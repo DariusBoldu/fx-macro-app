@@ -4,7 +4,7 @@
  *   - cache-first (stale-while-revalidate) for static assets
  *   - Web Push: shows a notification when the push sender fires
  * Bump CACHE when shell assets change to force an update. */
-var CACHE = 'fx-macro-v1';
+var CACHE = 'fx-macro-v2';
 var SHELL = [
   './',
   './index.html',
@@ -40,14 +40,15 @@ self.addEventListener('fetch', function (e) {
   // Never cache cross-origin price API calls — let them hit the network.
   if (url.origin !== self.location.origin) return;
 
-  // data.json: network-first so a new report shows immediately.
-  if (url.pathname.endsWith('/data.json') || url.pathname.endsWith('data.json')) {
+  // data.json + config.js: network-first so a new report (and any config edit —
+  // keys, passcode, provider) applies immediately; cache is the offline fallback.
+  if (/\/(data\.json|config\.js)$/.test(url.pathname)) {
     e.respondWith(
       fetch(req).then(function (res) {
         var copy = res.clone();
-        caches.open(CACHE).then(function (c) { c.put('./data.json', copy); });
+        caches.open(CACHE).then(function (c) { c.put(req, copy); });
         return res;
-      }).catch(function () { return caches.match('./data.json'); })
+      }).catch(function () { return caches.match(req); })
     );
     return;
   }
