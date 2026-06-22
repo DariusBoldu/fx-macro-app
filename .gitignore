@@ -1,0 +1,13 @@
+# Secrets — never commit
+push/vapid-private.txt
+push/subscriptions.json
+config.local.js
+.env
+*.pem
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store

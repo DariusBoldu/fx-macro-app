@@ -1,0 +1,12 @@
+{
+  "name": "fx-macro-push",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web Push sender for the FX Macro PWA (run by the daily task).",
+  "scripts": {
+    "send": "node send-push.js"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
+  }
+}

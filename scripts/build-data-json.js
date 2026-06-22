@@ -1,0 +1,66 @@
+#!/usr/bin/env node
+/*
+ * build-data-json.js
+ * ------------------
+ * Single source of truth bridge: reads the desktop dashboard's data.js
+ * (window.FX_DATA = {...}) and emits the PWA's data.json with the SAME shape,
+ * plus an `updatedAt` ISO timestamp the app uses for "last updated" and as the
+ * Web-Push trigger (a changed timestamp => a new report => fire a notification).
+ *
+ * The existing daily Cowork task already regenerates Forex_Dashboard/data.js.
+ * Add a call to this script at the end of that task so the app stays in sync:
+ *
+ *     node fx-macro-app/scripts/build-data-json.js
+ *
+ * No third-party deps — runs on plain Node.
+ */
+const fs = require('fs');
+const path = require('path');
+const vm = require('vm');
+
+const ROOT = path.resolve(__dirname, '..', '..');           // .../Trading forex
+const DATA_JS = path.join(ROOT, 'Forex_Dashboard', 'data.js');
+const OUT = path.resolve(__dirname, '..', 'data.json');
+
+function main() {
+  const src = fs.readFileSync(DATA_JS, 'utf8');
+
+  // Evaluate data.js in a tiny sandbox that provides `window`.
+  const sandbox = { window: {} };
+  vm.createContext(sandbox);
+  vm.runInContext(src, sandbox, { filename: 'data.js', timeout: 5000 });
+
+  const FX = sandbox.window.FX_DATA;
+  if (!FX || !FX.meta || !Array.isArray(FX.symbols)) {
+    throw new Error('data.js did not set a valid window.FX_DATA');
+  }
+
+  // Sanity checks that keep the analyst standard intact.
+  const ccys = FX.strength.map((c) => c.ccy).sort().join(',');
+  const expected = ['AUD', 'CAD', 'EUR', 'GBP', 'JPY', 'NZD', 'USD'].join(',');
+  if (ccys !== expected) {
+    throw new Error('strength[] must be exactly the 7 currencies, got: ' + ccys);
+  }
+  if (FX.symbols.length !== 21) {
+    throw new Error('symbols[] must be 21 (18 pairs + DXY + JPYBASKET + GER40), got: ' + FX.symbols.length);
+  }
+
+  const out = {
+    meta: FX.meta,
+    dailyRead: FX.dailyRead,
+    strength: FX.strength,
+    symbols: FX.symbols,
+    catalysts: FX.catalysts,
+    geopolitics: FX.geopolitics,
+    // The app reads this for "last updated" and the push trigger.
+    updatedAt: new Date().toISOString(),
+  };
+
+  fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n', 'utf8');
+  console.log('Wrote ' + OUT);
+  console.log('  reportDate : ' + out.meta.reportDate);
+  console.log('  symbols    : ' + out.symbols.length);
+  console.log('  updatedAt  : ' + out.updatedAt);
+}
+
+main();

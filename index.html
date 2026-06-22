@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<title>FX Macro</title>
+<meta name="description" content="Daily forex macro intelligence for a 4H swing trader.">
+<meta name="theme-color" content="#0b0f17">
+
+<!-- iOS home-screen / standalone -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FX Macro">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<!-- iOS launch images (portrait) -->
+<link rel="apple-touch-startup-image" href="icons/splash-iphone-x.png"        media="(device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)">
+<link rel="apple-touch-startup-image" href="icons/splash-iphone-13-14.png"    media="(device-width:390px) and (device-height:844px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)">
+<link rel="apple-touch-startup-image" href="icons/splash-iphone-15-16.png"    media="(device-width:393px) and (device-height:852px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)">
+<link rel="apple-touch-startup-image" href="icons/splash-iphone-pro-max.png"  media="(device-width:430px) and (device-height:932px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)">
+<link rel="apple-touch-startup-image" href="icons/splash-ipad-air.png"        media="(device-width:820px) and (device-height:1180px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)">
+<link rel="apple-touch-startup-image" href="icons/splash-ipad-pro.png"        media="(device-width:1024px) and (device-height:1366px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===================== Passcode gate ===================== -->
+<div id="gate">
+  <img class="logo" src="icons/icon-192.png" alt="">
+  <h1>FX Macro</h1>
+  <p>Enter the shared passcode to continue.</p>
+  <input class="pin" id="pin" type="password" inputmode="numeric" autocomplete="off"
+         enterkeyhint="go" placeholder="• • • • •" aria-label="Passcode">
+  <button class="gobtn" id="gobtn">Unlock</button>
+  <div class="err" id="gateErr"></div>
+</div>
+
+<!-- ===================== App ===================== -->
+<div id="app">
+  <header class="appbar">
+    <div class="row1">
+      <h1>FX&nbsp;Macro</h1>
+      <div class="updated" id="updated"><span class="dotlive"></span><span id="updatedTxt">—</span></div>
+    </div>
+    <div class="label" id="reportLabel"></div>
+  </header>
+
+  <main>
+    <!-- Today -->
+    <section class="view active" id="v-today">
+      <div class="regime" id="regime"></div>
+      <div class="bigevent" id="bigevent"></div>
+      <div class="panel"><h2>What changed</h2><div class="read" id="dailyRead"></div></div>
+      <div class="panel"><h2>Geopolitics &amp; oil → FX transmission</h2><div class="read" id="geo"></div></div>
+      <div class="disclaimer">Not financial advice — for your own decision-making.</div>
+    </section>
+
+    <!-- Strength -->
+    <section class="view" id="v-strength">
+      <div class="panel">
+        <h2>Currency strength &amp; forward bias <span class="sidenote">strongest → weakest</span></h2>
+        <div id="strength"></div>
+        <div class="legend">Score −3 (weak) … +3 (strong). <b>Verdict</b> = current state ·
+          <b>Forward Bias</b> = expected lean into next CB meeting (🦅 hawkish/strength · 🔻 dovish/weakness · ⚖️ balanced).</div>
+      </div>
+      <div class="disclaimer">Not financial advice — for your own decision-making.</div>
+    </section>
+
+    <!-- Signals -->
+    <section class="view" id="v-signals">
+      <div class="filters" id="filters"></div>
+      <div id="signals"></div>
+      <div class="disclaimer">LONG = buy the pair · JPYBASKET rises when JPY strengthens (opposite ticket to XXX/JPY) ·
+        GER40 is an equity index (macro/risk-driven).<br>Not financial advice — for your own decision-making.</div>
+    </section>
+
+    <!-- Prices -->
+    <section class="view" id="v-prices">
+      <div class="panel">
+        <h2>Live prices <span class="sidenote" id="priceProvider"></span></h2>
+        <div id="prices"><div class="skeleton">Loading…</div></div>
+      </div>
+      <div class="disclaimer">Indices (DXY · GER40) and the synthetic JPYBASKET are chart-only — not shown here.<br>
+        Not financial advice — for your own decision-making.</div>
+    </section>
+
+    <!-- Calendar -->
+    <section class="view" id="v-cal">
+      <div class="panel">
+        <h2>Catalysts ahead</h2>
+        <div id="cal"></div>
+        <div class="legend"><span class="dot high"></span>High &nbsp; <span class="dot med"></span>Medium &nbsp; <span class="dot low"></span>Low</div>
+      </div>
+      <div class="disclaimer">Not financial advice — for your own decision-making.</div>
+    </section>
+  </main>
+
+  <nav class="tabbar" id="tabbar">
+    <button class="tabbtn active" data-v="today">
+      <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>Today</button>
+    <button class="tabbtn" data-v="strength">
+      <svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>Strength</button>
+    <button class="tabbtn" data-v="signals">
+      <svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>Signals</button>
+    <button class="tabbtn" data-v="prices">
+      <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>Prices</button>
+    <button class="tabbtn" data-v="cal">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendar</button>
+  </nav>
+</div>
+
+<div id="toast"><span id="toastTxt">New report available</span><button id="toastBtn">Refresh</button></div>
+
+<script src="config.js"></script>
+<script src="price-adapter.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function (e) { console.warn('SW failed', e); });
+  });
+}
+</script>
+</body>
+</html>

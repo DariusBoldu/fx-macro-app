@@ -1,0 +1,16 @@
+# Cloudflare Worker config for the FX Macro price proxy + push collector.
+# Free tier is plenty for two users. See ./README.md for the deploy steps.
+name = "fx-macro-proxy"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Created with:  wrangler kv namespace create FX_SUBS
+# Paste the printed id below.
+[[kv_namespaces]]
+binding = "FX_SUBS"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Secrets are NOT stored here — set them with `wrangler secret put`:
+#   wrangler secret put OANDA_TOKEN      (your fxTrade practice token)
+#   wrangler secret put OANDA_ACCOUNT    (your practice account id, e.g. 101-004-...)
+#   wrangler secret put ADMIN_KEY        (any long random string; gates /subscriptions)
