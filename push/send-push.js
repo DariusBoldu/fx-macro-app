@@ -17,17 +17,21 @@
 const fs = require('fs');
 const path = require('path');
 
-const CONFIG = {
-  subsUrl: process.env.SUBS_URL || '',          // worker /subscriptions URL
-  adminKey: process.env.ADMIN_KEY || '',        // worker ADMIN_KEY
-};
-
-function readVapid() {
+// All secrets live in the gitignored push/vapid-private.txt. Env vars override.
+function readSecrets() {
   const file = path.join(__dirname, 'vapid-private.txt');
   const txt = fs.readFileSync(file, 'utf8');
-  const get = (k) => (txt.match(new RegExp('^' + k + '=(.*)$', 'm')) || [])[1];
-  return { pub: get('VAPID_PUBLIC'), priv: get('VAPID_PRIVATE'), subject: get('VAPID_SUBJECT') || 'mailto:admin@example.com' };
+  const get = (k) => ((txt.match(new RegExp('^' + k + '=(.*)$', 'm')) || [])[1] || '').trim();
+  return {
+    pub: get('VAPID_PUBLIC'), priv: get('VAPID_PRIVATE'),
+    subject: get('VAPID_SUBJECT') || 'mailto:admin@example.com',
+    subsUrl: process.env.SUBS_URL || get('SUBS_URL'),
+    adminKey: process.env.ADMIN_KEY || get('ADMIN_KEY'),
+  };
 }
+const S = readSecrets();
+const CONFIG = { subsUrl: S.subsUrl, adminKey: S.adminKey };
+function readVapid() { return { pub: S.pub, priv: S.priv, subject: S.subject }; }
 
 async function main() {
   const title = process.argv[2] || 'FX Macro';

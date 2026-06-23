@@ -4,12 +4,11 @@ name = "fx-macro-proxy"
 main = "worker.js"
 compatibility_date = "2024-11-01"
 
-# --- Push only (commented out for a prices-only deploy) -------------------
-# When you later enable Web Push, run `wrangler kv namespace create FX_SUBS`,
-# paste the printed id below, and uncomment these three lines:
-# [[kv_namespaces]]
-# binding = "FX_SUBS"
-# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+# KV namespace stores push subscriptions (one row per device).
+# id is filled in by the deploy steps (wrangler kv namespace create FX_SUBS).
+[[kv_namespaces]]
+binding = "FX_SUBS"
+id = "571a77de22764b5b904ca9f39224dc98"
 
 # Secrets are NOT stored here — set them with `wrangler secret put`:
 #   wrangler secret put OANDA_TOKEN      (your fxTrade practice token)

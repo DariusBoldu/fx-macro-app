@@ -66,9 +66,9 @@ window.FX_CONFIG = {
    * Leave empty to disable the "Enable alerts" button until you stand up the
    * collector (see README + ./proxy). */
   push: {
-    enabled: false,               // flip to true once subscribeUrl is set
+    enabled: true,                // live
     vapidPublicKey: "BNIuELx5htoIPreBatlat8-46ADSDFwQmhmiAt_CiJ6JzWTml9pbSEDiRHCpWcG6kqiHgXXotU1JM8wROgWbsdA",
-    subscribeUrl: "",             // e.g. https://your-worker.workers.dev/subscribe
+    subscribeUrl: "https://fx-macro-proxy.dariusboldu2014.workers.dev/subscribe",
   },
 
   /* ---- Data source -------------------------------------------------------
