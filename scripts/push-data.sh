@@ -44,8 +44,11 @@ cd "$REPO"
 # no-op index commands (git status/fetch) in this script.
 clear_locks() {
   for L in .git/index.lock .git/HEAD.lock .git/refs/heads/main.lock .git/refs/remotes/origin/main.lock; do
-    [ -e "$L" ] && { rm -f "$L" 2>/dev/null || mv "$L" "$L.stale_$(date +%s%N)" 2>/dev/null || true; }
+    if [ -e "$L" ]; then
+      rm -f "$L" 2>/dev/null || mv "$L" "$L.stale_$(date +%s%N)" 2>/dev/null || true
+    fi
   done
+  return 0
 }
 
 clear_locks
