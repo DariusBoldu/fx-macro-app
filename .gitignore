@@ -9,5 +9,9 @@ config.local.js
 node_modules/
 npm-debug.log*
 
+# Cloudflare wrangler local cache
+.wrangler/
+proxy/.wrangler/
+
 # OS
 .DS_Store
