@@ -90,8 +90,7 @@
     var tabs = document.querySelectorAll('.tabbtn');
     for (var k = 0; k < tabs.length; k++) tabs[k].classList.toggle('active', tabs[k].dataset.v === v);
     window.scrollTo(0, 0);
-    if (v === 'prices') refreshPrices(true);
-    if (v === 'signals') refreshPrices(false);
+    if (v === 'signals') refreshPrices();
     if (v === 'size') computeSize();
   }
   document.querySelectorAll('.tabbtn').forEach(function (b) {
@@ -224,31 +223,14 @@
     }).join('');
   }
 
-  /* ============================ Prices ============================ */
-  var priceUniverse = [];   // display symbols, FX pairs only, in Signals order
+  /* ===================== Signals live quotes (per card) ===================== */
+  var priceUniverse = [];   // 18 FX pairs, in Signals order — feeds the cards
   var lastQuotes = {};
   var priceTimer = null;
 
   function renderPricesUniverse(D) {
     priceUniverse = (D.symbols || []).map(function (s) { return s.sym; })
       .filter(function (s) { return window.PriceAdapter.isFxPair(s); });
-    $('priceProvider').textContent = window.PriceAdapter.isConfigured()
-      ? window.PriceAdapter.providerLabel() : '';
-    if (!window.PriceAdapter.isConfigured()) {
-      $('prices').innerHTML =
-        '<div class="notice"><b>Live prices are not configured yet.</b><br>' +
-        'Pick a provider in <code>config.js</code> → <code>price.provider</code> and add the key, ' +
-        'then reload. Default is OANDA practice (via the bundled proxy) with Twelve Data as a ' +
-        'no-proxy fallback. Everything else in the app works without it.</div>';
-      return;
-    }
-    // initial skeleton rows
-    $('prices').innerHTML = priceUniverse.map(function (sym) {
-      return '<div class="prow" data-row="' + esc(sym) + '">' +
-        '<div class="psym">' + esc(sym) + '</div>' +
-        '<svg class="spark" viewBox="0 0 100 34" preserveAspectRatio="none"></svg>' +
-        '<div class="pvals"><div class="pmid">—</div><div class="pchg flat">·</div><div class="pba"></div></div></div>';
-    }).join('');
   }
 
   function fmtChg(p) {
@@ -256,18 +238,6 @@
     var cls = p > 0.001 ? 'up' : p < -0.001 ? 'down' : 'flat';
     var sign = p > 0 ? '+' : '';
     return { cls: cls, txt: sign + p.toFixed(2) + '%' };
-  }
-
-  function sparkPath(closes) {
-    if (!closes || closes.length < 2) return { d: '', up: true };
-    var min = Math.min.apply(null, closes), max = Math.max.apply(null, closes);
-    var rng = (max - min) || 1, n = closes.length;
-    var d = closes.map(function (v, i) {
-      var x = (i / (n - 1)) * 100;
-      var y = 32 - ((v - min) / rng) * 30;
-      return (i === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1);
-    }).join(' ');
-    return { d: d, up: closes[closes.length - 1] >= closes[0] };
   }
 
   function applyQuotesToSignals() {
@@ -280,50 +250,16 @@
     });
   }
 
-  function applyQuotesToPrices() {
-    priceUniverse.forEach(function (sym) {
-      var row = document.querySelector('.prow[data-row="' + cssEsc(sym) + '"]');
-      if (!row) return;
-      var q = lastQuotes[sym];
-      var mid = row.querySelector('.pmid'), chg = row.querySelector('.pchg'), ba = row.querySelector('.pba');
-      if (!q) return;
-      mid.textContent = window.PriceAdapter.formatPrice(sym, q.mid);
-      var c = fmtChg(q.changePct);
-      chg.className = 'pchg ' + c.cls; chg.textContent = c.txt;
-      ba.textContent = (q.bid != null && q.ask != null)
-        ? window.PriceAdapter.formatPrice(sym, q.bid) + ' / ' + window.PriceAdapter.formatPrice(sym, q.ask) : '';
-    });
-  }
-  function cssEsc(s) { return s.replace(/[^a-zA-Z0-9_-]/g, '\\$&'); }
-
-  function loadSparklines() {
-    if (!window.PriceAdapter.isConfigured()) return;
-    priceUniverse.forEach(function (sym) {
-      window.PriceAdapter.sparkline(sym, 24).then(function (closes) {
-        var row = document.querySelector('.prow[data-row="' + cssEsc(sym) + '"]');
-        if (!row) return;
-        var svg = row.querySelector('.spark'); if (!svg) return;
-        var p = sparkPath(closes);
-        if (!p.d) return;
-        svg.innerHTML = '<path d="' + p.d + '" fill="none" stroke="' +
-          (p.up ? 'var(--up)' : 'var(--down)') + '" stroke-width="1.5" vector-effect="non-scaling-stroke"/>';
-      });
-    });
-  }
-
-  function refreshPrices(includeSparklines) {
+  function refreshPrices() {
     if (!window.PriceAdapter.isConfigured() || !priceUniverse.length) return;
     window.PriceAdapter.quotes(priceUniverse).then(function (q) {
       lastQuotes = q || {};
-      applyQuotesToPrices();
       applyQuotesToSignals();
     });
-    if (includeSparklines) loadSparklines();
-    // (re)arm the poll while a price-bearing screen is open
+    // (re)arm the poll only while Signals is open & the app is foregrounded
     clearTimeout(priceTimer);
     priceTimer = setTimeout(function () {
-      // skip polling while the app is backgrounded — saves the daily credit budget
-      if (!document.hidden && (current === 'prices' || current === 'signals')) refreshPrices(false);
+      if (!document.hidden && current === 'signals') refreshPrices();
     }, (CFG.price && CFG.price.refreshMs) || 60000);
   }
 
@@ -494,14 +430,14 @@
   function boot() {
     setupSizeCalc();
     fetchData(false).then(function () {
-      refreshPrices(false);     // warm signals quotes
+      refreshPrices();          // warm signals quotes
       setupPush();
     });
     // poll for a fresh report
     setInterval(function () { fetchData(true); }, (CFG.dataPollMs) || 300000);
     // also re-check when returning to the app
     document.addEventListener('visibilitychange', function () {
-      if (!document.hidden) { fetchData(true); if (current === 'prices' || current === 'signals') refreshPrices(current === 'prices'); }
+      if (!document.hidden) { fetchData(true); if (current === 'signals') refreshPrices(); }
     });
   }
 
