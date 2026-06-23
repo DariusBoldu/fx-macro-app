@@ -97,6 +97,31 @@
       </div>
       <div class="disclaimer">Not financial advice — for your own decision-making.</div>
     </section>
+
+    <!-- Size calculator -->
+    <section class="view" id="v-size">
+      <div class="panel">
+        <h2>Position size calculator <span class="sidenote" id="cRate"></span></h2>
+        <div class="calcgrid">
+          <label class="fld"><span>Instrument</span><select id="cPair"></select></label>
+          <label class="fld"><span>Deposit currency</span><select id="cDep"></select></label>
+          <label class="fld"><span>Account balance</span><input id="cBal" type="number" inputmode="decimal" placeholder="1000" min="0"></label>
+          <label class="fld"><span>Risk</span>
+            <div class="riskrow"><input id="cRisk" type="number" inputmode="decimal" placeholder="1" min="0">
+              <select id="cRiskMode"><option value="pct">%</option><option value="amt">amount</option></select></div>
+          </label>
+          <label class="fld"><span>Stop loss (pips)</span><input id="cSl" type="number" inputmode="decimal" placeholder="20" min="0"></label>
+          <div class="fld"><span>1 pip size</span><div class="pipbox" id="cPip">0.0001</div></div>
+        </div>
+        <div class="calcres">
+          <div class="stat"><div class="sv accent" id="rLots">—</div><div class="sl">Lots (trade size)</div></div>
+          <div class="stat"><div class="sv" id="rUnits">—</div><div class="sl">Units</div></div>
+          <div class="stat"><div class="sv" id="rRisk">—</div><div class="sl">Money at risk</div></div>
+        </div>
+        <div class="calcnote" id="cNote"></div>
+      </div>
+      <div class="disclaimer">Lots rounded to 0.01 · standard lot = 100,000 units · cross-currency conversions use ~daily ECB rates.<br>Not financial advice — for your own decision-making.</div>
+    </section>
   </main>
 
   <nav class="tabbar" id="tabbar">
@@ -110,6 +135,8 @@
       <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>Prices</button>
     <button class="tabbtn" data-v="cal">
       <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendar</button>
+    <button class="tabbtn" data-v="size">
+      <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6"/><path d="M9 11h1.5M13.5 11h1.5"/><path d="M9 15h1.5M13.5 15h1.5"/><path d="M9 19h6"/></svg>Size</button>
   </nav>
 </div>
 

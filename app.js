@@ -92,6 +92,7 @@
     window.scrollTo(0, 0);
     if (v === 'prices') refreshPrices(true);
     if (v === 'signals') refreshPrices(false);
+    if (v === 'size') computeSize();
   }
   document.querySelectorAll('.tabbtn').forEach(function (b) {
     b.addEventListener('click', function () { showView(b.dataset.v); });
@@ -370,8 +371,127 @@
     });
   }
 
+  /* ============================ Size calculator ============================ */
+  var CALC_PAIRS = ['EUR/USD', 'GBP/USD', 'USD/JPY', 'USD/CAD', 'AUD/USD', 'NZD/USD',
+    'EUR/JPY', 'EUR/AUD', 'EUR/NZD', 'GBP/JPY', 'GBP/AUD', 'GBP/NZD', 'AUD/JPY',
+    'NZD/JPY', 'CAD/JPY', 'AUD/NZD', 'AUD/CAD', 'NZD/CAD'];
+  var CALC_CCYS = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD'];
+  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', JPY: '¥', AUD: 'A$', NZD: 'NZ$', CAD: 'C$' };
+  var CALC_KEY = 'fx_calc_inputs';
+
+  // rates: how many QUOTE units per 1 DEPOSIT unit (rates[dep]=1). Cached ~12h.
+  // Primary: frankfurter.dev (ECB daily). Fallback: open.er-api.com. Both keyless + CORS.
+  function getRates(dep) {
+    var ck = 'fx_rates_' + dep, cached = null;
+    try { cached = JSON.parse(localStorage.getItem(ck) || 'null'); } catch (e) {}
+    if (cached && (Date.now() - cached.t) < 12 * 3600 * 1000) return Promise.resolve(cached);
+    function store(rates, date) {
+      rates[dep] = 1; var obj = { t: Date.now(), rates: rates, date: date };
+      try { localStorage.setItem(ck, JSON.stringify(obj)); } catch (e) {}
+      return obj;
+    }
+    return fetch('https://api.frankfurter.dev/v1/latest?base=' + dep)
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (j) { if (!j.rates) throw 0; return store(j.rates, j.date); })
+      .catch(function () {
+        return fetch('https://open.er-api.com/v6/latest/' + dep)
+          .then(function (r) { return r.json(); })
+          .then(function (j) { if (!j || !j.rates) throw 0; return store(j.rates, (j.time_last_update_utc || '').slice(0, 16)); })
+          .catch(function () { return cached; });
+      });
+  }
+
+  function fmtMoney(dep, v) {
+    var sym = CCY_SYMBOL[dep] || (dep + ' ');
+    var n = (dep === 'JPY')
+      ? Math.round(v).toLocaleString('en-US')
+      : v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return sym + n;
+  }
+
+  function saveCalcInputs() {
+    try {
+      localStorage.setItem(CALC_KEY, JSON.stringify({
+        pair: $('cPair').value, dep: $('cDep').value, bal: $('cBal').value,
+        risk: $('cRisk').value, mode: $('cRiskMode').value, sl: $('cSl').value
+      }));
+    } catch (e) {}
+  }
+
+  function setCalcRes(lots, units, risk) { $('rLots').textContent = lots; $('rUnits').textContent = units; $('rRisk').textContent = risk; }
+
+  function computeSize() {
+    var pair = $('cPair').value, dep = $('cDep').value, mode = $('cRiskMode').value;
+    var bal = parseFloat($('cBal').value), risk = parseFloat($('cRisk').value), sl = parseFloat($('cSl').value);
+    var pipSize = pair.indexOf('JPY') >= 0 ? 0.01 : 0.0001;
+    $('cPip').textContent = pipSize.toString();
+    $('cRate').textContent = '';
+    saveCalcInputs();
+
+    if (!(bal > 0) || !(risk > 0) || !(sl > 0)) {
+      setCalcRes('—', '—', '—');
+      $('cNote').className = 'calcnote'; $('cNote').textContent = 'Enter balance, risk and stop loss to size the trade.';
+      return;
+    }
+    var riskAmount = mode === 'pct' ? bal * risk / 100 : risk;
+    var quote = pair.split('/')[1], contract = 100000;
+    var pvQuote = pipSize * contract;   // pip value per standard lot, in quote ccy
+
+    function finish(rateObj) {
+      var pvDep;
+      if (quote === dep) pvDep = pvQuote;
+      else if (rateObj && rateObj.rates && rateObj.rates[quote]) {
+        pvDep = pvQuote / rateObj.rates[quote];
+        $('cRate').textContent = rateObj.date ? ('rates ' + rateObj.date) : 'rates';
+      } else {
+        setCalcRes('—', '—', '—');
+        $('cNote').className = 'calcnote warn';
+        $('cNote').textContent = 'Could not get the ' + quote + '→' + dep + ' rate — connect once and it caches for offline use.';
+        return;
+      }
+      var riskPerLot = sl * pvDep;
+      var exactLots = riskAmount / riskPerLot;
+      var lots = Math.round(exactLots * 100) / 100;            // broker step 0.01
+      var belowMin = exactLots < 0.01;
+      var useLots = belowMin ? exactLots : lots;               // show precise if sub-minimum
+      var units = Math.round(useLots * contract);
+      var actualRisk = useLots * riskPerLot;
+      setCalcRes(belowMin ? exactLots.toFixed(3) : lots.toFixed(2),
+        units.toLocaleString('en-US'), fmtMoney(dep, actualRisk));
+      var riskShown = mode === 'pct' ? (risk + '% = ' + fmtMoney(dep, riskAmount)) : fmtMoney(dep, riskAmount);
+      $('cNote').className = 'calcnote' + (belowMin ? ' warn' : '');
+      $('cNote').innerHTML = belowMin
+        ? 'Risking <b>' + riskShown + '</b> needs ≈' + exactLots.toFixed(3) + ' lots — <b>below the 0.01 minimum</b>; raise risk or balance.'
+        : 'Risking <b>' + riskShown + '</b> · pip value <b>' + fmtMoney(dep, pvDep) + '/lot</b> · ' + sl + '-pip stop';
+    }
+
+    if (quote === dep) finish(null);
+    else getRates(dep).then(finish);
+  }
+
+  function setupSizeCalc() {
+    var pairSel = $('cPair');
+    if (!pairSel || pairSel.options.length) return;   // once
+    pairSel.innerHTML = CALC_PAIRS.map(function (p) { return '<option>' + p + '</option>'; }).join('');
+    $('cDep').innerHTML = CALC_CCYS.map(function (c) { return '<option>' + c + '</option>'; }).join('');
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(CALC_KEY) || '{}') || {}; } catch (e) {}
+    if (saved.pair && CALC_PAIRS.indexOf(saved.pair) >= 0) pairSel.value = saved.pair;
+    $('cDep').value = (saved.dep && CALC_CCYS.indexOf(saved.dep) >= 0) ? saved.dep : 'USD';
+    if (saved.bal) $('cBal').value = saved.bal;
+    $('cRisk').value = (saved.risk != null && saved.risk !== '') ? saved.risk : 1;
+    $('cRiskMode').value = saved.mode === 'amt' ? 'amt' : 'pct';
+    if (saved.sl) $('cSl').value = saved.sl;
+    ['cPair', 'cDep', 'cBal', 'cRisk', 'cRiskMode', 'cSl'].forEach(function (id) {
+      $(id).addEventListener('input', computeSize);
+      $(id).addEventListener('change', computeSize);
+    });
+    computeSize();
+  }
+
   /* ============================ Boot ============================ */
   function boot() {
+    setupSizeCalc();
     fetchData(false).then(function () {
       refreshPrices(false);     // warm signals quotes
       setupPush();
