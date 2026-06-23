@@ -147,8 +147,17 @@
 <script src="app.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
+  // Auto-apply new versions: when a freshly-installed SW takes control, reload
+  // once so the app always runs the latest shell (no manual reinstall needed).
+  var hadController = !!navigator.serviceWorker.controller, reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', function () {
+    if (hadController && !reloading) { reloading = true; window.location.reload(); }
+  });
   window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function (e) { console.warn('SW failed', e); });
+    navigator.serviceWorker.register('sw.js').then(function (reg) {
+      reg.update();
+      setInterval(function () { reg.update(); }, 60 * 60 * 1000); // hourly update check
+    }).catch(function (e) { console.warn('SW failed', e); });
   });
 }
 </script>

@@ -322,7 +322,8 @@
     // (re)arm the poll while a price-bearing screen is open
     clearTimeout(priceTimer);
     priceTimer = setTimeout(function () {
-      if (current === 'prices' || current === 'signals') refreshPrices(false);
+      // skip polling while the app is backgrounded — saves the daily credit budget
+      if (!document.hidden && (current === 'prices' || current === 'signals')) refreshPrices(false);
     }, (CFG.price && CFG.price.refreshMs) || 60000);
   }
 

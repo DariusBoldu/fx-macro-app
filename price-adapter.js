@@ -50,7 +50,7 @@
   var tdLastFetch = 0;
   var TD_BATCH = 8;          // == per-minute credit cap
   var TD_THROTTLE = 65000;   // >= 1 min between batches
-  var TD_TTL = 120000;       // refetch a symbol once older than this
+  var TD_TTL = 300000;       // refetch a symbol once older than 5 min (saves daily credits)
 
   var twelvedata = {
     label: 'Twelve Data',
