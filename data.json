@@ -1,13 +1,13 @@
 {
   "meta": {
     "reportDate": "2026-06-23",
-    "reportLabel": "Tue flash-PMI day — US-Japan FX coordination signal, oil 3-mo low / into PCE",
+    "reportLabel": "Tue PM — flash PMIs OUT (EZ downturn eases, UK services contracts, US softer), oil 3-mo low / into PCE",
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40",
-    "regime": "Dollar-strong / yen-weak. Warsh's hawkish FOMC stuck — DXY fresh 13-mo high ~101 (intraday 101.13), dots flip next move to a HIKE. USD/JPY ~161.5 (near 1986 low); intervention risk now coordination-flavoured after the Katayama-Bessent call.",
+    "regime": "Dollar-strong / yen-weak, intact. Warsh's hawkish FOMC stuck — DXY 13-mo high ~101, dots flip next move to a HIKE. USD/JPY ~161.5 (near 1986 low); intervention risk coordination-flavoured after the Katayama-Bessent call. New wrinkle: flash PMIs show a US services / UK services growth crack sitting under the crowded dollar into PCE.",
     "nextBigEvent": "US PCE — Thu Jun 25 (the marquee test of Warsh's 'broader than energy' call)"
   },
-  "dailyRead": "Three deltas Tuesday, all reinforcing the dollar-strong / yen-weak core rather than breaking it. (1) The yen story escalated from words to coordination signalling: FinMin Katayama spoke by phone with US Treasury Secretary Bessent and reaffirmed an agreement to coordinate FX action 'if needed' — a step up from Monday's verbal-only posture. USD/JPY ~161.5 (near the 1986 low), the yen has surrendered all its Apr 30 record-intervention gains, and the explicit US-Japan coordination line raises the odds the next move is JOINT, not unilateral — historically a harder, faster snap that hits every XXX/JPY at once. (2) The dollar pushed to a fresh 13-month high (~101, intraday 101.13) on the intact Warsh regime — the long-USD trade is even more crowded into Thursday's PCE. (3) Oil slid again: Brent ~$77.5, WTI ~$74 (near the early-March low) after Washington's 60-day Iranian oil license and 30M+ barrels shipped through Hormuz last week — but the peace track snagged: Switzerland confirmed the Friday Burgenstock technical talks are cancelled, with Iran reportedly demanding Israel halt the re-erupted Lebanon fighting. So oil keeps falling on flows while the diplomatic tail re-widens a notch. Today's live release is the flash PMIs (DE, EZ, UK, US), the EUR/GBP local catalyst. Net: carry the dollar-strong / yen-weak lean, but the JPY book's intervention risk just got two-sided and louder (coordination-flavoured), and the dollar is stretched into PCE — defend, don't chase.",
+  "dailyRead": "The Tuesday picture firmed rather than turned: the dollar-strong / yen-weak core is intact, and the flash PMIs have now printed and broadly fit the regime — with one small two-way wrinkle into PCE. The reads: Eurozone — the private-sector downturn eased and inflation pressures softened (composite still sub-50 after May's 48.5), a marginal EUR positive but not a break of the dovish-ECB frame; UK — services business activity CONTRACTED for the first time since April 2025, the cleanest confirmation of the GBP soft spot the hawkish-BoE bid had masked; US — services growth muted, optimism faltering, employment falling, a subtle softening that sits awkwardly under a dollar at a fresh 13-mo high (~101) and a very crowded long-USD book into Thursday's PCE. The JPY intervention story stayed at the escalated level — Katayama's call with US Treasury Sec Bessent reaffirmed US-Japan readiness to COORDINATE FX action 'if needed', so the next move could be JOINT, not unilateral; USD/JPY ~161.5 (near the 1986 low), the yen having surrendered all its Apr 30 gains. Oil slid a touch further: Brent ~$76.7, WTI ~$73.7 (a fresh ~3-mo low) on the 60-day Iranian oil license + 30M+ bbl through Hormuz, while the Friday Burgenstock technical talks stay cancelled (Iran tying them to a Lebanon ceasefire). Net: carry the dollar-strong / yen-weak lean, but two soft spots now sit under the crowded dollar — a muted US services PMI today and PCE Thursday — while the JPY book's intervention risk is two-sided and coordination-flavoured. Defend, don't chase.",
   "strength": [
     {
       "ccy": "USD",
@@ -15,15 +15,15 @@
       "verdict": "STRONG",
       "tag": "hawkish repricing",
       "drivers": "Core PCE firm; CPI 4.2% (May); claims 229k. Fed 3.50-3.75%, hawkish hold, dots flip next move to a HIKE.",
-      "forward": "🦅 Regime intact: median '26 dot ~3.8%, 9/18 see a hike. DXY fresh 13-mo high ~101. Next test: PCE Thu — a soft print is the only near-term fade. Even more crowded long."
+      "forward": "🦅 Regime intact: median '26 dot ~3.8%, 9/18 see a hike. DXY 13-mo high ~101. But today's US flash services PMI was muted (employment fell) — a small crack ahead of PCE Thu, the only near-term fade. Crowded long."
     },
     {
       "ccy": "GBP",
       "score": 2,
-      "verdict": "FIRM",
-      "tag": "hawkish surprise",
-      "drivers": "Core sticky; CPI 2.8% (soft headline, hot underneath). BoE 3.75%, hawkish 7-2 hold, 2 votes to HIKE, none to cut.",
-      "forward": "🦅 Hawkish dissent (Pill, Greene) + 'CPI may rise later' firmed GBP against a bid dollar. Flash PMI today the local catalyst; a sub-50 services print is the soft spot. Next BoE Aug."
+      "verdict": "FIRM → softer at the edge",
+      "tag": "hawkish bid, growth crack",
+      "drivers": "Core sticky; CPI 2.8%. BoE 3.75%, hawkish 7-2 hold, 2 hike votes — but UK flash services CONTRACTED (first since Apr 2025).",
+      "forward": "🦅→ Hawkish 7-2 BoE floor holds the rate story, but today's UK services contraction re-opens the cut-tail under the rate-bid GBP. Watch the GBP legs. Next BoE Aug."
     },
     {
       "ccy": "AUD",
@@ -55,15 +55,15 @@
       "verdict": "SOFT → firmer floor",
       "tag": "broadening CPI vs oil drag",
       "drivers": "May CPI hot + broadening: headline 3.2% (from 2.8%), CPI-ex-gas 2.2% (from 2.0%); gas +33.2%, groceries +4.3%. BoC 2.25% (parked).",
-      "forward": "⚖️ Hot/broadening CPI gives CAD a floor; but oil lower again (Brent ~$77.5, WTI ~$74, 3-mo low) re-presses the export side. Net less heavy than Sunday. Next BoC late Jul."
+      "forward": "⚖️ Hot/broadening CPI gives CAD a floor; but oil lower again (Brent ~$76.7, WTI ~$73.7, 3-mo low) re-presses the export side. Net less heavy than Sunday. Next BoC late Jul."
     },
     {
       "ccy": "EUR",
       "score": -2,
-      "verdict": "SOFT",
+      "verdict": "SOFT → marginally less soft",
       "tag": "USD-leg",
-      "drivers": "Core ~2.3%; unemp ~6.3%. ECB 2.25% (hiked Jun 11, dovish 'no cycle' frame).",
-      "forward": "⚖️↘ Pure USD-leg: hawkish Fed pushes EUR/USD down, dovish ECB frame caps bounces. Flash PMI today (May composite 47.5, sub-50) the local catalyst. Next ECB late Jul."
+      "drivers": "Core ~2.3%; unemp ~6.3%. ECB 2.25% (hiked Jun 11, dovish 'no cycle' frame). EZ flash PMI: downturn eased, inflation pressures softened (still sub-50).",
+      "forward": "⚖️↘ Pure USD-leg: hawkish Fed pushes EUR/USD down, dovish ECB frame caps bounces. The easing downturn is a modest positive, not a turn. Next ECB late Jul."
     }
   ],
   "symbols": [
@@ -71,14 +71,14 @@
       "sym": "EUR/USD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Cleanest short-USD leg: hawkish-repriced dollar (DXY 13-mo high) vs an ECB that's done — but crowded into PCE.",
-      "risk": "A soft core PCE (Thu) or an upside flash-PMI surprise bounces it; trail stops."
+      "why": "Cleanest short-USD leg, but two-sided now: EZ downturn easing + a muted US services PMI trim the one-way conviction into PCE.",
+      "risk": "A soft core PCE (Thu) or a further US-PMI-style soft patch bounces it; trail stops."
     },
     {
       "sym": "USD/CAD",
       "bias": "LONG",
       "conv": "LOW-MED",
-      "why": "Two-sided: oil ~$74 (3-mo low) re-presses CAD, but the broadening CPI floor (ex-gas 2.2%) caps the upside push — long but not one-way.",
+      "why": "Two-sided: oil ~$73.7 (3-mo low) re-presses CAD, but the broadening CPI floor (ex-gas 2.2%) caps the upside push — long but not one-way.",
       "risk": "Oil re-spike on an MOU breakdown / Lebanon flare; a gold bid; soft US PCE caps it."
     },
     {
@@ -113,8 +113,8 @@
       "sym": "GBP/JPY",
       "bias": "SHORT",
       "conv": "LOW",
-      "why": "Size down: hawkish BoE firmed the GBP leg — weakest JPY-cross short now (firm GBP vs structural yen).",
-      "risk": "Firm GBP fights the lean; a coordinated intervention spike snaps it lower."
+      "why": "Marginally cleaner: today's UK services contraction took some firmness out of the GBP leg vs the structural yen destination.",
+      "risk": "Firm-rate GBP still fights the lean; a coordinated intervention spike snaps it lower."
     },
     {
       "sym": "AUD/USD",
@@ -141,8 +141,8 @@
       "sym": "GBP/USD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Downgraded: BoE hawkish 7-2 hold (two hike votes) put a bid under GBP — two-hawk standoff, stand aside.",
-      "risk": "Re-short only when UK cut-pricing reasserts on soft data / soft PMI; USD leg still leans short."
+      "why": "UK services CONTRACTED (first since Apr 2025) — re-opens the cut-tail under the hawkish-BoE bid; leans short again if soft data continues.",
+      "risk": "Levels-only into PCE; the hawkish-7-2 rate story still floors GBP near-term."
     },
     {
       "sym": "NZD/USD",
@@ -211,16 +211,16 @@
       "sym": "GER40",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "Oil-lower tailwind intact (Brent ~$77.5) but the cancelled Burgenstock round + Lebanon flare re-widen the tail; hawkish-Fed rates drag the cap.",
+      "why": "Oil-lower tailwind intact (Brent ~$76.7) + EZ downturn easing; cancelled Burgenstock round + Lebanon flare keep the tail wider; hawkish-Fed rates the cap.",
       "risk": "An MOU breakdown / Lebanon escalation gaps it down; a hawkish-Fed rates scare."
     }
   ],
   "catalysts": [
     {
       "date": "Tue Jun 23",
-      "event": "Flash PMIs (DE, EZ, UK, US)",
+      "event": "Flash PMIs (DE, EZ, UK, US) — OUT",
       "impact": "med",
-      "note": "Today's live release; the EUR/GBP local catalyst. EZ composite 47.5 in May (sub-50) — a sub-50 hold validates the dovish-ECB frame."
+      "note": "EZ downturn eased / inflation softened (still sub-50); UK services CONTRACTED (first since Apr 2025); US services muted, employment fell — a small US/UK growth crack into PCE."
     },
     {
       "date": "Wed Jun 24",
@@ -232,7 +232,7 @@
       "date": "Thu Jun 25",
       "event": "US PCE — the marquee print",
       "impact": "high",
-      "note": "Direct test of Warsh's 'broader than energy' call; a soft core is the dollar's only near-term fade. Median '26 PCE 3.6%, core 3.3%."
+      "note": "Direct test of Warsh's 'broader than energy' call; today's muted US services PMI is the first hint a soft core is possible — the dollar's only near-term fade. Median '26 PCE 3.6%, core 3.3%."
     },
     {
       "date": "Thu Jun 25",
@@ -250,7 +250,7 @@
       "date": "Rolling",
       "event": "US-Iran 60-day MOU",
       "impact": "med",
-      "note": "Clock ticking, but Friday's Burgenstock technical round is CANCELLED (Iran tying it to a Lebanon ceasefire). The residual oil-respike tail re-widens a notch."
+      "note": "Clock ticking; Friday's Burgenstock technical round stays CANCELLED (Iran tying it to a Lebanon ceasefire). The residual oil-respike tail stays a notch wider."
     },
     {
       "date": "Jul 8",
@@ -265,6 +265,6 @@
       "note": "All next decisions parked to late July."
     }
   ],
-  "geopolitics": "Flows still beat diplomacy on price. Washington's 60-day Iranian oil license plus 30M+ barrels shipped through Hormuz last week pushed Brent to ~$77.5 and WTI to ~$74 (near the early-March low). But the diplomatic track stalled: Switzerland confirmed Friday's Burgenstock technical talks are cancelled, with Iran reportedly demanding Israel halt the re-erupted Lebanon fighting and VP Vance no longer travelling. The 60-day MOU clock keeps running, so the base case (truce holds, oil drifts lower) is intact — but the first technical round slipping plus the Lebanon flare nudges the oil-respike tail back open a notch. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps the dollar bid, supports GER40 and risk-beta AUD/NZD, and does NOT buy a Fed cut (Warsh marked inflation up into the oil drop); for CAD the broadening CPI partly offsets the renewed oil drag. Tail (re-widened a notch): an MOU stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,195 gold bid is the thin premium for exactly this.",
-  "updatedAt": "2026-06-23T06:03:46.163Z"
+  "geopolitics": "Flows still beat diplomacy on price. Washington's 60-day Iranian oil license plus 30M+ barrels shipped through Hormuz last week pushed Brent to ~$76.7 and WTI to ~$73.7 (a fresh ~3-month low). The diplomatic track stays stalled: Friday's Burgenstock technical talks remain cancelled, with Iran reportedly demanding Israel halt the re-erupted Lebanon fighting. The 60-day MOU clock keeps running, so the base case (truce holds, oil drifts lower) is intact — but the slipped first technical round plus the Lebanon flare keep the oil-respike tail a notch wider. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps the dollar bid, supports GER40 and risk-beta AUD/NZD, and does NOT buy a Fed cut (Warsh marked inflation up into the oil drop); for CAD the broadening CPI partly offsets the renewed oil drag. Tail (re-widened a notch): an MOU stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,195 gold bid is the thin premium for exactly this.",
+  "updatedAt": "2026-06-23T11:18:07.031Z"
 }
