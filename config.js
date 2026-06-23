@@ -26,16 +26,17 @@ window.FX_CONFIG = {
    * The adapter is swappable (see price-adapter.js). If unconfigured, the app
    * still works fully — the Prices screen just shows a setup notice and Signals
    * cards omit the live quote. */
-    // Chosen: OANDA practice via the bundled proxy (proxy/). Prices stay off
-    // (graceful setup notice) until you deploy the Worker and paste its URL into
-    // price.oanda.proxyUrl below. See proxy/README.md + main README §4.
+    // Chosen: Twelve Data (direct, CORS — no proxy needed). Free "Basic" tier =
+    // 8 credits/min, 800/day, so the adapter fetches 8 pairs per cycle and
+    // rotates through all 18 (see price-adapter.js). OANDA is parked below and
+    // can be swapped back in later via the proxy.
   price: {
-    provider: "oanda",            // OANDA practice (real-time) via proxy/
+    provider: "twelvedata",       // direct browser fetch, free tier
 
-    // Twelve Data — browser-friendly (CORS-enabled). Free tier key is a query
-    // param; low-risk to expose, but rate-limited (~8 req/min, 800/day).
+    // Twelve Data — browser-friendly (CORS-enabled). Free-tier key is a query
+    // param; low-risk to expose, but rate-limited (8 credits/min, 800/day).
     twelvedata: {
-      apiKey: "",                 // https://twelvedata.com/ -> free API key
+      apiKey: "ca7cf3cd64cb4c10beb23b4fca64d47b",   // https://twelvedata.com/
     },
 
     // OANDA fxTrade *practice* — real-time FX, free account. The token is a
@@ -56,7 +57,7 @@ window.FX_CONFIG = {
       proxyUrl: "",
     },
 
-    refreshMs: 60000,             // price poll interval while a screen is open
+    refreshMs: 90000,             // poll cadence (Twelve Data free tier friendly)
   },
 
   /* ---- Web Push ----------------------------------------------------------

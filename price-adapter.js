@@ -42,44 +42,55 @@
   var SPARK_TTL = 15 * 60 * 1000;
 
   // ========================= Twelve Data =========================
+  // Free "Basic" tier = 8 credits/min, 800/day; a multi-symbol quote costs one
+  // credit per symbol. So we never request more than TD_BATCH symbols at once,
+  // throttle to ~one batch per minute, and rotate through the universe — cached
+  // quotes fill the gaps so every pair stays reasonably fresh (~3-4 min cycle).
+  var tdCache = {};          // sym -> { mid, changePct, t(ms), iso }
+  var tdLastFetch = 0;
+  var TD_BATCH = 8;          // == per-minute credit cap
+  var TD_THROTTLE = 65000;   // >= 1 min between batches
+  var TD_TTL = 120000;       // refetch a symbol once older than this
+
   var twelvedata = {
     label: 'Twelve Data',
     configured: function () { return !!(CFG.twelvedata && CFG.twelvedata.apiKey); },
     quotes: function (symbols) {
       var key = CFG.twelvedata.apiKey;
       var list = symbols.filter(isFxPair);
-      if (!list.length) return Promise.resolve({});
-      var url = 'https://api.twelvedata.com/quote?symbol=' +
-        encodeURIComponent(list.map(toTwelve).join(',')) + '&apikey=' + encodeURIComponent(key);
-      return fetch(url).then(function (r) { return r.json(); }).then(function (j) {
+      var now = Date.now();
+      function result() {
         var out = {};
-        // API returns a single object for one symbol, or {SYM:{...}} for many.
-        var rows = (list.length === 1) ? (function () { var o = {}; o[list[0]] = j; return o; })() : j;
-        list.forEach(function (sym) {
-          var q = rows[sym];
-          if (!q || q.status === 'error' || q.code) return;
-          var mid = num(q.close);
-          if (mid == null) return;
-          out[sym] = {
-            mid: mid,
-            bid: null, ask: null,
-            changePct: num(q.percent_change),
-            ts: new Date().toISOString()
-          };
+        list.forEach(function (s) {
+          var c = tdCache[s];
+          if (c) out[s] = { mid: c.mid, bid: null, ask: null, changePct: c.changePct, ts: c.iso };
         });
         return out;
-      });
-    },
-    sparkline: function (sym, points) {
-      var key = CFG.twelvedata.apiKey;
-      var url = 'https://api.twelvedata.com/time_series?symbol=' + encodeURIComponent(toTwelve(sym)) +
-        '&interval=1h&outputsize=' + (points || 24) + '&apikey=' + encodeURIComponent(key);
+      }
+      if (now - tdLastFetch < TD_THROTTLE) return Promise.resolve(result());
+      // oldest-first so the rotation always refreshes the most stale pairs
+      var stale = list.filter(function (s) { var c = tdCache[s]; return !c || (now - c.t) > TD_TTL; })
+        .sort(function (a, b) { return (tdCache[a] ? tdCache[a].t : 0) - (tdCache[b] ? tdCache[b].t : 0); });
+      if (!stale.length) return Promise.resolve(result());
+      var toFetch = stale.slice(0, TD_BATCH);
+      tdLastFetch = now;
+      var url = 'https://api.twelvedata.com/quote?symbol=' + encodeURIComponent(toFetch.map(toTwelve).join(',')) +
+        '&apikey=' + encodeURIComponent(key);
       return fetch(url).then(function (r) { return r.json(); }).then(function (j) {
-        if (!j || !j.values) return [];
-        return j.values.map(function (v) { return num(v.close); })
-          .filter(function (x) { return x != null; }).reverse();
-      });
-    }
+        if (j && (j.code || j.status === 'error')) return result();   // rate-limited/etc: keep cache
+        var rows = (toFetch.length === 1) ? (function () { var o = {}; o[toFetch[0]] = j; return o; })() : j;
+        var t = Date.now();
+        toFetch.forEach(function (s) {
+          var q = rows[s]; if (!q || q.code || q.status === 'error') return;
+          var mid = num(q.close); if (mid == null) return;
+          tdCache[s] = { mid: mid, changePct: num(q.percent_change), t: t, iso: new Date().toISOString() };
+        });
+        return result();
+      }).catch(function () { return result(); });
+    },
+    // Sparklines disabled on the free tier — each is an extra credit, and the
+    // 8/min budget is reserved for live quotes (price + day% still show).
+    sparkline: function () { return Promise.resolve([]); }
   };
 
   // ===================== Proxy-backed (OANDA / FOREX.COM) =====================
