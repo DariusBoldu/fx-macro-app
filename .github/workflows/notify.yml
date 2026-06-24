@@ -1,0 +1,62 @@
+name: Notify subscribers
+
+# Fires a Web Push notification whenever the daily task publishes a fresh
+# data.json (push to main). Runs on GitHub's network, so it is NOT subject to
+# the Cowork sandbox's outbound allowlist — this is the reliable path.
+# Manual runs are allowed via the Actions tab (workflow_dispatch).
+
+on:
+  push:
+    branches: [main]
+    paths: ['data.json']
+  workflow_dispatch:
+    inputs:
+      body:
+        description: 'Notification body text'
+        required: false
+        default: 'A new macro report has been published.'
+
+concurrency:
+  group: notify-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install push deps
+        working-directory: push
+        run: npm ci --omit=dev || npm install --omit=dev
+
+      - name: Derive notification body from data.json
+        id: meta
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            LABEL="${{ github.event.inputs.body }}"
+          else
+            LABEL=$(node -e 'process.stdout.write(require("./data.json").meta.reportLabel || "A new macro report has been published.")')
+          fi
+          # GITHUB_OUTPUT is safe for arbitrary one-line values inside the heredoc form
+          {
+            echo "label<<__EOF__"
+            echo "$LABEL"
+            echo "__EOF__"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Send Web Push
+        working-directory: push
+        env:
+          VAPID_PUBLIC:  ${{ secrets.VAPID_PUBLIC }}
+          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          SUBS_URL:      ${{ secrets.SUBS_URL }}
+          ADMIN_KEY:     ${{ secrets.ADMIN_KEY }}
+        run: node send-push.js "New FX report" "${{ steps.meta.outputs.label }}"
