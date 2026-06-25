@@ -215,6 +215,316 @@
       "risk": "An MOU breakdown / Lebanon escalation gaps it down; a hawkish-Fed rates scare."
     }
   ],
+  "macro": {
+    "USD": {
+      "inflation": {
+        "value": "Core PCE 3.3%",
+        "trend": "rising",
+        "impact": "supportive",
+        "note": "broadening beyond energy",
+        "hist": [
+          3,
+          3,
+          3.1,
+          3.2,
+          3.3,
+          3.3
+        ]
+      },
+      "growth": {
+        "value": "Q1 GDP ~2.1%",
+        "trend": "steady",
+        "impact": "neutral",
+        "note": "final Q1 GDP today",
+        "hist": [
+          2.5,
+          2.3,
+          2.1,
+          2,
+          2.1,
+          2.1
+        ]
+      },
+      "labour": {
+        "value": "Claims ~229k",
+        "trend": "steady",
+        "impact": "supportive",
+        "note": "tight, low claims",
+        "hist": [
+          238,
+          234,
+          231,
+          230,
+          229,
+          229
+        ]
+      }
+    },
+    "GBP": {
+      "inflation": {
+        "value": "Services CPI 3.7%",
+        "trend": "rising",
+        "impact": "supportive",
+        "note": "re-accelerated from 3.2%",
+        "hist": [
+          3.4,
+          3.3,
+          3.2,
+          3.4,
+          3.7,
+          3.7
+        ]
+      },
+      "growth": {
+        "value": "GDP ~0.2% q/q",
+        "trend": "steady",
+        "impact": "neutral",
+        "note": "soft-activity risk",
+        "hist": [
+          0.4,
+          0.3,
+          0.2,
+          0.1,
+          0.2,
+          0.2
+        ]
+      },
+      "labour": {
+        "value": "Unemp ~4.6%",
+        "trend": "rising",
+        "impact": "soft",
+        "note": "loosening slowly",
+        "hist": [
+          4.3,
+          4.4,
+          4.4,
+          4.5,
+          4.6,
+          4.6
+        ]
+      }
+    },
+    "AUD": {
+      "inflation": {
+        "value": "Trimmed mean 3.6%",
+        "trend": "rising",
+        "impact": "supportive",
+        "note": "sticky, arms Aug hike",
+        "hist": [
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.6,
+          3.6
+        ]
+      },
+      "growth": {
+        "value": "GDP ~1.5%",
+        "trend": "falling",
+        "impact": "soft",
+        "note": "below trend",
+        "hist": [
+          1.9,
+          1.8,
+          1.7,
+          1.6,
+          1.5,
+          1.5
+        ]
+      },
+      "labour": {
+        "value": "Unemp 4.5%",
+        "trend": "rising",
+        "impact": "soft",
+        "note": "easing from tights",
+        "hist": [
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.5
+        ]
+      }
+    },
+    "JPY": {
+      "inflation": {
+        "value": "Core ~1.5%",
+        "trend": "rising",
+        "impact": "supportive",
+        "note": "PPI hot, BoJ hiking",
+        "hist": [
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.5
+        ]
+      },
+      "growth": {
+        "value": "GDP modest",
+        "trend": "steady",
+        "impact": "neutral",
+        "note": "",
+        "hist": [
+          0.9,
+          0.7,
+          0.5,
+          0.6,
+          0.7,
+          0.7
+        ]
+      },
+      "labour": {
+        "value": "Unemp ~2.5%",
+        "trend": "steady",
+        "impact": "supportive",
+        "note": "very tight",
+        "hist": [
+          2.6,
+          2.6,
+          2.5,
+          2.5,
+          2.5,
+          2.5
+        ]
+      }
+    },
+    "NZD": {
+      "inflation": {
+        "value": "CPI ~2.5%",
+        "trend": "falling",
+        "impact": "soft",
+        "note": "headline easing",
+        "hist": [
+          3.2,
+          3,
+          2.8,
+          2.6,
+          2.5,
+          2.5
+        ]
+      },
+      "growth": {
+        "value": "Q1 GDP +0.8% q/q",
+        "trend": "rising",
+        "impact": "supportive",
+        "note": "recovery; Jul hike priced",
+        "hist": [
+          -0.2,
+          -0.1,
+          0.2,
+          0.5,
+          0.8,
+          0.8
+        ]
+      },
+      "labour": {
+        "value": "Unemp ~5.1%",
+        "trend": "rising",
+        "impact": "soft",
+        "note": "lagging the recovery",
+        "hist": [
+          4.6,
+          4.8,
+          4.9,
+          5,
+          5.1,
+          5.1
+        ]
+      }
+    },
+    "CAD": {
+      "inflation": {
+        "value": "CPI 3.2% (core 2.0%)",
+        "trend": "rising",
+        "impact": "supportive",
+        "note": "hot headline; BoC looks through",
+        "hist": [
+          2.7,
+          2.8,
+          3,
+          3.1,
+          3.2,
+          3.2
+        ]
+      },
+      "growth": {
+        "value": "GDP softening",
+        "trend": "falling",
+        "impact": "soft",
+        "note": "Brent ~$73 export drag",
+        "hist": [
+          1.6,
+          1.4,
+          1.2,
+          1,
+          0.9,
+          0.9
+        ]
+      },
+      "labour": {
+        "value": "Unemp ~6.9%",
+        "trend": "rising",
+        "impact": "soft",
+        "note": "loosening",
+        "hist": [
+          6.4,
+          6.5,
+          6.7,
+          6.8,
+          6.9,
+          6.9
+        ]
+      }
+    },
+    "EUR": {
+      "inflation": {
+        "value": "Core ~2.5%",
+        "trend": "falling",
+        "impact": "soft",
+        "note": "'26 projection easing",
+        "hist": [
+          2.9,
+          2.8,
+          2.7,
+          2.6,
+          2.5,
+          2.5
+        ]
+      },
+      "growth": {
+        "value": "GDP ~0.8% '26",
+        "trend": "falling",
+        "impact": "soft",
+        "note": "ECB cut growth to 0.8%",
+        "hist": [
+          1.2,
+          1.1,
+          1,
+          0.9,
+          0.8,
+          0.8
+        ]
+      },
+      "labour": {
+        "value": "Unemp ~6.3%",
+        "trend": "steady",
+        "impact": "neutral",
+        "note": "holding near lows",
+        "hist": [
+          6.4,
+          6.4,
+          6.3,
+          6.3,
+          6.3,
+          6.3
+        ]
+      }
+    }
+  },
   "catalysts": [
     {
       "date": "Thu Jun 25",
@@ -260,5 +570,5 @@
     }
   ],
   "geopolitics": "Flows are crushing the war premium. With Strait-of-Hormuz tanker traffic normalising and US-Iran peace progress holding, Brent fell ~5% to ~$73 and WTI to ~$70 on Wednesday — the lowest since late February and roughly 40% off the wartime peak. The diplomatic track is still stalled (the Burgenstock technical round remains cancelled amid the re-erupted Lebanon fighting), so the base case (truce holds, oil drifts lower) is intact, but the slipped talks keep the respike tail alive. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps the dollar bid, supports GER40 and risk-beta AUD/NZD on calmer days, and does NOT buy a Fed cut (Warsh marked inflation up into the oil drop); for CAD the hot CPI only partly offsets the deeper oil drag at ~$73 → soft-and-capped. Tail (alive): an MOU stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,200 gold bid is the thin premium for exactly this.",
-  "updatedAt": "2026-06-25T05:17:25.650Z"
+  "updatedAt": "2026-06-25T09:17:38.715Z"
 }

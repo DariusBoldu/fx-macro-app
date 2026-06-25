@@ -129,7 +129,7 @@
 
   /* ============================ Renderers ============================ */
   function renderAll(D) {
-    renderMeta(D); renderToday(D); renderStrength(D); renderSignals(D.symbols);
+    renderMeta(D); renderToday(D); renderStrength(D); renderMacro(D); renderSignals(D.symbols);
     renderCalendar(D); renderPricesUniverse(D);
   }
 
@@ -178,6 +178,52 @@
         '</div></div>';
     }).join('');
     $('strength').innerHTML = html;
+  }
+
+  /* ---------------- Macro pillars (Inflation · Growth · Labour) -------------- */
+  function macroSpark(hist, impact) {
+    var color = impact === 'supportive' ? 'var(--long)' : impact === 'soft' ? 'var(--short)' : 'var(--range)';
+    if (!hist || hist.length < 2) return '<svg class="mspark"></svg>';
+    var min = Math.min.apply(null, hist), max = Math.max.apply(null, hist);
+    var rng = (max - min) || 1, n = hist.length;
+    var pts = hist.map(function (v, i) {
+      var x = (i / (n - 1)) * 60 + 3;
+      var y = 21 - ((v - min) / rng) * 18;
+      return x.toFixed(1) + ' ' + y.toFixed(1);
+    });
+    var last = pts[pts.length - 1].split(' ');
+    return '<svg class="mspark" viewBox="0 0 66 24">' +
+      '<path d="M' + pts.join(' L') + '" fill="none" stroke="' + color + '" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>' +
+      '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="1.7" fill="' + color + '"/></svg>';
+  }
+
+  function renderMacro(D) {
+    var macro = D.macro || {};
+    var order = (D.strength || []).map(function (c) { return c.ccy; });   // strongest → weakest
+    var verdict = {}; (D.strength || []).forEach(function (c) { verdict[c.ccy] = c.verdict; });
+    if (!order.length || !Object.keys(macro).length) {
+      $('macro').innerHTML = '<div class="panel"><div class="legend" style="margin:0">Macro pillar data will appear here once the daily report includes it.</div></div>';
+      return;
+    }
+    var pillars = [['inflation', 'Inflation'], ['growth', 'Growth'], ['labour', 'Labour']];
+    var arrows = { rising: '▲', falling: '▼', steady: '◆' };
+    $('macro').innerHTML = order.map(function (ccy) {
+      var m = macro[ccy]; if (!m) return '';
+      var rows = pillars.map(function (p) {
+        var d = m[p[0]]; if (!d) return '';
+        var impact = d.impact || 'neutral';
+        var trend = d.trend || 'steady';
+        var label = trend.charAt(0).toUpperCase() + trend.slice(1);
+        return '<div class="mpillar">' +
+          '<div class="mphead"><span class="mplabel">' + p[1] + '</span>' +
+            '<span class="mtag ' + impact + '">' + (arrows[trend] || '◆') + ' ' + label + '</span></div>' +
+          '<div class="mpbody"><div class="mptext"><span class="mpval">' + esc(d.value || '') + '</span>' +
+            (d.note ? ' <span class="mpnote">· ' + esc(d.note) + '</span>' : '') + '</div>' +
+            macroSpark(d.hist, impact) + '</div></div>';
+      }).join('');
+      return '<div class="mcard"><div class="mtop"><span class="mccy">' + esc(ccy) + '</span>' +
+        '<span class="mverdict">' + esc(verdict[ccy] || '') + '</span></div>' + rows + '</div>';
+    }).join('');
   }
 
   var signalFilter = 'ALL';

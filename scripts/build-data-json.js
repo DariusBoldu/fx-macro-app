@@ -45,11 +45,20 @@ function main() {
     throw new Error('symbols[] must be 21 (18 pairs + DXY + JPYBASKET + GER40), got: ' + FX.symbols.length);
   }
 
+  // macro pillars (Inflation/Growth/Labour per ccy) for the app's Macro tab.
+  // Carry forward the last-published block if a task run hasn't produced one yet,
+  // so the Macro page never goes blank between the seed and the task update.
+  let macro = FX.macro;
+  if (!macro || !Object.keys(macro).length) {
+    try { macro = (JSON.parse(fs.readFileSync(OUT, 'utf8')).macro) || {}; } catch (e) { macro = {}; }
+  }
+
   const out = {
     meta: FX.meta,
     dailyRead: FX.dailyRead,
     strength: FX.strength,
     symbols: FX.symbols,
+    macro: macro,
     catalysts: FX.catalysts,
     geopolitics: FX.geopolitics,
     // The app reads this for "last updated" and the push trigger.

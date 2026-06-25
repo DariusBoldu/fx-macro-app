@@ -142,6 +142,24 @@ main{flex:1;padding:14px 14px calc(var(--tabbar-h) + var(--safe-bottom) + 18px);
 .cev{font-weight:700;font-size:13px}
 .cnote{color:var(--mut);font-size:12px;margin-top:2px;line-height:1.5}
 
+/* ---------- Macro pillars ---------- */
+.mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:6px 15px 10px;margin-bottom:13px}
+.mtop{display:flex;align-items:baseline;gap:9px;padding:9px 0 4px}
+.mtop .mccy{font-weight:800;font-size:16px}
+.mtop .mverdict{font-size:11px;color:var(--mut);font-weight:700}
+.mpillar{padding:9px 0;border-top:1px solid var(--line)}
+.mphead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mplabel{font-size:11px;text-transform:uppercase;letter-spacing:.9px;color:var(--mut);font-weight:700}
+.mtag{font-size:11px;font-weight:800;letter-spacing:.3px;padding:3px 9px;border-radius:6px;white-space:nowrap}
+.mtag.supportive{background:rgba(31,174,106,.16);color:#46d68d}
+.mtag.soft{background:rgba(226,87,92,.16);color:#ff7b80}
+.mtag.neutral{background:rgba(127,140,163,.16);color:#9fb0c7}
+.mpbody{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:5px}
+.mptext{min-width:0;font-size:13px}
+.mptext .mpval{font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
+.mptext .mpnote{color:var(--dim);font-size:11.5px}
+.mspark{width:66px;height:24px;flex:none}
+
 /* ---------- Size calculator ---------- */
 .calcgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .fld{display:flex;flex-direction:column;gap:6px}
