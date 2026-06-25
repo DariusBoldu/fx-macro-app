@@ -147,18 +147,20 @@ main{flex:1;padding:14px 14px calc(var(--tabbar-h) + var(--safe-bottom) + 18px);
 .mtop{display:flex;align-items:baseline;gap:9px;padding:9px 0 4px}
 .mtop .mccy{font-weight:800;font-size:16px}
 .mtop .mverdict{font-size:11px;color:var(--mut);font-weight:700}
-.mpillar{padding:9px 0;border-top:1px solid var(--line)}
-.mphead{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.mplabel{font-size:11px;text-transform:uppercase;letter-spacing:.9px;color:var(--mut);font-weight:700}
+.mrow{padding:9px 0;border-top:1px solid var(--line)}
+.mrhead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mrlabel{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--mut);font-weight:700}
 .mtag{font-size:11px;font-weight:800;letter-spacing:.3px;padding:3px 9px;border-radius:6px;white-space:nowrap}
-.mtag.supportive{background:rgba(31,174,106,.16);color:#46d68d}
-.mtag.soft{background:rgba(226,87,92,.16);color:#ff7b80}
-.mtag.neutral{background:rgba(127,140,163,.16);color:#9fb0c7}
-.mpbody{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:5px}
-.mptext{min-width:0;font-size:13px}
-.mptext .mpval{font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
-.mptext .mpnote{color:var(--dim);font-size:11.5px}
-.mspark{width:66px;height:24px;flex:none}
+.mtag.rising{background:rgba(31,174,106,.16);color:#46d68d}
+.mtag.falling{background:rgba(226,87,92,.16);color:#ff7b80}
+.mtag.stable{background:rgba(127,140,163,.16);color:#9fb0c7}
+.mrbody{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:5px}
+.mrleft{min-width:0}
+.mrval{font-size:16px;font-weight:800;color:var(--txt);font-variant-numeric:tabular-nums}
+.mrnote{color:var(--dim);font-size:11px;margin-left:7px}
+.mrtrail{color:var(--dim);font-size:10.5px;font-variant-numeric:tabular-nums;margin-top:3px;letter-spacing:.2px}
+.mrtrail b{color:var(--mut);font-weight:700}
+.mspark{width:72px;height:26px;flex:none}
 
 /* ---------- Size calculator ---------- */
 .calcgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}

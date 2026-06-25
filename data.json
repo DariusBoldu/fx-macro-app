@@ -218,24 +218,22 @@
   "macro": {
     "USD": {
       "inflation": {
-        "value": "Core PCE 3.3%",
+        "value": "4.2%",
         "trend": "rising",
-        "impact": "supportive",
-        "note": "broadening beyond energy",
+        "note": "CPI y/y",
         "hist": [
-          3,
-          3,
-          3.1,
-          3.2,
-          3.3,
-          3.3
+          3.8,
+          3.9,
+          4,
+          4.1,
+          4.2,
+          4.2
         ]
       },
       "growth": {
-        "value": "Q1 GDP ~2.1%",
-        "trend": "steady",
-        "impact": "neutral",
-        "note": "final Q1 GDP today",
+        "value": "2.1%",
+        "trend": "stable",
+        "note": "GDP q/q ann.",
         "hist": [
           2.5,
           2.3,
@@ -245,41 +243,64 @@
           2.1
         ]
       },
-      "labour": {
-        "value": "Claims ~229k",
-        "trend": "steady",
-        "impact": "supportive",
-        "note": "tight, low claims",
+      "unemployment": {
+        "value": "4.1%",
+        "trend": "stable",
+        "note": "",
         "hist": [
-          238,
-          234,
-          231,
-          230,
-          229,
-          229
+          4,
+          4.1,
+          4.1,
+          4,
+          4.1,
+          4.1
+        ]
+      },
+      "jobs": {
+        "value": "+150k",
+        "trend": "rising",
+        "note": "NFP",
+        "hist": [
+          110,
+          135,
+          120,
+          145,
+          150,
+          150
+        ]
+      },
+      "rates": {
+        "value": "3.75%",
+        "trend": "rising",
+        "note": "Fed funds",
+        "hist": [
+          3.25,
+          3.5,
+          3.5,
+          3.75,
+          3.75,
+          3.75
         ]
       }
     },
     "GBP": {
       "inflation": {
-        "value": "Services CPI 3.7%",
-        "trend": "rising",
-        "impact": "supportive",
-        "note": "re-accelerated from 3.2%",
+        "value": "2.8%",
+        "trend": "stable",
+        "note": "CPI y/y",
         "hist": [
-          3.4,
-          3.3,
-          3.2,
-          3.4,
-          3.7,
-          3.7
+          2.9,
+          2.8,
+          2.8,
+          2.9,
+          2.8,
+          2.8
         ]
       },
       "growth": {
-        "value": "GDP ~0.2% q/q",
-        "trend": "steady",
-        "impact": "neutral",
-        "note": "soft-activity risk",
+        "value": "0.2%",
+        "trend": "stable",
+        "note": "GDP q/q",
         "hist": [
           0.4,
           0.3,
@@ -289,11 +310,10 @@
           0.2
         ]
       },
-      "labour": {
-        "value": "Unemp ~4.6%",
+      "unemployment": {
+        "value": "4.6%",
         "trend": "rising",
-        "impact": "soft",
-        "note": "loosening slowly",
+        "note": "",
         "hist": [
           4.3,
           4.4,
@@ -302,28 +322,52 @@
           4.6,
           4.6
         ]
+      },
+      "jobs": {
+        "value": "+25k",
+        "trend": "falling",
+        "note": "Payrolls",
+        "hist": [
+          80,
+          60,
+          45,
+          30,
+          25,
+          25
+        ]
+      },
+      "rates": {
+        "value": "3.75%",
+        "trend": "stable",
+        "note": "Bank Rate",
+        "hist": [
+          3.5,
+          3.75,
+          3.75,
+          3.75,
+          3.75,
+          3.75
+        ]
       }
     },
     "AUD": {
       "inflation": {
-        "value": "Trimmed mean 3.6%",
+        "value": "4.0%",
         "trend": "rising",
-        "impact": "supportive",
-        "note": "sticky, arms Aug hike",
+        "note": "CPI y/y",
         "hist": [
-          3.3,
-          3.4,
-          3.5,
           3.6,
-          3.6,
-          3.6
+          3.7,
+          3.8,
+          3.9,
+          4,
+          4
         ]
       },
       "growth": {
-        "value": "GDP ~1.5%",
+        "value": "1.5%",
         "trend": "falling",
-        "impact": "soft",
-        "note": "below trend",
+        "note": "GDP y/y",
         "hist": [
           1.9,
           1.8,
@@ -333,11 +377,10 @@
           1.5
         ]
       },
-      "labour": {
-        "value": "Unemp 4.5%",
+      "unemployment": {
+        "value": "4.5%",
         "trend": "rising",
-        "impact": "soft",
-        "note": "easing from tights",
+        "note": "",
         "hist": [
           4.1,
           4.2,
@@ -346,42 +389,65 @@
           4.5,
           4.5
         ]
+      },
+      "jobs": {
+        "value": "+30k",
+        "trend": "stable",
+        "note": "Employment",
+        "hist": [
+          25,
+          35,
+          20,
+          30,
+          30,
+          30
+        ]
+      },
+      "rates": {
+        "value": "4.35%",
+        "trend": "stable",
+        "note": "RBA cash",
+        "hist": [
+          4.35,
+          4.35,
+          4.35,
+          4.35,
+          4.35,
+          4.35
+        ]
       }
     },
     "JPY": {
       "inflation": {
-        "value": "Core ~1.5%",
+        "value": "2.8%",
         "trend": "rising",
-        "impact": "supportive",
-        "note": "PPI hot, BoJ hiking",
+        "note": "CPI y/y",
         "hist": [
-          1.1,
-          1.2,
-          1.3,
-          1.4,
-          1.5,
-          1.5
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.8
         ]
       },
       "growth": {
-        "value": "GDP modest",
-        "trend": "steady",
-        "impact": "neutral",
-        "note": "",
+        "value": "0.7%",
+        "trend": "stable",
+        "note": "GDP q/q ann.",
         "hist": [
           0.9,
-          0.7,
+          0.6,
           0.5,
           0.6,
           0.7,
           0.7
         ]
       },
-      "labour": {
-        "value": "Unemp ~2.5%",
-        "trend": "steady",
-        "impact": "supportive",
-        "note": "very tight",
+      "unemployment": {
+        "value": "2.5%",
+        "trend": "stable",
+        "note": "",
         "hist": [
           2.6,
           2.6,
@@ -390,14 +456,39 @@
           2.5,
           2.5
         ]
+      },
+      "jobs": {
+        "value": "1.26",
+        "trend": "rising",
+        "note": "Jobs/applicant",
+        "hist": [
+          1.22,
+          1.23,
+          1.24,
+          1.25,
+          1.26,
+          1.26
+        ]
+      },
+      "rates": {
+        "value": "1.00%",
+        "trend": "rising",
+        "note": "BoJ policy",
+        "hist": [
+          0.5,
+          0.5,
+          0.75,
+          1,
+          1,
+          1
+        ]
       }
     },
     "NZD": {
       "inflation": {
-        "value": "CPI ~2.5%",
+        "value": "2.5%",
         "trend": "falling",
-        "impact": "soft",
-        "note": "headline easing",
+        "note": "CPI y/y",
         "hist": [
           3.2,
           3,
@@ -408,10 +499,9 @@
         ]
       },
       "growth": {
-        "value": "Q1 GDP +0.8% q/q",
+        "value": "0.8%",
         "trend": "rising",
-        "impact": "supportive",
-        "note": "recovery; Jul hike priced",
+        "note": "GDP q/q",
         "hist": [
           -0.2,
           -0.1,
@@ -421,11 +511,10 @@
           0.8
         ]
       },
-      "labour": {
-        "value": "Unemp ~5.1%",
+      "unemployment": {
+        "value": "5.1%",
         "trend": "rising",
-        "impact": "soft",
-        "note": "lagging the recovery",
+        "note": "",
         "hist": [
           4.6,
           4.8,
@@ -434,14 +523,39 @@
           5.1,
           5.1
         ]
+      },
+      "jobs": {
+        "value": "+0.1%",
+        "trend": "stable",
+        "note": "Employment q/q",
+        "hist": [
+          0,
+          -0.1,
+          0,
+          0.1,
+          0.1,
+          0.1
+        ]
+      },
+      "rates": {
+        "value": "2.25%",
+        "trend": "stable",
+        "note": "RBNZ OCR",
+        "hist": [
+          2.25,
+          2.25,
+          2.25,
+          2.25,
+          2.25,
+          2.25
+        ]
       }
     },
     "CAD": {
       "inflation": {
-        "value": "CPI 3.2% (core 2.0%)",
+        "value": "3.2%",
         "trend": "rising",
-        "impact": "supportive",
-        "note": "hot headline; BoC looks through",
+        "note": "CPI y/y",
         "hist": [
           2.7,
           2.8,
@@ -452,10 +566,9 @@
         ]
       },
       "growth": {
-        "value": "GDP softening",
+        "value": "0.9%",
         "trend": "falling",
-        "impact": "soft",
-        "note": "Brent ~$73 export drag",
+        "note": "GDP q/q ann.",
         "hist": [
           1.6,
           1.4,
@@ -465,11 +578,10 @@
           0.9
         ]
       },
-      "labour": {
-        "value": "Unemp ~6.9%",
+      "unemployment": {
+        "value": "6.9%",
         "trend": "rising",
-        "impact": "soft",
-        "note": "loosening",
+        "note": "",
         "hist": [
           6.4,
           6.5,
@@ -478,28 +590,52 @@
           6.9,
           6.9
         ]
+      },
+      "jobs": {
+        "value": "+20k",
+        "trend": "stable",
+        "note": "Employment",
+        "hist": [
+          10,
+          25,
+          15,
+          20,
+          20,
+          20
+        ]
+      },
+      "rates": {
+        "value": "2.25%",
+        "trend": "stable",
+        "note": "BoC overnight",
+        "hist": [
+          2.25,
+          2.25,
+          2.25,
+          2.25,
+          2.25,
+          2.25
+        ]
       }
     },
     "EUR": {
       "inflation": {
-        "value": "Core ~2.5%",
+        "value": "3.2%",
         "trend": "falling",
-        "impact": "soft",
-        "note": "'26 projection easing",
+        "note": "HICP y/y",
         "hist": [
-          2.9,
-          2.8,
-          2.7,
-          2.6,
-          2.5,
-          2.5
+          3.6,
+          3.5,
+          3.4,
+          3.3,
+          3.2,
+          3.2
         ]
       },
       "growth": {
-        "value": "GDP ~0.8% '26",
+        "value": "0.8%",
         "trend": "falling",
-        "impact": "soft",
-        "note": "ECB cut growth to 0.8%",
+        "note": "GDP y/y",
         "hist": [
           1.2,
           1.1,
@@ -509,11 +645,10 @@
           0.8
         ]
       },
-      "labour": {
-        "value": "Unemp ~6.3%",
-        "trend": "steady",
-        "impact": "neutral",
-        "note": "holding near lows",
+      "unemployment": {
+        "value": "6.3%",
+        "trend": "stable",
+        "note": "",
         "hist": [
           6.4,
           6.4,
@@ -521,6 +656,32 @@
           6.3,
           6.3,
           6.3
+        ]
+      },
+      "jobs": {
+        "value": "+0.2%",
+        "trend": "stable",
+        "note": "Employment q/q",
+        "hist": [
+          0.3,
+          0.2,
+          0.1,
+          0.1,
+          0.2,
+          0.2
+        ]
+      },
+      "rates": {
+        "value": "2.25%",
+        "trend": "stable",
+        "note": "ECB deposit",
+        "hist": [
+          2,
+          2,
+          2,
+          2.25,
+          2.25,
+          2.25
         ]
       }
     }
@@ -570,5 +731,5 @@
     }
   ],
   "geopolitics": "Flows are crushing the war premium. With Strait-of-Hormuz tanker traffic normalising and US-Iran peace progress holding, Brent fell ~5% to ~$73 and WTI to ~$70 on Wednesday — the lowest since late February and roughly 40% off the wartime peak. The diplomatic track is still stalled (the Burgenstock technical round remains cancelled amid the re-erupted Lebanon fighting), so the base case (truce holds, oil drifts lower) is intact, but the slipped talks keep the respike tail alive. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps the dollar bid, supports GER40 and risk-beta AUD/NZD on calmer days, and does NOT buy a Fed cut (Warsh marked inflation up into the oil drop); for CAD the hot CPI only partly offsets the deeper oil drag at ~$73 → soft-and-capped. Tail (alive): an MOU stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,200 gold bid is the thin premium for exactly this.",
-  "updatedAt": "2026-06-25T09:17:38.715Z"
+  "updatedAt": "2026-06-25T09:47:10.007Z"
 }

@@ -180,21 +180,34 @@
     $('strength').innerHTML = html;
   }
 
-  /* ---------------- Macro pillars (Inflation · Growth · Labour) -------------- */
-  function macroSpark(hist, impact) {
-    var color = impact === 'supportive' ? 'var(--long)' : impact === 'soft' ? 'var(--short)' : 'var(--range)';
+  /* -------- Macro pillars: Inflation · Growth · Labour (Unemp+Jobs) · Rates ---- */
+  function trendColor(t) { return t === 'rising' ? 'var(--long)' : t === 'falling' ? 'var(--short)' : 'var(--range)'; }
+
+  function macroSpark(hist, trend) {
+    var color = trendColor(trend);
     if (!hist || hist.length < 2) return '<svg class="mspark"></svg>';
     var min = Math.min.apply(null, hist), max = Math.max.apply(null, hist);
     var rng = (max - min) || 1, n = hist.length;
     var pts = hist.map(function (v, i) {
-      var x = (i / (n - 1)) * 60 + 3;
-      var y = 21 - ((v - min) / rng) * 18;
+      var x = (i / (n - 1)) * 66 + 3;
+      var y = 23 - ((v - min) / rng) * 20;
       return x.toFixed(1) + ' ' + y.toFixed(1);
     });
     var last = pts[pts.length - 1].split(' ');
-    return '<svg class="mspark" viewBox="0 0 66 24">' +
+    return '<svg class="mspark" viewBox="0 0 72 26">' +
       '<path d="M' + pts.join(' L') + '" fill="none" stroke="' + color + '" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>' +
-      '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="1.7" fill="' + color + '"/></svg>';
+      '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="1.8" fill="' + color + '"/></svg>';
+  }
+
+  function macroTrail(hist) {
+    if (!hist || !hist.length) return '';
+    var dec = 0;   // match the most precise reading so 4 shows as 4.0, 3.25 stays 3.25
+    hist.forEach(function (v) { var d = (String(v).split('.')[1] || '').length; if (d > dec) dec = d; });
+    dec = Math.min(dec, 2);
+    return hist.map(function (v, i) {
+      var s = v.toFixed(dec);
+      return i === hist.length - 1 ? '<b>' + s + '</b>' : s;
+    }).join(' · ');
   }
 
   function renderMacro(D) {
@@ -205,21 +218,23 @@
       $('macro').innerHTML = '<div class="panel"><div class="legend" style="margin:0">Macro pillar data will appear here once the daily report includes it.</div></div>';
       return;
     }
-    var pillars = [['inflation', 'Inflation'], ['growth', 'Growth'], ['labour', 'Labour']];
-    var arrows = { rising: '▲', falling: '▼', steady: '◆' };
+    var metrics = [['inflation', 'Inflation'], ['growth', 'Growth'],
+      ['unemployment', 'Unemployment'], ['jobs', 'Jobs'], ['rates', 'Interest rate']];
+    var arrows = { rising: '▲', falling: '▼', stable: '▬' };
     $('macro').innerHTML = order.map(function (ccy) {
       var m = macro[ccy]; if (!m) return '';
-      var rows = pillars.map(function (p) {
+      var rows = metrics.map(function (p) {
         var d = m[p[0]]; if (!d) return '';
-        var impact = d.impact || 'neutral';
-        var trend = d.trend || 'steady';
+        var trend = d.trend || 'stable';
         var label = trend.charAt(0).toUpperCase() + trend.slice(1);
-        return '<div class="mpillar">' +
-          '<div class="mphead"><span class="mplabel">' + p[1] + '</span>' +
-            '<span class="mtag ' + impact + '">' + (arrows[trend] || '◆') + ' ' + label + '</span></div>' +
-          '<div class="mpbody"><div class="mptext"><span class="mpval">' + esc(d.value || '') + '</span>' +
-            (d.note ? ' <span class="mpnote">· ' + esc(d.note) + '</span>' : '') + '</div>' +
-            macroSpark(d.hist, impact) + '</div></div>';
+        return '<div class="mrow">' +
+          '<div class="mrhead"><span class="mrlabel">' + p[1] + '</span>' +
+            '<span class="mtag ' + trend + '">' + (arrows[trend] || '▬') + ' ' + label + '</span></div>' +
+          '<div class="mrbody"><div class="mrleft">' +
+              '<span class="mrval">' + esc(d.value || '') + '</span>' +
+              (d.note ? '<span class="mrnote">' + esc(d.note) + '</span>' : '') +
+              '<div class="mrtrail">' + macroTrail(d.hist) + '</div>' +
+            '</div>' + macroSpark(d.hist, trend) + '</div></div>';
       }).join('');
       return '<div class="mcard"><div class="mtop"><span class="mccy">' + esc(ccy) + '</span>' +
         '<span class="mverdict">' + esc(verdict[ccy] || '') + '</span></div>' + rows + '</div>';
