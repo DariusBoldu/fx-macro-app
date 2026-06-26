@@ -1,37 +1,45 @@
 {
   "meta": {
-    "reportDate": "2026-06-25",
-    "reportLabel": "Thu Report — PCE Day; ~70% priced on a Sept Fed hike, UK services CPI re-armed GBP (3.7%), Brent 4-mo low (~$75)",
+    "reportDate": "2026-06-26",
+    "reportLabel": "Fri Report — PCE confirmed HOT (core 3.4% / hdline 4.1%); dollar long validated, DXY 13-mo high (~101.4); GBP re-armed (services 3.7%); Brent 4-mo low (~$74.4)",
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40",
-    "regime": "Dollar-strong, holding a 13-mo high (DXY ~101.6) with ~70% odds of a Sept Fed hike now priced (from 29% a week ago). UK services CPI re-accelerated to 3.7% (re-arming the BoE, firming GBP); Brent hit a 4-mo low near $73 before bouncing to ~$75, leaving CAD pressed. USD/JPY ~161.5 (near 1986 low); intervention coordination-flavoured but doubted. Everything funnels into today's US PCE.",
-    "nextBigEvent": "US PCE — Thu Jun 25, 08:30 EDT (the marquee test of Warsh's 'broader than energy' call)"
+    "regime": "Dollar-strong, validated. May core PCE printed 3.4% (up from 3.3%) and headline 4.1% (up from 3.8%) — the hottest core since Oct 2023 — confirming Warsh's 'broader than energy' call and validating the crowded dollar long rather than fading it. DXY consolidates a 13-mo high (~101.4); ~63% Sept Fed hike still priced. GBP stays re-armed (services CPI 3.7%); Brent at a 4-mo low ~$74.4 keeps CAD pressed. USD/JPY ~161.5 (1986 low), squeezed. Focus rotates to quarter-end flows (Jun 30) and June jobs (Jul 2).",
+    "nextBigEvent": "Quarter-end rebalancing (Jun 30) then US June jobs / NFP (Jul 2, 08:30 EDT) — the next dollar test"
   },
-  "dailyRead": "The dollar-strong regime is intact and everything funnels into today's US PCE (08:30 EDT / 14:30 CET) — the one print that can fade a very crowded, 13-month-high dollar (DXY ~101.6), with the market now pricing ~70% odds of a September Fed hike (up from ~29% a week ago) on Warsh's hawkish dots. Two things drove the overnight tape: (1) UK services inflation re-accelerated hard — May services CPI jumped to 3.7% from 3.2% (core 2.6%), re-arming the BoE and reversing Wednesday's 'GBP cracking' read into a firmer GBP; and (2) Brent traded a fresh 4-month low near $73 before bouncing to ~$75, leaving CAD pressed and GER40 supported. The cleanest trades remain the USD-divergence legs (EUR/USD short, EUR/JPY short), the oil/commodity split (USD/CAD long, AUD/CAD long), and the structural long-JPY core (USD/JPY short, JPYBASKET long) — but the JPY book is squeezed near a 1986 low (~161.5), so defend, don't add. A soft core PCE (consensus 3.3% core, 4.1% headline) is the single event that bounces the whole crowded dollar book at once.",
+  "dailyRead": "The marquee resolved hawkish: May core PCE printed 3.4% (up from 3.3%) and headline 4.1% (up from 3.8%) — the hottest core since Oct 2023 — confirming Warsh's 'broader than energy' call and validating the crowded dollar long rather than fading it. Because the number landed broadly in line, DXY consolidated at a 13-month high (~101.4) instead of spiking, and Sept-hike odds eased only modestly to ~63%; the binary risk is now behind us and resolved the dollar's way, so the USD-divergence legs trade cleaner. GBP stays re-armed (May services CPI 3.7% vs 3.2%) and Brent slid further to a 4-month low ~$74.4 (-19% m/m), keeping CAD pressed and GER40 supported. The cleanest trades are the now-confirmed USD-divergence legs (EUR/USD short, USD/CAD long, EUR/JPY short); the structural long-JPY core (USD/JPY short, JPYBASKET long) remains squeezed near a 1986 low (~161.5) — defend, do not add. Focus now rotates to quarter-end flows (Jun 30) and the June jobs report (Jul 2) as the next dollar test.",
   "strength": [
     {
       "ccy": "USD",
       "score": 3,
       "verdict": "STRONG",
-      "tag": "hawkish, ~70% Sept hike",
-      "drivers": "Core PCE 3.3% (Apr); CPI 4.2%; claims ~229k. Fed 3.50-3.75%, hawkish hold, dots flip next move to a HIKE.",
-      "forward": "🦅 Regime extending: median '26 dot ~3.8%; market now ~70% on a Sept hike (from 29% a week ago); DXY 13-mo high ~101.6. PCE TODAY (3.3% core / 4.1% hdline exp.) the only near-term fade — a soft core bounces a crowded long."
+      "tag": "hot PCE confirmed, ~63% Sept hike",
+      "drivers": "Core PCE 3.4% (May, up from 3.3%); headline PCE 4.1%; CPI 4.2%; NFP +172k. Fed 3.50-3.75%, hawkish hold, dots flip next move to a HIKE.",
+      "forward": "🦅 Confirmed & strengthening: hot May PCE validates Warsh; ~63% on a Sept hike; DXY 13-mo high ~101.4. The binary is behind us — Jul 2 jobs is the next fade. Next FOMC late Jul."
     },
     {
       "ccy": "GBP",
       "score": 2,
       "verdict": "FIRM (re-armed)",
       "tag": "services CPI re-accelerated",
-      "drivers": "Core 2.6% (May, up); services CPI 3.7% (up from 3.2%, fastest in months); CPI 2.8% (held). BoE 3.75%, hawkish 7-2 hold.",
-      "forward": "🦅 Hawkish — services re-accelerated to 3.7%, shutting Wed's cut-tail and putting the rate story back. Risk: a soft activity wave re-splits it. Next BoE Aug."
+      "drivers": "Core 2.6% (May); services CPI 3.7% (up from 3.2%, fastest in months); CPI 2.8% (held). BoE 3.75%, hawkish 7-2 hold; sees CPI ~3.25% by Q4.",
+      "forward": "🦅 Hawkish — services re-accelerated to 3.7%, keeping the cut-tail shut and the rate story alive. Risk: a soft activity wave re-splits it. Next BoE Aug."
     },
     {
       "ccy": "AUD",
       "score": 1,
       "verdict": "MIXED → firmer data floor",
       "tag": "sticky core, swept by USD",
-      "drivers": "May CPI: headline 4.0%, trimmed mean 3.6%; unemp 4.5% (Apr). RBA 4.35%, hawkish hold, minutes 'risks to the upside'.",
-      "forward": "⚖️🦅 Sticky 3.6% trim arms an Aug-hike case, but risk-off + Fed repricing keep AUD/USD sub-0.70. A soft US PCE flips the USD leg and the firm CPI bites. Next RBA Aug."
+      "drivers": "May CPI: trimmed mean 3.6%; headline ~4.0% with a ~4.8% Q2 peak expected; unemp 4.5%. RBA 4.35%, hawkish hold, on hold to year-end.",
+      "forward": "⚖️🦅 Sticky 3.6% trim + a 4.8% Q2 peak arm an Aug-hike case, but a confirmed-hot-PCE USD keeps AUD/USD sub-0.70. Risk: soft Jul 23 jobs. Next RBA Aug."
+    },
+    {
+      "ccy": "NZD",
+      "score": 0,
+      "verdict": "MIXED → firm floor",
+      "tag": "GDP floor, Jul hike priced",
+      "drivers": "Headline easing (peak ~4.3% Q3 exp.); recovery establishing. RBNZ 2.25%; Q1 GDP revised firm +1.0% q/q. Markets price a 25bp hike Jul 9.",
+      "forward": "⚖️🦅 Firmer Q1 GDP (+1.0%) + a priced Jul RBNZ hike floor NZD; hawkish USD caps NZD/USD. Net firm-but-capped into Jul 9 RBNZ."
     },
     {
       "ccy": "JPY",
@@ -42,20 +50,12 @@
       "forward": "🦅↔ Destination unchanged, spot squeezed. Katayama-Bessent reaffirmed US-Japan COORDINATION readiness, but markets doubt Tokyo's will after April's reserve-draining op — two-sided, the swing. Next BoJ late Jul."
     },
     {
-      "ccy": "NZD",
-      "score": 0,
-      "verdict": "MIXED → firm floor",
-      "tag": "GDP floor, Jul hike priced",
-      "drivers": "Headline easing; recovery establishing. RBNZ 2.25%; Q1 GDP firm +0.8% q/q. Markets price a 25bp hike Jul 9.",
-      "forward": "⚖️🦅 Firm Q1 GDP + a priced Jul RBNZ hike floor NZD; hawkish USD caps NZD/USD. Net firm-but-capped into Jul 9 RBNZ."
-    },
-    {
       "ccy": "CAD",
       "score": -1,
       "verdict": "SOFT → oil drag",
       "tag": "hot CPI vs soft oil",
-      "drivers": "May CPI 3.2% (gas +33.2%, food +3.8%); but trimmed core 2.0%, median 2.1%. BoC 2.25% (5th hold, Jun 10), looking through energy.",
-      "forward": "⚖️🔻 Hot/broadening CPI gives CAD a floor; Brent's dip to a 4-mo low (~$73, now ~$75) keeps the export side pressed; BoC looks through energy. Next BoC late Jul."
+      "drivers": "May CPI 3.2% (up from 2.8%); trimmed core ~2.0-2.5%. BoC 2.25% (4th hold, Jun 10), looking through energy (sees ~3% near-term).",
+      "forward": "⚖️🔻 Hot/broadening CPI gives CAD a floor; Brent's slide to a 4-mo low (~$74.4, -19% m/m) keeps the export side pressed; BoC looks through energy. Next BoC late Jul."
     },
     {
       "ccy": "EUR",
@@ -63,7 +63,7 @@
       "verdict": "SOFT",
       "tag": "USD-leg",
       "drivers": "Core ~2.5% ('26 proj); headline 3.0% '26 proj; unemp ~6.3%. ECB 2.25% (hiked Jun 11), framed as one-off war insurance, not a cycle; growth cut to 0.8%.",
-      "forward": "⚖️🔻 Pure USD-leg: hawkish Fed pushes EUR/USD down, dovish-frame ECB caps bounces. EZ PMI downturn easing is not a turn. Next ECB late Jul."
+      "forward": "⚖️🔻 Pure USD-leg: a confirmed-hot-PCE Fed pushes EUR/USD down, dovish-frame ECB caps bounces. EZ PMI downturn easing is not a turn. Next ECB late Jul."
     }
   ],
   "symbols": [
@@ -71,8 +71,15 @@
       "sym": "EUR/USD",
       "bias": "SHORT",
       "conv": "HIGH",
-      "why": "Cleanest macro divergence: hawkish-Fed (dots->hike, DXY 13-mo high, ~70% Sept hike) vs an ECB that called its hike one-off war insurance.",
-      "risk": "Crowded into PCE — a soft core TODAY bounces it; trail stops."
+      "why": "Cleaner post-PCE: the binary that could've bounced it resolved hawkish (core 3.4%) — hawkish-Fed vs an ECB that called its hike one-off war insurance. DXY 13-mo high.",
+      "risk": "Very crowded; quarter-end (Jun 30) flows can squeeze; soft Jul 2 jobs."
+    },
+    {
+      "sym": "USD/CAD",
+      "bias": "LONG",
+      "conv": "HIGH",
+      "why": "Both legs aligned: hot US PCE + Brent 4-mo low (~$74.4, -19% m/m). Broadening CPI only a floor (core ~2.0%) as BoC looks through it.",
+      "risk": "An oil re-spike (MOU stall / Lebanon) rescues CAD; quarter-end USD selling."
     },
     {
       "sym": "EUR/JPY",
@@ -80,13 +87,6 @@
       "conv": "HIGH",
       "why": "Weak yen HELPS this: structural BoJ-tightening destination + a capped, dovish-frame EUR — cleaner than the USD/JPY leg.",
       "risk": "A coordination-flavoured intervention spike snaps every XXX/JPY lower at once."
-    },
-    {
-      "sym": "USD/CAD",
-      "bias": "LONG",
-      "conv": "HIGH",
-      "why": "Brent's slide to a 4-mo low (~$73, now ~$75) keeps CAD's export drag on; CPI only a floor (core 2.0%) as BoC looks through. Hawkish-USD leg carries it.",
-      "risk": "A soft US PCE caps the USD leg; a fuller oil re-spike rescues CAD."
     },
     {
       "sym": "USD/JPY",
@@ -99,7 +99,7 @@
       "sym": "AUD/CAD",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "Cleanest commodity split: sticky AUD trim (3.6%) + RBA floor vs oil-pressed CAD; Brent 4-mo low (~$75) keeps the tilt.",
+      "why": "Cleanest commodity split: sticky AUD trim (3.6%) + RBA floor vs oil-pressed CAD; Brent 4-mo low (~$74.4) keeps the tilt.",
       "risk": "Risk-off hits AUD beta harder; a CAD-supportive oil bid."
     },
     {
@@ -113,28 +113,28 @@
       "sym": "AUD/USD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "USD headwind dominant: risk-off + Fed repricing keep it sub-0.70, overpowering the firm trim-mean CPI.",
-      "risk": "The sticky 3.6% core + a soft US PCE flips the leg — the firm-AUD invalidation."
+      "why": "USD headwind dominant: hot PCE + Fed repricing keep it sub-0.70, overpowering the firm trim-mean CPI.",
+      "risk": "The sticky 3.6% core + a soft Jul 2 NFP flips the leg — the firm-AUD invalidation."
     },
     {
       "sym": "GBP/USD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Two firm legs now: services CPI 3.7% re-armed a hawkish BoE vs a 13-mo-high dollar — no clean edge till PCE.",
-      "risk": "Soft PCE lifts it; soft UK activity re-splits it."
+      "why": "Two firm legs: services CPI 3.7% re-armed a hawkish BoE vs a confirmed-hot-PCE dollar — slight USD tilt post-print.",
+      "risk": "Soft Jul 2 jobs lifts it; soft UK activity re-splits it."
     },
     {
       "sym": "NZD/USD",
       "bias": "RANGE",
       "conv": "LOW",
       "why": "Firm Q1 GDP + priced Jul RBNZ hike floor NZD; hawkish USD caps it — net neutral into Jul 9.",
-      "risk": "Risk-on lifts NZD; a soft US PCE or hot data helps."
+      "risk": "Risk-on lifts NZD; a soft US jobs print helps."
     },
     {
       "sym": "GBP/JPY",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Shifted from SHORT: services-CPI re-acceleration firmed the GBP leg, offsetting the yen destination — two-sided now.",
+      "why": "Services-CPI re-acceleration firmed the GBP leg, offsetting the yen destination — two-sided.",
       "risk": "Firm GBP + weak yen spot tilts it up; a coordinated intervention spike snaps it lower."
     },
     {
@@ -190,28 +190,28 @@
       "sym": "NZD/CAD",
       "bias": "LONG",
       "conv": "LOW",
-      "why": "Shifted from RANGE: firm NZD (GDP + Jul hike) vs a CAD pressed by Brent's 4-mo low (~$75) — the oil move tilts it long.",
+      "why": "Firm NZD (GDP + Jul hike) vs a CAD pressed by Brent's 4-mo low (~$74.4) — the oil move tilts it long.",
       "risk": "Oil-led disinflation undercuts NZD too; an oil bid lifts CAD."
     },
     {
       "sym": "DXY",
       "bias": "LONG",
-      "conv": "LOW-MED",
-      "why": "The strong leg: 13-mo high ~101.6 on Fed-hike repricing (~70% Sept) + risk-off; EUR/JPY/GBP/CAD legs all soft vs USD.",
-      "risk": "PCE TODAY is the swing — a soft core or risk-on wave fades a stretched, crowded long."
+      "conv": "MEDIUM",
+      "why": "Upgraded: hot PCE confirmed the hawkish leg, so the 13-mo high (~101.4) is validated, not just crowded; EUR/JPY/GBP/CAD legs all soft vs USD.",
+      "risk": "Quarter-end (Jun 30) rebalancing + a soft Jul 2 NFP fade a stretched long; positioning extreme."
     },
     {
       "sym": "JPYBASKET",
       "bias": "LONG",
       "conv": "LOW",
       "why": "Squeezed leg: basket near lows as the yen sits at a 1986 low — core only, do NOT add into a re-bid USD. (Rises when JPY strengthens.)",
-      "risk": "Wait for a coordinated intervention or a PCE-led USD fade to re-load; thesis intact, timing wrong."
+      "risk": "Wait for a coordinated intervention or a USD pullback to re-load; thesis intact, timing wrong."
     },
     {
       "sym": "GER40",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "Oil tailwind (Brent 4-mo low ~$75) + EZ PMI downturn easing; hawkish-Fed rates the cap, cancelled talks/Lebanon widen the tail.",
+      "why": "Oil tailwind (Brent 4-mo low ~$74.4) + EZ PMI downturn easing; hawkish-Fed rates the cap, cancelled talks/Lebanon widen the tail.",
       "risk": "An MOU breakdown / Lebanon escalation gaps it down; a hawkish-Fed rates scare."
     }
   ],
@@ -257,16 +257,16 @@
         ]
       },
       "jobs": {
-        "value": "+150k",
+        "value": "+172k",
         "trend": "rising",
         "note": "NFP",
         "hist": [
           110,
           135,
           120,
-          145,
-          150,
-          150
+          179,
+          172,
+          172
         ]
       },
       "rates": {
@@ -499,7 +499,7 @@
         ]
       },
       "growth": {
-        "value": "0.8%",
+        "value": "1.0%",
         "trend": "rising",
         "note": "GDP q/q",
         "hist": [
@@ -508,7 +508,7 @@
           0.2,
           0.5,
           0.8,
-          0.8
+          1
         ]
       },
       "unemployment": {
@@ -560,7 +560,7 @@
           2.7,
           2.8,
           3,
-          3.1,
+          2.8,
           3.2,
           3.2
         ]
@@ -688,16 +688,16 @@
   },
   "catalysts": [
     {
-      "date": "Thu Jun 25",
-      "event": "US PCE (08:30 EDT) — the marquee",
+      "date": "Tue Jun 30",
+      "event": "Quarter-end / month-end rebalancing",
       "impact": "high",
-      "note": "Test of Warsh's 'broader than energy' call; median '26 core PCE ~3.3%. The dollar's only near-term fade — a soft core bounces EUR/USD, USD/CAD, AUD/USD at once."
+      "note": "Q2 close; rebalancing flows can squeeze the crowded dollar long regardless of macro — the nearest tactical risk."
     },
     {
-      "date": "Thu Jun 25",
-      "event": "US final Q1 GDP; jobless claims",
-      "impact": "med",
-      "note": "Growth/labour read alongside PCE."
+      "date": "Thu Jul 2",
+      "event": "US June jobs report (NFP) — moved up for Jul 4",
+      "impact": "high",
+      "note": "Next dollar test; May was +172k (beat). A soft print is the cleanest fade of the validated dollar long."
     },
     {
       "date": "Jul 9",
@@ -706,10 +706,16 @@
       "note": "25bp hike priced; firm Q1 GDP backs it — the NZD swing."
     },
     {
+      "date": "Jul 20",
+      "event": "Canada June CPI",
+      "impact": "med",
+      "note": "Tests whether energy pass-through broadens; BoC looks through for now."
+    },
+    {
       "date": "Jul 23",
       "event": "Australia June Labour Force",
       "impact": "med",
-      "note": "The next AUD labour swing (no Aussie jobs today)."
+      "note": "The next AUD labour swing."
     },
     {
       "date": "Rolling",
@@ -721,7 +727,7 @@
       "date": "Rolling",
       "event": "US-Iran 60-day MOU / oil",
       "impact": "high",
-      "note": "Brent hit ~$73 (4-mo low) on eased Hormuz flows + peace progress, then bounced to ~$75; stalled talks (Lebanon flare) keep a respike tail."
+      "note": "Brent at a 4-mo low ~$74.4 on eased Hormuz flows + peace progress; stalled talks (Lebanon flare) keep a respike tail."
     },
     {
       "date": "Late Jul",
@@ -730,6 +736,6 @@
       "note": "All next decisions parked to late July."
     }
   ],
-  "geopolitics": "Flows are crushing the war premium. With Strait-of-Hormuz tanker traffic normalising and US-Iran peace progress holding, Brent fell to a 4-month low near $73 on Wednesday — the lowest since late February and roughly 40% off the wartime peak — before stabilising back to ~$75 into Thursday. The diplomatic track is still stalled (the Burgenstock technical round remains cancelled amid the re-erupted Lebanon fighting), so the base case (truce holds, oil drifts lower) is intact, but the slipped talks keep the respike tail alive. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps the dollar bid, supports GER40 and risk-beta AUD/NZD on calmer days, and does NOT buy a Fed cut (Warsh marked inflation up into the oil drop); for CAD the hot CPI only partly offsets the oil drag → soft-and-capped. Tail (alive): an MOU stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,200 gold bid is the thin premium for exactly this.",
-  "updatedAt": "2026-06-25T10:13:32.833Z"
+  "geopolitics": "Flows are still crushing the war premium. With Strait-of-Hormuz tanker traffic normalising and US-Iran peace progress holding, Brent slipped to ~$74.4 on Friday — a fresh 4-month low, down ~19% on the month and roughly 40% off the wartime peak. The diplomatic track remains stalled (the technical round is still cancelled amid the re-erupted Lebanon fighting), so the base case (truce holds, oil drifts lower) is intact, but the slipped talks keep the respike tail alive. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps the dollar bid, supports GER40 and risk-beta AUD/NZD on calmer days, and does NOT buy a Fed cut (hot May PCE confirmed inflation marked up into the oil drop; disinflation is energy-led, not broad); for CAD the hot CPI (3.2%) only partly offsets the deeper oil drag → soft-and-capped at ~$74. Tail (alive): an MOU stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,200 gold bid is the thin premium for exactly this.",
+  "updatedAt": "2026-06-26T05:16:36.329Z"
 }
