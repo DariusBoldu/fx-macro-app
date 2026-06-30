@@ -104,12 +104,12 @@
         <div class="calcgrid">
           <label class="fld"><span>Instrument</span><select id="cPair"></select></label>
           <label class="fld"><span>Deposit currency</span><select id="cDep"></select></label>
-          <label class="fld"><span>Account balance</span><input id="cBal" type="number" inputmode="decimal" placeholder="1000" min="0"></label>
+          <label class="fld"><span>Account balance</span><input id="cBal" type="text" inputmode="decimal" autocomplete="off" placeholder="1000" min="0"></label>
           <label class="fld"><span>Risk</span>
-            <div class="riskrow"><input id="cRisk" type="number" inputmode="decimal" placeholder="1" min="0">
+            <div class="riskrow"><input id="cRisk" type="text" inputmode="decimal" autocomplete="off" placeholder="1" min="0">
               <select id="cRiskMode"><option value="pct">%</option><option value="amt">amount</option></select></div>
           </label>
-          <label class="fld"><span>Stop loss (pips)</span><input id="cSl" type="number" inputmode="decimal" placeholder="20" min="0"></label>
+          <label class="fld"><span>Stop loss (pips)</span><input id="cSl" type="text" inputmode="decimal" autocomplete="off" placeholder="20" min="0"></label>
           <div class="fld"><span>1 pip size</span><div class="pipbox" id="cPip">0.0001</div></div>
         </div>
         <div class="calcres">

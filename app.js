@@ -418,9 +418,12 @@
 
   function setCalcRes(lots, units, risk) { $('rLots').textContent = lots; $('rUnits').textContent = units; $('rRisk').textContent = risk; }
 
+  // accept both "100.5" and "100,5" (the phone keypad only offers a comma)
+  function numVal(id) { return parseFloat(($(id).value || '').replace(',', '.').replace(/\s/g, '')); }
+
   function computeSize() {
     var pair = $('cPair').value, dep = $('cDep').value, mode = $('cRiskMode').value;
-    var bal = parseFloat($('cBal').value), risk = parseFloat($('cRisk').value), sl = parseFloat($('cSl').value);
+    var bal = numVal('cBal'), risk = numVal('cRisk'), sl = numVal('cSl');
     var pipSize = pair.indexOf('JPY') >= 0 ? 0.01 : 0.0001;
     $('cPip').textContent = pipSize.toString();
     $('cRate').textContent = '';
