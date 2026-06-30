@@ -1,21 +1,21 @@
 {
   "meta": {
-    "reportDate": "2026-06-29",
-    "reportLabel": "Mon Report — dollar long validated but FADING into the week it must survive: quarter-end (Jun 29-30), ECB Sintra (Lagarde tonight), US NFP (Jul 2). Oil ~$72 pins CAD at a 14-mo low; RBNZ Jul 9 is now a genuine COIN-FLIP (swaps still ~21bp hike vs the oil-drop hold case)",
+    "reportDate": "2026-06-30",
+    "reportLabel": "Tue Report — dollar long SURVIVES quarter-end's final day at DXY ~101.3 (2nd straight monthly gain); focus turns to Warsh's first Sintra speech (Wed) + US NFP (Thu). Lagarde's Sintra dinner came in FIRMER than feared (no dovish walk-back) — trims, not kills, the EUR/USD short. Oil ~$72 still pins CAD at a 14-mo low; Iran diplomacy messier (US strike Jun 26, talks moved to Qatar)",
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40",
-    "regime": "Dollar-strong but fading into the busiest week of the quarter. May core PCE confirmed hot (3.4% / headline ~4.1%) and the June dot flipped the next move to a HIKE, yet the in-line print left DXY drifting at ~101.3 with Sept-hike odds sub-50%. The crowded long must clear a four-event gauntlet: quarter-end rebalancing (Jun 29-30), the ECB Sintra forum (Lagarde's dinner speech tonight), US ISM (Jul 1) and the June jobs print (Jul 2), where May's hot +172k sets a high bar. The cleaner edge is the oil leg: Brent ~$72 (4-mo low) pins CAD at a 14-mo low (USD/CAD ~1.4154). USD/JPY ~161.7, squeezed just under the 162-163 intervention zone.",
-    "nextBigEvent": "Quarter-end rebalancing (Jun 29-30), then ECB Sintra (Lagarde tonight) and US June jobs / NFP (Jul 2) — the dollar's next test"
+    "regime": "Dollar-strong but fading, having survived quarter-end. May core PCE confirmed hot (3.4% / headline ~4.1%) and the June dot flipped the next move to a HIKE, yet the in-line print left DXY drifting ~101.3 with Sept-hike odds sub-50% — though the index still held quarter-end for a 2nd straight monthly gain (~2% MTD, best month since last July). Two near catalysts now dominate: Warsh's first Sintra appearance (Wed Jul 1) and the June jobs print (Thu Jul 2), where May's hot +172k sets a high bar. Lagarde's Sintra dinner speech was firmer than feared (no dovish walk-back), a mild EUR support. The cleaner edge stays the oil leg: Brent ~$72 (4-mo low) pins CAD at a 14-mo low (USD/CAD ~1.4154). USD/JPY ~161.7, squeezed just under the 162-163 intervention zone.",
+    "nextBigEvent": "Warsh's first Sintra appearance (Wed Jul 1), then US June jobs / NFP (Thu Jul 2) — the dollar's next test now quarter-end has cleared"
   },
-  "dailyRead": "The validated-but-fading dollar long now meets the week it has to survive. May core PCE confirmed hot (3.4%, hottest since Oct 2023; headline ~4.1%) and the June FOMC dot flipped the next move to a HIKE (median 3.8%), but the in-line print left DXY drifting at ~101.3 on the Monday open with Sept-hike odds still sub-50%. The crowded long must clear a four-event gauntlet: quarter-end rebalancing (today-Tue), the ECB Sintra forum (Lagarde's dinner speech tonight), US ISM (Jul 1) and the June jobs print (Thu Jul 2), where May's hot +172k sets a high bar and a cooler number is the cleanest fade. The cleaner edge stays the oil leg: Brent holds ~$72 (4-month low), pinning CAD at a 14-month low (USD/CAD ~1.4154). Best-expressed trades: USD/CAD long, AUD/CAD long, EUR/JPY short; the long-JPY core (USD/JPY short, JPYBASKET long) stays squeezed at ~161.7, just under the 162.00 line — defend, do not add.",
+  "dailyRead": "The validated-but-fading dollar long survives quarter-end's last day; the focus now turns to Warsh and jobs. DXY holds ~101.3 on the final session of Q2, on track for a second straight monthly gain (~2% MTD, its best month since last July) — the crowded long has so far absorbed quarter-end rebalancing without breaking, even as Sept-hike odds sit sub-50%. Lagarde's Sintra dinner speech (Mon) came in firmer than feared — she stressed the ECB 'can raise rates without fear' and warned of more frequent shocks, not the dovish walk-back the EUR short was braced for — a mild EUR support that trims (does not kill) the EUR/USD short. Two near catalysts now dominate: Warsh's first Sintra appearance (Wed) and the June jobs print (Thu), where May's hot +172k sets a high bar. The cleaner edge stays the oil leg: Brent holds ~$72 (4-mo low) pinning CAD at a 14-mo low (USD/CAD ~1.4154), even as Iran diplomacy turned messier (US strike Jun 26, talks moved to Qatar, now Hormuz-focused). Best-expressed: USD/CAD long, AUD/CAD long, EUR/JPY short; the long-JPY core (USD/JPY short, JPYBASKET long) stays squeezed at ~161.7, just under the 162.00 line — defend, do not add.",
   "strength": [
     {
       "ccy": "USD",
       "score": 3,
       "verdict": "STRONG (momentum fading)",
-      "tag": "hot PCE + hike-dot, but Sept odds sub-50%",
-      "drivers": "Core PCE 3.4% (May, up); headline ~4.1%; CPI 4.2%; NFP +172k (May), unemp 4.3%; Jun seen cooler. Fed 3.50-3.75%, hawkish hold, dots flip next move to a HIKE (median 3.8%).",
-      "forward": "🦅 Validated but fading: hot PCE + a hike-dot confirm Warsh, but the in-line print + soft-NFP fears keep Sept-hike odds sub-50%; DXY ~101.3. Risk: a cool Jul 2 jobs is the clean fade. Next FOMC Jul 28-29."
+      "tag": "survived quarter-end; eyes Warsh + jobs",
+      "drivers": "Core PCE 3.4% (May, up); headline ~4.1%; CPI 4.2%; NFP +172k (May), unemp 4.3%; Jun seen cooler. Fed 3.50-3.75%, hawkish hold, dots flip next move to a HIKE (median 3.8%). DXY ~101.3, 2nd straight monthly gain.",
+      "forward": "🦅 Survived quarter-end; eyes Warsh + jobs: hot PCE + a hike-dot confirm Warsh, but the in-line print keeps Sept odds sub-50%. Risk: a cool Jul 2 jobs is the clean fade. Warsh speaks Wed. Next FOMC Jul 28-29."
     },
     {
       "ccy": "GBP",
@@ -38,24 +38,24 @@
       "score": 0,
       "verdict": "MIXED (two-sided into Jul 9)",
       "tag": "coin-flip: swaps ~21bp hike vs oil-drop hold",
-      "drivers": "Headline ~2.5%; RBNZ saw a 4.3% Q3 peak (pre oil-drop); unemp ~5.1% elevated. RBNZ 2.25% (held May 27, casting-vote split). Swaps still price ~21bp (≈hike) for Jul 9.",
-      "forward": "⚖️ Genuinely split into Jul 9: swaps still price ~21bp (≈a hike) and ING/BNZ expect one, but the oil slide gutted the imported-inflation case the RBNZ leaned on (4.3% Q3 peak now stale). Live two-way — the kiwi's biggest near event. Next RBNZ Jul 9."
+      "drivers": "Headline ~2.5%; RBNZ saw a 4.3% Q3 peak (pre oil-drop); unemp ~5.1% elevated. RBNZ 2.25% (held May 27, casting-vote split). Swaps still price ~21bp (≈hike) for Jul 9; UBS/ING/BNZ lean hike, Westpac holds.",
+      "forward": "⚖️ Genuinely split into Jul 9: swaps still price ~21bp (≈a hike) and UBS/ING/BNZ expect one (de-anchoring risk over the long Jul-Sept gap), but the oil slide gutted the imported-inflation case (4.3% Q3 peak now stale); Westpac sees a hold. Live two-way — the kiwi's biggest near event. Next RBNZ Jul 9."
     },
     {
       "ccy": "JPY",
       "score": 0,
       "verdict": "MIXED",
       "tag": "structural-up vs squeezed spot",
-      "drivers": "Core ~1.5%; CPI ~2.8%; Tokyo core re-accelerated for the 1st time in 8 months. BoJ 1.00% (hiked Jun 16), favours more hikes; spot ~161.7 (intervention zone now seen 162-163).",
-      "forward": "🦅↔ Destination up, spot squeezed. Tokyo core re-accelerating reinforces more hikes; US-Japan coordinated-action readiness reaffirmed but doubted post-April — two-sided, the swing. Next BoJ late Jul."
+      "drivers": "Core ~1.5%; CPI ~2.8%; Tokyo core re-accelerated for the 1st time in 8 months. BoJ 1.00% (hiked Jun 16), Ueda/Tamura back more hikes; spot ~161.7 (intervention zone now seen 162-163).",
+      "forward": "🦅↔ Destination up, spot squeezed. Tokyo core re-accelerating reinforces more hikes; US-Japan coordinated-action readiness reaffirmed but doubted post-April — two-sided, the swing. Next BoJ Jul 31."
     },
     {
       "ccy": "EUR",
       "score": -1,
-      "verdict": "SOFT",
-      "tag": "USD-leg; Sintra in focus",
-      "drivers": "HICP 3.2% (May, held); core 2.2% (May, down from 2.3%); unemp ~6.3%. ECB 2.25% (hiked Jun 17), framed as one-off war insurance, not a cycle; sees HICP 3.0% '26 -> 2.0% '28.",
-      "forward": "⚖️🔻 Pure USD-leg: a hot-but-fading Fed pushes EUR/USD down, dovish-frame ECB caps bounces. Sintra (Lagarde tonight) the tell; ECB Jul 23 hold 94% priced. Next ECB Jul 23."
+      "verdict": "SOFT (less soft post-Sintra)",
+      "tag": "Sintra firmer than feared",
+      "drivers": "HICP 3.2% (May, held; energy +10.9%); core 2.2% (May, down from 2.3%); unemp ~6.3%. ECB 2.25% (hiked Jun 17), 'gradual' frame; sees HICP 3.0% '26 -> 2.0% '28.",
+      "forward": "⚖️ Sintra firmer than feared — the discount trims. Lagarde: ECB 'can raise rates without fear', more frequent shocks ahead — not a dovish walk-back. Mild EUR support; ECB Jul 23 hold 94% priced. Cap loosens slightly. Next ECB Jul 23."
     },
     {
       "ccy": "CAD",
@@ -72,7 +72,7 @@
       "bias": "LONG",
       "conv": "HIGH",
       "why": "Cleanest pair: hot US PCE + a hike-dot vs CAD at a 14-mo low on Brent ~$72. Hot CPI 3.2% only a floor (core ~2%); technical recession. ~1.4154.",
-      "risk": "An oil re-spike (MOU stall / Lebanon) rescues CAD; quarter-end USD selling."
+      "risk": "An oil re-spike (Qatar talks collapse / Lebanon) rescues CAD; final-day quarter-end USD selling."
     },
     {
       "sym": "AUD/CAD",
@@ -85,15 +85,15 @@
       "sym": "EUR/JPY",
       "bias": "SHORT",
       "conv": "HIGH",
-      "why": "Weak yen HELPS this: BoJ-tightening destination (Tokyo core re-accelerating) + a capped, dovish-frame EUR — cleaner than the USD/JPY leg with the dollar fading.",
-      "risk": "A coordinated intervention spike snaps every XXX/JPY lower at once; a Sintra hawkish surprise."
+      "why": "Weak yen HELPS this: BoJ-tightening destination (Tokyo core re-accelerating) + a still-capped EUR — cleaner than the USD/JPY leg with the dollar fading; Sintra a mild EUR offset only.",
+      "risk": "A coordinated intervention spike snaps every XXX/JPY lower at once; a further hawkish Lagarde/EZ surprise."
     },
     {
       "sym": "EUR/USD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Hawkish-Fed vs dovish-ECB divergence intact, but stays downgraded: dollar drifting ~101.3, sub-50% Sept odds, quarter-end + Sintra squeeze risk.",
-      "risk": "Quarter-end (Jun 30) rebalancing; a soft Jul 2 jobs lifts it; a Sintra hawkish Lagarde."
+      "why": "Fed-vs-gradual-ECB divergence intact but trimmed: Lagarde's Sintra firmer than feared (mild EUR support) + dollar drifting ~101.3, sub-50% Sept odds.",
+      "risk": "A soft Jul 2 jobs lifts it; a hawkish Warsh (Wed) is the offset that rescues the short."
     },
     {
       "sym": "CAD/JPY",
@@ -134,7 +134,7 @@
       "sym": "NZD/USD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Shift vs Sun: with the Jul 9 RBNZ now a live two-way (swaps ~21bp for a hike), the soft-NZD lean has faded — back to a level-trade vs a drifting dollar.",
+      "why": "Jul 9 RBNZ a live two-way (swaps ~21bp for a hike), so the soft-NZD lean stays faded — a level-trade vs a drifting dollar.",
       "risk": "A hawkish RBNZ repricing or hot NZ data lifts it; a firm Jul 2 NFP presses it."
     },
     {
@@ -162,8 +162,8 @@
       "sym": "EUR/AUD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "ECB done-dovish vs a hawkish-hold RBA (sticky trim, 4.70% priced) — mild AUD tilt, no USD vector.",
-      "risk": "EZ vs Aussie data set direction; a Sintra shift."
+      "why": "ECB 'gradual' (Sintra firmer) vs a hawkish-hold RBA (sticky trim, 4.70% priced) — mild AUD tilt, no USD vector.",
+      "risk": "EZ vs Aussie data set direction; a further Sintra/EZ shift."
     },
     {
       "sym": "EUR/NZD",
@@ -197,8 +197,8 @@
       "sym": "DXY",
       "bias": "LONG",
       "conv": "LOW-MED",
-      "why": "PCE + hike-dot validate the leg but the index is drifting ~101.3 and Sept odds sit sub-50%; EUR/JPY/GBP/CAD still soft vs USD but the edge bleeds into a heavy week.",
-      "risk": "Quarter-end (Jun 30) rebalancing + a cool Jul 2 NFP fade a stretched long; positioning extreme."
+      "why": "PCE + hike-dot validate the leg and the index held quarter-end ~101.3 (2nd straight monthly gain), but Sept odds sit sub-50%; EUR/JPY/GBP/CAD still soft vs USD though the edge is thin.",
+      "risk": "A cool Jul 2 NFP fades a stretched long; a firmer-than-feared Sintra EUR; positioning extreme."
     },
     {
       "sym": "JPYBASKET",
@@ -211,8 +211,8 @@
       "sym": "GER40",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "Oil tailwind intact (Brent 4-mo low ~$72) + EZ downturn easing; fading-Fed less of a cap, but cancelled talks/Lebanon widen the tail.",
-      "risk": "An MOU breakdown / Lebanon escalation gaps it down; a hawkish-Fed rates scare."
+      "why": "Oil tailwind intact (Brent 4-mo low ~$72) + EZ downturn easing; fading-Fed less of a cap, but the Iran re-escalation (US strike, Qatar talks) widens the tail.",
+      "risk": "A Qatar-talks breakdown / Lebanon escalation gaps it down; a hawkish-Warsh rates scare."
     }
   ],
   "macro": {
@@ -688,22 +688,16 @@
   },
   "catalysts": [
     {
-      "date": "Jun 29-30",
-      "event": "Quarter-end / month-end rebalancing",
+      "date": "Tue Jun 30",
+      "event": "Quarter-end / month-end rebalancing (final day)",
       "impact": "high",
-      "note": "Q2 close; rebalancing flows can squeeze the crowded dollar long regardless of macro — the nearest tactical risk."
-    },
-    {
-      "date": "Mon Jun 29",
-      "event": "ECB Sintra — Lagarde dinner speech",
-      "impact": "med",
-      "note": "Forum runs to Jul 1; watch for any walk-back of the 'one-off, no cycle' framing — the EUR swing."
+      "note": "Q2 close; the last session of rebalancing flows — the crowded dollar long has held so far, but the squeeze risk peaks today before clearing."
     },
     {
       "date": "Wed Jul 1",
-      "event": "US ISM Manufacturing (prices paid)",
-      "impact": "med",
-      "note": "An early read on whether goods inflation is rolling over with oil."
+      "event": "Warsh — first Sintra appearance + US ISM",
+      "impact": "high",
+      "note": "Watch for the new Fed chair signalling a dismantling of forward guidance / a harder hawkish frame; ISM an early read on goods inflation rolling over with oil."
     },
     {
       "date": "Thu Jul 2",
@@ -727,19 +721,25 @@
       "date": "Jul 23",
       "event": "ECB decision",
       "impact": "med",
-      "note": "'No cycle' frame (hold 94% priced); the EUR cap."
+      "note": "'Gradual' frame (hold 94% priced); Sintra firmer-than-feared loosens the EUR cap slightly."
     },
     {
       "date": "Jul 28-29",
       "event": "FOMC",
       "impact": "high",
-      "note": "Warsh's cycle; hot PCE + hike-dot keep it alive — Jul 2 jobs the swing."
+      "note": "Warsh's cycle; hot PCE + hike-dot keep it alive — Wed's speech + Jul 2 jobs the tells."
     },
     {
       "date": "Jul 30",
       "event": "BoE decision + MPR",
       "impact": "med",
       "note": "Services 3.7% keeps 2 hawk dissents live — the GBP swing."
+    },
+    {
+      "date": "Jul 31",
+      "event": "BoJ decision",
+      "impact": "high",
+      "note": "Tokyo core re-accelerating; the yen's structural destination."
     },
     {
       "date": "Rolling",
@@ -749,11 +749,11 @@
     },
     {
       "date": "Rolling",
-      "event": "US-Iran MOU / oil",
+      "event": "US-Iran MOU / Hormuz / oil",
       "impact": "high",
-      "note": "Brent ~$72 (4-mo low) on Hormuz flows ~75% of prewar; postponed talks + a drone incident keep a respike tail."
+      "note": "Brent ~$72 (4-mo low); US strike Jun 26 + talks shifted to Qatar (now Hormuz-focused) keep a respike tail despite the holding tape."
     }
   ],
-  "geopolitics": "Flows keep crushing the war premium even as the diplomacy stays fragile. With Strait-of-Hormuz transits back to ~75% of pre-war volumes and Saudi Arabia loading at Ras Tanura, Brent holds near $72 — a 4-month low (lowest since Feb 27), down over 10% last week and ~40% off the wartime peak. The headlines are messier than the tape: the Geneva technical round was abruptly postponed and Trump accused Iran of a ceasefire violation after a drone struck a tanker near Hormuz — but the strait stayed open and traffic held, so the base case (truce holds, oil drifts lower) is intact with a live respike tail. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps a (now-fading) dollar bid, supports GER40 and risk-beta AUD on calm days, and does NOT buy a Fed cut (hot May PCE confirmed inflation marked up into the oil drop; disinflation is energy-led). For NZD the lower oil path removed the cost-shock case the RBNZ leaned on (its 4.3% Q3 peak now looks stale) — yet swaps still price ~21bp for Jul 9, so the kiwi is a genuine coin-flip, not a clean dovish fade. For CAD the hot CPI (3.2%, gasoline +33% y/y) only partly offsets the deeper oil drag → soft-and-capped, the export side pressed hardest at ~$72 (loonie at a 14-mo low). Tail (alive): an MOU stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,200 gold bid is the thin premium for exactly this.",
-  "updatedAt": "2026-06-29T06:42:46.858Z"
+  "geopolitics": "Flows keep crushing the war premium even as the diplomacy turned messier. With Strait-of-Hormuz transits back to ~75% of pre-war volumes and Saudi Arabia loading at Ras Tanura, Brent holds near $72 — a 4-month low (lowest since Feb 27), down over 10% last week and ~40% off the wartime peak. The headlines are worse than the tape: after Trump accused Iran of a ceasefire violation, the US struck Iran on Jun 26, Iran then refused the scheduled Jun 28 talks, and the Jun 30 session was moved from Switzerland to Qatar and narrowed to focus on the Strait of Hormuz itself. Hostilities were reported 'halted again' into Jun 29 — but the strait stayed open and traffic held, so the base case (truce holds, oil drifts lower) is intact with a MORE live respike tail than a week ago. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps a (now-fading) dollar bid, supports GER40 and risk-beta AUD on calm days, and does NOT buy a Fed cut (hot May PCE confirmed inflation marked up into the oil drop; disinflation is energy-led). For NZD the lower oil path removed the cost-shock case the RBNZ leaned on (its 4.3% Q3 peak now looks stale) — yet swaps still price ~21bp for Jul 9, so the kiwi is a genuine coin-flip, not a clean dovish fade. For CAD the hot CPI (3.2%, gasoline +33% y/y) only partly offsets the deeper oil drag → soft-and-capped, the export side pressed hardest at ~$72 (loonie at a 14-mo low). Tail (more alive after the strike): a Qatar-talks stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,200 gold bid is the thin premium for exactly this.",
+  "updatedAt": "2026-06-30T05:12:41.733Z"
 }
