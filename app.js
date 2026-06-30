@@ -490,8 +490,29 @@
     computeSize();
   }
 
+  /* ============================ Version badge ============================ */
+  // Bump this together with CACHE in sw.js on every release. Shown in the header
+  // so you can confirm the running version; tap it to force-fetch the latest.
+  var APP_VERSION = 'v10';
+  function initVersion() {
+    var el = $('appver'); if (!el) return;
+    el.textContent = APP_VERSION + ' ⟳';
+    el.addEventListener('click', function () {
+      el.textContent = 'updating…';
+      (function () {
+        var done = function () { location.reload(); };
+        var jobs = [];
+        if (window.caches) jobs.push(caches.keys().then(function (ks) { return Promise.all(ks.map(function (k) { return caches.delete(k); })); }));
+        if (navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistrations().then(function (rs) { return Promise.all(rs.map(function (r) { return r.update(); })); }));
+        Promise.all(jobs).then(done, done);
+        setTimeout(done, 2500); // safety: reload even if the above stalls
+      })();
+    });
+  }
+
   /* ============================ Boot ============================ */
   function boot() {
+    initVersion();
     setupSizeCalc();
     fetchData(false).then(function () {
       refreshPrices();          // warm signals quotes
