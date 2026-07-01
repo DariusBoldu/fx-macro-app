@@ -1,21 +1,21 @@
 {
   "meta": {
     "reportDate": "2026-07-01",
-    "reportLabel": "Wed Report — dollar firm into WARSH's Sintra debut (today, 13:00 GMT) + US NFP (Thu, +130k exp vs +172k). Big story: the YEN broke 162 to a fresh 40-YEAR LOW (~162.3) — the long-JPY core is being run over; MoF now 'when not if' but doubted. Eurozone June flash HICP eased to 3.1% (from 3.2%) — re-softens EUR, re-firms the EUR/USD short. Brent ~$73 after weekend Iran-US Hormuz strikes then a 'stand down' — CAD still weakest.",
+    "reportLabel": "Wed Report (post-Warsh, post-ADP) — WARSH's Sintra debut skewed HAWKISH ('prices too high', inflation 'too elevated'); dollar held firm. But June ADP printed soft (+98k vs +110k exp), tilting Thu NFP (+115k exp) risk LOWER — the clean fade. YEN keeps grinding: USD/JPY ~162.8 toward 163, a fresh 40-YEAR LOW; MoF still sidelined ('when not if', doubted). Eurozone June flash HICP 3.1% (from 3.2%) keeps EUR soft. Brent ~$73.2 after weekend Iran-US Hormuz strikes then a 'stand down' — CAD still weakest.",
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40",
-    "regime": "Dollar-firm but two catalysts loom. May core PCE confirmed hot (3.4% / headline ~4.1%) and the June dot flipped the next move to a HIKE, keeping DXY ~101.3 with Sept-hike odds still sub-50%. Warsh makes his first international appearance today (Sintra panel, expected quiet) and June NFP prints Thu (+130k consensus vs May's hot +172k). The overnight story is the yen: USD/JPY broke clean through 162 to a fresh 40-year low (~162.3) on the widest US-Japan rate gap of the cycle + fiscal-dovish Japan — the structural long-JPY core is being squeezed, MoF intervention now 'when not if' but doubted post-April. Eurozone June flash HICP eased to 3.1% (from 3.2%), re-softening the EUR. The cleaner edge stays the oil leg: Brent ~$73 pins CAD near a 14-mo low (USD/CAD ~1.415).",
-    "nextBigEvent": "Warsh's first Sintra appearance (Wed Jul 1, 13:00 GMT), then US June jobs / NFP (Thu Jul 2, +130k exp) — the dollar's next tests"
+    "regime": "Dollar-firm post-Warsh, but the labor tape is cracking. Warsh's first international appearance (Sintra) skewed hawkish-of-neutral — 'prices are too high', inflation 'too elevated', taming it the Fed's primary objective (open-minded on AI supply gains) — and the dollar held its bid alongside hot May core PCE (3.4% / headline ~4.1%) and a June dot that flipped the next move to a HIKE (DXY ~101.3, Sept odds sub-50%). But June ADP printed just +98k (below +110k exp, down from +122k), tilting Thu NFP (+115k consensus) risk to the downside — the cleanest fade. The yen keeps grinding: USD/JPY ~162.8 toward 163, a fresh 40-year low on the ~250-275bp US-Japan rate gap + fiscal-dovish Japan, MoF still sidelined ('when not if' but doubted post-April). Eurozone June flash HICP eased to 3.1% (from 3.2%), keeping the EUR soft. The cleaner edge stays the oil leg: Brent ~$73.2 pins CAD near a 14-mo low (USD/CAD ~1.415).",
+    "nextBigEvent": "US June jobs / NFP (Thu Jul 2, +115k exp, unemp 4.3%) — ADP already soft at +98k, so a cool print is the clean fade of the firm dollar"
   },
-  "dailyRead": "The dollar carries a firm bid into Warsh's Sintra debut and tomorrow's jobs, and the big overnight story is the yen: USD/JPY broke clean through 162 to a fresh 40-year low (~162.3), running the structural long-JPY core straight over. The break — driven by the widest US-Japan rate gap in the cycle plus a fiscally-dovish Japan — puts spot inside the intervention zone with the MoF now a 'when, not if' (yet effectiveness doubted after April's massive op did little). Warsh makes his first international appearance today (13:00 GMT panel with Lagarde, Bailey, Macklem) — expected to say little, which is exactly why any hawkish tilt moves markets; then June NFP (Thu) prints against a soft +130k consensus vs May's hot +172k, the cleanest fade if it cools. Eurozone June flash HICP eased to 3.1% (from 3.2%), softening the EUR again and re-firming the EUR/USD short after Monday's Sintra-trim. The oil leg stays the cleanest edge: Brent ticked up to ~$73 on weekend Iran-US strikes near Hormuz, but both sides 'stood down' (vessels move freely) so the disinflationary base case holds — CAD stays weakest. Best-expressed: USD/CAD long, AUD/CAD long, EUR/USD short; the long-JPY core (USD/JPY short, JPYBASKET long) is being squeezed to fresh 40-yr lows — reduce/defend, do NOT add; wait for intervention as the re-load.",
+  "dailyRead": "Warsh delivered his first international message as Chair and it skewed hawkish-of-neutral: 'prices are too high', inflation stays 'too elevated', and taming it is the Fed's primary objective (even as he was open-minded on AI supply gains). The dollar held its firm bid, but the labor tape cracked first: June ADP printed just +98k (below +110k exp, down from +122k May), tilting Thursday's NFP risk to the downside. The overnight story is still the yen: USD/JPY pushed to ~162.8, grinding toward 163 — a fresh 40-year low on the ~250-275bp US-Japan rate gap plus a fiscally-dovish Japan, with the MoF still watching from the sidelines (intervention 'when, not if', but doubted after April's record op faded). Eurozone June flash HICP eased to 3.1% (from 3.2%), keeping the EUR soft and the EUR/USD short firm. The oil leg stays the cleanest edge: Brent ~$73.2 after the weekend Iran-US Hormuz strikes then a mutual 'stand down' (vessels move freely) — the disinflationary base case holds, and CAD stays weakest, pinned near a 14-mo low. Best-expressed: USD/CAD long, AUD/CAD long, EUR/USD short; the long-JPY core (USD/JPY short, JPYBASKET long) is being run over to fresh 40-yr lows — reduce/defend, do NOT add; wait for intervention as the re-load. Watch a soft NFP (Thu) as the one clean fade of the firm dollar.",
   "strength": [
     {
       "ccy": "USD",
       "score": 3,
-      "verdict": "STRONG (firm into Warsh)",
-      "tag": "Warsh today, jobs tomorrow",
-      "drivers": "Core PCE 3.4% (May, up); headline ~4.1%; CPI 4.2%; NFP +172k (May), unemp 4.3%; Jun consensus +130k. Fed 3.50-3.75%, hawkish hold, dots flip next move to a HIKE (median 3.8%). DXY ~101.3.",
-      "forward": "🦅 Warsh speaks today; jobs tomorrow: hot PCE + a hike-dot back a hawkish Warsh, but the in-line print keeps Sept odds sub-50%. Risk: a cool Jul 2 jobs (+130k exp) is the clean fade. Next FOMC Jul 28-29."
+      "verdict": "STRONG (firm post-Warsh)",
+      "tag": "Warsh hawkish; ADP soft, jobs Thu",
+      "drivers": "Warsh (Sintra) 'prices too high', inflation 'too elevated'. Core PCE 3.4% (May, up); headline ~4.1%; CPI 4.2%; unemp 4.3%. June ADP +98k (soft); NFP consensus +115k (Thu). Fed 3.50-3.75%, hawkish hold, dots flip next move to a HIKE (median 3.8%). DXY ~101.3.",
+      "forward": "🦅 Warsh confirmed a hawkish tilt ('prices too high'), but soft ADP (+98k) tilts Thu NFP risk lower; Sept odds sub-50%. Risk: a cool Jul 2 NFP (+115k exp) is the clean fade. Next FOMC Jul 28-29."
     },
     {
       "ccy": "GBP",
@@ -46,7 +46,7 @@
       "score": 0,
       "verdict": "MIXED (spot run over)",
       "tag": "structural-up vs a 40-yr-low spot",
-      "drivers": "Core ~1.5%; CPI ~2.8%; Tokyo core re-accelerating. BoJ 1.00% (hiked Jun 16), Ueda/Tamura back more hikes; but USD/JPY broke 162 to ~162.3 (lowest yen since 1986) on the rate gap + fiscal-dovish Japan.",
+      "drivers": "Core ~1.5%; CPI ~2.8%; Tokyo core re-accelerating; Tankan surged. BoJ 1.00% (hiked Jun 16), Ueda/Tamura back more hikes; but USD/JPY ~162.8 toward 163 (lowest yen since 1986) on the rate gap + fiscal-dovish Japan.",
       "forward": "🦅↔ Destination up, spot at a 40-yr low. Tokyo core re-accelerating backs more BoJ hikes, but the rate gap + fiscal-dovish Japan dominate; intervention now 'when not if' but doubted post-April — two-sided, the swing. Next BoJ Jul 31."
     },
     {
@@ -71,8 +71,8 @@
       "sym": "USD/CAD",
       "bias": "LONG",
       "conv": "HIGH",
-      "why": "Cleanest pair: firm US dollar into Warsh (hot PCE + hike-dot) vs CAD near a 14-mo low on Brent ~$73. Hot CPI 3.2% only a floor (core ~2%); technical recession. ~1.415.",
-      "risk": "An oil re-spike (Hormuz flare / Lebanon) rescues CAD; a cool Jul 2 NFP fades the USD leg."
+      "why": "Cleanest pair: firm US dollar (Warsh hawkish 'prices too high' + hot PCE + hike-dot) vs CAD near a 14-mo low on Brent ~$73. Hot CPI 3.2% only a floor (core ~2%); technical recession. ~1.415.",
+      "risk": "An oil re-spike (Hormuz flare / Lebanon) rescues CAD; a soft Jul 2 NFP (ADP +98k) fades the USD leg."
     },
     {
       "sym": "AUD/CAD",
@@ -85,8 +85,8 @@
       "sym": "EUR/USD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Re-firmed: June flash HICP eased to 3.1% (softens EUR again), undoing part of the Sintra-trim, into a firm dollar bid ahead of Warsh + jobs.",
-      "risk": "A soft Jul 2 NFP lifts it; a dovish-surprise Warsh removes the USD prop."
+      "why": "Firm: June flash HICP eased to 3.1% (softer EUR) into a firm dollar bid; Warsh's hawkish Sintra tone keeps the hawkish-Fed-vs-gradual-ECB divergence in focus.",
+      "risk": "A soft Jul 2 NFP lifts it (ADP +98k the warning); a dovish EUR-supportive shift."
     },
     {
       "sym": "EUR/JPY",
@@ -106,7 +106,7 @@
       "sym": "USD/JPY",
       "bias": "SHORT",
       "conv": "LOW",
-      "why": "Structural core (BoJ hiking, coord watch) but RUN OVER: broke 162 to ~162.3, a 40-yr low. Reduce/defend, do NOT add; wait for intervention as the re-load.",
+      "why": "Structural core (BoJ hiking, coord watch) but RUN OVER: ~162.8 grinding toward 163, a 40-yr low. Reduce/defend, do NOT add; wait for intervention as the re-load.",
       "risk": "Momentum toward 163-164; a JOINT intervention spike is the only violent snap-back."
     },
     {
@@ -197,14 +197,14 @@
       "sym": "DXY",
       "bias": "LONG",
       "conv": "LOW-MED",
-      "why": "Firm into Warsh + jobs; PCE + hike-dot validate the leg and the index holds ~101.3, but Sept odds sub-50%; EUR (flash 3.1% softens) / JPY (40-yr low) / GBP / CAD all soft vs USD.",
-      "risk": "A cool Jul 2 NFP fades a stretched long; a dovish-surprise Warsh; positioning extreme."
+      "why": "Firm post-Warsh (hawkish 'prices too high'); index holds ~101.3, but soft ADP (+98k) tilts Jul 2 NFP risk lower and Sept odds sub-50%; EUR (flash 3.1% soft) / JPY (40-yr low) / GBP / CAD all soft vs USD.",
+      "risk": "A cool Jul 2 NFP fades a stretched long; positioning extreme."
     },
     {
       "sym": "JPYBASKET",
       "bias": "LONG",
       "conv": "LOW",
-      "why": "Being run over: basket at fresh lows as the yen breaks 162 to a 40-yr low — core only, reduce/defend, do NOT add. (Rises when JPY strengthens.)",
+      "why": "Being run over: basket at fresh lows as the yen grinds toward 163, a 40-yr low — core only, reduce/defend, do NOT add. (Rises when JPY strengthens.)",
       "risk": "Wait for a coordinated intervention or a USD pullback to re-load; thesis intact, timing wrong."
     },
     {
@@ -689,21 +689,27 @@
   "catalysts": [
     {
       "date": "Wed Jul 1",
-      "event": "Warsh — first Sintra appearance (13:00 GMT) + US ISM",
+      "event": "Warsh — first Sintra appearance (DONE)",
       "impact": "high",
-      "note": "His first international appearance as Chair, on a panel w/ Lagarde, Bailey, Macklem; expected to say little — which is why any hawkish tilt / forward-guidance signal moves markets."
+      "note": "Said 'prices are too high', inflation 'too elevated', taming it the Fed's primary objective; open-minded on AI supply gains. Hawkish-of-neutral — confirmed the firm-USD leg."
+    },
+    {
+      "date": "Wed Jul 1",
+      "event": "US June ADP — +98k (soft)",
+      "impact": "high",
+      "note": "Below +110k consensus, down from +122k May; tilts Thu NFP risk to the downside — the clean-fade setup."
     },
     {
       "date": "Wed Jul 1",
       "event": "Eurozone June flash HICP — 3.1% (from 3.2%)",
       "impact": "high",
-      "note": "Softer than May; re-softens the EUR and re-firms the EUR/USD short after Monday's Sintra-trim."
+      "note": "Softer than May; keeps the EUR soft and the EUR/USD short firm."
     },
     {
       "date": "Thu Jul 2",
       "event": "US June jobs report (NFP) — early for Jul 4",
       "impact": "high",
-      "note": "Consensus +130k vs May's hot +172k; a cooler print is the cleanest fade of the firm-but-fading dollar."
+      "note": "Consensus +115k, unemp 4.3%; ADP already soft — a cooler print is the cleanest fade of the firm-but-fading dollar."
     },
     {
       "date": "Jul 9",
@@ -755,5 +761,5 @@
     }
   ],
   "geopolitics": "Flows keep the war premium crushed even as the weekend turned noisy. After Iran struck a vessel in the Strait of Hormuz (Thu), the US ran retaliatory strikes on Iranian targets around the strait Fri-Sat, which Iran called an MOU violation — yet by Monday both sides agreed to 'stand down for now,' confirming vessels can move freely, and Hormuz traffic stayed consistent. Brent ticked up only modestly to ~$73 (still ~40% off the wartime peak); the Doha diplomacy remains muddled (Witkoff/Kushner en route, but Qatar's FM said no high-level meeting is scheduled). Net: the base case (truce broadly holds, oil drifts near multi-month lows) survives, with a live but contained respike tail. Transmission: oil → energy/headline inflation → CB hawkishness → FX. Base case keeps a firm dollar bid, supports GER40 and risk-beta AUD on calm days, and does NOT buy a Fed cut (hot May PCE confirmed inflation marked up into the oil drop; disinflation is energy-led). For NZD the lower oil path removed the cost-shock case the RBNZ leaned on (its 4.3% Q3 peak now looks stale) — the Jul 9 poll now leans hold, though UBS/ING still see a hike, so the kiwi is a genuine coin-flip. For CAD the hot CPI (3.2%, gasoline +33% y/y) only partly offsets the oil drag → soft-and-capped, the export side pressed hardest at ~$73 (loonie near a 14-mo low). Tail (alive but contained): a Doha-talks stall / Lebanon escalation re-spikes oil (rescues CAD, hurts AUD/NZD/GER40, hands USD & JPY competing haven bids) — the persistent ~$4,200 gold bid is the thin premium for exactly this.",
-  "updatedAt": "2026-07-01T05:17:17.709Z"
+  "updatedAt": "2026-07-01T18:21:34.881Z"
 }
