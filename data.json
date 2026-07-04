@@ -1,21 +1,21 @@
 {
   "meta": {
-    "reportDate": "2026-07-03",
-    "reportLabel": "Fri Report — suspected JPY AMBUSH intervention (~1% surge, 2:30am ET, biggest move since Apr 30) in the thin US-holiday tape; RBNZ Jul 8 FLIPPED to consensus HOLD (was ~70% hike); Brent <$71 glut deepens - CAD weakest; EZ flash core wrinkle (2.5% up) keeps a Sept ECB hike alive.",
+    "reportDate": "2026-07-04",
+    "reportLabel": "Sat Report — JPY follow-through CONFIRMED (past 161, 2nd day, Katayama backing): JPY complex upgraded; Fed Sept hike odds halved to ~53% post-NFP - USD momentum cracking, DXY cut to RANGE; RBNZ Wed re-muddied to a COIN-FLIP (OIS ~70% hike vs bank hold) - NZD/CAD cut to MED; funeral week = oil headline vacuum.",
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40",
-    "regime": "Thin-tape intervention regime inside an oil-glut disinflation world. The flagged Friday window delivered: a suspected no-warning MoF ambush (~1% JPY surge at 2:30am ET, largest move since Apr 30) after Reuters revealed Tokyo's shift to unsignalled strikes - the short-JPY carry trade now faces invisible tape-bombs. Beneath it, the glut deepens (Brent <$71, Hormuz >10mn b/d, Iran 40mn+ bbl shipped) pinning CAD as weakest, while Warsh's hawkish hold (CPI 4.2%, ~80% priced zero '26 cuts) keeps USD firm despite the +57k NFP miss. RBNZ Jul 8 flipped to consensus HOLD; Doha talks paused Jul 4-9 for Khamenei's funeral.",
-    "nextBigEvent": "RBNZ Wed Jul 8 - flipped to consensus HOLD (was ~70% hike), surprise-hike tail makes NZD risk asymmetric UP; funeral-week oil headlines the rolling tail"
+    "regime": "The intervention regime got its confirmation: JPY strengthened past 161 Friday - a second straight day of gains after Thursday's suspected ambush - with FinMin Katayama saying authorities 'stand ready to intervene at any time.' The long-JPY re-load signal has triggered. Beneath it, the +57k NFP miss is biting: Sept Fed-hike odds fell to ~53% (from 60-64%), yields dropped and USD momentum cracked at the margin (still floored by zero-cuts pricing). The oil glut (WTI ~$68.5, Brent ~$70.5, lowest since late Feb) keeps CAD weakest - it lagged even Friday's bounce. RBNZ Wed is a genuine coin-flip; Doha talks paused Jul 4-9 for Khamenei's funeral.",
+    "nextBigEvent": "Wed Jul 8 double event: coin-flip RBNZ (OIS ~70% hike vs bank-economist hold) + Fed June minutes; funeral-week oil headlines the rolling tail"
   },
-  "dailyRead": "The overnight headline is the yen: at ~2:30am ET in today's thin pre-US-holiday tape, JPY surged ~1% - the largest single move since the April 30 intervention - and markets suspect Tokyo's first no-warning AMBUSH strike (Reuters revealed the tactic shift this week; official silence is the point). USD/JPY had touched 162.66, weakest since 1986. The deeper regime is unchanged: the oil supply glut (Brent below $71, lowest since late February; Hormuz flows >10mn b/d, Iran 40mn+ bbl shipped post-blockade) pins CAD as the clear weakest, while Warsh's hawkish hold (CPI 4.2%, zero 2026 cuts ~80% priced) keeps the dollar firm despite the +57k NFP miss. Two forward shifts today: RBNZ Jul 8 has FLIPPED from ~70% hike to a consensus HOLD (banks now see hikes from Aug/Sep) - NZD-long expressions trimmed (NZD/CAD now rides the oil leg alone); and the EZ June flash hid a hawkish detail - core ROSE to 2.5% even as headline cooled to 2.8%, keeping a Sept ECB hike alive under the soft-EUR thesis. Cleanest trades remain the CAD shorts: USD/CAD, AUD/CAD, NZD/CAD longs; EUR/USD short at MEDIUM; the long-JPY core may finally have its re-load signal - add ONLY on confirmed intervention follow-through. Doha talks pause Jul 4-9 for Khamenei's funeral: a headline vacuum over every oil-linked position.",
+  "dailyRead": "The yen got its follow-through: after Thursday's suspected 2:30am ambush, JPY strengthened past 161 on Friday - a second consecutive day of gains - with Finance Minister Katayama stating authorities 'stand ready to intervene at any time.' The re-load signal flagged yesterday has TRIGGERED: the JPY complex is upgraded across the board (USD/JPY and CAD/JPY shorts to MEDIUM, JPYBASKET long to MEDIUM). Meanwhile the +57k NFP miss is biting the dollar harder than Thursday suggested - Sept hike odds fell to ~53% (from 60-64%), yields dropped, and USD finished at the bottom of the majors table before stabilizing; Warsh's July 1 'prices are too high' line keeps the hold hawkish, but USD momentum has cracked at the margin (DXY cut to RANGE). The oil glut still pins CAD as clear weakest (WTI ~$68.5 / Brent ~$70.5, lowest since late Feb - CAD lagged even Friday's small pre-weekend bounce, the tell of a structurally offered currency), and RBNZ Wednesday has re-muddied into a genuine coin-flip (OIS still prices ~70% hike; ASB/Westpac/ANZ all forecast hold) - NZD/CAD is cut HIGH->MED on event risk. Cleanest board: USD/CAD and AUD/CAD longs, plus the freshly-armed JPY shorts. Funeral week = five days of frozen diplomacy and gap risk over every oil-linked position.",
   "strength": [
     {
       "ccy": "USD",
       "score": 2,
-      "verdict": "STRONG → FIRM",
-      "tag": "hawkish hold intact; NFP dented, didn't break",
-      "drivers": "CPI 4.2% headline / core 2.9% (May, highest since Sep-25); June NFP +57k miss BUT unemployment FELL to 4.2% (participation-driven); Fed 3.50-3.75%, dots erased 2026 cuts and flag a possible hike; ~80% priced: zero cuts in 2026.",
-      "forward": "🦅⚖️ Hawkish hold intact into the Jul 28-29 FOMC: the NFP miss pared the hike tail (Sept ~50/50) but a falling jobless rate + 4%+ CPI bar cuts entirely; Warsh's 130-word statement = deliberate hawkish minimalism. Risk: a SECOND soft labor print kills the hike tail and unwinds stretched USD longs. Next FOMC Jul 28-29."
+      "verdict": "STRONG → momentum cracking",
+      "tag": "hike tail halved: Sept ~53% post-NFP",
+      "drivers": "CPI 4.2% headline / core 2.9% (May); June NFP +57k big miss, unemp 4.2%; Fed 3.50-3.75% hawkish hold, zero 2026 cuts priced; Sept hike odds fell to ~53% (from 60-64%), yields lower; Warsh Jul 1: 'prices are too high' - no forward guidance.",
+      "forward": "🦅⚖️ Hawkish hold into the Jul 28-29 FOMC but the hike tail is halved (Sept ~53%); the zero-cut floor holds USD up while the NFP miss removed the motor. Jun CPI (~Jul 14) either re-arms the tail or confirms the crack. Risk: a second soft labor print unwinds stretched longs. Next FOMC Jul 28-29."
     },
     {
       "ccy": "GBP",
@@ -26,44 +26,44 @@
       "forward": "🦅 Hawkish - the services re-acceleration keeps the hike-tail and both dissents alive into the Jul 30 MPR round. Risk: a soft activity/labor wave re-splits the MPC. Next BoE Jul 30."
     },
     {
+      "ccy": "JPY",
+      "score": 1,
+      "verdict": "MIXED → FIRMING (confirmed)",
+      "tag": "past 161: 2nd day of gains + Katayama",
+      "drivers": "Core CPI 1.4% (May, subsidy-suppressed); unemp 2.5%, jobs/applicants 1.26 tight. BoJ 1.00% (hiked Jun 16, 7-1), guides more hikes. JPY past 161 Friday (from the 162.66 low) - second straight day of gains after the suspected ambush; Katayama: ready to intervene 'at any time.'",
+      "forward": "🦅 Follow-through CONFIRMED: two days of gains + verbal backing + the no-warning regime + the BoJ hike path (Jul 30-31 next) - long-JPY adds now justified, trail stops rather than pyramid. Risk: a full April-style retrace (¥11.7tn round had two good days too); the ~250bp+ carry gap. Next BoJ Jul 30-31."
+    },
+    {
       "ccy": "AUD",
       "score": 1,
       "verdict": "MIXED → firmer floor",
       "tag": "sticky 3.6% trim, 4.70% priced by Dec",
       "drivers": "May CPI: trimmed mean 3.6% (up from 3.4%); headline 4.0% (RBA sees a 4.8% Q2 peak); unemp 4.5% loosening. RBA 4.35% (hiked May), held Jun; market prices ~4.70% by year-end.",
-      "forward": "⚖️🦅 Sticky trim + year-end pricing keeps an Aug 11 hike tail open; AUD capped sub-0.70 by the firm USD and the oil-glut hit to commodity beta. Risk: cool Q2 jobs/CPI or risk-off flushes the beta. Next RBA Aug 11."
+      "forward": "⚖️🦅 Sticky trim + year-end pricing keeps an Aug 11 hike tail open; AUD capped sub-0.70 by the oil-glut hit to commodity beta. Risk: cool Q2 jobs/CPI or risk-off flushes the beta. Next RBA Aug 11."
     },
     {
       "ccy": "NZD",
       "score": 0,
-      "verdict": "MIXED (hike lean faded)",
-      "tag": "Jul 8 flipped to consensus HOLD",
-      "drivers": "CPI 3.1% Q1 (RBNZ sees >4% Q2, 4.3% Q3 peak); unemp 5.3% Q1 (edging down from 5.4%). RBNZ 2.25%, held since Nov; May was a 3-3 split decided by Governor Breman's casting vote.",
-      "forward": "⚖️ FORWARD SHIFT: Jul 8 is now a consensus HOLD (was ~70% hike) - the oil slide gutted the cost-shock case and bank economists (ASB/Westpac/ANZ) see hikes from Aug/Sep instead; UBS warns of de-anchoring if they wait. Hawkish-hold tone likely. Risk: a surprise 25bp hike (half the MPC wanted it in May) squeezes NZD sharply higher. Next RBNZ Jul 8."
-    },
-    {
-      "ccy": "JPY",
-      "score": 0,
-      "verdict": "MIXED — intervention LIVE",
-      "tag": "suspected ambush: +1% surge in thin tape",
-      "drivers": "Core CPI 1.4% (May, subsidy-suppressed, lowest since Mar-22); headline 1.5%; unemp 2.5%, jobs/applicants 1.26 tight. BoJ 1.00% (hiked Jun 16, 7-1; 31-yr high), guides more hikes; USD/JPY touched 162.66 (weakest since 1986) before the overnight move.",
-      "forward": "🦅↔ The spot game changed: a suspected no-warning AMBUSH (~1% JPY surge, 2:30am ET, biggest move since Apr 30) after Reuters revealed the tactic shift - shorts now face invisible tape-bombs, and the BoJ path (more hikes, medium-term overshoot) backs the destination. Risk: if it fades like the ¥11.7tn April round, 163+ resumes - add long-JPY only on follow-through. Next BoJ Jul 30-31."
+      "verdict": "MIXED — coin-flip Wednesday",
+      "tag": "Jul 8: OIS ~70% hike vs bank hold",
+      "drivers": "CPI 3.1% Q1 (RBNZ sees >4% Q2, 4.3% Q3 peak); unemp 5.3% Q1. RBNZ 2.25%; May was a 3-3 split decided by Governor Breman's casting vote.",
+      "forward": "⚖️🦅 RE-MUDDIED: Jul 8 is a genuine coin-flip - OIS still prices ~70%+ of a 25bp hike while ASB/Westpac/ANZ all forecast a hold (hikes from Aug/Sep); 'a closer call than markets expect.' Either way H2 tightening is the base case. Risk: two-way - a dovish-hold tone flushes the priced hike; a hike squeezes NZD sharply higher. Next RBNZ Jul 8."
     },
     {
       "ccy": "EUR",
       "score": -1,
       "verdict": "SOFT — core wrinkle",
       "tag": "flash 2.8% cooling BUT core up to 2.5%",
-      "drivers": "EZ June flash HICP 2.8% (down from 3.2%; energy 8.7% from 10.8%, services 3.2% from 3.5%) BUT core ROSE to 2.5% from 2.2%. Unemp 6.3%. ECB 2.25% depo (hiked Jun 11, first since 2023), meeting-by-meeting.",
-      "forward": "⚖️ Two-handed flash: the cooling headline guts Jul 23 urgency (hold expected), but rising core keeps a Sept hike alive - the dovish EUR read is less clean than headline suggests. Risk: a hawkish Jul 23 tone on the core print squeezes EUR shorts. Next ECB Jul 23."
+      "drivers": "EZ June flash HICP 2.8% (down from 3.2%; energy 8.7% from 10.8%) BUT core ROSE to 2.5% from 2.2%. Unemp 6.3%. ECB 2.25% depo (hiked Jun 11, first since 2023), meeting-by-meeting.",
+      "forward": "⚖️ Two-handed flash: the cooling headline guts Jul 23 urgency (hold expected), but rising core keeps a Sept hike alive - the dovish EUR read is not clean. Risk: a hawkish Jul 23 tone on the core print squeezes EUR shorts. Next ECB Jul 23."
     },
     {
       "ccy": "CAD",
       "score": -3,
       "verdict": "SOFT — weakest (oil glut)",
-      "tag": "Brent <$71, loonie at a 14-mo low",
-      "drivers": "May CPI 3.2% (energy-driven; ex-energy 2.1%, trim ~2.0%); unemp 6.6%; May jobs +88k but flat since Jan, wages 3.0% cooling; technical recession. BoC 2.25%, 5th straight hold (Jun 10), looking through energy.",
-      "forward": "🔻 The oil GLUT is the story: Brent <$71 (lowest since late Feb) with Hormuz >10mn b/d and Doha progress erodes the energy-CPI floor while the terms-of-trade hit deepens; BoC sidelined Jul 15. Risk: funeral-week talks collapse / fresh Hormuz incident re-spikes oil and rescues the loonie. Next BoC Jul 15."
+      "tag": "lagged even Friday's oil bounce",
+      "drivers": "May CPI 3.2% (energy-driven; ex-energy 2.1%, trim ~2.0%); unemp 6.6%; jobs flat since Jan, wages 3.0% cooling; technical recession. BoC 2.25%, 5th straight hold, looking through energy. WTI ~$68.5 / Brent ~$70.5 - lowest since late Feb.",
+      "forward": "🔻 The glut deepens and CAD lagged even Friday's pre-weekend oil bounce - the tell of a structurally offered currency; the energy-CPI floor erodes while the terms-of-trade hit deepens; BoC sidelined Jul 15. Risk: a funeral-week Hormuz incident re-spikes oil; a Jul 10 jobs surprise. Next BoC Jul 15."
     }
   ],
   "symbols": [
@@ -71,8 +71,8 @@
       "sym": "USD/CAD",
       "bias": "LONG",
       "conv": "HIGH",
-      "why": "Cleanest macro split: hawkish-hold Fed vs a BoC looking through CPI while the oil glut (Brent <$71) pins CAD at a 14-mo low ~1.42.",
-      "risk": "Oil re-spike on a funeral-week talks breakdown; a second soft US labor print."
+      "why": "Cleanest macro split: hawkish-hold Fed vs a BoC looking through CPI while the glut pins CAD at a 14-mo low ~1.42; CAD lagged even Friday's oil bounce.",
+      "risk": "An oil re-spike on a funeral-week incident; soft US CPI Jul 14."
     },
     {
       "sym": "AUD/CAD",
@@ -84,44 +84,58 @@
     {
       "sym": "NZD/CAD",
       "bias": "LONG",
-      "conv": "HIGH",
-      "why": "CAD leg still carries it (glut deepening); NZD leg DOWNGRADED - Jul 8 flipped to a hold - so conviction rests on oil, not the RBNZ. Size accordingly into Wednesday.",
-      "risk": "A dovish RBNZ-hold tone presses NZD; an oil bid lifts CAD."
+      "conv": "MEDIUM",
+      "why": "DOWNGRADED HIGH->MED: the CAD leg still carries it, but RBNZ Wednesday re-muddied into a coin-flip - binary event risk both ways. Re-assess Thursday.",
+      "risk": "A dovish-hold tone presses NZD; an oil bid lifts CAD."
     },
     {
-      "sym": "EUR/USD",
+      "sym": "USD/JPY",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Cooling 2.8% flash + spent ECB urgency vs a still-hawkish Fed; ~1.14 pivot.",
-      "risk": "The core-2.5% wrinkle turns Jul 23 hawkish; a second soft NFP dents the USD leg."
+      "why": "UPGRADED LOW-MED->MED: follow-through confirmed - JPY past 161, 2nd day of gains, Katayama backing; the no-warning regime + BoJ path now have momentum.",
+      "risk": "A full April-style retrace; the ~250bp+ carry gap; hot US CPI."
+    },
+    {
+      "sym": "CAD/JPY",
+      "bias": "SHORT",
+      "conv": "MEDIUM",
+      "why": "UPGRADED LOW-MED->MED: the cleanest JPY cross - the weakest currency vs the firming one; both legs pulling the same way.",
+      "risk": "An oil re-spike lifts CAD; the JPY move fades."
     },
     {
       "sym": "EUR/JPY",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Soft EUR + the suspected ambush finally puts a tape-bomb under every XXX/JPY rally.",
-      "risk": "If the ambush fades like April's ¥11.7tn round, the yen-weakness grind resumes."
+      "why": "Soft EUR + confirmed intervention follow-through under every XXX/JPY rally.",
+      "risk": "A hawkish ECB Jul 23 on the core print; a JPY fade."
     },
     {
-      "sym": "USD/JPY",
+      "sym": "EUR/USD",
+      "bias": "SHORT",
+      "conv": "MEDIUM",
+      "why": "Cooling 2.8% flash + spent ECB urgency vs the hawkish Fed hold; ~1.14 pivot - but the USD leg lost momentum post-NFP, size modestly.",
+      "risk": "The core-2.5% wrinkle turns Jul 23 hawkish; USD softness extends."
+    },
+    {
+      "sym": "AUD/JPY",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "Upgraded LOW->LOW-MED: the overnight ~1% JPY surge = suspected first AMBUSH; the no-warning regime + BoJ hike path favor the short re-load - add on follow-through ONLY.",
-      "risk": "$73bn already failed; momentum to 163-164 if unconfirmed; the ~250bp+ rate gap."
+      "why": "UPGRADED: carry unwind + a confirmed JPY turn; the risk-on tape still caps conviction.",
+      "risk": "Risk-on carry holds it up."
     },
     {
-      "sym": "CAD/JPY",
+      "sym": "NZD/JPY",
       "bias": "SHORT",
-      "conv": "LOW-MED",
-      "why": "Both legs now work: the oil glut on CAD + the ambush-intervention regime on JPY.",
-      "risk": "The yen-weakness grind resumes; an oil re-spike lifts CAD."
+      "conv": "LOW",
+      "why": "Firming JPY vs a coin-flip NZD; stand aside until Wednesday clears.",
+      "risk": "A surprise RBNZ hike squeezes it up."
     },
     {
-      "sym": "AUD/USD",
+      "sym": "GBP/JPY",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "The NFP miss softened the USD headwind; the 3.6% trim arms an AUD floor - trade sub-0.70 levels.",
-      "risk": "A second soft US print flips it LONG; the glut hitting AUD beta argues lower."
+      "why": "Firm GBP vs firming JPY - but the JPY leg now has momentum; the downside tail is growing.",
+      "risk": "An intervention fade; a hawkish BoE grind up."
     },
     {
       "sym": "GBP/USD",
@@ -131,32 +145,18 @@
       "risk": "A hawkish BoE Jul 30 breaks it up; soft UK activity re-splits it."
     },
     {
+      "sym": "AUD/USD",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "Softer USD momentum vs glut-capped AUD beta - trade sub-0.70 levels.",
+      "risk": "A second soft US print flips it LONG; the glut argues lower."
+    },
+    {
       "sym": "NZD/USD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Jul 8 flipped to hold - the mild upward tilt is gone; level-trade into Wednesday.",
-      "risk": "A surprise hike squeezes it up hard; a USD re-firm on hot US CPI."
-    },
-    {
-      "sym": "GBP/JPY",
-      "bias": "RANGE",
-      "conv": "LOW",
-      "why": "Firm GBP vs ambush-risk JPY - two-sided tape-bomb territory.",
-      "risk": "An intervention spike snaps it lower; firm GBP grinds it up otherwise."
-    },
-    {
-      "sym": "AUD/JPY",
-      "bias": "SHORT",
-      "conv": "LOW",
-      "why": "Carry unwind + the ambush regime argue lower; weak-yen momentum caps conviction.",
-      "risk": "Risk-on carry holds it up until a confirmed intervention campaign."
-    },
-    {
-      "sym": "NZD/JPY",
-      "bias": "SHORT",
-      "conv": "LOW",
-      "why": "Structural JPY destination vs a softer NZD lean post-shift - low conviction either way.",
-      "risk": "Carry dominates near-term; a surprise RBNZ hike lifts it."
+      "why": "Coin-flip RBNZ - do NOT pre-position; level-trade into Wednesday.",
+      "risk": "A hike squeezes it up hard; a dovish hold flushes it."
     },
     {
       "sym": "EUR/AUD",
@@ -169,7 +169,7 @@
       "sym": "EUR/NZD",
       "bias": "SHORT",
       "conv": "LOW",
-      "why": "Downgraded LOW-MED->LOW: the NZD hike lean faded; only the soft-EUR leg remains.",
+      "why": "The soft-EUR leg only; the NZD leg is binary Wednesday.",
       "risk": "A hawkish ECB Jul 23; a dovish RBNZ tone lifts it."
     },
     {
@@ -183,36 +183,36 @@
       "sym": "GBP/NZD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Firm GBP vs a hold-expected RBNZ - a mild GBP tilt; wait for Wednesday.",
+      "why": "Firm GBP vs a coin-flip RBNZ - wait for Wednesday.",
       "risk": "A surprise Jul 8 hike reverses it sharply."
     },
     {
       "sym": "AUD/NZD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Timing edge FLIPPED: the RBA Aug 11 tail now leads a hold-expected RBNZ - a slight AUD tilt.",
-      "risk": "A surprise Jul 8 hike flips it down."
+      "why": "The RBA Aug 11 tail vs a binary RBNZ - stay flat until Wednesday clears.",
+      "risk": "A Jul 8 hike flips it down."
     },
     {
       "sym": "DXY",
-      "bias": "LONG",
+      "bias": "RANGE",
       "conv": "LOW",
-      "why": "Carried by weak counterparts (EUR 57.6% soft, JPY at lows, CAD oil-pinned) + the hawkish hold; the hike tail pared post-NFP.",
-      "risk": "A second soft labor print; a JPY-intervention campaign hits the 13.6% yen weight."
+      "why": "DOWNGRADED LONG->RANGE: the hike tail halved (Sept ~53%), yields fell, and the firming JPY hits the 13.6% weight; the zero-cut floor vs weak counterparts (EUR 57.6%) = range.",
+      "risk": "Hot US CPI Jul 14 re-arms it LONG; a second soft labor print sinks it."
     },
     {
       "sym": "JPYBASKET",
       "bias": "LONG",
-      "conv": "LOW-MED",
-      "why": "Upgraded: the suspected ambush (+1% JPY, biggest move since Apr 30) + no-warning regime + BoJ hike path; basket near multi-decade lows = asymmetric. Add on follow-through. (Rises when JPY strengthens.)",
-      "risk": "April's ¥11.7tn round fully retraced - fade risk until a campaign is confirmed."
+      "conv": "MED",
+      "why": "UPGRADED LOW-MED->MED: follow-through confirmed - 2nd day of JPY gains, past 161, Katayama backing + the BoJ hike path; basket near multi-decade lows = asymmetric. (Rises when JPY strengthens - opposite ticket to XXX/JPY.)",
+      "risk": "April's Y11.7tn round fully retraced - fade risk is never zero; trail stops."
     },
     {
       "sym": "GER40",
       "bias": "LONG",
       "conv": "MED",
-      "why": "Oil-glut tailwind (Brent <$71, war premium crushed) + the cooling EZ headline flash.",
-      "risk": "A funeral-week talks breakdown re-spikes oil; a hawkish ECB core response."
+      "why": "Oil-glut tailwind (war premium crushed) + the cooling EZ headline + global risk-on (Dow at ATH on easing Fed-hike fears).",
+      "risk": "A funeral-week oil re-spike; a hawkish ECB core response."
     }
   ],
   "macro": {
@@ -350,73 +350,6 @@
         ]
       }
     },
-    "AUD": {
-      "inflation": {
-        "value": "4.0%",
-        "trend": "falling",
-        "note": "CPI y/y",
-        "hist": [
-          3.6,
-          3.7,
-          3.8,
-          3.9,
-          4.2,
-          4
-        ]
-      },
-      "growth": {
-        "value": "1.5%",
-        "trend": "falling",
-        "note": "GDP y/y",
-        "hist": [
-          1.9,
-          1.8,
-          1.7,
-          1.6,
-          1.5,
-          1.5
-        ]
-      },
-      "unemployment": {
-        "value": "4.5%",
-        "trend": "rising",
-        "note": "",
-        "hist": [
-          4.1,
-          4.2,
-          4.3,
-          4.4,
-          4.5,
-          4.5
-        ]
-      },
-      "jobs": {
-        "value": "+30k",
-        "trend": "stable",
-        "note": "Employment",
-        "hist": [
-          25,
-          35,
-          20,
-          30,
-          30,
-          30
-        ]
-      },
-      "rates": {
-        "value": "4.35%",
-        "trend": "rising",
-        "note": "RBA cash",
-        "hist": [
-          3.85,
-          4.1,
-          4.1,
-          4.35,
-          4.35,
-          4.35
-        ]
-      }
-    },
     "JPY": {
       "inflation": {
         "value": "1.5%",
@@ -484,6 +417,73 @@
         ]
       }
     },
+    "AUD": {
+      "inflation": {
+        "value": "4.0%",
+        "trend": "falling",
+        "note": "CPI y/y",
+        "hist": [
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.2,
+          4
+        ]
+      },
+      "growth": {
+        "value": "1.5%",
+        "trend": "falling",
+        "note": "GDP y/y",
+        "hist": [
+          1.9,
+          1.8,
+          1.7,
+          1.6,
+          1.5,
+          1.5
+        ]
+      },
+      "unemployment": {
+        "value": "4.5%",
+        "trend": "rising",
+        "note": "",
+        "hist": [
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.5
+        ]
+      },
+      "jobs": {
+        "value": "+30k",
+        "trend": "stable",
+        "note": "Employment",
+        "hist": [
+          25,
+          35,
+          20,
+          30,
+          30,
+          30
+        ]
+      },
+      "rates": {
+        "value": "4.35%",
+        "trend": "rising",
+        "note": "RBA cash",
+        "hist": [
+          3.85,
+          4.1,
+          4.1,
+          4.35,
+          4.35,
+          4.35
+        ]
+      }
+    },
     "NZD": {
       "inflation": {
         "value": "3.1%",
@@ -541,73 +541,6 @@
         "value": "2.25%",
         "trend": "stable",
         "note": "RBNZ OCR",
-        "hist": [
-          2.25,
-          2.25,
-          2.25,
-          2.25,
-          2.25,
-          2.25
-        ]
-      }
-    },
-    "CAD": {
-      "inflation": {
-        "value": "3.2%",
-        "trend": "rising",
-        "note": "CPI y/y",
-        "hist": [
-          2.7,
-          2.8,
-          3,
-          2.8,
-          3.2,
-          3.2
-        ]
-      },
-      "growth": {
-        "value": "0.9%",
-        "trend": "falling",
-        "note": "GDP q/q ann.",
-        "hist": [
-          1.6,
-          1.4,
-          1.2,
-          1,
-          0.9,
-          0.9
-        ]
-      },
-      "unemployment": {
-        "value": "6.6%",
-        "trend": "falling",
-        "note": "",
-        "hist": [
-          6.5,
-          6.7,
-          6.8,
-          6.9,
-          6.9,
-          6.6
-        ]
-      },
-      "jobs": {
-        "value": "+88k",
-        "trend": "rising",
-        "note": "Employment",
-        "hist": [
-          10,
-          25,
-          15,
-          20,
-          10,
-          88
-        ]
-      },
-      "rates": {
-        "value": "2.25%",
-        "trend": "stable",
-        "note": "BoC overnight",
         "hist": [
           2.25,
           2.25,
@@ -684,30 +617,103 @@
           2.25
         ]
       }
+    },
+    "CAD": {
+      "inflation": {
+        "value": "3.2%",
+        "trend": "rising",
+        "note": "CPI y/y",
+        "hist": [
+          2.7,
+          2.8,
+          3,
+          2.8,
+          3.2,
+          3.2
+        ]
+      },
+      "growth": {
+        "value": "0.9%",
+        "trend": "falling",
+        "note": "GDP q/q ann.",
+        "hist": [
+          1.6,
+          1.4,
+          1.2,
+          1,
+          0.9,
+          0.9
+        ]
+      },
+      "unemployment": {
+        "value": "6.6%",
+        "trend": "falling",
+        "note": "",
+        "hist": [
+          6.5,
+          6.7,
+          6.8,
+          6.9,
+          6.9,
+          6.6
+        ]
+      },
+      "jobs": {
+        "value": "+88k",
+        "trend": "rising",
+        "note": "Employment",
+        "hist": [
+          10,
+          25,
+          15,
+          20,
+          10,
+          88
+        ]
+      },
+      "rates": {
+        "value": "2.25%",
+        "trend": "stable",
+        "note": "BoC overnight",
+        "hist": [
+          2.25,
+          2.25,
+          2.25,
+          2.25,
+          2.25,
+          2.25
+        ]
+      }
     }
   },
   "catalysts": [
     {
-      "date": "Fri Jul 3",
-      "event": "US market holiday - thin tape",
-      "impact": "high",
-      "note": "The flagged window DELIVERED: a suspected MoF ambush at ~2:30am ET (~1% JPY surge); more possible into the close."
-    },
-    {
       "date": "Jul 4-9",
       "event": "Khamenei funeral - Doha talks PAUSED",
       "impact": "high",
-      "note": "Both-ways oil tail: 'positive progress' claimed pre-pause, but Iran issued a fresh Hormuz warning Jul 2; a headline vacuum over every oil-linked position."
+      "note": "Headline vacuum over every oil-linked position; Iran's Jul 2 Hormuz warning on the record; Monday-open gap risk."
+    },
+    {
+      "date": "Mon Jul 6",
+      "event": "US ISM Services; EZ retail sales",
+      "impact": "med",
+      "note": "First US read post-NFP miss - a weak ISM extends the USD slide."
     },
     {
       "date": "Wed Jul 8",
-      "event": "RBNZ decision",
+      "event": "RBNZ decision + Fed June minutes",
       "impact": "high",
-      "note": "FLIPPED to consensus HOLD (was ~70% hike); the surprise-hike tail makes NZD risk asymmetric UP - the NZD event."
+      "note": "The double event: a coin-flip RBNZ (OIS ~70% hike vs bank-economist hold) + minutes color on the erased-cuts dots."
+    },
+    {
+      "date": "Thu Jul 9",
+      "event": "China CPI",
+      "impact": "med",
+      "note": "Commodity-bloc (AUD/NZD) demand pulse."
     },
     {
       "date": "Fri Jul 10",
-      "event": "Canada June jobs",
+      "event": "Canada June jobs; Germany CPI final",
       "impact": "med",
       "note": "Whether May's +88k was noise; feeds BoC Jul 15."
     },
@@ -715,7 +721,7 @@
       "date": "~Jul 14",
       "event": "US June CPI",
       "impact": "high",
-      "note": "The 4.2%-headline regime check - sets the FOMC hike-tail."
+      "note": "The 4.2%-regime check - re-arms or kills the Sept hike (~53%)."
     },
     {
       "date": "Jul 15",
@@ -727,7 +733,7 @@
       "date": "~Jul 16",
       "event": "NZ Q2 CPI",
       "impact": "high",
-      "note": "RBNZ expects >4% - validates or kills the Aug/Sep hike path."
+      "note": "RBNZ expects >4% - validates or kills the H2 hike path."
     },
     {
       "date": "~Jul 22",
@@ -739,39 +745,33 @@
       "date": "Jul 23",
       "event": "ECB decision",
       "impact": "med",
-      "note": "Hold; watch the core-2.5% language - the Sept-hike signal."
+      "note": "Hold; the core-2.5% language is the Sept-hike signal."
     },
     {
       "date": "Jul 28-29",
       "event": "FOMC",
       "impact": "high",
-      "note": "Warsh round 2; hold + hawkish minimalism expected; Sept ~50/50."
-    },
-    {
-      "date": "Jul 30",
-      "event": "BoE decision + MPR",
-      "impact": "med",
-      "note": "7-2 hold expected; the dissent count is the GBP signal."
+      "note": "Warsh round 2; hold + hawkish minimalism; Sept ~53%."
     },
     {
       "date": "Jul 30-31",
-      "event": "BoJ decision",
+      "event": "BoE + MPR / BoJ decisions",
       "impact": "high",
-      "note": "Hold 1.00%; guidance on further hikes + intervention coordination post-ambush."
+      "note": "Dissent count for GBP; post-ambush BoJ guidance for JPY."
     },
     {
       "date": "Rolling",
       "event": "Oil supply glut",
       "impact": "high",
-      "note": "Brent <$71 (lowest since late Feb); Iran 40mn+ bbl, record Russian exports, floating storage building - the CAD pain."
+      "note": "WTI ~$68.5 / Brent ~$70.5 (lowest since late Feb); Iran 40mn+ bbl, record Russian exports - the CAD pain."
     },
     {
       "date": "Rolling",
       "event": "MoF ambush watch",
       "impact": "high",
-      "note": "The no-warning regime is confirmed by Reuters sources - every thin tape is now live; do not carry short-JPY into thin sessions."
+      "note": "Follow-through confirmed but the regime stays live - never carry short-JPY into thin sessions."
     }
   ],
-  "geopolitics": "The war has moved from battlefield to funeral hall and negotiating table. Khamenei's state funeral runs July 4-9 (he was assassinated Feb 28 in the strikes that opened the war; successor Mojtaba Khamenei will reportedly skip it for security reasons) and the Doha indirect talks are PAUSED until it ends - after a week both sides called 'positive progress,' with Trump saying denuclearization is 'moving along well.' The market consequence: Brent broke below $71, its lowest since late February, because the supply picture has flipped from blockade to glut - Hormuz flows are back above 10mn b/d with US military escort, the UAE restored 3.9mn b/d of exports, Iran has shipped 40mn+ barrels since the naval blockade lifted, and Russian exports are at records. Transmission: falling oil -> eroding energy-CPI floors -> less CB hawkishness at the margin -> and the currency holding the oil bag is CAD (weakest, USD/CAD ~1.42, a 14-mo low). Falling oil is also the GER40 tailwind, softened the RBNZ's cost-shock case (part of why Jul 8 flipped to a hold), and does NOT buy a Fed cut - US disinflation is energy-led while core runs 2.9%. The tail is funeral week itself: talks frozen, emotions high, Iran's Jul 2 Hormuz warning on the record, and Tehran still demanding maritime control of the strait - a fresh incident with negotiators sidelined would re-spike oil into a market that has fully crushed the war premium (rescuing CAD, hurting AUD/NZD/GER40, handing USD and JPY competing haven bids). With floating storage high, though, even a spike likely fades faster than prior episodes.",
-  "updatedAt": "2026-07-03T05:20:18.318Z"
+  "geopolitics": "Funeral week has begun: Khamenei's rites opened July 4 (running through July 9 across Tehran, Qom and Mashhad; 15-20 million mourners expected - the largest state funeral in Iran's history) and the Doha talks are PAUSED until it ends. The concluded round was substantive: two days on Strait of Hormuz maritime traffic and financial incentives for Iran - Axios reports the US is literally negotiating Tehran out of charging TOLLS on the strait, and Tehran still publicly asserts control over it. Oil steadied into the long weekend - WTI ~$68.5, Brent ~$70.5, still the lowest since late February - as traders secured supply pre-holiday; the structural glut is intact (Hormuz >10mn b/d with US escort, UAE 3.9mn b/d restored, Iran 40mn+ bbl shipped, record Russian exports, floating storage building). Transmission unchanged: falling oil -> eroding energy-CPI floors -> less CB hawkishness at the margin -> CAD holds the bag (it lagged even Friday's bounce - the tell). Falling oil remains the GER40 tailwind and does NOT buy a Fed cut (US core runs 2.9%; the disinflation is energy-led). The tail is the vacuum itself: five days of frozen diplomacy, high emotion, and a standing Iranian Hormuz warning - an incident with negotiators sidelined would re-spike oil into a market that has fully crushed the war premium (rescuing CAD, hurting AUD/NZD/GER40, handing USD and JPY competing haven bids). With floating storage high, even a spike likely fades faster than prior episodes.",
+  "updatedAt": "2026-07-04T05:18:44.214Z"
 }
