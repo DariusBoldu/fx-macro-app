@@ -41,6 +41,22 @@ function main() {
   if (ccys !== expected) {
     throw new Error('strength[] must be exactly the 7 currencies, got: ' + ccys);
   }
+  // Universe is 24: 18 pairs + DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL.
+  // Transition safety: if a task run still emits the old 21 (no commodities),
+  // carry the 3 commodity entries forward from the last publish instead of
+  // failing the whole pipeline — and warn loudly so the run report shows it.
+  const COMMODITIES = ['XAU/USD', 'XAG/USD', 'USOIL'];
+  const have = new Set(FX.symbols.map((s) => s.sym));
+  const missingComms = COMMODITIES.filter((c) => !have.has(c));
+  if (missingComms.length) {
+    let prev = {};
+    try {
+      (JSON.parse(fs.readFileSync(OUT, 'utf8')).symbols || []).forEach((s) => { prev[s.sym] = s; });
+    } catch (e) { /* no previous publish */ }
+    missingComms.forEach((c) => { if (prev[c]) FX.symbols.push(prev[c]); });
+    console.warn('WARNING: data.js is missing ' + missingComms.join(', ') +
+      ' — carried forward from the previous data.json. Update the daily task to analyse all 24 symbols.');
+  }
   if (FX.symbols.length !== 24) {
     throw new Error('symbols[] must be 24 (18 pairs + DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL), got: ' + FX.symbols.length);
   }

@@ -1,6 +1,17 @@
 # Prompt for Cowork — update the daily forex task
 
-Paste everything below to Cowork to update the existing daily report task.
+Paste the relevant section below to Cowork to update the existing daily report task.
+
+---
+
+## Update 2 (2026-07-05): add XAU/USD, XAG/USD, USOIL — 24 symbols
+
+Please update my daily forex report task: the symbol universe grows from 21 to **24** — the 18 pairs + DXY + JPYBASKET + GER40 are now joined by **XAU/USD (gold), XAG/USD (silver) and USOIL (WTI crude)**. Concretely:
+
+1. In `Forex_Dashboard/data.js` → `symbols[]`, analyse and include all 24 every day. For the three commodities use `sym: "XAU/USD"`, `sym: "XAG/USD"`, `sym: "USOIL"` with the same `{bias, conv, why, risk}` shape. They are USD-quoted commodity CFDs: gold and silver trade the haven/real-rates/Fed axis (plus silver's industrial leg), USOIL is WTI — tie it into the existing oil→FX transmission read (it already drives the CAD/GER40 analysis; now give oil its own bias too).
+2. Update `meta.coverage` to: `"USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL"`.
+3. In `fx_bias_indicator.pine`, add matching branches for tickers `XAUUSD`, `XAGUSD`, `USOIL` (biases must mirror `symbols[]` exactly, as for all other symbols), and update the Coverage comment. The 2026-07-05 version of the file already contains the three branches plus the forward-bias table handling for them — keep that structure when regenerating.
+4. Everything else (macro block, publish steps, push notification) is unchanged. Note: `build-data-json.js` now validates 24 symbols; if a run omits the commodities it carries the previous day's three forward and prints a WARNING — treat that warning as a signal the task prompt needs fixing.
 
 ---
 
