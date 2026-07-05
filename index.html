@@ -87,7 +87,7 @@
       <div class="filters" id="filters"></div>
       <div id="signals"></div>
       <div class="disclaimer">LONG = buy the pair · JPYBASKET rises when JPY strengthens (opposite ticket to XXX/JPY) ·
-        GER40 is an equity index (macro/risk-driven).<br>Not financial advice — for your own decision-making.</div>
+        GER40 is an equity index (macro/risk-driven) · XAU/XAG/USOIL are USD-quoted commodity CFDs.<br>Not financial advice — for your own decision-making.</div>
     </section>
 
     <!-- Calendar -->
@@ -112,8 +112,8 @@
             <div class="riskrow"><input id="cRisk" type="text" inputmode="decimal" autocomplete="off" placeholder="1" min="0">
               <select id="cRiskMode"><option value="pct">%</option><option value="amt">amount</option></select></div>
           </label>
-          <label class="fld"><span>Stop loss (pips)</span><input id="cSl" type="text" inputmode="decimal" autocomplete="off" placeholder="20" min="0"></label>
-          <div class="fld"><span>1 pip size</span><div class="pipbox" id="cPip">0.0001</div></div>
+          <label class="fld"><span id="cSlLabel">Stop loss (pips)</span><input id="cSl" type="text" inputmode="decimal" autocomplete="off" placeholder="20" min="0"></label>
+          <div class="fld"><span id="cPipLabel">1 pip size</span><div class="pipbox" id="cPip">0.0001</div></div>
         </div>
         <div class="calcres">
           <div class="stat"><div class="sv accent" id="rLots">—</div><div class="sl">Lots (trade size)</div></div>
@@ -122,7 +122,7 @@
         </div>
         <div class="calcnote" id="cNote"></div>
       </div>
-      <div class="disclaimer">Lots rounded to 0.01 · standard lot = 100,000 units · cross-currency conversions use ~daily ECB rates.<br>Not financial advice — for your own decision-making.</div>
+      <div class="disclaimer">Lots rounded to 0.01 · FX lot = 100,000 units · gold 100 oz / silver 5,000 oz / WTI 1,000 bbl per lot (for these, enter the stop as a $ price move) · cross-currency conversions use ~daily ECB rates. Check your broker's contract specs.<br>Not financial advice — for your own decision-making.</div>
     </section>
   </main>
 

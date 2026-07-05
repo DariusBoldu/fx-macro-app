@@ -41,8 +41,8 @@ function main() {
   if (ccys !== expected) {
     throw new Error('strength[] must be exactly the 7 currencies, got: ' + ccys);
   }
-  if (FX.symbols.length !== 21) {
-    throw new Error('symbols[] must be 21 (18 pairs + DXY + JPYBASKET + GER40), got: ' + FX.symbols.length);
+  if (FX.symbols.length !== 24) {
+    throw new Error('symbols[] must be 24 (18 pairs + DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL), got: ' + FX.symbols.length);
   }
 
   // macro pillars (Inflation/Growth/Labour per ccy) for the app's Macro tab.

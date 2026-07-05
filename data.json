@@ -3,7 +3,7 @@
     "reportDate": "2026-07-05",
     "reportLabel": "Sun Report — RBNZ hike bets COLLAPSE (OIS <30% from ~70%): Wed hold near-certain, binary defused, trade the guidance; JPY follow-through holding into tonight's thin Asia open (prime ambush tape); Fed Sept ~50% drifting to October; Iran vows Hormuz fees 'definitely' post-60-day window - a dated late-Aug tail.",
     "horizon": "4H swing",
-    "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40",
+    "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL",
     "regime": "The weekend reprice is in Wellington: OIS collapsed to under 30% for a Jul 8 RBNZ hike (from ~70%) as the oil slide vs the RBNZ's ~$100 May assumption guts July urgency - a hold is near-certain and Wednesday becomes a guidance event (September lift-off is the bank-economist base case). JPY holds its confirmed follow-through (past 161, Katayama backing) with Sunday/Monday thin tape prime ambush territory; USD's hike tail keeps deflating (Sept ~50%, October drift) against a zero-cuts floor; the oil glut (WTI ~$68.5-69, Brent ~$71-72, Saudi at 90% of baseline) keeps CAD weakest. New dated tail: Iran vows Hormuz fees 'definitely' once the 60-day free window lapses (~late Aug).",
     "nextBigEvent": "Wed Jul 8: RBNZ (hold near-certain - trade the guidance) + Fed June minutes; tonight's Asia open is the first thin tape since the JPY follow-through confirmed"
   },
@@ -213,6 +213,27 @@
       "conv": "MED",
       "why": "Oil-glut tailwind (war premium crushed) + the cooling EZ headline + global risk-on (easing Fed-hike fears).",
       "risk": "A funeral-week oil re-spike; a hawkish ECB core response; Hormuz-toll headlines."
+    },
+    {
+      "sym": "XAU/USD",
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "~$4,175: the residual haven bid for the frozen-diplomacy/Hormuz-fee tail vs a zero-cut Fed floor that caps rallies; the deflating hike tail (Sept ~50%) cushions dips — two-sided.",
+      "risk": "A funeral-week incident / Hormuz-fee escalation spikes it; hot US CPI (Jul 14) re-arming the Fed hike tail sinks it."
+    },
+    {
+      "sym": "XAG/USD",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "Gold beta with an industrial leg: tracks the haven bid but soft global growth drags the industrial side — noisier, no clean edge.",
+      "risk": "High-beta to a gold spike (risk-off drags it up hard); soft growth data hits it harder than gold."
+    },
+    {
+      "sym": "USOIL",
+      "bias": "SHORT",
+      "conv": "MED",
+      "why": "The glut rules: WTI ~$68.5-69 with Saudi at 90% of baseline, Iranian crude stacking at sea and record Russian exports — flows point lower while diplomacy stays frozen.",
+      "risk": "The dated tail: Iran vows Hormuz transit fees once the 60-day window lapses (~late Aug); a funeral-week incident re-spikes it — though high floating storage means spikes likely fade."
     }
   ],
   "macro": {
@@ -773,5 +794,5 @@
     }
   ],
   "geopolitics": "Funeral week, day two - and a new dated tail. Khamenei's rites run July 4-9 across Tehran, Qom and Mashhad (15-20 million mourners expected, the largest state funeral in Iran's history), with mourners chanting for revenge and the Doha talks paused until it ends; Qatar says the concluded round made 'positive progress' and talks resume 'at the earliest possible time,' while Trump framed the pause as Iran getting 'a week off.' The substantive weekend development: Iran's ambassador to China said Tehran will DEFINITELY charge fees on Strait of Hormuz transits - with 'special treatment' for friendly nations - once the 60-day free-transit window in the ceasefire deal lapses, an idea Washington has already rejected and was actively negotiating away in Doha. That converts the toll dispute from rumor into a dated collision point (~late August) that oil is not yet pricing. For now the glut rules: WTI ~$68.5-69, Brent ~$71-72 into Friday's close, Saudi exports back to 90% of the pre-war baseline, UAE restored, Iraq tentatively recovering, Iranian crude stacking at sea, record Russian exports. Transmission unchanged: falling oil -> eroding energy-CPI floors -> less CB hawkishness at the margin (it just repriced the RBNZ from hike to hold) -> CAD holds the bag. Falling oil remains the GER40 tailwind and does NOT buy a Fed cut (US core runs 2.9%; the disinflation is energy-led). The tail remains the vacuum itself: frozen diplomacy through July 9, high emotion, a standing Hormuz routing warning - an incident with negotiators sidelined would re-spike oil into a market that has fully crushed the war premium (rescuing CAD, hurting AUD/NZD/GER40, handing USD and JPY competing haven bids). High floating storage means even a spike likely fades faster than prior episodes.",
-  "updatedAt": "2026-07-05T05:17:54.582Z"
+  "updatedAt": "2026-07-05T19:44:51.119Z"
 }

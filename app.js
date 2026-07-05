@@ -263,7 +263,7 @@
   function renderSignalCards(symbols) {
     var html = symbols.filter(function (s) { return signalFilter === 'ALL' || s.bias === signalFilter; })
       .map(function (s) {
-        var pxCell = window.PriceAdapter.isFxPair(s.sym)
+        var pxCell = window.PriceAdapter.isQuotable(s.sym)
           ? '<div class="px" data-px="' + esc(s.sym) + '"><span class="pxna">·</span></div>' : '';
         return '<div class="card ' + s.bias + '">' +
           '<div class="top"><div class="symwrap"><span class="sym">' + esc(s.sym) + '</span>' +
@@ -291,7 +291,7 @@
 
   function renderPricesUniverse(D) {
     priceUniverse = (D.symbols || []).map(function (s) { return s.sym; })
-      .filter(function (s) { return window.PriceAdapter.isFxPair(s); });
+      .filter(function (s) { return window.PriceAdapter.isQuotable(s); });
   }
 
   function fmtChg(p) {
@@ -373,6 +373,13 @@
   var CALC_PAIRS = ['EUR/USD', 'GBP/USD', 'USD/JPY', 'USD/CAD', 'AUD/USD', 'NZD/USD',
     'EUR/JPY', 'EUR/AUD', 'EUR/NZD', 'GBP/JPY', 'GBP/AUD', 'GBP/NZD', 'AUD/JPY',
     'NZD/JPY', 'CAD/JPY', 'AUD/NZD', 'AUD/CAD', 'NZD/CAD'];
+  // Commodity CFDs (USD-quoted): stop loss is entered as a $ price move, not pips.
+  var CALC_COMMODITIES = {
+    'XAU/USD': { contract: 100,  label: '100 oz/lot' },
+    'XAG/USD': { contract: 5000, label: '5,000 oz/lot' },
+    'USOIL':   { contract: 1000, label: '1,000 bbl/lot' }
+  };
+  var CALC_INSTRUMENTS = CALC_PAIRS.concat(Object.keys(CALC_COMMODITIES));
   var CALC_CCYS = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD'];
   var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', JPY: '¥', AUD: 'A$', NZD: 'NZ$', CAD: 'C$' };
   var CALC_KEY = 'fx_calc_inputs';
@@ -424,19 +431,26 @@
   function computeSize() {
     var pair = $('cPair').value, dep = $('cDep').value, mode = $('cRiskMode').value;
     var bal = numVal('cBal'), risk = numVal('cRisk'), sl = numVal('cSl');
-    var pipSize = pair.indexOf('JPY') >= 0 ? 0.01 : 0.0001;
-    $('cPip').textContent = pipSize.toString();
+    var commodity = CALC_COMMODITIES[pair];
+    // commodities: SL is a $ price move (pipSize 1); FX keeps broker pips
+    var pipSize = commodity ? 1 : (pair.indexOf('JPY') >= 0 ? 0.01 : 0.0001);
+    $('cSlLabel').textContent = commodity ? 'Stop loss ($ move)' : 'Stop loss (pips)';
+    $('cPipLabel').textContent = commodity ? 'Contract size' : '1 pip size';
+    $('cPip').textContent = commodity ? commodity.label : pipSize.toString();
     $('cRate').textContent = '';
     saveCalcInputs();
 
     if (!(bal > 0) || !(risk > 0) || !(sl > 0)) {
       setCalcRes('—', '—', '—');
-      $('cNote').className = 'calcnote'; $('cNote').textContent = 'Enter balance, risk and stop loss to size the trade.';
+      $('cNote').className = 'calcnote'; $('cNote').textContent = commodity
+        ? 'Enter balance, risk and the stop distance as a $ price move (e.g. 5 = a $5 move).'
+        : 'Enter balance, risk and stop loss to size the trade.';
       return;
     }
     var riskAmount = mode === 'pct' ? bal * risk / 100 : risk;
-    var quote = pair.split('/')[1], contract = 100000;
-    var pvQuote = pipSize * contract;   // pip value per standard lot, in quote ccy
+    var quote = commodity ? 'USD' : pair.split('/')[1];
+    var contract = commodity ? commodity.contract : 100000;
+    var pvQuote = pipSize * contract;   // value per lot of one SL unit, in quote ccy
 
     function finish(rateObj) {
       var pvDep;
@@ -463,7 +477,9 @@
       $('cNote').className = 'calcnote' + (belowMin ? ' warn' : '');
       $('cNote').innerHTML = belowMin
         ? 'Risking <b>' + riskShown + '</b> needs ≈' + exactLots.toFixed(3) + ' lots — <b>below the 0.01 minimum</b>; raise risk or balance.'
-        : 'Risking <b>' + riskShown + '</b> · pip value <b>' + fmtMoney(dep, pvDep) + '/lot</b> · ' + sl + '-pip stop';
+        : 'Risking <b>' + riskShown + '</b> · ' + (commodity
+            ? '$1 move = <b>' + fmtMoney(dep, pvDep) + '/lot</b> · $' + sl + ' stop'
+            : 'pip value <b>' + fmtMoney(dep, pvDep) + '/lot</b> · ' + sl + '-pip stop');
     }
 
     if (quote === dep) finish(null);
@@ -473,11 +489,11 @@
   function setupSizeCalc() {
     var pairSel = $('cPair');
     if (!pairSel || pairSel.options.length) return;   // once
-    pairSel.innerHTML = CALC_PAIRS.map(function (p) { return '<option>' + p + '</option>'; }).join('');
+    pairSel.innerHTML = CALC_INSTRUMENTS.map(function (p) { return '<option>' + p + '</option>'; }).join('');
     $('cDep').innerHTML = CALC_CCYS.map(function (c) { return '<option>' + c + '</option>'; }).join('');
     var saved = {};
     try { saved = JSON.parse(localStorage.getItem(CALC_KEY) || '{}') || {}; } catch (e) {}
-    if (saved.pair && CALC_PAIRS.indexOf(saved.pair) >= 0) pairSel.value = saved.pair;
+    if (saved.pair && CALC_INSTRUMENTS.indexOf(saved.pair) >= 0) pairSel.value = saved.pair;
     $('cDep').value = (saved.dep && CALC_CCYS.indexOf(saved.dep) >= 0) ? saved.dep : 'USD';
     if (saved.bal) $('cBal').value = saved.bal;
     $('cRisk').value = (saved.risk != null && saved.risk !== '') ? saved.risk : 1;
@@ -493,7 +509,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v10';
+  var APP_VERSION = 'v11';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

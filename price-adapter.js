@@ -30,9 +30,17 @@
     'AUD/NZD': 1, 'AUD/CAD': 1, 'NZD/CAD': 1
   };
 
+  // Commodities with a live quote. XAU/USD works on the Twelve Data FREE tier;
+  // XAG/USD and WTI/USD are plan-gated — flip them to 1 if the key is upgraded
+  // (Grow plan) and silver/oil quotes light up with no other change.
+  // (USOIL maps to Twelve Data's "WTI/USD".)
+  var QUOTABLE_COMMODITIES = { 'XAU/USD': 1, 'XAG/USD': 0, 'USOIL': 0 };
+  var TD_SYMBOL_MAP = { 'USOIL': 'WTI/USD' };
+
   function isFxPair(sym) { return !!FX_PAIRS[sym]; }
+  function isQuotable(sym) { return !!FX_PAIRS[sym] || QUOTABLE_COMMODITIES[sym] === 1; }
   function toOanda(sym) { return sym.replace('/', '_'); }      // EUR/USD -> EUR_USD
-  function toTwelve(sym) { return sym; }                       // EUR/USD -> EUR/USD
+  function toTwelve(sym) { return TD_SYMBOL_MAP[sym] || sym; } // USOIL -> WTI/USD
   function pipFactor(sym) { return sym.indexOf('JPY') >= 0 ? 1000 : 100000; }
 
   function num(x) { var n = parseFloat(x); return isFinite(n) ? n : null; }
@@ -57,7 +65,7 @@
     configured: function () { return !!(CFG.twelvedata && CFG.twelvedata.apiKey); },
     quotes: function (symbols) {
       var key = CFG.twelvedata.apiKey;
-      var list = symbols.filter(isFxPair);
+      var list = symbols.filter(isQuotable);
       var now = Date.now();
       function result() {
         var out = {};
@@ -78,10 +86,10 @@
         '&apikey=' + encodeURIComponent(key);
       return fetch(url).then(function (r) { return r.json(); }).then(function (j) {
         if (j && (j.code || j.status === 'error')) return result();   // rate-limited/etc: keep cache
-        var rows = (toFetch.length === 1) ? (function () { var o = {}; o[toFetch[0]] = j; return o; })() : j;
+        var rows = (toFetch.length === 1) ? (function () { var o = {}; o[toTwelve(toFetch[0])] = j; return o; })() : j;
         var t = Date.now();
         toFetch.forEach(function (s) {
-          var q = rows[s]; if (!q || q.code || q.status === 'error') return;
+          var q = rows[toTwelve(s)]; if (!q || q.code || q.status === 'error') return;
           var mid = num(q.close); if (mid == null) return;
           tdCache[s] = { mid: mid, changePct: num(q.percent_change), t: t, iso: new Date().toISOString() };
         });
@@ -100,7 +108,7 @@
       configured: function () { return !!getUrl(); },
       quotes: function (symbols) {
         var base = getUrl();
-        var list = symbols.filter(isFxPair);
+        var list = symbols.filter(isQuotable);
         if (!list.length) return Promise.resolve({});
         var url = base.replace(/\/$/, '') + '/quotes?symbols=' + encodeURIComponent(list.join(','));
         return fetch(url).then(function (r) { return r.json(); }).then(function (j) {
@@ -142,6 +150,7 @@
   // ============================ Public API ============================
   window.PriceAdapter = {
     isFxPair: isFxPair,
+    isQuotable: isQuotable,
     pipFactor: pipFactor,
     providerKey: CFG.provider,
     providerLabel: function () { return active.label; },
@@ -160,7 +169,7 @@
 
     /* Best-effort sparkline with a 15-min cache to respect free-tier limits. */
     sparkline: function (sym, points) {
-      if (!active.configured() || !isFxPair(sym)) return Promise.resolve([]);
+      if (!active.configured() || !isQuotable(sym)) return Promise.resolve([]);
       var c = sparkCache[sym];
       if (c && (Date.now() - c.ts) < SPARK_TTL) return Promise.resolve(c.closes);
       return active.sparkline(sym, points).then(function (closes) {
@@ -171,6 +180,8 @@
 
     formatPrice: function (sym, v) {
       if (v == null) return '—';
+      if (sym === 'XAU/USD' || sym === 'USOIL') return v.toFixed(2);
+      if (sym === 'XAG/USD') return v.toFixed(3);
       return v.toFixed(sym.indexOf('JPY') >= 0 ? 3 : 5);
     }
   };

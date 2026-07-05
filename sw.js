@@ -4,7 +4,7 @@
  *   - cache-first (stale-while-revalidate) for static assets
  *   - Web Push: shows a notification when the push sender fires
  * Bump CACHE when shell assets change to force an update. */
-var CACHE = 'fx-macro-v10';
+var CACHE = 'fx-macro-v11';
 var SHELL = [
   './',
   './index.html',
