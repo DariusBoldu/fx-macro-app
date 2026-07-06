@@ -86,6 +86,41 @@ function main() {
   console.log('  reportDate : ' + out.meta.reportDate);
   console.log('  symbols    : ' + out.symbols.length);
   console.log('  updatedAt  : ' + out.updatedAt);
+
+  writeHistory(out);
+}
+
+/* ---- History archive ------------------------------------------------------
+ * history/<reportDate>.json  — full snapshot, one per report date (same-day
+ *                              refreshes overwrite, keeping the day's latest)
+ * history/summary.json       — compact timelines the app actually fetches:
+ *                              per-symbol {date,bias,conv} and per-ccy scores */
+function writeHistory(out) {
+  const HIST = path.resolve(__dirname, '..', 'history');
+  fs.mkdirSync(HIST, { recursive: true });
+  fs.writeFileSync(path.join(HIST, out.meta.reportDate + '.json'),
+    JSON.stringify(out, null, 2) + '\n', 'utf8');
+  rebuildSummary(HIST);
+  console.log('  history    : ' + out.meta.reportDate + '.json + summary.json');
+}
+
+function rebuildSummary(HIST) {
+  const dates = fs.readdirSync(HIST)
+    .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .map((f) => f.slice(0, 10)).sort();
+  const symbols = {}, strength = {};
+  for (const d of dates) {
+    let snap;
+    try { snap = JSON.parse(fs.readFileSync(path.join(HIST, d + '.json'), 'utf8')); } catch (e) { continue; }
+    (snap.symbols || []).forEach((s) => {
+      (symbols[s.sym] = symbols[s.sym] || []).push({ d: d, bias: s.bias, conv: s.conv });
+    });
+    (snap.strength || []).forEach((c) => {
+      (strength[c.ccy] = strength[c.ccy] || []).push({ d: d, score: c.score });
+    });
+  }
+  fs.writeFileSync(path.join(HIST, 'summary.json'),
+    JSON.stringify({ dates: dates, symbols: symbols, strength: strength }) + '\n', 'utf8');
 }
 
 main();

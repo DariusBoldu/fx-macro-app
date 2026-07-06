@@ -21,7 +21,10 @@
  * Then set config.js -> price.oanda.proxyUrl and push.subscribeUrl to the
  * worker URL.  See ./README.md.
  * ==========================================================================*/
+import { sendWebPush } from './webpush.js';
+
 const OANDA_BASE = 'https://api-fxpractice.oanda.com/v3';
+const DATA_URL = 'https://dariusboldu.github.io/fx-macro-app/data.json';
 
 // Lock this down to your Pages origin in production, e.g.
 //   'https://<user>.github.io'
@@ -31,7 +34,7 @@ function cors(extra) {
   return Object.assign({
     'Access-Control-Allow-Origin': ALLOW_ORIGIN,
     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
+    'Access-Control-Allow-Headers': 'Content-Type, x-fx-auth'
   }, extra || {});
 }
 const json = (obj, status = 200) =>
@@ -50,12 +53,101 @@ export default {
       if (url.pathname === '/sparkline') return await sparkline(url, env);
       if (url.pathname === '/subscribe' && request.method === 'POST') return await subscribe(request, env);
       if (url.pathname === '/subscriptions') return await listSubs(url, env);
+      if (url.pathname === '/journal') return await journal(request, env);
       return json({ error: 'not found' }, 404);
     } catch (e) {
       return json({ error: String(e && e.message || e) }, 500);
     }
+  },
+
+  /* Cron (every 5 min): push alerts 60 and 15 minutes before each HIGH-impact
+   * catalyst that carries a machine-readable `when` timestamp. Runs entirely
+   * in the cloud — the laptop is not involved. */
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(newsAlerts(env));
   }
 };
+
+/* ========================= High-impact news alerts ========================= */
+async function newsAlerts(env) {
+  let data;
+  try {
+    const r = await fetch(DATA_URL + '?t=' + Date.now(), { cf: { cacheTtl: 0 } });
+    data = await r.json();
+  } catch (e) { return; }
+  const now = Date.now();
+  const windows = [
+    { tag: '60', lo: 55, hi: 65, label: 'in 1 hour' },
+    { tag: '15', lo: 10, hi: 20, label: 'in 15 minutes' },
+  ];
+  for (const c of (data.catalysts || [])) {
+    if (c.impact !== 'high' || !c.when) continue;
+    const t = Date.parse(c.when);
+    if (isNaN(t)) continue;
+    const mins = (t - now) / 60000;
+    for (const w of windows) {
+      if (mins <= w.lo || mins > w.hi) continue;
+      const dedupeKey = 'alert:' + c.when + ':' + w.tag;
+      if (await env.FX_SUBS.get(dedupeKey)) continue;
+      await env.FX_SUBS.put(dedupeKey, '1', { expirationTtl: 172800 });
+      await broadcast(env, {
+        title: '⏰ ' + c.event + ' — ' + w.label,
+        body: (c.note || 'High-impact event ahead.').slice(0, 160),
+        tag: 'fx-event-' + c.when,
+        url: './index.html'
+      });
+    }
+  }
+}
+
+/* Send a payload to every subscriber; prune expired subscriptions. */
+async function broadcast(env, payload) {
+  const list = await env.FX_SUBS.list({ prefix: 'sub:' });
+  const cfg = {
+    vapidPublicKey: env.VAPID_PUBLIC, vapidPrivateKey: env.VAPID_PRIVATE,
+    subject: env.VAPID_SUBJECT || 'mailto:admin@example.com', ttl: 1800
+  };
+  const body = JSON.stringify(payload);
+  for (const k of list.keys) {
+    const v = await env.FX_SUBS.get(k.name);
+    if (!v) continue;
+    try {
+      const status = await sendWebPush(JSON.parse(v), body, cfg);
+      if (status === 404 || status === 410) await env.FX_SUBS.delete(k.name);
+    } catch (e) { /* keep going */ }
+  }
+}
+
+/* ============================ Shared trade journal ============================
+ * One journal for both users, stored as a single KV blob. Auth: the app sends
+ * x-fx-auth = SHA-256("journal:" + passcode), which must equal the JOURNAL_KEY
+ * secret. The raw passcode never lives in the public repo. */
+async function journal(request, env) {
+  if (request.headers.get('x-fx-auth') !== env.JOURNAL_KEY) {
+    return json({ error: 'forbidden' }, 403);
+  }
+  const KEY = 'journal:v1';
+  const state = JSON.parse((await env.FX_SUBS.get(KEY)) || '{"trades":[]}');
+
+  if (request.method === 'GET') return json(state);
+  if (request.method !== 'POST') return json({ error: 'method' }, 405);
+
+  const req = await request.json();
+  if (req.op === 'add' && req.trade) {
+    req.trade.id = 't' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    state.trades.unshift(req.trade);
+  } else if (req.op === 'close' && req.id) {
+    const t = state.trades.find((x) => x.id === req.id);
+    if (t) { t.status = 'closed'; t.resultR = req.resultR; t.closedTs = req.closedTs || new Date().toISOString(); }
+  } else if (req.op === 'delete' && req.id) {
+    state.trades = state.trades.filter((x) => x.id !== req.id);
+  } else {
+    return json({ error: 'bad op' }, 400);
+  }
+  state.trades = state.trades.slice(0, 500);   // sanity cap
+  await env.FX_SUBS.put(KEY, JSON.stringify(state));
+  return json(state);
+}
 
 async function oandaGet(path, env) {
   const r = await fetch(OANDA_BASE + path, {

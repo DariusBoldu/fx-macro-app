@@ -69,6 +69,8 @@
     if (!val) return;
     if (sha256(val) === (CFG.passcodeSha256 || '')) {
       if (CFG.rememberUnlock) localStorage.setItem(UNLOCK_KEY, CFG.passcodeSha256);
+      // journal sync token — derived from the raw passcode, never committed
+      try { localStorage.setItem('fx_jtoken', sha256('journal:' + val)); } catch (e) {}
       $('gateErr').textContent = '';
       unlock();
     } else {
@@ -91,7 +93,7 @@
     for (var k = 0; k < tabs.length; k++) tabs[k].classList.toggle('active', tabs[k].dataset.v === v);
     window.scrollTo(0, 0);
     if (v === 'signals') refreshPrices();
-    if (v === 'size') computeSize();
+    if (v === 'trades') { computeSize(); renderTrades(); }
   }
   document.querySelectorAll('.tabbtn').forEach(function (b) {
     b.addEventListener('click', function () { showView(b.dataset.v); });
@@ -131,6 +133,7 @@
   function renderAll(D) {
     renderMeta(D); renderToday(D); renderStrength(D); renderMacro(D); renderSignals(D.symbols);
     renderCalendar(D); renderPricesUniverse(D);
+    renderBookBanner(); renderTrades();
   }
 
   function relTime(iso) {
@@ -265,7 +268,7 @@
       .map(function (s) {
         var pxCell = window.PriceAdapter.isQuotable(s.sym)
           ? '<div class="px" data-px="' + esc(s.sym) + '"><span class="pxna">·</span></div>' : '';
-        return '<div class="card ' + s.bias + '">' +
+        return '<div class="card ' + s.bias + '" data-sym="' + esc(s.sym) + '">' +
           '<div class="top"><div class="symwrap"><span class="sym">' + esc(s.sym) + '</span>' +
             '<span class="chip ' + s.bias + '">' + s.bias + '</span>' +
             '<span class="conv">' + esc(s.conv) + '</span></div>' + pxCell + '</div>' +
@@ -273,6 +276,9 @@
           '<div class="rk"><b>Risk:</b> ' + esc(s.risk) + '</div></div>';
       }).join('');
     $('signals').innerHTML = html;
+    document.querySelectorAll('#signals .card[data-sym]').forEach(function (c) {
+      c.addEventListener('click', function () { openDetail(c.getAttribute('data-sym')); });
+    });
     applyQuotesToSignals();
   }
 
@@ -445,6 +451,7 @@
       $('cNote').className = 'calcnote'; $('cNote').textContent = commodity
         ? 'Enter balance, risk and the stop distance as a $ price move (e.g. 5 = a $5 move).'
         : 'Enter balance, risk and stop loss to size the trade.';
+      lastCalc = null; updateLogUi();
       return;
     }
     var riskAmount = mode === 'pct' ? bal * risk / 100 : risk;
@@ -462,6 +469,7 @@
         setCalcRes('—', '—', '—');
         $('cNote').className = 'calcnote warn';
         $('cNote').textContent = 'Could not get the ' + quote + '→' + dep + ' rate — connect once and it caches for offline use.';
+        lastCalc = null; updateLogUi();
         return;
       }
       var riskPerLot = sl * pvDep;
@@ -480,6 +488,12 @@
         : 'Risking <b>' + riskShown + '</b> · ' + (commodity
             ? '$1 move = <b>' + fmtMoney(dep, pvDep) + '/lot</b> · $' + sl + ' stop'
             : 'pip value <b>' + fmtMoney(dep, pvDep) + '/lot</b> · ' + sl + '-pip stop');
+      lastCalc = belowMin ? null : {
+        sym: pair, dep: dep, lots: lots.toFixed(2),
+        riskAmt: Math.round(actualRisk * 100) / 100,
+        sl: sl + (commodity ? ' $' : ' pips')
+      };
+      updateLogUi();
     }
 
     if (quote === dep) finish(null);
@@ -506,10 +520,359 @@
     computeSize();
   }
 
+  /* ============================ History summary ============================ */
+  var HIST = null;
+  function fetchHistory() {
+    if (HIST) return Promise.resolve(HIST);
+    return fetch('history/summary.json?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { HIST = j; try { localStorage.setItem('fx_hist', JSON.stringify(j)); } catch (e) {} return j; })
+      .catch(function () {
+        try { HIST = JSON.parse(localStorage.getItem('fx_hist') || 'null'); } catch (e) {}
+        return HIST;
+      });
+  }
+
+  /* ============================ Symbol detail view ============================ */
+  var LEG_MAP = { 'DXY': ['USD'], 'JPYBASKET': ['JPY'], 'GER40': ['EUR'], 'XAU/USD': ['USD'], 'XAG/USD': ['USD'], 'USOIL': ['USD'] };
+  var TV_MAP = { 'DXY': 'TVC:DXY', 'JPYBASKET': 'FXCM:JPYBASKET', 'GER40': 'GER40', 'XAU/USD': 'OANDA:XAUUSD', 'XAG/USD': 'OANDA:XAGUSD', 'USOIL': 'TVC:USOIL' };
+  var CAT_KEYS = {
+    USD: /US |USD|Fed|FOMC|ISM|NFP/i, EUR: /ECB|EZ |euro|Germany|HICP/i, GBP: /BoE|UK |GBP/i,
+    JPY: /BoJ|Japan|JPY|MoF|ambush/i, AUD: /RBA|Aussie|Australia|AUD/i, NZD: /RBNZ|NZ |NZD/i,
+    CAD: /BoC|Canada|CAD|oil|WTI|Brent/i
+  };
+  var COMMODITY_CAT = { 'XAU/USD': /gold|Fed|CPI|Hormuz|Iran/i, 'XAG/USD': /silver|gold|CPI/i, 'USOIL': /oil|WTI|Brent|Hormuz|Iran|OPEC|Saudi/i };
+
+  function legsOf(sym) {
+    if (LEG_MAP[sym]) return LEG_MAP[sym];
+    return sym.indexOf('/') > 0 ? sym.split('/') : [sym];
+  }
+  function trendArrow(t) {
+    return t === 'rising' ? '<span class="up">▲</span>' : t === 'falling' ? '<span class="down">▼</span>' : '<span class="flat">▬</span>';
+  }
+
+  function openDetail(sym) {
+    var s = (DATA.symbols || []).find(function (x) { return x.sym === sym; });
+    if (!s) return;
+    var q = lastQuotes[sym];
+    var px = q ? '<span class="dpx">' + window.PriceAdapter.formatPrice(sym, q.mid) +
+      '<span class="pxchg ' + fmtChg(q.changePct).cls + '">' + fmtChg(q.changePct).txt + '</span></span>' : '';
+
+    var html = '<div class="dhead"><span class="sym">' + esc(sym) + '</span>' +
+      '<span class="chip ' + s.bias + '">' + s.bias + '</span>' +
+      '<span class="conv">' + esc(s.conv) + '</span>' + px + '</div>' +
+      '<div class="dsec"><h3>Today\'s read</h3><div class="why">' + esc(s.why) + '</div>' +
+      '<div class="rk"><b>Risk:</b> ' + esc(s.risk) + '</div></div>' +
+      '<div class="dsec"><h3>Bias history</h3><div id="dTimeline" class="skeleton">Loading…</div></div>';
+
+    // both legs' macro pillars
+    var legs = legsOf(sym).filter(function (c) { return DATA.macro && DATA.macro[c]; });
+    if (legs.length) {
+      html += '<div class="dsec"><h3>Macro pillars</h3><div class="legsgrid" style="grid-template-columns:repeat(' + legs.length + ',1fr)">' +
+        legs.map(function (c) {
+          var m = DATA.macro[c];
+          var rows = [['inflation', 'Inflation'], ['growth', 'Growth'], ['unemployment', 'Unemp'], ['jobs', 'Jobs'], ['rates', 'Rate']]
+            .map(function (p) {
+              var d = m[p[0]]; if (!d) return '';
+              return '<div class="lrow"><span>' + p[1] + '</span><span><b>' + esc(d.value) + '</b> ' + trendArrow(d.trend) + '</span></div>';
+            }).join('');
+          return '<div class="leg"><h4>' + c + '</h4>' + rows + '</div>';
+        }).join('') + '</div></div>';
+    }
+
+    // related catalysts
+    var pats = legsOf(sym).map(function (c) { return CAT_KEYS[c]; }).filter(Boolean);
+    if (COMMODITY_CAT[sym]) pats = [COMMODITY_CAT[sym]];
+    var cats = (DATA.catalysts || []).filter(function (c) {
+      var txt = (c.event || '') + ' ' + (c.note || '');
+      return pats.some(function (p) { return p.test(txt); });
+    }).slice(0, 5);
+    if (cats.length) {
+      html += '<div class="dsec"><h3>Related catalysts</h3>' + cats.map(function (c) {
+        return '<div class="dcat"><span class="dot ' + esc(c.impact) + '"></span><b>' + esc(c.date) + '</b> — ' +
+          esc(c.event) + '<div class="cnote">' + esc(c.note || '') + '</div></div>';
+      }).join('') + '</div>';
+    }
+
+    var tv = TV_MAP[sym] || sym.replace('/', '');
+    html += '<a class="tvlink" href="https://www.tradingview.com/chart/?symbol=' + encodeURIComponent(tv) +
+      '" target="_blank" rel="noopener">Open ' + esc(sym) + ' on TradingView ↗</a>';
+
+    $('detailBody').innerHTML = html;
+    $('detail').classList.add('show');
+    document.body.style.overflow = 'hidden';
+
+    fetchHistory().then(function (h) {
+      var el = document.getElementById('dTimeline');
+      if (!el) return;
+      var tl = (h && h.symbols && h.symbols[sym]) || [];
+      if (tl.length < 2) { el.innerHTML = '<div class="legend" style="margin:0">History builds up as daily reports accumulate.</div>'; return; }
+      var last = tl.slice(-21);
+      var cells = last.map(function (x) {
+        return '<div class="tcell ' + x.bias + '" title="' + x.d + ' ' + x.bias + '"></div>';
+      }).join('');
+      // current streak
+      var cur = tl[tl.length - 1].bias, streak = 0;
+      for (var i = tl.length - 1; i >= 0 && tl[i].bias === cur; i--) streak++;
+      el.className = '';
+      el.innerHTML = '<div class="tl">' + cells + '</div>' +
+        '<div class="tldates"><span>' + last[0].d.slice(5) + '</span><span>' + last[last.length - 1].d.slice(5) + '</span></div>' +
+        '<div class="tlsummary"><b>' + cur + '</b> for ' + streak + ' report day' + (streak > 1 ? 's' : '') +
+        ' · <span style="color:var(--long)">■</span> long <span style="color:var(--short)">■</span> short <span style="color:#3c4757">■</span> range</div>';
+    });
+  }
+  $('detailClose').addEventListener('click', closeDetail);
+  $('detail').addEventListener('click', function (e) { if (e.target === $('detail')) closeDetail(); });
+  function closeDetail() { $('detail').classList.remove('show'); document.body.style.overflow = ''; }
+
+  /* ============================ Trade journal ============================ */
+  var JSTATE = { trades: [] };
+  try { JSTATE = JSON.parse(localStorage.getItem('fx_jcache') || '{"trades":[]}'); } catch (e) {}
+  var lastCalc = null;
+  var logDir = null;
+
+  function jToken() { return localStorage.getItem('fx_jtoken') || ''; }
+  function jFetch(method, body) {
+    var base = (CFG.workerUrl || '').replace(/\/$/, '');
+    if (!base || !jToken()) return Promise.reject(new Error('no sync'));
+    return fetch(base + '/journal', {
+      method: method,
+      headers: { 'x-fx-auth': jToken(), 'Content-Type': 'application/json' },
+      body: body ? JSON.stringify(body) : undefined
+    }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (j) {
+      JSTATE = j;
+      try { localStorage.setItem('fx_jcache', JSON.stringify(j)); } catch (e) {}
+      return j;
+    });
+  }
+  function loadJournal() {
+    return jFetch('GET').then(function () { renderTrades(); renderBookBanner(); })
+      .catch(function () { renderTrades(); renderBookBanner(); });
+  }
+
+  function alignOf(bias, dir) {
+    if (bias === 'LONG' && dir === 'LONG') return 'with';
+    if (bias === 'SHORT' && dir === 'SHORT') return 'with';
+    if (bias === 'LONG' || bias === 'SHORT') return 'against';
+    return 'neutral';
+  }
+  function currentBias(sym) {
+    var s = (DATA && DATA.symbols || []).find(function (x) { return x.sym === sym; });
+    return s ? s.bias : null;
+  }
+  function flipState(t) {
+    var b = currentBias(t.sym);
+    if (!b) return null;
+    if (b === 'RANGE') return { cls: 'warn', txt: 'Report now RANGE — edge faded' };
+    if ((b === 'LONG') === (t.dir === 'LONG')) return { cls: 'ok', txt: 'Report aligned (' + b + ')' };
+    return { cls: 'bad', txt: '⚠ Report flipped to ' + b + ' — against your ' + t.dir };
+  }
+
+  /* ---- log form ---- */
+  function updateLogUi() {
+    var btn = $('logBtn'); if (!btn) return;
+    btn.style.display = lastCalc ? '' : 'none';
+    if (!lastCalc) $('logForm').style.display = 'none';
+  }
+  function wireLogForm() {
+    $('logBtn').addEventListener('click', function () {
+      $('logForm').style.display = ''; $('logBtn').style.display = 'none';
+      logDir = null;
+      $('dirLong').classList.remove('sel'); $('dirShort').classList.remove('sel');
+    });
+    $('dirLong').addEventListener('click', function () { logDir = 'LONG'; $('dirLong').classList.add('sel'); $('dirShort').classList.remove('sel'); });
+    $('dirShort').addEventListener('click', function () { logDir = 'SHORT'; $('dirShort').classList.add('sel'); $('dirLong').classList.remove('sel'); });
+    $('logCancel').addEventListener('click', function () { $('logForm').style.display = 'none'; updateLogUi(); });
+    $('logSave').addEventListener('click', function () {
+      if (!lastCalc || !logDir) { $('logSave').textContent = logDir ? 'Save trade' : 'Pick a direction'; return; }
+      var s = (DATA.symbols || []).find(function (x) { return x.sym === lastCalc.sym; });
+      var trade = {
+        ts: new Date().toISOString(), sym: lastCalc.sym, dir: logDir,
+        lots: lastCalc.lots, riskAmt: lastCalc.riskAmt, riskCcy: lastCalc.dep, sl: lastCalc.sl,
+        biasAtEntry: s ? s.bias : null, convAtEntry: s ? s.conv : null,
+        align: alignOf(s ? s.bias : null, logDir), status: 'open',
+        note: ($('logNote').value || '').slice(0, 140)
+      };
+      $('logSave').disabled = true; $('logSave').textContent = 'Saving…';
+      jFetch('POST', { op: 'add', trade: trade }).then(function () {
+        $('logForm').style.display = 'none'; $('logNote').value = '';
+        $('logSave').disabled = false; $('logSave').textContent = 'Save trade';
+        updateLogUi(); renderTrades(); renderBookBanner();
+      }).catch(function () {
+        $('logSave').disabled = false; $('logSave').textContent = 'Sync failed — retry';
+      });
+    });
+    $('jauthBtn').addEventListener('click', function () {
+      var v = $('jauthPin').value || '';
+      if (sha256(v) === (CFG.passcodeSha256 || '')) {
+        localStorage.setItem('fx_jtoken', sha256('journal:' + v));
+        $('jauthPin').value = ''; $('jauthErr').textContent = '';
+        loadJournal();
+      } else { $('jauthErr').textContent = 'Wrong passcode.'; }
+    });
+  }
+
+  /* ---- open book + exposure ---- */
+  function renderBook(open) {
+    $('bookPanel').style.display = open.length ? '' : 'none';
+    if (!open.length) return;
+    $('bookCount').textContent = open.length + ' open';
+
+    // per-currency risk-weighted exposure; commodities count as their own leg
+    var COMMODITY_LEG = { 'XAU/USD': 'XAU', 'XAG/USD': 'XAG', 'USOIL': 'OIL' };
+    var exp = {}, touch = {};
+    open.forEach(function (t) {
+      var sign = t.dir === 'LONG' ? 1 : -1;
+      var r = Number(t.riskAmt) || 0;
+      if (COMMODITY_LEG[t.sym]) {
+        var cc = COMMODITY_LEG[t.sym];
+        exp[cc] = (exp[cc] || 0) + sign * r; (touch[cc] = touch[cc] || []).push(sign);
+        return;
+      }
+      var b = t.sym.split('/')[0], qc = t.sym.split('/')[1];
+      exp[b] = (exp[b] || 0) + sign * r; (touch[b] = touch[b] || []).push(sign);
+      exp[qc] = (exp[qc] || 0) - sign * r; (touch[qc] = touch[qc] || []).push(-sign);
+    });
+
+    // warnings
+    var warns = [];
+    Object.keys(touch).forEach(function (c) {
+      var arr = touch[c];
+      if (arr.length >= 2 && arr.every(function (s) { return s === arr[0]; })) {
+        var word = arr[0] > 0 ? 'long' : 'short';
+        warns.push({ red: arr.length >= 3, txt: '<b>Concentrated:</b> net ' + word + ' ' + esc(c) + ' across ' + arr.length + ' trades — one ' + esc(c) + ' print hits all of them.' });
+      }
+    });
+    if (open.some(function (t) { return t.sym.indexOf('JPY') >= 0; })) {
+      warns.push({ red: false, txt: '<b>JPY book:</b> MoF intervention is the shared master variable — one strike moves every JPY position at once.' });
+    }
+    var flips = open.map(function (t) { return { t: t, f: flipState(t) }; }).filter(function (x) { return x.f && x.f.cls === 'bad'; });
+    flips.forEach(function (x) {
+      warns.push({ red: true, txt: '<b>' + esc(x.t.sym) + ':</b> ' + esc(x.f.txt) + '.' });
+    });
+    $('bookWarns').innerHTML = warns.map(function (w) {
+      return '<div class="bwarn' + (w.red ? ' red' : '') + '">' + w.txt + '</div>';
+    }).join('');
+
+    // exposure bars
+    var keys = Object.keys(exp).filter(function (c) { return Math.abs(exp[c]) > 0.004; })
+      .sort(function (a, b) { return Math.abs(exp[b]) - Math.abs(exp[a]); });
+    var max = Math.max.apply(null, keys.map(function (c) { return Math.abs(exp[c]); })) || 1;
+    $('bookExposure').innerHTML = keys.map(function (c) {
+      var v = exp[c], pct = Math.abs(v) / max * 50;
+      var left = v >= 0 ? 50 : 50 - pct;
+      return '<div class="exprow"><span class="eccy">' + esc(c) + '</span>' +
+        '<div class="expbar"><div class="mid"></div><div class="fill" style="left:' + left + '%;width:' + pct + '%;background:' + (v >= 0 ? 'var(--long)' : 'var(--short)') + '"></div></div>' +
+        '<span class="eval">' + (v >= 0 ? 'long' : 'short') + ' · risk ' + Math.abs(v).toFixed(0) + '</span></div>';
+    }).join('');
+
+    // open trade rows
+    $('bookTrades').innerHTML = open.map(function (t) {
+      var f = flipState(t);
+      return '<div class="jrow" data-id="' + t.id + '">' +
+        '<div class="jtop"><span class="jsym">' + esc(t.sym) + '</span>' +
+          '<span class="jdir ' + t.dir + '">' + t.dir + '</span>' +
+          '<span class="conv">' + esc(t.lots) + ' lots</span>' +
+          '<span class="jr">risk ' + esc(String(t.riskAmt)) + ' ' + esc(t.riskCcy || '') + '</span></div>' +
+        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString() + ' · SL ' + esc(t.sl || '—') +
+          ' · entered ' + (t.align === 'with' ? 'WITH' : t.align === 'against' ? 'AGAINST' : 'no') + ' bias (' + esc(t.biasAtEntry || '—') + ')' +
+          (t.note ? ' · ' + esc(t.note) : '') + '</div>' +
+        (f ? '<div class="jflip ' + f.cls + '">' + esc(f.txt) + '</div>' : '') +
+        '<div class="jact"><button class="btn ghost jclose">Close…</button><button class="jdel">delete</button></div>' +
+        '<div class="closeform" style="display:none"><input type="text" inputmode="text" placeholder="Result in R, e.g. +1,5 or -1">' +
+          '<button class="btn jcsave">Save</button></div></div>';
+    }).join('');
+
+    document.querySelectorAll('#bookTrades .jrow').forEach(function (row) {
+      var id = row.getAttribute('data-id');
+      row.querySelector('.jclose').addEventListener('click', function () {
+        row.querySelector('.closeform').style.display = 'flex';
+      });
+      row.querySelector('.jcsave').addEventListener('click', function () {
+        var raw = (row.querySelector('.closeform input').value || '').replace(',', '.').replace(/[Rr\s]/g, '');
+        var r = parseFloat(raw);
+        if (!isFinite(r)) { row.querySelector('.closeform input').placeholder = 'Enter a number, e.g. -1 or +2'; return; }
+        jFetch('POST', { op: 'close', id: id, resultR: Math.round(r * 100) / 100 })
+          .then(function () { renderTrades(); renderBookBanner(); });
+      });
+      row.querySelector('.jdel').addEventListener('click', function () {
+        if (confirm('Delete this trade from the journal?')) {
+          jFetch('POST', { op: 'delete', id: id }).then(function () { renderTrades(); renderBookBanner(); });
+        }
+      });
+    });
+  }
+
+  /* ---- stats + closed history ---- */
+  function renderStats(closed) {
+    $('jpanel').style.display = closed.length ? '' : 'none';
+    if (!closed.length) return;
+    $('jCount').textContent = closed.length + ' closed';
+    function agg(list) {
+      var n = list.length;
+      if (!n) return { n: 0, win: '—', avg: '—', tot: '—', cls: '' };
+      var wins = list.filter(function (t) { return t.resultR > 0; }).length;
+      var tot = list.reduce(function (s, t) { return s + (Number(t.resultR) || 0); }, 0);
+      return { n: n, win: Math.round(wins / n * 100) + '%', avg: (tot / n).toFixed(2) + 'R', tot: (tot >= 0 ? '+' : '') + tot.toFixed(1) + 'R', cls: tot >= 0 ? 'pos' : 'neg' };
+    }
+    var all = agg(closed);
+    $('jstats').innerHTML =
+      '<div class="jstatgrid">' +
+        '<div class="jstat"><div class="v">' + all.n + '</div><div class="k">Trades</div></div>' +
+        '<div class="jstat"><div class="v">' + all.win + '</div><div class="k">Win rate</div></div>' +
+        '<div class="jstat"><div class="v ' + all.cls + '">' + all.avg + '</div><div class="k">Avg R</div></div>' +
+        '<div class="jstat"><div class="v ' + all.cls + '">' + all.tot + '</div><div class="k">Total R</div></div>' +
+      '</div>' +
+      '<table class="aligntbl"><tr><th>vs report bias</th><th>n</th><th>win%</th><th>avg R</th><th>total R</th></tr>' +
+      [['with', 'With bias'], ['against', 'Against bias'], ['neutral', 'No bias (range)']].map(function (g) {
+        var a = agg(closed.filter(function (t) { return t.align === g[0]; }));
+        return '<tr><td>' + g[1] + '</td><td>' + a.n + '</td><td>' + a.win + '</td>' +
+          '<td class="' + a.cls + '">' + a.avg + '</td><td class="' + a.cls + '">' + a.tot + '</td></tr>';
+      }).join('') + '</table>';
+
+    $('jhist').innerHTML = closed.slice(0, 30).map(function (t) {
+      var r = Number(t.resultR) || 0;
+      return '<div class="jrow"><div class="jtop"><span class="jsym">' + esc(t.sym) + '</span>' +
+        '<span class="jdir ' + t.dir + '">' + t.dir + '</span>' +
+        '<span class="conv">' + (t.align === 'with' ? 'with bias' : t.align === 'against' ? 'against bias' : 'no bias') + '</span>' +
+        '<span class="jr ' + (r > 0 ? 'pos' : r < 0 ? 'neg' : '') + '">' + (r > 0 ? '+' : '') + r + 'R</span></div>' +
+        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString() + ' → ' + (t.closedTs ? new Date(t.closedTs).toLocaleDateString() : '') +
+        (t.note ? ' · ' + esc(t.note) : '') + '</div></div>';
+    }).join('');
+  }
+
+  function renderTrades() {
+    if (!$('bookPanel')) return;
+    var hasToken = !!jToken();
+    $('jauth').style.display = hasToken ? 'none' : '';
+    var trades = (JSTATE && JSTATE.trades) || [];
+    renderBook(trades.filter(function (t) { return t.status === 'open'; }));
+    renderStats(trades.filter(function (t) { return t.status === 'closed' && t.resultR != null; }));
+  }
+
+  /* ---- Today-tab open-book banner ---- */
+  function renderBookBanner() {
+    var el = $('bookBanner'); if (!el) return;
+    var open = ((JSTATE && JSTATE.trades) || []).filter(function (t) { return t.status === 'open'; });
+    if (!open.length) { el.innerHTML = ''; return; }
+    var flips = open.map(function (t) { return { t: t, f: flipState(t) }; });
+    var bad = flips.filter(function (x) { return x.f && x.f.cls === 'bad'; });
+    var warn = flips.filter(function (x) { return x.f && x.f.cls === 'warn'; });
+    var line = '<b>Open book:</b> ' + open.map(function (t) { return t.dir === 'LONG' ? '▲' + t.sym : '▼' + t.sym; }).join(' · ');
+    if (bad.length) line += '<br><span class="bb-bad">⚠ Report flipped against: ' + bad.map(function (x) { return x.t.sym; }).join(', ') + '</span>';
+    else if (warn.length) line += '<br><span class="bb-warn">Edge faded to RANGE on: ' + warn.map(function (x) { return x.t.sym; }).join(', ') + '</span>';
+    else line += '<br><span style="color:var(--long)">All open trades still aligned with today\'s report ✓</span>';
+    el.innerHTML = '<div class="bookbanner">' + line + '</div>';
+    el.querySelector('.bookbanner').addEventListener('click', function () { showView('trades'); });
+  }
+
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v11';
+  var APP_VERSION = 'v12';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
@@ -530,9 +893,12 @@
   function boot() {
     initVersion();
     setupSizeCalc();
+    wireLogForm();
     fetchData(false).then(function () {
       refreshPrices();          // warm signals quotes
       setupPush();
+      loadJournal();            // shared journal -> book, stats, Today banner
+      fetchHistory();           // warm the bias-history cache
     });
     // poll for a fresh report
     setInterval(function () { fetchData(true); }, (CFG.dataPollMs) || 300000);

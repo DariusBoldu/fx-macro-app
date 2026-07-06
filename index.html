@@ -57,6 +57,7 @@
     <section class="view active" id="v-today">
       <div class="regime" id="regime"></div>
       <div class="bigevent" id="bigevent"></div>
+      <div id="bookBanner"></div>
       <div class="panel"><h2>What changed</h2><div class="read" id="dailyRead"></div></div>
       <div class="panel"><h2>Geopolitics &amp; oil → FX transmission</h2><div class="read" id="geo"></div></div>
       <div class="disclaimer">Not financial advice — for your own decision-making.</div>
@@ -100,8 +101,8 @@
       <div class="disclaimer">Not financial advice — for your own decision-making.</div>
     </section>
 
-    <!-- Size calculator -->
-    <section class="view" id="v-size">
+    <!-- Trades: size calculator + journal + book -->
+    <section class="view" id="v-trades">
       <div class="panel">
         <h2>Position size calculator <span class="sidenote" id="cRate"></span></h2>
         <div class="calcgrid">
@@ -121,8 +122,47 @@
           <div class="stat"><div class="sv" id="rRisk">—</div><div class="sl">Money at risk</div></div>
         </div>
         <div class="calcnote" id="cNote"></div>
+        <div class="logwrap">
+          <button class="btn ghost" id="logBtn" style="display:none">＋ Log this trade</button>
+          <div id="logForm" class="logform" style="display:none">
+            <div class="dirrow">
+              <button class="dirbtn long" id="dirLong" type="button">LONG</button>
+              <button class="dirbtn short" id="dirShort" type="button">SHORT</button>
+            </div>
+            <input id="logNote" type="text" placeholder="Note (optional)" autocomplete="off">
+            <div class="lfrow">
+              <button class="btn" id="logSave">Save trade</button>
+              <button class="btn ghost" id="logCancel">Cancel</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="disclaimer">Lots rounded to 0.01 · FX lot = 100,000 units · gold 100 oz / silver 5,000 oz / WTI 1,000 bbl per lot (for these, enter the stop as a $ price move) · cross-currency conversions use ~daily ECB rates. Check your broker's contract specs.<br>Not financial advice — for your own decision-making.</div>
+
+      <!-- journal sync unlock (shown only when the sync token is missing) -->
+      <div class="panel" id="jauth" style="display:none">
+        <h2>Journal sync</h2>
+        <div class="legend" style="margin:0 0 10px">Re-enter the passcode once to enable the shared journal on this device.</div>
+        <div class="lfrow"><input id="jauthPin" type="password" inputmode="numeric" placeholder="Passcode" autocomplete="off">
+        <button class="btn" id="jauthBtn">Enable</button></div>
+        <div class="err" id="jauthErr" style="min-height:0"></div>
+      </div>
+
+      <!-- open book -->
+      <div class="panel" id="bookPanel" style="display:none">
+        <h2>Open book <span class="sidenote" id="bookCount"></span></h2>
+        <div id="bookWarns"></div>
+        <div id="bookExposure"></div>
+        <div id="bookTrades"></div>
+      </div>
+
+      <!-- journal history + stats -->
+      <div class="panel" id="jpanel" style="display:none">
+        <h2>Journal <span class="sidenote" id="jCount"></span></h2>
+        <div id="jstats"></div>
+        <div id="jhist"></div>
+      </div>
+
+      <div class="disclaimer">Lots rounded to 0.01 · FX lot = 100,000 units · gold 100 oz / silver 5,000 oz / WTI 1,000 bbl per lot (for these, enter the stop as a $ price move) · cross-currency conversions use ~daily ECB rates. Check your broker's contract specs.<br>Journal is shared between the two of you and syncs via the Worker. Results in R (risk multiples).<br>Not financial advice — for your own decision-making.</div>
     </section>
   </main>
 
@@ -137,12 +177,20 @@
       <svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>Signals</button>
     <button class="tabbtn" data-v="cal">
       <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendar</button>
-    <button class="tabbtn" data-v="size">
-      <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6"/><path d="M9 11h1.5M13.5 11h1.5"/><path d="M9 15h1.5M13.5 15h1.5"/><path d="M9 19h6"/></svg>Size</button>
+    <button class="tabbtn" data-v="trades">
+      <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>Trades</button>
   </nav>
 </div>
 
 <div id="toast"><span id="toastTxt">New report available</span><button id="toastBtn">Refresh</button></div>
+
+<!-- symbol detail overlay -->
+<div id="detail" class="detail">
+  <div class="dsheet">
+    <button class="dclose" id="detailClose" aria-label="Close">✕</button>
+    <div id="detailBody"></div>
+  </div>
+</div>
 
 <script src="config.js"></script>
 <script src="price-adapter.js"></script>

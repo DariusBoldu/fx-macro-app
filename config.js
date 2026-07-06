@@ -72,6 +72,12 @@ window.FX_CONFIG = {
     subscribeUrl: "https://fx-macro-proxy.dariusboldu2014.workers.dev/subscribe",
   },
 
+  /* ---- Worker (journal sync + news alerts) -------------------------------
+   * Base URL of the Cloudflare Worker. The shared trade journal lives there
+   * (KV) and the news-alert cron runs there. Auth for the journal is derived
+   * from the passcode at unlock — never stored in this public file. */
+  workerUrl: "https://fx-macro-proxy.dariusboldu2014.workers.dev",
+
   /* ---- Data source -------------------------------------------------------
    * Where the app fetches the macro payload published by the daily task.
    * Relative path works on GitHub Pages; the cache-buster keeps it fresh. */

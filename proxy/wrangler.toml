@@ -4,11 +4,16 @@ name = "fx-macro-proxy"
 main = "worker.js"
 compatibility_date = "2024-11-01"
 
-# KV namespace stores push subscriptions (one row per device).
-# id is filled in by the deploy steps (wrangler kv namespace create FX_SUBS).
+# KV namespace stores push subscriptions, the shared trade journal, and
+# alert-dedupe markers.
 [[kv_namespaces]]
 binding = "FX_SUBS"
 id = "571a77de22764b5b904ca9f39224dc98"
+
+# News-alert cron: every 5 minutes the worker reads the published data.json
+# and pushes 60 + 15 minutes before each HIGH-impact catalyst with a `when`.
+[triggers]
+crons = ["*/5 * * * *"]
 
 # Secrets are NOT stored here — set them with `wrangler secret put`:
 #   wrangler secret put OANDA_TOKEN      (your fxTrade practice token)

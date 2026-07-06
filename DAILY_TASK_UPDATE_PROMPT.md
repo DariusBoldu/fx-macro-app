@@ -4,6 +4,17 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 3 (2026-07-06): timestamped catalysts + history archive
+
+Two small changes to the daily task:
+
+1. **Catalysts carry a `when` timestamp.** In `Forex_Dashboard/data.js` → `catalysts[]`, every event with a known scheduled release time must include `when: "<ISO 8601 UTC, e.g. 2026-07-14T12:30:00Z>"` — the exact release moment (use standard times: US data 12:30Z/14:00Z, RBNZ 02:00Z, ECB 12:15Z, BoE 11:00Z, FOMC statement 18:00Z, etc.). Give each separately-timed event its **own entry** (don't combine "RBNZ + Fed minutes" in one). Rolling/undated items (intervention watch, geopolitics) get no `when`. This drives the app's automatic push alerts 60 and 15 minutes before every HIGH-impact event — so keep `impact: "high"` accurate: true market movers only. (The 2026-07-06 data.js already follows this format — keep it.)
+2. **Publish the history archive too.** The publish step's git add now includes the history folder:
+   `git add data.json history/ && git commit -m "data: $(date +%F)" && git push origin main`
+   (`build-data-json.js` writes `history/<date>.json` + `history/summary.json` automatically — no extra work, just add them to the commit.)
+
+---
+
 ## Update 2 (2026-07-05): add XAU/USD, XAG/USD, USOIL — 24 symbols
 
 Please update my daily forex report task: the symbol universe grows from 21 to **24** — the 18 pairs + DXY + JPYBASKET + GER40 are now joined by **XAU/USD (gold), XAG/USD (silver) and USOIL (WTI crude)**. Concretely:
