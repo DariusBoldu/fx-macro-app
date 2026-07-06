@@ -416,11 +416,18 @@
   var CALC_PAIRS = ['EUR/USD', 'GBP/USD', 'USD/JPY', 'USD/CAD', 'AUD/USD', 'NZD/USD',
     'EUR/JPY', 'EUR/AUD', 'EUR/NZD', 'GBP/JPY', 'GBP/AUD', 'GBP/NZD', 'AUD/JPY',
     'NZD/JPY', 'CAD/JPY', 'AUD/NZD', 'AUD/CAD', 'NZD/CAD'];
-  // Commodity CFDs (USD-quoted): stop loss is entered as a $ price move, not pips.
+  // Non-FX CFDs: stop loss is entered as a price move (not pips).
+  //  kind 'cash'   -> stop is a $/€ price move; contract = units per lot
+  //  kind 'points' -> stop is in index points; contract = money per point per lot
+  // `quote` is the instrument's quote currency (converted to the deposit ccy).
   var CALC_COMMODITIES = {
-    'XAU/USD': { contract: 100,  label: '100 oz/lot' },
-    'XAG/USD': { contract: 5000, label: '5,000 oz/lot' },
-    'USOIL':   { contract: 1000, label: '1,000 bbl/lot' }
+    'XAU/USD': { contract: 100,  label: '100 oz/lot',    quote: 'USD', kind: 'cash' },
+    'XAG/USD': { contract: 5000, label: '5,000 oz/lot',  quote: 'USD', kind: 'cash' },
+    'USOIL':   { contract: 1000, label: '1,000 bbl/lot', quote: 'USD', kind: 'cash' },
+    // GER40 (DAX): quoted in EUR, stop in index points. €25/point/lot is the
+    // standard index-contract multiplier — VERIFY against FOREX.COM and change
+    // `contract` here if their point value differs.
+    'GER40':   { contract: 25,   label: '€25 / point / lot', quote: 'EUR', kind: 'points' }
   };
   var CALC_INSTRUMENTS = CALC_PAIRS.concat(Object.keys(CALC_COMMODITIES));
   var CALC_CCYS = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD'];
@@ -475,24 +482,27 @@
     var pair = $('cPair').value, dep = $('cDep').value, mode = $('cRiskMode').value;
     var bal = numVal('cBal'), risk = numVal('cRisk'), sl = numVal('cSl');
     var commodity = CALC_COMMODITIES[pair];
-    // commodities: SL is a $ price move (pipSize 1); FX keeps broker pips
+    var isPoints = commodity && commodity.kind === 'points';
+    // non-FX: SL is a price move so pipSize is 1 unit; FX keeps broker pips
     var pipSize = commodity ? 1 : (pair.indexOf('JPY') >= 0 ? 0.01 : 0.0001);
-    $('cSlLabel').textContent = commodity ? 'Stop loss ($ move)' : 'Stop loss (pips)';
+    $('cSlLabel').textContent = commodity ? (isPoints ? 'Stop loss (points)' : 'Stop loss ($ move)') : 'Stop loss (pips)';
     $('cPipLabel').textContent = commodity ? 'Contract size' : '1 pip size';
     $('cPip').textContent = commodity ? commodity.label : pipSize.toString();
+    $('rUnitsLabel').textContent = isPoints ? (commodity.quote + '/point') : 'Units';
     $('cRate').textContent = '';
     saveCalcInputs();
 
     if (!(bal > 0) || !(risk > 0) || !(sl > 0)) {
       setCalcRes('—', '—', '—');
       $('cNote').className = 'calcnote'; $('cNote').textContent = commodity
-        ? 'Enter balance, risk and the stop distance as a $ price move (e.g. 5 = a $5 move).'
+        ? (isPoints ? 'Enter balance, risk and the stop distance in index points (e.g. 40 = a 40-point move).'
+                    : 'Enter balance, risk and the stop distance as a $ price move (e.g. 5 = a $5 move).')
         : 'Enter balance, risk and stop loss to size the trade.';
       lastCalc = null; updateLogUi();
       return;
     }
     var riskAmount = mode === 'pct' ? bal * risk / 100 : risk;
-    var quote = commodity ? 'USD' : pair.split('/')[1];
+    var quote = commodity ? commodity.quote : pair.split('/')[1];
     var contract = commodity ? commodity.contract : 100000;
     var pvQuote = pipSize * contract;   // value per lot of one SL unit, in quote ccy
 
@@ -514,7 +524,8 @@
       var lots = Math.round(exactLots * 100) / 100;            // broker step 0.01
       var belowMin = exactLots < 0.01;
       var useLots = belowMin ? exactLots : lots;               // show precise if sub-minimum
-      var units = Math.round(useLots * contract);
+      var unitsRaw = useLots * contract;   // FX/cash: units; points: quote$/point
+      var units = isPoints ? (Math.round(unitsRaw * 100) / 100) : Math.round(unitsRaw);
       var actualRisk = useLots * riskPerLot;
       setCalcRes(belowMin ? exactLots.toFixed(3) : lots.toFixed(2),
         units.toLocaleString('en-US'), fmtMoney(dep, actualRisk));
@@ -523,12 +534,13 @@
       $('cNote').innerHTML = belowMin
         ? 'Risking <b>' + riskShown + '</b> needs ≈' + exactLots.toFixed(3) + ' lots — <b>below the 0.01 minimum</b>; raise risk or balance.'
         : 'Risking <b>' + riskShown + '</b> · ' + (commodity
-            ? '$1 move = <b>' + fmtMoney(dep, pvDep) + '/lot</b> · $' + sl + ' stop'
+            ? (isPoints ? '1 point = <b>' + fmtMoney(dep, pvDep) + '/lot</b> · ' + sl + '-pt stop'
+                        : '$1 move = <b>' + fmtMoney(dep, pvDep) + '/lot</b> · $' + sl + ' stop')
             : 'pip value <b>' + fmtMoney(dep, pvDep) + '/lot</b> · ' + sl + '-pip stop');
       lastCalc = belowMin ? null : {
         sym: pair, dep: dep, lots: lots.toFixed(2),
         riskAmt: Math.round(actualRisk * 100) / 100,
-        sl: sl + (commodity ? ' $' : ' pips')
+        sl: sl + (commodity ? (isPoints ? ' pts' : ' $') : ' pips')
       };
       updateLogUi();
     }
@@ -909,7 +921,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v13';
+  var APP_VERSION = 'v14';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
