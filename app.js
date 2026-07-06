@@ -155,6 +155,20 @@
     $('regime').innerHTML = '<b>Regime:</b> ' + esc(m.regime || '');
   }
 
+  var fullReadOpen = false;
+  function syncFullRead(collapsible) {
+    $('fullReadTitle').textContent = collapsible ? 'Full daily read' : 'What changed';
+    $('fullReadChev').style.display = collapsible ? '' : 'none';
+    $('fullReadChev').classList.toggle('open', fullReadOpen);
+    $('dailyRead').style.display = (!collapsible || fullReadOpen) ? '' : 'none';
+    $('fullReadHdr').style.cursor = collapsible ? 'pointer' : 'default';
+  }
+  $('fullReadHdr').addEventListener('click', function () {
+    if ($('fullReadChev').style.display === 'none') return;   // not collapsible
+    fullReadOpen = !fullReadOpen;
+    syncFullRead(true);
+  });
+
   function renderToday(D) {
     var m = D.meta || {};
     $('bigevent').innerHTML =
@@ -162,6 +176,29 @@
       '<div class="v">' + esc(m.nextBigEvent || '—') + '</div></div>';
     $('dailyRead').textContent = D.dailyRead || '';
     $('geo').textContent = D.geopolitics || '';
+
+    // per-currency reads, movers first (order comes from the task)
+    var list = Array.isArray(D.today) ? D.today.filter(function (t) { return t && t.ccy; }) : [];
+    var scores = {};
+    (D.strength || []).forEach(function (c) { scores[c.ccy] = c.score; });
+    if (list.length) {
+      $('todayCcy').innerHTML = list.map(function (t) {
+        var sc = scores[t.ccy];
+        var scHtml = (sc != null)
+          ? '<span class="tscore" style="color:' + (sc > 0 ? 'var(--long)' : sc < 0 ? 'var(--short)' : 'var(--range)') + '">' + (sc > 0 ? '+' : '') + sc + '</span>' : '';
+        return '<div class="tccy' + (t.moved ? '' : ' quiet') + '">' +
+          '<div class="thead"><span class="tccy-code">' + esc(t.ccy) + '</span>' + scHtml +
+            '<span class="tmoved' + (t.moved ? '' : ' q') + '">' + (t.moved ? 'MOVED' : 'QUIET') + '</span></div>' +
+          '<div class="thl">' + esc(t.headline || '') + '</div>' +
+          (t.read ? '<div class="tread">' + esc(t.read) + '</div>' : '') +
+          '</div>';
+      }).join('');
+      syncFullRead(true);
+    } else {
+      // fallback: no structured block in this report -> classic layout
+      $('todayCcy').innerHTML = '';
+      syncFullRead(false);
+    }
   }
 
   function barColor(s) { return s > 0 ? 'var(--up)' : s < 0 ? 'var(--down)' : 'var(--neutral)'; }
@@ -872,7 +909,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v12';
+  var APP_VERSION = 'v13';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

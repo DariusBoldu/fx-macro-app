@@ -72,6 +72,10 @@ function main() {
   const out = {
     meta: FX.meta,
     dailyRead: FX.dailyRead,
+    // per-currency daily read (movers first). Optional: if a run omits it the
+    // app falls back to the classic prose layout — no carry-forward on purpose
+    // (a stale "today" is worse than none).
+    today: Array.isArray(FX.today) ? FX.today : undefined,
     strength: FX.strength,
     symbols: FX.symbols,
     macro: macro,

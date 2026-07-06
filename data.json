@@ -8,6 +8,50 @@
     "nextBigEvent": "Wed Jul 8: RBNZ - binary BACK ON (~75% hike priced, 22/28 economists; ASB/Westpac still say hold) + Fed June minutes"
   },
   "dailyRead": "The RBNZ binary is back on - violently. What printed as 'hold near-certain' over the weekend has flipped in a session: 22 of 28 polled economists now expect a hike to 2.50% Wednesday, with market odds ~75% (ANZ - now tipping three hikes starting July - and BNZ call the hike; ASB and Westpac still say hold; the NZIER shadow board is split line-ball). Wednesday is once again the week's genuine coin-flip, and ANZ's own base case is a 'neutral-to-dovish' hike designed to minimise the reaction. Meanwhile the JPY follow-through FADED: USD/JPY drifted back to ~161.8 through the Monday Asia open with no MoF ambush on the thin tape - the momentum signal failed even as spot walks deeper into the proven intervention zone. USD holds its hawkish-hold floor (zero cuts priced, Sept ~50%, June CPI Jul 14 the arbiter), CAD stays weakest (WTI ~$68.3 fresh low, glut intact), and Doha diplomacy now has a date: talks resume July 11, after the funeral ends July 9. Cleanest board: USD/CAD and AUD/CAD longs; NZD trades are event trades until Wednesday 02:00 UTC.",
+  "today": [
+    {
+      "ccy": "NZD",
+      "moved": true,
+      "headline": "RBNZ binary BACK ON — ~75% hike priced for Wednesday (from <30% in a session)",
+      "read": "22/28 economists say 2.50%; the HOLD is now the pain trade and even a delivered hike can sell off on ANZ's 'neutral-to-dovish' script. NZD is an event trade only until Wed 02:00 UTC."
+    },
+    {
+      "ccy": "JPY",
+      "moved": true,
+      "headline": "Follow-through FADED — back to ~161.8, no Monday ambush",
+      "read": "The momentum signal failed; JPY shorts revert to an intervention lottery deep in the proven MoF zone. Defend, don't add — a no-warning strike is the tail on every XXX/JPY position."
+    },
+    {
+      "ccy": "CAD",
+      "moved": true,
+      "headline": "WTI fresh $68.3 low — the glut deepens",
+      "read": "Still the weakest currency: Saudi at 90% of baseline, Iranian crude stacking. USD/CAD and AUD/CAD longs stay the cleanest board; Friday's June jobs is the near catalyst."
+    },
+    {
+      "ccy": "USD",
+      "moved": true,
+      "headline": "ISM Services today — first pulse after the NFP miss",
+      "read": "The hawkish-hold floor holds (zero cuts priced, Sept ~50% and drifting); a weak ISM extends the slide, but the Jul 14 CPI is the real arbiter of the hike tail."
+    },
+    {
+      "ccy": "AUD",
+      "moved": true,
+      "headline": "Aug hike tail thinned to ~36% — now called an outlier",
+      "read": "The sticky-core floor stands but the near-term hawkish kicker faded; the AUD/CAD long now leans mostly on the weak CAD leg."
+    },
+    {
+      "ccy": "EUR",
+      "moved": false,
+      "headline": "No change — soft with a hawkish wrinkle",
+      "read": "Flash 2.8% cooling guts Jul 23 urgency, but core at 2.5% keeps a Sept hike alive. The USD leg drives EUR/USD; the wrinkle is the squeeze risk."
+    },
+    {
+      "ccy": "GBP",
+      "moved": false,
+      "headline": "No change — re-armed BoE thesis holds",
+      "read": "Services CPI 3.7% keeps both hike dissents alive into Jul 30. Firm, rangebound vs USD."
+    }
+  ],
   "strength": [
     {
       "ccy": "USD",
@@ -819,5 +863,5 @@
     }
   ],
   "geopolitics": "Funeral week, midpoint - and the diplomacy now has dates. Khamenei's rites run July 4-9 (Tehran -> Qom -> burial at the Imam Reza Shrine in Mashhad; the largest state funeral in Iran's history), with the Doha talks paused and now scheduled to RESUME JULY 11. The last round produced claims of a partial release of frozen Iranian funds - asserted by Tehran, denied by US officials - itself a read on how contested the deal's plumbing remains. The standing collision point is unchanged: the June 17 MoU obliges Iran to 'best efforts' toll-free Hormuz transit for 60 days only (lapsing ~mid-August), and Iranian officials keep repeating that fees will 'definitely' come - friendly nations get 'special treatment' - while Washington rejects the concept outright. Oil is not pricing this: WTI printed a fresh ~$68.3 low Monday, Brent ~$71-72, Saudi exports hold at 90% of the pre-war baseline, UAE restored, Iranian crude stacking at sea, record Russian exports. Transmission: falling oil -> eroding energy-CPI floors -> less CB hawkishness at the margin - though Wellington just showed the limit of that logic, with the RBNZ's hawks (and 22/28 economists) looking through the oil slide at domestic inflation. CAD still holds the bag; falling oil remains the GER40 tailwind (record highs) and does NOT buy a Fed cut (US core 2.9%; the disinflation is energy-led). Through Thursday the tail is the funeral vacuum itself - an incident with negotiators sidelined would re-spike oil into a market that has crushed the war premium (rescuing CAD, hurting AUD/NZD/GER40, handing USD and JPY competing haven bids); after Saturday the tail migrates to the talks themselves and the mid-August toll clock.",
-  "updatedAt": "2026-07-06T05:18:59.515Z"
+  "updatedAt": "2026-07-06T10:03:16.862Z"
 }

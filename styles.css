@@ -83,6 +83,24 @@ main{flex:1;padding:14px 14px calc(var(--tabbar-h) + var(--safe-bottom) + 18px);
 .bigevent .k{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--warn);font-weight:700;margin-bottom:3px}
 .bigevent .v{font-size:13.5px;font-weight:600;line-height:1.45}
 
+/* ---------- Today: per-currency reads ---------- */
+.tccy{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.tccy.quiet{border-left-color:var(--line)}
+.tccy.quiet .thl{color:var(--mut);font-weight:600}
+.tccy.quiet .tread{color:var(--dim)}
+.thead{display:flex;align-items:baseline;gap:9px}
+.tccy-code{font-weight:800;font-size:15.5px}
+.tscore{font-size:11px;font-weight:800;font-variant-numeric:tabular-nums}
+.tmoved{margin-left:auto;font-size:9px;font-weight:800;letter-spacing:.6px;color:var(--accent);
+  border:1px solid rgba(76,141,255,.45);border-radius:5px;padding:2px 7px;white-space:nowrap}
+.tmoved.q{color:var(--dim);border-color:var(--line)}
+.thl{font-size:13px;font-weight:700;margin-top:6px;line-height:1.5}
+.tread{font-size:12.5px;color:var(--mut);margin-top:5px;line-height:1.6}
+#fullReadHdr{cursor:pointer}
+#fullReadHdr .chev{float:right;color:var(--dim);transition:transform .15s ease}
+#fullReadHdr .chev.open{transform:rotate(90deg)}
+
 /* ---------- Strength ---------- */
 .srow{display:grid;grid-template-columns:50px 1fr;gap:13px;align-items:center;padding:13px 0;border-top:1px solid var(--line)}
 .srow:first-of-type{border-top:none}

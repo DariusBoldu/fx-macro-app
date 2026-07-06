@@ -52,13 +52,13 @@ clear_locks() {
 }
 
 clear_locks
-git add data.json
-# Commit only if data.json is actually staged for change.
-if git diff --cached --name-only | grep -qx "data.json"; then
+git add data.json history/
+# Commit only if something is actually staged for change.
+if ! git diff --cached --quiet; then
   clear_locks
   git commit -m "data: $(date +%F)"
 else
-  echo "data.json unchanged; nothing to commit."
+  echo "data.json/history unchanged; nothing to commit."
 fi
 
 clear_locks

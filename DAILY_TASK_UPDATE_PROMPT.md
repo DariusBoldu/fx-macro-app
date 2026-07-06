@@ -4,6 +4,26 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 4 (2026-07-06): per-currency Today block
+
+In `Forex_Dashboard/data.js`, alongside `dailyRead`, include a `today` array — the per-currency daily read that powers the app's restructured Today page. **All 7 currencies, every day**, shaped:
+
+```js
+today: [
+  { ccy: "NZD", moved: true, headline: "<one line: what changed today>", read: "<1-2 sentences: the lean / so-what>" },
+  ...
+]
+```
+
+Rules:
+- **Order = display order, BIGGEST MOVERS FIRST** — the currencies whose picture actually changed lead the array; quiet ones go last.
+- `moved: true` if that currency's story changed today; `false` for quiet days (then headline like "No change — <thesis> holds").
+- `headline` ≤ ~90 chars, the day's delta; `read` 1–2 sentences, forward-looking (the lean, the catalyst, the risk) — not a recap.
+- Keep `dailyRead` (the full narrative) exactly as before — the app shows it under a collapsible "Full daily read".
+- The 2026-07-06 data.js contains the reference format — keep it.
+
+---
+
 ## Update 3 (2026-07-06): timestamped catalysts + history archive
 
 Two small changes to the daily task:
