@@ -424,10 +424,9 @@
     'XAU/USD': { contract: 100,  label: '100 oz/lot',    quote: 'USD', kind: 'cash' },
     'XAG/USD': { contract: 5000, label: '5,000 oz/lot',  quote: 'USD', kind: 'cash' },
     'USOIL':   { contract: 1000, label: '1,000 bbl/lot', quote: 'USD', kind: 'cash' },
-    // GER40 (DAX): quoted in EUR, stop in index points. €25/point/lot is the
-    // standard index-contract multiplier — VERIFY against FOREX.COM and change
-    // `contract` here if their point value differs.
-    'GER40':   { contract: 25,   label: '€25 / point / lot', quote: 'EUR', kind: 'points' }
+    // GER40 (DAX): quoted in EUR, stop in index points. FOREX.COM Germany 40 =
+    // €1.00 per point per 1.0 lot (confirmed from their contract spec).
+    'GER40':   { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' }
   };
   var CALC_INSTRUMENTS = CALC_PAIRS.concat(Object.keys(CALC_COMMODITIES));
   var CALC_CCYS = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD'];
@@ -921,7 +920,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v14';
+  var APP_VERSION = 'v15';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
