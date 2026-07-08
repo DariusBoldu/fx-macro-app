@@ -855,41 +855,88 @@
   }
 
   /* ---- stats + closed history ---- */
+  // Breakeven (0R) is NOT a loss: excluded from win rate AND avg R (it also
+  // contributes 0 to total R). Win rate = wins / (wins + losses).
+  function aggTrades(list) {
+    var wins = 0, losses = 0, be = 0, tot = 0;
+    list.forEach(function (t) {
+      var r = Number(t.resultR) || 0; tot += r;
+      if (r > 0) wins++; else if (r < 0) losses++; else be++;
+    });
+    var decisive = wins + losses;
+    var avg = decisive ? tot / decisive : null;
+    return {
+      n: list.length, wins: wins, losses: losses, be: be,
+      winTxt: decisive ? Math.round(wins / decisive * 100) + '%' : '—',
+      avgTxt: avg == null ? '—' : (avg >= 0 ? '+' : '') + avg.toFixed(2) + 'R',
+      totTxt: (tot >= 0 ? '+' : '') + tot.toFixed(1) + 'R',
+      avgCls: avg == null ? '' : avg >= 0 ? 'pos' : 'neg',
+      totCls: tot > 0 ? 'pos' : tot < 0 ? 'neg' : ''
+    };
+  }
+
   function renderStats(closed) {
     $('jpanel').style.display = closed.length ? '' : 'none';
     if (!closed.length) return;
     $('jCount').textContent = closed.length + ' closed';
-    function agg(list) {
-      var n = list.length;
-      if (!n) return { n: 0, win: '—', avg: '—', tot: '—', cls: '' };
-      var wins = list.filter(function (t) { return t.resultR > 0; }).length;
-      var tot = list.reduce(function (s, t) { return s + (Number(t.resultR) || 0); }, 0);
-      return { n: n, win: Math.round(wins / n * 100) + '%', avg: (tot / n).toFixed(2) + 'R', tot: (tot >= 0 ? '+' : '') + tot.toFixed(1) + 'R', cls: tot >= 0 ? 'pos' : 'neg' };
-    }
-    var all = agg(closed);
+    var a = aggTrades(closed);
+    function box(v, k, cls) { return '<div class="jstat"><div class="v ' + (cls || '') + '">' + v + '</div><div class="k">' + k + '</div></div>'; }
     $('jstats').innerHTML =
       '<div class="jstatgrid">' +
-        '<div class="jstat"><div class="v">' + all.n + '</div><div class="k">Trades</div></div>' +
-        '<div class="jstat"><div class="v">' + all.win + '</div><div class="k">Win rate</div></div>' +
-        '<div class="jstat"><div class="v ' + all.cls + '">' + all.avg + '</div><div class="k">Avg R</div></div>' +
-        '<div class="jstat"><div class="v ' + all.cls + '">' + all.tot + '</div><div class="k">Total R</div></div>' +
+        box(a.n, 'Total trades', '') +
+        box(a.wins, 'Wins', a.wins ? 'pos' : '') +
+        box(a.losses, 'Losses', a.losses ? 'neg' : '') +
+        box(a.be, 'Breakeven', '') +
+      '</div>' +
+      '<div class="jstatgrid three">' +
+        box(a.winTxt, 'Win rate', '') +
+        box(a.avgTxt, 'Avg R', a.avgCls) +
+        box(a.totTxt, 'Total R', a.totCls) +
       '</div>' +
       '<table class="aligntbl"><tr><th>vs report bias</th><th>n</th><th>win%</th><th>avg R</th><th>total R</th></tr>' +
       [['with', 'With bias'], ['against', 'Against bias'], ['neutral', 'No bias (range)']].map(function (g) {
-        var a = agg(closed.filter(function (t) { return t.align === g[0]; }));
-        return '<tr><td>' + g[1] + '</td><td>' + a.n + '</td><td>' + a.win + '</td>' +
-          '<td class="' + a.cls + '">' + a.avg + '</td><td class="' + a.cls + '">' + a.tot + '</td></tr>';
-      }).join('') + '</table>';
+        var x = aggTrades(closed.filter(function (t) { return t.align === g[0]; }));
+        return '<tr><td>' + g[1] + '</td><td>' + x.n + '</td><td>' + x.winTxt + '</td>' +
+          '<td class="' + x.avgCls + '">' + x.avgTxt + '</td><td class="' + x.totCls + '">' + x.totTxt + '</td></tr>';
+      }).join('') + '</table>' +
+      '<div class="legend" style="margin-top:8px">Win rate = wins ÷ (wins + losses). Breakeven (0R) trades are excluded from win rate and avg R.</div>';
 
-    $('jhist').innerHTML = closed.slice(0, 30).map(function (t) {
+    $('jhist').innerHTML = closed.slice(0, 40).map(function (t) {
       var r = Number(t.resultR) || 0;
-      return '<div class="jrow"><div class="jtop"><span class="jsym">' + esc(t.sym) + '</span>' +
+      var rcls = r > 0 ? 'pos' : r < 0 ? 'neg' : '';
+      var rtxt = r === 0 ? 'BE · 0R' : (r > 0 ? '+' : '') + r + 'R';
+      var rval = r === 0 ? '0' : (r > 0 ? '+' : '') + r;
+      return '<div class="jrow" data-id="' + t.id + '"><div class="jtop"><span class="jsym">' + esc(t.sym) + '</span>' +
         '<span class="jdir ' + t.dir + '">' + t.dir + '</span>' +
         '<span class="conv">' + (t.align === 'with' ? 'with bias' : t.align === 'against' ? 'against bias' : 'no bias') + '</span>' +
-        '<span class="jr ' + (r > 0 ? 'pos' : r < 0 ? 'neg' : '') + '">' + (r > 0 ? '+' : '') + r + 'R</span></div>' +
+        '<span class="jr ' + rcls + '">' + rtxt + '</span></div>' +
         '<div class="jmeta">' + new Date(t.ts).toLocaleDateString() + ' → ' + (t.closedTs ? new Date(t.closedTs).toLocaleDateString() : '') +
-        (t.note ? ' · ' + esc(t.note) : '') + '</div></div>';
+        (t.note ? ' · ' + esc(t.note) : '') + '</div>' +
+        '<div class="jact"><button class="btn ghost jedit">Edit result</button><button class="jdel">delete</button></div>' +
+        '<div class="closeform jeditform" style="display:none"><input type="text" inputmode="text" placeholder="Result in R (0 = breakeven), e.g. +1,5 · 0 · -1" value="' + rval + '">' +
+        '<button class="btn jesave">Save</button></div></div>';
     }).join('');
+
+    document.querySelectorAll('#jhist .jrow').forEach(function (row) {
+      var id = row.getAttribute('data-id');
+      var t = closed.find(function (x) { return x.id === id; });
+      row.querySelector('.jedit').addEventListener('click', function () {
+        var f = row.querySelector('.jeditform'); f.style.display = f.style.display === 'flex' ? 'none' : 'flex';
+      });
+      row.querySelector('.jesave').addEventListener('click', function () {
+        var raw = (row.querySelector('.jeditform input').value || '').replace(',', '.').replace(/[Rr\s]/g, '');
+        var nr = parseFloat(raw);
+        if (!isFinite(nr)) { row.querySelector('.jeditform input').placeholder = 'Enter a number: 0, -1, +2…'; return; }
+        // reuse the close op to update the result; keep the original close date
+        jFetch('POST', { op: 'close', id: id, resultR: Math.round(nr * 100) / 100, closedTs: t && t.closedTs })
+          .then(function () { renderTrades(); renderBookBanner(); });
+      });
+      row.querySelector('.jdel').addEventListener('click', function () {
+        if (confirm('Delete this closed trade from the journal?')) {
+          jFetch('POST', { op: 'delete', id: id }).then(function () { renderTrades(); renderBookBanner(); });
+        }
+      });
+    });
   }
 
   function renderTrades() {
@@ -920,7 +967,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v15';
+  var APP_VERSION = 'v16';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

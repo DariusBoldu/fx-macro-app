@@ -284,7 +284,8 @@ main{flex:1;padding:14px 14px calc(var(--tabbar-h) + var(--safe-bottom) + 18px);
 .jact .jdel{margin-left:auto;background:none;border:none;color:var(--dim);font-size:12px;cursor:pointer}
 .closeform{display:flex;gap:8px;margin-top:9px}
 .closeform input{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:9px;color:var(--txt);padding:9px 11px;font-size:14px;outline:none}
-.jstatgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px}
+.jstatgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+.jstatgrid.three{grid-template-columns:repeat(3,1fr)}
 .jstat{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 6px;text-align:center}
 .jstat .v{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
 .jstat .v.pos{color:var(--long)} .jstat .v.neg{color:var(--short)}
