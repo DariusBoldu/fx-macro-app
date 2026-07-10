@@ -1,171 +1,156 @@
 {
   "meta": {
     "reportDate": "2026-07-10",
-    "reportLabel": "Fri Report — WAR PREMIUM FADES: WTI slips a 2nd session to ~$72 (Brent ~$77) DESPITE live strikes as the US campaign is read as degrading Iran's shipping-attack capability + glut caps rallies; gold floors ~$4,075, silver ~$57.7. USD stays firm (SEP 1-2 hikes, zero cuts). CAD oil floor eroding into today's Canada jobs (~+10k) - short EUR/USD, long USD/CAD; USOIL downgraded to a fading long, metals RANGE; Jul 14 CPI the arbiter.",
+    "reportLabel": "Fri PM update — REVERSAL: Canada jobs BEAT (+18.2k vs ~+10k, unemp 6.5% from 6.6%) fired CAD and broke the USD/CAD uptrend to a 2-wk low ~1.4136; a softer USD (DXY 101->100.9, fading Fed-hike bets) lifted EUR/USD to ~1.1420. Trump says Iran 'reached out to make a deal' - de-escalation tilt; WTI soft <$72, gold firms back >$4,100 (~$4,115). Both morning USD-leg trades wrong-footed; board now all-RANGE. Jul 14 CPI the single arbiter.",
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL",
-    "regime": "The kinetic escalation is still live but the market has stopped paying up for it: WTI fell a second session to ~$72 (Brent ~$77) DESPITE CENTCOM's second round of strikes, because the US campaign is read as degrading Iran's capacity to attack shipping (supply-protective) and the stacked-crude glut caps rallies. That partial normalization let gold find a floor at ~$4,075 (off Wed's ~$4,030 low) and yields steady, while the USD stays firm on the SEP's 1-2-hike guidance. With the CAD oil floor eroding into today's Canada jobs, the cleanest expressions flip back to the USD legs. Everything headline-hostage into the Jul 14 CPI and the post-funeral Doha reconvene.",
-    "nextBigEvent": "Tue Jul 14, 12:30 UTC: US June CPI - the 4.2%-regime check that decides the Sept hike (~50%); oil fading lowers the bar for a soft print. Canada June jobs today 12:30 UTC is the nearer catalyst."
+    "regime": "The de-escalation tilt + a softer USD wrong-footed the morning's two USD-leg trades. Canada's June jobs beat (+18.2k vs ~+10k, unemployment down to 6.5%) fired CAD and broke the USD/CAD uptrend to ~1.4136 despite hollow internals (all part-time, goods -43.7k); fading Fed-hike bets dropped DXY to ~100.9 and lifted EUR/USD to ~1.1420. Trump said Iran 'reached out to make a deal' as regional mediators work to reconvene Doha talks, keeping WTI soft under $72 and letting gold firm back above $4,100. The board is now almost entirely RANGE - the USD bid is leaking, not broken, and Jul 14 US CPI is the single arbiter.",
+    "nextBigEvent": "Tue Jul 14, 12:30 UTC: US June CPI - the 4.2%-regime check that decides the Sept hike (~45-50%) and whether the leaking USD bid snaps back or breaks."
   },
-  "dailyRead": "The story today is that the war premium is fading even as the strikes continue: WTI slipped a second session to ~$72 (Brent ~$77) despite CENTCOM's second consecutive round of strikes overnight (~80 Iranian targets, 60+ IRGC boats), because the market now reads the US campaign as degrading Iran's ability to hit shipping - supply-protective - and the stacked-crude glut keeps capping rallies. That partial normalization let gold find a floor at ~$4,075 (off Wednesday's ~$4,030 low) while silver stayed pinned near ~$57.7 (Dec-2025 lows, ratio ~67). The USD stays firm on the higher-for-longer read (Fed SEP now shows 1-2 hikes in 2026, zero cuts), and with the oil floor under CAD eroding just as Canada's June jobs print today (12:30 UTC, consensus ~+10k after May's +88k), the cleanest expression flips back to the USD legs: short EUR/USD and long USD/CAD, with USOIL downgraded to a fading long and the metals still RANGE. Everything remains headline-hostage into the Jul 14 US CPI and the post-funeral Doha reconvene.",
+  "dailyRead": "The morning's two USD-leg trades got wrong-footed by lunchtime. Canada's June jobs BEAT (+18.2k vs ~+10k consensus, unemployment DOWN to 6.5% from 6.6%) firmed CAD and knocked USD/CAD to a two-week low ~1.4136 - its first weekly loss in six - even though the internals were soft (all part-time, goods-producing shed 43.7k, manufacturing -17k). At the same time a softer USD (DXY back to ~100.9, fading Fed-hike bets) lifted EUR/USD to ~1.1420, so the morning's short-EUR/USD + long-USD/CAD pair both worked against the tape. The driver is de-escalation hope: Trump said Iran 'reached out to make a deal,' and Qatar/Pakistan/Oman/Turkey/Egypt/Saudi mediators are working to reconvene talks even as CENTCOM's Jul 8-9 strikes (80+ targets, 60+ IRGC boats) leave the MoU 'over.' That let WTI stay soft under $72 (Brent ~$76) and gold firm back above $4,100 (~$4,115). Net: the board is now almost entirely RANGE, the USD bid is leaking, and Jul 14 US CPI is the single arbiter - stand down size into it.",
   "today": [
     {
       "ccy": "CAD",
       "moved": true,
-      "headline": "Oil floor ERODING (WTI ~$72) into today's June jobs (~+10k)",
-      "read": "The oil bid that firmed the floor under the board's weakest currency is fading as WTI slips a second session, just as June jobs (12:30 UTC) are expected to calm to ~+10k after May's +88k. Both point the same way - USD/CAD stays a long, but a jobs beat or an oil re-spike flips the setup."
-    },
-    {
-      "ccy": "XAU",
-      "moved": true,
-      "headline": "Gold finds a floor ~$4,075 as the oil-yield pressure eases",
-      "read": "Off Wednesday's ~$4,030 low: the metals selloff paused as oil faded and yields steadied, but it stays RANGE - only a ceasefire that drops yields while keeping risk-off bid revives the long; a hot CPI re-arms the selloff."
+      "headline": "Jobs BEAT (+18.2k vs +10k, unemp 6.5%) fires CAD; USD/CAD to ~1.4136",
+      "read": "The beat + falling unemployment broke the July USD/CAD uptrend (first weekly loss in six), but the internals are hollow - all part-time, goods-producing shed 43.7k, manufacturing -17k. Fade extreme CAD strength: the BoC stays sidelined Jul 15 and the oil floor is still eroding."
     },
     {
       "ccy": "USD",
       "moved": true,
-      "headline": "Firm but the energy-CPI push eases as oil fades a 2nd day",
-      "read": "The SEP now pencils 1-2 hikes and zero cuts, keeping the higher-for-longer bid, but two down sessions in oil soften the energy pass-through into June CPI - a soft Jul 14 print would crack the story fast. DXY grinds ~101."
+      "headline": "Bid LEAKING - DXY 101->100.9 as Fed-hike bets fade",
+      "read": "De-escalation hope + the soft NFP crack outweighed the hawkish SEP dots today, so the higher-for-longer premium leaked. Still 1-2 hikes penciled and zero cuts - a hot Jul 14 CPI snaps the dollar straight back; a second soft print breaks it."
+    },
+    {
+      "ccy": "EUR",
+      "moved": true,
+      "headline": "EUR/USD up to ~1.1420 - on the soft USD, not EUR strength",
+      "read": "Cooling flash 2.8% still guts Jul 23 urgency while core 2.5% keeps a Sept hike alive; today's move was entirely the leaking USD bid. A hot US CPI reverses it; a hawkish ECB core tone would give EUR its own leg."
+    },
+    {
+      "ccy": "XAU",
+      "moved": true,
+      "headline": "Gold firms back above $4,100 (~$4,115) as yields ease",
+      "read": "Off Wednesday's ~$4,030 low: the softer USD and easing oil-yield pressure let gold steady into a little-changed week. Still RANGE - a hot CPI re-arms the real-rate selloff; a ceasefire that drops yields while keeping a haven bid revives the long."
     },
     {
       "ccy": "JPY",
       "moved": true,
-      "headline": "Yield pin eases marginally but spot holds ~162",
-      "read": "Fading oil relaxes the rising-yield prop a touch, yet spot stays ~162 in the MoF zone (Y11.73tn precedent) with no intervention - the strength case is still the backstop asymmetry, not momentum. A yields re-spike to 163+ forces the MoF's hand."
+      "headline": "Softer US yields let spot ease toward ~161.5",
+      "read": "The yield prop relaxed with the leaking USD bid, giving a mild short-USD/JPY tilt on top of the MoF-backstop asymmetry (Y11.73tn precedent). A yields re-spike on a hot CPI drags spot to 163+ and forces the MoF's hand."
     },
     {
-      "ccy": "USOIL",
+      "ccy": "AUD",
       "moved": true,
-      "headline": "Premium faded to ~$72 DESPITE live strikes - long downgraded",
-      "read": "The US campaign is read as degrading Iran's shipping-attack capability and the glut caps rallies, so momentum turned lower; the tail (Hormuz, ongoing strikes) keeps a long bias but the edge thinned. Headline-hostage - size small."
+      "headline": "De-escalation risk bid + soft USD lift the beta",
+      "read": "AUD caught a de-escalation bid, but the Aug 11 hike tail is thin (~36%) and soft China CPI (+1%) caps the demand pulse - the soft USD is doing most of the AUD/USD work. A Hormuz re-escalation flips it risk-off; Q2 CPI late Jul is the re-arm."
     },
     {
-      "ccy": "EUR",
+      "ccy": "NZD",
       "moved": false,
-      "headline": "No change — soft with the core wrinkle; the firm-USD tape does the work",
-      "read": "Flash 2.8% cooling still guts Jul 23 urgency, but core 2.5% keeps the Sept hike alive - EUR/USD short is the clean USD-leg expression. The squeeze risk is a hawkish Jul 23 tone."
+      "headline": "No change - dovish-hike NZD, higher hurdle for the next move",
+      "read": "The 6-0 hike to 2.50% was scripted dovish (inflation seen peaked 3.9% Q2); NZ Q2 CPI ~Jul 16 is the swing factor. Soft USD offsets the dovish leg, keeping NZD/USD RANGE. A 4%+ CPI re-arms the hawks."
     },
     {
       "ccy": "GBP",
       "moved": false,
-      "headline": "No change — firm and quiet; fading political risk adds a mild bid",
-      "read": "Services CPI 3.7% keeps both hike dissents alive into Jul 30, and post-Starmer political calm supports GBP/USD >1.34. Firm but rangebound vs a firm high-yield USD; long tilt vs AUD."
+      "headline": "No change - firm and quiet; soft USD adds a mild long tilt",
+      "read": "Services CPI 3.7% keeps both hike dissents alive into Jul 30, and the leaking USD bid gives GBP/USD a mild long tilt >1.34. Firm but rangebound; a hot US CPI re-firms the dollar against it."
     }
   ],
   "strength": [
     {
       "ccy": "USD",
       "score": 2,
-      "verdict": "STRONG — yields + haven",
-      "tag": "SEP 1-2 hikes, zero cuts; oil fading eases the energy push",
-      "drivers": "CPI 4.2% headline / core 2.9% (May); June NFP +57k big miss (unemp 4.2% on participation 61.5%); Fed 3.50-3.75% hawkish hold, SEP now pencils 1-2 hikes and zero 2026 cuts, Sept ~50%. Oil fading two sessions eases the energy-CPI floor at the margin.",
-      "forward": "🦅⚖️ Hawkish hold into the Jul 28-29 FOMC; the SEP's 1-2-hike guidance keeps the Sept tail alive, but two down sessions in oil soften the energy pass-through. Jun CPI (Jul 14) is the arbiter. Risk: a second soft CPI turns the NFP crack into a trend. Next FOMC Jul 28-29."
+      "verdict": "STRONG — but bid leaking",
+      "tag": "DXY 101->100.9; Fed-hike bets fade, SEP still 1-2 hikes",
+      "drivers": "CPI 4.2% headline / core 2.9% (May); June NFP +57k big miss (unemp 4.2%); Fed 3.50-3.75% hawkish hold, SEP pencils 1-2 hikes and zero 2026 cuts, Sept ~45-50%. Today the market faded the hike odds (DXY to ~100.9) as de-escalation hope + the NFP crack outweighed the hawkish dots.",
+      "forward": "🦅⚖️ Hawkish hold into the Jul 28-29 FOMC, but the bid is leaking - the SEP caps the downside while Jul 14 CPI is the only trigger that resets direction. Risk: a hot CPI snaps the dollar back; a second soft print turns the NFP crack into a trend. Next FOMC Jul 28-29."
     },
     {
       "ccy": "GBP",
       "score": 2,
       "verdict": "FIRM (quiet)",
-      "tag": "services CPI 3.7%; fading political risk adds a bid",
-      "drivers": "Core 2.6% (May, up from 2.5%); services CPI 3.7% (up from 3.2%); headline 2.8% held; DMP wages 4.2%. BoE 3.75%, hawkish 7-2 hold (2 hike votes); post-Starmer political calm supports GBP/USD >1.34.",
-      "forward": "🦅 Hawkish - the services re-acceleration keeps the hike tail and both dissents alive into the Jul 30 MPR round; fading political risk adds a mild bid. Risk: a soft activity/labor wave re-splits the MPC. Next BoE Jul 30."
+      "tag": "services CPI 3.7%; soft USD adds a mild long tilt",
+      "drivers": "Core 2.6% (May); services CPI 3.7% (up from 3.2%); headline 2.8% held; DMP wages 4.2%. BoE 3.75%, hawkish 7-2 hold (2 hike votes); post-Starmer political calm + the leaking USD bid support GBP/USD >1.34.",
+      "forward": "🦅 Hawkish - the services re-acceleration keeps the hike tail and both dissents alive into the Jul 30 MPR round. Risk: a soft activity/labor wave re-splits the MPC; a hot US CPI re-firms the dollar against it. Next BoE Jul 30."
     },
     {
       "ccy": "NZD",
       "score": 1,
       "verdict": "FIRM — dovish hike delivered",
       "tag": "2.50%, first hike since 2023; higher hurdle next",
-      "drivers": "RBNZ hiked 25bp to 2.50% Jul 8, 6-0 - but the statement was the dovish version: headline inflation now seen PEAKED at 3.9% in Q2 (easing to 3.3% Q3), a 'considerably higher hurdle' for the next move. NZD popped and faded; soft China CPI (+1%) trims the growth story.",
+      "drivers": "RBNZ hiked 25bp to 2.50% Jul 8, 6-0 - but the statement was the dovish version: headline inflation now seen PEAKED at 3.9% in Q2 (easing to 3.3% Q3), a 'considerably higher hurdle' for the next move. Soft China CPI (+1%) trims the growth story; the soft USD offset the dovish leg today.",
       "forward": "🦅⚖️ Hike delivered but guidance capped it - Sept still likely, not aggressively priced; Aug 19 should be a hold. NZ Q2 CPI (~Jul 16) validates or breaks the 'peaked at 3.9%' framing. Risk: a 4%+ CPI print re-arms the hawks; risk-off beta cuts the other way. Next RBNZ Aug 19."
     },
     {
       "ccy": "JPY",
       "score": 1,
       "verdict": "MIXED (haven vs yields)",
-      "tag": "spot ~162; yield pin eases as oil fades, MoF still the story",
-      "drivers": "Core CPI 1.4% (May, subsidy-suppressed); unemp 2.5%, jobs/applicants 1.26 tight. BoJ 1.00% (hiked Jun 16, 7-1), guides more hikes. Oil fading eases the rising-yield prop slightly but spot still ~162 - deep in the proven MoF zone (Y11.73tn/$74bn precedent) with no intervention yet.",
-      "forward": "🦅 The haven bid is real and the yield prop is easing marginally, but spot holds ~162 - the JPY-strength case is still the backstop asymmetry more than momentum; BoJ Jul 31 stays hawkish. Risk: a yields re-spike to 163+ forces the MoF's hand; fast de-escalation restores the carry grind. Next BoJ Jul 31."
+      "tag": "spot ~161.5; softer US yields ease the pin, MoF still the story",
+      "drivers": "Core CPI 1.4% (May, subsidy-suppressed); unemp 2.5%, jobs/applicants 1.26 tight. BoJ 1.00% (hiked Jun 16, 7-1), guides more hikes. Softer US yields today let spot slip toward ~161.5 - still deep in the proven MoF zone (Y11.73tn/$74bn precedent) with no intervention yet.",
+      "forward": "🦅 The haven bid is real and the yield prop eased today, giving a mild short-USD/JPY tilt on top of the backstop asymmetry; BoJ Jul 31 stays hawkish. Risk: a yields re-spike to 163+ forces the MoF's hand; fast de-escalation restores the carry grind. Next BoJ Jul 31."
     },
     {
       "ccy": "AUD",
       "score": -1,
-      "verdict": "MIXED — risk-off + soft China",
-      "tag": "thin Aug tail (~36%), China CPI +1% demand pulse light",
-      "drivers": "May CPI: trimmed mean 3.6% (up from 3.4%); headline 4.0%; unemp 4.5% loosening (June jobs Jul 16). RBA 4.35% (held Jun after 75bp of 2026 hikes); the Aug 11 hike was priced only ~36% before the escalation. China CPI missed at +1%, trimming the demand pulse.",
-      "forward": "⚖️🔻 The sticky-core floor stands but risk-off + a soft China pulse hit the beta first - an oil-shock growth scare argues RBA patience through Q3. Risk: a durable de-escalation plus a hot Q2 CPI (late Jul) flips it straight back to hawkish. Next RBA Aug 11."
+      "verdict": "MIXED — de-escalation lifts beta",
+      "tag": "thin Aug tail (~36%), China CPI +1%, soft USD lift",
+      "drivers": "May CPI: trimmed mean 3.6%; headline 4.0%; unemp 4.5% loosening (June jobs Jul 16). RBA 4.35% (held Jun after 75bp of 2026 hikes); the Aug 11 hike was priced only ~36%. China CPI missed at +1%, trimming the demand pulse; de-escalation hope + the soft USD lifted the beta today.",
+      "forward": "⚖️🔻 The sticky-core floor stands but the thin hike tail + soft China cap it - the soft USD is doing most of the AUD/USD work. Risk: a Hormuz re-escalation flips risk-off; a durable de-escalation plus a hot Q2 CPI (late Jul) flips it hawkish. Next RBA Aug 11."
     },
     {
       "ccy": "EUR",
       "score": -1,
-      "verdict": "SOFT — core wrinkle",
-      "tag": "flash 2.8% cooling BUT core 2.5%; firm-USD tape",
-      "drivers": "EZ June flash HICP 2.8% (down from 3.2%) BUT core ROSE to 2.5% from 2.2%. Unemp 6.3%. ECB 2.25% depo (hiked Jun 11, first since 2023), meeting-by-meeting; the firm-USD tape does the work on EUR/USD.",
-      "forward": "⚖️ Cooling headline guts Jul 23 urgency (hold expected) but rising core keeps a Sept hike alive - the dovish EUR read is not clean. Risk: a hawkish Jul 23 tone on core squeezes EUR shorts. Next ECB Jul 23."
+      "verdict": "SOFT — riding the soft USD",
+      "tag": "flash 2.8% cooling BUT core 2.5%; EUR/USD up on USD",
+      "drivers": "EZ June flash HICP 2.8% (down from 3.2%) BUT core ROSE to 2.5% from 2.2%. Unemp 6.3%. ECB 2.25% depo (hiked Jun 11), meeting-by-meeting; EUR/USD rose to ~1.1420 today purely on the softer USD, not EUR strength.",
+      "forward": "⚖️ Cooling headline guts Jul 23 urgency (hold expected) but rising core keeps a Sept hike alive - the EUR/USD lift is a USD story. Risk: a hot US CPI Jul 14 reverses it; a hawkish Jul 23 core tone squeezes EUR shorts. Next ECB Jul 23."
     },
     {
       "ccy": "CAD",
-      "score": -2,
-      "verdict": "SOFT → floor softening (oil fades)",
-      "tag": "WTI ~$72 - oil floor eroding; jobs today ~+10k",
-      "drivers": "May CPI 3.2% (energy-driven; ex-energy 2.1%, trim ~2.0%); unemp 6.6%; May +88k (June jobs today 12:30 UTC, consensus ~+10k); wages 3.0% cooling; technical recession. BoC 2.25%, 5th straight hold. WTI slipping to ~$72 is eroding the floor under the board's weakest currency.",
-      "forward": "🔻 Still the softest macro on the board and the oil floor is now eroding as WTI fades; BoC sidelined Jul 15 (core ~2% vs energy headline); today's June jobs (~+10k exp) is the domestic catalyst. Risk: an oil re-spike or a jobs beat firms it back. Next BoC Jul 15."
+      "score": -1,
+      "verdict": "SOFT → firmer on jobs beat",
+      "tag": "Jun +18.2k, unemp 6.5% - but all part-time, goods -43.7k",
+      "drivers": "May CPI 3.2% (energy-driven; ex-energy 2.1%, trim ~2.0%); Jun jobs +18.2k BEAT ~+10k, unemp fell to 6.5% from 6.6% - but all part-time, goods-producing -43.7k, manufacturing -17k; BoC 2.25%, 5th straight hold; technical recession. The beat broke the USD/CAD uptrend to ~1.4136.",
+      "forward": "⚖️ The jobs beat + falling unemployment fired CAD and broke the USD/CAD uptrend, but the internals are hollow and the oil floor is still eroding (~$72); BoC stays sidelined Jul 15. Risk: a hot US CPI re-firms USD/CAD; soft internals + an oil slide re-soften CAD. Next BoC Jul 15."
     }
   ],
   "symbols": [
     {
       "sym": "EUR/USD",
-      "bias": "SHORT",
-      "conv": "MEDIUM",
-      "why": "Soft EUR (cooling 2.8% flash, spent Jul 23 urgency) vs a USD held firm by the higher-for-longer read (SEP 1-2 hikes); the clean USD-leg expression.",
-      "risk": "The core-2.5% wrinkle turns Jul 23 hawkish; a soft US CPI Jul 14 fades the USD bid."
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "Downgraded from SHORT: rose to ~1.1420 on the softer USD, not EUR strength; cooling EUR flash vs a USD whose hike bid is leaking - no edge until CPI.",
+      "risk": "A hot CPI Jul 14 re-arms the USD short-EUR trade; a hawkish ECB Jul 23 core tone."
     },
     {
       "sym": "USD/CAD",
-      "bias": "LONG",
-      "conv": "MEDIUM",
-      "why": "Firm USD + the CAD oil floor eroding (WTI ~$72) into a June jobs print seen fading to ~+10k today; the offsetting oil bid is fading, not building.",
-      "risk": "An oil re-spike or a jobs beat firms CAD; soft US CPI Jul 14."
-    },
-    {
-      "sym": "USOIL",
-      "bias": "LONG",
+      "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "Downgraded from MED: premium faded to ~$72 over two sessions as US strikes are read as degrading Iran's capability + glut caps rallies; the tail keeps a long bias but momentum turned.",
-      "risk": "A Doha/'capability degraded' narrative crushes it; a tanker/Hormuz shock re-arms it."
+      "why": "Downgraded from LONG: the +18.2k jobs beat + unemp 6.5% broke the July uptrend to ~1.4136, but internals are hollow (part-time, goods -43.7k) and the oil floor still fades - no clean vector.",
+      "risk": "A hot US CPI Jul 14 re-firms it; an oil slide + soft-internals re-read weakens CAD again."
     },
     {
       "sym": "USD/JPY",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "The haven case holds but spot sits ~162 on still-elevated yields - the MoF-backstop asymmetry (Y11.73tn precedent), not momentum.",
-      "risk": "Yields re-spike and drag it to 163+; de-escalation restores carry."
+      "why": "Softer US yields let spot ease toward ~161.5; the MoF-backstop asymmetry (Y11.73tn precedent) plus the yield fade give a mild short tilt.",
+      "risk": "Yields re-spike on a hot CPI and drag it to 163+; de-escalation restores carry."
     },
     {
-      "sym": "AUD/JPY",
-      "bias": "SHORT",
-      "conv": "LOW-MED",
-      "why": "Risk-off + a thin AUD tail + soft China vs a haven-bid JPY, but the yield-propped JPY caps the downside.",
-      "risk": "A ceasefire snaps it back; hot AU Q2 CPI re-arms the AUD leg."
-    },
-    {
-      "sym": "EUR/JPY",
-      "bias": "SHORT",
+      "sym": "USOIL",
+      "bias": "LONG",
       "conv": "LOW",
-      "why": "Soft EUR vs a JPY with the MoF backstop; the yield drag caps conviction.",
-      "risk": "A hawkish ECB Jul 23; de-escalation."
+      "why": "Downgraded further: stuck under $72 as Trump's 'Iran reached out' + the glut cap rallies despite live strikes; the Hormuz tail keeps only a thin long bias.",
+      "risk": "A Doha breakthrough crushes it; a tanker/Hormuz-closure shock re-arms it."
     },
     {
       "sym": "EUR/NZD",
       "bias": "SHORT",
-      "conv": "LOW-MED",
-      "why": "Soft EUR vs an NZD that just hiked; the dovish statement caps the NZD leg.",
-      "risk": "A hawkish NZ Q2 CPI extends it; an EUR core squeeze reverses it."
-    },
-    {
-      "sym": "NZD/JPY",
-      "bias": "RANGE",
       "conv": "LOW",
-      "why": "Dovish-hike NZD vs a yield-pinned JPY; both legs blunted, the vector is gone.",
-      "risk": "A hot NZ Q2 CPI re-arms NZD; de-escalation lifts carry."
+      "why": "Soft EUR vs an NZD that just hiked; the dovish statement caps the NZD leg - edge thinned.",
+      "risk": "A hawkish NZ Q2 CPI extends it; an EUR core squeeze reverses it."
     },
     {
       "sym": "AUD/NZD",
@@ -175,53 +160,74 @@
       "risk": "A hot AU Q2 CPI flips it; NZD's higher-hurdle guidance caps the divergence."
     },
     {
-      "sym": "AUD/USD",
-      "bias": "SHORT",
+      "sym": "AUD/JPY",
+      "bias": "RANGE",
       "conv": "LOW",
-      "why": "Risk-off beta + soft China + a thin hike tail vs the firm, high-yield USD.",
-      "risk": "De-escalation + a soft US CPI Jul 14 flips it back."
+      "why": "De-escalation lifted the risk beta while softer yields firm JPY - both legs blunted, vector gone.",
+      "risk": "A Hormuz re-escalation snaps it down; a hot AU Q2 CPI re-arms AUD."
+    },
+    {
+      "sym": "EUR/JPY",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "Soft EUR vs a yield-eased JPY with the MoF backstop - no clean vector.",
+      "risk": "A hawkish ECB Jul 23; a yields re-spike."
+    },
+    {
+      "sym": "NZD/JPY",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "Dovish-hike NZD vs a firmer JPY - both legs blunted.",
+      "risk": "A hot NZ Q2 CPI re-arms NZD; de-escalation lifts carry."
+    },
+    {
+      "sym": "AUD/USD",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "De-escalation beta + softer USD lift it, but a thin hike tail + soft China cap it - two-way.",
+      "risk": "A Hormuz shock + a hot US CPI flips it back down."
     },
     {
       "sym": "CAD/JPY",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Oil fade weakens CAD, yields pin JPY - no clean vector.",
+      "why": "CAD firmed on jobs, JPY firmed on yields - offsetting, no vector.",
       "risk": "An oil re-spike lifts CAD; a MoF strike lifts JPY."
     },
     {
       "sym": "AUD/CAD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Fading oil eases the CAD headwind while risk-off + soft China hit AUD - both legs blunted.",
+      "why": "CAD firmer on jobs while AUD rides risk-on - both legs bid, the edge is thin.",
       "risk": "An oil re-spike re-pins CAD; a hot AU CPI lifts AUD."
     },
     {
       "sym": "NZD/CAD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Dovish-hike NZD vs an oil-softening CAD; both catalysts spent.",
-      "risk": "NZ Q2 CPI vs oil headlines set the break."
+      "why": "Dovish-hike NZD vs a jobs-firmed CAD; both catalysts spent.",
+      "risk": "NZ Q2 CPI vs Canada oil/data set the break."
     },
     {
       "sym": "GBP/JPY",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Firm GBP vs a yield-pinned JPY - mild long tilt as oil-yield pressure eases, but no momentum.",
+      "why": "Firm GBP vs a yield-eased JPY - mild long tilt, no momentum.",
       "risk": "A no-warning MoF strike; a yields re-spike."
     },
     {
       "sym": "GBP/USD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Two firm legs: hawkish BoE (services 3.7%, fading political risk) vs a firm hawkish-hold Fed - no clean edge.",
-      "risk": "A hawkish BoE Jul 30 breaks it up; a hot US CPI breaks it down."
+      "why": "Firm hawkish GBP (services 3.7%) vs a leaking USD bid - mild long tilt as the dollar softens, but no momentum.",
+      "risk": "A hot US CPI re-firms USD; a soft UK activity wave re-splits the MPC."
     },
     {
       "sym": "NZD/USD",
-      "bias": "SHORT",
+      "bias": "RANGE",
       "conv": "LOW",
-      "why": "Post-RBNZ: the dovish hike faded and the firm high-yield USD caps rallies - mild short tilt.",
-      "risk": "NZ Q2 CPI (~Jul 16) re-opens direction."
+      "why": "Post-RBNZ dovish hike vs a softening USD - the soft-USD lift offsets the dovish NZD leg.",
+      "risk": "NZ Q2 CPI (~Jul 16) re-opens direction; a hot US CPI."
     },
     {
       "sym": "EUR/AUD",
@@ -234,8 +240,8 @@
       "sym": "GBP/AUD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Firm GBP vs risk-hit AUD - long tilt, but stretched and headline-hostage.",
-      "risk": "De-escalation + a hot AU CPI reverses the tilt."
+      "why": "Firm GBP vs a risk-lifted AUD - flat, headline-hostage.",
+      "risk": "De-escalation extends AUD; a hot AU CPI."
     },
     {
       "sym": "GBP/NZD",
@@ -248,35 +254,35 @@
       "sym": "DXY",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "Firm long tilt: the SEP's 1-2-hike read and soft EUR (57.6% weight) hold DXY ~101, but Sept is only ~50% and oil fading eases the yield push - it grinds, not breaks. Jul 14 CPI is the trigger.",
-      "risk": "De-escalation + a soft CPI Jul 14 unwind the bid."
+      "why": "The bid is leaking: fading Fed-hike bets + de-escalation dropped DXY 101->100.9 as EUR (57.6% wt) firmed; the SEP caps the downside but Jul 14 CPI is the only trigger that resets direction.",
+      "risk": "A hot CPI Jul 14 snaps it back up; a second soft print breaks 100.5."
     },
     {
       "sym": "JPYBASKET",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "The haven bid is intact but yields still pin JPY at ~162 with no intervention - a backstop-asymmetry play, not a momentum long. (Rises when JPY strengthens - opposite ticket to XXX/JPY.)",
-      "risk": "A yields re-spike drags it lower and forces the MoF; de-escalation caps it."
+      "why": "Softer US yields let JPY firm and spot ease toward ~161.5 - a backstop-asymmetry + yield-fade tilt, still not momentum. (Rises when JPY strengthens - opposite ticket to XXX/JPY.)",
+      "risk": "A yields re-spike on a hot CPI drags it lower; de-escalation caps it."
     },
     {
       "sym": "GER40",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "The oil pullback restores a mild tailwind (WTI ~$72) but geopolitics stays a headwind and the index is stretched at record territory (~25,800).",
-      "risk": "A deeper oil spike turns it SHORT; a clean de-escalation restores the melt-up."
+      "why": "De-escalation hope + oil under $72 restore a mild tailwind, but the index is stretched at record territory (~25,800) and geopolitics is a live two-way.",
+      "risk": "A Hormuz re-escalation turns it SHORT; a clean ceasefire restores the melt-up."
     },
     {
       "sym": "XAU/USD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Gold found a floor at ~$4,075 (off Wed's ~$4,030 low) as the oil-yield pressure eased and the escalation-selling paused; still range-bound until yields and the Fed path settle.",
-      "risk": "A ceasefire that drops yields AND keeps risk-off bid revives the long; a hot CPI re-arms the selloff."
+      "why": "Gold firmed back above $4,100 (~$4,115, off Wed's ~$4,030 low) as yields eased and the USD bid leaked; steadies into a little-changed week - trade levels until the Fed path settles.",
+      "risk": "A hot CPI re-arms the real-rate selloff; a ceasefire that drops yields AND keeps a haven bid revives the long."
     },
     {
       "sym": "XAG/USD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Silver stays pinned near ~$57.7 (Dec-2025 lows, ratio ~67) - the industrial leg plus real yields keep it heavier than gold even as the metals steady.",
+      "why": "Silver steadied near ~$57.7 (ratio ~71) - the industrial leg plus real yields keep it heavier than gold even as the metals firm together.",
       "risk": "A high-beta flush lower; follows gold up only if the haven leg re-dominates."
     }
   ],
@@ -310,7 +316,7 @@
       },
       "unemployment": {
         "value": "4.2%",
-        "trend": "falling",
+        "trend": "stable",
         "note": "",
         "hist": [
           4.1,
@@ -711,29 +717,29 @@
         ]
       },
       "unemployment": {
-        "value": "6.6%",
+        "value": "6.5%",
         "trend": "falling",
         "note": "",
         "hist": [
-          6.5,
-          6.7,
           6.8,
           6.9,
           6.9,
-          6.6
+          6.6,
+          6.6,
+          6.5
         ]
       },
       "jobs": {
-        "value": "+88k",
-        "trend": "rising",
+        "value": "+18.2k",
+        "trend": "falling",
         "note": "Employment",
         "hist": [
-          10,
           25,
           15,
           20,
           10,
-          88
+          88,
+          18
         ]
       },
       "rates": {
@@ -754,37 +760,30 @@
   "catalysts": [
     {
       "date": "Fri Jul 10",
-      "event": "Canada June jobs",
+      "event": "Canada June jobs (DONE)",
       "impact": "med",
       "when": "2026-07-10T12:30:00Z",
-      "note": "Consensus ~+10k, unemp 6.6% - whether May's +88k was noise; feeds a CAD whose oil floor is now fading, ahead of BoC Jul 15."
-    },
-    {
-      "date": "Fri Jul 10",
-      "event": "Germany CPI final",
-      "impact": "low",
-      "when": "2026-07-10T06:00:00Z",
-      "note": "Confirmation print; EZ inflation texture into ECB Jul 23."
+      "note": "+18.2k vs ~+10k, unemp 6.5% (down from 6.6%) - beat, but all part-time / goods -43.7k; fired CAD, USD/CAD to ~1.4136."
     },
     {
       "date": "Post-funeral",
       "event": "US-Iran Doha talks reconvene",
       "impact": "high",
-      "note": "Technical round concluded with 'positive progress'; the next sit is the first hard de-escalation signal - oil, CAD, JPY, gold all key off it."
+      "note": "Mediators (Qatar/Pakistan/Oman/Turkey/Egypt/Saudi) working to reconvene; Trump says Iran 'reached out' - the first hard de-escalation signal drives oil, CAD, JPY, gold."
     },
     {
       "date": "Tue Jul 14",
       "event": "US June CPI",
       "impact": "high",
       "when": "2026-07-14T12:30:00Z",
-      "note": "The 4.2%-regime check - re-arms or kills the Sept hike (~50%); oil fading lowers the bar for a soft print."
+      "note": "The 4.2%-regime check - re-arms or kills the Sept hike (~45-50%); the single arbiter now."
     },
     {
       "date": "Wed Jul 15",
       "event": "BoC decision",
       "impact": "med",
       "when": "2026-07-15T13:45:00Z",
-      "note": "Hold; the fading oil floor vs core ~2% and a technical recession."
+      "note": "Hold; jobs beat but hollow internals + fading oil floor + technical recession."
     },
     {
       "date": "~Thu Jul 16",
@@ -819,7 +818,7 @@
       "event": "FOMC decision",
       "impact": "high",
       "when": "2026-07-29T18:00:00Z",
-      "note": "Warsh round 2; hold + hawkish minimalism; Sept ~50% hangs on the Jul 14 CPI."
+      "note": "Warsh round 2; hold + hawkish minimalism; Sept ~45-50% hangs on the Jul 14 CPI."
     },
     {
       "date": "Jul 30",
@@ -833,21 +832,21 @@
       "event": "BoJ decision",
       "impact": "high",
       "when": "2026-07-31T03:00:00Z",
-      "note": "Guidance with spot ~162 and the MoF zone hot; oil fading eases the pin slightly."
+      "note": "Guidance with spot ~161.5 and the MoF zone hot."
     },
     {
       "date": "~Aug 16",
       "event": "Hormuz 60-day free-transit window lapses",
       "impact": "high",
-      "note": "Iran: fees 'definitely'; Washington: rejected - now with active strikes in between."
+      "note": "Iran: fees 'definitely'; Washington: rejected - with active strikes in between."
     },
     {
       "date": "Rolling",
       "event": "Tanker-war / strikes escalation watch",
       "impact": "high",
-      "note": "3 vessels hit, CENTCOM strikes ongoing, sanctions reimposed; every headline moves oil, CAD, JPY, gold."
+      "note": "3 vessels hit, CENTCOM strikes Jul 8-9, MoU 'over'; every headline moves oil, CAD, JPY, gold."
     }
   ],
-  "geopolitics": "The kinetic escalation is still live but the market has stopped paying up for it. Overnight CENTCOM ran a second consecutive round of strikes - following the previous night's hit on ~80 Iranian targets including 60+ IRGC boats - and Treasury's reimposed oil sanctions stayed in force, yet WTI fell a second session to ~$72 (Brent ~$77) and tanker traffic through Hormuz stayed thin (13 crossings Wednesday vs a 33/day norm). Two things flipped the read: the US campaign is increasingly interpreted as degrading Iran's capacity to attack shipping (supply-protective rather than supply-threatening), and the stacked-crude glut (Iranian barrels plus Saudi ~90% output) caps every rally. The Doha technical track remains alive - 'positive progress' reported, reconvene after Khamenei's funeral - even as Trump calls the June-17 MoU 'over' and ~6,000 seafarers stay stranded. With the oil-inflation impulse easing, the RATES channel that smashed metals on Wednesday relaxed: gold found a floor at ~$4,075 and yields steadied, though the USD stays firm on the SEP's 1-2-hike guidance. Transmission by currency: USD still the cleanest beneficiary (higher-for-longer holds even as the energy push fades); CAD loses its oil floor just as June jobs are expected to soften today, firming the USD/CAD long; JPY's pin eases marginally but spot holds ~162 (MoF backstop still the story); AUD and NZD wear risk-off beta plus the soft China pulse (CPI +1%); EUR stays soft on the firm-USD tape; GER40 gets a small tailwind back from the oil pullback. The two-way risk is unchanged and large: a Doha breakthrough would crush what premium remains, while a genuine Hormuz-closure or tanker shock re-arms the whole complex overnight - which is why the board still carries no high-conviction pairs and the oil-linked calls are sized small.",
-  "updatedAt": "2026-07-10T05:12:23.908Z"
+  "geopolitics": "The kinetic story is still live but the market is now leaning toward de-escalation. CENTCOM's Jul 8-9 strikes (80+ targets, 60+ IRGC boats, in response to three vessels hit in Hormuz) left Trump calling the June-17 MoU 'over,' yet by Friday Trump said Iran had 'reached out to make a deal,' and Qatar, Pakistan, Oman, Turkey, Egypt and Saudi officials are working the phones to reconvene talks. That de-escalation tilt - plus the stacked-crude glut (Iranian barrels plus Saudi ~90% output) - kept WTI soft under $72 (Brent ~$76) and let the rates channel relax: gold firmed back above $4,100 (~$4,115) and the USD bid leaked (DXY 101->100.9) as Fed-hike odds faded. Transmission by currency: the USD's higher-for-longer premium is leaking - the cleanest beneficiary of the war trade is now the weakest link into Jul 14 CPI; CAD firmed on its OWN data (jobs beat + unemployment down) rather than oil, breaking the USD/CAD uptrend even though the internals were hollow; JPY firmed as US yields eased, nudging spot toward ~161.5 (MoF backstop still the deeper story); AUD/NZD caught a de-escalation risk bid; EUR rose on the soft-USD tape, not its own strength; GER40 and gold both firmed on the easing oil-yield pressure. The two-way risk is unchanged and large: a Doha breakthrough crushes what premium remains, while a genuine Hormuz-closure or tanker shock re-arms the whole complex overnight - which is why the board carries no conviction pairs and the oil-linked calls are sized to a whisper.",
+  "updatedAt": "2026-07-10T15:46:53.874Z"
 }
