@@ -49,7 +49,7 @@
       "ccy": "CHF",
       "moved": true,
       "headline": "Haven bid bleeding with gold on the de-escalation - the franc gives back its war premium.",
-      "read": "New coverage from today: CHF trades as the FX twin of gold's haven unwind - soft while the truce holds, instantly re-armed if it collapses. SNB parked at 0.75% (Sept 17 next); the franc, not the policy rate, does the work."
+      "read": "New coverage from today: CHF trades as the FX twin of gold's haven unwind - soft while the truce holds, instantly re-armed if it collapses. SNB at 0% (Sept 24 next); the franc, not the policy rate, does the work."
     },
     {
       "ccy": "EUR",
@@ -128,8 +128,8 @@
     },
     "CHF": {
       "next": "hold",
-      "when": "Sept 17 (SNB)",
-      "note": "Parked at 0.75%; the franc itself does the tightening via haven flows."
+      "when": "Sept 24 (SNB)",
+      "note": "At ZERO (held Dec/Mar/Jun); SNB signals greater readiness to intervene in FX; sees inflation ~0.6% for 2026."
     }
   },
   "strength": [
@@ -178,8 +178,8 @@
       "score": 0,
       "verdict": "MIXED — haven unwinding",
       "tag": "war premium bleeding off",
-      "drivers": "CPI ~1.1% y/y (inside the SNB band); unemp 2.9%; SNB 0.75%, parked since spring. The franc rode the escalation as the clean FX haven; the 10-day ceasefire proposal is unwinding that bid alongside gold.",
-      "forward": "⚖️ De-escalation = softer CHF, escalation = instant re-arm - the truce headlines, not the SNB, set the franc. Sept 17 SNB is far; intervention risk only on extreme strength. New coverage as of Jul 28."
+      "drivers": "CPI 0.5% y/y (falling); GDP 0.3% y/y; unemp 2.9%; SNB at 0% (held Dec/Mar/Jun). The franc rode the escalation as the clean FX haven; the 10-day ceasefire proposal is unwinding that bid alongside gold.",
+      "forward": "⚖️ De-escalation = softer CHF, escalation = instant re-arm - the truce headlines, not the SNB, set the franc. Sept 24 SNB is far; the SNB explicitly signals readiness to intervene on franc strength. New coverage as of Jul 28."
     },
     {
       "ccy": "CAD",
@@ -889,68 +889,50 @@
     },
     "CHF": {
       "inflation": {
-        "value": "1.1%",
-        "trend": "stable",
+        "value": "0.5%",
+        "trend": "falling",
         "note": "CPI y/y",
         "hist": [
-          1.3,
-          1.2,
-          1.1,
-          1.1,
-          1.2,
-          1.1
+          0.6,
+          0.5
         ]
       },
       "growth": {
-        "value": "1.2%",
-        "trend": "stable",
+        "value": "0.3%",
+        "trend": "falling",
         "note": "GDP y/y",
         "hist": [
-          1,
           1.1,
-          1.2,
-          1.1,
-          1.2,
-          1.2
+          0.3
         ]
       },
       "unemployment": {
         "value": "2.9%",
-        "trend": "stable",
+        "trend": "falling",
         "note": "",
         "hist": [
-          2.8,
-          2.8,
-          2.9,
-          2.9,
-          2.9,
+          3,
           2.9
         ]
       },
       "jobs": {
-        "value": "+0.2%",
-        "trend": "stable",
-        "note": "Employment q/q",
+        "value": "-41k",
+        "trend": "falling",
+        "note": "Employed q/q",
         "hist": [
-          0.3,
-          0.2,
-          0.2,
-          0.1,
-          0.2,
-          0.2
+          5392,
+          5351
         ]
       },
       "rates": {
-        "value": "0.75%",
+        "value": "0.00%",
         "trend": "stable",
         "note": "SNB policy",
         "hist": [
-          0.75,
-          0.75,
-          0.75,
-          0.75,
-          0.75,
-          0.75
+          0,
+          0,
+          0,
+          0
         ]
       }
     }
@@ -1025,5 +1007,5 @@
     }
   ],
   "geopolitics": "The pivot: de-escalation, and the oil trade is one-way down. Regional mediators - Pakistan, Qatar, Turkey and Egypt - have tabled a 10-day ceasefire reopening BOTH Strait of Hormuz lanes: the southern route through Omani waters free of Iranian attacks, and the northern route through Iranian waters free of the US blockade, with a proposed middle corridor where vessels transit and Iran collects reasonable service fees. Iranian barrels are re-entering the market. Crude, which last week printed the cycle high on a 12th strike night, collapsed ~5% intraday to a $83.19 low (WTI ~$84, Brent ~$86), compounded by a fresh US inventory build. The crucial caveat: the US is demanding a LONGER truce than the 10-day proposal, so this is de-escalation-in-progress, not a signed deal - the marginal headline risk now runs both ways. FX transmission: (1) CAD is the clearest loser - the terms-of-trade premium that made it last week's winner is gone with crude near $84 and no domestic hawkish leg to replace it; USD/CAD LONG (HIGH) is the cleanest expression. (2) The JPY gets fundamental relief - the energy importer benefits most, and BoJ Jul 31 (trend 1.9%) arms the hawks - but spot still ~163.8 as the dollar is firm into the Fed. (3) The USD's bid rotates from haven to policy - hike odds up to ~34% (Sept ~82%); DXY long tilt. (4) Gold and silver bled off the haven bid to $4,046 / $57.68 - XAU/XAG downgraded to RANGE (short tilt). (5) NZD and GBP lose their fuel-CPI engine as the petrol pass-through stops renewing, softening both forward paths. (6) The DAX gets an energy-cost tailwind - GER40 flips to a long tilt. Every oil-linked leg keys off the same binary - and today it broke to the downside. If the 10-day truce collapses, it all snaps back.",
-  "updatedAt": "2026-07-28T17:44:49.896Z"
+  "updatedAt": "2026-07-28T19:59:55.517Z"
 }
