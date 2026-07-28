@@ -92,7 +92,6 @@
     var tabs = document.querySelectorAll('.tabbtn');
     for (var k = 0; k < tabs.length; k++) tabs[k].classList.toggle('active', tabs[k].dataset.v === v);
     window.scrollTo(0, 0);
-    if (v === 'signals') refreshPrices();
     if (v === 'trades') { computeSize(); renderTrades(); }
   }
   document.querySelectorAll('.tabbtn').forEach(function (b) {
@@ -131,10 +130,26 @@
 
   /* ============================ Renderers ============================ */
   function renderAll(D) {
-    renderMeta(D); renderToday(D); renderStrength(D); renderMacro(D); renderSignals(D.symbols);
-    renderCalendar(D); renderPricesUniverse(D);
+    renderMeta(D); renderToday(D); renderMacro(D); renderSignals(D.symbols);
+    renderRates(D); renderCalendar(D);
     renderBookBanner(); renderTrades();
   }
+
+  /* ============================ Theme (light/dark) ============================ */
+  function applyTheme(t) {
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.removeAttribute('data-theme');
+    var btn = $('thToggle'); if (btn) btn.textContent = t === 'dark' ? '☀' : '☾';
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'dark' ? '#0b0f17' : '#f2f5fa');
+  }
+  var THEME = localStorage.getItem('fx_theme') || 'light';
+  applyTheme(THEME);
+  $('thToggle').addEventListener('click', function () {
+    THEME = THEME === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('fx_theme', THEME);
+    applyTheme(THEME);
+  });
 
   function relTime(iso) {
     if (!iso) return '—';
@@ -152,7 +167,6 @@
     var stale = D.updatedAt && (Date.now() - new Date(D.updatedAt).getTime()) > 36 * 3600 * 1000;
     $('updated').classList.toggle('stale', !!stale);
     $('updatedTxt').textContent = 'Updated ' + relTime(D.updatedAt);
-    $('regime').innerHTML = '<b>Regime:</b> ' + esc(m.regime || '');
   }
 
   var fullReadOpen = false;
@@ -169,6 +183,16 @@
     syncFullRead(true);
   });
 
+  var geoOpen = false;
+  $('geoHdr').addEventListener('click', function () {
+    geoOpen = !geoOpen;
+    $('geo').style.display = geoOpen ? '' : 'none';
+    $('geoChev').classList.toggle('open', geoOpen);
+  });
+
+  function scoreColor(s) { return s > 0 ? 'var(--long)' : s < 0 ? 'var(--short)' : 'var(--range)'; }
+
+  var openCcy = null;
   function renderToday(D) {
     var m = D.meta || {};
     $('bigevent').innerHTML =
@@ -177,47 +201,64 @@
     $('dailyRead').textContent = D.dailyRead || '';
     $('geo').textContent = D.geopolitics || '';
 
-    // per-currency reads, movers first (order comes from the task)
-    var list = Array.isArray(D.today) ? D.today.filter(function (t) { return t && t.ccy; }) : [];
-    var scores = {};
-    (D.strength || []).forEach(function (c) { scores[c.ccy] = c.score; });
-    if (list.length) {
-      $('todayCcy').innerHTML = list.map(function (t) {
-        var sc = scores[t.ccy];
-        var scHtml = (sc != null)
-          ? '<span class="tscore" style="color:' + (sc > 0 ? 'var(--long)' : sc < 0 ? 'var(--short)' : 'var(--range)') + '">' + (sc > 0 ? '+' : '') + sc + '</span>' : '';
-        return '<div class="tccy' + (t.moved ? '' : ' quiet') + '">' +
-          '<div class="thead"><span class="tccy-code">' + esc(t.ccy) + '</span>' + scHtml +
-            '<span class="tmoved' + (t.moved ? '' : ' q') + '">' + (t.moved ? 'MOVED' : 'QUIET') + '</span></div>' +
-          '<div class="thl">' + esc(t.headline || '') + '</div>' +
-          (t.read ? '<div class="tread">' + esc(t.read) + '</div>' : '') +
-          '</div>';
-      }).join('');
-      syncFullRead(true);
-    } else {
-      // fallback: no structured block in this report -> classic layout
-      $('todayCcy').innerHTML = '';
-      syncFullRead(false);
-    }
+    // world snapshot (fallback: regime prose if the report has no snapshot yet)
+    var snap = Array.isArray(D.snapshot) ? D.snapshot : [];
+    $('snapshot').innerHTML = snap.length
+      ? snap.map(function (r) {
+          return '<div class="snaprow"><span class="si">' + esc(r.icon || '•') + '</span>' +
+            '<span class="st">' + esc(r.t || '') + '</span><span class="ss">' + esc(r.s || '') + '</span></div>';
+        }).join('')
+      : '<div class="read" style="font-size:13px">' + esc(m.regime || '') + '</div>';
+
+    // strongest -> weakest ranking strip (strength[] is already ordered)
+    var st = D.strength || [];
+    $('rankstrip').innerHTML = st.map(function (c, i) {
+      return (i ? '<span class="rankarrow">›</span>' : '') +
+        '<div class="rankchip" data-ccy="' + esc(c.ccy) + '"><span class="rc">' + esc(c.ccy) + '</span>' +
+        '<span class="rs" style="color:' + scoreColor(c.score) + '">' + (c.score > 0 ? '+' : '') + c.score + '</span></div>';
+    }).join('');
+    $('rankstrip').querySelectorAll('.rankchip').forEach(function (ch) {
+      ch.addEventListener('click', function () {
+        openCcy = ch.getAttribute('data-ccy');
+        renderCcyGrid(D);
+        var el = document.querySelector('.cbox.open');
+        if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      });
+    });
+
+    renderCcyGrid(D);
+    syncFullRead(true);
   }
 
-  function barColor(s) { return s > 0 ? 'var(--up)' : s < 0 ? 'var(--down)' : 'var(--neutral)'; }
-  function renderStrength(D) {
-    var html = (D.strength || []).map(function (c) {
-      var pct = Math.abs(c.score) / 3 * 50;
-      var left = c.score >= 0 ? 50 : 50 - pct;
-      var signed = (c.score > 0 ? '+' : '') + c.score;
-      return '<div class="srow">' +
-        '<div><div class="ccy">' + esc(c.ccy) + '</div><div class="sc">' + signed + '</div></div>' +
-        '<div>' +
-          '<div class="verdict">' + esc(c.verdict || '') +
-            (c.tag ? ' <span class="tag">' + esc(c.tag) + '</span>' : '') + '</div>' +
-          '<div class="bar"><div class="mid"></div><div class="fill" style="left:' + left + '%;width:' + pct + '%;background:' + barColor(c.score) + '"></div></div>' +
-          '<div class="fwd">' + esc(c.forward || '') + '</div>' +
-          '<div class="drivers">' + esc(c.drivers || '') + '</div>' +
-        '</div></div>';
+  /* currency accordion grid — merges the old Strength details with the daily read */
+  function renderCcyGrid(D) {
+    var tmap = {};
+    (D.today || []).forEach(function (t) { tmap[t.ccy] = t; });
+    $('ccyGrid').innerHTML = (D.strength || []).map(function (c) {
+      var t = tmap[c.ccy] || {};
+      var open = openCcy === c.ccy;
+      var pct = Math.abs(c.score) / 3 * 50, left = c.score >= 0 ? 50 : 50 - pct;
+      var det = '<div class="cdetail">' +
+        (t.headline ? '<div class="thl">' + esc(t.headline) + '</div>' : '') +
+        (t.read ? '<div class="ctx" style="margin-top:4px">' + esc(t.read) + '</div>' : '') +
+        '<div class="cbar"><div class="mid"></div><div class="fill" style="left:' + left + '%;width:' + pct + '%;background:' + scoreColor(c.score) + '"></div></div>' +
+        '<div class="csec">Forward bias</div><div class="ctx">' + esc(c.forward || '') + '</div>' +
+        '<div class="csec">Drivers</div><div class="ctx">' + esc(c.drivers || '') + '</div>' +
+        '<div class="cclose">Close ▴</div></div>';
+      return '<div class="cbox' + (open ? ' open' : '') + '" data-ccy="' + esc(c.ccy) + '">' +
+        '<div class="chead"><span class="cc">' + esc(c.ccy) + '</span>' +
+        '<span class="cs" style="color:' + scoreColor(c.score) + '">' + (c.score > 0 ? '+' : '') + c.score + '</span>' +
+        '<span class="cdot' + (t.moved ? '' : ' q') + '"></span></div>' +
+        '<div class="cverdict">' + esc(c.verdict || '') + (c.tag ? ' · ' + esc(c.tag) : '') + '</div>' + det + '</div>';
     }).join('');
-    $('strength').innerHTML = html;
+    $('ccyGrid').querySelectorAll('.cbox').forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        if (e.target.closest('.cclose')) { openCcy = null; renderCcyGrid(D); return; }
+        if (b.classList.contains('open')) return;
+        openCcy = b.getAttribute('data-ccy');
+        renderCcyGrid(D);
+      });
+    });
   }
 
   /* -------- Macro pillars: Inflation · Growth · Labour (Unemp+Jobs) · Rates ---- */
@@ -263,6 +304,9 @@
     var arrows = { rising: '▲', falling: '▼', stable: '▬' };
     $('macro').innerHTML = order.map(function (ccy) {
       var m = macro[ccy]; if (!m) return '';
+      var open = openMacro === ccy;
+      var rate = m.rates ? m.rates.value : '—';
+      var cpi = m.inflation ? m.inflation.value : '—';
       var rows = metrics.map(function (p) {
         var d = m[p[0]]; if (!d) return '';
         var trend = d.trend || 'stable';
@@ -276,95 +320,137 @@
               '<div class="mrtrail">' + macroTrail(d.hist) + '</div>' +
             '</div>' + macroSpark(d.hist, trend) + '</div></div>';
       }).join('');
-      return '<div class="mcard"><div class="mtop"><span class="mccy">' + esc(ccy) + '</span>' +
-        '<span class="mverdict">' + esc(verdict[ccy] || '') + '</span></div>' + rows + '</div>';
+      return '<div class="mcard" data-mccy="' + esc(ccy) + '" style="cursor:pointer">' +
+        '<div class="mtop"><span class="mccy">' + esc(ccy) + '</span>' +
+        '<span class="mverdict">' + esc(verdict[ccy] || '') + '</span>' +
+        '<span class="mverdict" style="margin-left:auto">' + esc(rate) + ' · CPI ' + esc(cpi) + ' <span class="chev' + (open ? ' open' : '') + '" style="display:inline-block;transition:transform .15s">▸</span></span></div>' +
+        '<div class="mbody" style="display:' + (open ? 'block' : 'none') + '">' + rows + '</div></div>';
     }).join('');
-  }
-
-  var signalFilter = 'ALL';
-  function renderFilters(symbols) {
-    var counts = { ALL: symbols.length, LONG: 0, SHORT: 0, RANGE: 0 };
-    symbols.forEach(function (s) { if (counts[s.bias] != null) counts[s.bias]++; });
-    var order = ['ALL', 'LONG', 'SHORT', 'RANGE'];
-    $('filters').innerHTML = order.map(function (f) {
-      return '<div class="fbtn' + (f === signalFilter ? ' active' : '') + '" data-f="' + f + '">' +
-        f + '<span class="n">' + counts[f] + '</span></div>';
-    }).join('');
-    document.querySelectorAll('#filters .fbtn').forEach(function (b) {
-      b.addEventListener('click', function () {
-        signalFilter = b.dataset.f;
-        document.querySelectorAll('#filters .fbtn').forEach(function (x) { x.classList.remove('active'); });
-        b.classList.add('active');
-        renderSignalCards(DATA.symbols);
+    $('macro').querySelectorAll('.mcard').forEach(function (card) {
+      card.addEventListener('click', function () {
+        var c = card.getAttribute('data-mccy');
+        openMacro = openMacro === c ? null : c;
+        renderMacro(DATA);
       });
     });
   }
-  function renderSignals(symbols) { renderFilters(symbols); renderSignalCards(symbols); }
-  function renderSignalCards(symbols) {
-    var html = symbols.filter(function (s) { return signalFilter === 'ALL' || s.bias === signalFilter; })
-      .map(function (s) {
-        var pxCell = window.PriceAdapter.isQuotable(s.sym)
-          ? '<div class="px" data-px="' + esc(s.sym) + '"><span class="pxna">·</span></div>' : '';
-        return '<div class="card ' + s.bias + '" data-sym="' + esc(s.sym) + '">' +
-          '<div class="top"><div class="symwrap"><span class="sym">' + esc(s.sym) + '</span>' +
-            '<span class="chip ' + s.bias + '">' + s.bias + '</span>' +
-            '<span class="conv">' + esc(s.conv) + '</span></div>' + pxCell + '</div>' +
-          '<div class="why">' + esc(s.why) + '</div>' +
-          '<div class="rk"><b>Risk:</b> ' + esc(s.risk) + '</div></div>';
+  var openMacro = null;
+
+  /* grouped compact rows: LONG / SHORT / RANGE sections; tap a row -> detail sheet */
+  function renderSignals(symbols) {
+    var groups = [['LONG', 'Long'], ['SHORT', 'Short'], ['RANGE', 'Range / stand aside']];
+    $('signals').innerHTML = groups.map(function (g) {
+      var list = (symbols || []).filter(function (s) { return s.bias === g[0]; });
+      if (!list.length) return '';
+      var rows = list.map(function (s) {
+        return '<div class="srowc ' + s.bias + '" data-sym="' + esc(s.sym) + '">' +
+          '<span class="ssym">' + esc(s.sym) + '</span>' +
+          '<span class="sconv">' + esc(s.conv) + '</span>' +
+          '<span class="swhy">' + esc(s.why || '') + '</span>' +
+          '<span class="schev">›</span></div>';
       }).join('');
-    $('signals').innerHTML = html;
-    document.querySelectorAll('#signals .card[data-sym]').forEach(function (c) {
-      c.addEventListener('click', function () { openDetail(c.getAttribute('data-sym')); });
-    });
-    applyQuotesToSignals();
-  }
-
-  function renderCalendar(D) {
-    $('cal').innerHTML = (D.catalysts || []).map(function (c) {
-      return '<div class="cal"><div class="cdate">' + esc(c.date) + '</div>' +
-        '<div><div class="cev"><span class="dot ' + esc(c.impact) + '"></span>' + esc(c.event) + '</div>' +
-        '<div class="cnote">' + esc(c.note || '') + '</div></div></div>';
+      return '<div class="sgroup"><div class="sgh"><span class="chip ' + g[0] + '">' + g[1] + '</span>' +
+        '<span class="n">' + list.length + '</span></div>' + rows + '</div>';
     }).join('');
-  }
-
-  /* ===================== Signals live quotes (per card) ===================== */
-  var priceUniverse = [];   // 18 FX pairs, in Signals order — feeds the cards
-  var lastQuotes = {};
-  var priceTimer = null;
-
-  function renderPricesUniverse(D) {
-    priceUniverse = (D.symbols || []).map(function (s) { return s.sym; })
-      .filter(function (s) { return window.PriceAdapter.isQuotable(s); });
-  }
-
-  function fmtChg(p) {
-    if (p == null) return { cls: 'flat', txt: '·' };
-    var cls = p > 0.001 ? 'up' : p < -0.001 ? 'down' : 'flat';
-    var sign = p > 0 ? '+' : '';
-    return { cls: cls, txt: sign + p.toFixed(2) + '%' };
-  }
-
-  function applyQuotesToSignals() {
-    document.querySelectorAll('[data-px]').forEach(function (el) {
-      var q = lastQuotes[el.getAttribute('data-px')];
-      if (!q) { el.innerHTML = '<span class="pxna">·</span>'; return; }
-      var c = fmtChg(q.changePct);
-      el.innerHTML = '<span class="pxmid">' + window.PriceAdapter.formatPrice(el.getAttribute('data-px'), q.mid) + '</span>' +
-        '<span class="pxchg ' + c.cls + '">' + c.txt + '</span>';
+    $('signals').querySelectorAll('.srowc').forEach(function (r) {
+      r.addEventListener('click', function () { openDetail(r.getAttribute('data-sym')); });
     });
   }
 
-  function refreshPrices() {
-    if (!window.PriceAdapter.isConfigured() || !priceUniverse.length) return;
-    window.PriceAdapter.quotes(priceUniverse).then(function (q) {
-      lastQuotes = q || {};
-      applyQuotesToSignals();
+  var calOtherOpen = false;
+  $('calOtherHdr').addEventListener('click', function () {
+    calOtherOpen = !calOtherOpen;
+    $('calOther').classList.toggle('open', calOtherOpen);
+    $('calOtherChev').classList.toggle('open', calOtherOpen);
+  });
+  function calRow(c) {
+    return '<div class="cal"><div class="cdate">' + esc(c.date) + '</div>' +
+      '<div><div class="cev"><span class="dot ' + esc(c.impact) + '"></span>' + esc(c.event) + '</div>' +
+      '<div class="cnote">' + esc(c.note || '') + '</div></div></div>';
+  }
+  function renderCalendar(D) {
+    var all = D.catalysts || [];
+    var red = all.filter(function (c) { return c.impact === 'high'; });
+    var rest = all.filter(function (c) { return c.impact !== 'high'; });
+    $('cal').innerHTML = red.length ? red.map(calRow).join('')
+      : '<div class="legend" style="margin:0">No red-folder events in the current report.</div>';
+    $('calOtherLabel').textContent = 'Other events (' + rest.length + ')';
+    $('calOtherHdr').style.display = rest.length ? '' : 'none';
+    $('calOther').innerHTML = rest.map(calRow).join('');
+  }
+
+  /* ============ Rates: policy-rate differentials (source: TradingEconomics) ============ */
+  var TE_SLUG = { USD: 'united-states', EUR: 'euro-area', GBP: 'united-kingdom', JPY: 'japan',
+    AUD: 'australia', NZD: 'new-zealand', CAD: 'canada', CHF: 'switzerland' };
+  var CB_NAME = { USD: 'Fed', EUR: 'ECB', GBP: 'BoE', JPY: 'BoJ', AUD: 'RBA', NZD: 'RBNZ', CAD: 'BoC', CHF: 'SNB' };
+  function parseRate(v) { var n = parseFloat(String(v || '').replace('%', '')); return isFinite(n) ? n : null; }
+  var PATH_DELTA = { hike: 1, hold: 0, cut: -1 };
+
+  function diffSpark(bh, qh) {
+    if (!bh || !qh || bh.length < 2 || qh.length < 2) return '';
+    var n = Math.min(bh.length, qh.length);
+    var d = [];
+    for (var i = 0; i < n; i++) d.push(bh[bh.length - n + i] - qh[qh.length - n + i]);
+    var min = Math.min.apply(null, d), max = Math.max.apply(null, d), rng = (max - min) || 1;
+    var pts = d.map(function (v, i) {
+      return ((i / (n - 1)) * 58 + 3).toFixed(1) + ' ' + (19 - ((v - min) / rng) * 16).toFixed(1);
     });
-    // (re)arm the poll only while Signals is open & the app is foregrounded
-    clearTimeout(priceTimer);
-    priceTimer = setTimeout(function () {
-      if (!document.hidden && current === 'signals') refreshPrices();
-    }, (CFG.price && CFG.price.refreshMs) || 60000);
+    var up = d[n - 1] > d[0], flat = Math.abs(d[n - 1] - d[0]) < 0.01;
+    var col = flat ? 'var(--range)' : up ? 'var(--long)' : 'var(--short)';
+    return '<svg class="rsp" viewBox="0 0 64 22"><path d="M' + pts.join(' L') +
+      '" fill="none" stroke="' + col + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+
+  var openRate = null;
+  function renderRates(D) {
+    var macro = D.macro || {}, paths = D.ratePaths || {};
+    var pairs = (D.symbols || []).map(function (s) { return s.sym; })
+      .filter(function (s) { return s.indexOf('/') > 0 && !LEG_MAP[s]; });
+    var rows = pairs.map(function (sym) {
+      var b = sym.split('/')[0], q = sym.split('/')[1];
+      var br = macro[b] && parseRate(macro[b].rates && macro[b].rates.value);
+      var qr = macro[q] && parseRate(macro[q].rates && macro[q].rates.value);
+      if (br == null || qr == null) return null;
+      var diff = br - qr;
+      var bp = paths[b] || {}, qp = paths[q] || {};
+      var delta = (PATH_DELTA[bp.next] || 0) - (PATH_DELTA[qp.next] || 0);
+      var exp = delta > 0 ? 'widen' : delta < 0 ? 'tighten' : 'stable';
+      return { sym: sym, b: b, q: q, br: br, qr: qr, diff: diff, exp: exp, bp: bp, qp: qp,
+        bh: macro[b].rates.hist, qh: macro[q].rates.hist };
+    }).filter(Boolean);
+
+    // widening first, then tightening, then stable; by |diff| within groups
+    var order = { widen: 0, tighten: 1, stable: 2 };
+    rows.sort(function (x, y) { return order[x.exp] - order[y.exp] || Math.abs(y.diff) - Math.abs(x.diff); });
+
+    var expLabel = { widen: 'WIDENING', tighten: 'TIGHTENING', stable: 'STABLE' };
+    $('rates').innerHTML = rows.map(function (r) {
+      var open = openRate === r.sym;
+      var sign = r.diff > 0 ? '+' : '';
+      return '<div class="rrow' + (open ? ' open' : '') + '" data-rsym="' + esc(r.sym) + '">' +
+        '<div class="rtop"><span class="rsym">' + esc(r.sym) + '</span>' +
+        '<span class="rdiff" style="color:' + (r.diff > 0 ? 'var(--long)' : r.diff < 0 ? 'var(--short)' : 'var(--range)') + '">' + sign + r.diff.toFixed(2) + '%</span>' +
+        diffSpark(r.bh, r.qh) +
+        '<span class="rexp ' + r.exp + '">' + expLabel[r.exp] + '</span></div>' +
+        '<div class="rdetail">' +
+          '<div class="rleg"><b>' + esc(r.b) + ' ' + r.br.toFixed(2) + '%</b> (' + esc(CB_NAME[r.b]) + ') — next: ' +
+            esc((r.bp.next || 'n/a') + (r.bp.when ? ' · ' + r.bp.when : '')) +
+            (r.bp.note ? '. ' + esc(r.bp.note) : '') + '</div>' +
+          '<div class="rleg"><b>' + esc(r.q) + ' ' + r.qr.toFixed(2) + '%</b> (' + esc(CB_NAME[r.q]) + ') — next: ' +
+            esc((r.qp.next || 'n/a') + (r.qp.when ? ' · ' + r.qp.when : '')) +
+            (r.qp.note ? '. ' + esc(r.qp.note) : '') + '</div>' +
+          '<a href="https://tradingeconomics.com/' + TE_SLUG[r.b] + '/interest-rate" target="_blank" rel="noopener">' + esc(r.b) + ' on TradingEconomics ↗</a> · ' +
+          '<a href="https://tradingeconomics.com/' + TE_SLUG[r.q] + '/interest-rate" target="_blank" rel="noopener">' + esc(r.q) + ' ↗</a>' +
+        '</div></div>';
+    }).join('');
+    $('rates').querySelectorAll('.rrow').forEach(function (row) {
+      row.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        var s = row.getAttribute('data-rsym');
+        openRate = openRate === s ? null : s;
+        renderRates(DATA);
+      });
+    });
   }
 
   /* ============================ Fresh-report toast ============================ */
@@ -388,12 +474,14 @@
   function setupPush() {
     var p = CFG.push || {};
     if (!p.enabled || !p.subscribeUrl || !('serviceWorker' in navigator) || !('PushManager' in window)) return;
-    // surface a button on Today
+    // elegant auto-hide: once alerts are enabled on this device, show nothing
+    if (localStorage.getItem('fx_push_on') === '1' ||
+        ('Notification' in window && Notification.permission === 'granted')) return;
     var bar = document.createElement('div');
     bar.className = 'panel';
     bar.innerHTML = '<h2>Alerts</h2><button class="btn" id="pushBtn">Enable push alerts</button>' +
       '<div class="legend" style="margin-top:8px">Get a notification when a new report publishes or a high-impact event fires.</div>';
-    $('v-today').insertBefore(bar, $('v-today').firstChild.nextSibling);
+    $('alertRow').appendChild(bar);
     $('pushBtn').addEventListener('click', function () {
       Notification.requestPermission().then(function (perm) {
         if (perm !== 'granted') return;
@@ -406,7 +494,7 @@
           return fetch(p.subscribeUrl, {
             method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(sub)
           });
-        }).then(function () { $('pushBtn').textContent = 'Alerts enabled ✓'; $('pushBtn').disabled = true; })
+        }).then(function () { localStorage.setItem('fx_push_on', '1'); $('pushBtn').textContent = 'Alerts enabled ✓'; $('pushBtn').disabled = true; setTimeout(function(){ $('alertRow').innerHTML=''; }, 1500); })
           .catch(function (e) { console.warn('push subscribe failed', e); });
       });
     });
@@ -415,7 +503,8 @@
   /* ============================ Size calculator ============================ */
   var CALC_PAIRS = ['EUR/USD', 'GBP/USD', 'USD/JPY', 'USD/CAD', 'AUD/USD', 'NZD/USD',
     'EUR/JPY', 'EUR/AUD', 'EUR/NZD', 'GBP/JPY', 'GBP/AUD', 'GBP/NZD', 'AUD/JPY',
-    'NZD/JPY', 'CAD/JPY', 'AUD/NZD', 'AUD/CAD', 'NZD/CAD'];
+    'NZD/JPY', 'CAD/JPY', 'AUD/NZD', 'AUD/CAD', 'NZD/CAD',
+    'USD/CHF', 'EUR/CHF', 'GBP/CHF', 'CAD/CHF', 'NZD/CHF', 'AUD/CHF', 'CHF/JPY'];
   // Non-FX CFDs: stop loss is entered as a price move (not pips).
   //  kind 'cash'   -> stop is a $/€ price move; contract = units per lot
   //  kind 'points' -> stop is in index points; contract = money per point per lot
@@ -429,8 +518,8 @@
     'GER40':   { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' }
   };
   var CALC_INSTRUMENTS = CALC_PAIRS.concat(Object.keys(CALC_COMMODITIES));
-  var CALC_CCYS = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD'];
-  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', JPY: '¥', AUD: 'A$', NZD: 'NZ$', CAD: 'C$' };
+  var CALC_CCYS = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD', 'CHF'];
+  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', JPY: '¥', AUD: 'A$', NZD: 'NZ$', CAD: 'C$', CHF: 'Fr ' };
   var CALC_KEY = 'fx_calc_inputs';
 
   // rates: how many QUOTE units per 1 DEPOSIT unit (rates[dep]=1). Cached ~12h.
@@ -587,7 +676,7 @@
   var CAT_KEYS = {
     USD: /US |USD|Fed|FOMC|ISM|NFP/i, EUR: /ECB|EZ |euro|Germany|HICP/i, GBP: /BoE|UK |GBP/i,
     JPY: /BoJ|Japan|JPY|MoF|ambush/i, AUD: /RBA|Aussie|Australia|AUD/i, NZD: /RBNZ|NZ |NZD/i,
-    CAD: /BoC|Canada|CAD|oil|WTI|Brent/i
+    CAD: /BoC|Canada|CAD|oil|WTI|Brent/i, CHF: /SNB|Swiss|CHF|franc/i
   };
   var COMMODITY_CAT = { 'XAU/USD': /gold|Fed|CPI|Hormuz|Iran/i, 'XAG/USD': /silver|gold|CPI/i, 'USOIL': /oil|WTI|Brent|Hormuz|Iran|OPEC|Saudi/i };
 
@@ -602,15 +691,30 @@
   function openDetail(sym) {
     var s = (DATA.symbols || []).find(function (x) { return x.sym === sym; });
     if (!s) return;
-    var q = lastQuotes[sym];
-    var px = q ? '<span class="dpx">' + window.PriceAdapter.formatPrice(sym, q.mid) +
-      '<span class="pxchg ' + fmtChg(q.changePct).cls + '">' + fmtChg(q.changePct).txt + '</span></span>' : '';
+
+    // rate differential line for FX pairs (rates + expectations from TradingEconomics)
+    var rateLine = '';
+    if (sym.indexOf('/') > 0 && !LEG_MAP[sym] && DATA.macro) {
+      var b = sym.split('/')[0], qc = sym.split('/')[1];
+      var br = DATA.macro[b] && parseRate(DATA.macro[b].rates && DATA.macro[b].rates.value);
+      var qr = DATA.macro[qc] && parseRate(DATA.macro[qc].rates && DATA.macro[qc].rates.value);
+      if (br != null && qr != null) {
+        var diff = br - qr;
+        var bp = (DATA.ratePaths || {})[b] || {}, qp = (DATA.ratePaths || {})[qc] || {};
+        var delta = (PATH_DELTA[bp.next] || 0) - (PATH_DELTA[qp.next] || 0);
+        var expTxt = delta > 0 ? 'expected to WIDEN' : delta < 0 ? 'expected to TIGHTEN' : 'expected STABLE';
+        rateLine = '<div class="dsec"><h3>Rate differential</h3><div class="ctx" style="font-size:13px;color:var(--mut)">' +
+          '<b style="color:' + (diff > 0 ? 'var(--long)' : diff < 0 ? 'var(--short)' : 'var(--range)') + '">' +
+          (diff > 0 ? '+' : '') + diff.toFixed(2) + '%</b> (' + esc(b) + ' ' + br.toFixed(2) + '% − ' + esc(qc) + ' ' + qr.toFixed(2) + '%) · ' +
+          expTxt + '</div></div>';
+      }
+    }
 
     var html = '<div class="dhead"><span class="sym">' + esc(sym) + '</span>' +
       '<span class="chip ' + s.bias + '">' + s.bias + '</span>' +
-      '<span class="conv">' + esc(s.conv) + '</span>' + px + '</div>' +
+      '<span class="conv">' + esc(s.conv) + '</span></div>' +
       '<div class="dsec"><h3>Today\'s read</h3><div class="why">' + esc(s.why) + '</div>' +
-      '<div class="rk"><b>Risk:</b> ' + esc(s.risk) + '</div></div>' +
+      '<div class="rk"><b>Risk:</b> ' + esc(s.risk) + '</div></div>' + rateLine +
       '<div class="dsec"><h3>Bias history</h3><div id="dTimeline" class="skeleton">Loading…</div></div>';
 
     // both legs' macro pillars
@@ -666,7 +770,7 @@
       el.innerHTML = '<div class="tl">' + cells + '</div>' +
         '<div class="tldates"><span>' + last[0].d.slice(5) + '</span><span>' + last[last.length - 1].d.slice(5) + '</span></div>' +
         '<div class="tlsummary"><b>' + cur + '</b> for ' + streak + ' report day' + (streak > 1 ? 's' : '') +
-        ' · <span style="color:var(--long)">■</span> long <span style="color:var(--short)">■</span> short <span style="color:#3c4757">■</span> range</div>';
+        ' · <span style="color:var(--long)">■</span> long <span style="color:var(--short)">■</span> short <span style="color:var(--cell-range)">■</span> range</div>';
     });
   }
   $('detailClose').addEventListener('click', closeDetail);
@@ -939,6 +1043,13 @@
     });
   }
 
+  var jhistOpen = false;
+  $('jhistHdr').addEventListener('click', function () {
+    jhistOpen = !jhistOpen;
+    $('jhist').style.display = jhistOpen ? '' : 'none';
+    $('jhistChev').classList.toggle('open', jhistOpen);
+  });
+
   function renderTrades() {
     if (!$('bookPanel')) return;
     var hasToken = !!jToken();
@@ -967,7 +1078,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v16';
+  var APP_VERSION = 'v17';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
@@ -990,7 +1101,6 @@
     setupSizeCalc();
     wireLogForm();
     fetchData(false).then(function () {
-      refreshPrices();          // warm signals quotes
       setupPush();
       loadJournal();            // shared journal -> book, stats, Today banner
       fetchHistory();           // warm the bias-history cache
@@ -999,7 +1109,7 @@
     setInterval(function () { fetchData(true); }, (CFG.dataPollMs) || 300000);
     // also re-check when returning to the app
     document.addEventListener('visibilitychange', function () {
-      if (!document.hidden) { fetchData(true); if (current === 'signals') refreshPrices(); }
+      if (!document.hidden) fetchData(true);
     });
   }
 

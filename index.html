@@ -45,7 +45,8 @@
     <div class="row1">
       <h1>FX&nbsp;Macro</h1>
       <div class="hdr-right">
-        <div class="updated" id="updated"><span class="dotlive"></span><span id="updatedTxt">—</span></div>
+        <div class="updated" id="updated"><span class="dotlive"></span><span id="updatedTxt">—</span>
+          <button class="thToggle" id="thToggle" aria-label="Theme">☾</button></div>
         <div class="appver" id="appver" title="Tap to check for updates"></div>
       </div>
     </div>
@@ -55,25 +56,19 @@
   <main>
     <!-- Today -->
     <section class="view active" id="v-today">
-      <div class="regime" id="regime"></div>
+      <div class="panel"><h2>World snapshot</h2><div id="snapshot"></div></div>
       <div class="bigevent" id="bigevent"></div>
       <div id="bookBanner"></div>
-      <div id="todayCcy"></div>
-      <div class="panel" id="fullReadPanel">
+      <div id="alertRow"></div>
+      <div class="rankstrip" id="rankstrip"></div>
+      <div class="ccygrid" id="ccyGrid"></div>
+      <div class="panel cpanel" id="fullReadPanel">
         <h2 id="fullReadHdr"><span id="fullReadTitle">Full daily read</span> <span class="chev" id="fullReadChev">▸</span></h2>
         <div class="read" id="dailyRead"></div>
       </div>
-      <div class="panel"><h2>Geopolitics &amp; oil → FX transmission</h2><div class="read" id="geo"></div></div>
-      <div class="disclaimer">Not financial advice — for your own decision-making.</div>
-    </section>
-
-    <!-- Strength -->
-    <section class="view" id="v-strength">
-      <div class="panel">
-        <h2>Currency strength &amp; forward bias <span class="sidenote">strongest → weakest</span></h2>
-        <div id="strength"></div>
-        <div class="legend">Score −3 (weak) … +3 (strong). <b>Verdict</b> = current state ·
-          <b>Forward Bias</b> = expected lean into next CB meeting (🦅 hawkish/strength · 🔻 dovish/weakness · ⚖️ balanced).</div>
+      <div class="panel cpanel">
+        <h2 id="geoHdr">Geopolitics &amp; oil → FX <span class="chev" id="geoChev">▸</span></h2>
+        <div class="read" id="geo" style="display:none"></div>
       </div>
       <div class="disclaimer">Not financial advice — for your own decision-making.</div>
     </section>
@@ -82,25 +77,37 @@
     <section class="view" id="v-macro">
       <div id="macro"></div>
       <div class="panel" style="padding:12px 15px">
-        <div class="legend" style="margin:0">Inflation (headline CPI) · Growth · Labour (unemployment + jobs) · Interest rate, per currency. The <b>tag</b> shows how that reading itself moved over recent prints — <span style="color:var(--long)">▲ rising</span> · <span style="color:var(--short)">▼ falling</span> · <span style="color:var(--range)">▬ stable</span>. The trail and sparkline show the last ~6 readings.</div>
+        <div class="legend" style="margin:0">Inflation · Growth · Unemployment · Jobs · Interest rate per currency — sourced from TradingEconomics, refreshed daily. Tap a currency to expand. The <b>tag</b> shows how that reading itself moved over recent prints — <span style="color:var(--long)">▲ rising</span> · <span style="color:var(--short)">▼ falling</span> · <span style="color:var(--range)">▬ stable</span>. The trail and sparkline show the last ~6 readings.</div>
       </div>
       <div class="disclaimer">Not financial advice — for your own decision-making.</div>
     </section>
 
     <!-- Signals -->
     <section class="view" id="v-signals">
-      <div class="filters" id="filters"></div>
       <div id="signals"></div>
-      <div class="disclaimer">LONG = buy the pair · JPYBASKET rises when JPY strengthens (opposite ticket to XXX/JPY) ·
-        GER40 is an equity index (macro/risk-driven) · XAU/XAG/USOIL are USD-quoted commodity CFDs.<br>Not financial advice — for your own decision-making.</div>
+      <div class="disclaimer">Tap a row for the full read · LONG = buy · JPYBASKET rises when JPY strengthens ·
+        GER40 is an equity index · XAU/XAG/USOIL are USD-quoted CFDs.<br>Not financial advice — for your own decision-making.</div>
+    </section>
+
+    <!-- Rates: policy-rate differentials (source: TradingEconomics via the daily task) -->
+    <section class="view" id="v-rates">
+      <div class="panel" style="padding:12px 15px">
+        <div class="legend" style="margin:0">Policy-rate differential per pair (base − quote) with the expected path of the gap —
+          <span class="rexp widen" style="padding:1px 6px">WIDENING</span> favours the base currency,
+          <span class="rexp tighten" style="padding:1px 6px">TIGHTENING</span> favours the quote.
+          Rates &amp; expectations sourced from TradingEconomics, refreshed daily. Tap a pair for both banks' paths.</div>
+      </div>
+      <div id="rates"></div>
+      <div class="disclaimer">Not financial advice — for your own decision-making.</div>
     </section>
 
     <!-- Calendar -->
     <section class="view" id="v-cal">
       <div class="panel">
-        <h2>Catalysts ahead</h2>
+        <h2>Red-folder catalysts</h2>
         <div id="cal"></div>
-        <div class="legend"><span class="dot high"></span>High &nbsp; <span class="dot med"></span>Medium &nbsp; <span class="dot low"></span>Low</div>
+        <div class="calother-h" id="calOtherHdr"><span class="chev" id="calOtherChev">▸</span> <span id="calOtherLabel">Other events</span></div>
+        <div id="calOther"></div>
       </div>
       <div class="disclaimer">Not financial advice — for your own decision-making.</div>
     </section>
@@ -160,10 +167,11 @@
       </div>
 
       <!-- journal history + stats -->
-      <div class="panel" id="jpanel" style="display:none">
+      <div class="panel cpanel" id="jpanel" style="display:none">
         <h2>Journal <span class="sidenote" id="jCount"></span></h2>
         <div id="jstats"></div>
-        <div id="jhist"></div>
+        <h2 id="jhistHdr" style="margin-top:12px">Closed trades <span class="chev" id="jhistChev">▸</span></h2>
+        <div id="jhist" style="display:none"></div>
       </div>
 
       <div class="disclaimer">Lots rounded to 0.01 · FX lot = 100,000 units · gold 100 oz / silver 5,000 oz / WTI 1,000 bbl per lot (stop = $ price move) · GER40 = €1/point per lot, quoted in EUR (stop = index points) · cross-currency conversions use ~daily ECB rates. Check your broker's contract specs.<br>Journal is shared between the two of you and syncs via the Worker. Results in R (risk multiples).<br>Not financial advice — for your own decision-making.</div>
@@ -173,12 +181,12 @@
   <nav class="tabbar" id="tabbar">
     <button class="tabbtn active" data-v="today">
       <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>Today</button>
-    <button class="tabbtn" data-v="strength">
-      <svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>Strength</button>
     <button class="tabbtn" data-v="macro">
       <svg viewBox="0 0 24 24"><path d="M3 13a9 9 0 0 1 18 0"/><path d="M12 13l4-2.5"/><circle cx="12" cy="13" r="1.3" fill="currentColor" stroke="none"/></svg>Macro</button>
     <button class="tabbtn" data-v="signals">
       <svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>Signals</button>
+    <button class="tabbtn" data-v="rates">
+      <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Rates</button>
     <button class="tabbtn" data-v="cal">
       <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendar</button>
     <button class="tabbtn" data-v="trades">

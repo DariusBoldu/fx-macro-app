@@ -35,30 +35,47 @@ function main() {
     throw new Error('data.js did not set a valid window.FX_DATA');
   }
 
-  // Sanity checks that keep the analyst standard intact.
+  // Sanity checks that keep the analyst standard intact (8 ccys incl CHF since 2026-07-28).
+  let prevData = null;
+  try { prevData = JSON.parse(fs.readFileSync(OUT, 'utf8')); } catch (e) {}
+
   const ccys = FX.strength.map((c) => c.ccy).sort().join(',');
-  const expected = ['AUD', 'CAD', 'EUR', 'GBP', 'JPY', 'NZD', 'USD'].join(',');
-  if (ccys !== expected) {
-    throw new Error('strength[] must be exactly the 7 currencies, got: ' + ccys);
+  const expected8 = ['AUD', 'CAD', 'CHF', 'EUR', 'GBP', 'JPY', 'NZD', 'USD'].join(',');
+  const expected7 = ['AUD', 'CAD', 'EUR', 'GBP', 'JPY', 'NZD', 'USD'].join(',');
+  if (ccys === expected7 && prevData) {
+    // transition: a task run without CHF yet — carry CHF pieces forward, loudly
+    console.warn('WARNING: data.js has no CHF — carrying CHF strength/today/macro/ratePaths forward from the previous publish. Update the daily task to cover all 8 currencies.');
+    const prevChfS = (prevData.strength || []).find((c) => c.ccy === 'CHF');
+    if (prevChfS) FX.strength.splice(FX.strength.length - 1, 0, prevChfS);
+    const prevChfT = (prevData.today || []).find((c) => c.ccy === 'CHF');
+    if (prevChfT && Array.isArray(FX.today)) FX.today.push(prevChfT);
+    if (prevData.macro && prevData.macro.CHF) { FX.macro = FX.macro || {}; FX.macro.CHF = prevData.macro.CHF; }
+    if (prevData.ratePaths && prevData.ratePaths.CHF) { FX.ratePaths = FX.ratePaths || {}; FX.ratePaths.CHF = prevData.ratePaths.CHF; }
+  } else if (ccys !== expected8) {
+    throw new Error('strength[] must be exactly the 8 currencies (incl CHF), got: ' + ccys);
   }
-  // Universe is 24: 18 pairs + DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL.
-  // Transition safety: if a task run still emits the old 21 (no commodities),
-  // carry the 3 commodity entries forward from the last publish instead of
-  // failing the whole pipeline — and warn loudly so the run report shows it.
-  const COMMODITIES = ['XAU/USD', 'XAG/USD', 'USOIL'];
+
+  // ratePaths: carry forward if a run omits them (stale expectations beat none — warned)
+  if (!FX.ratePaths || !Object.keys(FX.ratePaths).length) {
+    FX.ratePaths = (prevData && prevData.ratePaths) || {};
+    if (Object.keys(FX.ratePaths).length) console.warn('WARNING: data.js has no ratePaths — carried forward from the previous publish.');
+  }
+  // Universe is 31: 25 pairs (18 classic + 7 CHF crosses) + DXY + JPYBASKET +
+  // GER40 + XAU/USD + XAG/USD + USOIL. Transition safety: carry forward any
+  // missing commodity or CHF-pair entries from the last publish, loudly.
+  const CARRYABLE = ['XAU/USD', 'XAG/USD', 'USOIL',
+    'USD/CHF', 'EUR/CHF', 'GBP/CHF', 'CAD/CHF', 'NZD/CHF', 'AUD/CHF', 'CHF/JPY'];
   const have = new Set(FX.symbols.map((s) => s.sym));
-  const missingComms = COMMODITIES.filter((c) => !have.has(c));
-  if (missingComms.length) {
+  const missing = CARRYABLE.filter((c) => !have.has(c));
+  if (missing.length) {
     let prev = {};
-    try {
-      (JSON.parse(fs.readFileSync(OUT, 'utf8')).symbols || []).forEach((s) => { prev[s.sym] = s; });
-    } catch (e) { /* no previous publish */ }
-    missingComms.forEach((c) => { if (prev[c]) FX.symbols.push(prev[c]); });
-    console.warn('WARNING: data.js is missing ' + missingComms.join(', ') +
-      ' — carried forward from the previous data.json. Update the daily task to analyse all 24 symbols.');
+    ((prevData && prevData.symbols) || []).forEach((s) => { prev[s.sym] = s; });
+    missing.forEach((c) => { if (prev[c]) FX.symbols.push(prev[c]); });
+    console.warn('WARNING: data.js is missing ' + missing.join(', ') +
+      ' — carried forward from the previous data.json. Update the daily task to analyse all 31 symbols.');
   }
-  if (FX.symbols.length !== 24) {
-    throw new Error('symbols[] must be 24 (18 pairs + DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL), got: ' + FX.symbols.length);
+  if (FX.symbols.length !== 31) {
+    throw new Error('symbols[] must be 31 (25 pairs incl 7 CHF crosses + DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL), got: ' + FX.symbols.length);
   }
 
   // macro pillars (Inflation/Growth/Labour per ccy) for the app's Macro tab.
@@ -76,6 +93,11 @@ function main() {
     // app falls back to the classic prose layout — no carry-forward on purpose
     // (a stale "today" is worse than none).
     today: Array.isArray(FX.today) ? FX.today : undefined,
+    // structured world snapshot for the top of Today (no carry-forward — the
+    // app falls back to meta.regime prose if absent)
+    snapshot: Array.isArray(FX.snapshot) ? FX.snapshot : undefined,
+    // central-bank rate paths (SOURCE: TradingEconomics) for the Rates tab
+    ratePaths: FX.ratePaths && Object.keys(FX.ratePaths).length ? FX.ratePaths : undefined,
     strength: FX.strength,
     symbols: FX.symbols,
     macro: macro,

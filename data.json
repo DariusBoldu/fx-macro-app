@@ -3,7 +3,7 @@
     "reportDate": "2026-07-28",
     "reportLabel": "Tue - THE PIVOT: DE-ESCALATION unwinds the oil premium. A 10-day Hormuz ceasefire proposal reopens BOTH lanes (Omani south + Iranian north) and crude COLLAPSES ~5% to WTI ~$84 / Brent ~$86, compounded by a US inventory build. Every oil leg reverses: CAD's premium is gutted (clearest loser), gold/silver bleed off the haven bid ($4,046 / $57.7), the yen gets fundamental relief (but spot still ~163.8 as the dollar is firm into the Fed). The story is now policy: tomorrow (Wed Jul 29) delivers a TWIN BINARY - FOMC (hike now ~34%, up from ~16% Jul 23; Sept ~82%) AND Australia Q2 CPI (~3.7% trim). CLEANEST: USD/CAD LONG (HIGH). USOIL flips to SHORT; XAU/XAG downgraded to RANGE; last week's CAD/JPY LONG is dead (RANGE). Caveat: the US wants a LONGER truce - not signed, a collapse re-arms every oil leg.",
     "horizon": "4H swing",
-    "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD · 18 pairs + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL",
+    "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 25 pairs + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL",
     "regime": "The pivot to de-escalation: a 10-day Hormuz ceasefire proposal reopens both shipping lanes and crude collapsed ~5% to WTI ~$84 / Brent ~$86, unwinding the oil premium that drove the tape for weeks. CAD is the clearest loser, the yen gets fundamental relief (spot still ~163.8, pinned by a firm dollar), and gold/silver bled off the haven bid. The story is now policy, not oil: tomorrow's twin binary - FOMC (hike ~34%, Sept ~82%) and Australia Q2 CPI (~3.7% trim) - lands in one session. Caveat: the US demands a longer truce, so a collapse re-arms every oil leg.",
     "nextBigEvent": "Tomorrow (Wed Jul 29) is a TWIN BINARY in one session: the FOMC (hold ~66% / hike ~34%, up from ~16% on Jul 23; Sept ~82%; no SEP, so Warsh's tone is the trade) AND Australia Q2 CPI (consensus trimmed mean ~3.7%, deciding the AUD and the Aug 11 RBA) - ahead of the BoE Jul 30 and BoJ Jul 31, all under a fragile 10-day Hormuz ceasefire the US wants extended."
   },
@@ -46,12 +46,92 @@
       "read": "CBA/NAB/Westpac/ANZ all see trim +0.9% q/q -> 3.7% y/y, keeping the Aug 11 RBA hike tail alive (headline dragged to ~0.7% by cheaper fuel). A soft core would unwind the tail and the AUD firming; the print lands in the same session as the FOMC."
     },
     {
+      "ccy": "CHF",
+      "moved": true,
+      "headline": "Haven bid bleeding with gold on the de-escalation - the franc gives back its war premium.",
+      "read": "New coverage from today: CHF trades as the FX twin of gold's haven unwind - soft while the truce holds, instantly re-armed if it collapses. SNB parked at 0.75% (Sept 17 next); the franc, not the policy rate, does the work."
+    },
+    {
       "ccy": "EUR",
       "moved": false,
       "headline": "No change - the ECB held Jul 23; the September-hike case is still priced but its energy argument is deflating with oil.",
       "read": "HICP is near target at 2.8% and the oil drop removes the energy resurgence that justified the Sept lean, so the hawkish tilt is softer than a week ago. A firmer USD caps EUR mechanically into the FOMC."
     }
   ],
+  "snapshot": [
+    {
+      "icon": "🌍",
+      "t": "Regime",
+      "s": "THE PIVOT: de-escalation unwinds the oil premium — the story is policy now, with a twin binary tomorrow (FOMC + Aussie Q2 CPI)."
+    },
+    {
+      "icon": "🛢",
+      "t": "Oil & war",
+      "s": "10-day Hormuz ceasefire proposal reopens both lanes — crude collapsed ~5% (WTI ~$84 / Brent ~$86). US wants a longer truce; a collapse re-arms every oil leg."
+    },
+    {
+      "icon": "💵",
+      "t": "Dollar",
+      "s": "Firm into the FOMC — hike ~34% (from ~16%), Sept ~82%; no SEP, so Warsh's tone is the trade."
+    },
+    {
+      "icon": "💴",
+      "t": "Yen",
+      "s": "First real fundamental relief in weeks (energy importer), but spot ~163.8 stays pinned by the firm dollar; BoJ Jul 31."
+    },
+    {
+      "icon": "🥇",
+      "t": "Gold/silver",
+      "s": "Bleeding off the haven bid ($4,046 / $57.7) — both downgraded to RANGE."
+    },
+    {
+      "icon": "🍁",
+      "t": "CAD",
+      "s": "The pivot's clearest loser — oil premium gutted, no hawkish leg behind it. USD/CAD LONG is the day's cleanest trade."
+    }
+  ],
+  "ratePaths": {
+    "USD": {
+      "next": "hike",
+      "when": "FOMC tomorrow (~34%) / Sept ~82%",
+      "note": "Zero cuts priced; no SEP — Warsh's tone is the trade."
+    },
+    "EUR": {
+      "next": "hike",
+      "when": "Sept (~priced)",
+      "note": "Held Jul 23; the energy collapse may soften the September case."
+    },
+    "GBP": {
+      "next": "hold",
+      "when": "Jul 30 (BoE + MPR)",
+      "note": "Two hike dissents armed by 3.6% CPI / 3.7% core."
+    },
+    "JPY": {
+      "next": "hike",
+      "when": "Jul 31 (BoJ)",
+      "note": "Guides more hikes; de-escalation is fundamental relief."
+    },
+    "AUD": {
+      "next": "hold",
+      "when": "Aug 11",
+      "note": "Tomorrow's Q2 CPI (~3.7% trim) decides whether the hike case arms."
+    },
+    "NZD": {
+      "next": "hike",
+      "when": "Aug 19",
+      "note": "Back-to-back hike live — but the CPI engine was petrol, now reversing."
+    },
+    "CAD": {
+      "next": "hold",
+      "when": "Sept 9",
+      "note": "Six straight holds; core 1.8% and the oil premium gone — parked."
+    },
+    "CHF": {
+      "next": "hold",
+      "when": "Sept 17 (SNB)",
+      "note": "Parked at 0.75%; the franc itself does the tightening via haven flows."
+    }
+  },
   "strength": [
     {
       "ccy": "USD",
@@ -92,6 +172,14 @@
       "tag": "Q2 CPI tomorrow decides",
       "drivers": "June employment +76.3k (blowout) with unemployment 4.4%; trimmed mean 3.6% (May), headline 4.0% above band; RBA held 4.35% in June; Q2 CPI (Jul 29) consensus trim +0.9% q/q -> 3.7% y/y.",
       "forward": "⚖️🦅 On the back of June's +76.3k jobs blowout, tomorrow's Q2 CPI (Jul 29, 01:30Z) is the decider: CBA/NAB/Westpac/ANZ all see trimmed mean +0.9% q/q -> 3.7% y/y, holding well above band and keeping the Aug 11 RBA hike tail alive (headline dragged to ~0.7% q/q by cheaper fuel). Risk: a soft core print unwinds the hike tail and the AUD firming; a de-escalation risk-on melt-up lifts high-betas regardless."
+    },
+    {
+      "ccy": "CHF",
+      "score": 0,
+      "verdict": "MIXED — haven unwinding",
+      "tag": "war premium bleeding off",
+      "drivers": "CPI ~1.1% y/y (inside the SNB band); unemp 2.9%; SNB 0.75%, parked since spring. The franc rode the escalation as the clean FX haven; the 10-day ceasefire proposal is unwinding that bid alongside gold.",
+      "forward": "⚖️ De-escalation = softer CHF, escalation = instant re-arm - the truce headlines, not the SNB, set the franc. Sept 17 SNB is far; intervention risk only on extreme strength. New coverage as of Jul 28."
     },
     {
       "ccy": "CAD",
@@ -236,6 +324,55 @@
       "conv": "LOW",
       "why": "Short tilt - NZD's fuel-led CPI edge softening on the oil drop vs a firm USD into the FOMC",
       "risk": "A dovish Warsh hold; a hawkish RBNZ surprise"
+    },
+    {
+      "sym": "USD/CHF",
+      "bias": "LONG",
+      "conv": "LOW-MED",
+      "why": "Cleanest CHF expression of the pivot: the franc's war premium bleeds while the dollar stays firm into the FOMC.",
+      "risk": "A truce collapse re-arms CHF in a session; a dovish Warsh hold caps the USD leg."
+    },
+    {
+      "sym": "EUR/CHF",
+      "bias": "LONG",
+      "conv": "LOW",
+      "why": "Haven unwind lifts it: EUR breathes on collapsing energy while CHF gives back the escalation bid.",
+      "risk": "Truce collapse - the war tape, not the SNB or ECB, decides this cross."
+    },
+    {
+      "sym": "GBP/CHF",
+      "bias": "LONG",
+      "conv": "LOW",
+      "why": "Firm GBP (two hike dissents into Jul 30) vs a haven-unwinding franc - mild upside lean.",
+      "risk": "A dovish BoE Thursday or a truce collapse reverses it."
+    },
+    {
+      "sym": "CAD/CHF",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "The pivot's two losers: CAD's oil premium gutted, CHF's haven bid bleeding - no clean edge.",
+      "risk": "An oil snap-back favours CAD; escalation favours CHF - event-driven only."
+    },
+    {
+      "sym": "NZD/CHF",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "NZD's Aug 19 hike case (petrol-built) softening with oil just as CHF unwinds - two fading legs.",
+      "risk": "A hawkish RBNZ re-arms the long; a truce collapse re-arms CHF."
+    },
+    {
+      "sym": "AUD/CHF",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "No position into tomorrow's Q2 CPI binary; the CHF unwind is the only lean until the print.",
+      "risk": "A hot trim (>3.7%) arms Aug 11 and lifts it; a miss plus a truce collapse sinks it."
+    },
+    {
+      "sym": "CHF/JPY",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "Two havens in transition: CHF gives back war premium while the energy-importing yen gets relief - a wash.",
+      "risk": "BoJ Jul 31 guidance decides the JPY leg; escalation re-arms CHF first."
     },
     {
       "sym": "USOIL",
@@ -749,6 +886,73 @@
           2.25
         ]
       }
+    },
+    "CHF": {
+      "inflation": {
+        "value": "1.1%",
+        "trend": "stable",
+        "note": "CPI y/y",
+        "hist": [
+          1.3,
+          1.2,
+          1.1,
+          1.1,
+          1.2,
+          1.1
+        ]
+      },
+      "growth": {
+        "value": "1.2%",
+        "trend": "stable",
+        "note": "GDP y/y",
+        "hist": [
+          1,
+          1.1,
+          1.2,
+          1.1,
+          1.2,
+          1.2
+        ]
+      },
+      "unemployment": {
+        "value": "2.9%",
+        "trend": "stable",
+        "note": "",
+        "hist": [
+          2.8,
+          2.8,
+          2.9,
+          2.9,
+          2.9,
+          2.9
+        ]
+      },
+      "jobs": {
+        "value": "+0.2%",
+        "trend": "stable",
+        "note": "Employment q/q",
+        "hist": [
+          0.3,
+          0.2,
+          0.2,
+          0.1,
+          0.2,
+          0.2
+        ]
+      },
+      "rates": {
+        "value": "0.75%",
+        "trend": "stable",
+        "note": "SNB policy",
+        "hist": [
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75,
+          0.75
+        ]
+      }
     }
   },
   "catalysts": [
@@ -821,5 +1025,5 @@
     }
   ],
   "geopolitics": "The pivot: de-escalation, and the oil trade is one-way down. Regional mediators - Pakistan, Qatar, Turkey and Egypt - have tabled a 10-day ceasefire reopening BOTH Strait of Hormuz lanes: the southern route through Omani waters free of Iranian attacks, and the northern route through Iranian waters free of the US blockade, with a proposed middle corridor where vessels transit and Iran collects reasonable service fees. Iranian barrels are re-entering the market. Crude, which last week printed the cycle high on a 12th strike night, collapsed ~5% intraday to a $83.19 low (WTI ~$84, Brent ~$86), compounded by a fresh US inventory build. The crucial caveat: the US is demanding a LONGER truce than the 10-day proposal, so this is de-escalation-in-progress, not a signed deal - the marginal headline risk now runs both ways. FX transmission: (1) CAD is the clearest loser - the terms-of-trade premium that made it last week's winner is gone with crude near $84 and no domestic hawkish leg to replace it; USD/CAD LONG (HIGH) is the cleanest expression. (2) The JPY gets fundamental relief - the energy importer benefits most, and BoJ Jul 31 (trend 1.9%) arms the hawks - but spot still ~163.8 as the dollar is firm into the Fed. (3) The USD's bid rotates from haven to policy - hike odds up to ~34% (Sept ~82%); DXY long tilt. (4) Gold and silver bled off the haven bid to $4,046 / $57.68 - XAU/XAG downgraded to RANGE (short tilt). (5) NZD and GBP lose their fuel-CPI engine as the petrol pass-through stops renewing, softening both forward paths. (6) The DAX gets an energy-cost tailwind - GER40 flips to a long tilt. Every oil-linked leg keys off the same binary - and today it broke to the downside. If the 10-day truce collapses, it all snaps back.",
-  "updatedAt": "2026-07-28T09:24:44.589Z"
+  "updatedAt": "2026-07-28T17:44:49.896Z"
 }

@@ -31,7 +31,7 @@ window.FX_CONFIG = {
     // rotates through all 18 (see price-adapter.js). OANDA is parked below and
     // can be swapped back in later via the proxy.
   price: {
-    provider: "twelvedata",       // direct browser fetch, free tier
+    provider: "none",             // prices removed from the app (user follows TradingView)
 
     // Twelve Data — browser-friendly (CORS-enabled). Free-tier key is a query
     // param; low-risk to expose, but rate-limited (8 credits/min, 800/day).
