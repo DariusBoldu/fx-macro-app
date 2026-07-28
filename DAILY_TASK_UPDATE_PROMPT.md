@@ -4,6 +4,16 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 6 (2026-07-28): app-only outputs + daily TE verification — CONSOLIDATED, supersedes Update 5
+
+1. **Outputs simplified**: no PDF, no `fx_bias_indicator.pine`. Daily outputs = `Forex_Dashboard/data.js` + the publish steps only.
+2. **CHF**: 8 currencies, 25 pairs (adds USD/CHF, EUR/CHF, GBP/CHF, CAD/CHF, NZD/CHF, AUD/CHF, CHF/JPY), 31 symbols. Coverage string: "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 25 pairs + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL". 2026-07-28 data.js = reference format.
+3. **TradingEconomics canonical + VERIFIED DAILY**: take macro five metrics (inflation CPI y/y, growth, unemployment, jobs, interest rate) and ratePaths from tradingeconomics.com country pages every run, appending to hist arrays. Conventions: EUR = ECB deposit facility (2.25, NOT the 2.40 MRO headline); USD = Fed funds upper bound; CHF SNB = 0%. If TE differs from yesterday, TE wins — never fill from memory.
+4. **Contract**: keep snapshot (5-7 {icon,t,s} rows), today[] (8 ccys, movers first), ratePaths (8 ccys {next,when,note}), catalysts `when` ISO + impact:"high" = true red-folder only. symbols[] is now the SOLE source of biases (no Pine mirror).
+5. **Publish** (unchanged): build-data-json.js -> git add data.json history/ -> commit/push -> send-push.js. A build WARNING about carried-forward entries = a missed block; fix in the same run.
+
+---
+
 ## Update 5 (2026-07-28): CHF, TradingEconomics sourcing, snapshot, rate paths
 
 Four changes to the daily task:
