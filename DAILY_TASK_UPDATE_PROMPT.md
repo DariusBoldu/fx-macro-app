@@ -4,6 +4,20 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 5 (2026-07-28): CHF, TradingEconomics sourcing, snapshot, rate paths
+
+Four changes to the daily task:
+
+1. **CHF joins the universe — 8 currencies, 25 pairs, 31 symbols.** Analyse CHF (SNB) exactly like the other currencies, every day: it gets entries in `strength[]`, `today[]`, `macro.CHF`, and `ratePaths.CHF`. The pairs list gains **USD/CHF, EUR/CHF, GBP/CHF, CAD/CHF, NZD/CHF, AUD/CHF, CHF/JPY** in `symbols[]` (with the same {bias, conv, why, risk} shape) and matching branches in `fx_bias_indicator.pine` (tickers USDCHF, EURCHF, GBPCHF, CADCHF, NZDCHF, AUDCHF, CHFJPY). Set `meta.coverage` to `"USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 25 pairs + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL"`. The 2026-07-28 files contain the reference format.
+
+2. **TradingEconomics is the canonical data source for `macro` and rates.** Each day, consult tradingeconomics.com (the country pages, e.g. tradingeconomics.com/switzerland/indicators and .../interest-rate) and take the `macro` block's five metrics — inflation (headline CPI y/y), growth (GDP), unemployment, jobs, interest rate — **from TradingEconomics' published values** for all 8 countries (euro-area for EUR). Same for rate expectations. Do not substitute other sources for these numbers.
+
+3. **New `snapshot` block** — a structured world resume for the top of the app's Today page, replacing the prose regime as the primary display. ~5–7 rows: `snapshot: [{ icon: "<emoji>", t: "<topic ≤12 chars, e.g. Regime/Oil & war/Dollar/Yen/Gold>", s: "<1-2 sentences>" }]`. Cover: the regime, oil/war, the dollar, the yen, gold, and whatever moved most. Keep `meta.regime` too (fallback + desktop).
+
+4. **New `ratePaths` block** — per currency, the expected next central-bank move (sourced from TE + your CB analysis): `ratePaths: { USD: { next: "hike"|"hold"|"cut", when: "<meeting/timing>", note: "<one line why>" }, ... }` for all 8. This powers the app's Rates tab (differential + expected widening/tightening per pair) — keep it consistent with each day's forward analysis.
+
+---
+
 ## Update 4 (2026-07-06): per-currency Today block
 
 In `Forex_Dashboard/data.js`, alongside `dailyRead`, include a `today` array — the per-currency daily read that powers the app's restructured Today page. **All 7 currencies, every day**, shaped:
