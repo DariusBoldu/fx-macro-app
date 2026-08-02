@@ -419,9 +419,8 @@
         bh: macro[b].rates.hist, qh: macro[q].rates.hist };
     }).filter(Boolean);
 
-    // widening first, then tightening, then stable; by |diff| within groups
-    var order = { widen: 0, tighten: 1, stable: 2 };
-    rows.sort(function (x, y) { return order[x.exp] - order[y.exp] || Math.abs(y.diff) - Math.abs(x.diff); });
+    // alphabetical by pair (Darius's preference — predictable place for each pair)
+    rows.sort(function (x, y) { return x.sym.localeCompare(y.sym); });
 
     var expLabel = { widen: 'WIDENING', tighten: 'TIGHTENING', stable: 'STABLE' };
     $('rates').innerHTML = rows.map(function (r) {
@@ -504,7 +503,8 @@
   var CALC_PAIRS = ['EUR/USD', 'GBP/USD', 'USD/JPY', 'USD/CAD', 'AUD/USD', 'NZD/USD',
     'EUR/JPY', 'EUR/AUD', 'EUR/NZD', 'GBP/JPY', 'GBP/AUD', 'GBP/NZD', 'AUD/JPY',
     'NZD/JPY', 'CAD/JPY', 'AUD/NZD', 'AUD/CAD', 'NZD/CAD',
-    'USD/CHF', 'EUR/CHF', 'GBP/CHF', 'CAD/CHF', 'NZD/CHF', 'AUD/CHF', 'CHF/JPY'];
+    'USD/CHF', 'EUR/CHF', 'GBP/CHF', 'CAD/CHF', 'NZD/CHF', 'AUD/CHF', 'CHF/JPY',
+    'EUR/GBP', 'EUR/CAD', 'GBP/CAD'];
   // Non-FX CFDs: stop loss is entered as a price move (not pips).
   //  kind 'cash'   -> stop is a $/€ price move; contract = units per lot
   //  kind 'points' -> stop is in index points; contract = money per point per lot
@@ -1078,7 +1078,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v17';
+  var APP_VERSION = 'v18';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

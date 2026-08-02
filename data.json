@@ -3,7 +3,7 @@
     "reportDate": "2026-08-02",
     "reportLabel": "Sun - TWO THESES FLIP. (1) THE FRANC IS THE WEAKEST CURRENCY ON THE BOARD, not the strongest: CHF is at a 13-month low vs USD and EUR/CHF has broken out to 0.9332 because the SNB's 0% is the widest rate disadvantage in the developed world and the Bank is actively talking the franc lower - USD/CHF and EUR/CHF flip from SHORT to LONG. (2) THE WAR PREMIUM IS DEFLATING AGAIN: the US held off the strikes Trump threatened for the weekend, Iran and Oman are negotiating Hormuz transit in Tehran, WTI is back to ~$83-84 from $86 and gold has slipped to ~$4,053 - USOIL flips to SHORT, XAU to RANGE. The yen is the one clean long: it HELD the intervention gains at ~157 and Tokyo July core CPI jumped to 1.9%. Also corrected: the RBNZ's next meeting is Sept 2, NOT Aug 19. Cleanest trades: CHF/JPY SHORT, AUD/JPY SHORT, EUR/CHF LONG, USD/JPY SHORT, JPYBASKET LONG. Next gate: US July jobs Fri Aug 7 (consensus +85k).",
     "horizon": "4H swing",
-    "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 25 pairs + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL",
+    "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL",
     "regime": "Risk premium is coming OUT of the market and the haven trade has split in two. On the geopolitics, the escalation Friday's tape promised did not happen: after Trump told a Cabinet meeting the US would be 'hitting them very hard' and fresh strikes were expected over the weekend, Washington forewent attacking, Trump said the US halted strikes at the Iranian regime's request, and Iranian and Omani deputy foreign ministers are meeting in Tehran on a compromise that would let Iran run Hormuz transit with fewer restrictions on ships. WTI has come off to roughly $83-84 from $86 with Brent near $85-88, gold has slipped to ~$4,053 from $4,086 and silver sits at $58.25. That deflates the CAD terms-of-trade bid, kills the USOIL long and takes gold off the long list. The bigger structural change is the franc: CHF is at a 13-month low against the dollar and EUR/CHF has broken out to 0.9332, because with the SNB at 0% the franc now carries the widest rate disadvantage in the developed world, the Bank is openly talking it lower, and markets are pricing a higher probability of two more ECB hikes this year. A haven that no longer catches a haven bid while its policy rate is pinned at zero is simply a funding currency - so every CHF cross inverts. The yen is the opposite case and the one unambiguous long: it HELD the MoF intervention gains near 157 rather than giving them back, the BoJ held 1.00% with Takata dissenting for a hike, and Tokyo July core CPI jumped to 1.9% from 1.6% with headline at 2.0%. The dollar had its worst week in three months (DXY -1.5%, monthly -1.3%) but bounced to 100.3 on Friday, and September hike pricing is still live at roughly 60% on prediction markets and up near 82% in fed funds futures.",
     "nextBigEvent": "US July employment report (Fri Aug 7, 12:30Z). The Bloomberg consensus is +85k after June's +57k, with unemployment at 4.2% and April-May revised down 74k combined. A second sub-100k print kills the September hike the three FOMC dissenters (Hammack, Kashkari, Logan) are pushing and breaks the dollar lower; a clean beat re-arms it and would hit the EUR, GBP and JPY longs at once. July CPI on Aug 12 is the follow-up."
   },
@@ -238,6 +238,27 @@
       "conv": "MED",
       "why": "The basket rises when the yen strengthens, and the yen now has three legs: a defence that stuck at ~157, a BoJ hike dissent with an above-2% core forecast, and a Tokyo July core CPI print of 1.9% validating it - the opposite ticket to every XXX/JPY cross",
       "risk": "A dollar bounce on strong US jobs re-weakens the yen broadly; the April/May precedent is that interventions fade; oil-importer drag returns if Hormuz diplomacy fails"
+    },
+    {
+      "sym": "EUR/CAD",
+      "bias": "LONG",
+      "conv": "MEDIUM",
+      "why": "Rate-path divergence: markets price two more ECB hikes this year against a BoC on its sixth hold with core at five-year lows (median 1.9%, trim 1.8%), and the oil slide to ~$83-84 strips CAD's terms-of-trade leg.",
+      "risk": "A Tehran breakdown snaps oil back and rescues CAD within a session; EZ annual growth of just 0.3% caps how far the ECB pricing can run."
+    },
+    {
+      "sym": "GBP/CAD",
+      "bias": "LONG",
+      "conv": "MEDIUM",
+      "why": "The labour-data split: a hawkish 6-3 BoE hold with UK employment +148k and wages at 4.3% against a CAD carrying five-year-low core inflation and no oil bid left.",
+      "risk": "An oil snap-back on a Tehran collapse; a soft UK wage or jobs print unwinds the hawkish-hold premium."
+    },
+    {
+      "sym": "EUR/GBP",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "Two firm European legs cancelling out: ECB two-hike pricing against a hawkish 6-3 BoE hold with a strengthening labour market - equal strength scores, no divergence worth trading.",
+      "risk": "UK data is the swing: a soft wage/jobs print tilts it up; EZ growth stuck at 0.3% disappointing the ECB path tilts it down."
     },
     {
       "sym": "USD/CHF",
@@ -1014,5 +1035,5 @@
     }
   ],
   "geopolitics": "The premium is coming out of the price, but on a fragile basis. Friday's tape pointed one way - Trump told a Cabinet meeting the US would be hitting Iran very hard and fresh strikes were expected as soon as the weekend - and then the strikes did not come. Washington forewent attacking, at least for the near term, with Trump saying the US halted at the Iranian regime's request while warning that attacks resume if a new ceasefire deal is not reached, and diplomatic effort has concentrated on reopening the waterway. Iranian and Omani deputy foreign ministers are meeting in Tehran on a compromise that would allow Iran to run vessel transit through the Strait of Hormuz with fewer restrictions on ships, though Tehran maintains it has no negotiations with the United States itself. This is not a resolution: US and Saudi aircraft struck militia sites in Iraq after drones were launched toward Saudi Arabia, Foreign Minister Araghchi has warned Iran will respond forcefully to any further American aggression, the State Department has warned US citizens across the Middle East, and traffic through the strait is still under 10 commodity ships a day against roughly 100 on a normal prewar day, with about 27% of the world's seaborne crude and product trade normally passing through. FX transmission: (1) Crude is the transmission channel and it is falling - WTI back to roughly $83-84 from $86 and Brent to about $85-88 from $91 - so CAD loses the terms-of-trade bid that was its only support and USOIL flips from LONG to SHORT. (2) Gold slips to ~$4,053 from $4,086 and comes off the LONG list to RANGE; the soft-dollar leg survives, the war leg does not. Silver at $58.25 is the more balanced of the two because de-escalation and cheaper energy help its industrial leg even as the haven leg fades. (3) The franc is the biggest casualty and the most important trade: CHF only worked while the premium was expanding, and at a 13-month low against the dollar with the SNB pinned at 0% it is now a funding currency - LONG USD/CHF, EUR/CHF, GBP/CHF, NZD/CHF and AUD/CHF, SHORT CHF/JPY. (4) The yen is unaffected by this because its bid is domestic and official - a held MoF defence plus a hawkish BoJ - which is precisely why it is the one clean long. (5) GER40 gets a real energy-cost tailwind for the first time in weeks. (6) The whole book is one headline from inverting: these talks have collapsed twice already and Trump has explicitly conditioned the pause on a deal, so size the oil, gold and franc positions for a violent snap-back rather than a trend.",
-  "updatedAt": "2026-08-02T08:44:48.691Z"
+  "updatedAt": "2026-08-02T11:45:17.931Z"
 }
