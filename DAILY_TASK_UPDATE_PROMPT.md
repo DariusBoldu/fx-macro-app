@@ -4,6 +4,16 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 7 (2026-08-02): complete G10 pair matrix — 28 pairs / 34 symbols
+
+The pair universe is now the **complete G10 matrix excluding SEK and NOK** — every combination of the 8 covered currencies = **28 pairs**, i.e. 34 symbols with DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL.
+
+Three pairs are added to `symbols[]` (same `{bias, conv, why, risk}` shape, standard quote conventions): **EUR/GBP, EUR/CAD, GBP/CAD**. Full list of the 28: EUR/USD, EUR/GBP, EUR/JPY, EUR/AUD, EUR/NZD, EUR/CAD, EUR/CHF, GBP/USD, GBP/JPY, GBP/AUD, GBP/NZD, GBP/CAD, GBP/CHF, AUD/USD, AUD/JPY, AUD/NZD, AUD/CAD, AUD/CHF, NZD/USD, NZD/JPY, NZD/CAD, NZD/CHF, USD/JPY, USD/CAD, USD/CHF, CAD/JPY, CAD/CHF, CHF/JPY.
+
+Set `meta.coverage` to: `"USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + XAU + XAG + USOIL"`. Note the earlier rule that excluded EUR/GBP, EUR/CAD and GBP/CAD is **cancelled** — analyse all 28 every day. `build-data-json.js` now validates 34 symbols and carries any missing pair forward with a WARNING.
+
+---
+
 ## Update 6 (2026-07-28): app-only outputs + daily TE verification — CONSOLIDATED, supersedes Update 5
 
 1. **Outputs simplified**: no PDF, no `fx_bias_indicator.pine`. Daily outputs = `Forex_Dashboard/data.js` + the publish steps only.
