@@ -242,23 +242,23 @@
     {
       "sym": "EUR/CAD",
       "bias": "LONG",
-      "conv": "MEDIUM",
-      "why": "Rate-path divergence: markets price two more ECB hikes this year against a BoC on its sixth hold with core at five-year lows (median 1.9%, trim 1.8%), and the oil slide to ~$83-84 strips CAD's terms-of-trade leg.",
-      "risk": "A Tehran breakdown snaps oil back and rescues CAD within a session; EZ annual growth of just 0.3% caps how far the ECB pricing can run."
+      "conv": "MED",
+      "why": "Rate-path divergence: markets price two more ECB hikes this year against a BoC on its sixth hold with core at five-year lows (median 1.9%, trim 1.8%), and the oil slide to ~$83-84 strips CAD's terms-of-trade leg",
+      "risk": "A Tehran breakdown snaps oil back and rescues CAD within a session; euro-area annual growth of just 0.3% caps how far the ECB pricing can run"
     },
     {
       "sym": "GBP/CAD",
       "bias": "LONG",
-      "conv": "MEDIUM",
-      "why": "The labour-data split: a hawkish 6-3 BoE hold with UK employment +148k and wages at 4.3% against a CAD carrying five-year-low core inflation and no oil bid left.",
-      "risk": "An oil snap-back on a Tehran collapse; a soft UK wage or jobs print unwinds the hawkish-hold premium."
+      "conv": "MED",
+      "why": "The labour-data split: a hawkish 6-3 BoE hold with UK employment +148k in May and wages at 4.3% against a CAD carrying five-year-low core inflation and no oil bid left",
+      "risk": "An oil snap-back on a Tehran collapse; a soft UK wage or jobs print unwinds the hawkish-hold premium; both are 3.75%-vs-2.25% carry trades that unwind together in a risk-off flush"
     },
     {
       "sym": "EUR/GBP",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Two firm European legs cancelling out: ECB two-hike pricing against a hawkish 6-3 BoE hold with a strengthening labour market - equal strength scores, no divergence worth trading.",
-      "risk": "UK data is the swing: a soft wage/jobs print tilts it up; EZ growth stuck at 0.3% disappointing the ECB path tilts it down."
+      "why": "Two firm European legs cancelling out: ECB two-hike pricing against a hawkish 6-3 BoE hold with a strengthening labour market - equal strength scores, no divergence worth trading",
+      "risk": "UK data is the swing: a soft wage or jobs print tilts it up; euro-area growth stuck at 0.3% disappointing the ECB path tilts it down"
     },
     {
       "sym": "USD/CHF",
@@ -1035,5 +1035,5 @@
     }
   ],
   "geopolitics": "The premium is coming out of the price, but on a fragile basis. Friday's tape pointed one way - Trump told a Cabinet meeting the US would be hitting Iran very hard and fresh strikes were expected as soon as the weekend - and then the strikes did not come. Washington forewent attacking, at least for the near term, with Trump saying the US halted at the Iranian regime's request while warning that attacks resume if a new ceasefire deal is not reached, and diplomatic effort has concentrated on reopening the waterway. Iranian and Omani deputy foreign ministers are meeting in Tehran on a compromise that would allow Iran to run vessel transit through the Strait of Hormuz with fewer restrictions on ships, though Tehran maintains it has no negotiations with the United States itself. This is not a resolution: US and Saudi aircraft struck militia sites in Iraq after drones were launched toward Saudi Arabia, Foreign Minister Araghchi has warned Iran will respond forcefully to any further American aggression, the State Department has warned US citizens across the Middle East, and traffic through the strait is still under 10 commodity ships a day against roughly 100 on a normal prewar day, with about 27% of the world's seaborne crude and product trade normally passing through. FX transmission: (1) Crude is the transmission channel and it is falling - WTI back to roughly $83-84 from $86 and Brent to about $85-88 from $91 - so CAD loses the terms-of-trade bid that was its only support and USOIL flips from LONG to SHORT. (2) Gold slips to ~$4,053 from $4,086 and comes off the LONG list to RANGE; the soft-dollar leg survives, the war leg does not. Silver at $58.25 is the more balanced of the two because de-escalation and cheaper energy help its industrial leg even as the haven leg fades. (3) The franc is the biggest casualty and the most important trade: CHF only worked while the premium was expanding, and at a 13-month low against the dollar with the SNB pinned at 0% it is now a funding currency - LONG USD/CHF, EUR/CHF, GBP/CHF, NZD/CHF and AUD/CHF, SHORT CHF/JPY. (4) The yen is unaffected by this because its bid is domestic and official - a held MoF defence plus a hawkish BoJ - which is precisely why it is the one clean long. (5) GER40 gets a real energy-cost tailwind for the first time in weeks. (6) The whole book is one headline from inverting: these talks have collapsed twice already and Trump has explicitly conditioned the pause on a deal, so size the oil, gold and franc positions for a violent snap-back rather than a trend.",
-  "updatedAt": "2026-08-02T11:45:17.931Z"
+  "updatedAt": "2026-08-02T11:50:36.972Z"
 }
