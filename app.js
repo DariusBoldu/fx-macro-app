@@ -521,7 +521,9 @@
     // €1.00 per point per 1.0 lot (confirmed from their contract spec).
     'GER40':   { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' }
   };
-  var CALC_INSTRUMENTS = CALC_PAIRS.concat(Object.keys(CALC_COMMODITIES));
+  // one alphabetical list (same convention as the Rates and Signals tabs)
+  var CALC_INSTRUMENTS = CALC_PAIRS.concat(Object.keys(CALC_COMMODITIES))
+    .sort(function (x, y) { return x.localeCompare(y); });
   var CALC_CCYS = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD', 'CHF'];
   var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', JPY: '¥', AUD: 'A$', NZD: 'NZ$', CAD: 'C$', CHF: 'Fr ' };
   var CALC_KEY = 'fx_calc_inputs';
@@ -1082,7 +1084,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v20';
+  var APP_VERSION = 'v21';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
