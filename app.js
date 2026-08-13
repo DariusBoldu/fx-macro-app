@@ -514,6 +514,9 @@
     'XAU/USD': { contract: 100,  label: '100 oz/lot',    quote: 'USD', kind: 'cash' },
     'XAG/USD': { contract: 5000, label: '5,000 oz/lot',  quote: 'USD', kind: 'cash' },
     'USOIL':   { contract: 1000, label: '1,000 bbl/lot', quote: 'USD', kind: 'cash' },
+    // Copper: quoted USD per pound; COMEX HG contract = 25,000 lbs per lot.
+    // VERIFY against FOREX.COM's copper spec and change `contract` if theirs differs.
+    'XCU/USD': { contract: 25000, label: '25,000 lbs/lot', quote: 'USD', kind: 'cash' },
     // GER40 (DAX): quoted in EUR, stop in index points. FOREX.COM Germany 40 =
     // €1.00 per point per 1.0 lot (confirmed from their contract spec).
     'GER40':   { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' }
@@ -1079,7 +1082,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v19';
+  var APP_VERSION = 'v20';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

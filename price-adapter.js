@@ -37,7 +37,7 @@
   // GER40 (DAX index) is EUR-quoted; Twelve Data's free tier does NOT serve the
   // real index ("DAX" resolves to a wrong US ticker), so it stays 0 until a
   // paid plan + the correct index symbol are set in TD_SYMBOL_MAP below.
-  var QUOTABLE_COMMODITIES = { 'XAU/USD': 1, 'XAG/USD': 0, 'USOIL': 0, 'GER40': 0 };
+  var QUOTABLE_COMMODITIES = { 'XAU/USD': 1, 'XAG/USD': 0, 'XCU/USD': 0, 'USOIL': 0, 'GER40': 0 };
   var TD_SYMBOL_MAP = { 'USOIL': 'WTI/USD' };
 
   function isFxPair(sym) { return !!FX_PAIRS[sym]; }
@@ -185,6 +185,7 @@
       if (v == null) return '—';
       if (sym === 'XAU/USD' || sym === 'USOIL') return v.toFixed(2);
       if (sym === 'XAG/USD') return v.toFixed(3);
+      if (sym === 'XCU/USD') return v.toFixed(4);
       if (sym === 'GER40') return v.toFixed(1);
       return v.toFixed(sym.indexOf('JPY') >= 0 ? 3 : 5);
     }

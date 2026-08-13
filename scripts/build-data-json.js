@@ -60,10 +60,10 @@ function main() {
     FX.ratePaths = (prevData && prevData.ratePaths) || {};
     if (Object.keys(FX.ratePaths).length) console.warn('WARNING: data.js has no ratePaths — carried forward from the previous publish.');
   }
-  // Universe is 34: 28 pairs (the complete G10 matrix excluding SEK/NOK) + DXY +
-  // JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL. Transition safety: carry forward any
+  // Universe is 35: 28 pairs (the complete G10 matrix excluding SEK/NOK) + DXY +
+  // JPYBASKET + GER40 + XAU/USD + XAG/USD + XCU/USD + USOIL. Transition safety: carry forward any
   // missing commodity or CHF-pair entries from the last publish, loudly.
-  const CARRYABLE = ['XAU/USD', 'XAG/USD', 'USOIL',
+  const CARRYABLE = ['XAU/USD', 'XAG/USD', 'XCU/USD', 'USOIL',
     'USD/CHF', 'EUR/CHF', 'GBP/CHF', 'CAD/CHF', 'NZD/CHF', 'AUD/CHF', 'CHF/JPY',
     'EUR/GBP', 'EUR/CAD', 'GBP/CAD'];
   const have = new Set(FX.symbols.map((s) => s.sym));
@@ -73,10 +73,10 @@ function main() {
     ((prevData && prevData.symbols) || []).forEach((s) => { prev[s.sym] = s; });
     missing.forEach((c) => { if (prev[c]) FX.symbols.push(prev[c]); });
     console.warn('WARNING: data.js is missing ' + missing.join(', ') +
-      ' — carried forward from the previous data.json. Update the daily task to analyse all 34 symbols.');
+      ' — carried forward from the previous data.json. Update the daily task to analyse all 35 symbols.');
   }
-  if (FX.symbols.length !== 34) {
-    throw new Error('symbols[] must be 34 (28 pairs = full G10 ex SEK/NOK + DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL), got: ' + FX.symbols.length);
+  if (FX.symbols.length !== 35) {
+    throw new Error('symbols[] must be 35 (28 pairs = full G10 ex SEK/NOK + DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + XCU/USD + USOIL), got: ' + FX.symbols.length);
   }
 
   // macro pillars (Inflation/Growth/Labour per ccy) for the app's Macro tab.
