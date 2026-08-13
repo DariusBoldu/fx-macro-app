@@ -340,7 +340,8 @@
   function renderSignals(symbols) {
     var groups = [['LONG', 'Long'], ['SHORT', 'Short'], ['RANGE', 'Range / stand aside']];
     $('signals').innerHTML = groups.map(function (g) {
-      var list = (symbols || []).filter(function (s) { return s.bias === g[0]; });
+      var list = (symbols || []).filter(function (s) { return s.bias === g[0]; })
+        .sort(function (x, y) { return x.sym.localeCompare(y.sym); });   // alphabetical within each bias group
       if (!list.length) return '';
       var rows = list.map(function (s) {
         return '<div class="srowc ' + s.bias + '" data-sym="' + esc(s.sym) + '">' +
@@ -1078,7 +1079,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v18';
+  var APP_VERSION = 'v19';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
