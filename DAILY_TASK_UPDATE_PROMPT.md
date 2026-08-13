@@ -4,6 +4,16 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 8 (2026-08-13): add copper — 35 symbols
+
+Add **copper** to the commodity block alongside gold, silver and oil. In `symbols[]` use `sym: "XCU/USD"` with the same `{bias, conv, why, risk}` shape, analysed daily like the others. Copper is quoted in **USD per pound** and its price/analysis should come from TradingEconomics (tradingeconomics.com/commodity/copper).
+
+Analyse it as the industrial/growth metal: China demand (the Yangshan premium is a good tell), global mine supply (Codelco et al.), US tariff risk — and explicitly tie it to **AUD**, since copper is the cleanest leading proxy for the industrial cycle behind the Aussie.
+
+Set `meta.coverage` to end: `"... + DXY + JPYBASKET + GER40 + XAU + XAG + XCU + USOIL"`. `build-data-json.js` now validates **35 symbols** (28 pairs + 7 non-pairs) and carries XCU/USD forward with a WARNING if a run omits it.
+
+---
+
 ## Update 7 (2026-08-02): complete G10 pair matrix — 28 pairs / 34 symbols
 
 The pair universe is now the **complete G10 matrix excluding SEK and NOK** — every combination of the 8 covered currencies = **28 pairs**, i.e. 34 symbols with DXY + JPYBASKET + GER40 + XAU/USD + XAG/USD + USOIL.
