@@ -23,7 +23,33 @@ fi
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
 cp "$KEY" "$HOME/.ssh/fx_deploy" && chmod 600 "$HOME/.ssh/fx_deploy"
 echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > "$HOME/.ssh/known_hosts"
-cat > "$HOME/.ssh/config" <<'EOF'
+
+# --- proxy auth (added 2026-08-23) ------------------------------------------
+# The sandbox CONNECT proxy on :3128 now REQUIRES basic auth. Credentials are
+# minted per bash invocation and exposed in $https_proxy as
+#   http://<urlencoded-user>:<pass>@localhost:3128
+# They must be read at RUNTIME (never hardcoded) and URL-decoded, because the
+# username is base64 and its "==" padding arrives as "%3D%3D".
+#
+# The decoded username contains "%" and "=", which ssh's ProxyCommand runs
+# through percent_expand() -> "unknown key %3" and the connection dies. So the
+# socat invocation is written to a tiny helper script and ssh is pointed at
+# that, keeping every "%" away from ssh's expander.
+PROXY_AUTH=""
+if [ -n "${https_proxy:-}" ] && printf '%s' "$https_proxy" | grep -q '@'; then
+  _pu=$(printf '%s' "$https_proxy" | sed -E 's|^https?://([^:]+):([^@]+)@.*|\1|')
+  _pp=$(printf '%s' "$https_proxy" | sed -E 's|^https?://([^:]+):([^@]+)@.*|\2|')
+  # URL-decode the username (%3D -> '=', etc).
+  _pu=$(printf '%s' "$_pu" | python3 -c 'import sys,urllib.parse;print(urllib.parse.unquote(sys.stdin.read().strip()))' 2>/dev/null || printf '%s' "$_pu")
+  [ -n "$_pu" ] && PROXY_AUTH=",proxyauth=$_pu:$_pp"
+fi
+
+printf '%s\n' '#!/bin/sh' \
+  "exec socat - PROXY:localhost:\$1:\$2,proxyport=3128${PROXY_AUTH}" \
+  > "$HOME/.ssh/fx_proxy"
+chmod 700 "$HOME/.ssh/fx_proxy"
+
+cat > "$HOME/.ssh/config" <<EOF
 Host github.com
   HostName github.com
   User git
@@ -31,7 +57,7 @@ Host github.com
   IdentitiesOnly yes
   UserKnownHostsFile ~/.ssh/known_hosts
   StrictHostKeyChecking yes
-  ProxyCommand socat - PROXY:localhost:%h:%p,proxyport=3128
+  ProxyCommand $HOME/.ssh/fx_proxy %h %p
 EOF
 chmod 600 "$HOME/.ssh/config"
 export GIT_SSH_COMMAND="ssh"   # use ~/.ssh/config (drops any inline env ProxyCommand)
