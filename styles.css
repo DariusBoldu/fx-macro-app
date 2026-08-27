@@ -442,3 +442,6 @@ nav.tabbar{
 .calother-h .chev.open{transform:rotate(90deg)}
 #calOther{display:none}
 #calOther.open{display:block}
+
+.rrow .rsub{color:var(--dim);font-size:11px;margin-top:5px;font-variant-numeric:tabular-nums}
+.rrow .rsub b{color:var(--mut);font-weight:700}

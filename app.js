@@ -386,6 +386,24 @@
   var CB_NAME = { USD: 'Fed', EUR: 'ECB', GBP: 'BoE', JPY: 'BoJ', AUD: 'RBA', NZD: 'RBNZ', CAD: 'BoC', CHF: 'SNB' };
   function parseRate(v) { var n = parseFloat(String(v || '').replace('%', '')); return isFinite(n) ? n : null; }
   var PATH_DELTA = { hike: 1, hold: 0, cut: -1 };
+  var CB_STEP = 0.25;   // standard 25bp move
+
+  /* Project the policy-rate gap and classify it.
+   * WIDENING/TIGHTENING is about the MAGNITUDE of the gap, not its sign:
+   * EUR/GBP at -1.50% with EUR hiking and GBP holding moves to -1.25%, i.e. the
+   * two rates CONVERGE -> tightening. (Comparing the signed change instead was
+   * the old bug: it called every base-currency hike a widening.)
+   * `favours` is the orthogonal, actionable fact: which leg the move benefits. */
+  function ratePath(diff, bp, qp) {
+    var delta = (PATH_DELTA[(bp || {}).next] || 0) - (PATH_DELTA[(qp || {}).next] || 0);
+    var proj = diff + CB_STEP * delta;
+    var exp = 'stable';
+    if (delta !== 0) {
+      if (Math.abs(proj) > Math.abs(diff) + 1e-9) exp = 'widen';
+      else if (Math.abs(proj) < Math.abs(diff) - 1e-9) exp = 'tighten';
+    }
+    return { delta: delta, proj: proj, exp: exp, favours: delta > 0 ? 'base' : delta < 0 ? 'quote' : null };
+  }
 
   function diffSpark(bh, qh) {
     if (!bh || !qh || bh.length < 2 || qh.length < 2) return '';
@@ -414,10 +432,10 @@
       if (br == null || qr == null) return null;
       var diff = br - qr;
       var bp = paths[b] || {}, qp = paths[q] || {};
-      var delta = (PATH_DELTA[bp.next] || 0) - (PATH_DELTA[qp.next] || 0);
-      var exp = delta > 0 ? 'widen' : delta < 0 ? 'tighten' : 'stable';
-      return { sym: sym, b: b, q: q, br: br, qr: qr, diff: diff, exp: exp, bp: bp, qp: qp,
-        bh: macro[b].rates.hist, qh: macro[q].rates.hist };
+      var rp = ratePath(diff, bp, qp);
+      return { sym: sym, b: b, q: q, br: br, qr: qr, diff: diff, exp: rp.exp,
+        proj: rp.proj, favours: rp.favours === 'base' ? b : rp.favours === 'quote' ? q : null,
+        bp: bp, qp: qp, bh: macro[b].rates.hist, qh: macro[q].rates.hist };
     }).filter(Boolean);
 
     // alphabetical by pair (Darius's preference — predictable place for each pair)
@@ -432,6 +450,8 @@
         '<span class="rdiff" style="color:' + (r.diff > 0 ? 'var(--long)' : r.diff < 0 ? 'var(--short)' : 'var(--range)') + '">' + sign + r.diff.toFixed(2) + '%</span>' +
         diffSpark(r.bh, r.qh) +
         '<span class="rexp ' + r.exp + '">' + expLabel[r.exp] + '</span></div>' +
+        (r.favours ? '<div class="rsub">→ ' + (r.proj > 0 ? '+' : '') + r.proj.toFixed(2) +
+          '% expected · favours <b>' + esc(r.favours) + '</b></div>' : '') +
         '<div class="rdetail">' +
           '<div class="rleg"><b>' + esc(r.b) + ' ' + r.br.toFixed(2) + '%</b> (' + esc(CB_NAME[r.b]) + ') — next: ' +
             esc((r.bp.next || 'n/a') + (r.bp.when ? ' · ' + r.bp.when : '')) +
@@ -707,8 +727,9 @@
       if (br != null && qr != null) {
         var diff = br - qr;
         var bp = (DATA.ratePaths || {})[b] || {}, qp = (DATA.ratePaths || {})[qc] || {};
-        var delta = (PATH_DELTA[bp.next] || 0) - (PATH_DELTA[qp.next] || 0);
-        var expTxt = delta > 0 ? 'expected to WIDEN' : delta < 0 ? 'expected to TIGHTEN' : 'expected STABLE';
+        var rp = ratePath(diff, bp, qp);
+        var expTxt = rp.exp === 'widen' ? 'gap expected to WIDEN' : rp.exp === 'tighten' ? 'gap expected to TIGHTEN' : 'no move expected either side';
+        if (rp.favours) expTxt += ' to ' + (rp.proj > 0 ? '+' : '') + rp.proj.toFixed(2) + '%, favouring ' + (rp.favours === 'base' ? b : qc);
         rateLine = '<div class="dsec"><h3>Rate differential</h3><div class="ctx" style="font-size:13px;color:var(--mut)">' +
           '<b style="color:' + (diff > 0 ? 'var(--long)' : diff < 0 ? 'var(--short)' : 'var(--range)') + '">' +
           (diff > 0 ? '+' : '') + diff.toFixed(2) + '%</b> (' + esc(b) + ' ' + br.toFixed(2) + '% − ' + esc(qc) + ' ' + qr.toFixed(2) + '%) · ' +
@@ -1084,7 +1105,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v21';
+  var APP_VERSION = 'v22';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
