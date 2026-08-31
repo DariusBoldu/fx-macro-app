@@ -4,6 +4,33 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 9 (2026-09-01): publish step gains an HTTPS fallback
+
+Replace the publish section of the task with this three-step logic. Everything else (analysis, TE verification, data.js) is unchanged.
+
+```bash
+cd "<workspace>"
+bash fx-macro-app/scripts/preflight.sh
+```
+
+**If preflight exits 0 (healthy):** publish normally —
+```bash
+node fx-macro-app/scripts/build-data-json.js
+bash fx-macro-app/scripts/push-data.sh
+```
+
+**If preflight exits 4 (degraded mount):** do NOT run those two. Use the HTTPS fallback instead —
+```bash
+node fx-macro-app/scripts/publish-api.js
+```
+It commits data.json + the day's history snapshot through the GitHub Contents API, needing only the data.js just written (freshly-written files are always readable) and a token. No git, no SSH key, no reading the history archive. Notifications still fire. It deliberately does not rebuild history/summary.json — the next healthy run does that.
+
+**Only if the fallback also fails** (e.g. no token): report that data.js was written and the publish must be finished manually on the Mac, quoting the two commands preflight prints.
+
+Always include preflight's `PREFLIGHT_SUMMARY ...` line in the run report so degradation is visible run to run.
+
+---
+
 ## Update 8 (2026-08-13): add copper — 35 symbols
 
 Add **copper** to the commodity block alongside gold, silver and oil. In `symbols[]` use `sym: "XCU/USD"` with the same `{bias, conv, why, risk}` shape, analysed daily like the others. Copper is quoted in **USD per pound** and its price/analysis should come from TradingEconomics (tradingeconomics.com/commodity/copper).
