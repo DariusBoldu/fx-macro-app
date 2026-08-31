@@ -51,7 +51,12 @@ function readWithRetry(file, tries) {
   throw last;
 }
 
-function main() {
+/* Build the published payload from data.js.
+ * `prevData` is the previously published data.json, used only for carry-forward.
+ * It is passed IN (rather than read here) so the degraded-mount fallback can
+ * supply the copy fetched from GitHub over HTTPS — see scripts/publish-api.js.
+ * Both publish paths therefore share one implementation of the validation. */
+function buildPayload(prevData) {
   const src = readWithRetry(DATA_JS);
 
   // Evaluate data.js in a tiny sandbox that provides `window`.
@@ -65,9 +70,6 @@ function main() {
   }
 
   // Sanity checks that keep the analyst standard intact (8 ccys incl CHF since 2026-07-28).
-  let prevData = null;
-  try { prevData = JSON.parse(fs.readFileSync(OUT, 'utf8')); } catch (e) {}
-
   const ccys = FX.strength.map((c) => c.ccy).sort().join(',');
   const expected8 = ['AUD', 'CAD', 'CHF', 'EUR', 'GBP', 'JPY', 'NZD', 'USD'].join(',');
   const expected7 = ['AUD', 'CAD', 'EUR', 'GBP', 'JPY', 'NZD', 'USD'].join(',');
@@ -113,7 +115,8 @@ function main() {
   // so the Macro page never goes blank between the seed and the task update.
   let macro = FX.macro;
   if (!macro || !Object.keys(macro).length) {
-    try { macro = (JSON.parse(fs.readFileSync(OUT, 'utf8')).macro) || {}; } catch (e) { macro = {}; }
+    macro = (prevData && prevData.macro) || {};
+    if (Object.keys(macro).length) console.warn('WARNING: data.js has no macro block — carried forward from the previous publish.');
   }
 
   const out = {
@@ -136,6 +139,13 @@ function main() {
     // The app reads this for "last updated" and the push trigger.
     updatedAt: new Date().toISOString(),
   };
+  return out;
+}
+
+function main() {
+  let prevData = null;
+  try { prevData = JSON.parse(readWithRetry(OUT)); } catch (e) {}
+  const out = buildPayload(prevData);
 
   fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n', 'utf8');
   console.log('Wrote ' + OUT);
@@ -197,4 +207,6 @@ function rebuildSummary(HIST) {
   return true;
 }
 
-main();
+module.exports = { buildPayload, DATA_JS, OUT };
+
+if (require.main === module) main();

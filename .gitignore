@@ -20,3 +20,6 @@ proxy/.wrangler/
 .probe-*
 *.tmp
 .preflight-probe.tmp
+
+# GitHub token for the API fallback publisher
+.gh_token

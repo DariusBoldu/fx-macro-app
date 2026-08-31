@@ -97,8 +97,14 @@ re-download them (macOS can; Linux/FUSE cannot -> EDEADLK).
 Do NOT run build-data-json.js or push-data.sh from here: the build would rewrite
 history/summary.json from an unreadable archive and git cannot open .git anyway.
 
-Finish the run by writing Forex_Dashboard/data.js only, then report that the
-publish must be completed manually with these two commands in Terminal:
+FALLBACK (preferred — publishes without git, works on a degraded mount):
+
+  node "<workspace>/fx-macro-app/scripts/publish-api.js"
+
+It commits data.json over HTTPS with the GitHub Contents API, needing only
+data.js (just written, so always readable) and a token. Notifications still
+fire. It skips history/summary.json on purpose; the next healthy run rebuilds it.
+If that also fails (no token), the publish must be completed manually on the Mac:
 
   node "$HOME/Documents/Claude/Projects/Trading forex/fx-macro-app/scripts/build-data-json.js"
   bash "$HOME/Documents/Claude/Projects/Trading forex/fx-macro-app/scripts/push-data.sh"
