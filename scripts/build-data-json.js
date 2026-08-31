@@ -22,8 +22,37 @@ const ROOT = path.resolve(__dirname, '..', '..');           // .../Trading forex
 const DATA_JS = path.join(ROOT, 'Forex_Dashboard', 'data.js');
 const OUT = path.resolve(__dirname, '..', 'data.json');
 
+/* ---- degraded-mount safety (added 2026-08-28) ------------------------------
+ * When this runs inside the Cowork Linux sandbox, the connected-folder mount can
+ * enter a state where files that already exist on the host are unreadable:
+ * every read returns EDEADLK ("Resource deadlock avoided", errno -35) while
+ * stat/readdir still succeed and freshly written files read fine.
+ *
+ * That failure mode is dangerous here, because rebuildSummary() used to swallow
+ * per-file read errors and would happily rewrite history/summary.json from zero
+ * readable snapshots — silently destroying months of history. Reads now retry,
+ * and the summary is never rewritten from an incomplete set. */
+const TRANSIENT = new Set(['EDEADLK', 'EDEADLOCK', 'EAGAIN', 'EBUSY']);
+function isTransient(e) {
+  return e && (TRANSIENT.has(e.code) || e.errno === -35 || /deadlock/i.test(e.message || ''));
+}
+function readWithRetry(file, tries) {
+  tries = tries || 4;
+  let last;
+  for (let i = 0; i < tries; i++) {
+    try { return fs.readFileSync(file, 'utf8'); } catch (e) {
+      last = e;
+      if (!isTransient(e)) throw e;
+      // crude sync backoff — no deps, and this script is not latency sensitive
+      const until = Date.now() + 250 * (i + 1);
+      while (Date.now() < until) { /* spin */ }
+    }
+  }
+  throw last;
+}
+
 function main() {
-  const src = fs.readFileSync(DATA_JS, 'utf8');
+  const src = readWithRetry(DATA_JS);
 
   // Evaluate data.js in a tiny sandbox that provides `window`.
   const sandbox = { window: {} };
@@ -127,8 +156,9 @@ function writeHistory(out) {
   fs.mkdirSync(HIST, { recursive: true });
   fs.writeFileSync(path.join(HIST, out.meta.reportDate + '.json'),
     JSON.stringify(out, null, 2) + '\n', 'utf8');
-  rebuildSummary(HIST);
-  console.log('  history    : ' + out.meta.reportDate + '.json + summary.json');
+  const summaryOk = rebuildSummary(HIST);
+  console.log('  history    : ' + out.meta.reportDate + '.json' +
+    (summaryOk ? ' + summary.json' : ' (summary.json SKIPPED — see error above)'));
 }
 
 function rebuildSummary(HIST) {
@@ -136,9 +166,11 @@ function rebuildSummary(HIST) {
     .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
     .map((f) => f.slice(0, 10)).sort();
   const symbols = {}, strength = {};
+  const unreadable = [];
   for (const d of dates) {
     let snap;
-    try { snap = JSON.parse(fs.readFileSync(path.join(HIST, d + '.json'), 'utf8')); } catch (e) { continue; }
+    try { snap = JSON.parse(readWithRetry(path.join(HIST, d + '.json'))); }
+    catch (e) { unreadable.push(d + ' (' + (e.code || e.message) + ')'); continue; }
     (snap.symbols || []).forEach((s) => {
       (symbols[s.sym] = symbols[s.sym] || []).push({ d: d, bias: s.bias, conv: s.conv });
     });
@@ -146,8 +178,23 @@ function rebuildSummary(HIST) {
       (strength[c.ccy] = strength[c.ccy] || []).push({ d: d, score: c.score });
     });
   }
+
+  // NEVER rewrite the summary from an incomplete read of the archive. A single
+  // unreadable snapshot means the rebuild would drop that date's timeline
+  // permanently, so leave the existing summary.json untouched and say so.
+  if (unreadable.length) {
+    console.error('ERROR: ' + unreadable.length + ' of ' + dates.length +
+      ' history snapshots could not be read — summary.json was NOT rewritten ' +
+      '(refusing to truncate the archive).');
+    console.error('  first few: ' + unreadable.slice(0, 5).join(', '));
+    console.error('  data.json and history/<date>.json are still correct; re-run ' +
+      'this script from a shell with direct filesystem access to refresh summary.json.');
+    return false;
+  }
+
   fs.writeFileSync(path.join(HIST, 'summary.json'),
     JSON.stringify({ dates: dates, symbols: symbols, strength: strength }) + '\n', 'utf8');
+  return true;
 }
 
 main();

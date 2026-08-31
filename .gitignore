@@ -15,3 +15,8 @@ proxy/.wrangler/
 
 # OS
 .DS_Store
+
+# diagnostic probe artefacts (mount debugging)
+.probe-*
+*.tmp
+.preflight-probe.tmp
