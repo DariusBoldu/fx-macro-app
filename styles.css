@@ -369,7 +369,15 @@ nav.tabbar{
 .snaprow{display:flex;gap:11px;padding:9px 0;border-top:1px solid var(--line);align-items:flex-start}
 .snaprow:first-of-type{border-top:none;padding-top:2px}
 .snaprow .si{font-size:16px;line-height:1.3;flex:none}
-.snaprow .st{font-weight:800;font-size:12px;min-width:74px;flex:none;padding-top:1px}
+/* Label column: fixed width so a long topic can NEVER squeeze the text.
+   min-width alone was not enough — `flex:none` sized it to its content, so a
+   98-char topic ate the whole row and left `.ss` a one-word-per-line sliver. */
+.snaprow .st{font-weight:800;font-size:12px;flex:0 0 74px;max-width:74px;padding-top:1px;overflow-wrap:anywhere}
+/* Stacked variant: the report put a headline in `t`, so give it the full width
+   as a title with the detail beneath it. */
+.snaprow.stack{flex-wrap:wrap;row-gap:4px}
+.snaprow.stack .st{flex:1 1 0;min-width:0;max-width:none;font-size:13px;line-height:1.45;color:var(--txt)}
+.snaprow.stack .ss{flex:1 1 100%;margin-left:27px}
 .snaprow .ss{color:var(--mut);font-size:12.5px;line-height:1.55}
 
 /* Today: strongest -> weakest ranking strip */
