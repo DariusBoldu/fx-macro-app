@@ -4,13 +4,22 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
-## Update 10 (2026-09-07): snapshot `t` must be a SHORT label — OPTIONAL
+## Update 10 (2026-09-07): snapshot rows are HEADLINE + detail — SEND THIS
 
-Only send this if you want the compact topic-row layout back. The app now renders long `t` values correctly either way, so nothing is broken if you skip it.
+The Today page's World snapshot now renders every row as a **bold headline with the supporting detail beneath it**, and that is the permanent design. Write the `snapshot` block to match, every day:
 
-In the `snapshot` block, `t` is meant to be a **short topic label of about 12 characters** — "Regime", "Oil & war", "Dollar", "Yen", "Gold", "Franc" — with the sentences going in `s`. Recent reports have been putting a full headline sentence (85-120 chars) in `t`, which is why the Today page shows a bold multi-line heading per row instead of a scannable label column.
+```js
+snapshot: [
+  { icon: "<emoji>", t: "<the headline — what actually changed, ~60-120 chars>",
+    s: "<1-2 sentences of supporting detail: the numbers, the so-what>" },
+  ...  // 5-7 rows
+]
+```
 
-Keep the shape as: `{ icon: "<emoji>", t: "<short label, ~12 chars>", s: "<1-2 sentences>" }` — the headline belongs at the start of `s`, not in `t`.
+- `t` is a **headline sentence**, not a short label. The 2026-09-07 report is the reference: *"CORRECTION: 65 of 65 economists say Thursday's hike is the LAST one - EUR comes down from +2 to +1"*.
+- `s` carries the evidence beneath it — figures, levels, the implication.
+- **The old rule that `t` must be a ~12-character topic label ("Regime", "Oil & war") is CANCELLED.** Ignore it wherever it still appears in earlier updates.
+- Keep covering the regime, oil/war + Hormuz, the dollar, the yen, gold/metals and the day's biggest movers.
 
 ---
 

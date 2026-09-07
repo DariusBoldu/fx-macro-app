@@ -205,14 +205,13 @@
     var snap = Array.isArray(D.snapshot) ? D.snapshot : [];
     $('snapshot').innerHTML = snap.length
       ? snap.map(function (r) {
-          // `t` is contracted to be a SHORT topic label ("Regime", "Oil & war").
-          // Reports sometimes put a full headline sentence there instead, and a
-          // fixed side-column would then squeeze `s` into an unreadable
-          // one-word-per-line sliver. So: short t -> label column (as designed);
-          // long t -> stack it as a headline with the detail underneath.
+          // ALWAYS stacked: `t` renders as a bold headline with `s` beneath it.
+          // Darius chose this layout on 2026-09-07 and wants it every day, so it
+          // is unconditional — a short `t` becomes a short heading rather than
+          // flipping the page back to the old label-column look. (That two-column
+          // style is why `s` once collapsed into a one-word-per-line sliver.)
           var t = r.t || '', s = r.s || '';
-          var stacked = t.length > 22;
-          return '<div class="snaprow' + (stacked ? ' stack' : '') + '">' +
+          return '<div class="snaprow stack">' +
             '<span class="si">' + esc(r.icon || '•') + '</span>' +
             (t ? '<span class="st">' + esc(t) + '</span>' : '') +
             (s ? '<span class="ss">' + esc(s) + '</span>' : '') + '</div>';
@@ -1114,7 +1113,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v23';
+  var APP_VERSION = 'v24';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
