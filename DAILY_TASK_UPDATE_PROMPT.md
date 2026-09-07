@@ -4,6 +4,16 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 10 (2026-09-07): snapshot `t` must be a SHORT label — OPTIONAL
+
+Only send this if you want the compact topic-row layout back. The app now renders long `t` values correctly either way, so nothing is broken if you skip it.
+
+In the `snapshot` block, `t` is meant to be a **short topic label of about 12 characters** — "Regime", "Oil & war", "Dollar", "Yen", "Gold", "Franc" — with the sentences going in `s`. Recent reports have been putting a full headline sentence (85-120 chars) in `t`, which is why the Today page shows a bold multi-line heading per row instead of a scannable label column.
+
+Keep the shape as: `{ icon: "<emoji>", t: "<short label, ~12 chars>", s: "<1-2 sentences>" }` — the headline belongs at the start of `s`, not in `t`.
+
+---
+
 ## Update 9 (2026-09-01): publish step gains an HTTPS fallback
 
 Replace the publish section of the task with this three-step logic. Everything else (analysis, TE verification, data.js) is unchanged.
