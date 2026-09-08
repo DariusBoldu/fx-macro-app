@@ -136,6 +136,27 @@ main{flex:1;padding:14px 14px calc(var(--tabbar-h) + var(--safe-bottom) + 18px);
 .legend{color:var(--dim);font-size:11px;margin-top:10px;line-height:1.6}
 
 /* ---------- Signals ---------- */
+/* Filter bar: two single-select axes (bias, conviction). Counts are faceted,
+   so a chip's number always equals what tapping it will show. */
+.sfilters{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:9px 11px 7px;margin-bottom:12px}
+.frow{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.flab{flex:none;width:36px;font-size:9.5px;font-weight:800;letter-spacing:.8px;
+  text-transform:uppercase;color:var(--dim)}
+.fchips{display:flex;flex-wrap:wrap;gap:5px;flex:1 1 auto;min-width:0}
+.fchip{display:inline-flex;align-items:center;gap:5px;background:var(--panel2);
+  border:1px solid var(--line);border-radius:999px;color:var(--mut);
+  font-size:11.5px;font-weight:700;padding:4px 9px;cursor:pointer;line-height:1.3;
+  transition:background .12s ease,color .12s ease,border-color .12s ease}
+.fchip .fn{font-size:10px;font-weight:800;color:var(--dim);font-variant-numeric:tabular-nums}
+.fchip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.fchip.on .fn{color:rgba(255,255,255,.85)}
+.fchip.zero{opacity:.42}
+.fmeta{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin-top:2px;font-size:10.5px;color:var(--dim);font-weight:600}
+.fclear{background:none;border:none;color:var(--accent);font-size:10.5px;
+  font-weight:700;cursor:pointer;padding:2px 0}
+
 .filters{display:flex;gap:7px;margin-bottom:13px;position:sticky;top:0;z-index:5}
 .fbtn{flex:1;background:var(--panel2);border:1px solid var(--line);color:var(--mut);padding:9px 4px;border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:700;text-align:center}
 .fbtn.active{background:var(--accent);border-color:var(--accent);color:#fff}

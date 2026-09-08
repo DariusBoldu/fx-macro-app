@@ -345,10 +345,66 @@
   var openMacro = null;
 
   /* grouped compact rows: LONG / SHORT / RANGE sections; tap a row -> detail sheet */
+  /* ---- Signals filters ------------------------------------------------
+   * Conviction strings are NOT consistent across reports ("HIGH", "MEDIUM",
+   * "MED", "LOW-MED", "LOW"), so rank them instead of matching text, and filter
+   * on a minimum rank. Order matters below: LOW-MED must be tested before LOW,
+   * or it would be caught by /^LOW/. */
+  var CONV_RANK = [
+    [/^HIGH/i, 3],
+    [/^MED(IUM)?\b/i, 2],
+    [/LOW[\s\-\/]*MED|MED[\s\-\/]*LOW/i, 1.5],
+    [/^LOW/i, 1]
+  ];
+  function convRank(c) {
+    var s = String(c || '').trim();
+    for (var i = 0; i < CONV_RANK.length; i++) if (CONV_RANK[i][0].test(s)) return CONV_RANK[i][1];
+    return 0;
+  }
+  var SIG_DIR = [['all', 'All'], ['LONG', 'Long'], ['SHORT', 'Short'], ['RANGE', 'Range']];
+  var SIG_CONV = [['all', 'Any'], ['med', 'Med+'], ['high', 'High']];
+  function dirPass(k, s) { return k === 'all' || s.bias === k; }
+  function convPass(k, s) {
+    if (k === 'high') return convRank(s.conv) >= 3;
+    if (k === 'med') return convRank(s.conv) >= 2;   // HIGH + MEDIUM (LOW-MED excluded)
+    return true;
+  }
+  var sigFilter = { dir: 'all', conv: 'all' };
+  try {
+    var _sf = JSON.parse(localStorage.getItem('fx_sig_filter') || 'null');
+    if (_sf && typeof _sf.dir === 'string' && typeof _sf.conv === 'string') sigFilter = _sf;
+  } catch (e) { /* private mode / cleared storage — defaults are fine */ }
+
+  var lastSymbols = [];
   function renderSignals(symbols) {
+    if (symbols) lastSymbols = symbols;
+    var all = lastSymbols || [];
+
+    // Faceted counts: each chip shows what you'd get if you tapped it, given the
+    // OTHER axis's current selection — so the number never contradicts the list.
+    function chips(defs, axis) {
+      return defs.map(function (d) {
+        var n = all.filter(function (s) {
+          return axis === 'dir'
+            ? dirPass(d[0], s) && convPass(sigFilter.conv, s)
+            : convPass(d[0], s) && dirPass(sigFilter.dir, s);
+        }).length;
+        return '<button class="fchip' + (sigFilter[axis] === d[0] ? ' on' : '') +
+          (n ? '' : ' zero') + '" data-axis="' + axis + '" data-v="' + d[0] + '">' +
+          esc(d[1]) + '<span class="fn">' + n + '</span></button>';
+      }).join('');
+    }
+    $('fDir').innerHTML = chips(SIG_DIR, 'dir');
+    $('fConv').innerHTML = chips(SIG_CONV, 'conv');
+
+    var shown = all.filter(function (s) { return dirPass(sigFilter.dir, s) && convPass(sigFilter.conv, s); });
+    var active = sigFilter.dir !== 'all' || sigFilter.conv !== 'all';
+    $('fCount').textContent = active ? 'Showing ' + shown.length + ' of ' + all.length : all.length + ' instruments';
+    $('fClear').hidden = !active;
+
     var groups = [['LONG', 'Long'], ['SHORT', 'Short'], ['RANGE', 'Range / stand aside']];
-    $('signals').innerHTML = groups.map(function (g) {
-      var list = (symbols || []).filter(function (s) { return s.bias === g[0]; })
+    var html = groups.map(function (g) {
+      var list = shown.filter(function (s) { return s.bias === g[0]; })
         .sort(function (x, y) { return x.sym.localeCompare(y.sym); });   // alphabetical within each bias group
       if (!list.length) return '';
       var rows = list.map(function (s) {
@@ -361,10 +417,33 @@
       return '<div class="sgroup"><div class="sgh"><span class="chip ' + g[0] + '">' + g[1] + '</span>' +
         '<span class="n">' + list.length + '</span></div>' + rows + '</div>';
     }).join('');
+
+    $('signals').innerHTML = html ||
+      '<div class="panel" style="text-align:center;color:var(--mut);font-size:13px">' +
+      'Nothing matches this filter today.<br><span style="color:var(--dim);font-size:12px">' +
+      'No ' + (sigFilter.conv === 'high' ? 'high-conviction' : sigFilter.conv === 'med' ? 'medium-or-better' : '') +
+      ' setups in that direction — try widening it.</span></div>';
+
     $('signals').querySelectorAll('.srowc').forEach(function (r) {
       r.addEventListener('click', function () { openDetail(r.getAttribute('data-sym')); });
     });
   }
+
+  // Filter chips: single-select per axis, remembered on this device.
+  ['fDir', 'fConv'].forEach(function (id) {
+    $(id).addEventListener('click', function (e) {
+      var b = e.target.closest('.fchip');
+      if (!b) return;
+      sigFilter[b.getAttribute('data-axis')] = b.getAttribute('data-v');
+      try { localStorage.setItem('fx_sig_filter', JSON.stringify(sigFilter)); } catch (err) {}
+      renderSignals();
+    });
+  });
+  $('fClear').addEventListener('click', function () {
+    sigFilter = { dir: 'all', conv: 'all' };
+    try { localStorage.setItem('fx_sig_filter', JSON.stringify(sigFilter)); } catch (err) {}
+    renderSignals();
+  });
 
   var calOtherOpen = false;
   $('calOtherHdr').addEventListener('click', function () {
@@ -1113,7 +1192,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v24';
+  var APP_VERSION = 'v25';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
