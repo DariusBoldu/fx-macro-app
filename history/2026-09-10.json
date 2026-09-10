@@ -1,140 +1,140 @@
 {
   "meta": {
     "reportDate": "2026-09-10",
-    "reportLabel": "THE BIGGEST ESCALATION OF THE WAR PRODUCED ALMOST NO FX HAVEN BID - and that is today's real signal. Iran attacked more than a dozen vessels near Hormuz including two US ships, struck a US base in Jordan (Jordan downed 18 missiles), and for the FIRST TIME extended its prohibited zone beyond the Strait into the Gulf of Oman and the ARABIAN SEA; the IAEA referred Iran to the UN Security Council 23-3. Brent broke 100 dollars, closing at 101.21 and trading 101.039 now, WTI 96.074 and +15.49% on the month. Yet GOLD FELL 1.41% on the week, the franc is WEAKER on the week (USD/CHF +0.19%) and the loonie did not move with crude (USD/CAD 1.38060, +0.08% weekly). The entire risk premium is going into ENERGY, not into FX havens - so this board is trading CENTRAL BANKS, not the war. Two things changed there: TE now says rate futures price a THIRD ECB hike by December, roughly 40-50%, which reopens a path this file called closed two days ago and closes it hawkish; and BoJ's Masu said overnight the Bank expects to KEEP raising to avoid being forced into rapid tightening later - a fourth confirmation in three days. XAU/USD is DOWNGRADED from LONG to RANGE on the failed haven bid. Board unchanged: JPY +3; AUD +2; EUR, USD, CAD, CHF +1; GBP -1, NZD -1. Cleanest: NZD/JPY SHORT, GBP/JPY SHORT, JPYBASKET LONG, USD/JPY SHORT, AUD/NZD LONG, EUR/GBP LONG, USOIL LONG. ECB TODAY 12:15Z, US PPI 12:30Z, US CPI tomorrow.",
+    "reportLabel": "THE HAVEN FAILURE IS NOW A COMMODITY FAILURE TOO - and that is today's change. Yesterday gold and the franc refused to bid on the biggest escalation of the war. Today the INDUSTRIAL metals joined them: copper fell 1.00% to 6.7356 USD per pound and its monthly gain collapsed to +1.87% from +2.90% on the week, silver fell 0.94% to 66.634, and gold broke BELOW 4,400 to 4,392.69 with only +0.54% left on the month. Meanwhile crude went the other way again - WTI 97.269 and +1.27% today for +16.85% on the month, Brent 102.167. Energy is now the ONLY asset carrying the war premium, and the reason the metals are cracking is the Fed: CME FedWatch has drifted to 58% from 56% for a September 16 hike, with TE forecasting 4.00%. Rising US real rates beat the haven bid. That costs AUD its commodity leg (score held at +2 on the rate differential alone, NOT on copper) and forces one bias change: XAG/USD is DOWNGRADED from LONG to RANGE, joining gold. UK gas got worse again at +38.71% monthly, the worst in G10. Board unchanged: JPY +3; AUD +2; EUR, USD, CAD, CHF +1; GBP -1, NZD -1. Cleanest: NZD/JPY SHORT, GBP/JPY SHORT, JPYBASKET LONG, USD/JPY SHORT, AUD/NZD LONG, EUR/GBP LONG, USOIL LONG. ECB TODAY 12:15Z, US PPI 12:30Z, US CPI tomorrow.",
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + XAU + XAG + XCU + USOIL",
-    "regime": "The war escalated harder overnight than at any point since it began, and the FX market barely flinched - gold fell on the week, the franc weakened, and the loonie ignored Brent breaking 100 dollars. The risk premium is being expressed almost entirely through energy: crude +15.49% on the month, EU gas +34.66%, UK gas +36.33%. That leaves FX trading pure monetary-policy differentials, which is why the yen - the one currency with a central bank actively repricing - is the only clean directional trade on the board. The second regime feature is that Europe is absorbing an energy tax it cannot hedge while its central bank tightens into it, and rate futures have now reopened a December ECB hike at roughly 40-50%.",
-    "nextBigEvent": "The ECB TODAY, September 10 at 12:15Z, with the press conference at 12:45Z. The 25bp to a 2.50% deposit facility is 99% priced and every one of the 65 economists in the September 3 Reuters poll expects it, so the move is not the event. Two things are. First, the NEW STAFF PROJECTIONS: August energy inflation jumped to 14.3% from 10.3%, HICP hit 3.3% - the highest since September 2023 - and TTF has risen further since, so the staff inflation path can be revised UP. Second, and this is what genuinely changed in the last 24 hours, TradingEconomics now states that interest-rate futures are pricing a THIRD hike by December, with previews putting it near 40-50%. Two days ago this file said the path was closed on the Reuters poll; one day ago it softened that to 'economists closed it, the ECB has not'. Today the rate market has reopened it outright, and that outranks the poll. Previews still expect Lagarde to retain full optionality rather than confirm a terminal. US PPI follows at 12:30Z and US August CPI tomorrow, September 11, at 12:30Z with consensus 3.4%."
+    "regime": "The war premium has stopped being a cross-asset risk premium and become a pure ENERGY premium. Crude is +16.85% on the month and Brent holds above 102, while gold has broken below 4,400 with only +0.54% left on the month, silver is falling and copper has now turned down too. The transmission channel is US real rates: with CME FedWatch at 58% for a September 16 hike and TE forecasting 4.00%, the discount rate on every non-yielding haven is rising faster than the war can bid them. That leaves FX trading pure monetary-policy differentials, which is why the yen - the one currency with a central bank the market has already priced into a hike - is still the only clean directional trade on the board. The second feature is unchanged: Europe is absorbing an energy tax it cannot hedge while its central bank tightens into it, and rate futures keep a December ECB hike alive at roughly 40-50%.",
+    "nextBigEvent": "The ECB TODAY, September 10 at 12:15Z, with the press conference at 12:45Z. The 25bp to a 2.50% deposit facility is 99% priced - TE carries consensus and forecast at 2.65% on the refi - and every one of the 65 economists in the September 3 Reuters poll expects it, so the move is not the event. The event is the NEW STAFF PROJECTIONS. August energy inflation jumped to 14.3% from 10.3% and headline HICP hit 3.3%, the highest since September 2023, with core at 2.4%. Since those numbers were collected, EU gas has risen further to 80.30 euros per MWh, German gas jumped 4.42% in a single session to 80.40, and German storage sits at only 53% full. The staff inflation path can therefore be revised UP into a market that had decided the cycle was finished. TE states directly that interest-rate futures are pricing a THIRD hike by December while policymakers keep flagging upside inflation risks - but also that the ECB is expected to signal CAUTION about further increases that could weigh on activity, that there is still little evidence of the second-round effects policymakers fear, and that economists warn more tightening risks recession. Lagarde retaining full optionality is the hawkish outcome; naming 2.50% as terminal is the dovish one. US PPI lands 15 minutes later at 12:30Z and August CPI tomorrow at 12:30Z is the bigger number for the whole board."
   },
-  "dailyRead": "The single most important fact this morning is a non-reaction. Overnight the US-Iran war produced its largest escalation to date: Iran's Revolutionary Guards attacked more than a dozen vessels trying to transit Hormuz - two US ships, eight oil tankers and ten so-called non-compliant vessels - after US forces destroyed five Iranian tankers on Tuesday; Iran struck a US military base in Jordan, where the army shot down 18 missiles; and for the FIRST TIME the Guards extended their declared prohibited zone beyond the Strait itself into parts of the Gulf of Oman and the Arabian Sea, with coordinates to follow. The IAEA board then referred Iran to the UN Security Council for nuclear non-compliance by 23 votes to 3 with 8 abstentions, Russia, China and Niger against. Brent breached 100 dollars for the first time since July, closing at 101.21 and trading 101.039 now, with WTI at 96.074 and up 15.49% on the month. And yet: GOLD IS DOWN 1.41% ON THE WEEK at 4,409.98. The Swiss franc is WEAKER on the week, USD/CHF at 0.80904 and +0.19%. The Canadian dollar did not move with crude at all - USD/CAD is 1.38060, unchanged today and UP 0.08% on the week. Three separate haven and terms-of-trade channels that should have fired did not. The conclusion this file draws, and it reframes every position on the board, is that the war's risk premium is now being paid entirely in ENERGY and no longer in currencies. The FX market has stopped trading the headline and gone back to trading central banks. That has two direct consequences today. First, XAU/USD is DOWNGRADED from LONG to RANGE: a gold position is a bet that geopolitical stress buys gold, and this week is the cleanest possible test of that proposition and gold failed it. Silver stays LONG at LOW-MED precisely because its industrial leg - it is +4.33% on the month against gold's +0.92% - is doing work gold's haven leg is not. Second, the yen keeps its +3 and its four HIGH-conviction expressions, because Japan is the one place where the policy repricing is live and accelerating: BoJ board member Masu said overnight at 01:39Z that the Bank expects to CONTINUE raising rates given accommodative financial conditions, and that further hikes are needed precisely to avoid being FORCED into rapid tightening later - naming Iran-driven fuel and chemical costs, distribution and food costs, yen pass-through and AI demand as persistent price pressures. That is the fourth hawkish confirmation in three sessions, on top of the upward-revised Q2 GDP, the Reuters Tankan at 21, machine tool orders +64.7%, average cash earnings +4.7% and Treasury Secretary Bessent's warning against betting against the currency. USD/JPY at 153.425 sits near a seven-month low with swaps carrying roughly 75bp of cumulative tightening by April 2027. On Europe: the euro's forward case genuinely hardened, and this file has now moved on it twice in three days, so the correction should be stated cleanly. Two days ago it said the ECB path was CLOSED on the September 3 Reuters poll, where 91% saw 2.50% as the year-end rate. Yesterday it softened that to 'economists closed the path, the ECB has not'. Today TradingEconomics states plainly that interest-rate futures are pricing in a THIRD hike by December, with previews putting the odds near 40-50%. Rate-market pricing outranks an economist poll, so the path is OPEN and the file was wrong to shut it. Against that, the gas tax got worse rather than better: EU gas is 79.1702 euros per MWh and +34.66% on the month with a 144.70% yearly gain, UK gas is 196.61 pence and +36.33% on the month, German storage is only 53% full against an EU aggregate of 65%, and Morgan Stanley has raised its winter TTF forecast to about 85 euros with risk skewed higher, writing that it is now too late for Qatari LNG to return before winter. EUR therefore holds +1 as a genuinely two-sided score with a hawkish forward tilt, and GER40 stays SHORT - an industrial economy entering winter with half-empty storage, a 36% monthly gas move and a central bank hiking into it. Sterling holds MINUS 1 with the worst gas exposure in G10 and a Bank frozen on September 17, though cable at 1.35552 is still up 0.22% on the week and GBP/USD stays LOW-MED for that reason - express sterling against the yen and the euro. The kiwi's rebound lasted exactly one session: NZD/USD is 0.58507 and now DOWN 0.50% on the week, so yesterday's 'the slide stopped' call was wrong within 24 hours and the RBNZ leg - a bank that hiked to 2.75% and then declined to validate an October follow-up - is doing the work, as it always was. AUD holds +2: consumer inflation expectations printed UNCHANGED at 4.9% this morning, elevated and sticky, with trimmed mean stuck at 3.6% and copper at 6.7676 and +2.90% on the week. CAD holds +1 but with an honest downgrade of its transmission: the oil leg is now at its cycle maximum and the currency is not monetising it, so the loonie is being traded on the -41,700 August jobs print and 2.0% wage growth instead, and every CAD cross stays a RANGE or a low-conviction expression. CHF holds +1 with the same note - it did not get the haven bid the escalation should have handed it, which caps rather than breaks the case. Today's binary is the ECB at 12:15Z; US PPI lands at 12:30Z and CPI tomorrow.",
+  "dailyRead": "Yesterday this file said the biggest escalation of the war produced almost no FX haven bid, and that the board was therefore trading central banks rather than the war. Today that observation extends into the metals complex and gets a cleaner explanation. Copper fell 1.00% to 6.7356 USD per pound, cutting its monthly gain to +1.87% after being +2.90% on the WEEK only yesterday; silver fell 0.94% to 66.634; and gold broke below 4,400, trading 4,392.69 with a monthly gain of just +0.54%. Set that against crude, which went the other way for a second session: WTI 97.269, +1.27% today and +16.85% on the month, with Brent 102.167 and +14.82%. Energy is the only asset class still paying the war premium. The mechanism is US real rates. CME FedWatch has drifted to 58% from 56% for a September 16 hike after August payrolls at +162,000 against +53,000 expected, and TradingEconomics now forecasts 4.00% outright; a rising discount rate beats a geopolitical bid on every asset that pays no coupon, which is precisely why gold and silver are falling in the middle of a shooting war. Two disciplined caveats belong here. First, 56% to 58% is a two-point drift and CoinDesk argued on September 7 that the payrolls print did NOT materially move Fed pricing - so the USD score does not flip on it, and August CPI tomorrow at 12:30Z is the number that decides September 16. Second, one session of copper weakness does not break the Australian thesis: AUD holds at +2 on the G10-high 4.35% cash rate with September 29 near 54% priced, on inflation expectations stuck at 4.9%, and on trimmed mean at 3.6% - NOT on the commodity leg, which has now visibly weakened and should stop being cited as support. That distinction is the one that matters for position sizing, and it is why XCU/USD keeps its LONG direction on the genuine supply shortage but loses conviction to LOW-MED. The one outright bias change today is XAG/USD, downgraded from LONG to RANGE. Silver was held as a gold substitute with an extra industrial leg; today it fell harder than gold while copper fell harder still, so the industrial leg is the part that broke and the reason to prefer silver has gone. It joins gold at RANGE. Elsewhere the board is stable and the stability is informative. The yen remains the only uncompromised score at +3 - TE carries consensus AND its own forecast at 1.25% for the September 18 BoJ, board member Masu said the Bank expects to keep raising precisely to avoid being forced into rapid tightening later, average cash earnings are +4.7% y/y and the fastest since 1997, and USD/JPY at 153.716 is still -3.50% on the month even after a +0.11% session. Sterling stays at -1 and its energy problem got worse again: UK gas is 200.38 pence per therm and now +38.71% on the month, up from +36.33% yesterday, the worst gas exposure in G10, into a confirmed October Ofgem cap rise - stagflationary for a Bank of England that TE shows will not move on September 17 and cannot ease either. The kiwi stays at -1 on a central bank that hiked to 2.75% and then declined to validate the next step, with TE carrying October 28 unchanged and the next 25bp only on December 9; NZD/USD at 0.58399 is flat on the day and -0.65% on the month, the worst major. The loonie stays at +1 with the same uncomfortable footnote as yesterday: Brent is above 102 and USD/CAD is 1.38134, up another 0.06%, so the oil beta remains broken and every CAD expression stays low-conviction. And the franc failed its haven test for a SECOND session - USD/CHF 0.81110, +0.12%, leaving CHF flat on the month - so while the Swiss data alone would justify +2, the score stays at +1 and the franc should now be expressed on data and differentials only, never as a haven. Trade the yen, trade crude, trade the AUD/NZD antipodean spread, and let the ECB and tomorrow's CPI resolve the euro and the dollar.",
   "today": [
     {
       "ccy": "EUR",
       "moved": true,
-      "headline": "The December path REOPENED - TE says rate futures now price a THIRD hike by December, near 40-50% in previews, which reverses this file's own 'path is closed' call from two days ago hours before the ECB decides at 12:15Z.",
-      "read": "Rate-market pricing outranks the Reuters poll that closed the path, so own the hawkish tilt: the new STAFF PROJECTIONS are the live risk, with August energy inflation at 14.3% taking HICP to 3.3% and TTF higher since. Against it, the gas tax worsened - EU gas +34.66% on the month, German storage 53%, Morgan Stanley's winter TTF forecast raised to ~85 euros. EUR holds +1 as a two-sided score with a hawkish lean: own it against GBP and NZD, keep EUR/USD a range until Lagarde speaks."
+      "headline": "ECB decides TODAY at 12:15Z - the hike is 99% priced, so the new staff projections and Lagarde at 12:45Z are the entire event.",
+      "read": "The asymmetry favours a hawkish surprise: August energy inflation was already 14.3% and gas has risen since, so the staff path can be revised UP into a market that thought the cycle was over. Own EUR against GBP and NZD into it, and keep EUR/USD, EUR/CAD and EUR/CHF as ranges until Lagarde speaks."
     },
     {
-      "ccy": "CHF",
+      "ccy": "USD",
       "moved": true,
-      "headline": "The franc FAILED its haven test - the biggest escalation of the war and CHF is WEAKER on the week, USD/CHF 0.80904 and +0.19%.",
-      "read": "Yesterday's argument that the franc is the cleanest European hedge against the gas shock is not visible in the price and should be held loosely. CHF stays +1 on outstanding data - PMI 57.1, current account 15,544m, Q2 annual growth 2.3% - capped by an SNB at 0% forecasting 0.6% inflation and signalling readiness to intervene. Keep every CHF cross MEDIUM or below and do not add on war headlines."
-    },
-    {
-      "ccy": "CAD",
-      "moved": true,
-      "headline": "Brent broke 100 dollars and the loonie did NOT move - USD/CAD 1.38060, unchanged on the day and UP 0.08% on the week, weaker than yesterday's 1.37732.",
-      "read": "The oil-CAD beta has broken this week and the thesis should say so rather than repeat itself. What the market is trading is the labour leg: -41,700 August jobs and average hourly wages decelerating to 2.0% y/y from 2.8%, which keeps the BoC beyond October 28. CAD holds +1 on strong growth data, but every CAD expression stays a RANGE or low-conviction until the currency monetises its own terms of trade."
-    },
-    {
-      "ccy": "NZD",
-      "moved": true,
-      "headline": "The rebound lasted ONE SESSION - NZD/USD 0.58507 is now DOWN 0.50% on the week, so yesterday's 'the three-day slide stopped' was wrong within 24 hours.",
-      "read": "The correction is worth stating because the leg that justified MINUS 1 was never China - it is a central bank that hiked to 2.75% and then declined to validate an October follow-up, with ANZ reading the statement as deliberately vague and highly conditional. TE has October 28 unchanged and December 9 at 3.00%. NZD/JPY SHORT and AUD/NZD LONG both stay HIGH; add EUR/NZD as the euro's hawkish tilt firms."
-    },
-    {
-      "ccy": "JPY",
-      "moved": true,
-      "headline": "BoJ's Masu at 01:39Z: the Bank expects to CONTINUE raising rates, and further hikes are needed to avoid being FORCED into rapid tightening later - a fourth hawkish confirmation in three sessions.",
-      "read": "Hawkish on direction, deliberate on pace, which is the path that supports the yen without inviting a disorderly move. With September 18 near 80% priced and swaps carrying ~75bp of cumulative tightening by April 2027, the yen trades on GUIDANCE and on the path beyond September. Keep all four HIGH-conviction expressions - NZD/JPY SHORT, GBP/JPY SHORT, USD/JPY SHORT, JPYBASKET LONG. The only thing that breaks it is a hike-and-explicit-pause, or MoF discomfort at the PACE."
-    },
-    {
-      "ccy": "GBP",
-      "moved": true,
-      "headline": "UK gas exposure got WORSE - 196.61 pence per therm, +10.46% on the week and +36.33% on the MONTH, up from +29.82% yesterday, into a confirmed October Ofgem cap rise.",
-      "read": "That is stagflationary for a Bank already frozen at 3.75% into September 17: it lifts the CPI path while cutting real household income. But cable is 1.35552 and still UP 0.22% on the week, so the short is not paying against the dollar and GBP/USD stays LOW-MED. Express sterling against the YEN and the EURO. Tomorrow's monthly GDP at 06:00Z is the main risk to the position."
+      "headline": "Fed pricing drifted to 58% from 56% for September 16 and TE now forecasts 4.00% - and it is showing up in the metals, not in FX.",
+      "read": "Treat the two-point drift as noise, not a signal: the dollar is dormant until August CPI lands tomorrow at 12:30Z with consensus 3.4%. The tradeable expression of rising US real rates right now is short gold and short silver, not long dollars - DXY is still -1.03% on the month."
     },
     {
       "ccy": "AUD",
       "moved": true,
-      "headline": "Consumer inflation expectations printed UNCHANGED at 4.9% for September - elevated and sticky, exactly what the August minutes were worried about.",
-      "read": "With trimmed mean stuck at 3.6%, the monthly inflation rate at +1.0%, annual growth at 2.1% above the RBA's 2% speed limit, and Middle East oil listed FIRST among the minutes' hike arguments while crude runs +15.49% on the month, the September 29 case is intact at near 54%. Copper 6.7676 and +2.90% on the week holds the commodity leg. AUD stays +2; AUD/NZD LONG is the cleanest expression, GBP/AUD SHORT next."
+      "headline": "Copper turned down 1.00% to 6.7356 and its monthly gain halved - the Australian commodity leg has visibly weakened.",
+      "read": "AUD stays at +2 but the support is now the 4.35% cash rate and 4.9% inflation expectations, NOT commodities, so express it against NZD where the rate story is cleanest rather than against USD. A second soft copper session plus another weak domestic print would be the trigger to cut to +1."
     },
     {
-      "ccy": "USD",
+      "ccy": "GBP",
+      "moved": true,
+      "headline": "UK gas worsened again to 200.38 pence, now +38.71% on the month against +36.33% yesterday - the worst energy exposure in G10.",
+      "read": "This tightens the stagflation vice into an October Ofgem cap rise: it lifts the CPI path while cutting real incomes, and TE shows a Bank frozen at 3.75% on September 17 with a 0/9 vote-cut consensus. Keep sterling short against JPY and EUR, not against USD where cable is still +0.32% on the month."
+    },
+    {
+      "ccy": "CAD",
+      "moved": true,
+      "headline": "Brent above 102 and WTI +16.85% on the month, and USD/CAD went UP again to 1.38134 - the oil beta is still broken.",
+      "read": "Until the loonie starts trading its own terms of trade, keep every CAD expression low-conviction and take the crude view through USOIL directly instead. The next catalyst is a labour stabilisation, not an oil headline - August wages at 2.0% y/y are what is actually capping this currency."
+    },
+    {
+      "ccy": "CHF",
+      "moved": true,
+      "headline": "Second straight session with no haven bid - USD/CHF 0.81110, +0.12%, leaving the franc flat on the month through the war escalation.",
+      "read": "The haven argument is retired: from here trade CHF only on its data and differentials, which are strong enough to hold +1 but capped by an SNB that forecasts 0.6% inflation and has signalled greater readiness to intervene. Keep every CHF cross at MEDIUM or below into September 24."
+    },
+    {
+      "ccy": "JPY",
       "moved": false,
-      "headline": "No change - not one US macro number moved on TE and Fed pricing is steady near 56% on CME FedWatch. Thesis holds.",
-      "read": "The dollar is dormant until PPI at 12:30Z today and CPI tomorrow at 12:30Z, consensus 3.4%. TE's July-minutes summary tilts hawkish - officials saw inflation risks to the UPSIDE and some judged conditions not restrictive enough - but it predates the cooler data. Keep USD/JPY as a JAPAN trade with a neutral dollar leg; DXY stays a RANGE at 98.740."
+      "headline": "No change - thesis holds, and it is the only uncompromised score on the board.",
+      "read": "TE carries its own forecast at 1.25% for September 18 against a 1% consensus, so the yen gets paid on guidance and on the roughly 75bp of cumulative tightening swaps carry to April 2027. USD/JPY at 153.716 is still -3.50% on the month; a hike-and-explicit-pause is the only thing that breaks this."
+    },
+    {
+      "ccy": "NZD",
+      "moved": false,
+      "headline": "No change - and it is now the only major with a NEGATIVE monthly return against the dollar.",
+      "read": "NZD/USD -0.65% on the month confirms that a central bank which hikes to 2.75% and then refuses to validate the next step does not get paid for its carry. Stay short via NZD/JPY and long AUD/NZD; October 28 pulling the December hike forward is the invalidation."
     }
   ],
   "snapshot": [
     {
-      "icon": "🚨",
-      "t": "The war's biggest escalation yet - Iran hit a dozen-plus ships, struck a US base in Jordan, and pushed its no-go zone BEYOND Hormuz into the Gulf of Oman and the Arabian Sea for the first time",
-      "s": "Iran's Revolutionary Guards said they attacked two US vessels, eight oil tankers and ten 'non-compliant vessels' trying to transit the Strait on Wednesday, after US forces destroyed FIVE Iranian oil tankers on Tuesday. The Guards also struck a US military base in Jordan; Jordan's army shot down 18 missiles. UKMTO reported several merchant ships subject to disabling fire in the Gulf of Oman and the Gulf. The geographic expansion is the new fact: spokesman Hossein Mohebi said parts of the Gulf of Oman and the Arabian Sea are now inside the prohibited zone, coordinates to follow, and any vessel entering without coordination will be sanctioned."
+      "icon": "🥇",
+      "t": "Gold breaks below 4,400 in the middle of a shooting war - the haven bid has now failed for a second straight session",
+      "s": "XAU/USD 4,392.69, -0.12% today with only +0.54% left on the month, against WTI +16.85% over the same stretch. Downgraded from LONG to RANGE yesterday and that call is confirming. The driver is US real rates, not risk appetite."
     },
     {
-      "icon": "🥇",
-      "t": "AND GOLD FELL - down 1.41% on the WEEK at 4,409.98 through the single biggest escalation of the war. XAU/USD is DOWNGRADED from LONG to RANGE",
-      "s": "This is the cleanest possible test of the proposition that geopolitical stress buys gold, and gold failed it. The franc failed the same test - USD/CHF 0.80904 and CHF WEAKER by 0.19% on the week - and the loonie ignored Brent breaking 100. The risk premium is being paid in ENERGY and not in FX havens, which means this board is trading central banks rather than headlines. Silver stays LONG at LOW-MED on its INDUSTRIAL leg: +4.33% on the month against gold's +0.92%, a decoupling that is doing real work."
+      "icon": "🔻",
+      "t": "Copper turns down and takes the industrial-metals leg with it - AUD keeps its score but loses its commodity support",
+      "s": "XCU/USD 6.7356 USD/lb, -1.00% today, monthly gain cut to +1.87% after printing +2.90% on the week yesterday. Silver -0.94% to 66.634. The supply story is intact; the momentum is not."
     },
     {
       "icon": "🛢️",
-      "t": "Brent BROKE 100 DOLLARS - closed 101.21, trading 101.039, first time since July; WTI 96.074, +5.25% on the week and +15.49% on the month",
-      "s": "Iran has asserted control of the Strait since February and requires vessels to obtain permission and pay transit fees; AFP now describes traffic as virtually paralysed, which is a harder characterisation than the 'transits above nine million bpd' this file has been carrying and should be treated as the more current read. Washington is running a counter-blockade of Iranian ports. Rubio: 'for every time they do that, they're going to lose tankers.' USOIL stays LONG at HIGH - but note that CAD is not being paid for it."
+      "t": "Energy is now the only asset still carrying the war premium, and it keeps extending",
+      "s": "WTI 97.269, +1.27% today and +16.85% on the month; Brent 102.167, +14.82%. US tanker-for-tanker policy remains live after Washington sank five Iranian tankers and Iran struck 10 ships plus the Al-Azraq base in Jordan."
     },
     {
-      "icon": "🇪🇺",
-      "t": "The ECB path is REOPENED and this file was wrong to close it - TE now says rate futures price a THIRD hike by DECEMBER, with previews near 40-50%",
-      "s": "Two days ago this file called the path CLOSED on the September 3 Reuters poll, where 91% of economists saw 2.50% as the year-end rate. Yesterday it softened to 'economists closed it, the ECB has not'. Today TradingEconomics states plainly that interest-rate futures price a third hike by December while policymakers continue to flag upside inflation risks. Rate-market pricing outranks an economist poll - the path is OPEN. Today's 25bp to a 2.50% deposit facility is 99% priced; the event is the NEW STAFF PROJECTIONS and whether Lagarde retains full optionality. Decision 12:15Z, press conference 12:45Z."
+      "icon": "🏦",
+      "t": "ECB decides TODAY at 12:15Z - the 25bp is 99% priced, so the new staff projections are the whole event",
+      "s": "Deposit facility 2.25% to 2.50%, TE consensus and forecast 2.65% on the refi. August energy inflation 14.3% from 10.3%, HICP 3.3%; TTF has risen SINCE. Futures still price a third hike by December at roughly 40-50%."
+    },
+    {
+      "icon": "💵",
+      "t": "Fed pricing drifts to 58% from 56% but this is noise, not a signal - August CPI tomorrow is the number that decides it",
+      "s": "CME FedWatch 58% for September 16, TE forecast 4.00%. CoinDesk argued on September 7 that the payrolls beat did NOT materially move pricing. DXY 98.830, +0.01% today, -1.03% on the month. USD holds at +1."
     },
     {
       "icon": "🇯🇵",
-      "t": "BoJ's Masu overnight: the Bank expects to KEEP RAISING, and further hikes are needed to avoid being FORCED into rapid tightening later - the fourth confirmation in three days",
-      "s": "Masu spoke at 01:39Z naming Iran-driven fuel and chemical costs, higher distribution and food costs, greater pass-through from yen weakness and AI-related demand as sources of persistent price pressure. Hawkish on direction, deliberate on pace. It stacks on final Q2 GDP revised up to +0.4% q/q, the Reuters Tankan at 21 from 18, machine tool orders +64.7% y/y, average cash earnings +4.7% - the fastest since 1997 - and Bessent's warning against betting against the yen. USD/JPY 153.425 near a seven-month low, swaps carrying ~75bp of cumulative tightening by April 2027, September 18 near 80% priced."
+      "t": "The yen is still the only uncompromised score on the board and the only currency with its next hike already in TE's forecast",
+      "s": "BoJ September 18 at 03:00Z: TE carries consensus 1% but its OWN forecast at 1.25%. Masu says the Bank expects to keep raising to avoid forced rapid tightening later. USD/JPY 153.716, -3.50% on the month."
     },
     {
-      "icon": "🇳🇿",
-      "t": "The kiwi's rebound lasted ONE SESSION - NZD/USD 0.58507 is now DOWN 0.50% on the week, so yesterday's 'the slide stopped' call was wrong inside 24 hours",
-      "s": "Said plainly: yesterday this file reported the three-day slide as having stopped on China's reflation, and that was a one-session artefact. The leg that actually justifies MINUS 1 is unchanged and is the central bank - ANZ reads the September 2 statement as not pointing to an October increase, with language deliberately vague and highly conditional, which is why wholesale rates and the kiwi both fell after a HIKE. TE has October 28 unchanged with the next 25bp only on December 9. NZD/JPY SHORT and AUD/NZD LONG both stay HIGH."
-    },
-    {
-      "icon": "⛽",
-      "t": "European gas keeps compounding - EU gas +34.66% on the MONTH and +144.70% on the YEAR, UK gas +36.33%, with GERMAN storage only 53% full",
-      "s": "EU gas is 79.1702 euros per MWh, near a three-year high; UK gas is 196.61 pence per therm. EU aggregate storage is 65% but the distribution is what matters - Italy 83%, GERMANY 53%. Morgan Stanley has raised its winter TTF forecast to about 85 euros with risk skewed to the upside, writing that it is too late for Qatari LNG to return before winter and that Europe enters the season with its lowest storage in 15 years and almost no buffer to cold weather. Edison alone has lost 29 cargoes since April, roughly 3.8 bcm. A terms-of-trade tax on EUR and GBP; GER40 stays SHORT."
+      "icon": "🇬🇧",
+      "t": "UK gas worsens again to +38.71% on the month, the worst energy exposure in G10, into a confirmed October cap rise",
+      "s": "200.38 pence per therm, up from +36.33% yesterday. Stagflationary for a Bank that TE shows holding at 3.75% on September 17 with a 0/9 vote-cut consensus. GBP holds at -1; express it against JPY and EUR, not USD."
     }
   ],
   "ratePaths": {
     "USD": {
       "next": "hike",
-      "when": "Sept 16, 18:00Z - CME FedWatch near 56% for a 25bp move to 4.00%, with TE's own forecast at 4.00%",
-      "note": "TE re-verified this morning and NOTHING in the US data changed: policy rate 3.75% upper bound, CPI 3.4% with MoM 0.1%, unemployment 4.1%, non-farm payrolls +162,000 against a prior +21,000, GDP growth rate 1.5% with annual growth 2.1%, business confidence 54.6, manufacturing PMI 53.9, non-manufacturing 55.4, services 56.5, consumer confidence 51.7, retail sales -0.6% m/m, balance of trade -88.58bn, current account -227bn. Fed pricing is also unchanged from yesterday's corrected read: CME FedWatch near 56%, having been 58.7% on September 7 and 66% on August 31 immediately after Warsh's hawkish Jackson Hole remarks. Prediction markets remain lower - Kalshi 48%, Polymarket 49% - and should not be quoted as rate-market pricing, which is the error this file corrected yesterday. September 16 is a modest hike LEAN. TE's summary of the July minutes reinforces it: officials were concerned about persistent inflation and the possibility that further increases could be required, several judged financial conditions may not have been restrictive enough, a small group wanted an immediate hike to reduce the need for larger moves later, and inflation risks were generally viewed as tilted to the UPSIDE - though TE notes the meeting predated the cooler employment and inflation data. USD HOLDS at +1. The tactical framing is unchanged and matters: hold USD/JPY as a JAPAN trade with a neutral dollar leg, not a two-sided differential trade. DXY 98.740, -0.05% today and -0.17% on the week. US PPI TODAY at 12:30Z with consensus +0.4% m/m, and August CPI tomorrow at 12:30Z with consensus 3.4%."
+      "when": "Sept 16, 18:00Z - CME FedWatch has drifted to 58% from 56% for a 25bp move to 4.00%, which is also TE's own forecast",
+      "note": "TE re-verified this morning: policy rate 3.75% upper bound, CPI 3.4% with MoM 0.1%, unemployment 4.1%, non-farm payrolls +162,000 against a prior +21,000, GDP growth rate 1.5% with annual growth 2.1%, business confidence 54.6, manufacturing PMI 53.9, non-manufacturing 55.4, services 56.5, consumer confidence 51.7, retail sales -0.6% m/m, balance of trade -88.58bn, current account -227bn. The one thing that moved is pricing: CME FedWatch is now near 58%, up from 56% yesterday and having been 58.7% on September 7 and 66% on August 31 after Warsh's hawkish Jackson Hole remarks. That is a two-point drift inside a range this file has already seen, and CoinDesk argued explicitly on September 7 that the payrolls beat did NOT materially boost hike odds - so it is noise and USD does NOT flip on it. It is worth naming because of where it shows up: in the metals. Gold below 4,400 and silver -0.94% are the rising-real-rate trade, not the risk-appetite trade. TE now forecasts 4.00% outright for September 16 and its summary of the July minutes tilts the same way - officials concerned about persistent inflation, several judging financial conditions possibly not restrictive enough, a small group wanting an immediate hike to reduce the need for larger moves later, inflation risks viewed as tilted to the UPSIDE - though TE notes the meeting predated the cooler employment and inflation data. Prediction markets remain lower at 48-49% and should not be quoted as rate-market pricing. USD HOLDS at +1. Tactical framing unchanged: hold USD/JPY as a JAPAN trade with a neutral dollar leg, not a two-sided differential trade. DXY 98.830, +0.01% today and -1.03% on the month. US PPI TODAY at 12:30Z, August CPI tomorrow at 12:30Z with consensus 3.4% - that is the decider."
     },
     "EUR": {
       "next": "hike",
       "when": "TODAY, Sept 10 at 12:15Z - the deposit facility goes to 2.50% from 2.25%, priced at 99%, with TE carrying consensus and forecast at 2.65% on the refi",
-      "note": "Deposit facility re-verified on TE at 2.25%, main refi 2.40%, marginal lending 2.65%; TE's calendar shows the September 10 decision with previous 2.4%, consensus 2.65% and forecast 2.65% on the refi. EUR HOLDS at +1, but the forward tilt HARDENS and this file owes a correction it has now made twice in three days, so it should be stated once, cleanly. Two days ago it wrote that the ECB path was CLOSED, citing the September 3 Reuters poll in which all 65 economists expected today's move while 91% saw 2.50% as the year-end rate and 78% saw it through mid-2027. Yesterday it softened that to 'economists closed the path, the ECB has not'. Today TradingEconomics states directly that INTEREST-RATE FUTURES ARE PRICING IN A THIRD HIKE BY DECEMBER while policymakers continue to flag upside inflation risks and rising bond yields add uncertainty; previews put December near 40-50%. Rate-market pricing outranks an economist poll, so the path is OPEN and the original call was wrong. TE also notes the ECB is expected to signal caution about further increases that could weigh on activity, that there have been few signs of the second-round effects policymakers fear when energy prices surge, and that economists remain unconvinced further tightening is necessary and warn it risks recession. The event today is therefore the NEW STAFF PROJECTIONS - August energy inflation jumped to 14.3% from 10.3%, HICP hit 3.3%, the highest since September 2023, with core at 2.4%, and TTF has risen since - plus whether Lagarde retains full optionality. Against the hawkish case sits a gas TAX that got worse: EU gas 79.1702 euros per MWh, +34.66% on the month and +144.70% on the year, German storage only 53% full, and Morgan Stanley raising its winter TTF forecast to about 85 euros with risk skewed higher and no Qatari return before winter. That is a hit to euro-area activity no hike offsets. TE macro re-verified: Q2 GDP +0.6% q/q and 1.2% y/y, unemployment 6.4%, inflation 3.3% with MoM 0.4%, manufacturing PMI 52.7 from 51.9, services 51.6, consumer confidence -15.5, current account +46.9bn, balance of trade +8,600m, retail sales -0.6% m/m. Own EUR against sterling and the kiwi; keep EUR/USD, EUR/CAD and EUR/CHF as ranges through the meeting. EUR/USD 1.16382, +0.04%."
+      "note": "Deposit facility re-verified on TE at 2.25%, main refi 2.40%, marginal lending 2.65%; TE's calendar shows the September 10 decision with previous 2.4%, consensus 2.65% and forecast 2.65%. EUR HOLDS at +1 with a hawkish forward tilt, and the correction this file made over the last two days stands: it originally called the ECB path CLOSED on the September 3 Reuters poll, in which all 65 economists expected today's move while 91% saw 2.50% as the year-end rate and 78% saw it through mid-2027. TradingEconomics now states directly that INTEREST-RATE FUTURES ARE PRICING A THIRD HIKE BY DECEMBER while policymakers continue to flag upside inflation risks and rising bond yields add uncertainty; previews put December near 40-50%. Rate-market pricing outranks an economist poll, so the path is OPEN and the original call was wrong. The live event today is the NEW STAFF PROJECTIONS. August energy inflation jumped to 14.3% from 10.3%, HICP hit 3.3% - the highest since September 2023 - with core at 2.4%, and gas has risen SINCE those readings were collected: EU gas is 80.30 euros per MWh, +1.34% today and +36.58% on the month, German gas jumped 4.42% in a session to 80.40 and is +29.43% monthly, and German storage is only 53% full with Morgan Stanley lifting its winter TTF forecast to about 85 euros and no Qatari return expected before winter. The staff inflation path can be revised UP. TE also notes the offsetting case: the ECB is expected to signal caution about further increases that could weigh on activity, there are still few signs of the second-round effects policymakers fear when energy prices surge, and economists remain unconvinced further tightening is necessary and warn it risks recession. The gas move is a terms-of-trade TAX on euro-area activity that no hike offsets. TE macro re-verified: Q2 GDP +0.6% q/q and 1.2% y/y, unemployment 6.4%, inflation 3.3% with core 2.4%, manufacturing PMI 52.7 from 51.9, services 51.6, composite 52, wage growth 3.4% from 3.1%, retail sales +0.6% y/y from 1.4%. Own EUR against sterling and the kiwi; keep EUR/USD, EUR/CAD and EUR/CHF as ranges through the meeting. EUR/USD 1.16318, -0.01% today, +0.81% on the month."
     },
     "GBP": {
       "next": "hold",
       "when": "Sept 17, 11:00Z - roughly 90% priced for no change at 3.75%, with TE carrying a 0/9 vote-cut consensus and a 3.75% forecast",
-      "note": "Bank Rate re-verified on TE at 3.75%, held 6-3 on July 30 with three members voting for 4.00%. GBP HOLDS at MINUS 1 and the performance caveat still applies: cable is 1.35552, up 0.06% today and 0.22% on the WEEK, so the short is not paying against the dollar and GBP/USD stays LOW-MED. TE's own summary of the July decision captures the trap sterling is in - the Bank expects inflation to RISE again later this year as higher energy costs feed through, sees little evidence of second-round effects, notes weaker labour conditions and still-elevated borrowing costs reducing underlying pressure, and says risks remain tilted to the upside on geopolitical uncertainty while standing ready to tighten if necessary. That is a central bank that will not move on September 17 and cannot ease either. What keeps the score negative is structural: the highest borrowing costs of any G10 developed nation, July government borrowing 69% above the prior year, TE-verified government debt at 94.3% of GDP from 93.2%, and a yield advantage that fails to attract capital because it is a risk premium rather than carry. Gilts have stayed off the September 3 extremes - the 10-year is around 5.266% against a 5.294% peak and the 30-year around 5.854% against 5.904% - so the acute leg is dormant and the structural premium works alone. The energy point got WORSE today: UK gas is 196.61 pence per therm, +10.46% on the WEEK and +36.33% on the MONTH, up from +29.82% yesterday, the worst gas exposure in G10, feeding a confirmed October Ofgem cap rise. Stagflationary, not hawkish. TE re-verified: CPI 2.9% with MoM 0.3%, GDP growth rate 0.4% from 0.6% with annual growth 1.2% from 0.9%, unemployment 4.9%, manufacturing PMI 51.7, services 52.5, consumer confidence -14 from -17, retail sales -0.5% m/m, business confidence -36 from -65, balance of trade -5,537m. Express sterling against the YEN and the EURO. UK monthly GDP tomorrow at 06:00Z is the main risk to the position."
+      "note": "Bank Rate re-verified on TE at 3.75%, held 6-3 on July 30 with three members voting for 4.00%. GBP HOLDS at MINUS 1 and the energy leg deteriorated for a third consecutive session: UK gas is 200.38 pence per therm, +1.37% today and now +38.71% on the MONTH, up from +36.33% yesterday and +29.82% the day before - comfortably the worst gas exposure in G10 - feeding a confirmed October Ofgem cap rise. That is stagflationary, not hawkish: it lifts the CPI path while cutting real household income. TE's own summary of the July decision describes exactly the trap sterling is in - the Bank expects inflation to RISE again later this year as higher energy costs feed through, sees little evidence of second-round effects, notes weaker labour conditions and still-elevated borrowing costs reducing underlying pressure, and says risks remain tilted to the upside on geopolitical uncertainty while standing ready to tighten if necessary. A central bank that will not move on September 17 and cannot ease either. The structural leg is unchanged: the highest borrowing costs of any G10 developed nation, July government borrowing 69% above the prior year, and a yield advantage that fails to attract capital because it is a risk premium rather than carry. The momentum caveat also stands and should keep being stated - cable is 1.35421, down 0.04% today but still +0.32% on the MONTH, so the short is not paying against the dollar and GBP/USD stays LOW-MED. TE re-verified: CPI 2.9% with core 2.6%, GDP 0.4% q/q from 0.6% with annual growth 1.2% from 0.9%, unemployment 4.9%, employment change +83k from +147k, claimant count -11k, wage growth 4.1% from 4.4%, manufacturing PMI 51.7, services 52.5, composite 52.5, retail sales +1.6% y/y from 3.8%. Express sterling against the YEN and the EURO. UK monthly GDP tomorrow at 06:00Z is the main risk to the position."
     },
     "JPY": {
       "next": "hike",
-      "when": "Sept 18, 03:00Z - reported near 80% priced for 1.25%, which is also TE's forecast, with swaps pricing ~75bp cumulative by April 2027",
-      "note": "Policy rate re-verified on TE at 1.00%, the highest since September 1995, held July 31 by 8-1 with Takata dissenting for 1.25%; TE's calendar shows consensus 1% and TE forecast 1.25% for September 18. JPY HOLDS at +3 and remains the only uncompromised score on this board. Today's addition is the fourth hawkish confirmation in three sessions: board member Kazuyuki MASU said at 01:39Z that the Bank EXPECTS TO CONTINUE RAISING RATES given current accommodative financial conditions, and that further hikes are needed precisely to avoid being FORCED into rapid tightening later - naming Iran-conflict fuel and chemical costs, higher distribution and food costs, greater pass-through from yen depreciation, and AI-related demand as sources of persistent price pressure. Hawkish on direction, deliberate on pace, which is exactly the gradual-but-continuous path that supports the currency without inviting a disorderly move. It stacks on final Q2 GDP revised UP to +0.4% q/q from a 0.3% flash with annualised 1.4% against 1.1% expected and capex improved to -0.9% from -1.2%, the Reuters Tankan at 21 from 18 against a 15 forecast, machine tool orders +64.7% y/y from 50.4%, average cash earnings +4.7% y/y - the fastest since 1997 - real wages positive for a seventh straight month, a current account swung to PLUS 2,989bn yen from MINUS 92.3bn, and retail sales +2.4% m/m. US Treasury Secretary Bessent has warned traders against betting against the yen and the Takaichi administration has acknowledged the need to limit excessive yen weakness. TE's July-meeting summary is the one caveat worth carrying: the BoJ CUT its FY2026 inflation forecast to 2.5% from 2.8% on government energy-cost relief, while raising FY2026 GDP to 0.6% and FY2027 inflation to 2.4% and growth to 0.8%. TE macro re-verified: CPI 1.9% with MoM 0.4%, jobless rate 2.4% from 2.5%, GDP annual growth 0.7%, business confidence 22 from 17, manufacturing PMI 54.9, services 52.5, consumer confidence 35.5, balance of trade -634bn. USD/JPY 153.425, -0.08% today and -1.53% on the week, near a seven-month low."
+      "when": "Sept 18, 03:00Z - TE's OWN forecast is 1.25% against a 1% consensus, with reports near 80% priced and swaps carrying ~75bp cumulative by April 2027",
+      "note": "Policy rate re-verified on TE at 1.00%, the highest since September 1995, held July 31 by 8-1 with Takata dissenting for 1.25%. TE's calendar is the cleanest single fact on this board: consensus 1% but TE FORECAST 1.25% for September 18. JPY HOLDS at +3 and remains the only uncompromised score here. The hawkish stack is now five confirmations deep across four sessions: board member Kazuyuki MASU said the Bank EXPECTS TO CONTINUE raising rates as underlying inflation nears 2% and that further hikes are needed precisely to avoid being FORCED into rapid tightening later, naming Iran-conflict fuel and chemical costs, higher distribution and food costs, greater pass-through from yen depreciation, and AI-related demand as sources of persistent price pressure - and warning that the fuel and chemical costs could prove more than temporary. Governor Ueda separately hinted at a September move on September 2. Underneath the rhetoric: final Q2 GDP revised UP to +0.4% q/q from a 0.3% flash with annualised 1.4% against 1.1% expected, the Reuters Tankan at 21 from 18 against a 15 forecast, machine tool orders +64.7% y/y, average cash earnings +4.7% y/y - the fastest since 1997 - real wages positive for a seventh straight month, a current account swung to PLUS 2,989bn yen from MINUS 92.3bn, and retail sales +2.4% m/m. US Treasury Secretary Bessent has warned traders against betting against the yen and the Takaichi administration has acknowledged the need to limit excessive yen weakness; the yen also jumped to a one-month intraday high on September 3 as traders weighed intervention risk. The one caveat worth carrying is TE's July-meeting summary: the BoJ CUT its FY2026 inflation forecast to 2.5% from 2.8% on government energy relief, while raising FY2026 GDP to 0.6% and FY2027 inflation to 2.4% and growth to 0.8%. TE macro re-verified: CPI 1.9% with MoM 0.4%, jobless rate 2.4% from 2.5%, GDP 0.4% q/q and 0.7% y/y, business confidence 22 from 17, manufacturing PMI 54.9, services 52.5, consumer confidence 35.5. USD/JPY 153.716, +0.11% today but still -3.50% on the MONTH, the largest move of any major."
     },
     "AUD": {
       "next": "hike",
-      "when": "Sept 29, 04:30Z - market-implied near 54%, with TE's own consensus and forecast at 4.35%",
-      "note": "Cash rate re-verified on TE at 4.35%, the G10 high, held August 11. AUD HOLDS at +2 and today's fresh evidence is the inflation-expectations print: Melbourne Institute consumer inflation expectations came in UNCHANGED at 4.9% for September, elevated and sticky, which is precisely the kind of number the August minutes were worried about when they judged inflation TOO HIGH with excess demand persistent and staff seeing target only by late 2027. TE's summary of those minutes lists the hike arguments in order: Middle East conflict driving oil prices FIRST, then fuller cost pass-through by firms, stronger AI and data-centre investment, resilient demand and weak productivity. Crude is now +15.49% on the month with Brent through 100 dollars, so the first argument is stronger than when it was written. The commodity leg holds: copper is 6.7676 USD per pound, -0.53% on the session but +2.90% on the week, resting on both a genuine supply shortage - Codelco and Freeport double-digit declines, an ICSG-recorded 1.1% fall in global H1 output, a Congo export ban, weak Chilean and Peruvian supply - and on Chinese reflation, with August CPI +0.8% y/y from 0.5%, PPI +3.8% beating a 3.7% consensus, and exports +25%. Against that the domestic side is genuinely soft and should keep being named: Westpac consumer confidence fell 5.2% to 84.4 and NAB business confidence slipped to MINUS 8 from MINUS 6. TE re-verified: headline CPI 3.5% from 3.8% with the MONTHLY rate at +1.0% from -0.1%, trimmed mean stuck at 3.6%, unemployment 4.5% from 4.4%, GDP 0.4% q/q from 0.3% with annual growth 2.1% - still above the RBA's estimated 2% speed limit - balance of trade 1,923m, manufacturing PMI 52, services 53.2. AUD/USD 0.72205, +0.04% today, +0.28% on the week, +2.25% on the month and +8.21% year-to-date, still the best major on every horizon beyond a session. AUD/NZD 1.2341 and extending again."
+      "when": "Sept 29, 04:30Z - market-implied near 54%, though TE's own consensus and forecast both sit at 4.35% for a hold",
+      "note": "Cash rate re-verified on TE at 4.35%, the G10 high, held August 11. AUD HOLDS at +2, and today the reason for that score needs restating because the usual supporting argument just weakened. The commodity leg has turned: copper is 6.7356 USD per pound, DOWN 1.00% today with its monthly gain cut to +1.87% after this file quoted +2.90% on the week only yesterday. Silver fell 0.94% alongside it. The score is therefore held on the RATE DIFFERENTIAL and on domestic inflation persistence, not on commodities - that distinction matters for sizing and for how AUD crosses are expressed. What supports it: the G10-high 4.35% cash rate with September 29 near 54% market-implied; Melbourne Institute consumer inflation expectations UNCHANGED at 4.9% in September, elevated and sticky; trimmed mean stuck at 3.6%; and GDP annual growth at 2.1%, still above the RBA's estimated 2% speed limit. TE's summary of the August minutes remains the anchor - board members judged inflation TOO HIGH with excess demand persistent, staff projected target only by late 2027 with risks skewed upward, and the hike arguments were listed as Middle East conflict driving oil prices FIRST, then fuller cost pass-through, stronger AI and data-centre investment, resilient demand and weak productivity. Crude is +16.85% on the month with Brent above 102, so that first argument is stronger than when it was written even as copper fades. The underlying copper supply story is also intact - Codelco and Freeport double-digit declines, an ICSG-recorded 1.1% fall in global H1 output, a Congo export ban, weak Chilean and Peruvian supply - which is why XCU/USD keeps its LONG direction but loses conviction. Against all of it the domestic side stays genuinely soft and should keep being named: Westpac consumer confidence fell 5.2% to 84.4 and NAB business confidence slipped to MINUS 8 from MINUS 6. TE re-verified: headline CPI 3.5% from 3.8%, unemployment 4.5% from 4.4%, GDP 0.4% q/q from 0.3%, manufacturing PMI 52, services 53.2, balance of trade 1,923m from 2,341m. AUD/USD 0.72074, -0.14% today but +2.12% on the month, still the best major on the monthly horizon after the yen. AUD/NZD 1.2340."
     },
     "NZD": {
       "next": "hold",
-      "when": "Oct 28, 01:00Z is a pause on TE's own calendar; TE forecasts the next 25bp on Dec 9 to 3.00%",
-      "note": "OCR re-verified on TE at 2.75% after the September 2 hike from 2.50%. NZD HOLDS at MINUS 1, and yesterday's most confident sentence about this currency has to be withdrawn. Yesterday this file reported that the kiwi's three-session slide had STOPPED, citing NZD/USD up 0.07% on the day and 0.16% on the week after China reflated. That was a one-session artefact: NZD/USD is 0.58507 this morning and now DOWN 0.50% on the week and 0.50% on the month. The reversal took 24 hours and should be named rather than quietly dropped. The good news is that the leg which justified the downgrade was never the China number, and it is unchanged. TE's own summary of the September 2 decision is a bank explaining why it hiked in the past tense: removing stimulus gradually, annual inflation at 4.1% attributed LARGELY TO HIGHER FUEL PRICES FROM THE MIDDLE EAST CONFLICT, core inflation, wage growth and expectations all judged consistent with a return to the 1-3% band by mid-2027, and household spending weighed down by weak income growth, job insecurity and flat house prices. ANZ reads the statement as not pointing to an October increase, with the language around future decisions deliberately vague and highly conditional - which is why wholesale rates and the kiwi both fell after a HIKE and AUD/NZD ran to its strongest since July on the decision itself. A central bank that raises to 2.75% and then declines to validate the next step does not get paid for its carry. TE carries October 28 unchanged with the next 25bp only on December 9. TE re-verified: unemployment 5.6% from 5.4%, the highest since Q3 2015; Q2 CPI 4.1% with MoM 1.5%; GDP 0.8% q/q from 0.5% with annual growth 1.5%; retail sales -0.5% m/m; balance of trade -1,949m from -237m; business confidence 53.7 from 56.1; manufacturing PMI 54.3 from 60.1; consumer confidence 80.4 from 94.7. It stays at MINUS 1 rather than MINUS 2 only because a majority of MPC members still see upside inflation risks and TE forecasts a December hike."
+      "when": "Oct 28, 01:00Z is a pause on TE's own calendar; TE forecasts the next 25bp only on Dec 9, to 3.00%",
+      "note": "OCR re-verified on TE at 2.75% after the September 2 hike from 2.50%. NZD HOLDS at MINUS 1 and today it is simply the worst major on the monthly horizon: NZD/USD is 0.58399, unchanged on the session and DOWN 0.65% on the month, the only major with a negative monthly return against the dollar. That confirms the withdrawal this file made yesterday of its claim that the kiwi's slide had stopped - that rebound was a one-session artefact and naming it as such was correct. The leg that justifies MINUS 1 has never depended on China. TE's own summary of the September 2 decision reads as a central bank explaining a hike in the past tense: removing stimulus gradually, annual inflation at 4.1% attributed LARGELY TO HIGHER FUEL PRICES FROM THE MIDDLE EAST CONFLICT, core inflation, wage growth and expectations all judged consistent with a return to the 1-3% band by mid-2027, and household spending weighed down by weak income growth, job insecurity and flat house prices. ANZ reads the statement as not pointing to an October increase, with the language around future decisions deliberately vague and highly conditional - which is why wholesale rates and the kiwi both FELL after a hike and AUD/NZD ran to its strongest since July on the decision itself. A central bank that raises to 2.75% and then declines to validate the next step does not get paid for its carry. TE carries October 28 unchanged with the next 25bp only on December 9. The domestic data is the worst in the G10 on second derivatives: TE re-verified unemployment 5.6% from 5.4%, the highest since Q3 2015; Q2 CPI 4.1% from 3.1%; GDP 0.8% q/q from 0.5% with annual growth 1.5%; consumer confidence 80.4 from 94.7, a collapse; manufacturing PMI 54.3 from 60.1; business confidence 53.7 from 56.1; balance of trade -1,949m from -237m; retail sales -0.5% m/m. It stays at MINUS 1 rather than MINUS 2 only because a majority of MPC members still see upside inflation risks and TE forecasts a December hike."
     },
     "CAD": {
       "next": "hold",
       "when": "Oct 28 with the MPR - held for a seventh straight meeting on Sept 2, and August's job loss keeps the next move out",
-      "note": "Policy rate re-verified on TE at 2.25%, held September 2. CAD HOLDS at +1, but today the honest observation is about TRANSMISSION rather than fundamentals, and it cuts against this file's own framing. Brent broke 100 dollars overnight - closing at 101.21, trading 101.039, the first breach since July - and WTI is 96.074, +5.25% on the week and +15.49% on the month. That is the strongest terms-of-trade impulse of the entire cycle. The loonie did not move: USD/CAD is 1.38060, UNCHANGED on the session and UP 0.08% on the week, weaker than yesterday's 1.37732. The oil-CAD beta has broken this week and the position should be described that way rather than repeating an oil thesis the currency is not paying. What the market is actually trading is the labour leg: August employment fell 41,700 against a +15,000 consensus after +75,100, full-time down 36,000, and average hourly wages decelerated to 2.0% y/y from 2.8% in July and 3.3% in June. A 2.0% wage run-rate is not consistent with the inflation persistence the September 2 statement worries about, which is what keeps the next move past October 28. The growth data is genuinely strong - TE re-verified current account PLUS C$8,800m from MINUS 8,300m, business confidence 64.3 from 55.1, Q2 GDP 0.8% q/q with annual growth 1.1% from 0.1% and an annualised 3.3% from 0.3% - and TE's summary of the September statement notes a broad Q2 recovery with resilience to the war, stronger UPSIDE inflation risks from both the continuation of the war and renewed US tariffs, underlying inflation still at target, and an uncertain outlook preventing any clear policy signal this year. TE also re-verified CPI 3.0% with MoM 0.5%, unemployment 6.4%, manufacturing PMI 53, consumer confidence 48.2, retail sales -0.8% m/m, balance of trade 770m from 4,200m. The C$27.6bn of counter-tariffs across roughly 700 US product lines are in force. Keep every CAD expression low-conviction until the currency starts trading its own terms of trade again."
+      "note": "Policy rate re-verified on TE at 2.25%, held September 2. CAD HOLDS at +1, and the uncomfortable observation from yesterday not only stands but got worse. Brent is 102.167 and WTI 97.269, +1.27% today and +16.85% on the month - the strongest terms-of-trade impulse of the entire cycle - and USD/CAD is 1.38134, UP another 0.06% and weaker than yesterday's 1.38060. The oil-CAD beta is broken and this file will keep describing the position that way rather than repeating an oil thesis the currency refuses to pay. What the market is actually trading is the labour leg: August employment fell 41,700 against a +15,000 consensus after +75,100, full-time down 36,000, and average hourly wages decelerated to 2.0% y/y from 2.8% in July and 3.3% in June. A 2.0% wage run-rate is not consistent with the inflation persistence the September 2 statement worries about, which is what keeps the next move past October 28. The growth data is genuinely strong and TE re-verified it: current account PLUS C$8,800m from MINUS 8,300m, business confidence 64.3 from 55.1, Q2 GDP 0.8% q/q from 0.1% with annual growth 1.1% from 0.1% and an annualised 3.3% from 0.3%. TE's summary of the September statement notes a broad Q2 recovery with resilience to the war, stronger UPSIDE inflation risks from both the continuation of the war and the reintroduction of aggressive US tariffs, underlying inflation still holding at target despite the energy shock, and an uncertain outlook preventing any clear policy signal this year. TE also re-verified CPI 3.0% with MoM 0.5%, unemployment 6.4%, manufacturing PMI 53, consumer confidence 48.2, retail sales -0.8% m/m, balance of trade 770m from 4,200m. The C$27.6bn of counter-tariffs across roughly 700 US product lines are in force. Keep every CAD expression low-conviction until the currency starts trading its own terms of trade again."
     },
     "CHF": {
       "next": "hold",
       "when": "Sept 24, 07:30Z - TE carries a 0% consensus and a 0% forecast; nothing this week changes the base case",
-      "note": "Policy rate re-verified on TE at 0.00%, held March 19 and again June 18. CHF HOLDS at +1, and today it earns a caveat rather than an upgrade. The escalation overnight was the largest of the war - more than a dozen vessels attacked, a US base in Jordan struck, the prohibited zone extended into the Gulf of Oman and the Arabian Sea, and an IAEA referral to the UN Security Council - and the franc did NOT get a haven bid. USD/CHF is 0.80904 and the franc is WEAKER by 0.19% on the week. Yesterday this file argued the franc was gaining a second bid as the cleanest European hedge against the gas shock; that argument is not visible in the price and should be held more lightly. The data remains outstanding: TE re-verified August CPI 0.8% y/y with MoM +0.4%, the fastest since August 2024; Q2 GDP +1.5% q/q with ANNUAL growth 2.3% from 0.4%, the strongest since Q3 2021; unemployment 3.0%; manufacturing PMI 57.1 from 53.2; current account CHF 15,544m from 2,994m; business confidence 107 from 104; balance of trade 8,141m from 3,834m; retail sales +0.1% m/m. On data alone this is a +2. What caps it is explicit and TE-verified: the SNB forecasts annual average inflation of just 0.6% for 2026 and 2027 and 0.7% for 2028 with growth of 1% in 2026 and 1.5% in 2027, said in June that medium-term inflation pressures remain LARGELY UNCHANGED despite energy-driven price increases, highlighted Middle East tensions as potentially strengthening the franc, and signalled a GREATER READINESS TO INTERVENE in foreign exchange markets. With the war escalating and the franc still not bid, the intervention language is likely to be repeated on September 24 and there is nothing forcing the SNB to move. Keep every CHF cross at MEDIUM or below and do not buy a hawkish SNB."
+      "note": "Policy rate re-verified on TE at 0.00%, held March 19 and again June 18. CHF HOLDS at +1, and the franc has now failed its haven test for a SECOND consecutive session. USD/CHF is 0.81110, up 0.12% today, leaving the franc flat on the month at -0.03% - through an overnight period that included the largest escalation of the war so far, a US tanker-for-tanker policy sinking five Iranian vessels, Iranian strikes on 10 ships and on the Al-Azraq base in Jordan, and an IAEA referral to the UN Security Council. Two days ago this file argued the franc was gaining a second bid as the cleanest European hedge against the gas shock. That argument is not visible in the price and is now retired rather than merely held loosely: from here the franc is expressed on DATA AND DIFFERENTIALS ONLY, never as a haven. The data remains outstanding and TE re-verified it: August CPI 0.8% y/y with MoM +0.4%, the fastest since August 2024; Q2 GDP +1.5% q/q with ANNUAL growth 2.3% from 0.4%, the strongest since Q3 2021; unemployment 3.0%; manufacturing PMI 57.1 from 53.2, a large jump; business confidence 107 from 104; current account CHF 15,544m from 2,994m; balance of trade 8,141m from 3,834m; retail sales +0.1% m/m. On data alone this is a +2. What caps it is explicit and TE-verified: the SNB forecasts annual average inflation of just 0.6% for 2026 and 2027 and 0.7% for 2028 with growth of 1% in 2026 and 1.5% in 2027, said in June that medium-term inflation pressures remain LARGELY UNCHANGED despite energy-driven price increases, highlighted Middle East tensions as potentially strengthening the franc, and signalled a GREATER READINESS TO INTERVENE in foreign exchange markets. With the war escalating and the franc still not bid, that intervention language is very likely to be repeated on September 24 and there is nothing forcing the SNB to move. Keep every CHF cross at MEDIUM or below and do not buy a hawkish SNB."
     }
   },
   "strength": [
@@ -142,65 +142,65 @@
       "ccy": "JPY",
       "score": 3,
       "verdict": "STRENGTHENING",
-      "tag": "Fourth hawkish confirmation",
-      "drivers": "BoJ board member Masu said at 01:39Z the Bank expects to CONTINUE raising rates given accommodative conditions and that further hikes avoid being forced into rapid tightening later; on top of final Q2 GDP revised up to +0.4% q/q with annualised 1.4% against 1.1% expected, the Reuters Tankan at 21 from 18 against a 15 forecast, machine tool orders +64.7% y/y, average cash earnings +4.7% y/y - the fastest since 1997 - real wages positive for a seventh month, and a current account at PLUS 2,989bn yen; policy rate 1.00% with September 18 near 80% priced for 1.25%; CPI 1.9%, jobless rate 2.4%; USD/JPY 153.425, -1.53% on the week and near a seven-month low.",
-      "forward": "🦅 Tightening, and still the only uncompromised score on the board - now with the added distinction of being the only currency actually PAYING on a day when gold, the franc and the loonie all failed their respective tests. Masu's framing matters more than the headline: hawkish on direction, deliberate on pace, which is exactly the gradual-but-continuous path that appreciates the yen without inviting MoF pushback. He named Iran-driven fuel and chemical costs, distribution and food costs, yen pass-through and AI demand as persistent pressures. With September 18 largely spoken for, the yen gets paid on GUIDANCE and on the roughly 75bp of cumulative tightening swaps carry through April 2027. Bessent's warning against betting against the currency and the Takaichi administration's stated intent to limit excessive weakness both sit underneath it. Invalidated by a hike-and-explicit-pause, or by MoF discomfort at the PACE after a 3.68% monthly move."
+      "tag": "TE forecasts 1.25% on Sept 18",
+      "drivers": "TE's calendar carries consensus 1% but its OWN forecast at 1.25% for the September 18 BoJ; board member Masu said the Bank expects to CONTINUE raising rates and that further hikes avoid being forced into rapid tightening later, after Ueda hinted at a September move on September 2; final Q2 GDP revised up to +0.4% q/q with annualised 1.4% against 1.1% expected, Reuters Tankan 21 from 18 against a 15 forecast, machine tool orders +64.7% y/y, average cash earnings +4.7% y/y - the fastest since 1997 - real wages positive for a seventh month, current account PLUS 2,989bn yen; policy rate 1.00%, CPI 1.9%, jobless rate 2.4% from 2.5%; USD/JPY 153.716, -3.50% on the month, the largest move of any major.",
+      "forward": "🦅 Tightening, and on a day when gold, silver, copper and the franc all failed their respective tests the yen is again the only currency actually paying. Masu's framing is what matters more than the headline: hawkish on direction, deliberate on pace - the gradual-but-continuous path that appreciates the yen without inviting MoF pushback. He named Iran-driven fuel and chemical costs, distribution and food costs, yen pass-through and AI demand as persistent pressures, and warned the fuel component may be more than temporary. With September 18 largely spoken for and TE forecasting the hike outright, the yen gets paid on GUIDANCE and on the roughly 75bp of cumulative tightening swaps carry through April 2027. Bessent's warning against betting against the currency and the Takaichi administration's stated intent to limit excessive weakness sit underneath it, and the yen touched a one-month intraday high on September 3 on intervention risk alone. Invalidated by a hike-and-explicit-pause, or by MoF discomfort at the PACE after a 3.50% monthly move."
     },
     {
       "ccy": "AUD",
       "score": 2,
       "verdict": "STRENGTHENING",
-      "tag": "Inflation expectations stuck at 4.9%",
-      "drivers": "Melbourne Institute consumer inflation expectations UNCHANGED at 4.9% in September, elevated and sticky; cash rate 4.35%, the G10 high, with September 29 near 54%; monthly inflation rate +1.0% from -0.1%, trimmed mean stuck at 3.6%, headline 3.5%; GDP 0.4% q/q from 0.3% and 2.1% y/y, above the RBA's estimated 2% speed limit; unemployment 4.5%; copper 6.7676, +2.90% on the week with Chinese PPI at +3.8% beating consensus and exports +25% underneath it; AUD/USD 0.72205, +0.28% weekly, +2.25% monthly and +8.21% YTD.",
-      "forward": "🦅 Tightening bias, reinforced by the only Australian data that printed today. Consumer inflation expectations holding at 4.9% is exactly the persistence the August minutes flagged when they judged inflation TOO HIGH with excess demand and staff seeing target only by late 2027. Those minutes list Middle East oil FIRST among the hike arguments, and crude is now +15.49% on the month with Brent through 100 - so the argument they wrote in August is stronger in September. The commodity leg is intact on both supply (Codelco and Freeport declines, an ICSG-recorded 1.1% fall in H1 output, a Congo export ban) and demand (Chinese PPI accelerating out of deflation). Invalidated by the domestic side, which remains the honest counterweight - Westpac consumer confidence -5.2% to 84.4, NAB business confidence at -8 - or by a second consecutive employment fall."
+      "tag": "Held on rates, NOT on copper",
+      "drivers": "Cash rate 4.35%, the G10 high, with September 29 near 54% market-implied; Melbourne Institute consumer inflation expectations UNCHANGED at 4.9% in September; trimmed mean stuck at 3.6% with headline CPI 3.5% from 3.8%; GDP 0.4% q/q from 0.3% and 2.1% y/y, above the RBA's estimated 2% speed limit; unemployment 4.5% from 4.4% - against a commodity leg that TURNED today, with copper 6.7356 and DOWN 1.00%, its monthly gain cut to +1.87% from the +2.90% weekly figure quoted yesterday, and silver -0.94%; AUD/USD 0.72074, -0.14% today but +2.12% on the month.",
+      "forward": "🦅 Tightening bias, but the basis of the score has narrowed and that should be stated plainly rather than glossed. Until today AUD rested on two legs - the G10-high policy rate and the commodity complex. The commodity leg has weakened: copper fell 1.00% and halved its monthly gain in a single session, silver fell with it, and the reason is the same US real-rate repricing that took gold below 4,400. The rate leg is untouched and is doing all the work: inflation expectations at 4.9% are exactly the persistence the August minutes flagged when they judged inflation TOO HIGH with excess demand and staff seeing target only by late 2027, and those minutes list Middle East oil FIRST among hike arguments - with crude +16.85% on the month, that argument is stronger than when written. The underlying copper SUPPLY story also still holds: Codelco and Freeport double-digit declines, an ICSG-recorded 1.1% fall in H1 output, a Congo export ban. Invalidated by a second consecutive soft copper session combined with another weak domestic print - Westpac consumer confidence at 84.4 after a 5.2% fall and NAB business confidence at MINUS 8 remain the honest counterweight - which would take this to +1."
     },
     {
       "ccy": "EUR",
       "score": 1,
       "verdict": "MIXED",
-      "tag": "December reopened at 40-50%",
-      "drivers": "TradingEconomics now states interest-rate futures are pricing a THIRD hike by December, with previews near 40-50%, against a September 3 Reuters poll in which 91% saw 2.50% as the year-end rate; deposit facility 2.25% going to 2.50% today at 99% priced, refi consensus and forecast 2.65%; flash HICP 3.3%, the highest since September 2023, with ENERGY inflation at 14.3% from 10.3% and core 2.4%; Q2 GDP +0.6% q/q and 1.2% y/y; unemployment 6.4%; manufacturing PMI 52.7 from 51.9, services 51.6; against EU gas at 79.1702 euros per MWh, +34.66% on the month and +144.70% on the year, German storage at 53%; EUR/USD 1.16382.",
-      "forward": "⚖️ Balanced with a HAWKISH tilt, and a correction this file has now made in two stages and should own outright. Two days ago it called the ECB path CLOSED on the Reuters poll. Yesterday it softened to 'economists closed it, the ECB has not'. Today the rate market has reopened December at roughly 40-50% and TE says so directly - rate-market pricing outranks an economist poll, so the original call was wrong. The live event is the NEW STAFF PROJECTIONS: the 14.3% energy print predates further TTF strength, so the inflation path can be revised UP into a market that had decided the cycle was over. TE also notes there have been few signs of the second-round effects policymakers fear, and that economists warn further tightening risks recession. Against it, the gas shock is a terms-of-trade TAX no hike offsets, and Morgan Stanley now sees ~85 euro TTF this winter with no Qatari return. Invalidated upward by higher staff projections plus December kept live; downward by Lagarde confirming 2.50% as terminal while gas compounds."
+      "tag": "Decision day, projections are the event",
+      "drivers": "ECB decides TODAY at 12:15Z with the deposit facility going 2.25% to 2.50% at 99% priced and TE consensus and forecast at 2.65% on the refi; TE states interest-rate futures price a THIRD hike by December, with previews near 40-50%; flash HICP 3.3%, the highest since September 2023, with ENERGY inflation 14.3% from 10.3% and core 2.4%; Q2 GDP +0.6% q/q and 1.2% y/y; unemployment 6.4%; manufacturing PMI 52.7 from 51.9, services 51.6, composite 52; wage growth 3.4% from 3.1% - against EU gas at 80.30 euros per MWh, +36.58% on the month, German gas +4.42% in a single session to 80.40, and German storage at 53%; EUR/USD 1.16318.",
+      "forward": "⚖️ Balanced with a HAWKISH tilt into the 12:15Z decision, and the asymmetry is worth naming precisely. The 25bp is 99% priced so it carries no information; the new STAFF PROJECTIONS do. August energy inflation at 14.3% was collected BEFORE the latest gas leg, and TTF has risen further since - so the staff inflation path can be revised UP into a market that had decided the cycle was finished, and TE says futures already price a third hike by December at roughly 40-50%. This file called the path CLOSED two days ago on the September 3 Reuters poll and was wrong; rate-market pricing outranks an economist poll and the correction stands. Against the hawkish case: TE notes the ECB is expected to signal caution about increases that could weigh on activity, that there are still few signs of the second-round effects policymakers fear, and that economists warn further tightening risks recession - plus the gas shock is a terms-of-trade TAX no hike offsets, with Morgan Stanley now seeing ~85 euro TTF this winter and no Qatari return. Invalidated upward by higher staff projections plus December kept explicitly live; downward by Lagarde naming 2.50% as terminal while gas compounds."
     },
     {
       "ccy": "USD",
       "score": 1,
       "verdict": "MIXED",
-      "tag": "Nothing moved, 56% holds",
-      "drivers": "Not one US macro reading changed on TE overnight: August payrolls +162,000 against +53,000 expected with the prior two months revised up by a combined 55,000; unemployment 4.1%, CPI 3.4% with MoM 0.1%, GDP 2.1% annual, non-manufacturing PMI 55.4 and services 56.5, against consumer confidence at 51.7 and retail sales -0.6% m/m; policy rate 3.75% upper bound; CME FedWatch steady near 56% for September 16; DXY 98.740, -0.05% today and -0.17% on the week.",
-      "forward": "⚖️ Balanced, and dormant until the data. The Fed pricing this file corrected yesterday has not drifted further: CME FedWatch near 56%, having been 58.7% on September 7 and 66% on August 31 after Warsh's Jackson Hole remarks; prediction markets remain lower at 48-49% and should not be quoted as rate-market pricing. September 16 is a modest hike LEAN and TE's forecast is 4.00%. TE's summary of the July minutes tilts hawkish - officials concerned about persistent inflation, several judging financial conditions possibly not restrictive enough, a small group wanting an immediate hike, inflation risks viewed as tilted to the UPSIDE - though the meeting predated the cooler employment and inflation data. Waller argues the hold case from three-month annualised core PCE at 3.05% against 4.76% in February. Hold USD/JPY as a JAPAN trade with a neutral dollar leg. Invalidated in either direction by PPI today and CPI tomorrow."
+      "tag": "58% now, but that is noise",
+      "drivers": "CME FedWatch drifted to 58% from 56% for a 25bp move to 4.00% on September 16, which is also TE's own forecast, having been 58.7% on September 7 and 66% on August 31 after Warsh's Jackson Hole remarks; August payrolls +162,000 against +53,000 expected with the prior two months revised up by a combined 55,000; unemployment 4.1%, CPI 3.4% with MoM 0.1%, GDP 2.1% annual, non-manufacturing PMI 55.4 and services 56.5 - against consumer confidence 51.7 and retail sales -0.6% m/m; policy rate 3.75% upper bound; DXY 98.830, +0.01% today and -1.03% on the month.",
+      "forward": "⚖️ Balanced and dormant in FX - but the hawkish repricing is expressing itself somewhere, and that is the useful observation today. A 56% to 58% drift is inside a range this file has already traded and CoinDesk argued explicitly on September 7 that the payrolls beat did NOT materially move Fed pricing, so the USD score does not flip on it and DXY is still -1.03% on the month. Yet gold broke below 4,400 and silver fell 0.94% on the same repricing: rising US real rates are beating the war bid on every asset that pays no coupon. So the tradeable expression of a hawkish Fed right now is SHORT METALS, not long dollars. TE's summary of the July minutes supports the direction - officials concerned about persistent inflation, several judging financial conditions possibly not restrictive enough, a small group wanting an immediate hike, inflation risks tilted to the UPSIDE - though the meeting predated the cooler employment and inflation data. Prediction markets stay lower at 48-49% and are not rate-market pricing. Hold USD/JPY as a JAPAN trade with a neutral dollar leg. Invalidated in either direction by PPI today at 12:30Z and August CPI tomorrow at 12:30Z, consensus 3.4%."
     },
     {
       "ccy": "CAD",
       "score": 1,
       "verdict": "MIXED",
-      "tag": "Brent 100, loonie flat",
-      "drivers": "Brent broke 100 dollars overnight, closing at 101.21 and trading 101.039, the first breach since July; WTI 96.074, +5.25% on the week and +15.49% on the month - and USD/CAD is 1.38060, UNCHANGED on the session and UP 0.08% on the week; current account PLUS C$8,800m from MINUS 8,300m; business confidence 64.3 from 55.1; Q2 GDP 0.8% q/q, 1.1% y/y and 3.3% annualised from 0.3% - against employment MINUS 41,700 with average hourly wages decelerating to 2.0% y/y from 2.8%, CPI 3.0%, unemployment 6.4%, and the policy rate held at 2.25% for a seventh meeting.",
-      "forward": "⚖️ Balanced, and today the honest change is to the TRANSMISSION rather than the fundamentals. Brent through 100 is the strongest terms-of-trade impulse of the entire cycle and the currency did not move - the oil-CAD beta has broken this week, and repeating an oil thesis the loonie is not paying would be exactly the stale-call problem this file is meant to avoid. What the market is trading instead is the labour leg: a 2.0% wage run-rate is not consistent with the inflation persistence the September 2 statement worries about, which is what pushes the next move past October 28. The growth data is genuinely the best in months and the BoC does flag stronger upside inflation risks from the war and from renewed US tariffs. Invalidated upward by the oil beta re-engaging plus any labour stabilisation; downward by damage from the C$27.6bn of counter-tariffs now in force."
+      "tag": "Brent 102, loonie weaker again",
+      "drivers": "Brent 102.167 and WTI 97.269, +1.27% today and +16.85% on the month, the strongest terms-of-trade impulse of the cycle - and USD/CAD is 1.38134, UP 0.06% today and weaker than yesterday's 1.38060; current account PLUS C$8,800m from MINUS 8,300m; business confidence 64.3 from 55.1; Q2 GDP 0.8% q/q, 1.1% y/y and 3.3% annualised from 0.3% - against August employment MINUS 41,700 with average hourly wages decelerating to 2.0% y/y from 2.8% in July and 3.3% in June, CPI 3.0%, unemployment 6.4%, and the policy rate held at 2.25% for a seventh meeting.",
+      "forward": "⚖️ Balanced, and the broken transmission observed yesterday not only persists but extended - crude rose again and the loonie weakened again. Repeating an oil thesis the currency refuses to pay would be exactly the stale-call problem this file exists to avoid, so the honest position is that the crude view belongs in USOIL directly, not in CAD. What the market is actually trading is the labour leg: a 2.0% wage run-rate is not consistent with the inflation persistence the September 2 statement worries about, which is what pushes the next move past October 28. The growth data is genuinely the best in months and the BoC does flag stronger upside inflation risks from both the continuing war and renewed US tariffs, while noting underlying inflation has held at target despite the energy shock - that is what keeps the score positive rather than neutral. Invalidated upward by the oil beta re-engaging plus any labour stabilisation; downward by damage from the C$27.6bn of counter-tariffs now in force across roughly 700 US product lines."
     },
     {
       "ccy": "CHF",
       "score": 1,
       "verdict": "MIXED",
-      "tag": "Failed its haven test",
-      "drivers": "The largest escalation of the war produced NO franc bid - USD/CHF 0.80904 with CHF weaker by 0.19% on the week; against outstanding data: manufacturing PMI 57.1 from 53.2, current account CHF 15,544m from 2,994m, business confidence 107 from 104, balance of trade 8,141m from 3,834m; August CPI 0.8% y/y with MoM +0.4%, the fastest since August 2024; Q2 GDP +1.5% q/q with annual growth 2.3% from 0.4%, the strongest since Q3 2021; unemployment 3.0%; policy rate 0.00%.",
-      "forward": "⚖️ Balanced and capped - on the data alone this would be a +2. The new information today is negative and this file should mark it: yesterday it argued the franc was gaining a second bid as the cleanest European hedge against the gas shock, and a night of more than a dozen vessels attacked, a US base struck in Jordan, the prohibited zone extended into the Arabian Sea and an IAEA referral to the Security Council produced no franc strength at all. Hold that argument loosely. The ceiling remains explicit: the SNB forecasts 0.6% average inflation for 2026 and 2027 and 0.7% for 2028, said in June that medium-term pressures remain largely unchanged despite energy-driven increases, named Middle East tensions as a franc-strengthening risk, and signalled GREATER READINESS TO INTERVENE. Invalidated upward only if the SNB drops the intervention language on September 24; downward by a reversion in the October 1 CPI."
+      "tag": "Haven thesis retired",
+      "drivers": "A SECOND consecutive session with no haven bid - USD/CHF 0.81110, +0.12% today, leaving the franc at -0.03% on the month through a US tanker-for-tanker escalation, Iranian strikes on 10 ships and the Al-Azraq base in Jordan, and an IAEA referral to the Security Council; against outstanding data: manufacturing PMI 57.1 from 53.2, current account CHF 15,544m from 2,994m, business confidence 107 from 104, balance of trade 8,141m from 3,834m; August CPI 0.8% y/y with MoM +0.4%, the fastest since August 2024; Q2 GDP +1.5% q/q with annual growth 2.3% from 0.4%, the strongest since Q3 2021; unemployment 3.0%; policy rate 0.00%.",
+      "forward": "⚖️ Balanced and capped - on the data alone this would be a +2. The change today is a retirement rather than a re-score: two days ago this file argued the franc was gaining a second bid as the cleanest European hedge against the gas shock, yesterday it held that loosely, and after a second session in which the largest escalation of the war produced no franc strength at all, the haven argument is dropped outright. From here CHF is expressed on data and differentials only. The ceiling is explicit and TE-verified: the SNB forecasts annual average inflation of just 0.6% for 2026 and 2027 and 0.7% for 2028, said in June that medium-term pressures remain largely unchanged despite energy-driven increases, named Middle East tensions as a franc-strengthening risk, and signalled a GREATER READINESS TO INTERVENE. With the franc still not bid through an escalating war, that intervention language is very likely repeated on September 24. Invalidated upward only if the SNB drops the intervention language; downward by a reversion in the October 1 CPI."
     },
     {
       "ccy": "GBP",
       "score": -1,
       "verdict": "WEAKENING",
-      "tag": "Gas exposure now +36% on the month",
-      "drivers": "UK gas 196.61 pence per therm, +10.46% on the WEEK and +36.33% on the MONTH - up from +29.82% yesterday and the worst gas exposure in G10 - into a confirmed October Ofgem cap rise; Bank Rate 3.75% with September 17 about 90% priced for no change and a 0/9 TE vote-cut consensus; July government borrowing 69% above the prior year with debt at 94.3% of GDP from 93.2%; 10-year gilt around 5.266% against a 5.294% September 3 peak; CPI 2.9%; GDP 0.4% q/q from 0.6% with annual growth revised to 1.2%; consumer confidence -14 from -17; cable 1.35552, +0.22% on the week.",
-      "forward": "🔻 Easing-relative, held on structure rather than momentum, and the momentum caveat stands: cable is UP on the day and the week, the short is not paying against the dollar, and GBP/USD stays LOW-MED. Gilts have held off the September 3 extremes so the acute leg is dormant and the fiscal premium works alone - the highest borrowing costs of any G10 developed nation, borrowing 69% above prior year, and a yield advantage that fails to attract capital because it is risk premium rather than carry. What deteriorated today is energy: a 36.33% monthly gas move into an October cap rise is STAGFLATIONARY for a Bank already frozen, lifting the CPI path while cutting real household income - and TE's own read of the July decision is a Bank expecting inflation to RISE later this year on energy while labour conditions weaken. Invalidated by a hard upside surprise in tomorrow's monthly GDP, or by a credible fiscal statement."
+      "tag": "Gas now +38.71% on the month",
+      "drivers": "UK gas 200.38 pence per therm, +1.37% today and +38.71% on the MONTH - up from +36.33% yesterday and +29.82% the day before, the worst gas exposure in G10 - into a confirmed October Ofgem cap rise; Bank Rate 3.75% with September 17 about 90% priced for no change and a 0/9 TE vote-cut consensus; July government borrowing 69% above the prior year; CPI 2.9% with core 2.6%; GDP 0.4% q/q from 0.6% with annual growth 1.2%; wage growth 4.1% from 4.4%; employment change +83k from +147k; retail sales +1.6% y/y from 3.8%; cable 1.35421, -0.04% today but +0.32% on the month.",
+      "forward": "🔻 Easing-relative, held on structure and now on a third consecutive session of energy deterioration. A 38.71% monthly gas move into an October cap rise is STAGFLATIONARY for a Bank already frozen: it lifts the CPI path while cutting real household income, and TE's own read of the July decision is a Bank that expects inflation to RISE later this year on energy while labour conditions weaken, sees little second-round evidence, and stands ready to tighten but will not. The structural leg is unchanged - the highest borrowing costs of any G10 developed nation, borrowing 69% above prior year, and a yield advantage that fails to attract capital because it is risk premium rather than carry. The momentum caveat also stands and keeps this honest: cable is +0.32% on the MONTH, so the short is not paying against the dollar and GBP/USD stays LOW-MED. Express sterling against the YEN and the EURO, where the differential story is unambiguous. Invalidated by a hard upside surprise in tomorrow's monthly GDP at 06:00Z, or by a credible fiscal statement."
     },
     {
       "ccy": "NZD",
       "score": -1,
       "verdict": "WEAKENING",
-      "tag": "Rebound lasted one session",
-      "drivers": "NZD/USD 0.58507 - up 0.18% on the session but now DOWN 0.50% on the WEEK and 0.50% on the month, reversing the rebound this file reported yesterday within 24 hours; OCR 2.75% after the September 2 hike; unemployment 5.6%, the highest since Q3 2015; Q2 CPI 4.1% which the RBNZ attributes largely to Middle East fuel prices; business confidence 53.7 from 56.1; manufacturing PMI 54.3 from 60.1; consumer confidence 80.4 from 94.7; balance of trade -1,949m from -237m.",
-      "forward": "🔻 Easing-relative, and yesterday's most confident claim about this currency was wrong. This file reported that the three-session slide had STOPPED on China's reflation; that was a one-day artefact and the kiwi is now down on the week. The leg that actually justified MINUS 1 never depended on China: it is a central bank that raised to 2.75% and then declined to validate the next step. ANZ reads the September 2 statement as not pointing to an October increase, with the language around future decisions deliberately vague and highly conditional, which is why wholesale rates and the kiwi both fell after a HIKE and AUD/NZD ran to its strongest since July on the decision itself. TE carries October 28 unchanged with the next 25bp only on December 9. Invalidated if October 28 pulls the December hike forward, or if the RBNZ hardens on the 4.1% headline it currently blames on Middle East fuel."
+      "tag": "Only major negative on the month",
+      "drivers": "NZD/USD 0.58399, flat on the session and DOWN 0.65% on the MONTH - the only major with a negative monthly return against the dollar; OCR 2.75% after the September 2 hike, with TE carrying October 28 unchanged and the next 25bp only on December 9; unemployment 5.6% from 5.4%, the highest since Q3 2015; Q2 CPI 4.1% from 3.1%, which the RBNZ attributes largely to Middle East fuel prices; consumer confidence 80.4 from 94.7, a collapse; manufacturing PMI 54.3 from 60.1; business confidence 53.7 from 56.1; balance of trade -1,949m from -237m.",
+      "forward": "🔻 Easing-relative, and the monthly numbers now settle the argument this file had with itself over the last two sessions. It reported a rebound on Monday, withdrew that yesterday as a one-day artefact, and today the kiwi is the ONLY major down against the dollar on the month. The leg that justified MINUS 1 never depended on China: it is a central bank that raised to 2.75% and then declined to validate the next step. ANZ reads the September 2 statement as not pointing to an October increase, with the language around future decisions deliberately vague and highly conditional, which is why wholesale rates and the kiwi both FELL after a hike and AUD/NZD ran to its strongest since July on the decision itself. A central bank that hikes and then refuses to guide does not get paid for its carry. The second-derivative data is the worst in G10 - consumer confidence down 14 points, manufacturing PMI down almost 6 - and TE carries no move until December 9. It stays at MINUS 1 rather than MINUS 2 only because a majority of MPC members still see upside inflation risks and TE does forecast that December hike. Invalidated if October 28 pulls the December move forward, or if the RBNZ hardens on the 4.1% headline it currently blames on Middle East fuel."
     }
   ],
   "symbols": [
@@ -208,246 +208,246 @@
       "sym": "NZD/JPY",
       "bias": "SHORT",
       "conv": "HIGH",
-      "why": "The widest gap on the board and both legs firmed today: Masu confirmed the BoJ expects to keep raising and wants to avoid being forced into rapid tightening later, while the kiwi's one-session rebound reversed and NZD/USD is now down 0.50% on the week. RBNZ hiked to 2.75% and then declined to validate an October follow-up.",
-      "risk": "A hike-and-explicit-pause from the BoJ on September 18, MoF discomfort at the pace of yen appreciation, or an October 28 RBNZ that pulls the December hike forward."
+      "why": "The widest differential on the board: a BoJ that TE forecasts at 1.25% on September 18 against an RBNZ that hiked to 2.75% and then refused to validate the next step, with TE carrying no move until December 9. NZD is the only major negative on the month at -0.65% while JPY is -3.50% against USD.",
+      "risk": "A hawkish RBNZ surprise on October 28 pulling the December hike forward, or a BoJ hike-and-explicit-pause on September 18."
     },
     {
       "sym": "GBP/JPY",
       "bias": "SHORT",
       "conv": "HIGH",
-      "why": "A currency with a fourth hawkish confirmation in three sessions against one whose gas exposure just widened to +36.33% on the month into an October Ofgem cap rise, with a Bank ~90% priced to hold on September 17 and debt at 94.3% of GDP. This is where the sterling short is actually paid, since cable is not paying.",
-      "risk": "A hard upside surprise in UK monthly GDP tomorrow at 06:00Z, or any BoJ signal that September 18 is a one-and-done."
+      "why": "Sterling carries the worst energy exposure in G10 with UK gas now +38.71% on the month into an October Ofgem cap rise, against a Bank frozen at 3.75% with a 0/9 vote-cut consensus - versus the only central bank whose next hike is already in TE's own forecast.",
+      "risk": "A hard upside surprise in UK monthly GDP tomorrow at 06:00Z, or MoF discomfort at the pace of yen appreciation."
     },
     {
       "sym": "JPYBASKET",
       "bias": "LONG",
       "conv": "HIGH",
-      "why": "Rises when JPY strengthens, so it is the cleanest single expression of the only currency on this board actually being paid today - September 18 near 80% priced, swaps carrying ~75bp of cumulative tightening by April 2027, and Masu's overnight confirmation that hikes continue. USD/JPY 153.425 near a seven-month low.",
-      "risk": "MoF or BoJ jawboning aimed at the PACE of appreciation after a 3.68% monthly move; a hike-and-pause on September 18."
+      "why": "The basket rises as JPY strengthens and JPY is the only uncompromised +3 on the board: TE forecasts 1.25% on September 18, Masu says the Bank expects to keep raising to avoid forced rapid tightening later, and cash earnings are +4.7% y/y, the fastest since 1997.",
+      "risk": "A hike-and-pause on September 18, or intervention-style jawboning inverted to the strong side if the pace alarms the MoF."
     },
     {
       "sym": "USD/JPY",
       "bias": "SHORT",
       "conv": "HIGH",
-      "why": "Hold this as a JAPAN trade with a neutral dollar leg - the yen has the repricing and the dollar has nothing new, with Fed pricing steady near 56% and no US data change. Bessent has warned traders against betting against the yen and the Takaichi administration wants to limit excessive weakness.",
-      "risk": "A hot US CPI tomorrow at 12:30Z, consensus 3.4%, which would push September 16 to a clear hike and re-engage the dollar leg against the position."
+      "why": "Hold this as a JAPAN trade with a neutral dollar leg, not a two-sided differential: the BoJ leg is priced and forecast while Fed pricing at 58% is a two-point drift that is showing up in metals rather than in DXY, which is still -1.03% on the month. Spot 153.716, -3.50% monthly.",
+      "risk": "A hot August CPI tomorrow at 12:30Z that converts the 58% into a near-certainty and lifts the dollar leg materially."
     },
     {
       "sym": "AUD/NZD",
       "bias": "LONG",
       "conv": "HIGH",
-      "why": "The purest hawkish-versus-vague-central-bank pair. Australian inflation expectations printed UNCHANGED at 4.9% today with trimmed mean stuck at 3.6% and the RBA near 54% for September 29, against an RBNZ whose own statement ANZ reads as not pointing to an October move. Trading 1.2341 and extending.",
-      "risk": "A second consecutive Australian employment fall, or an RBNZ speaker hardening the language on 4.1% headline inflation."
+      "why": "The cleanest antipodean spread and the trade least affected by today's commodity turn: RBA at a G10-high 4.35% with inflation expectations stuck at 4.9% and September 29 near 54%, against an RBNZ on hold until December. Spot 1.2340, strongest since July.",
+      "risk": "A dovish RBA turn on September 29, or an RBNZ that hardens its October 28 language on the 4.1% headline."
     },
     {
       "sym": "EUR/GBP",
       "bias": "LONG",
       "conv": "HIGH",
-      "why": "Upgraded conviction on the euro's reopened December path - TE says futures price a third ECB hike by December at roughly 40-50% - against a Bank of England frozen on September 17 with the worst gas exposure in G10 at +36.33% on the month and a fiscal premium it cannot fix with rates.",
-      "risk": "A Lagarde press conference that confirms 2.50% as terminal, or a hard upside surprise in UK monthly GDP tomorrow."
+      "why": "An ECB hiking today with futures pricing a third move by December at 40-50%, against a Bank of England that TE shows holding on September 17 with a 0/9 vote-cut consensus - and sterling carries the worse gas exposure of the two at +38.71% versus +36.58% monthly.",
+      "risk": "Lagarde naming 2.50% as terminal at 12:45Z, which would close the December path and unwind the spread."
     },
     {
       "sym": "USOIL",
       "bias": "LONG",
       "conv": "HIGH",
-      "why": "WTI 96.074, +5.25% on the week and +15.49% on the month, with Brent through 100 for the first time since July after Iran attacked more than a dozen vessels, struck a US base in Jordan and extended its prohibited zone into the Gulf of Oman and the Arabian Sea. AFP now describes Hormuz traffic as virtually paralysed.",
-      "risk": "A credible de-escalation headline - Trump says the war ends after November's midterms, though WSJ reports his advisers privately warn it could run two more years. OPEC has also cut 2026 demand growth to 580,000 bpd from 780,000."
+      "why": "The only asset still carrying the war premium and it keeps extending: WTI 97.269, +1.27% today and +16.85% on the month, with a US tanker-for-tanker policy live after Washington sank five Iranian tankers and Iran struck 10 ships plus the Al-Azraq base in Jordan. Take the crude view here, not through CAD.",
+      "risk": "A credible de-escalation or ceasefire signal, or an OPEC+ supply response large enough to offset the Hormuz risk premium."
     },
     {
       "sym": "GER40",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Upgraded from LOW-MED. An industrial economy entering winter with storage only 53% full against an EU aggregate of 65%, gas +34.66% on the month, Morgan Stanley raising its winter TTF forecast to ~85 euros with no Qatari return before winter, Brent above 100, and an ECB hiking into all of it today.",
-      "risk": "A dovish Lagarde who confirms 2.50% as terminal, or a genuine Middle East de-escalation that unwinds the energy complex at once."
+      "why": "German gas jumped 4.42% in a single session to 80.40 euros per MWh and is +29.43% on the month with storage only 53% full, into an ECB tightening at 12:15Z and a war escalating - three simultaneous headwinds for an energy-intensive index.",
+      "risk": "Falling Brent, or a dovish Lagarde naming 2.50% as terminal, which would relieve both the energy and the policy legs at once."
     },
     {
       "sym": "EUR/NZD",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "A euro whose December path just reopened at 40-50% against a kiwi that gave back its entire rebound within a session and whose central bank declines to validate its own hike. TE has the RBNZ unchanged on October 28 with the next move only on December 9.",
-      "risk": "A dovish ECB press conference at 12:45Z; a euro-area growth shock as the gas tax bites."
+      "why": "Pairs the strongest forward tilt in Europe - an ECB hiking today with December alive at 40-50% - against the weakest in the G10, an RBNZ with nothing until December 9 and the only major negative monthly return against the dollar.",
+      "risk": "A dovish ECB press conference at 12:45Z, or an RBNZ that surprises hawkish on October 28."
     },
     {
       "sym": "EUR/JPY",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "The yen's repricing is faster and better confirmed than the euro's, but this is now a two-hawks pair rather than a one-sided one - the ECB's December path reopened at 40-50% today, which is why it stays MEDIUM rather than moving up.",
-      "risk": "Hawkish staff projections plus a Lagarde who keeps December explicitly live, which would compress the differential quickly."
+      "why": "Both central banks are tightening, so this is a relative-pace trade and the yen wins it: TE forecasts the BoJ hike outright on September 18 while the euro leg carries a gas TAX at +36.58% monthly that no ECB hike offsets.",
+      "risk": "Materially higher ECB staff projections today plus December kept explicitly live, which would close the pace gap."
     },
     {
       "sym": "CHF/JPY",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "An SNB at 0% forecasting 0.6% inflation and signalling readiness to intervene, against a BoJ whose board is now publicly arguing for continued hikes. The franc also failed to catch a bid on the largest escalation of the war, which removes the haven argument against this position.",
-      "risk": "A genuine risk-off cascade that finally bids the franc; MoF discomfort at the pace of yen appreciation."
+      "why": "A franc that has now failed its haven test for a second straight session at a 0.00% policy rate, against a yen whose next hike is in TE's own forecast. Two would-be havens, only one with a central bank behind it.",
+      "risk": "SNB dropping its intervention language on September 24, or a BoJ pause that removes the yen's rate leg."
     },
     {
       "sym": "CAD/JPY",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Cleaner today than it was yesterday, because the oil leg that used to argue against it has stopped working - Brent broke 100 and the loonie did not move. That leaves a BoC on hold with 2.0% wage growth against a BoJ near 80% priced for September 18.",
-      "risk": "The oil-CAD beta re-engaging with crude at these levels, which would make this the wrong side of a terms-of-trade trade."
+      "why": "The broken oil beta makes this cleaner than it looks: Brent above 102 and the loonie still weakened, so CAD is not being paid for the terms-of-trade impulse, while August wages at 2.0% y/y keep the BoC out past October 28 against a BoJ hiking.",
+      "risk": "The oil-CAD beta re-engaging sharply, which would give the CAD leg a delayed catch-up bid."
     },
     {
       "sym": "NZD/USD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "The rebound reversed within one session and the pair is now down 0.50% on the week at 0.58507. The RBNZ's own statement, per ANZ, does not point to an October increase, while the Fed is a modest hike lean at 56%.",
-      "risk": "A soft US CPI tomorrow that knocks the dollar leg out; TE's forecast December RBNZ hike being pulled forward."
+      "why": "The kiwi is the only major with a negative monthly return against the dollar at -0.65%, on an RBNZ that hiked and then refused to guide, unemployment at 5.6% and consumer confidence collapsing from 94.7 to 80.4.",
+      "risk": "A soft August US CPI tomorrow that knocks the 58% Fed pricing down and lifts every dollar-denominated major."
     },
     {
       "sym": "NZD/CAD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "A central bank that will not validate its own hike against one with Brent above 100, a current account swung to plus C$8,800m and Q2 growth at 3.3% annualised. Both legs are policy-on-hold, so this trades the relative data and the data favours Canada.",
-      "risk": "The Canadian labour leg deteriorating again; the loonie continuing to ignore its terms of trade, which would leave this pair range-bound."
+      "why": "Sells the weakest currency on the board against one with strong growth data, a current account swung to +C$8,800m and business confidence at 64.3 from 55.1 - even with the oil leg discounted to zero.",
+      "risk": "Renewed US tariff damage to Canada under the C$27.6bn counter-tariff regime, or a hawkish RBNZ shift."
     },
     {
       "sym": "NZD/CHF",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "The weakest currency on the board against one with a 57.1 manufacturing PMI, a CHF 15,544m current account and Q2 annual growth at 2.3%. Both central banks are on hold, so this is a pure relative-data expression.",
-      "risk": "SNB intervention language or actual intervention against franc strength on September 24; a China-driven commodity rally that lifts the kiwi."
+      "why": "Expresses the kiwi weakness against the franc on Swiss DATA rather than on any haven claim - manufacturing PMI 57.1 from 53.2, annual GDP 2.3% and a current account of CHF 15,544m - which is the only CHF argument this file still holds.",
+      "risk": "SNB intervention rhetoric on September 24 capping the franc, keeping this range-bound rather than trending."
     },
     {
       "sym": "GBP/CAD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Sterling's gas exposure widened to +36.33% on the month into an October cap rise while Canada's terms of trade improved further with Brent through 100. Both banks are frozen, so this trades the energy asymmetry, and it runs in Canada's favour.",
-      "risk": "The loonie continuing to ignore crude as it did overnight; a hard upside surprise in UK monthly GDP tomorrow."
+      "why": "Sterling's +38.71% monthly gas shock and frozen Bank against Canada's best growth data in months; even with the loonie not paying its oil beta, the relative energy exposure runs clearly the other way - Canada is a net exporter of the shock.",
+      "risk": "Weak UK GDP being already priced, or further tariff damage weighing on CAD independently."
     },
     {
       "sym": "GBP/CHF",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "The worst gas exposure in G10 against an economy with no comparable import bill, a 57.1 PMI and the strongest quarterly growth since Q3 2021. A frozen Bank of England on one side and a stable SNB on the other.",
-      "risk": "SNB intervention talk on September 24; a UK fiscal statement that credibly addresses the borrowing path."
+      "why": "The G10 worst gas exposure and highest borrowing costs against Swiss data that would justify a +2 in isolation: CPI 0.8%, annual GDP 2.3%, unemployment 3.0% and a manufacturing PMI at 57.1.",
+      "risk": "SNB intervention readiness capping the franc leg, plus sterling short covering after tomorrow's GDP."
     },
     {
       "sym": "GBP/AUD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Downgraded from HIGH. The fundamental gap is intact - Australian inflation expectations stuck at 4.9%, the RBA near 54% for September 29, against a frozen BoE with worsening gas exposure - but AUD/USD gained only 0.28% on the week and cable rose 0.22%, so the pair is not moving as the thesis implies.",
-      "risk": "Australian domestic softness compounding after Westpac consumer confidence fell 5.2% and NAB business confidence hit -8; a strong UK GDP print tomorrow."
+      "why": "A frozen Bank of England against the G10-high 4.35% cash rate with September 29 near 54% - and this expression is insulated from today's copper turn because the Australian score now rests on the rate leg, not commodities.",
+      "risk": "A further slide in copper combined with soft Australian employment, which would take AUD to +1 and flatten the spread."
     },
     {
       "sym": "XCU/USD",
       "bias": "LONG",
-      "conv": "MEDIUM",
-      "why": "Copper at 6.7676 USD per pound is -0.53% on the session but +2.90% on the week, resting on a genuine supply shortage - Codelco and Freeport double-digit declines, an ICSG-recorded 1.1% fall in global H1 output, a Congo export ban, weak Chilean and Peruvian supply - now with Chinese PPI at +3.8% beating consensus underneath it.",
-      "risk": "Profit-taking off record levels, which is already visible in the session move; a reversal in the Chinese reflation, which is one month of data and not a cycle."
+      "conv": "LOW-MED",
+      "why": "Direction held on a genuine physical shortage - Codelco and Freeport double-digit declines, an ICSG-recorded 1.1% fall in global H1 output, a Congo export ban, weak Chilean and Peruvian supply - but conviction CUT from MEDIUM after a 1.00% fall to 6.7356 halved the monthly gain to +1.87%.",
+      "risk": "The US real-rate repricing that took gold below 4,400 spreading further into industrial metals; a second soft session would argue for RANGE."
     },
     {
       "sym": "AUD/JPY",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "The board's two hawks against each other, and the yen's repricing is faster and better confirmed after Masu's overnight comments. Kept LOW-MED because Australian inflation expectations at 4.9% and the RBA at 54% mean this is not a one-sided trade.",
-      "risk": "A hike-and-explicit-pause from the BoJ on September 18 would flip this immediately; a hot Australian labour print."
+      "why": "Shorting the second-strongest currency against the strongest is uncomfortable, but the yen leg is priced and forecast while the Australian commodity support just weakened - copper -1.00% and silver -0.94% on the same session.",
+      "risk": "The clear stretch trade on this board: an RBA that turns explicitly hawkish on September 29 would make this the wrong side."
     },
     {
       "sym": "GBP/USD",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "Held at LOW-MED for the second day for an honest reason: the short is not paying. Cable is 1.35552, up 0.06% today and 0.22% on the week. The structural sterling case is intact but the dollar leg has no momentum with Fed pricing flat near 56%.",
-      "risk": "A hot US CPI tomorrow would finally give the dollar leg something; a strong UK GDP print would remove the sterling leg."
+      "why": "The structural sterling case is intact - worst G10 gas exposure, highest borrowing costs, borrowing 69% above prior year - but the pair keeps refusing to pay, so conviction stays capped.",
+      "risk": "Cable is still +0.32% on the MONTH at 1.35421; the short has not worked against the dollar and a soft US CPI tomorrow would hurt it further."
     },
     {
       "sym": "EUR/AUD",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "Downgraded in spirit if not in level: the euro's December path reopened at 40-50% today, which weakens the one-sidedness of shorting it against the RBA. Still short because Australian inflation expectations at 4.9% and the G10-high cash rate give AUD the better carry and the better inflation persistence.",
-      "risk": "Hawkish ECB staff projections at 12:15Z with December kept live, which would compress this quickly."
+      "why": "Two hawkish central banks with Australia holding the rate advantage at 4.35% versus a 2.50% deposit facility after today, but the euro leg is live at 12:15Z and the Australian commodity leg just turned, so both sides are unsettled.",
+      "risk": "Materially higher ECB staff projections keeping December live, into further copper weakness on the AUD side."
     },
     {
       "sym": "AUD/USD",
       "bias": "LONG",
       "conv": "LOW-MED",
-      "why": "Still the best major on every horizon beyond a session at +2.25% monthly and +8.21% YTD, with sticky 4.9% inflation expectations and copper firm on the week - but only +0.04% today and +0.28% on the week, so the momentum has flattened and the conviction reflects that.",
-      "risk": "US CPI tomorrow at 12:30Z; the Australian domestic side deteriorating further after the Westpac and NAB confidence falls."
+      "why": "Still +2.12% on the month and the best major after the yen, on the G10-high cash rate and inflation expectations stuck at 4.9% - but it fell 0.14% today as copper turned, and the commodity leg is no longer supporting it.",
+      "risk": "A hot US CPI tomorrow converting 58% Fed pricing into near-certainty, compounding the commodity fade."
     },
     {
       "sym": "AUD/CAD",
       "bias": "LONG",
       "conv": "LOW-MED",
-      "why": "A hawkish RBA against a BoC on hold with wages at 2.0% y/y. Kept low-conviction deliberately: Canada's terms of trade just improved sharply with Brent through 100, and if the loonie starts monetising that this is the wrong side.",
-      "risk": "The oil-CAD beta re-engaging at current crude levels, which is the single most likely way this position turns."
+      "why": "The rate differential is stark at 4.35% against 2.25% with the BoC out past October 28 on 2.0% wage growth - but both currencies are commodity-linked and both commodity legs are behaving oddly right now.",
+      "risk": "The oil-CAD beta re-engaging with Brent above 102 would flip this quickly given the size of the terms-of-trade impulse."
     },
     {
       "sym": "AUD/CHF",
       "bias": "LONG",
       "conv": "LOW-MED",
-      "why": "The G10-high cash rate and sticky inflation expectations against a 0% SNB that has signalled readiness to intervene against franc strength. The franc's failure to bid on the overnight escalation supports the direction.",
-      "risk": "A genuine risk-off event that finally bids the franc; Australian domestic weakness compounding."
+      "why": "The widest policy gap available at 4.35% against 0.00%, with the franc now demonstrably not bid as a haven through two sessions of war escalation.",
+      "risk": "Australian commodity weakness extending while Swiss data stays outstanding, or SNB rhetoric that is read hawkishly on September 24."
     },
     {
       "sym": "XAG/USD",
-      "bias": "LONG",
+      "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "Kept LONG while gold is downgraded, and the divergence is the point: silver is +4.33% on the month and +0.76% on the week against gold's +0.92% monthly and MINUS 1.41% weekly. The industrial leg - renewable demand plus Chinese PPI reflating - is doing work the haven leg is not.",
-      "risk": "A hot US CPI tomorrow lifting real rates; silver's industrial leg makes it more exposed than gold to a global growth scare."
+      "why": "DOWNGRADED from LONG today. Silver was held as gold with an extra industrial leg; today it fell 0.94% to 66.634 while copper fell 1.00%, so the industrial leg is precisely what broke and the reason to prefer silver over gold has gone. It joins gold at RANGE.",
+      "risk": "The +3.03% monthly gain is still the best in the metals complex, so a dovish US CPI tomorrow could restore both the haven and the industrial legs at once."
     },
     {
       "sym": "EUR/USD",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "Trade levels through the ECB. The decision at 12:15Z and press conference at 12:45Z are the binary: the 25bp is 99% priced, so the move comes from the new staff projections and from whether Lagarde keeps December - now near 40-50% in futures - explicitly alive. 1.16382 with US PPI at 12:30Z on top.",
-      "risk": "Taking a directional view before 12:45Z. Both tails are live - upside on revised-up projections, downside on a confirmed terminal rate."
+      "why": "Both legs decide within 24 hours - the ECB at 12:15Z with press conference at 12:45Z, then US PPI at 12:30Z and August CPI tomorrow. Trade the levels around 1.16318 and let the events resolve it.",
+      "risk": "A hawkish ECB projection set into a soft US CPI would break this range decisively higher; the reverse breaks it lower."
     },
     {
       "sym": "USD/CAD",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "1.38060, unchanged today and up 0.08% on the week even as Brent broke 100 dollars. The oil-CAD beta has broken this week, which removes the reason to be short here, while a Fed at a modest 56% hike lean removes the reason to be long. Trade the range.",
-      "risk": "The beta re-engaging in either direction - a sharp crude move that CAD finally follows, or a hot US CPI tomorrow."
+      "why": "The purest expression of the broken oil beta: Brent above 102 and WTI +16.85% monthly, yet the pair rose again to 1.38134. Neither leg is trending, so trade the levels.",
+      "risk": "A resolution in either direction - the oil beta re-engaging, or a hot US CPI that finally gives the dollar leg a trend."
     },
     {
       "sym": "USD/CHF",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "0.80904 with the franc actually WEAKER by 0.19% on the week through the war's largest escalation. Excellent Swiss data against an SNB at 0% forecasting 0.6% inflation and ready to intervene, versus a dollar with a modest hike lean. Nothing directional here.",
-      "risk": "US CPI tomorrow; SNB intervention language on September 24."
+      "why": "A franc that will not bid as a haven against a dollar that is dormant in FX despite 58% hike pricing. Spot 0.81110 with the franc flat on the month at -0.03%; nothing is trending here.",
+      "risk": "August US CPI tomorrow at 12:30Z is the only near-term catalyst capable of giving either leg direction."
     },
     {
       "sym": "EUR/CAD",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "Two currencies with improving policy stories and broken price transmission - the euro's December path reopened but EUR/USD is flat, and Canada's terms of trade improved sharply but the loonie ignored it. Trade levels through the ECB.",
-      "risk": "A decisive ECB press conference; the CAD oil beta re-engaging."
+      "why": "A hiking ECB against strong Canadian growth data, with the euro carrying a gas tax and the loonie refusing to trade its own terms of trade. Both legs are compromised in opposite ways.",
+      "risk": "A decisive ECB press conference at 12:45Z, or the oil-CAD beta re-engaging, would break the range."
     },
     {
       "sym": "DXY",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "98.740, -0.05% today and -0.17% on the week, with no US data change and Fed pricing steady near 56%. EUR at 57.6% of the index makes today's ECB the dominant input, and that is genuinely two-sided.",
-      "risk": "US PPI at 12:30Z today and CPI tomorrow; the ECB press conference moving the euro leg."
+      "why": "98.830, +0.01% today and -1.03% on the month. The 58% Fed pricing is expressing itself in gold and silver rather than in the dollar index, and the EUR weight of 57.6% is frozen until 12:15Z.",
+      "risk": "August CPI tomorrow with consensus 3.4% is the single event that decides whether this index gets a trend at all."
     },
     {
       "sym": "XAU/USD",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "DOWNGRADED from LONG. Gold is 4,409.98 and DOWN 1.41% on the WEEK through the single largest escalation of the war - more than a dozen vessels attacked, a US base struck in Jordan, the prohibited zone extended into the Arabian Sea, an IAEA referral to the Security Council. That is the cleanest possible test of the haven thesis and gold failed it. Trade levels, do not own the geopolitical bid.",
-      "risk": "A dovish surprise in tomorrow's US CPI that pushes real rates down would restore the Fed leg independently of the haven leg; conversely a hot CPI extends the drift lower."
+      "why": "Downgraded from LONG yesterday and confirming today: 4,392.69, below 4,400 with only +0.54% left on the month while WTI ran +16.85%. Rising US real rates are beating the war bid on an asset that pays no coupon.",
+      "risk": "A soft August US CPI tomorrow that knocks the 58% hike pricing down would restore the haven bid quickly from a low base."
     },
     {
       "sym": "EUR/CHF",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Two European currencies absorbing the same shock from opposite ends, with the euro's December hike reopened and the franc pinned at 0% by an SNB ready to intervene. The franc's failure to bid on the escalation removes yesterday's asymmetry argument.",
-      "risk": "The ECB press conference at 12:45Z; SNB intervention on September 24."
+      "why": "Both currencies are absorbing the same European energy shock from opposite ends - one with a central bank hiking into it today, one with a central bank at zero threatening to intervene. Neither leg is clean.",
+      "risk": "The ECB at 12:15Z is a genuine binary for the euro leg; a hawkish projection set would break the range higher."
     },
     {
       "sym": "CAD/CHF",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "Both currencies failed their respective tests overnight - the loonie ignored Brent through 100 and the franc ignored the escalation - which is about as clean a definition of a range as this board produces. Both central banks are on hold.",
-      "risk": "Either beta re-engaging; SNB intervention language on September 24."
+      "why": "Two currencies both failing to trade their own story: the loonie ignoring Brent above 102, the franc ignoring an escalating war. Two broken transmissions do not make a trend.",
+      "risk": "Either transmission re-engaging - an oil catch-up in CAD or an SNB surprise on September 24 - would resolve this sharply."
     },
     {
       "sym": "GBP/NZD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "The two weakest currencies on the board against each other, both at MINUS 1, both with frozen or non-committal central banks. Sterling has the worse energy exposure, the kiwi has the worse central-bank credibility. No edge.",
-      "risk": "UK monthly GDP tomorrow at 06:00Z is the only near-term catalyst that could break the range."
+      "why": "Both currencies are scored at MINUS 1 for different reasons - sterling on its gas shock and fiscal premium, the kiwi on a central bank that hiked and then refused to guide - so there is no directional edge.",
+      "risk": "UK monthly GDP tomorrow at 06:00Z or an RBNZ shift on October 28 would separate the two legs."
     }
   ],
   "macro": {
@@ -803,7 +803,7 @@
       "growth": {
         "value": "1.5%",
         "trend": "stable",
-        "note": "Q1 y/y",
+        "note": "Q2 y/y",
         "hist": [
           -0.5,
           -0.7,
@@ -993,122 +993,122 @@
       "date": "Sep 10",
       "event": "ECB rate decision + new staff projections",
       "impact": "high",
-      "note": "The deposit facility goes to 2.50% from 2.25% - 99% priced, TE consensus and forecast at 2.65% on the refi, and all 65 economists in the September 3 Reuters poll agree. The MOVE is not the event. The new STAFF PROJECTIONS are: August energy inflation jumped to 14.3% from 10.3%, taking HICP to 3.3%, the highest since September 2023, and TTF has risen since, so the inflation path can be revised UP. What changed in 24 hours is that TE now says interest-rate futures price a THIRD hike by DECEMBER, with previews near 40-50% - reopening a path this file wrongly called closed two days ago.",
+      "note": "Deposit facility 2.25% to 2.50% at 99% priced, TE consensus and forecast 2.65% on the refi. The projections are the event - August energy inflation was 14.3% and gas has risen since.",
       "when": "2026-09-10T12:15:00Z"
     },
     {
       "date": "Sep 10",
       "event": "ECB press conference - Lagarde",
       "impact": "high",
-      "note": "The real binary. Previews expect Lagarde to retain FULL OPTIONALITY and offer no firm guidance, which would limit the reaction. TE notes the ECB is expected to signal caution about further increases that could weigh on activity, that there have been few signs of the second-round effects policymakers fear when energy surges, and that economists remain unconvinced further tightening is needed and warn it risks recession. Against that, policymakers keep flagging upside inflation risks and rising bond yields add uncertainty. A December kept explicitly live is the euro-positive tail.",
+      "note": "Whether she retains full optionality or names 2.50% as terminal decides the December path that futures currently price at 40-50%.",
       "when": "2026-09-10T12:45:00Z"
     },
     {
       "date": "Sep 10",
       "event": "US PPI (August)",
       "impact": "med",
-      "note": "Consensus +0.4% m/m against 0% prior, core +0.3% against 0.2%, with core PPI y/y expected around 4.6% from 4.2%. The day before CPI and the first read on the inflation condition Waller named. With CME FedWatch steady near 56%, a hot PPI pushes September 16 toward a clear hike and gives the dollar leg of the USD/JPY short something to argue with.",
+      "note": "Consensus +0.4% m/m. A curtain-raiser for tomorrow's CPI and the first read on how far the energy shock has reached US producer prices.",
       "when": "2026-09-10T12:30:00Z"
     },
     {
       "date": "Sep 10",
       "event": "US initial jobless claims",
       "impact": "low",
-      "note": "Consensus around 205K against 206K prior with continuing claims near 1,790K from 1,779K. Same release slot as PPI. Matters only as a check on whether the +162,000 August payroll strength is holding.",
+      "note": "Last 206k against 204k. Only matters if it breaks materially, given the labour market did the work of lifting Fed pricing to 58%.",
       "when": "2026-09-10T12:30:00Z"
     },
     {
       "date": "Sep 11",
       "event": "US CPI (August)",
       "impact": "high",
-      "note": "THE event of the cycle. Headline consensus 3.4% with the July monthly rate at 0.1%. It decides September 16, which CME FedWatch has near 56% - a modest hike lean, with TE's own forecast at 4.00%. TE's July-minutes summary tilts hawkish: officials concerned about persistent inflation, several judging conditions possibly not restrictive enough, a small group wanting an immediate hike, inflation risks tilted to the UPSIDE - though that meeting predated the cooler data. It is also the single risk to short USD/JPY and long silver simultaneously.",
+      "note": "Consensus 3.4%. The single number that decides September 16 and, by extension, whether gold and silver keep falling in a war.",
       "when": "2026-09-11T12:30:00Z"
     },
     {
       "date": "Sep 11",
       "event": "UK monthly GDP (July)",
       "impact": "med",
-      "note": "The main risk to every short-sterling position now that gilts have stayed off the September 3 extremes and cable is up 0.22% on the week. Quarterly growth slowed to +0.4% from +0.6% even as TE revised annual growth up to 1.2% from 0.9%. A hard upside surprise would leave only the fiscal premium and the gas tax carrying the thesis.",
+      "note": "The main risk to every short-sterling position on this board, with cable still +0.32% on the month.",
       "when": "2026-09-11T06:00:00Z"
     },
     {
       "date": "Sep 16",
       "event": "FOMC decision + economic projections",
       "impact": "high",
-      "note": "CME FedWatch near 56% for a 25bp move to 4.00%, down from 58.7% on September 7 and 66% on August 31 after Warsh's hawkish Jackson Hole remarks, but well above the 48-49% prediction markets show - the distinction this file corrected yesterday and is holding to today. TE's forecast is 4.00%. No US data deteriorated overnight, so Friday's CPI decides it. Press conference 18:30Z.",
+      "note": "CME FedWatch 58% for 25bp to 4.00%, which is also TE's own forecast. Prediction markets remain lower at 48-49%.",
       "when": "2026-09-16T18:00:00Z"
     },
     {
       "date": "Sep 17",
       "event": "Bank of England decision",
       "impact": "high",
-      "note": "About 90% priced for no change at 3.75%, with TE carrying a 0/9 vote-cut consensus and a 3.75% forecast. The July vote was 6-3 for a hold with three members preferring 4.00%. TE's summary has the Bank expecting inflation to RISE later this year as energy feeds through, seeing little evidence of second-round effects, and standing ready to tighten if needed. With UK gas now +36.33% on the month into a confirmed October Ofgem cap rise, the live question is whether the Bank acknowledges a higher near-term CPI path while its demand side weakens.",
+      "note": "About 90% priced for no change at 3.75%, with a 0/9 TE vote-cut consensus. Frozen by an energy shock it cannot ease against.",
       "when": "2026-09-17T11:00:00Z"
     },
     {
       "date": "Sep 18",
       "event": "Bank of Japan decision",
       "impact": "high",
-      "note": "Reported near 80% priced for a hike to 1.25%, which is also TE's forecast against a 1% consensus. Board member Masu said on September 10 that the Bank expects to CONTINUE raising rates and that further hikes are needed to avoid being forced into rapid tightening later - the fourth hawkish confirmation in three sessions. Swaps carry roughly 75bp of cumulative tightening by April 2027. With the September move largely spoken for, the yen trades entirely on guidance; a hike-and-explicit-pause is the one thing that takes JPY off +3.",
+      "note": "TE forecasts 1.25% against a 1% consensus. The most important scheduled event for this board - it decides the only uncompromised score.",
       "when": "2026-09-18T03:00:00Z"
     },
     {
       "date": "Sep 24",
       "event": "SNB rate decision",
       "impact": "med",
-      "note": "TE carries a 0% consensus AND a 0% forecast. Swiss data keeps beating - manufacturing PMI 57.1 from 53.2, current account CHF 15,544m, Q2 annual growth 2.3% - but nothing changes the base case. What the franc trades is whether the Bank repeats its stated readiness to INTERVENE. Note that the franc did NOT catch a bid on the war's largest escalation, which reduces the urgency behind that language rather than raising it.",
+      "note": "TE carries 0% consensus and 0% forecast. Watch only for whether the greater-readiness-to-intervene language is repeated.",
       "when": "2026-09-24T07:30:00Z"
     },
     {
       "date": "Sep 29",
       "event": "RBA rate decision",
       "impact": "high",
-      "note": "Market-implied near 54% with TE's own consensus and forecast at 4.35%. Consumer inflation expectations printed UNCHANGED at 4.9% on September 10, trimmed mean is stuck at 3.6%, the monthly inflation rate jumped +1.0%, and annual growth at 2.1% sits above the RBA's estimated 2% speed limit. The August minutes list Middle East oil FIRST among the hike arguments and crude is now +15.49% on the month with Brent above 100. The counterweight is domestic: Westpac consumer confidence -5.2% to 84.4 and NAB business confidence at -8.",
+      "note": "Market-implied near 54% for a hike, though TE's own consensus and forecast are 4.35%. Inflation expectations stuck at 4.9% is the case for moving.",
       "when": "2026-09-29T04:30:00Z"
     },
     {
       "date": "Rolling",
-      "event": "Iran / US war - largest escalation to date, prohibited zone extended BEYOND Hormuz",
+      "event": "Iran / US war - tanker-for-tanker policy live, prohibited zone extended beyond Hormuz",
       "impact": "high",
-      "note": "Iran's Revolutionary Guards said they attacked two US vessels, eight oil tankers and ten 'non-compliant vessels' near the Strait on September 9, after US forces destroyed FIVE Iranian oil tankers the previous day. The Guards struck a US military base in Jordan; Jordan's army shot down 18 missiles. UKMTO reported several merchant vessels subject to disabling fire in the Gulf of Oman and the Gulf. For the FIRST TIME the Guards extended the prohibited zone beyond the Strait into parts of the Gulf of Oman and the Arabian Sea, coordinates to follow, with uncoordinated vessels subject to Iranian sanctions. The IAEA board referred Iran to the UN Security Council for nuclear non-compliance 23-3 with 8 abstentions, Russia, China and Niger against. Iran's stated terms to end the war include Israeli withdrawal from Lebanon, an end to the Yemen blockade and release of USD 24bn in frozen assets. Trump says the war ends immediately after November's midterms; WSJ reports his advisers privately warn it could run the remaining two years of his term."
+      "note": "Washington sank five Iranian tankers; Iran struck 10 ships and the Al-Azraq base in Jordan. The premium is going into energy only."
     },
     {
       "date": "Rolling",
-      "event": "European gas crisis - German storage at 53%, Morgan Stanley lifts winter TTF forecast to ~85 euros",
+      "event": "European gas crisis - German storage 53%, German gas +4.42% in a session",
       "impact": "high",
-      "note": "EU gas is 79.1702 euros per MWh, +34.66% on the MONTH and +144.70% on the YEAR, near a three-year high; UK gas is 196.61 pence per therm, +10.46% on the week and +36.33% on the month. EU aggregate storage is 65% but the distribution is the story - Italy 83%, GERMANY 53%. Morgan Stanley has raised its winter TTF forecast to about 85 euros with risk skewed to the upside, writing that it is too late for Qatari LNG to return before winter and that Europe enters the season with its lowest storage in 15 years and almost no buffer to cold weather. QatarEnergy's force majeure runs into early November; Italy's Edison alone has lost 29 cargoes since April, roughly 3.8 bcm. A terms-of-trade tax on EUR and GBP that no rate hike offsets, and the core of the GER40 short."
+      "note": "EU gas +36.58% monthly, UK gas +38.71%. Morgan Stanley sees ~85 euro TTF this winter with no Qatari return."
     },
     {
       "date": "Rolling",
-      "event": "Haven bid FAILURE - gold, franc and loonie all failed their tests this week",
+      "event": "Haven failure now extends to industrial metals - gold below 4,400, silver and copper both down",
       "impact": "high",
-      "note": "The single most important observation on this board today. Through the war's largest escalation, gold FELL 1.41% on the week to 4,409.98, the franc WEAKENED 0.19% on the week with USD/CHF at 0.80904, and the loonie did not move as Brent broke 100 with USD/CAD at 1.38060 and up 0.08%. Three haven and terms-of-trade channels that should have fired did not. The risk premium is being paid entirely in ENERGY and no longer in currencies, which means FX is trading central banks rather than headlines. Direct consequences: XAU/USD downgraded from LONG to RANGE, every CAD expression kept low-conviction, and the CHF gas-hedge argument held loosely."
+      "note": "US real rates are beating the war bid. The tradeable expression of a hawkish Fed is short metals, not long dollars."
     },
     {
       "date": "Rolling",
       "event": "MoF / BoJ jawboning watch - inverted to the STRONG side",
       "impact": "med",
-      "note": "With USD/JPY at 153.425 near a seven-month low after a 3.68% monthly move, the BoJ near 80% priced and swaps carrying 75bp of cumulative tightening by April 2027, the question is no longer whether officials talk the yen up but whether they express discomfort at the PACE of appreciation. US Treasury Secretary Bessent has warned traders against betting against the yen, and the Takaichi administration has acknowledged the need to limit excessive weakness. MoF language about disorderly moves is the main near-term risk to the four HIGH-conviction yen positions."
+      "note": "Bessent has warned against betting against the yen; the risk is now discomfort at the PACE after a 3.50% monthly move."
+    },
+    {
+      "date": "Rolling",
+      "event": "Copper supply shortage versus real-rate repricing",
+      "impact": "med",
+      "note": "Codelco and Freeport declines and a Congo export ban against a 1.00% session fall - the physical story and the macro story are now fighting."
     },
     {
       "date": "Rolling",
       "event": "China reflation - one month of data, treat as provisional",
       "impact": "med",
-      "note": "August CPI rose 0.8% y/y from 0.5% with the monthly rate at +0.4% from -0.1%; PPI rose 3.8% from 3.5%, BEATING the 3.7% consensus and accelerating out of deflation; exports printed +25% y/y from 23.9%, though imports at +28.2% missed a 30% consensus. It puts a demand leg under copper's supply-driven record and supports AUD directly. Note the honest caveat: yesterday this file also used it to call the kiwi's slide over, and the kiwi is now down 0.50% on the week - one month of Chinese data is not a cycle and does not override a central-bank story."
-    },
-    {
-      "date": "Rolling",
-      "event": "Global bond backdrop - gilts off the highs, JGBs normalising",
-      "impact": "med",
-      "note": "UK gilts have stayed off the September 3 extremes: the 10-year is around 5.266% against a 5.294% peak, the highest since June 2008, and the 30-year around 5.854% against 5.904%, the highest since 1998. The acute UK leg is dormant and the structural fiscal premium works alone. Japan's 10-year at 3% for the first time since 1996 reads as normalisation and is yen-positive. TE notes rising bond yields add uncertainty to the ECB's outlook."
+      "note": "August CPI +0.8% y/y from 0.5%, PPI +3.8% beating a 3.7% consensus, exports +25%. Not yet a trend."
     },
     {
       "date": "Rolling",
       "event": "SNB FX intervention readiness",
       "impact": "med",
-      "note": "The SNB signalled in June a greater readiness to intervene in FX markets, naming Middle East tensions as something that could strengthen the franc, alongside forecasts of 0.6% average annual inflation for 2026 and 2027 and 0.7% for 2028, with growth of 1% in 2026. That is the stated ceiling keeping CHF at +1 despite a run of upside data surprises. The franc's failure to bid on this week's escalation makes actual intervention less likely, not more - but it does not remove the ceiling."
+      "note": "Signalled in June and likely repeated September 24. Caps every CHF cross at MEDIUM or below."
     }
   ],
-  "geopolitics": "The war produced its largest escalation to date overnight and FX barely moved, which is the most important thing on this board today. The facts first. On Tuesday US forces destroyed FIVE Iranian oil tankers, directing the crews to abandon ship beforehand; Secretary of State Rubio said plainly that for every attempt Iran makes on a US naval vessel, 'they're going to lose tankers'. On Wednesday Iran's Revolutionary Guards said they attacked two US vessels, eight oil tankers and ten so-called non-compliant vessels attempting to transit the Strait, and UKMTO reported several merchant ships subject to disabling fire in both the Gulf of Oman and the Gulf. The Guards also struck a US military base in Jordan in retaliation; Jordan's army says it shot down 18 missiles. The genuinely new development, and the one that changes the geography of the risk, is that the Guards for the FIRST TIME extended their declared prohibited zone beyond the Strait itself into parts of the Gulf of Oman and the ARABIAN SEA, with spokesman Hossein Mohebi saying exact coordinates will follow and that any vessel entering without Iranian coordination will be subject to sanctions. Alongside the military escalation came a diplomatic one: the IAEA board of governors voted 23-3 with 8 abstentions to refer Iran to the UN Security Council over nuclear non-compliance, with Russia, China and Niger against. Iran's Guards named their terms for ending the war - no renewed threats, Israeli withdrawal from Lebanon, an end to the Yemen blockade, release of USD 24 billion in frozen assets, and no interference in Iran's nuclear and missile programmes - while Netanyahu said Israel is 'very close' to bringing down the Iranian government. On timing, Trump asserted the conflict will end immediately after November's US midterm elections because Iran 'can't hold out any longer'; the Wall Street Journal quotes US officials saying his top advisers privately warn the war could drag on through the remaining two years of his term. That gap between the public and private timelines is the honest state of the de-escalation trade. One correction to this file's own framing: it has been carrying 'transits still run above nine million barrels a day against roughly twenty million pre-conflict' as a countervailing fact. AFP now reports that Iran has asserted control of the Strait since February with traffic VIRTUALLY PARALYSED, that Tehran requires vessels to obtain permission and pay transit fees, and TradingEconomics describes the war as having CLOSED the Strait. The harder characterisation should be treated as the more current one, which makes the oil risk premium better justified rather than worse. Prices confirm: Brent breached 100 dollars for the first time since July, closing at 101.21 and trading 101.039; WTI is 96.074, up 5.25% on the week and 15.49% on the month; EU gas is 79.1702 euros per MWh and up 34.66% on the month and 144.70% on the year; UK gas is 196.61 pence and up 36.33% on the month. Now the part that matters for FX, and it is a negative result. Gold FELL 1.41% on the week to 4,409.98. The Swiss franc WEAKENED 0.19% on the week, USD/CHF at 0.80904. The Canadian dollar did not move at all as Brent broke 100 - USD/CAD is 1.38060 and UP 0.08% on the week. Three separate channels that should have transmitted this escalation into currencies did not. The conclusion this file draws is that the war's risk premium is now fully expressed in energy and no longer in FX, and that the currency market has gone back to trading central banks. Five consequences follow. First, XAU/USD is DOWNGRADED from LONG to RANGE - this week was the cleanest available test of the geopolitical-bid thesis and gold failed it; silver stays LONG only because its industrial leg, +4.33% on the month against gold's +0.92%, is doing independent work. Second, every CAD expression stays a RANGE or low-conviction until the loonie starts monetising its own terms of trade again; the market is trading the -41,700 August jobs print and 2.0% wage growth instead, and it is right to. Third, yesterday's argument that the franc is the cleanest European hedge against the gas shock should be held loosely - it is not visible in the price. Fourth, the gas channel remains the real FX transmission and it is a terms-of-trade TAX rather than a haven story: German storage is only 53% full against an EU aggregate of 65% and an Italian 83%, Morgan Stanley has raised its winter TTF forecast to about 85 euros with risk to the upside and says it is too late for Qatari LNG to return before winter, leaving Europe with its lowest storage in 15 years and almost no buffer to cold weather. That taxes EUR and GBP directly, lands on the ECB today, and keeps GER40 SHORT. Fifth, the entire tightening board still rests on this one input and the central banks say so explicitly - the RBA's August minutes list Middle East oil FIRST among the hike arguments, the BoC's September statement flags the continuation of the war as an upside inflation risk, the RBNZ attributes its 4.1% inflation largely to Middle East fuel prices, the BoE expects energy to lift CPI later this year, and BoJ board member Masu named Iran-conflict fuel and chemical costs among the persistent price pressures justifying further hikes. Five reaction functions from one input, which is also why the entire board would reprice together on a credible de-escalation headline. That single headline remains the largest correlated risk across every position in this file - and note that it is now a risk to the ENERGY leg far more than to the FX legs, since the FX market has already stopped paying for the war.",
-  "updatedAt": "2026-09-10T04:46:26.388Z"
+  "geopolitics": "The war escalated again overnight and the FX market again declined to price it, which is now the single most reliable feature of this regime. The United States is operating an explicit tanker-for-tanker policy approved by President Trump: Washington sank five Iranian oil tankers in the Gulf of Oman and near Kharg Island after accusing Tehran of firing ballistic missiles at a US warship, and Iran retaliated by attacking 10 ships near the Strait of Hormuz and firing missiles at US forces at the Al-Azraq base in Jordan. That follows the extension of Iran's prohibited zone beyond the Strait into the Gulf of Oman and the Arabian Sea, and an IAEA referral of Iran to the UN Security Council. TradingEconomics now describes the Strait as closed by the war in its own ECB commentary, which is the framing the ECB will be working from at 12:15Z. The transmission is entirely through energy and it is intensifying rather than fading: WTI is 97.269 and +1.27% today for +16.85% on the month, Brent is 102.167 and +14.82% monthly having broken 100 dollars on Wednesday, Urals is 95.74 and +16.94%, heating oil is +11.70%, coal +14.22%, LNG JKM +16.11%, and the European gas complex is the worst affected with EU gas at 80.30 euros per MWh and +36.58% monthly, German gas jumping 4.42% in a single session to 80.40 and +29.43% monthly, and UK gas at 200.38 pence per therm and +38.71% monthly. What is genuinely new today is that the FX and metals havens are not merely flat but actively falling. Gold has broken below 4,400 to 4,392.69 with only +0.54% left on the month, silver fell 0.94%, copper fell 1.00%, and the Swiss franc weakened for a second straight session with USD/CHF at 0.81110. The explanation is US real rates: CME FedWatch pricing for a September 16 Fed hike has drifted to 58% with TradingEconomics forecasting 4.00% outright, and a rising discount rate beats a geopolitical bid on every asset that pays no coupon. The FX read follows directly. Own the war through USOIL, where the premium actually accrues, and short GER40, where the energy tax lands on an index that cannot pass it through. Do NOT own the war through CAD - Brent above 102 has produced a weaker loonie two sessions running - and do NOT own it through gold, silver or the franc, all three of which have now failed the same test. The one currency that keeps paying is the yen, and it is paying for a reason unrelated to the war: the Bank of Japan is the only central bank on this board whose next hike sits in TradingEconomics own forecast. De-escalation is the main risk to USOIL, to GER40 short, and to the euro-area energy tax; it would do comparatively little to the yen trade, which is why the yen remains the cleanest expression on the board.",
+  "updatedAt": "2026-09-10T16:09:58.611Z"
 }
