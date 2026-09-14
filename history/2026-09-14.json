@@ -5,15 +5,20 @@
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + XAU + XAG + XCU + USOIL",
     "regime": "The regime is a pure supply shock priced through a rate-differential market, and the two words that matter are what it is NOT. It is not a risk-off shock: on a day when the main Hormuz bypass pipeline stayed shut, diplomacy collapsed and a tanker burned, gold FELL 0.50%, silver fell 0.67% and the Swiss franc lost 0.26% to the dollar. Havens are not being bought. It is not a demand shock either: the IEA cut its 2026 global demand forecast to a DECLINE of 2.5 million barrels a day, steeper than August's 1.6 million, and OPEC cut its demand-growth forecast for a fifth straight month - yet crude rose 2% anyway, because the barrels physically cannot move. What that leaves is a market where energy prices are set by pipes and straits while currencies are set by policy differentials, and the two channels only intersect in one place: the terms of trade. That is why CAD outperformed today and why the euro area, the largest net energy importer on this board with German gas at 80.65 euros a megawatt-hour and up 29.32% on the month, underperformed. The fourth feature is calendar compression - the Fed, the Bank of England and the Bank of Japan all decide inside 61 hours - which means every symbol on this board is effectively a bet on how those three land relative to what is already priced, with roughly 86% priced on the Fed and near-certainty priced on the BoJ.",
-    "nextBigEvent": "FOMC decision plus the Summary of Economic Projections, Wednesday September 16 at 18:00Z, press conference 18:30Z. TE carries consensus AND its own forecast at 4.00%, and CME FedWatch sits near 86%, up from 72% before last week's PPI. The hike is not the event - it is bought. The event is the dot plot, because TE's projection rows still show 3.6% for the first year and 3.4% for the second against 3.8% for the current year, which is a set of dots that implies CUTS after this hike. If Warsh's committee lifts those out-year dots to flat or higher, the dollar finally gets the trend that an 86% hike probability and a 4.9%-handle 10-year have not delivered all month; if the dots keep the easing path intact, the market reads Wednesday as the last hike and sells the fact. Warsh has refused forward guidance since Jackson Hole on August 28, so the dots are the only guidance available and their weight is unusually high. Before that, Canada CPI lands today at 12:30Z with the monthly rate expected to fall to 0.0% from +0.5%."
+    "nextBigEvent": "FOMC decision plus the Summary of Economic Projections, Wednesday September 16 at 18:00Z, press conference 18:30Z. TE carries consensus AND its own forecast at 4.00%, and CME FedWatch sits near 86%, up from 72% before last week's PPI. The hike is not the event - it is bought. The event is the dot plot, because TE's projection rows still show 3.6% for the first year and 3.4% for the second against 3.8% for the current year, which is a set of dots that implies CUTS after this hike. If Warsh's committee lifts those out-year dots to flat or higher, the dollar finally gets the trend that an 86% hike probability and a 4.9%-handle 10-year have not delivered all month; if the dots keep the easing path intact, the market reads Wednesday as the last hike and sells the fact. Warsh has refused forward guidance since Jackson Hole on August 28, so the dots are the only guidance available and their weight is unusually high. Before that, Canada CPI lands today at 12:30Z with the monthly rate expected to fall to 0.0% from +0.5%.",
+    "update": {
+      "at": "2026-09-14T14:21:30Z",
+      "title": "🇨🇦 CAD analysis updated",
+      "text": "Aug CPI in line at 3.0% y/y; MoM cooled to -0.1% vs 0.0% forecast, core to 2.4%, trimmed-mean held 1.9%. No score change - BoC stays frozen, oil-driven CAD case unaffected."
+    }
   },
   "dailyRead": "Start with the fact that did not move a score but should change how the whole board is read. Over the weekend two doors closed at once. Saudi Arabia's East-West pipeline - Petroline, 1,200 kilometres from the Eastern Province to the Red Sea port of Yanbu, carrying roughly 5 million barrels a day of crude that would otherwise transit the Gulf - was hit by drones launched from Iraq on September 10 and 11 and remains shut. Traders told Reuters that stored volumes at Yanbu cover exports for only five to seven days; past that window as much as 4% of global oil supply is exposed. Then, late Sunday, Omani Foreign Minister Badr Albusaidi announced that Monday's Gulf Cooperation Council-Iran meeting on the Strait of Hormuz shipping proposal had been postponed 'in the interests of consensus', at the request of unnamed regional states and by joint Tehran-Muscat decision, with no new date set. That announcement came hours after a vessel was struck near Qeshm Island killing one and injuring four, with Trump declining to say whether the US was responsible. So: the bypass is closed, the strait is still roughly 90% below pre-war flows, and the diplomatic track has no date on the calendar. Crude did exactly what it should: WTI +2.17% to 102.226, Brent +2.09% to 106.795, EU gas +4.30% to 82.94 euros. And here is the part that matters for FX. GOLD FELL. XAU/USD is at 4328.57, down 0.50% on the day, down 1.73% on the week and down 1.98% on the month. Silver fell 0.67% to 63.834. The Swiss franc lost another 0.26%, taking USD/CHF to 0.81862, up 1.12% on the week. Yesterday this file cut CHF from +1 to zero on the argument that a haven which will not bid on a burning tanker cannot be held long. Twenty-four hours later that call is validated by a completely independent asset: gold, with no central bank and no intervention risk attached to it, refused the same escalation. This is not a risk-off market. It is a market in which US real rates dominate everything and the war is being expressed exclusively through the price of physical energy. Second point, and this one IS a change: the petro-currency link came back. Yesterday's file said plainly that Brent gaining 9% on the week while USD/CAD rose 0.25% meant USOIL LONG and CAD LONG were no longer the same trade. Today they are the same trade again. USD/CAD sits at 1.38770, up just 0.03%, on a session in which the dollar index rose 0.32% to 99.439 and beat every other major - EUR -0.39%, NZD -0.53%, EUR/USD to 1.15535, NZD/USD to 0.57823. The Canadian dollar was the best G10 performer of the day. The specific fact that changed is the character of the oil move: last week's 9% was a risk premium, and risk premia do not transmit to a petro-currency when the domestic central bank is frozen. A pipeline that is physically shut with a five-to-seven-day inventory buffer is a supply shock, and supply shocks move the terms of trade directly. CAD is not upgraded, and the reason is discipline rather than doubt: Canada's own August CPI prints at 12:30Z today with the monthly rate expected to collapse to 0.0% from +0.5%, trimmed-mean at 1.9% and median at 2.0%, and August employment was -41,700 with retail sales -0.8% m/m. Core measures at or below target keep the Bank of Canada frozen no matter where crude trades, and raising a score hours before its own inflation print on one session of price action is exactly the noise-chasing this file is supposed to avoid. If today's CPI does not disappoint, CAD is the first upgrade candidate on the board. Third, and this needs saying straight because yesterday's argument depended on it: the yen did NOT beat the dollar today. USD/JPY rose 0.37% to 154.177 and the weekly loss has shrunk to -0.12% from -1.69% at Friday's close; the monthly is still -3.31%. Yesterday JPY was held at +3 specifically because it won the head-to-head on the hottest US data day of the month. That evidence did not repeat. JPY still holds +3, but the honest description is that the score is now a FORWARD call rather than a validated result: the BoJ is expected to move to 1.25% on Friday, the highest policy rate since roughly 1995, DBS calls it 'almost a done deal' with a hawkish 25bp the most likely outcome, and 62% of surveyed economists see 1.75% by end-Q2 2027. One 0.37% session inside a broad dollar bid is not a reason to flip a +3, but it is a reason to name the invalidation precisely: a hike delivered Friday with an explicit pause attached is the single event that cuts the yen and unwinds every SHORT XXX/JPY on this list at once. Fourth, the base rates. Nothing printed overnight in the eight economies. TE was re-verified this morning across all of them and every value matches yesterday: US CPI 3.4% with the policy rate at a 3.75% upper bound and FedWatch near 86%; euro-area HICP 3.3% with the ECB deposit facility confirmed at 2.50% after the September 10 hike from 2.25%, main refinancing 2.65%, marginal lending 2.90%; UK CPI 2.9% and Bank Rate 3.75%; Japan CPI 1.9% and the policy rate 1.00%; Australia CPI 3.5% and the cash rate 4.35%; New Zealand CPI 4.1% and the OCR 2.75%; Canada CPI 3.0% and the overnight rate 2.25%; Switzerland CPI 0.8% and the SNB at exactly 0%. Fifth, the industrial complex is deteriorating faster than anything else on this board and it is the AUD tripwire. Copper is at 6.3838 USD per pound, down 1.32% today, down 5.27% on the WEEK and down 3.33% on the month - a materially worse reading than the -1.42% monthly figure that framed Thursday's discussion. Yesterday's file set a two-part trigger for cutting Australia to zero, copper plus domestic employment, and said the employment half could not be tested until the mid-October labour force report. That rule is kept today, so AUD holds +1, but it is now the weakest +1 on the board and the test arrives sooner than October: China industrial production and retail sales print Tuesday at 05:00Z with consensus at 4.8% and 0.8%. A miss on both, with copper already down 5% in five sessions, meets the spirit of the trigger through the demand channel rather than the domestic one, and AUD goes to zero. Consumer confidence at 84.4 from 88.9 and building permits at 17,687 from 18,351 are already pointing the same way. Sixth, sterling. GBP stays at zero because both tails are live inside 48 hours and the calendar loads them in the worst possible order. Tuesday at 06:00Z the labour market report is expected to show unemployment RISING to 5.0% from 4.9%, average earnings including bonus FALLING to 3.9% from 4.1%, employment change +70K from +83K and a claimant count that TE forecasts at -5,000 against a +8,300 consensus. Wednesday at 06:00Z CPI is expected to RISE to 3.1% from 2.9% with core at 2.7%. Inflation accelerating into a loosening labour market is the configuration that freezes a committee, and the Bank of England decides Thursday at 11:00Z with TE carrying a 3.75% forecast and a 3/9 vote-hike consensus. Zero is not indecision here; it is the accurate reading of a distribution with mass on both sides. Seventh, the euro. EUR/USD closed the week at 1.15985 and is now 1.15535, down 0.39% today and 0.59% on the week, despite an ECB that hiked eleven days ago and told the market the Middle East conflict continues to fuel inflationary pressures. The euro is fully paid for its own central bank, and it now carries the largest energy-import bill on the board: German gas at 80.65 euros is up 29.32% on the month and EU gas at 82.94 is up 34.29%. That combination is why EUR/CAD moves from RANGE to SHORT today - the same barrel that helps Canada hurts the euro area - and why GER40 moves from RANGE to SHORT. Four ECB speakers are on the tape today alone: Schnabel at 09:15Z, Cipollone at 13:00Z, Lagarde at 15:15Z and Machado at 16:00Z, with euro-area Q2 wage growth at 3.4% due Wednesday. Any softening of the further-tightening language is the euro's main downside risk this week. Eighth, the kiwi remains the cleanest short leg. NZD/USD at 0.57823 was the worst major again today at -0.53%, is -1.61% on the week and -2.03% on the month, and it carries the HIGHEST headline inflation in the G10 at 4.1% with a central bank that has hiked twice. The RBNZ explained why itself: the Q2 spike was largely imported fuel, core and expectations remain consistent with a return to the 1-3% band by mid-2027, and the Committee flagged weak income growth, job insecurity and flat house prices. Consumer confidence at 80.4 from 94.7 is a fourteen-point collapse in a month. A central bank hiking into an energy shock it expects to fade earns a growth discount, not a currency bid. So the shape of the book today is unchanged at the score level and meaningfully changed at the symbol level: keep the yen crosses short and size them for Friday, keep USD/CHF and the CHF crosses long because two independent haven tests have now failed, re-pair USOIL LONG with CAD strength rather than against it, and move the copper-linked and energy-importing exposures - AUD/CAD, EUR/CAD, GER40, XCU - to the short side of the same supply shock.",
   "today": [
     {
       "ccy": "CAD",
       "moved": true,
-      "headline": "CAD was the BEST G10 of the day at -0.03% against a dollar that beat every other major, as Brent rose 2.09% on a physically shut Saudi pipeline - the petro link is transmitting again",
-      "read": "Trade USOIL LONG and CAD strength as the SAME position again, reversing yesterday's split, because a shut bypass with five to seven days of cover is a supply shock rather than a risk premium. CAD is the first upgrade candidate on the board if today's 12:30Z CPI does not disappoint - but the monthly rate is expected at 0.0% and trimmed-mean at 1.9%, so the Bank stays frozen and the score stays +1 for now."
+      "headline": "Aug CPI in line at 3.0% y/y; monthly rate cooled to -0.1% vs 0.0% forecast",
+      "read": "The Bank stays frozen on the file's own criteria - the monthly rate missed to the downside but trimmed-mean held at 1.9%, so neither the upgrade nor the downgrade case fired. The petro-currency channel remains the reason to hold CAD strength; watch Wednesday's Summary of Deliberations for the next signal."
     },
     {
       "ccy": "CHF",
@@ -72,7 +77,7 @@
     {
       "icon": "🇨🇦",
       "t": "The petro-currency link came BACK: CAD was the best G10 of the day while the dollar beat everything else",
-      "s": "USD/CAD 1.38770, up just 0.03%, against DXY +0.32% to 99.439 and EUR -0.39%, NZD -0.53%. Yesterday's file said USOIL LONG and CAD LONG were no longer the same trade; today they are, because a shut pipeline is a supply shock and supply shocks move the terms of trade. Canada CPI at 12:30Z is the test."
+      "s": "USD/CAD 1.38770, up just 0.03%, against DXY +0.32% to 99.439 and EUR -0.39%, NZD -0.53%. Yesterday's file said USOIL LONG and CAD LONG were no longer the same trade; today they are, because a shut pipeline is a supply shock and supply shocks move the terms of trade. August CPI then landed exactly at consensus (3.0% y/y) with the monthly rate cooling to -0.1%, confirming the Bank stays frozen without disturbing the oil-driven case."
     },
     {
       "icon": "🇯🇵",
@@ -129,7 +134,7 @@
     "CAD": {
       "next": "hold",
       "when": "Late October - the BoC held on Sept 2 and its next decision follows the Oct 19 Business Outlook and Consumer Expectations surveys; the Summary of Deliberations is due Sept 16 at 17:30Z",
-      "note": "TE re-verified: overnight rate 2.25%, CPI 3.0% y/y with +0.5% m/m, unemployment 6.4%, GDP +0.8% q/q with 3.3% annualised and 1.1% annual, employment -41,700, retail sales -0.8% m/m, manufacturing PMI 53.0, business confidence 64.3 from 55.1, current account +8.8bn. Today is the day the petro-currency channel started transmitting again, and the reason is the character of the oil move rather than its size. Last week Brent gained 9% on a risk premium and USD/CAD ROSE 0.25%. Today Brent gained 2.09% because Saudi Arabia's main Hormuz-bypass pipeline is physically shut with five to seven days of Yanbu cover, and USD/CAD was flat at 1.38770 - the best G10 result of a session in which the dollar index rose 0.32% and beat everything else. Risk premia do not move the terms of trade; supply shocks do. That reverses yesterday's explicit statement that USOIL LONG and CAD LONG were no longer the same trade, and it is today's main symbol-level change. CAD is NOT upgraded to +2, on discipline: August CPI prints at 12:30Z today with headline consensus 3.0% y/y, the MONTHLY rate expected to fall to 0.0% from +0.5%, core 2.3% y/y, trimmed-mean 1.9%, median 2.0% and CPI common 2.7%. Core measures at or below target keep the Bank frozen no matter where crude trades, and the domestic picture is genuinely soft with 41,700 jobs lost in August and retail sales -0.8%. Raising a score hours before its own inflation print, on one session, is the noise-chasing this file avoids. If today's CPI lands at or above consensus, CAD is the first upgrade candidate on the board. Wednesday's Summary of Deliberations at 17:30Z shows whether the internal split is moving ahead of the data."
+      "note": "TE re-verified: overnight rate 2.25%, CPI 3.0% y/y with +0.5% m/m, unemployment 6.4%, GDP +0.8% q/q with 3.3% annualised and 1.1% annual, employment -41,700, retail sales -0.8% m/m, manufacturing PMI 53.0, business confidence 64.3 from 55.1, current account +8.8bn. Today is the day the petro-currency channel started transmitting again, and the reason is the character of the oil move rather than its size. Last week Brent gained 9% on a risk premium and USD/CAD ROSE 0.25%. Today Brent gained 2.09% because Saudi Arabia's main Hormuz-bypass pipeline is physically shut with five to seven days of Yanbu cover, and USD/CAD was flat at 1.38770 - the best G10 result of a session in which the dollar index rose 0.32% and beat everything else. Risk premia do not move the terms of trade; supply shocks do. That reverses yesterday's explicit statement that USOIL LONG and CAD LONG were no longer the same trade, and it is today's main symbol-level change. CAD stays at +1: August CPI landed at 3.0% y/y, exactly matching both consensus and July, with the monthly rate undershooting to -0.1% against a 0.0% forecast (previous +0.5%), core CPI at 2.4% y/y up from 2.3%, trimmed-mean unchanged at 1.9% and median unchanged at 2.0%. Core measures still at or close to target keep the Bank frozen no matter where crude trades, and the domestic picture stays genuinely soft with 41,700 jobs lost in August and retail sales -0.8%. The print was not the beat this file said it needed to lift CAD to +2, and the monthly miss did not push trimmed-mean under 1.9%, so it is not the downgrade case either - the oil-driven terms-of-trade case for CAD strength now stands on its own, independent of today's inflation data. Wednesday's Summary of Deliberations at 17:30Z shows whether the internal split is moving ahead of the data."
     },
     "CHF": {
       "next": "hold",
@@ -158,9 +163,9 @@
       "ccy": "CAD",
       "score": 1,
       "verdict": "MIXED",
-      "tag": "Oil link switched back on",
-      "drivers": "Overnight rate 2.25% with core CPI 2.3% y/y, trimmed-mean 1.9% and median 2.0% all at or below target, employment -41,700 and retail sales -0.8% m/m, against Q2 GDP at 3.3% annualised and Brent up 2.09% to 106.795 with USD/CAD flat at 1.38770.",
-      "forward": "⚖️ Balanced, and promoted to the top of the +1 group because today reversed a correlation this file declared broken yesterday. The distinction that matters is the CHARACTER of the oil move. Last week Brent gained 9% on a risk premium and USD/CAD rose 0.25%, which is why the link was called dead. Today Brent gained 2.09% because Saudi Arabia's East-West pipeline - roughly 5 million barrels a day of Hormuz-bypass capacity - is physically shut with only five to seven days of Yanbu cover, and USD/CAD was the only G10 pair to hold flat against a dollar index up 0.32%. Risk premia do not move the terms of trade; physical supply shocks do. CAD is deliberately NOT upgraded, because August CPI prints at 12:30Z today with the monthly rate expected to fall to 0.0% from +0.5% and every core measure at or below target, which keeps the Bank frozen regardless of crude, and because upgrading hours before a currency's own inflation print on one session is exactly what this file is supposed to avoid. What would confirm the upgrade: CPI at or above consensus today plus the pipeline still shut into Wednesday's Summary of Deliberations. What would invalidate: a monthly print below 0.0% with trimmed-mean under 1.9%, which puts BoC cuts back in play."
+      "tag": "In-line CPI, oil case intact",
+      "drivers": "Overnight rate 2.25% with August CPI landing in line at 3.0% y/y (matching July and consensus), core CPI ticking up to 2.4% y/y from 2.3% while trimmed-mean held at 1.9% and median at 2.0%, and the monthly rate undershooting to -0.1% against a 0.0% forecast; employment -41,700, retail sales -0.8% m/m, Q2 GDP +3.3% annualised, Brent 106.795 with USD/CAD flat at 1.38770.",
+      "forward": "⚖️ Balanced, and today's test closed exactly on the line it was set up to test. August CPI printed 3.0% y/y, matching both the July reading and consensus - not the beat that this file said was needed to lift CAD to +2. The monthly rate undershot to -0.1% against a 0.0% forecast, a cooler outcome than expected, while trimmed-mean held at 1.9% and median at 2.0%, both exactly where they were forecast and both still at or close to the Bank's target; core CPI ticked up to 2.4% from 2.3% but stayed too close to target to move the needle on its own. That combination keeps the Bank of Canada frozen on the file's own stated rule - the monthly miss did not push trimmed-mean under 1.9%, so this is not the downgrade case either. CAD holds at +1, and the reason the score does not move at all today is that the oil-driven outperformance from yesterday and the CPI print are now two separate, non-reinforcing stories: the petro-currency channel still argues for CAD strength on the terms of trade, while the CPI print simply confirms the Bank of Canada has no reason to move off 2.25% in either direction before the October 19 Business Outlook survey. Wednesday's Summary of Deliberations at 17:30Z is the next read on whether the internal committee split is shifting ahead of the data."
     },
     {
       "ccy": "EUR",
@@ -264,8 +269,8 @@
       "sym": "CAD/JPY",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "Downgraded from HIGH: still short on the policy gap between a frozen BoC at 2.25% and a BoJ moving to 1.25%, but the Canadian leg strengthened materially today as the petro link resumed and CAD outperformed every G10 peer.",
-      "risk": "This is now the weakest yen short on the board - a Canada CPI beat at 12:30Z on top of a shut pipeline could turn it into a range trade before Friday; the yen leg also carries the BoJ pause risk."
+      "why": "Downgraded from HIGH: still short on the policy gap between a frozen BoC at 2.25% and a BoJ moving to 1.25%, but the Canadian leg strengthened materially today as the petro link resumed and CAD outperformed every G10 peer, a case reinforced by an in-line August CPI (3.0% y/y) that removes near-term BoC-cut risk without giving grounds for a hike either.",
+      "risk": "This is still the weakest yen short on the board - Canada's CPI landed in line rather than the beat that would have turned this into a range trade, so the short stays on the BoC/BoJ policy gap; the yen leg still carries the BoJ pause risk into Friday."
     },
     {
       "sym": "USD/JPY",
@@ -307,7 +312,7 @@
       "bias": "LONG",
       "conv": "MEDIUM",
       "why": "Today's cleanest expression of the regime: the best-performing G10 currency, supported by a physical oil supply shock, against the worst-performing haven at a zero policy rate. Both legs worked in the same session.",
-      "risk": "Canada CPI at 12:30Z with the monthly rate expected at 0.0% and trimmed-mean at 1.9% - a soft print removes the CAD leg while leaving the CHF leg intact, turning this into a slower grind."
+      "risk": "August CPI landed in line at 3.0% y/y with trimmed-mean unchanged at 1.9%, so the soft-print risk that would have removed the CAD leg did not materialise; the monthly rate did cool further to -0.1%, but not enough to disturb the oil-driven case, so the LONG stands on both legs."
     },
     {
       "sym": "AUD/CHF",
@@ -321,7 +326,7 @@
       "bias": "SHORT",
       "conv": "MEDIUM",
       "why": "The worst major against the best of the session, with the added structural point that a shut Hormuz bypass raises New Zealand's imported fuel bill while improving Canada's terms of trade - the same barrel cuts opposite ways.",
-      "risk": "A soft Canada CPI at 12:30Z removes the CAD leg; a pipeline repair or rescheduled Muscat meeting removes the structural argument on both sides at once."
+      "risk": "Canada's August CPI printed in line at 3.0% y/y and did not deliver the soft surprise that would have removed the CAD leg, so the short stands; a pipeline repair or rescheduled Muscat meeting still removes the structural argument on both sides at once."
     },
     {
       "sym": "XAU/USD",
@@ -370,7 +375,7 @@
       "bias": "SHORT",
       "conv": "MEDIUM",
       "why": "Upgraded from LOW-MED: the Canadian leg gained a real driver today as the petro link resumed and CAD outperformed every peer, against a sterling with two-sided data risk and a BoE hold Thursday.",
-      "risk": "Canada CPI at 12:30Z with the monthly rate expected to fall to 0.0% is the immediate risk to the long leg; a hawkish BoE vote split Thursday is the risk to the short leg."
+      "risk": "Canada's August CPI landed in line at 3.0% y/y with core gauges anchored at target, removing the near-term risk to the long CAD leg without adding a hawkish case either; a hawkish BoE vote split Thursday remains the risk to the short GBP leg."
     },
     {
       "sym": "JPYBASKET",
@@ -384,13 +389,13 @@
       "bias": "SHORT",
       "conv": "LOW-MED",
       "why": "Changed from RANGE: both currencies score +1, but the same barrel cuts opposite ways - a shut Saudi bypass improves Canada's terms of trade while EU gas at 82.94 euros, up 34.29% on the month, taxes the euro area directly. This is the purest terms-of-trade expression of today's supply shock.",
-      "risk": "Both central banks are on hold until late October, so there is no rate catalyst to force the move; a soft Canada CPI at 12:30Z or a Hormuz de-escalation neutralises the whole thesis."
+      "risk": "Both central banks are on hold until late October, so there is no rate catalyst to force the move; Canada's in-line August CPI (3.0% y/y, trimmed-mean unchanged at 1.9%) removed the soft-print risk without adding a rate catalyst of its own, so a Hormuz de-escalation remains the main thing that neutralises the whole thesis."
     },
     {
       "sym": "AUD/CAD",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "Changed from RANGE: the copper-versus-oil divergence in one ticket. Copper is -5.27% on the week and -1.32% today while WTI is +2.17%, so two +1 commodity currencies are being pulled in opposite directions by the same global supply picture.",
+      "why": "Changed from RANGE: the copper-versus-oil divergence in one ticket. Copper is -5.27% on the week and -1.32% today while WTI is +2.17%, so two +1 commodity currencies are being pulled in opposite directions by the same global supply picture, a divergence Canada's in-line August CPI (3.0% y/y, core measures anchored at target) did nothing to disturb since it left the Bank of Canada exactly where it already was.",
       "risk": "The narrowest fundamental spread on the board - both are +1 with central banks on hold - so it needs the commodity divergence to persist; a China beat Tuesday reverses the copper leg."
     },
     {
@@ -418,8 +423,8 @@
       "sym": "USD/CAD",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "Changed from LONG: 1.38770, up just 0.03% on a day the dollar index rose 0.32% and beat every other major. The dollar's rate advantage and Canada's restored oil tailwind are now cancelling each other out, and Canada CPI prints at 12:30Z.",
-      "risk": "Trade the levels, not a direction, into today's CPI and Wednesday's FOMC - a CPI beat with the pipeline still shut breaks it lower, hawkish dots with a soft CPI break it higher."
+      "why": "Changed from LONG: 1.38770, up just 0.03% on a day the dollar index rose 0.32% and beat every other major. The dollar's rate advantage and Canada's restored oil tailwind are now cancelling each other out, and Canada's August CPI landed exactly in line at 3.0% y/y (monthly -0.1% vs 0.0% forecast, trimmed-mean unchanged at 1.9%), leaving that balance undisturbed.",
+      "risk": "Trade the levels, not a direction, into Wednesday's FOMC - the CPI beat that could have broken this lower did not arrive, so the range holds; hawkish dots on Wednesday with the oil tailwind still in place is now the cleaner break-lower scenario for USD/CAD."
     },
     {
       "sym": "XCU/USD",
@@ -856,14 +861,14 @@
     "CAD": {
       "inflation": {
         "value": "3.0%",
-        "trend": "rising",
-        "note": "Jul CPI",
+        "trend": "stable",
+        "note": "Aug CPI",
         "hist": [
-          2.4,
           2.8,
           3.2,
           3.2,
           2.8,
+          3,
           3
         ]
       },
@@ -994,7 +999,33 @@
       "event": "Canada CPI (August)",
       "impact": "high",
       "note": "Headline consensus 3.0% y/y with the MONTHLY rate expected to fall to 0.0% from +0.5%, core 2.3% y/y, core MoM 0.2%, trimmed-mean 1.9%, median 2.0% and CPI common 2.7%. The decisive print for whether CAD gets upgraded from +1. Core measures at or below target keep the Bank frozen no matter where crude trades; a beat on top of a shut Saudi pipeline is the combination that lifts the score.",
-      "when": "2026-09-14T12:30:00Z"
+      "when": "2026-09-14T12:30:00Z",
+      "result": [
+        {
+          "title": "Inflation Rate YoY",
+          "actual": 3,
+          "forecast": 3,
+          "previous": 3,
+          "unit": "%",
+          "importance": 1
+        },
+        {
+          "title": "Core Inflation Rate YoY",
+          "actual": 2.4,
+          "forecast": null,
+          "previous": 2.3,
+          "unit": "%",
+          "importance": 0
+        },
+        {
+          "title": "Inflation Rate MoM",
+          "actual": -0.1,
+          "forecast": 0,
+          "previous": 0.5,
+          "unit": "%",
+          "importance": 0
+        }
+      ]
     },
     {
       "date": "Sep 14",
@@ -1156,5 +1187,5 @@
     }
   ],
   "geopolitics": "Two doors closed over the weekend and the market repriced only one channel. First, Saudi Arabia's East-West Crude Oil Pipeline - Petroline, 1,200 kilometres from the Eastern Province to the Red Sea port of Yanbu, carrying roughly 5 million barrels a day of crude that would otherwise transit the Gulf - was struck by drones launched from Iraqi territory on September 10 and 11 and remains shut as a precaution. Riyadh issued its strongest condemnation but said it would not retaliate for now, at Baghdad's request. Traders told Reuters that stored volumes at Yanbu cover exports for only five to seven days; past that window as much as 4% of global supply is exposed. This matters more than another tanker strike because Petroline IS the bypass - the physical answer to a closed Hormuz - and with it offline there is no workaround left. Second, late on September 13 Omani Foreign Minister Badr Albusaidi announced that Monday's Gulf Cooperation Council-Iran meeting on the Hormuz shipping proposal had been postponed 'in the interests of consensus', at the request of unnamed regional states and by joint Tehran-Muscat decision, with no new date set. The postponement came hours after an attack near Qeshm Island, about 22km from Bandar Abbas, killed one and wounded four aboard an Iranian commercial vessel; UKMTO separately reported a vessel hit by a projectile with a severe fire and evacuation. Iran's president said 'Iran won't surrender'; Trump said Iran 'wants to make a deal so bad' that they are 'calling constantly', and when asked whether the US struck the vessel replied 'I don't want to say'. The underlying dispute is unchanged: Muscat's July proposal to split control of the strait 50-50 with voluntary transit fees was rejected by Tehran, which insists fees be compulsory and that it will not reopen the strait until the US naval blockade of Iranian ports is lifted. Hormuz traffic remains roughly 90% below pre-war levels against about 20 million barrels a day before February 28. Trump is pushing to restore flows ahead of November's midterms, which is the strongest force for de-escalation on the board and also the reason a sudden deal headline is a live tail risk. The FX transmission is unusually clean and unusually narrow. Energy repriced: WTI +2.17% to 102.226, Brent +2.09% to 106.795, EU gas +4.30% to 82.94 euros with the monthly at +34.29%, German gas 80.65 at +29.32% monthly, gasoline +1.61%. Havens did not: gold FELL 0.50% to 4328.57, silver fell 0.67% to 63.834, and USD/CHF ROSE 0.26% to 0.81862. That divergence is the single most important read on this page - the war is being expressed exclusively through physical energy, while US real rates own the haven bid. It is also why the demand-side counterweight matters: the IEA cut its 2026 global demand forecast to a DECLINE of 2.5 million barrels a day from 1.6 million in August, OPEC cut its demand-growth forecast for a fifth consecutive month and the EIA still projects Brent averaging near $90 in H2 on a gradual Hormuz recovery. Crude is rising on supply despite a deteriorating demand picture, which makes the rally fragile to exactly one headline: a pipeline restart or a rescheduled Muscat date. Practically: hold USOIL LONG and pair it WITH CAD strength rather than against it, since the terms-of-trade channel is transmitting again; keep the CHF crosses long because two structurally unrelated havens have now refused the same escalation; short the energy importers of this shock through EUR/CAD, GER40 and the NZD crosses; and keep XAU and XAG short as a Fed trade rather than a war trade, with Wednesday's dot plot - not the Strait - as the event that decides them.",
-  "updatedAt": "2026-09-14T06:33:39.080Z"
+  "updatedAt": "2026-09-14T14:23:46.920Z"
 }
