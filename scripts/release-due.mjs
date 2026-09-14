@@ -31,9 +31,12 @@ import {
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, '..');
 const ROOT = path.resolve(REPO, '..');
-const DATA_JSON = path.join(REPO, 'data.json');
-const DATA_JS = path.join(ROOT, 'Forex_Dashboard', 'data.js');
-const STATE = path.join(REPO, '.release-state.json');
+// Overridable for the cloud routine, which works on shadow/ files and keeps its
+// state IN the repo (a cloud run has no Mac to keep .release-state.json on).
+const envPath = (v, dflt) => (process.env[v] ? path.resolve(process.env[v]) : dflt);
+const DATA_JSON = envPath('FX_DATA_JSON', path.join(REPO, 'data.json'));
+const DATA_JS = envPath('FX_DATA_JS', path.join(ROOT, 'Forex_Dashboard', 'data.js'));
+const STATE = envPath('FX_RELEASE_STATE', path.join(REPO, '.release-state.json'));
 
 const SETTLE_MIN = 2;          // a release isn't "due" until figures can plausibly exist
 const STALE_H = 6;             // older than this: leave it to the next daily report

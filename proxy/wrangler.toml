@@ -14,3 +14,9 @@ id = "571a77de22764b5b904ca9f39224dc98"
 # (pre-release alerts every 5 min, release results every 2 min).
 [triggers]
 crons = ["* * * * *"]
+
+# Cloud analyst routine (claude.ai/code/routines) that the Worker starts after each
+# red-folder result push. The ID is not secret; the matching token IS:
+#   npx wrangler secret put ROUTINE_FIRE_TOKEN
+[vars]
+ROUTINE_ID = "trig_012ZHTBaARkJjBHivSZJuGNQ"

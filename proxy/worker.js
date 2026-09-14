@@ -186,7 +186,50 @@ async function releaseResults(env, groups) {
     await env.FX_SUBS.put(sentKey, '1', { expirationTtl: 3 * 86400 });   // mark BEFORE sending
     await broadcast(env, buildResultNotification(g, m));
     await saveResult(env, { id: g.id, when: g.when, ccy: g.ccy, lines: m.lines, at: new Date(now).toISOString() });
+    await fireRoutine(env, g, m);
   }
+}
+
+/* Start the cloud analyst routine for this release through its API trigger.
+ * Configured by ROUTINE_ID (wrangler.toml [vars]) and ROUTINE_FIRE_TOKEN (a
+ * secret generated in the routine's edit page at claude.ai/code/routines). Does
+ * nothing until both exist. The routine receives `text` wrapped as untrusted
+ * payload data; its saved prompt says how to use it. Each fire counts toward the
+ * account's daily routine-run cap. */
+async function fireRoutine(env, g, m) {
+  if (!env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return;
+  const key = 'fire:' + g.id;
+  if (await env.FX_SUBS.get(key)) return;
+  await env.FX_SUBS.put(key, '1', { expirationTtl: 3 * 86400 });       // mark BEFORE firing
+  const figures = m.lines.filter((l) => l.actual != null).map((l) =>
+    `- ${l.title}: actual ${l.actual}` +
+    (l.forecast ? ` (forecast ${l.forecast}${l.cmp ? ', ' + l.cmp : ''})` : '') +
+    (l.previous ? `, previous ${l.previous}` : ''));
+  const text = [
+    `RED-FOLDER RELEASE ${g.id}`,
+    `Currency: ${g.ccy}`,
+    `Released at: ${g.when}`,
+    `Red-folder lines: ${g.lines.map((l) => l.title).join(', ')}`,
+    'Figures (ForexFactory format; actuals from TradingView):',
+    ...figures,
+  ].join('\n');
+  let outcome;
+  try {
+    const r = await fetch(`https://api.anthropic.com/v1/claude_code/routines/${env.ROUTINE_ID}/fire`, {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + env.ROUTINE_FIRE_TOKEN,
+        'anthropic-beta': 'experimental-cc-routine-2026-04-01',
+        'anthropic-version': '2023-06-01',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text }),
+    });
+    outcome = { id: g.id, status: r.status, at: new Date().toISOString() };
+  } catch (e) {
+    outcome = { id: g.id, error: String((e && e.message) || e), at: new Date().toISOString() };
+  }
+  await env.FX_SUBS.put('fire:last', JSON.stringify(outcome), { expirationTtl: 14 * 86400 });
 }
 
 async function saveResult(env, rec) {
@@ -226,11 +269,14 @@ async function probeResults(url, env) {
 
   let lastCron = null;
   try { lastCron = JSON.parse((await env.FX_SUBS.get('cron:last')) || 'null'); } catch (e) {}
+  let lastFire = null;
+  try { lastFire = JSON.parse((await env.FX_SUBS.get('fire:last')) || 'null'); } catch (e) {}
   return json({
     status: r.status, events: events.length,
     withActual: events.filter((e) => e.actual != null).length,
     ff,
     lastCron,                                   // null = the cron has not run since this was added
+    lastFire,                                   // last routine fire: HTTP status or error
   });
 }
 

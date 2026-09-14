@@ -18,9 +18,18 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-const ROOT = path.resolve(__dirname, '..', '..');           // .../Trading forex
-const DATA_JS = path.join(ROOT, 'Forex_Dashboard', 'data.js');
-const OUT = path.resolve(__dirname, '..', 'data.json');
+const REPO = path.resolve(__dirname, '..');
+const ROOT = path.resolve(REPO, '..');                     // .../Trading forex on the Mac
+/* Paths are overridable (added 2026-09-14 for the cloud routine):
+ *   FX_DATA_JS       source data.js. Default: ../Forex_Dashboard/data.js when it
+ *                    exists (Mac / Cowork layout), otherwise <repo>/source/data.js
+ *                    (a cloud clone has no parent Forex_Dashboard folder).
+ *   FX_OUT           data.json to write. Default: <repo>/data.json.
+ *   FX_NO_HISTORY=1  skip history/ — shadow builds must not touch the live archive. */
+const LEGACY_DATA_JS = path.join(ROOT, 'Forex_Dashboard', 'data.js');
+const DATA_JS = process.env.FX_DATA_JS ? path.resolve(process.env.FX_DATA_JS)
+  : (fs.existsSync(LEGACY_DATA_JS) ? LEGACY_DATA_JS : path.join(REPO, 'source', 'data.js'));
+const OUT = process.env.FX_OUT ? path.resolve(process.env.FX_OUT) : path.join(REPO, 'data.json');
 
 /* ---- degraded-mount safety (added 2026-08-28) ------------------------------
  * When this runs inside the Cowork Linux sandbox, the connected-folder mount can
@@ -153,7 +162,8 @@ function main() {
   console.log('  symbols    : ' + out.symbols.length);
   console.log('  updatedAt  : ' + out.updatedAt);
 
-  writeHistory(out);
+  if (process.env.FX_NO_HISTORY === '1') console.log('  history    : skipped (FX_NO_HISTORY=1)');
+  else writeHistory(out);
 }
 
 /* ---- History archive ------------------------------------------------------
