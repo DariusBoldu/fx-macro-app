@@ -15,6 +15,8 @@
  *        - push the ACTUAL figures moments after it is released
  *        GET /results               -> recent released figures     (public)
  *        GET /results/probe?key=…   -> FF + TradingView reachable, last cron tick (admin)
+ *      and after each release, fire the cloud analyst routine's API trigger:
+ *        POST /routine/test?key=…   -> fire it with a TRIGGER TEST payload (admin)
  *
  * Deploy (free):
  *   npm i -g wrangler && wrangler login
@@ -65,6 +67,7 @@ export default {
       if (url.pathname === '/journal') return await journal(request, env);
       if (url.pathname === '/results') return await getResults(env);
       if (url.pathname === '/results/probe') return await probeResults(url, env);
+      if (url.pathname === '/routine/test' && request.method === 'POST') return await testRoutine(url, env);
       return json({ error: 'not found' }, 404);
     } catch (e) {
       return json({ error: String(e && e.message || e) }, 500);
@@ -215,21 +218,39 @@ async function fireRoutine(env, g, m) {
   ].join('\n');
   let outcome;
   try {
-    const r = await fetch(`https://api.anthropic.com/v1/claude_code/routines/${env.ROUTINE_ID}/fire`, {
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer ' + env.ROUTINE_FIRE_TOKEN,
-        'anthropic-beta': 'experimental-cc-routine-2026-04-01',
-        'anthropic-version': '2023-06-01',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ text }),
-    });
-    outcome = { id: g.id, status: r.status, at: new Date().toISOString() };
+    const res = await postRoutineFire(env, text);
+    outcome = { id: g.id, status: res.status, at: new Date().toISOString() };
+    if (res.status >= 300) outcome.detail = res.body.slice(0, 200);
   } catch (e) {
     outcome = { id: g.id, error: String((e && e.message) || e), at: new Date().toISOString() };
   }
   await env.FX_SUBS.put('fire:last', JSON.stringify(outcome), { expirationTtl: 14 * 86400 });
+}
+
+async function postRoutineFire(env, text) {
+  const r = await fetch(`https://api.anthropic.com/v1/claude_code/routines/${env.ROUTINE_ID}/fire`, {
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + env.ROUTINE_FIRE_TOKEN,
+      'anthropic-beta': 'experimental-cc-routine-2026-04-01',
+      'anthropic-version': '2023-06-01',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ text }),
+  });
+  let body = '';
+  try { body = (await r.text()).slice(0, 500); } catch (e) {}
+  return { status: r.status, body };
+}
+
+/* Admin: prove the trigger works end to end without waiting for a release. The
+ * routine's prompt answers a TRIGGER TEST payload with 'Trigger OK' and stops, so
+ * this costs one short run (it still counts toward the daily run cap). */
+async function testRoutine(url, env) {
+  if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
+  if (!env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return json({ error: 'ROUTINE_ID or ROUTINE_FIRE_TOKEN is not set' }, 400);
+  const res = await postRoutineFire(env, 'TRIGGER TEST ' + new Date().toISOString());
+  return json(res, res.status < 300 ? 200 : 502);
 }
 
 async function saveResult(env, rec) {
