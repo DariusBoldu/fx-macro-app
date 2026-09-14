@@ -451,36 +451,61 @@
     $('calOther').classList.toggle('open', calOtherOpen);
     $('calOtherChev').classList.toggle('open', calOtherOpen);
   });
-  /* Released figures on catalysts. Two sources, merged:
-   *   1) c.result — written into data.json by the post-release follow-up task
-   *   2) the Worker's GET /results — recorded at release time, so figures show
-   *      even before (or without) the follow-up re-analysis running.
-   * relId() MUST match releaseId() in proxy/release-match.js. */
+  /* Released figures on red-folder catalysts. Two sources, merged:
+   *   1) the Worker's GET /results — ForexFactory red-folder figures recorded at
+   *      release time, keyed by release time + currency
+   *   2) c.result — written into data.json by the post-release follow-up task
+   * Red-folder lines are ForexFactory-style strings ({title, actual:"-0.1%",
+   * forecast, previous, cmp}); results stored before 2026-09-14 are numeric
+   * TradingView lines and still render.
+   * ccyOf() mirrors inferCurrency() in proxy/release-match.js. */
   var liveResults = {}, resultsFetchedAt = 0, calData = null;
-  function relId(c) {
-    var slug = String(c.event || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
-    return c.when + '|' + slug;
+  var CCY_RULES_APP = [
+    ['USD', /\b(United States|Federal Reserve|nonfarm|non-farm|payrolls|jobless claims|Powell|Warsh)\b/i, /\b(US|U\.S\.|FOMC|Fed|NFP|ISM|PCE)\b/],
+    ['EUR', /\b(euro ?area|eurozone|Lagarde|German[y]?|France|French|Spain|Spanish|Ital(y|ian))\b/i, /\b(ECB|EZ|HICP|Ifo|ZEW)\b/],
+    ['GBP', /\b(United Kingdom|Britain|British|Bank of England)\b/i, /\b(UK|U\.K\.|BoE|MPC)\b/],
+    ['JPY', /\b(Japan|Japanese|Bank of Japan|Tokyo)\b/i, /\b(BoJ|JGB)\b/],
+    ['AUD', /\b(Australia|Australian)\b/i, /\b(RBA)\b/],
+    ['NZD', /\b(New Zealand)\b/i, /\b(RBNZ|NZ)\b/],
+    ['CAD', /\b(Canada|Canadian|Bank of Canada)\b/i, /\b(BoC)\b/],
+    ['CHF', /\b(Swiss|Switzerland)\b/i, /\b(SNB)\b/]
+  ];
+  function ccyOf(text) {
+    var s = String(text || '');
+    for (var i = 0; i < CCY_RULES_APP.length; i++) {
+      if (CCY_RULES_APP[i][1].test(s) || CCY_RULES_APP[i][2].test(s)) return CCY_RULES_APP[i][0];
+    }
+    return null;
   }
+  function resultKey(when, ccy) { return Date.parse(when) + '|' + ccy; }
   function fmtVal(v, unit) {
     if (v == null || v === '') return '—';
+    if (typeof v === 'string') return v;
     var n = Number(v), s = isFinite(n) ? String(Math.round(n * 1000) / 1000) : String(v);
     return unit ? s + unit : s;
   }
+  function numOf(v) {
+    if (typeof v === 'number') return v;
+    var m = /^\s*(-?\d+(?:\.\d+)?)\s*[%KMBT]?\s*$/i.exec(String(v == null ? '' : v));
+    return m ? Number(m[1]) : null;
+  }
   function resultHtml(c) {
-    var src = (c.result && c.result.length) ? c.result : ((liveResults[relId(c)] || {}).lines || []);
-    var lines = src.filter(function (l) { return l && l.actual != null; }).slice(0, 3);
+    var live = c.when ? liveResults[resultKey(c.when, ccyOf(c.event))] : null;
+    var src = (live && live.lines && live.lines.length) ? live.lines : (c.result || []);
+    var lines = src.filter(function (l) { return l && l.actual != null; }).slice(0, 4);
     if (!lines.length) return '';
     return '<div class="cres">' + lines.map(function (l) {
-      var cmp = '';
-      if (l.forecast != null && isFinite(Number(l.actual)) && isFinite(Number(l.forecast))) {
-        var d = Number(l.actual) - Number(l.forecast);
-        cmp = '<span class="cmp">' + (Math.abs(d) < 1e-9 ? 'in line' : d > 0 ? '▲ above' : '▼ below') + '</span>';
+      var cmp = l.cmp;
+      if (cmp == null) {                      // older numeric lines carry no comparison
+        var a = numOf(l.actual), f = numOf(l.forecast);
+        cmp = (a != null && f != null) ? (Math.abs(a - f) < 1e-9 ? 'in line' : a > f ? '▲ above' : '▼ below') : '';
       }
+      var fc = (l.forecast == null || l.forecast === '') ? '' :
+        ' <span class="crx">exp ' + esc(fmtVal(l.forecast, l.unit)) + '</span>';
       return '<div class="crl"><span class="crt">' +
         esc(String(l.title).replace(/\bRate (?=(YoY|MoM|QoQ)\b)/, '')) + '</span> <b>' +
-        esc(fmtVal(l.actual, l.unit)) + '</b>' +
-        (l.forecast != null ? ' <span class="crx">exp ' + esc(fmtVal(l.forecast, l.unit)) + '</span>' : '') +
-        ' ' + cmp + '</div>';
+        esc(fmtVal(l.actual, l.unit)) + '</b>' + fc +
+        (cmp ? ' <span class="cmp">' + esc(cmp) + '</span>' : '') + '</div>';
     }).join('') + '</div>';
   }
   function loadResults() {
@@ -490,7 +515,9 @@
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (list) {
         var m = {};
-        (Array.isArray(list) ? list : []).forEach(function (x) { if (x && x.id) m[x.id] = x; });
+        (Array.isArray(list) ? list : []).forEach(function (x) {
+          if (x && x.when && x.ccy) m[resultKey(x.when, x.ccy)] = x;
+        });
         liveResults = m;
         if (calData) renderCalendar(calData);
       })
@@ -1244,7 +1271,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v27';
+  var APP_VERSION = 'v28';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

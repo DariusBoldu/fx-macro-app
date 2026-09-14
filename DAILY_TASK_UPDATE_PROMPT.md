@@ -4,13 +4,13 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
-## Update 11 (2026-09-14): release results + post-release follow-up — SEND THIS
+## Update 11 (2026-09-14): ForexFactory red folders drive the news features — SEND THIS
 
-Two new automations now react to every high-impact release. Nothing in the daily task's analysis changes; three details matter:
+The pre-release alerts (60 and 15 minutes before), the push with the ACTUAL figures, and the post-release re-analysis now follow **ForexFactory red folders** (impact "High") for the app's 8 currencies. They read ForexFactory's feed directly, so they no longer depend on this report's catalyst list. Keep the report consistent with that:
 
-1. **`when` must be the exact official release time (UTC).** It now drives three things: the 60/15-minute alerts, a push with the ACTUAL figures moments after release, and a local re-analysis of the affected currency ~5 minutes later. A wrong time means no result push. Verify each time against the official calendar — for example China's NBS activity data is normally **02:00Z**, not 05:00Z (the 2026-09-14 file listed 05:00Z and no matching figures exist at that time).
-2. **Name the country or central bank in `event`** ("UK CPI (August)", "Bank of Japan decision", "FOMC decision") — the currency is inferred from that wording.
-3. **When you regenerate `Forex_Dashboard/data.js`, do not copy forward `meta.update` or any catalyst `result` fields** from the previous file. The follow-up writes those after a release; carrying them into a new report would show stale figures.
+1. **`catalysts[]` with `impact: "high"` = exactly the ForexFactory red-folder releases** for USD, EUR, GBP, JPY, AUD, NZD, CAD and CHF — one entry per release time per currency, with `when` = ForexFactory's release time in UTC. Anything that is not a red folder for those currencies (e.g. China data, rolling geopolitical watches) must use `impact: "medium"` or `"low"`. The app's Calendar shows the released figures on those high rows.
+2. **Name the country or central bank in `event`** (e.g. "Canada CPI m/m, Median CPI y/y, Trimmed CPI y/y", "Bank of England rate decision") — figures are attached to a row by its time and that country.
+3. **When you regenerate `Forex_Dashboard/data.js`, do not copy forward `meta.update` or any catalyst `result` fields** from the previous file.
 
 You may see commits titled `update: <event> (post-release)` between daily runs — those are the follow-up's, and the next daily report simply supersedes them.
 
