@@ -87,6 +87,18 @@ export default {
  * and results still land within ~2 minutes of TradingView publishing them. */
 async function cronTick(env, scheduledTime) {
   const minute = new Date(scheduledTime || Date.now()).getUTCMinutes();
+
+  // Liveness heartbeat every 10 min (144 KV writes/day, well inside the free
+  // 1,000). The pre-release alerts depend on this cron, so "is it actually
+  // running?" must be answerable with one request: GET /results/probe.
+  if (minute % 10 === 0) {
+    try {
+      await env.FX_SUBS.put('cron:last', JSON.stringify({
+        ranAt: new Date().toISOString(),
+        scheduledAt: new Date(scheduledTime || Date.now()).toISOString(),
+      }));
+    } catch (e) { /* never let monitoring break the alerts */ }
+  }
   const doAlerts = minute % 5 === 0;
   const doResults = minute % 2 === 0;
   if (!doAlerts && !doResults) return;
@@ -196,9 +208,12 @@ async function probeResults(url, env) {
     '&countries=US,EU,GB,JP,AU,NZ,CA,CH', { headers: TV_HEADERS });
   let events = [];
   try { const j = await r.json(); events = Array.isArray(j) ? j : (j.result || []); } catch (e) {}
+  let lastCron = null;
+  try { lastCron = JSON.parse((await env.FX_SUBS.get('cron:last')) || 'null'); } catch (e) {}
   return json({
     status: r.status, events: events.length,
     withActual: events.filter((e) => e.actual != null).length,
+    lastCron,                                   // null = the cron has not run since this was added
   });
 }
 
