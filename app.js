@@ -451,12 +451,64 @@
     $('calOther').classList.toggle('open', calOtherOpen);
     $('calOtherChev').classList.toggle('open', calOtherOpen);
   });
+  /* Released figures on catalysts. Two sources, merged:
+   *   1) c.result — written into data.json by the post-release follow-up task
+   *   2) the Worker's GET /results — recorded at release time, so figures show
+   *      even before (or without) the follow-up re-analysis running.
+   * relId() MUST match releaseId() in proxy/release-match.js. */
+  var liveResults = {}, resultsFetchedAt = 0, calData = null;
+  function relId(c) {
+    var slug = String(c.event || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
+    return c.when + '|' + slug;
+  }
+  function fmtVal(v, unit) {
+    if (v == null || v === '') return '—';
+    var n = Number(v), s = isFinite(n) ? String(Math.round(n * 1000) / 1000) : String(v);
+    return unit ? s + unit : s;
+  }
+  function resultHtml(c) {
+    var src = (c.result && c.result.length) ? c.result : ((liveResults[relId(c)] || {}).lines || []);
+    var lines = src.filter(function (l) { return l && l.actual != null; }).slice(0, 3);
+    if (!lines.length) return '';
+    return '<div class="cres">' + lines.map(function (l) {
+      var cmp = '';
+      if (l.forecast != null && isFinite(Number(l.actual)) && isFinite(Number(l.forecast))) {
+        var d = Number(l.actual) - Number(l.forecast);
+        cmp = '<span class="cmp">' + (Math.abs(d) < 1e-9 ? 'in line' : d > 0 ? '▲ above' : '▼ below') + '</span>';
+      }
+      return '<div class="crl"><span class="crt">' +
+        esc(String(l.title).replace(/\bRate (?=(YoY|MoM|QoQ)\b)/, '')) + '</span> <b>' +
+        esc(fmtVal(l.actual, l.unit)) + '</b>' +
+        (l.forecast != null ? ' <span class="crx">exp ' + esc(fmtVal(l.forecast, l.unit)) + '</span>' : '') +
+        ' ' + cmp + '</div>';
+    }).join('') + '</div>';
+  }
+  function loadResults() {
+    if (!CFG.workerUrl || Date.now() - resultsFetchedAt < 60000) return;
+    resultsFetchedAt = Date.now();
+    fetch(CFG.workerUrl.replace(/\/$/, '') + '/results', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        var m = {};
+        (Array.isArray(list) ? list : []).forEach(function (x) { if (x && x.id) m[x.id] = x; });
+        liveResults = m;
+        if (calData) renderCalendar(calData);
+      })
+      .catch(function () { /* Worker unreachable: results already in data.json still show */ });
+  }
+  // pick up figures released while the app is open
+  setInterval(function () { if (!document.hidden && calData) loadResults(); }, 120000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && calData) loadResults(); });
+
   function calRow(c) {
     return '<div class="cal"><div class="cdate">' + esc(c.date) + '</div>' +
       '<div><div class="cev"><span class="dot ' + esc(c.impact) + '"></span>' + esc(c.event) + '</div>' +
+      resultHtml(c) +
       '<div class="cnote">' + esc(c.note || '') + '</div></div></div>';
   }
   function renderCalendar(D) {
+    calData = D;
+    loadResults();
     var all = D.catalysts || [];
     var red = all.filter(function (c) { return c.impact === 'high'; });
     var rest = all.filter(function (c) { return c.impact !== 'high'; });
@@ -1192,7 +1244,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v25';
+  var APP_VERSION = 'v26';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
