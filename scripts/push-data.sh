@@ -84,25 +84,64 @@ cd "$REPO"
 
 # Some sandbox mounts block unlink/rm but allow same-dir rename; a git command
 # that opens the index without rewriting it can leave a stale *.lock behind.
-# Clear locks via rename immediately before each index-writing step, and avoid
-# no-op index commands (git status/fetch) in this script.
+# Clear locks immediately before each index-writing step.
+#
+# FIX 2026-09-14: the rename fallback used to produce "<ref>.lock.stale_<ts>".
+# Under .git/refs/ git parses EVERY file as a ref, so those names broke
+# `git fetch` ("bad object refs/remotes/origin/main.lock.s..."). A renamed lock
+# now ENDS in ".lock", which git's ref scanner always skips. Where unlink works
+# (the Mac), old remnants are swept away entirely.
 clear_locks() {
   for L in .git/index.lock .git/HEAD.lock .git/refs/heads/main.lock .git/refs/remotes/origin/main.lock; do
-    if [ -e "$L" ]; then
-      rm -f "$L" 2>/dev/null || mv "$L" "$L.stale_$(date +%s%N)" 2>/dev/null || true
-    fi
+    [ -e "$L" ] || continue
+    # A lock under ~1 minute old may belong to a git command running RIGHT NOW:
+    # the Mac's post-release follow-up and the sandbox's daily run share this
+    # .git. Deleting a live lock can corrupt the index, so wait (max 60 s) for
+    # it to clear; only a lock that outlives that is treated as stale.
+    for _ in $(seq 1 30); do
+      [ -e "$L" ] && [ -z "$(find "$L" -mmin +1 2>/dev/null)" ] || break
+      sleep 2
+    done
+    [ -e "$L" ] || continue
+    rm -f "$L" 2>/dev/null && continue
+    mv "$L" "${L%.lock}.stale_$(date +%s)$RANDOM.lock" 2>/dev/null || true
   done
   return 0
 }
+sweep_stale_locks() {   # best effort: works on macOS, silently no-ops on the sandbox mount
+  find .git \( -name '*.lock.stale_*' -o -name '*.lock.s[0-9]*' -o -name '*.lock.x[0-9]*' \
+            -o -name '*.stale_*.lock' \) -type f -size 0 -delete 2>/dev/null || true
+}
 
+sweep_stale_locks
 clear_locks
 git add data.json history/
 # Commit only if something is actually staged for change.
+# FX_COMMIT_MSG lets the post-release follow-up label its commits.
 if ! git diff --cached --quiet; then
   clear_locks
-  git commit -m "data: $(date +%F)"
+  git commit -m "${FX_COMMIT_MSG:-data: $(date +%F)}"
 else
   echo "data.json/history unchanged; nothing to commit."
+fi
+
+# Integrate anything published from elsewhere first: scripts/publish-api.js
+# commits straight to GitHub, and without this the push below is rejected as
+# non-fast-forward.
+clear_locks
+if git fetch -q origin main 2>/dev/null; then
+  if ! git merge-base --is-ancestor origin/main HEAD; then
+    clear_locks
+    # During a rebase "theirs" = OUR local commits being replayed, so the
+    # freshest local data.json wins any conflict with the copy on GitHub.
+    if ! git rebase --autostash -X theirs origin/main; then
+      git rebase --abort 2>/dev/null || true
+      echo "ERROR: could not rebase onto origin/main; nothing pushed. Resolve manually." >&2
+      exit 6
+    fi
+  fi
+else
+  echo "WARN: git fetch failed; attempting a plain push." >&2
 fi
 
 clear_locks

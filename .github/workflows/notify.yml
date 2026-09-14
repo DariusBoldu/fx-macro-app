@@ -36,19 +36,21 @@ jobs:
         working-directory: push
         run: npm ci --omit=dev || npm install --omit=dev
 
-      - name: Derive notification body from data.json
+      - name: Derive notification title + body from data.json
         id: meta
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TITLE="New FX report"
             LABEL="${{ github.event.inputs.body }}"
           else
-            LABEL=$(node -e 'process.stdout.write(require("./data.json").meta.reportLabel || "A new macro report has been published.")')
+            # A post-release follow-up stamps meta.update; if it is fresh, say
+            # "analysis updated" instead of repeating the whole daily headline.
+            TITLE=$(node -e 'const m=require("./data.json").meta||{};const u=m.update;const f=u&&u.at&&(Date.now()-Date.parse(u.at))<45*60000;process.stdout.write(f?("📊 "+(u.title||"Analysis updated")):"New FX report")')
+            LABEL=$(node -e 'const m=require("./data.json").meta||{};const u=m.update;const f=u&&u.at&&(Date.now()-Date.parse(u.at))<45*60000;process.stdout.write(f?(u.text||"Analysis updated after a release."):(m.reportLabel||"A new macro report has been published."))')
           fi
-          # GITHUB_OUTPUT is safe for arbitrary one-line values inside the heredoc form
           {
-            echo "label<<__EOF__"
-            echo "$LABEL"
-            echo "__EOF__"
+            echo "title<<__EOF__"; echo "$TITLE"; echo "__EOF__"
+            echo "label<<__EOF__"; echo "$LABEL"; echo "__EOF__"
           } >> "$GITHUB_OUTPUT"
 
       - name: Send Web Push
@@ -59,4 +61,9 @@ jobs:
           VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
           SUBS_URL:      ${{ secrets.SUBS_URL }}
           ADMIN_KEY:     ${{ secrets.ADMIN_KEY }}
-        run: node send-push.js "New FX report" "${{ steps.meta.outputs.label }}"
+          # Passed through env, NOT interpolated into the command: report text
+          # contains "$" (e.g. "WTI ~$84"), which bash expanded inside "..." and
+          # silently mangled the notification ("$8" -> positional parameter).
+          PUSH_TITLE: ${{ steps.meta.outputs.title }}
+          PUSH_BODY:  ${{ steps.meta.outputs.label }}
+        run: node send-push.js "$PUSH_TITLE" "$PUSH_BODY"

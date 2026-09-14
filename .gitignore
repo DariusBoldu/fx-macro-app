@@ -23,3 +23,6 @@ proxy/.wrangler/
 
 # GitHub token for the API fallback publisher
 .gh_token
+
+# post-release follow-up: local record of handled releases
+.release-state.json

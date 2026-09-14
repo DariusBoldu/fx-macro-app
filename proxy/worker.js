@@ -1,14 +1,19 @@
 /* ============================================================================
  * FX Macro — Cloudflare Worker (free tier).
  *
- * Does two jobs so the static PWA needs no secrets of its own:
- *   1) PRICE PROXY for OANDA practice (keeps the bearer token server-side and
- *      adds the CORS headers OANDA itself doesn't send):
+ * Jobs, so the static PWA needs no secrets of its own:
+ *   1) PRICE PROXY for OANDA practice (dormant — the app shows no prices):
  *        GET /quotes?symbols=EUR/USD,GBP/USD
  *        GET /sparkline?symbol=EUR/USD&points=24
  *   2) PUSH SUBSCRIPTION COLLECTOR (stores devices in KV for the push sender):
  *        POST /subscribe            body = PushSubscription JSON   (public)
  *        GET  /subscriptions?key=…  -> all subs                    (admin)
+ *   3) SHARED TRADE JOURNAL:  GET/POST /journal  (x-fx-auth)
+ *   4) NEWS ALERTS + RELEASE RESULTS (cron, every minute — laptop not involved):
+ *        - push 60 and 15 minutes before each HIGH-impact catalyst
+ *        - push the ACTUAL figures moments after each one is released
+ *        GET /results               -> recent released figures     (public)
+ *        GET /results/probe?key=…   -> is TradingView reachable?   (admin)
  *
  * Deploy (free):
  *   npm i -g wrangler && wrangler login
@@ -22,6 +27,10 @@
  * worker URL.  See ./README.md.
  * ==========================================================================*/
 import { sendWebPush } from './webpush.js';
+import {
+  fetchCalendar, matchRelease, buildNotification, releaseId, inferCurrency,
+  TV_URL, TV_HEADERS,
+} from './release-match.js';
 
 const OANDA_BASE = 'https://api-fxpractice.oanda.com/v3';
 const DATA_URL = 'https://dariusboldu.github.io/fx-macro-app/data.json';
@@ -54,27 +63,46 @@ export default {
       if (url.pathname === '/subscribe' && request.method === 'POST') return await subscribe(request, env);
       if (url.pathname === '/subscriptions') return await listSubs(url, env);
       if (url.pathname === '/journal') return await journal(request, env);
+      if (url.pathname === '/results') return await getResults(env);
+      if (url.pathname === '/results/probe') return await probeResults(url, env);
       return json({ error: 'not found' }, 404);
     } catch (e) {
       return json({ error: String(e && e.message || e) }, 500);
     }
   },
 
-  /* Cron (every 5 min): push alerts 60 and 15 minutes before each HIGH-impact
-   * catalyst that carries a machine-readable `when` timestamp. Runs entirely
-   * in the cloud — the laptop is not involved. */
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(newsAlerts(env));
+    ctx.waitUntil(cronTick(env, event.scheduledTime));
   }
 };
 
-/* ========================= High-impact news alerts ========================= */
-async function newsAlerts(env) {
+/* ============================== Cron dispatcher ==============================
+ * The trigger fires every minute, but each job runs on its own cadence:
+ *   - pre-release alerts on minutes divisible by 5 (the original cadence)
+ *   - release results on EVEN minutes
+ * Why not every minute for everything: dedupe markers live in KV, which is
+ * eventually consistent across locations for up to ~60 s, and cron invocations
+ * don't always run in the same place. Two invocations a minute apart could both
+ * read "not sent yet" and notify twice. A 2-minute gap outlasts propagation,
+ * and results still land within ~2 minutes of TradingView publishing them. */
+async function cronTick(env, scheduledTime) {
+  const minute = new Date(scheduledTime || Date.now()).getUTCMinutes();
+  const doAlerts = minute % 5 === 0;
+  const doResults = minute % 2 === 0;
+  if (!doAlerts && !doResults) return;
+
   let data;
   try {
     const r = await fetch(DATA_URL + '?t=' + Date.now(), { cf: { cacheTtl: 0 } });
     data = await r.json();
   } catch (e) { return; }
+
+  if (doAlerts) await newsAlerts(env, data);
+  if (doResults) await releaseResults(env, data);
+}
+
+/* ========================= High-impact news alerts ========================= */
+async function newsAlerts(env, data) {
   const now = Date.now();
   const windows = [
     { tag: '60', lo: 55, hi: 65, label: 'in 1 hour' },
@@ -98,6 +126,80 @@ async function newsAlerts(env) {
       });
     }
   }
+}
+
+/* ============================ Release results ================================
+ * After each HIGH-impact catalyst's release time, look up the actual figures
+ * (TradingView calendar; matching logic shared with the local follow-up task in
+ * release-match.js) and push them once. */
+const RESULT_WINDOW_MS = 45 * 60000;   // keep looking this long after release
+const SETTLE_MS = 3 * 60000;           // headline out but secondary lines lagging: wait at most this
+const RESULTS_KEY = 'results:v1';
+
+async function releaseResults(env, data) {
+  const now = Date.now();
+  for (const c of (data.catalysts || [])) {
+    if (c.impact !== 'high' || !c.when) continue;
+    const t = Date.parse(c.when);
+    if (isNaN(t) || now < t || now - t > RESULT_WINDOW_MS) continue;
+
+    const id = releaseId(c);
+    const sentKey = 'result:' + id;
+    if (await env.FX_SUBS.get(sentKey)) continue;
+
+    let events;
+    try { events = await fetchCalendar(inferCurrency(c.event) || inferCurrency(c.note), t); }
+    catch (e) { continue; }                    // TradingView unavailable: retry next pass
+
+    const m = matchRelease(c, events);
+    if (!m.lines.some((l) => l.actual != null)) continue;   // not published yet
+
+    // Headline in but companion lines still empty: give them a moment so the
+    // one notification carries the full picture, then send what exists.
+    if (!m.complete) {
+      const seenKey = 'resultseen:' + id;
+      const seen = await env.FX_SUBS.get(seenKey);
+      if (!seen) { await env.FX_SUBS.put(seenKey, String(now), { expirationTtl: 7200 }); continue; }
+      if (now - Number(seen) < SETTLE_MS) continue;
+    }
+
+    await env.FX_SUBS.put(sentKey, '1', { expirationTtl: 3 * 86400 });   // mark BEFORE sending
+    await broadcast(env, buildNotification(c, m));
+    await saveResult(env, {
+      id, when: c.when, event: c.event, ccy: m.ccy, lines: m.lines,
+      at: new Date(now).toISOString(),
+    });
+  }
+}
+
+async function saveResult(env, rec) {
+  let list = [];
+  try { list = JSON.parse((await env.FX_SUBS.get(RESULTS_KEY)) || '[]'); } catch (e) {}
+  list = [rec].concat(list.filter((x) => x.id !== rec.id)).slice(0, 40);
+  await env.FX_SUBS.put(RESULTS_KEY, JSON.stringify(list));
+}
+
+async function getResults(env) {
+  const body = (await env.FX_SUBS.get(RESULTS_KEY)) || '[]';
+  return new Response(body, {
+    headers: cors({ 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' })
+  });
+}
+
+/* Admin check that TradingView answers from Cloudflare's network (it can't be
+ * tested from a laptop — egress IPs differ). */
+async function probeResults(url, env) {
+  if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
+  const to = new Date();
+  const from = new Date(to.getTime() - 3 * 86400000);
+  const r = await fetch(`${TV_URL}?from=${from.toISOString()}&to=${to.toISOString()}` +
+    '&countries=US,EU,GB,JP,AU,NZ,CA,CH', { headers: TV_HEADERS });
+  let events = [];
+  try { const j = await r.json(); events = Array.isArray(j) ? j : (j.result || []); } catch (e) {}
+  return json({
+    status: r.status, events: events.length,
+    withActual: events.filter((e) => e.actual != null).length,
+  });
 }
 
 /* Send a payload to every subscriber; prune expired subscriptions. */

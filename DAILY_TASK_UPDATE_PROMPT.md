@@ -4,6 +4,18 @@ Paste the relevant section below to Cowork to update the existing daily report t
 
 ---
 
+## Update 11 (2026-09-14): release results + post-release follow-up — SEND THIS
+
+Two new automations now react to every high-impact release. Nothing in the daily task's analysis changes; three details matter:
+
+1. **`when` must be the exact official release time (UTC).** It now drives three things: the 60/15-minute alerts, a push with the ACTUAL figures moments after release, and a local re-analysis of the affected currency ~5 minutes later. A wrong time means no result push. Verify each time against the official calendar — for example China's NBS activity data is normally **02:00Z**, not 05:00Z (the 2026-09-14 file listed 05:00Z and no matching figures exist at that time).
+2. **Name the country or central bank in `event`** ("UK CPI (August)", "Bank of Japan decision", "FOMC decision") — the currency is inferred from that wording.
+3. **When you regenerate `Forex_Dashboard/data.js`, do not copy forward `meta.update` or any catalyst `result` fields** from the previous file. The follow-up writes those after a release; carrying them into a new report would show stale figures.
+
+You may see commits titled `update: <event> (post-release)` between daily runs — those are the follow-up's, and the next daily report simply supersedes them.
+
+---
+
 ## Update 10 (2026-09-07): snapshot rows are HEADLINE + detail — SEND THIS
 
 The Today page's World snapshot now renders every row as a **bold headline with the supporting detail beneath it**, and that is the permanent design. Write the `snapshot` block to match, every day:
