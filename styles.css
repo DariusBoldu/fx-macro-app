@@ -482,4 +482,4 @@ nav.tabbar{
 .crl .crt{color:var(--mut)}
 .crl b{color:var(--txt);font-weight:800}
 .crl .crx{color:var(--dim)}
-.crl .cmp{font-size:10.5px;font-weight:700;color:var(--mut);margin-left:3px}
+.crl .cmp{font-size:10.5px;font-weight:700;color:var(--mut);margin-left:3px;white-space:nowrap}
