@@ -126,13 +126,17 @@ async function status() {
   for (const g of groups) {
     if (!g.numeric) continue;                                   // speeches/statements carry no figures
     const t = Date.parse(g.when);
-    if (t > now - SETTLE_MIN * 60000) continue;                 // not released yet
+    if (t > now) continue;                                      // not released yet
     if (isProcessed(state, g)) continue;
     if (now - t > STALE_H * 3600000) { staleSkipped.push(g.id); continue; }
 
     let match = null; let error = null;
     try { match = matchGroup(g, await fetchCalendar(g.ccy, t, { spanMin: g.decision ? 150 : 10 })); }
     catch (e) { error = String((e && e.message) || e); }
+    // Inside the settle window a group is due only once its figures are out. The
+    // Worker fires the cloud routine as soon as they are (often within 60 s), and
+    // an empty `due` there would read as "already handled" (2026-09-15, UK claimants).
+    if (t > now - SETTLE_MIN * 60000 && !(match && match.anyActual)) continue;
 
     const windowMin = g.decision ? DECISION_WINDOW_MIN : RESULT_WINDOW_MIN;
     due.push({
