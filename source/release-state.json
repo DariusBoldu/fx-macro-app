@@ -1,0 +1,16 @@
+{
+  "processed": {
+    "2026-09-14T12:30:00Z|canada-cpi-august": {
+      "at": "2026-09-14T14:24:08.133Z",
+      "outcome": "reanalysed"
+    },
+    "2026-09-15T06:00:00Z|GBP": {
+      "at": "2026-09-15T06:47:47.633Z",
+      "outcome": "handled"
+    },
+    "2026-09-16T06:00:00Z|GBP": {
+      "at": "2026-09-16T06:22:48.953Z",
+      "outcome": "handled"
+    }
+  }
+}
