@@ -2,6 +2,11 @@
   "meta": {
     "reportDate": "2026-09-15",
     "reportLabel": "THE DOLLAR HAS BEATEN ALL SEVEN PEERS TWO DAYS RUNNING and the weekly is now positive against every G10 currency - yesterday's one-day event is a trend. DXY 99.640, up 0.16% today and 0.86% on the week, with CAD -0.06%, CHF -0.11%, EUR -0.13%, GBP -0.17%, AUD -0.28%, JPY -0.31% and NZD -0.35%. The day's release was British: the August claimant count came in at +27.8k against an +8.3k forecast and -11.8k previously, a 39.6k swing, while average earnings decelerated to 3.9% from 4.2% and unemployment held 4.9%. That breaks the LABOUR leg of the BoE hawkish case two days before the MPC - but the pound fell only 0.17% and is still the best G10 on the week at -0.48%, because tomorrow's CPI is forecast to accelerate to 3.1% from 2.9% and the vote consensus is still 3-0-6 for a hold. GBP stays 0. Second: JPY is CUT AGAIN, from +2 to +1, the second cut in two days. Yesterday's file said a Friday BoJ pause would take the yen to +1; instead it got there early, on price, as the second-worst G10 for a second session with the weekly now against it - USD/JPY 154.824, +0.31% today and +0.55% on the week, though still -2.90% on the month. A 97%-priced hike has nothing left to buy. Third, yesterday's stated AUD tripwire resolved HALF met, exactly as Canada's did on Monday: China industrial production beat at 5.2% against 4.8%, retail sales missed at 0.4% against 0.8%, and fixed asset investment deepened to -7.2%. Production up, consumption down is the mix that keeps copper offered - XCU -6.18% on the week - so AUD holds +1 under the file's own rule and the copper short survives. Board: USD +2; CAD, EUR, AUD, JPY +1; GBP, CHF 0; NZD -1. Cleanest: NZD/USD SHORT, USD/CHF LONG, USOIL LONG. FOMC tomorrow 18:00Z with the dot plot, UK CPI 06:00Z, NZ GDP 22:45Z, BoE Thursday, BoJ Friday.",
+    "update": {
+      "at": "2026-09-16T06:09:41Z",
+      "title": "🇬🇧 GBP analysis updated",
+      "text": "Aug CPI 3.1% y/y vs 3.1% forecast, core 2.6% vs 2.6%. The acceleration is all energy, no new domestic impulse. GBP holds 0; a 3-0-6 hold Thursday is the base case."
+    },
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + XAU + XAG + XCU + USOIL",
     "regime": "The regime is unchanged in kind and stronger in degree: a physical energy supply shock priced through US real rates, with the dollar now the only currency on the board that is up against everything. Two consecutive sessions in which DXY beat all seven peers have turned a one-day observation into a weekly fact - the dollar is positive against all seven on the week, from GBP at -0.48% through to NZD at -1.63%. Crude keeps grinding higher without any haven response: WTI 103.127 is up 1.71% today, 10.85% on the week and 22.04% on the month, while gold at 4291.57 is down 1.47% on the week and silver 3.93%. The second feature is the split inside the commodity complex, and today China told us why it persists - industrial production beat at 5.2% while retail sales missed at 0.4% and fixed asset investment deepened to -7.2%. That is a supply-side China: more output, less demand, which is precisely the configuration that keeps energy bid and industrial metals offered, with copper down 6.18% on the week. Long the energy exporter against the industrial exporter remains the cleanest cross-rate axis on this board. The third feature is that the calendar compression is now upon us rather than ahead of us: the Fed decides in roughly 36 hours, the Bank of England in 53 and the Bank of Japan in 68, and all three are effectively priced - near 85% on the Fed, a 3-0-6 hold consensus on the MPC, 97% on the BoJ. When the level is bought, the only tradeable content is guidance: the dot plot, the vote split, and whether the BoJ attaches a pause.",
@@ -12,8 +17,8 @@
     {
       "ccy": "GBP",
       "moved": true,
-      "headline": "August claimant count +27.8k against an +8.3k forecast and -11.8k previously, average earnings decelerating to 3.9% from 4.2%, unemployment holding 4.9%, employment change +67k from +83k - and sterling fell only 0.17%",
-      "read": "The labour leg of the BoE hawkish case is the one that broke, and it broke clearly: claims running more than three times consensus with wages decelerating does not support three MPC members voting to hike. GBP nonetheless stays 0, because no cut tail opened and the pound is still the best G10 of the week at -0.48%. Everything now turns on CPI tomorrow at 06:00Z, forecast at 3.1% from 2.9% - an in-line or hot print preserves the 3-0-6 split and the score, a miss stacked on top of today's claims is the first real dovish repricing risk sterling has carried and would take GBP to -1."
+      "headline": "August CPI printed 3.1% y/y against a 3.1% forecast and 2.9% previously, the monthly at 0.5% from 0.3% also in line, and core HELD at 2.6% - and sterling did not move, GBP/USD 1.34826, +0.03%",
+      "read": "Yesterday's file set the rule in terms - an in-line or hot 3.1% preserves the 3-0-6 split and keeps GBP at 0 - and the print came in line, so the score holds and the claimant-count miss does not become a trend. Read the composition before the headline, though. Core unchanged at 2.6% for a third month means the whole acceleration is the energy and fuel pass-through, which is precisely the kind of inflation a committee looks through, so the hawkish case got nothing to offset +27.8k claimants and the dovish case got no miss either. Both tails are thinner than 24 hours ago and the 3-0-6 hold is now the highest-probability central-bank outcome in this file. What is left in sterling is the vote split Thursday at 11:00Z; before that, the FOMC tonight at 18:00Z owns the GBP/USD leg. A 4-5 or 5-4 hawkish split takes GBP to +1 and reverses GBP/USD, GBP/CAD and EUR/GBP together."
     },
     {
       "ccy": "NZD",
@@ -66,8 +71,8 @@
     },
     {
       "icon": "🇬🇧",
-      "t": "UK claimant count missed hard at +27.8k against +8.3k forecast, but the pound fell only 0.17%",
-      "s": "A 39.6k swing from -11.8k previously, with average earnings decelerating to 3.9% from 4.2% and unemployment holding 4.9%. The labour leg of the BoE hawkish case is broken; sterling is still the best G10 of the week because CPI tomorrow is forecast at 3.1% and the vote consensus is unchanged at 3-0-6."
+      "t": "UK CPI accelerated to 3.1% exactly as forecast but core held at 2.6% - and sterling did not move",
+      "s": "August headline rose from 2.9% with the monthly at 0.5%, both in line, while core was unchanged for a third month, so the entire acceleration is energy pass-through rather than a domestic impulse. GBP/USD 1.34826, +0.03%. GBP stays 0 and the 3-0-6 hold Thursday is now the base case."
     },
     {
       "icon": "🇯🇵",
@@ -108,8 +113,8 @@
     },
     "GBP": {
       "next": "hold",
-      "when": "Sept 17, 11:00Z - TE carries a 3.75% forecast and the vote consensus is unchanged at 3-0-6, three for a hike, none for a cut, six for no change",
-      "note": "TE re-verified: Bank Rate 3.75%, CPI 2.9% y/y in July, core 2.6%, GDP 0.4% q/q and 1.2% annual, unemployment 4.9%, services PMI 52.5, manufacturing 51.7, retail sales -0.5% m/m. Today's labour release is the change: the August claimant count came in at +27.8k against an +8.3k forecast and -11.8k previously, average earnings including bonus decelerated to 3.9% from 4.2%, and employment change slowed to +67k from +83k. That materially weakens the case for the three hawkish votes without creating any case for a cut, so the expected outcome is unchanged while the distribution around it narrows. The sequencing matters for the next 48 hours: CPI lands tomorrow at 06:00Z forecast at 3.1% from 2.9%, so the committee will have an accelerating inflation print and a deteriorating labour print in front of it on the same day. A 3.1% or higher CPI keeps the 3-0-6 split intact; a miss on CPI following today's claims makes a 1-0-8 or 0-0-9 split plausible and is the first genuine dovish repricing risk sterling has carried in weeks."
+      "when": "Sept 17, 11:00Z - TE carries a 3.75% forecast and the vote consensus is unchanged at 3-0-6, three for a hike, none for a cut, six for no change, and this morning's in-line CPI leaves that intact",
+      "note": "TE re-verified immediately after the release: Bank Rate 3.75%, August CPI 3.1% y/y from 2.9% with the monthly rate at 0.5% from 0.3% and core inflation held at 2.6%, GDP 0.4% q/q and 1.2% annual, unemployment 4.9%, services PMI 52.5, manufacturing 51.7, retail sales -0.5% m/m. The expected outcome is unchanged and the confidence around it has risen. The committee now has its full pack in front of it: a claimant count at +27.8k against an +8.3k forecast with average earnings decelerating to 3.9%, and a headline inflation rate accelerating to 3.1% whose acceleration is entirely energy and fuel, with the core measure static at 2.6% for a third consecutive month. A loosening labour market alongside an imported price shock is the configuration that freezes a committee rather than one that moves it, which is why the 3-0-6 hold is now the base case rather than merely the consensus. The tradeable part is the split, not the level. A 4-5 or 5-4 hawkish outcome remains the under-priced tail and takes sterling to +1, reversing GBP/USD, GBP/CAD and EUR/GBP together; a 1-0-8 or 0-0-9, or a Monetary Policy Summary that leans on the labour deterioration, puts a cut back onto a curve that prices none and takes sterling to -1. Retail sales Friday at 06:00Z, expected -0.2% m/m from -0.5%, only confirms the reaction."
     },
     "JPY": {
       "next": "hike",
@@ -182,9 +187,9 @@
       "ccy": "GBP",
       "score": 0,
       "verdict": "MIXED",
-      "tag": "Labour leg broke, price did not",
-      "drivers": "Bank Rate 3.75% with the MPC vote consensus unchanged at 3-0-6, August claimant count +27.8k against an +8.3k forecast and -11.8k previously, average earnings 3.9% from 4.2%, employment change +67k from +83k, unemployment 4.9%, CPI 2.9% y/y with core 2.6%, services PMI 52.5; GBP/USD 1.34761, -0.17% today but still the best G10 of the week at -0.48%.",
-      "forward": "⚖️ Balanced, and the reason it stays balanced after a clearly soft release is the most interesting thing on the board today. Yesterday's file had both tails live into a 48-hour window, the hawkish tail resting on a labour market that had refused to crack. That is the leg that broke: a claimant count running more than three times consensus, a 39.6k swing from the previous month, with earnings decelerating to 3.9%, does not support three MPC members voting to hike on Thursday. But sterling fell only 0.17%, was the second-best performer on the day and remains the best G10 currency of the week, which says the market has decided one soft labour print will not move a committee focused on an energy-driven inflation impulse. The sequencing over the next 48 hours is unusually clean: CPI at 06:00Z tomorrow forecast to accelerate to 3.1% from 2.9%, then the decision Thursday at 11:00Z. The committee gets a deteriorating labour print and an accelerating inflation print on consecutive days. What would invalidate: a CPI miss stacked on top of today's claims makes a 1-0-8 or 0-0-9 vote plausible and is the first genuine dovish repricing sterling has carried in weeks - that takes GBP to -1 and flips EUR/GBP conviction up and GBP/NZD down; an in-line or hot 3.1% preserves the 3-0-6 split, keeps GBP at 0, and makes today's labour miss a one-day story."
+      "tag": "CPI in line, core did not budge",
+      "drivers": "Bank Rate 3.75% with the MPC vote consensus unchanged at 3-0-6, August CPI 3.1% y/y from 2.9% exactly on forecast with the monthly at 0.5% and core held at 2.6%, August claimant count +27.8k against an +8.3k forecast, average earnings 3.9% from 4.2%, employment change +67k from +83k, unemployment 4.9%, services PMI 52.5; GBP/USD 1.34826, +0.03% on the print and still the best G10 of the week at -0.48%.",
+      "forward": "⚖️ Balanced, and held at zero by this file's own stated rule rather than by discretion. Yesterday's entry said an in-line or hot 3.1% preserves the 3-0-6 split and keeps GBP at 0; August CPI printed exactly 3.1% against a 3.1% consensus, the monthly 0.5% from 0.3%, and core held at 2.6% against a 2.6% consensus - all three in line, all three re-verified on TE after the release. The verdict is therefore unchanged, but the distribution behind it has narrowed in a way worth stating precisely. The hawkish case needed a BEAT, because it had to offset a claimant count that came in at more than three times consensus 24 hours earlier; what it got instead was an acceleration composed entirely of energy and fuel, with the core measure static for a third consecutive month, which is the single easiest kind of inflation for a committee to look through. The dovish case needed a miss and did not get one. So both tails are thinner than they were yesterday, and a 3-0-6 hold is now the highest-probability central-bank outcome in this file rather than just the consensus. The price agrees and that matters: GBP/USD at 1.34826 is +0.03% on the print, EUR/GBP is unchanged at 0.85646, and sterling is still the best G10 of the week at -0.48%. A currency that absorbs both a labour miss and an inflation acceleration without moving is a currency with no directional thesis until its central bank supplies one. What would invalidate: the vote split Thursday at 11:00Z is the only domestic event left - a 4-5 or 5-4 hawkish outcome is the under-priced tail, takes GBP to +1 and reverses GBP/USD, GBP/CAD and EUR/GBP together; a 1-0-8 or 0-0-9, or a summary that leans on the labour deterioration, takes GBP to -1 and flips EUR/GBP conviction up and GBP/NZD down. Before that, tonight's FOMC at 18:00Z owns the GBP/USD leg outright."
     },
     {
       "ccy": "CHF",
@@ -236,8 +241,8 @@
       "sym": "GBP/NZD",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "Sterling was the best G10 of the week at -0.48% even after a claimant count miss, against the worst at -1.63%; 2.34013, +0.18% today and +1.17% on the week, and the BoE vote consensus is still 3-0-6 for a hold rather than anything dovish.",
-      "risk": "The one cross here carrying both of the week's binaries - a UK CPI miss tomorrow at 06:00Z stacked on today's claims would cut GBP to -1 just as NZ GDP could lift NZD to zero, compressing the gap from both sides."
+      "why": "2.34322, +0.10% today; one of this cross's two binaries has now cleared in its favour - UK CPI printed 3.1% exactly in line with core steady at 2.6%, so GBP stays 0 and the dovish repricing tail never opened - against the worst G10 currency on the board at -1.63% on the week.",
+      "risk": "The second binary is still live: New Zealand Q2 GDP tonight at 22:45Z, consensus +0.1% q/q from +0.8%. A surprise above +0.4% lifts NZD to zero and compresses the gap from the other side, and the BoE vote split lands Thursday at 11:00Z."
     },
     {
       "sym": "AUD/NZD",
@@ -278,8 +283,8 @@
       "sym": "GBP/USD",
       "bias": "SHORT",
       "conv": "MEDIUM",
-      "why": "1.34761, -0.17% today; the claimant count missed at +27.8k against +8.3k with earnings decelerating to 3.9%, which thins the hawkish tail into Thursday's MPC while the Fed hikes tomorrow.",
-      "risk": "Sterling barely paid for the miss and is still the best G10 of the week, so the market is not treating one labour print as decisive. A hot UK CPI at 3.1% tomorrow preserves the 3-0-6 vote split and squeezes this."
+      "why": "1.34826, +0.03% on the print; CPI at 3.1% was fully priced and core did not budge from 2.6%, so sterling got no hawkish offset to yesterday's +27.8k claimant count, while the Fed is roughly 85% priced to hike to 4.00% tonight at 18:00Z.",
+      "risk": "This is a dollar trade before it is a sterling one - an intact easing path in the dots is the sell-the-fact scenario and would squeeze it hard. A 4-5 or 5-4 hawkish MPC split Thursday does the same damage from the other leg."
     },
     {
       "sym": "AUD/USD",
@@ -327,8 +332,8 @@
       "sym": "EUR/GBP",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "0.85585, +0.04% today; upgraded on today's UK labour miss - the claimant count at +27.8k against +8.3k with earnings at 3.9% thins the case for three hawkish MPC votes, while the ECB has just hiked unanimously and lifted its inflation projections.",
-      "risk": "UK CPI tomorrow at 06:00Z forecast at 3.1% from 2.9% - a hot print restores the hawkish tail and the 3-0-6 vote split, and sterling was the best G10 of the week despite today's data, so the market is not yet selling it."
+      "why": "0.85646, unchanged today; the stated risk to this position was a hot UK CPI restoring the hawkish tail and it did not arrive - 3.1% came in exactly on forecast with core flat at 2.6% - so yesterday's labour-miss upgrade stands against an ECB that hiked unanimously to 2.50% and lifted its 2027 projection.",
+      "risk": "The euro area is the largest energy importer on this board with EU gas up roughly a third on the month, and a 4-5 or 5-4 MPC split Thursday at 11:00Z is the direct reversal. The cross has now gone two sessions without moving, so neither leg is being pressed."
     },
     {
       "sym": "USD/JPY",
@@ -369,22 +374,22 @@
       "sym": "GBP/CAD",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "1.87453, -0.11% today; a one-point gap plus the energy axis - Canada is paid by the shock while the UK imports gas at 206.07, up roughly 35% on the month, and today's labour miss thins sterling's hawkish tail into Thursday.",
-      "risk": "Sterling was the best G10 of the week and barely paid for the claimant count miss; a hot UK CPI tomorrow at 3.1% restores the hawkish case. Canada's domestic data is contracting outright."
+      "why": "1.87708, +0.06% today; the energy terms-of-trade axis is the whole case - Canada is paid by a shock that has WTI up 22.04% on the month while the UK imports it, and this morning's 3.1% CPI was itself mostly that same imported energy with core static at 2.6%.",
+      "risk": "Canada's domestic data is contracting outright - employment -41.7k, services PMI 46.8, composite 47.8 - and the BoC is frozen until October 28, so this leans entirely on crude holding above 100. A hawkish MPC split Thursday reverses it."
     },
     {
       "sym": "GBP/AUD",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "1.89260, +0.11% today; a one-point gap with Australia holding the highest policy rate on the board at 4.35% against 3.75%, and today's UK claimant count miss weakening the case for the three hawkish MPC votes.",
-      "risk": "Both legs are soft - GBP faces CPI tomorrow and the MPC Thursday, AUD faces a China demand channel that missed today and copper down 6.18% on the week. Sterling outperformed on the week despite its data."
+      "why": "1.89094, +0.06% today; a one-point gap with Australia holding the board's highest policy rate at 4.35% against 3.75%, and an in-line UK CPI that adds nothing to the case for three hawkish MPC votes after yesterday's claimant-count miss.",
+      "risk": "Both legs are soft - AUD faces a China demand channel that missed on Monday with copper -6.18% on the week, GBP faces the MPC Thursday - and sterling has still been the best G10 of the week despite absorbing two releases."
     },
     {
       "sym": "GBP/JPY",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "208.642, +0.14% today; a one-point gap that has narrowed with today's cut of JPY to +1, pairing a BoJ hiking to a 31-year high on Friday against a UK labour market that just produced a 39.6k swing in claims.",
-      "risk": "Downgraded from MEDIUM because the yen leg was cut for a second consecutive day and the BoJ move is 97% priced. Both currencies have a central bank inside 68 hours, so this carries two event risks rather than one."
+      "why": "209.241, +0.10% today; the yen leg was cut to +1 on Monday but the BoJ still lifts to a 31-year-high 1.25% on Friday, against a UK print that confirmed an energy-driven headline with the core measure unchanged at 2.6%.",
+      "risk": "This carries two central banks inside 48 hours and the BoJ move is about 97% priced, so a hike with an explicit pause attached takes JPY to zero and reverses it. The cross has now risen for three consecutive sessions."
     },
     {
       "sym": "CHF/JPY",
@@ -446,8 +451,8 @@
       "sym": "GBP/CHF",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "1.10284, -0.06% today and +0.64% on the week; equal scores at zero, pairing a currency whose labour market just deteriorated sharply with one whose strong data is entirely neutralised by a 0% policy rate and an interventionist central bank.",
-      "risk": "Three central-bank events touch this within ten days - UK CPI tomorrow, the MPC Thursday, the SNB on September 24 - and the two currencies are scored equal, so there is no gap to trade until one of them moves."
+      "why": "1.10308, -0.03% today; still equal scores at zero after the CPI - sterling's acceleration is imported energy with core static, while the franc's strong data stays neutralised by a 0% policy rate and an SNB that has flagged readiness to intervene.",
+      "risk": "Two events could break the tie inside nine days, the MPC on Thursday at 11:00Z and the SNB on September 24, but until one of them moves a score there is no gap here to trade."
     }
   ],
   "macro": {
@@ -587,16 +592,16 @@
     },
     "GBP": {
       "inflation": {
-        "value": "2.9%",
+        "value": "3.1%",
         "trend": "rising",
-        "note": "Jul CPI, core 2.6%",
+        "note": "Aug CPI, core 2.6%",
         "hist": [
-          3.5,
           3.4,
           3.4,
           2.8,
           2.6,
-          2.9
+          2.9,
+          3.1
         ]
       },
       "growth": {
@@ -1021,8 +1026,24 @@
       "date": "Sep 16",
       "event": "UK CPI y/y, core CPI (ONS)",
       "impact": "high",
-      "note": "Consensus 3.1% from 2.9%, with core last at 2.6%. The single most important print for sterling this week and the direct counterweight to today's labour miss - the MPC will have a deteriorating jobs picture and an accelerating inflation picture on consecutive days. In line or hot preserves the 3-0-6 vote split and keeps GBP at 0; a miss stacked on today's claims makes a 1-0-8 or 0-0-9 split plausible, takes GBP to -1 and flips EUR/GBP to higher conviction.",
-      "when": "2026-09-16T06:00:00Z"
+      "note": "RELEASED, and exactly in line on every line. August headline CPI accelerated to 3.1% y/y from 2.9% against a 3.1% consensus, the monthly rate printed 0.5% from 0.3% also in line, and core inflation HELD at 2.6% against a 2.6% consensus and 2.6% previously. TradingEconomics re-verified all three directly after the release. The composition is the whole story: with core static for a third month, the entire acceleration is the energy and fuel pass-through, which is the easiest kind of inflation for a committee to look through. Sterling did not move - GBP/USD 1.34826, +0.03%, EUR/GBP unchanged at 0.85646 - which is what a fully-priced release looks like. Under this file's own stated rule an in-line 3.1% preserves the 3-0-6 vote split and keeps GBP at 0. What it does not do is hand the three hawks anything to offset yesterday's +27.8k claimant count, so both tails into Thursday 11:00Z are thinner than they were 24 hours ago.",
+      "when": "2026-09-16T06:00:00Z",
+      "result": [
+        {
+          "title": "CPI y/y",
+          "actual": "3.1%",
+          "forecast": "3.1%",
+          "previous": "2.9%",
+          "cmp": "in line"
+        },
+        {
+          "title": "Core CPI y/y",
+          "actual": "2.6%",
+          "forecast": "2.6%",
+          "previous": "2.6%",
+          "cmp": "in line"
+        }
+      ]
     },
     {
       "date": "Sep 16",
@@ -1163,5 +1184,5 @@
     }
   ],
   "geopolitics": "The oil channel is now doing all of the work and the haven channel is doing none of it, and after several sessions that pattern has to be read as the regime rather than as a lag. The physical position is unchanged and severe: transit through the Strait of Hormuz remains largely restricted after a series of attacks on shipping, including two supertankers struck by projectiles while attempting to exit the Strait at the start of the month, and Saudi Arabia's East-West Crude Oil Pipeline - Petroline, running roughly 1,200 kilometres from the Eastern Province to the Red Sea port of Yanbu and carrying around 5 million barrels a day that would otherwise transit the Gulf - has been shut since September 11. Military exchanges resumed at the start of this week with neither side giving ground over the waterway. The International Energy Agency has characterised the cumulative disruption as the largest in the history of the global oil market. The price response is exactly what a physical supply shock looks like and nothing like what a risk-off event looks like: WTI 103.127, up 1.71% today, 10.85% over five sessions and 22.04% over the month; Brent 107.336, up 1.57%, 9.62% and 18.12% on the same horizons; gasoline up 1.94% and heating oil 1.98% today, with heating oil now 138.51% higher year to date. Gas is the second and less-discussed transmission line, and it is the one that hits the euro directly - EU gas at 82.67 is up roughly a third on the month and about two and a half times year-on-year, with UK gas at 206.07 up around 35% on the month. Against all of that, gold is 4291.57 and DOWN 1.47% on the week and 2.82% on the month, and silver at 63.170 is down 3.93% on the week. Bullion is not being bought as insurance against a war that has closed the most important oil chokepoint on earth. There are two reasons, and both are tradeable. The first is that the insurance premium is being paid in barrels rather than in ounces, because the disruption is physical and specific rather than systemic - traders are hedging the thing that is actually constrained. The second is that the Federal Reserve is hiking into the shock, with roughly 85% priced for 4.00% tomorrow, which raises the opportunity cost of holding a non-yielding asset at exactly the moment the geopolitical case for holding it is strongest. Real rates are beating fear, and they have been doing so for long enough that the XAU and XAG shorts are regime trades rather than momentum trades - but note precisely what that means: they are bets on the dot plot, not on the war, and a dovish Fed surprise tomorrow would reverse them even with Hormuz still shut. The FX read follows the same two channels. On the terms of trade, the shock sorts the board cleanly into currencies that are paid and currencies that pay: Canada is the only G10 economy that gets paid, which is why CAD was again the best of the seven today at -0.06% and why it beats the commodity bloc on every horizon while still losing to the dollar; the euro area and the UK are the largest net energy importers here, which is what caps EUR at +1 despite the most hawkish central bank on the board and what supplies the third leg of the GER40 short. Japan, also a major importer, has this channel largely masked at present by its own tightening cycle. On the haven side, the more important conclusion is negative: the franc is not working. Switzerland has the strongest growth and survey data on this board - GDP up 2.3% on the year, manufacturing PMI 57.1 - and CHF is still down 1.11% on the week and still scored at zero, because a 0% policy rate is uninvestable against a Fed at 4.00% and because the SNB has repeatedly signalled it will intervene against appreciation rather than allow it. Both the demand side and the supply side of the haven bid are therefore capped, which is why USD/CHF LONG is the highest-conviction dollar expression in this file. The concentrated risk is the mirror image of all of the above, and it is worth stating explicitly because it would hit many positions at once: an escalation severe enough to make this systemic rather than specific - a direct attack on a Gulf state's production facilities, or a formal closure of the Strait - would finally bid bullion rather than only barrels, and would simultaneously break USD/CHF LONG, EUR/CHF LONG, AUD/CHF LONG, CAD/CHF LONG, XAU/USD SHORT and XAG/USD SHORT. The opposite tail is just as correlated: a ceasefire or a re-opening of Petroline would take USOIL LONG, the CAD long legs and the GER40 SHORT down together. This file is long the continuation of a specific, physical, non-systemic shock.",
-  "updatedAt": "2026-09-15T06:21:03.781Z"
+  "updatedAt": "2026-09-16T06:09:44.280Z"
 }
