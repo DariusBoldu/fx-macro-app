@@ -5,6 +5,11 @@ window.FX_DATA = {
     horizon: "4H swing",
     coverage: "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + XAU + XAG + XCU + USOIL",
     regime: "The regime has changed character overnight. For three weeks it was an energy supply shock pushing the long end of the US curve around, with the Fed a passive passenger. As of 18:00Z yesterday the Fed is the driver again, and it is driving in one direction. The September projections did not merely confirm the hike to a 3.75%-4.00% range; they rebuilt the whole path, lifting the 2026 median to 4.1% from 3.8%, putting 16 of 18 participants behind at least one more increase this year, and doing it while revising growth UP to 2.3%, unemployment DOWN to 4.1% from 4.3% and core PCE UP to 3.4% from 3.3%. A stronger economy with firmer inflation and a lower unemployment path is the configuration that produces more hikes, and the committee said so in the only language it has. The second feature is that the energy leg is quietly deflating at the margin. WTI at 102.173 is now NEGATIVE on the week, Brent at 105.755 is -1.74%, and European gas has fallen 5.20% in Amsterdam and 6.08% in Britain over seven days - the first sustained relief since the Petroline strikes. That does not end the shock, because the monthly numbers are still +21.55% on WTI and +22.20% on EU gas and refined products remain the tight leg with heating oil +17.30% on the month, but it does change which currencies are helped and hurt at the margin: it takes the floor out from under CAD and puts one under EUR. The third feature is a caution against simply buying the dollar with both hands. The move has largely happened - DXY is +1.23% on the week - Warsh explicitly said the Fed does not at this stage envisage an aggressive tightening cycle, and TE's own model still carries 4.00% at the October 28 meeting, which is a hold. Two central banks report inside the next sixteen hours. The correct posture is to hold the dollar longs that already worked and to express the rest of the board through crosses.",
+    update: {
+      at: "2026-09-17T11:05:00Z",
+      title: "\ud83c\uddec\ud83c\udde7 GBP analysis updated",
+      text: "BoE held 3.75% on a 3-0-6 vote, both in line. The stated -1 trigger did not fire: three hike votes held a fourth time, zero for a cut. GBP stays 0; binary cleared."
+    },
     nextBigEvent: "Bank of England, today September 17 at 11:00Z, with the Monetary Policy Summary, the minutes and the MPC vote split released together. ForexFactory carries a 3.75% hold and a 3-0-6 vote forecast - three for a hike, none for a cut, six unchanged - an exact repeat of July, and TE's consensus row shows 0/9 for a cut. Prediction markets put the hold near 96.75%. So the rate is not the event and the vote split is. The three hawkish dissents in July came from Greene, Mann and Pill, and the hawkish minority has grown at three straight meetings - 8-1 in April, 7-2 in June, 6-3 in July. What has changed since is the labour market rather than inflation: claimant count +27.8K against an 8.3K forecast on Monday, payrolled employees -26.1K in August, and wage growth down to 3.9% from 4.2%. Tuesday's CPI then took the hawkish route away, with core HELD at 2.6% against a 2.7% consensus for a fourth consecutive month and services steady at 3.4%. The asymmetry is therefore one-sided and this file has said so since Tuesday: a 3-0-6 repeat is priced and does nothing, while ANY erosion of the three hike votes to 2 or 1, or dovish language on the labour market in the minutes, cuts GBP to -1 and takes GBP/USD, GBP/NZD and EUR/GBP with it. Then the Bank of Japan at 02:30Z tomorrow, where 1.25% is effectively fully priced and the terminal-rate guidance is the whole event with USD/JPY at 156."
   },
 
@@ -38,8 +43,8 @@ window.FX_DATA = {
     },
     {
       icon: "🏦",
-      t: "Two central banks inside sixteen hours: BoE at 11:00Z today, BoJ at 02:30Z tomorrow",
-      s: "The BoE is a priced hold where only the vote matters - ForexFactory forecasts 3-0-6, an exact repeat of July, and the distribution is one-sided after core CPI held at 2.6% and the claimant count jumped 27.8K. Any defection from the three hike votes cuts GBP to -1. The BoJ hikes to 1.25% with near-certainty, so the terminal-rate language is the whole event, and USD/JPY at 156.005 sits where the MoF bought yen ten days ago. No HIGH conviction anywhere today."
+      t: "BoE held 3.75% on a 3-0-6 vote - the pound's downside trigger failed to fire, BoJ next at 02:30Z",
+      s: "TE-verified: the MPC Vote Hike row printed 3/9 and the Vote Cut row 0/9, an exact repeat of July and exactly what was priced, so GBP/USD is 1.33798 and -0.01% on the day. The content is what the committee refused to do - three members still want 4.00% after a fourth meeting, and nobody wants a cut, despite a claimant count of +27.8K and payrolled employees -26.1K since July. GBP stays at ZERO but the binary is spent and the uncertainty discount comes off. The BoJ at 02:30Z is now the only live central bank left, where 1.25% is near-certain and the terminal-rate language is the whole event."
     },
     {
       icon: "🛢️",
@@ -61,8 +66,8 @@ window.FX_DATA = {
     },
     GBP: {
       next: "hold",
-      when: "TODAY, Sept 17 at 11:00Z - ForexFactory carries a 3.75% hold with a 3-0-6 vote forecast and TE's consensus row shows 0/9 for a cut; the next decision after this one is November 5 at 12:00Z",
-      note: "TE re-verified: Bank Rate 3.75%, CPI 3.1% y/y with core HELD at 2.6%, unemployment 4.9%, GDP +0.4% q/q and 1.2% annual, wage growth 3.9% from 4.2%, payrolled employees -26.1K in August, manufacturing PMI 51.7, services 52.5, retail sales -0.5% m/m, consumer confidence -14, business confidence -36 from -65. GBP stays at ZERO into the decision, which is the only defensible score six hours before the event, and the reasoning has been on this page since Tuesday. Both of the triggers written in advance failed to fire: the -1 route needed a headline CPI below the 3.1% consensus and the headline matched exactly; the +1 route needed core above 2.6% and core came in at 2.6% against a 2.7% consensus, unchanged for a FOURTH consecutive month, with services steady at 3.4%. So the score does not move - but the distribution around it is now one-sided, and that is the tradeable observation. The hawkish route is closed because the two series the MPC actually targets did not move, while the dovish route has been opening steadily: the claimant count jumped 27.8K against an 8.3K forecast on Monday, payrolled employees fell 26.1K in August, and wage growth has decelerated to 3.9% from 4.2%. The July vote was 6-3 with Greene, Mann and Pill each preferring 4.00%, and the hawkish minority has GROWN at three consecutive meetings - 8-1 in April, 7-2 in June, 6-3 in July - so the market's baseline is a fourth repeat. Prediction markets put the hold near 96.75%. What that means practically: a 3-0-6 repeat is fully priced and should do very little, while any erosion to 2 hike votes or 1, or minutes that lean on the labour-market deterioration, cuts GBP to -1 and takes GBP/USD, GBP/NZD and EUR/GBP with it. Retail sales tomorrow at 06:00Z, expected -0.2% m/m after -0.5%, is the follow-up."
+      when: "Nov 5 at 12:00Z - today's 11:00Z decision is done and held at 3.75%, and TE's calendar shows nothing between now and November 5, then MPC vote rows again on December 17",
+      note: "RELEASED AND TE-VERIFIED: Bank Rate HELD at 3.75%, actual against a 3.75% consensus and 3.75% previous, on a 3-0-6 vote - TE's MPC Vote Hike row actual 3/9 against a 3/9 consensus, its MPC Vote Cut row actual 0/9. Both figures landed exactly in line, so the priced outcome is the outcome and sterling barely moved: GBP/USD 1.33798, -0.01% on the day. The path itself is unchanged - hold - but the reasons behind it are now confirmed rather than forecast. Three members again preferred 4.00%, a fourth consecutive meeting of hawkish dissent, and nobody voted to cut. That matters more than the repeat itself, because the labour market gave the doves everything they needed since July: claimant count +27.8K against an 8.3K forecast, payrolled employees -26.1K in August, wage growth down to 3.9% from 4.2%, retail sales -0.5% m/m. A committee handed that data and still returning a 0/9 cut row is a committee with no dovish wing, which puts a firmer near-term floor under the pound than the data alone suggests. The rest of the TE-verified picture is unchanged: CPI 3.1% y/y with core HELD at 2.6% for a fourth month and services 3.4%, unemployment 4.9%, GDP +0.4% q/q and 1.2% annual, manufacturing PMI 51.7, services 52.5, consumer confidence -14, business confidence -36 from -65. What now sits between this decision and the next: retail sales tomorrow at 06:00Z, expected -0.2% m/m, then a six-week vacuum in which no scheduled repricing is available. The hawkish route to a November hike needs services inflation back above 3.4%; the dovish route needs the labour market to crack far enough to create a cut vote where there is currently none."
     },
     JPY: {
       next: "hike",
@@ -93,6 +98,12 @@ window.FX_DATA = {
 
   today: [
     {
+      ccy: "GBP",
+      moved: true,
+      headline: "BoE HELD 3.75% on a 3-0-6 vote, both in line - the downgrade trigger written here did NOT fire and the cut row printed 0/9",
+      read: "The tail this page flagged since Tuesday was one-sided and dated: any erosion of the three hike votes, or minutes leaning on the labour-market deterioration, cuts GBP to -1. It did not happen. TE's MPC Vote Hike row printed 3/9 against a 3/9 consensus and the Vote Cut row printed 0/9, an exact repeat of July, and sterling did what a fully priced event should do - GBP/USD 1.33798, -0.01% on the day. What deserves attention is what the committee refused to do. Since July the labour market has handed the doves the claimant count at +27.8K against 8.3K expected, payrolled employees -26.1K, wage growth down to 3.9% from 4.2% and retail sales at -0.5% m/m, and against all of that not one member voted to cut and not one hawk stood down. A 0/9 cut row means there is no dovish wing on this committee at present, which puts a firmer near-term floor under the pound than the data alone implies. Forward: the score stays at ZERO because an in-line hold with an in-line vote is not new tightening and the hawkish route stayed shut when core CPI held at 2.6% on Tuesday - but the uncertainty discount that capped every GBP ticket comes off, so conviction improves on GBP/USD and GBP/AUD without any bias flipping. Next risk: retail sales tomorrow at 06:00Z, expected -0.2% m/m, then a six-week vacuum to November 5."
+    },
+    {
       ccy: "USD",
       moved: true,
       headline: "The dot plot resolved HAWKISH - 2026 median 4.1% from 3.8%, 16 of 18 want another hike, growth revised up and unemployment down - and USD goes +2 to +3",
@@ -104,12 +115,7 @@ window.FX_DATA = {
       headline: "CUT FROM +1 TO 0 - WTI's weekly turned NEGATIVE at -0.30% from +8.95%, and services PMI collapsed to 46.8 from 49.1",
       read: "The Canadian +1 was always an explicit trade-off: a central bank frozen at 2.25% by a -0.1% monthly CPI, 41,700 lost jobs and -0.8% retail sales, carried anyway by an oil windfall. The windfall stopped paying this week, and it stopped BEFORE the known negative catalyst - the 84.5%-probable Petroline restart by September 30 - has even landed. That sequencing is what makes this a score change rather than a warning. Independently, services PMI at 46.8 is a deepening contraction in the larger part of the economy. Forward: express Canada as a neutral rather than a short, because Q2 GDP at 3.3% annualised and business confidence at 64.3 from 55.1 are genuine counterweights that argue against -1. EUR/CAD and GBP/CAD leave SHORT, CAD/CHF leaves LONG, AUD/CAD becomes a mild LONG. Producer prices at 12:30Z."
     },
-    {
-      ccy: "GBP",
-      moved: true,
-      headline: "Bank of England at 11:00Z with the vote split the entire event - ForexFactory forecasts 3-0-6, an exact repeat of July",
-      read: "GBP stays at ZERO into the decision because both triggers written here in advance failed: the -1 route needed a headline CPI below 3.1% and it matched exactly, the +1 route needed core above 2.6% and core held at 2.6% against a 2.7% consensus for a fourth month. The score is unchanged but the distribution around it is not. The hawkish route closed when the two series the MPC targets refused to move, while the dovish route keeps widening - claimant count +27.8K against 8.3K expected, payrolled employees -26.1K, wage growth down to 3.9% from 4.2%. Forward: a 3-0-6 repeat is priced near 96.75% and should barely move the pound, so the asymmetry is entirely in the tail. Any erosion to 2 hike votes, or minutes leaning on the labour market, cuts GBP to -1 and takes GBP/USD, GBP/NZD and EUR/GBP with it. Retail sales tomorrow 06:00Z."
-    },
+
     {
       ccy: "JPY",
       moved: true,
@@ -179,9 +185,9 @@ window.FX_DATA = {
       ccy: "GBP",
       score: 0,
       verdict: "MIXED",
-      tag: "BoE at 11:00Z; hawkish route closed, dovish route open",
-      drivers: "Bank Rate 3.75% with ForexFactory forecasting a 3-0-6 vote and TE's consensus showing 0/9 for a cut; CPI 3.1% y/y in line but core HELD at 2.6% against a 2.7% consensus for a fourth month with services steady at 3.4%; against a claimant count of +27.8K versus 8.3K expected, payrolled employees -26.1K, wage growth 3.9% from 4.2%, unemployment 4.9%, retail sales -0.5% m/m; GBP/USD 1.33812, week -0.97%.",
-      forward: "⚖️ Balanced, held at ZERO into an 11:00Z decision, which is the only defensible score six hours before the event - and the two triggers this file published in advance are the reason it does not move. The -1 route required a headline CPI below the 3.1% consensus; the headline matched exactly. The +1 route required core above 2.6%; core came in at 2.6% against a 2.7% consensus, unchanged for a FOURTH consecutive month, with services steady at 3.4%. Neither fired, so the score holds - but the distribution around that unchanged score has become distinctly one-sided, and that is the tradeable content. The hawkish route is closed because the two series the MPC actually targets refused to move, while goods inflation accelerating to 2.7% is exactly the imported energy pass-through the committee has said it will look through. The dovish route keeps widening: the claimant count jumped 27.8K against an 8.3K forecast on Monday, payrolled employees fell 26.1K in August, wage growth has decelerated to 3.9% from 4.2%, and retail sales are -0.5% m/m. A labour market cracking while core inflation stalls is the configuration that peels hawks away. The July vote was 6-3 with Greene, Mann and Pill each preferring 4.00%, and the hawkish minority has GROWN at three consecutive meetings - 8-1 in April, 7-2 in June, 6-3 in July - so a fourth repeat is the market's baseline and prediction markets put the hold near 96.75%. That is what makes the asymmetry: a 3-0-6 repeat is fully priced and should barely move the pound, while any erosion to 2 hike votes or 1, or minutes that lean on the labour-market deterioration, cuts GBP to -1 immediately and takes GBP/USD, GBP/NZD and EUR/GBP with it. The one genuine tail in the other direction is a hawkish surprise on energy pass-through, which the CPI data argues against. Business confidence at -36 from -65 is the one bright spot in the domestic picture. Retail sales tomorrow at 06:00Z, expected -0.2% m/m, is the follow-up. Hold positions small until 11:00Z."
+      tag: "BoE held 3.75% on a 3-0-6 vote - both tails failed to fire",
+      drivers: "BoE HELD Bank Rate at 3.75% on a 3-0-6 vote, TE-verified with the MPC Vote Hike row actual at 3/9 and the MPC Vote Cut row actual at 0/9, both exactly in line; CPI 3.1% y/y with core HELD at 2.6% for a fourth month and services 3.4%; against a claimant count of +27.8K versus 8.3K expected, payrolled employees -26.1K, wage growth 3.9% from 4.2%, unemployment 4.9%, retail sales -0.5% m/m; GBP/USD 1.33798, day -0.01%, week -0.98%.",
+      forward: "\u2696\ufe0f Balanced, HELD AT ZERO through the decision, and the score does not move because nothing in the release justified moving it - but the character of the zero has changed completely and that is the tradeable content. This page carried an explicit, dated downgrade trigger since Tuesday: any erosion of the three hike votes to 2 or 1, or minutes leaning on the labour-market deterioration, cuts GBP to -1 and takes GBP/USD, GBP/NZD and EUR/GBP with it. It did not fire. TE's MPC Vote Hike row printed 3/9 against a 3/9 consensus and the Vote Cut row printed 0/9, so the split repeated July exactly: three for 4.00%, none for a cut, six unchanged. Read what that actually required. Since the July meeting the UK labour market has deteriorated on every series the doves would use - the claimant count jumped 27.8K against an 8.3K forecast on Monday, payrolled employees fell 26.1K in August, wage growth decelerated to 3.9% from 4.2%, retail sales are -0.5% m/m - and against all of it not one member moved to the dovish side and not one of the three hawks stood down. The non-obvious point is the empty half of the committee: with the cut row at 0/9, there is currently no dovish wing at all on this MPC, so the near-term policy floor is firmer than the labour data alone would imply. That is the first meeting since April at which the hawkish minority neither grew nor shrank - 8-1, 7-2, 6-3, 6-3 - which reads as a committee that has settled rather than one drifting toward a cut. Why this is still zero and not +1: an in-line hold with an in-line vote is not new tightening, the hawkish route remains closed because core CPI and services did not move on Tuesday, and the price agrees - GBP/USD is 1.33798 and -0.01% on the day, a fully priced event doing exactly nothing. What changes practically is the risk premium rather than the score: the single largest scheduled sterling event of the month has passed without damage, so the uncertainty discount that capped conviction on every GBP ticket comes off, and the pound reverts to a relative-score story against a USD at +3 and an AUD at +1. Next inputs: retail sales tomorrow at 06:00Z, expected -0.2% m/m after -0.5%, then a six-week policy vacuum to November 5 at 12:00Z. What cuts GBP to -1 now: a second consecutive negative retail sales print alongside another labour-market miss, which would put a cut back on a committee that currently has nobody arguing for one. What takes it to +1: services inflation re-accelerating above 3.4% in the September CPI, which is the only route left for the three hawks to gain a fourth vote."
     },
     {
       ccy: "CHF",
@@ -262,9 +268,9 @@ window.FX_DATA = {
     {
       sym: "GBP/USD",
       bias: "SHORT",
-      conv: "LOW-MED",
-      why: "0 against +3, with the pound's hawkish route closed on Tuesday when core CPI held at 2.6% against a 2.7% consensus for a fourth month and services stayed at 3.4%, while the labour market keeps cracking - claimant count +27.8K against 8.3K expected, payrolled employees -26.1K, wage growth down to 3.9% from 4.2%. GBP/USD 1.33812, week -0.97%, month -1.12%.",
-      risk: "Conviction stays LOW-MED purely because the Bank of England reports at 11:00Z and the vote is the event. A 3-0-6 repeat is priced near 96.75% and does nothing, but this is a binary sitting six hours away and the pound is flat on the day. Any hawkish surprise on energy pass-through hurts immediately."
+      conv: "MEDIUM",
+      why: "0 against +3, and the conviction improves because the reason it was capped has been removed rather than because the pound got weaker. The BoE held 3.75% on a 3-0-6 vote, TE-verified at 3/9 hike and 0/9 cut, exactly as priced, so the binary that sat under this ticket is spent while the score gap is untouched: the Fed's median now carries another hike this year against a UK committee that just declined to move in either direction. Sterling's hawkish route stayed shut on Tuesday with core CPI held at 2.6% for a fourth month and services at 3.4%. GBP/USD 1.33798, day -0.01%, week -0.98%, month -1.13%.",
+      risk: "With the decision out of the way the risks are all dollar-side again: this is a short against a currency that has already run +1.14% on the week, so it is chasing rather than anticipating. On the sterling leg, the 0/9 cut row is a genuine counterweight - a committee with no dovish wing limits how far the pound can be sold on UK data alone. Retail sales tomorrow at 06:00Z, expected -0.2% m/m, is the next input."
     },
     {
       sym: "NZD/JPY",
@@ -332,16 +338,16 @@ window.FX_DATA = {
     {
       sym: "EUR/GBP",
       bias: "LONG",
-      conv: "LOW-MED",
-      why: "+1 against 0 into a Bank of England whose distribution is one-sided: core CPI held at 2.6% against a 2.7% consensus for a fourth month, closing the hawkish route, while the claimant count jumped 27.8K and payrolled employees fell 26.1K. The ECB hiked six days ago with risks to the upside and the euro's gas drag is easing. EUR/GBP 0.85694.",
-      risk: "The BoE reports at 11:00Z and a 3-0-6 repeat is priced near 96.75%, so the priced outcome does nothing for this ticket - it needs a dovish defection to pay. The euro's own Q2 wage growth missed at 3.0% from 3.4%, which is the mirror-image dovish risk on the long leg."
+      conv: "LOW",
+      why: "+1 against 0, and the conviction is cut because the condition this ticket needed failed. It was written here as needing a dovish defection at the BoE to pay, and the vote repeated July exactly - 3/9 for a hike, 0/9 for a cut on TE's rows - so the catalyst has passed without delivering. What survives is the score gap alone: the ECB hiked six days ago with risks to the upside and the euro's gas drag is easing, against a UK committee that just held. EUR/GBP 0.85792, up about 0.10% on the day.",
+      risk: "A long whose stated trigger has already failed is a weaker trade than it was this morning, hence LOW. The euro's own Q2 wage growth missed at 3.0% from 3.4%, which undercuts the hawkish leg, and the 0/9 cut row means sterling now has a firmer floor than the UK labour data implied. Treat this as levels rather than momentum until Lagarde speaks tomorrow at 10:30Z."
     },
     {
       sym: "GBP/NZD",
       bias: "LONG",
       conv: "LOW-MED",
-      why: "0 against -1, and the kiwi leg is doing the work: an RBNZ holding to October 28 with no move priced until December 9, looking through 4.1% inflation as imported fuel, with unemployment at 5.6% and rising. Sterling at least has a live central bank at 11:00Z and three standing hike votes. GBP/NZD 2.33614.",
-      risk: "Both legs are compromised, which is why this is LOW-MED. Sterling faces a binary at 11:00Z where any defection from the three hike votes cuts GBP to -1 and flips this ticket outright, and the kiwi has had two firm prints in three days. Trade balance tonight 22:45Z."
+      why: "0 against -1, and the sterling leg improved in a way that matters for this specific ticket: the risk written here was that a defection from the three hike votes would cut GBP to -1 and flip it outright, and the BoE instead returned an exact 3-0-6 repeat with a 0/9 cut row. The kiwi case is unchanged - an RBNZ holding to October 28 with no move priced until December 9, looking through 4.1% inflation as imported fuel, unemployment 5.6% and rising. GBP/NZD 2.33090.",
+      risk: "Conviction stays LOW-MED rather than rising, because the threat removed on one leg is being offset on the other: GBP/NZD is -0.50% on the day, the largest fall of any sterling cross, after two firm New Zealand prints in three days. The kiwi short is a one-pillar trade and this is the ticket where that shows. Trade balance tonight at 22:45Z, expected -1,775M."
     },
     {
       sym: "NZD/CAD",
@@ -360,16 +366,16 @@ window.FX_DATA = {
     {
       sym: "GBP/AUD",
       bias: "SHORT",
-      conv: "LOW-MED",
-      why: "0 against +1 with the Australian leg outperforming: AUD/USD gained 0.31% against hawkish Fed projections while sterling was flat, and the RBA is still describing inflation as too high against a BoE whose hawkish route closed when core CPI held at 2.6% for a fourth month and the claimant count jumped 27.8K. GBP/AUD 1.88216.",
-      risk: "Two event legs inside 24 hours. The BoE at 11:00Z could surprise hawkishly on energy pass-through, and Bullock speaks at 23:30Z tonight ahead of the September 24 jobs report that is the stated tripwire for cutting AUD to zero."
+      conv: "MEDIUM",
+      why: "0 against +1, and this is the cleanest of the sterling shorts now that one of its two event legs has cleared. The BoE held 3.75% on a 3-0-6 vote exactly in line, TE-verified at 3/9 hike and 0/9 cut, so the hawkish-surprise risk named here this morning is spent, while the RBA still describes inflation as too high and AUD/USD outperformed against hawkish Fed projections. The ticket is also confirming: GBP/AUD 1.88201, -0.32% on the day.",
+      risk: "The remaining risk is entirely Australian. Bullock speaks at 23:30Z tonight ahead of the September 24 jobs report that is the stated tripwire for cutting AUD to zero, and employment was already negative in July with consumer confidence down to 84.4. On the sterling side the 0/9 cut row limits how far this can run on UK weakness alone."
     },
     {
       sym: "GBP/JPY",
       bias: "SHORT",
       conv: "LOW-MED",
-      why: "0 against +1 with a BoJ hike to 1.25% landing at 02:30Z tomorrow against a Bank of England whose hawkish route is closed - core CPI unchanged at 2.6% for a fourth month, services flat at 3.4%, claimant count +27.8K and payrolled employees -26.1K. GBP/JPY 208.753.",
-      risk: "The most event-crowded ticket on the board, with two central banks inside sixteen hours and both legs live. The yen has underperformed for five straight sessions despite the near-certain hike, and a few-clues-on-terminal outcome leaves it heavy. Hold minimal size through 11:00Z and 02:30Z."
+      why: "0 against +1 with a BoJ hike to 1.25% landing at 02:30Z tomorrow against a Bank of England that has now confirmed it is going nowhere - Bank Rate held at 3.75% on a 3-0-6 vote, TE-verified at 3/9 hike and 0/9 cut, with core CPI unchanged at 2.6% for a fourth month. GBP/JPY 208.220, -0.42% on the day.",
+      risk: "Conviction stays LOW-MED even though the BoE leg has cleared, because the larger of the two events is still ahead and it is the one with a genuine two-way outcome. The yen has underperformed for five straight sessions despite a near-certain hike, and a few-clues-on-terminal statement leaves it heavy. Hold minimal size through 02:30Z."
     },
     {
       sym: "CHF/JPY",
@@ -396,8 +402,8 @@ window.FX_DATA = {
       sym: "GBP/CAD",
       bias: "RANGE",
       conv: "LOW-MED",
-      why: "Leaves SHORT for RANGE at 0 against 0 after CAD was cut today: the Canadian oil leg went flat with WTI's weekly at -0.30% and services PMI at 46.8 from 49.1, which removes the terms-of-trade edge that justified being short sterling against it. GBP/CAD 1.87179.",
-      risk: "Two weak currencies with two frozen central banks - the BoC at 2.25% through 2027 on TE's model, the BoE almost certainly holding at 3.75% at 11:00Z. That is a range until one of them gets a catalyst. A dovish BoE vote split would reopen the short."
+      why: "RANGE at 0 against 0, and both sides of the range are now confirmed rather than assumed. The BoE held 3.75% on a 3-0-6 vote exactly in line, so the dovish vote split that this file said would reopen the short did not arrive, while the Canadian oil leg went flat with WTI's weekly at -0.30% and services PMI at 46.8 from 49.1. Two frozen central banks and a pair that is dead flat on the day at 1.87186, +0.01%.",
+      risk: "Nothing on either leg now has a scheduled catalyst until Canadian producer prices at 12:30Z today and UK retail sales at 06:00Z tomorrow, neither of which is large enough to break a range. The genuine risk to holding levels here is the Petroline restart, priced at 84.5% by September 30, which would push CAD lower and give this pair an upward bias."
     },
     {
       sym: "CAD/CHF",
@@ -438,8 +444,8 @@ window.FX_DATA = {
       sym: "GBP/CHF",
       bias: "RANGE",
       conv: "LOW",
-      why: "0 against 0 with two central banks that are almost certain not to move - the BoE at 11:00Z where a 3.75% hold is priced near 96.75%, the SNB on September 24 where 0.00% is certain and only the intervention language is readable. GBP/CHF 1.10464.",
-      risk: "The BoE vote split at 11:00Z is the only live variable and it is one-sided: any erosion of the three hike votes cuts GBP to -1 and opens a short here. Until then this is a levels trade between two currencies that have both lost ground to the dollar this week."
+      why: "0 against 0 with both central banks now effectively settled - the BoE has delivered its hold at 3.75% on a 3-0-6 vote, TE-verified at 3/9 hike and 0/9 cut, and the SNB on September 24 is certain at 0.00% with only the intervention language readable. GBP/CHF 1.10394, -0.09% on the day.",
+      risk: "The one live variable named here this morning, the BoE vote split, has resolved to the priced outcome and no longer offers a direction, which leaves this a pure levels trade. The next real input is whether the SNB's intervention language survives a week in which the franc has weakened 1.6% against the dollar."
     },
     {
       sym: "XCU/USD",
@@ -518,7 +524,23 @@ window.FX_DATA = {
       date: "Sep 17",
       event: "Bank of England rate decision, Monetary Policy Summary, minutes and MPC vote split",
       impact: "high",
-      note: "The day's main event and the one asymmetric setup on the board. ForexFactory carries a 3.75% hold with a 3-0-6 vote forecast - three for a hike, none for a cut, six unchanged - an exact repeat of July, and TE's consensus row shows 0/9 for a cut. Prediction markets put the hold near 96.75%, so the rate is not the event and the vote split is. July was 6-3 with Greene, Mann and Pill each preferring 4.00%, and the hawkish minority has GROWN at three consecutive meetings: 8-1 in April, 7-2 in June, 6-3 in July. What has changed since is the labour market rather than inflation - claimant count +27.8K against 8.3K expected, payrolled employees -26.1K, wage growth down to 3.9% from 4.2% - while Tuesday's CPI closed the hawkish route with core HELD at 2.6% against a 2.7% consensus for a fourth month and services steady at 3.4%. The distribution is therefore one-sided: a 3-0-6 repeat is priced and should barely move sterling, while any erosion to 2 hike votes or 1, or minutes leaning on the labour-market deterioration, cuts GBP to -1 and takes GBP/USD, GBP/NZD and EUR/GBP with it.",
+      note: "The day's main event and the one asymmetric setup on the board. ForexFactory carries a 3.75% hold with a 3-0-6 vote forecast - three for a hike, none for a cut, six unchanged - an exact repeat of July, and TE's consensus row shows 0/9 for a cut. Prediction markets put the hold near 96.75%, so the rate is not the event and the vote split is. July was 6-3 with Greene, Mann and Pill each preferring 4.00%, and the hawkish minority has GROWN at three consecutive meetings: 8-1 in April, 7-2 in June, 6-3 in July. What has changed since is the labour market rather than inflation - claimant count +27.8K against 8.3K expected, payrolled employees -26.1K, wage growth down to 3.9% from 4.2% - while Tuesday's CPI closed the hawkish route with core HELD at 2.6% against a 2.7% consensus for a fourth month and services steady at 3.4%. The distribution is therefore one-sided: a 3-0-6 repeat is priced and should barely move sterling, while any erosion to 2 hike votes or 1, or minutes leaning on the labour-market deterioration, cuts GBP to -1 and takes GBP/USD, GBP/NZD and EUR/GBP with it. RELEASED, and it resolved to the priced outcome: Bank Rate held at 3.75% on a 3-0-6 vote, TE-verified with its MPC Vote Hike row actual at 3/9 and its MPC Vote Cut row actual at 0/9. Neither tail fired. The three hawkish dissents held for a FOURTH consecutive meeting despite a labour market that has deteriorated materially since July, and not one member voted to cut. Sterling did exactly what a fully priced outcome should do - GBP/USD 1.33798, -0.01% on the day.",
+      result: [
+        {
+          title: "Official Bank Rate",
+          actual: "3.75%",
+          forecast: "3.75%",
+          previous: "3.75%",
+          cmp: "in line"
+        },
+        {
+          title: "MPC Official Bank Rate Votes",
+          actual: "3-0-6",
+          forecast: "3-0-6",
+          previous: "3-0-6",
+          cmp: "in line"
+        }
+      ],
       when: "2026-09-17T11:00:00Z"
     },
     {
@@ -668,7 +690,7 @@ window.FX_DATA = {
       growth: { value: "1.2%", trend: "rising", note: "Q2 y/y", hist: [1.1, 1, 0.8, 1.1, 0.9, 1.2] },
       unemployment: { value: "4.9%", trend: "stable", note: "Jul rate", hist: [5.1, 5.2, 5.2, 4.9, 4.9, 4.9] },
       jobs: { value: "+66k", trend: "falling", note: "Jul chg", hist: [30, 84, 99, 147, 83, 66] },
-      rates: { value: "3.75%", trend: "stable", note: "Bank Rate", hist: [3.5, 3.75, 3.75, 3.75, 3.75, 3.75] }
+      rates: { value: "3.75%", trend: "stable", note: "Bank Rate", hist: [3.75, 3.75, 3.75, 3.75, 3.75, 3.75] }
     },
     JPY: {
       inflation: { value: "1.9%", trend: "rising", note: "Jul CPI", hist: [2, 1.8, 1.6, 1.5, 1.6, 1.9] },
