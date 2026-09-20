@@ -26,3 +26,6 @@ proxy/.wrangler/
 
 # post-release follow-up: local record of handled releases
 .release-state.json
+
+# Cloudflare API token for Worker deploys
+.cf_token
