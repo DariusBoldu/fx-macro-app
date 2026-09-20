@@ -292,7 +292,11 @@ async function commentaryFires(env, groups) {
 async function testRoutine(url, env) {
   if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
   if (!env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return json({ error: 'ROUTINE_ID or ROUTINE_FIRE_TOKEN is not set' }, 400);
-  const res = await postRoutineFire(env, 'TRIGGER TEST ' + new Date().toISOString());
+  // `text` sends another read-only payload the prompt understands (EGRESS CHECK,
+  // which reports what the sandbox can reach). Capped, and admin-gated above.
+  const text = (url.searchParams.get('text') || '').slice(0, 2000) || ('TRIGGER TEST ' + new Date().toISOString());
+  if (!/^(TRIGGER TEST|EGRESS CHECK)\b/.test(text)) return json({ error: 'text must start with TRIGGER TEST or EGRESS CHECK' }, 400);
+  const res = await postRoutineFire(env, text);
   return json(res, res.status < 300 ? 200 : 502);
 }
 
