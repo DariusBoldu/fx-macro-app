@@ -120,6 +120,88 @@ export async function fetchRedFolder(fetchImpl = fetch) {
   return redFolderGroups(await r.json());
 }
 
+/* ==================== Central-bank commentary (2026-09-20) ====================
+ * The figure is only half of a central-bank event. The statement, the vote
+ * split, the projections/dot plot and the press conference carry the rest — and
+ * none of it is readable at release time: after the 2026-09-16 FOMC the rate was
+ * verifiable within a minute, while the dot plot was still unindexed 11 minutes
+ * later, so that report went out without it. Every red folder that is about what
+ * a central bank SAYS therefore gets a second, later pass.
+ *
+ * Delays run from the scheduled start. A Fed or ECB press conference lasts about
+ * an hour (45-75 min), so 60 minutes lands just after it ends, with the wires
+ * written up. Speeches are shorter. A decision with no press conference of its
+ * own still needs ~45 minutes for the votes and projections to be reported. */
+export const COMMENTARY_MIN = { presser: 60, speech: 45, decision: 45 };
+export const COMMENTARY_STALE_H = 6;      // older than this: the daily report covers it
+const PRESSER_LINK_MS = 3 * 3600000;      // a presser this close belongs to that decision
+const PRESSER_RE = /press conference/i;
+const SPEECH_RE = /\b(speaks|speech|testimony|testifies|remarks|panel|statement)\b/i;
+
+/* What kind of "said" event this group is, or null if it is figures only. */
+export function commentaryKind(g) {
+  if (!g || !g.lines || !g.lines.length) return null;
+  if (g.lines.some((l) => PRESSER_RE.test(l.title))) return 'presser';
+  if (g.decision) return 'decision';
+  if (!g.numeric && g.lines.some((l) => SPEECH_RE.test(l.title))) return 'speech';
+  return null;
+}
+
+/* The rate decision a press conference belongs to (SNB decides 07:30Z, speaks
+ * 08:00Z), so the commentary pass can quote the figure that was already pushed. */
+export function relatedDecision(g, groups) {
+  return (groups || []).find((o) => o.id !== g.id && o.ccy === g.ccy && o.decision &&
+    Math.abs(Date.parse(o.when) - Date.parse(g.when)) <= PRESSER_LINK_MS) || null;
+}
+
+/* Every group owed a commentary pass, each with the kind and the UTC time it is
+ * due. A decision whose own press conference is within 3 hours is skipped: that
+ * later pass reads the statement and the press conference together. */
+export function commentaryGroups(groups) {
+  const out = [];
+  for (const g of groups || []) {
+    const kind = commentaryKind(g);
+    if (!kind) continue;
+    if (kind === 'decision' && (groups || []).some((o) => o.id !== g.id && o.ccy === g.ccy &&
+      commentaryKind(o) === 'presser' && Math.abs(Date.parse(o.when) - Date.parse(g.when)) <= PRESSER_LINK_MS)) continue;
+    out.push(Object.assign({}, g, {
+      kind,
+      dueAt: isoNoMillis(Date.parse(g.when) + COMMENTARY_MIN[kind] * 60000),
+    }));
+  }
+  return out;
+}
+
+/* Fed, ECB and BoJ move the whole board, so their commentary re-scores all 8
+ * currencies; the rest stay scoped to their own currency (Darius, 2026-09-16). */
+export const FULL_BOARD_CCYS = ['USD', 'EUR', 'JPY'];
+export const commentaryScope = (ccy) => (FULL_BOARD_CCYS.includes(ccy) ? 'full' : 'focused');
+
+/* The payload the Worker sends to the cloud routine. Facts only — the routine's
+ * own prompt decides what to do with them. */
+export function buildCommentaryPayload(c, { decisionGroup, result } = {}) {
+  const KIND = { presser: 'press conference', speech: 'speech', decision: 'rate decision (no press conference)' };
+  const lines = [
+    `CENTRAL-BANK COMMENTARY ${c.id}`,
+    `Currency: ${c.ccy}`,
+    `Event: ${KIND[c.kind] || c.kind}`,
+    `Scheduled: ${c.when}`,
+    `Red-folder lines: ${c.lines.map((l) => l.title).join(', ')}`,
+    `Scope: ${commentaryScope(c.ccy)}`,
+  ];
+  if (decisionGroup) lines.push(`Decision at ${decisionGroup.when}: ${decisionGroup.lines.map((l) => l.title).join(', ')}`);
+  const figures = ((result && result.lines) || []).filter((l) => l.actual != null);
+  if (figures.length) {
+    lines.push('Figures already published to the app:');
+    for (const l of figures) {
+      lines.push(`- ${l.title}: actual ${l.actual}` +
+        (l.forecast ? ` (forecast ${l.forecast}${l.cmp ? ', ' + l.cmp : ''})` : '') +
+        (l.previous ? `, previous ${l.previous}` : ''));
+    }
+  }
+  return lines.join('\n');
+}
+
 /* ============================ TradingView actuals ============================ */
 
 export function calendarUrl(ccy, whenMs, spanMin = 10) {

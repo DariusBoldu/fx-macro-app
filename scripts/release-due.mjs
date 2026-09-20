@@ -26,6 +26,7 @@ import { fileURLToPath } from 'node:url';
 import {
   fetchRedFolder, fetchCalendar, matchGroup, isNumeric, inferCurrency,
   affectedCurrencies, isAffectedSymbol, FLAG,
+  commentaryGroups, relatedDecision, commentaryScope,
 } from '../proxy/release-match.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -171,6 +172,60 @@ async function status() {
   });
 }
 
+/* What a CENTRAL-BANK COMMENTARY pass has to work with: the event, the figures
+ * that were already published for it, the report's own catalyst row, and the
+ * scope (Fed/ECB/BoJ re-score the whole board; everyone else stays local). */
+async function commentary(ids) {
+  if (!ids.length) fail('commentary needs a release id');
+  const id = ids[0];
+  const data = readJson(DATA_JSON, null);
+  if (!data) fail(DATA_JSON + ' is unreadable');
+  const groups = await loadGroups();
+  const all = commentaryGroups(groups);
+  let c = all.find((x) => x.id === id);
+  if (!c) {
+    // ForexFactory restates central-bank times after the fact (BoJ 02:30 -> 02:54),
+    // so fall back to the same currency within the decision window.
+    const cut = String(id).indexOf('|');
+    const t = Date.parse(String(id).slice(0, cut));
+    const ccy = String(id).slice(cut + 1);
+    c = all.find((x) => x.ccy === ccy && Math.abs(Date.parse(x.when) - t) <= DECISION_WINDOW_MIN * 60000) || null;
+  }
+  if (!c) {
+    out({ id, found: false, note: 'no commentary event with this id in this week\'s ForexFactory feed — nothing to do' });
+    return;
+  }
+
+  const state = loadState();
+  const dec = c.kind === 'presser' ? relatedDecision(c, groups) : (c.decision ? c : null);
+  let figures = [];
+  let figuresError = null;
+  if (dec) {
+    try {
+      const m = matchGroup(dec, await fetchCalendar(dec.ccy, Date.parse(dec.when), { spanMin: 150 }));
+      figures = m.lines;
+    } catch (e) { figuresError = String((e && e.message) || e); }
+  }
+  const scope = commentaryScope(c.ccy);
+  const syms = (data.symbols || []).map((s) => s.sym);
+
+  out({
+    now: new Date().toISOString(),
+    id: c.id, found: true, kind: c.kind, ccy: c.ccy, flag: FLAG[c.ccy],
+    when: c.when, dueAt: c.dueAt,
+    minutesSinceStart: Math.round((Date.now() - Date.parse(c.when)) / 60000),
+    redFolder: c.lines.map((l) => l.title),
+    alreadyHandled: !!state.processed[c.id],
+    scope,                                        // 'full' = all 8 ccys / 35 symbols
+    decision: dec ? { id: dec.id, when: dec.when, lines: figures, error: figuresError } : null,
+    catalyst: catalystFor(data, c),
+    currencies: scope === 'full' ? ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD', 'CHF'] : affectedCurrencies(c.ccy),
+    symbols: scope === 'full' ? syms : syms.filter((s) => isAffectedSymbol(s, c.ccy)),
+    reportDate: data.meta && data.meta.reportDate,
+    dataUpdatedAt: data.updatedAt,
+  });
+}
+
 function mark(ids) {
   if (!ids.length) fail('mark needs at least one release id');
   const state = loadState();
@@ -187,7 +242,8 @@ function fingerprint() {
 
 const [cmd, ...args] = process.argv.slice(2);
 if (cmd === 'status') await status();
+else if (cmd === 'commentary') await commentary(args);
 else if (cmd === 'mark') mark(args);
 else if (cmd === 'next') out(nextFire(await loadGroups(), Date.now()));
 else if (cmd === 'fingerprint') fingerprint();
-else fail('usage: release-due.mjs status | mark <id>... | next | fingerprint');
+else fail('usage: release-due.mjs status | commentary <id> | mark <id>... | next | fingerprint');

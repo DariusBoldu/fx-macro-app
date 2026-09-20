@@ -32,6 +32,7 @@
 import { sendWebPush } from './webpush.js';
 import {
   fetchRedFolder, fetchCalendar, matchGroup, buildResultNotification, buildPreAlert,
+  commentaryGroups, relatedDecision, buildCommentaryPayload, COMMENTARY_STALE_H,
   TV_URL, TV_HEADERS,
 } from './release-match.js';
 
@@ -110,7 +111,10 @@ async function cronTick(env, scheduledTime) {
   if (!groups) return;
 
   if (doAlerts) await newsAlerts(env, groups);
-  if (doResults) await releaseResults(env, groups);
+  if (doResults) {
+    await releaseResults(env, groups);
+    await commentaryFires(env, groups);
+  }
 }
 
 /* ForexFactory red folders, cached in KV for an hour (the feed itself refreshes
@@ -243,6 +247,45 @@ async function postRoutineFire(env, text) {
   return { status: r.status, body };
 }
 
+/* Second pass on a central-bank event (added 2026-09-20). An hour after a press
+ * conference — or 45 minutes after a speech, or after a decision that has no
+ * press conference — start the routine again to analyse what was SAID: the
+ * statement, the vote split, the projections/dot plot and the press conference.
+ * None of that is readable at release time, so the figure pass cannot cover it. */
+async function commentaryFires(env, groups) {
+  if (!env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return;
+  const now = Date.now();
+  for (const c of commentaryGroups(groups)) {
+    const due = Date.parse(c.dueAt);
+    if (isNaN(due) || now < due || now - due > COMMENTARY_STALE_H * 3600000) continue;
+
+    const key = 'comm:' + c.id;
+    if (await env.FX_SUBS.get(key)) continue;
+    await env.FX_SUBS.put(key, '1', { expirationTtl: 3 * 86400 });      // mark BEFORE firing
+
+    // Quote the figures already pushed for this event, when it had any.
+    const decisionGroup = c.kind === 'presser' ? relatedDecision(c, groups) : null;
+    const figureId = decisionGroup ? decisionGroup.id : (c.decision ? c.id : null);
+    let result = null;
+    if (figureId) {
+      try {
+        const list = JSON.parse((await env.FX_SUBS.get(RESULTS_KEY)) || '[]');
+        result = list.find((x) => x.id === figureId) || null;
+      } catch (e) { /* figures are a bonus here, not a requirement */ }
+    }
+
+    let outcome;
+    try {
+      const res = await postRoutineFire(env, buildCommentaryPayload(c, { decisionGroup, result }));
+      outcome = { id: c.id, kind: c.kind, status: res.status, at: new Date().toISOString() };
+      if (res.status >= 300) outcome.detail = res.body.slice(0, 200);
+    } catch (e) {
+      outcome = { id: c.id, kind: c.kind, error: String((e && e.message) || e), at: new Date().toISOString() };
+    }
+    await env.FX_SUBS.put('comm:last', JSON.stringify(outcome), { expirationTtl: 14 * 86400 });
+  }
+}
+
 /* Admin: prove the trigger works end to end without waiting for a release. The
  * routine's prompt answers a TRIGGER TEST payload with 'Trigger OK' and stops, so
  * this costs one short run (it still counts toward the daily run cap). */
@@ -292,12 +335,22 @@ async function probeResults(url, env) {
   try { lastCron = JSON.parse((await env.FX_SUBS.get('cron:last')) || 'null'); } catch (e) {}
   let lastFire = null;
   try { lastFire = JSON.parse((await env.FX_SUBS.get('fire:last')) || 'null'); } catch (e) {}
+  let lastCommentary = null;
+  try { lastCommentary = JSON.parse((await env.FX_SUBS.get('comm:last')) || 'null'); } catch (e) {}
+  let commentaryDue = [];
+  try {
+    const groups = await redFolder(env);
+    commentaryDue = commentaryGroups(groups || []).filter((c) => Date.parse(c.dueAt) > Date.now())
+      .map((c) => `${c.dueAt} ${c.ccy} ${c.kind}: ${c.lines.map((l) => l.title).join(', ')}`);
+  } catch (e) {}
   return json({
     status: r.status, events: events.length,
     withActual: events.filter((e) => e.actual != null).length,
     ff,
     lastCron,                                   // null = the cron has not run since this was added
-    lastFire,                                   // last routine fire: HTTP status or error
+    lastFire,                                   // last routine fire for figures: HTTP status or error
+    lastCommentary,                             // last "what was said" fire
+    commentaryDue,                              // upcoming commentary passes this week
   });
 }
 
