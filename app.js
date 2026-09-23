@@ -161,9 +161,33 @@
     return Math.floor(s / 86400) + 'd ago';
   }
 
+  /* The headline is clamped to two lines in the sticky appbar and expands on tap.
+   * Without this a long report (2,805 characters on 2026-09-23) covered the whole
+   * phone screen on every tab. The choice is remembered per device. */
+  var labelOpen = false;
+  try { labelOpen = localStorage.getItem('fx_label_open') === '1'; } catch (e) {}
+  function syncLabelClamp() {
+    var lab = $('reportLabel'), more = $('labelMore');
+    if (!lab || !more) return;
+    lab.classList.toggle('open', labelOpen);
+    // Offer the toggle only when the text is actually longer than the clamp.
+    more.hidden = !(labelOpen || lab.scrollHeight > lab.clientHeight + 2);
+    more.textContent = labelOpen ? 'less ⌃' : 'more ⌄';
+    more.setAttribute('aria-expanded', labelOpen ? 'true' : 'false');
+  }
+  function toggleLabel() {
+    labelOpen = !labelOpen;
+    try { localStorage.setItem('fx_label_open', labelOpen ? '1' : '0'); } catch (e) {}
+    syncLabelClamp();
+  }
+  $('reportLabel').addEventListener('click', toggleLabel);
+  $('labelMore').addEventListener('click', toggleLabel);
+  window.addEventListener('resize', syncLabelClamp);
+
   function renderMeta(D) {
     var m = D.meta || {};
     $('reportLabel').textContent = (m.reportLabel || '') + (m.horizon ? '  ·  ' + m.horizon : '');
+    syncLabelClamp();
     var stale = D.updatedAt && (Date.now() - new Date(D.updatedAt).getTime()) > 36 * 3600 * 1000;
     $('updated').classList.toggle('stale', !!stale);
     $('updatedTxt').textContent = 'Updated ' + relTime(D.updatedAt);
@@ -1271,7 +1295,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v28';
+  var APP_VERSION = 'v29';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
