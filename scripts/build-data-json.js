@@ -95,6 +95,15 @@ function buildPayload(prevData) {
     throw new Error('strength[] must be exactly the 8 currencies (incl CHF), got: ' + ccys);
   }
 
+  // meta.reportLabel is the app's sticky-header line AND the push-notification
+  // body. Reports drifted to 2,805 characters by 2026-09-23 and covered the whole
+  // phone screen (fixed in the app at v29, but the contract is one short sentence).
+  const labelLen = String((FX.meta && FX.meta.reportLabel) || '').length;
+  if (labelLen > 400) {
+    console.warn('WARNING: meta.reportLabel is ' + labelLen + ' characters. It is the header line and the ' +
+      'notification body: keep it to ONE sentence (~200 chars) and put the narrative in dailyRead.');
+  }
+
   // ratePaths: carry forward if a run omits them (stale expectations beat none — warned)
   if (!FX.ratePaths || !Object.keys(FX.ratePaths).length) {
     FX.ratePaths = (prevData && prevData.ratePaths) || {};
