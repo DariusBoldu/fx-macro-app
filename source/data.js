@@ -5,7 +5,12 @@ window.FX_DATA = {
     horizon: "4H swing",
     coverage: "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + XAU + XAG + XCU + USOIL",
     regime: "A dollar regime that has stopped being about the Fed alone and become about American growth: the September flash PMIs printed the strongest composite since July 2021, the price components went to their highest since October 2022, and the US 10-year closed at a 19-year high. Underneath it the Middle East risk premium has stopped deflating - Brent is back above 100 - which repairs the monetary case under the commodity currencies that the last week broke.",
-    nextBigEvent: "The SNB monetary policy assessment at 07:30Z today with the press conference at 08:00Z. Every source carries 0.00%, so the conditional inflation forecast and the FX intervention language are the whole event. After that, BoE Governor Bailey at 09:15Z tomorrow and the RBA on September 29, which the market prices at about 95% for a hike the canonical source still has as a hold."
+    nextBigEvent: "The SNB press conference at 08:00Z, now that the assessment has landed: the rate held at 0.00% but the conditional inflation path was marked up to 0.7%/0.8%/0.8% and the 'increased willingness to intervene' clause is gone. After that, BoE Governor Bailey at 09:15Z tomorrow and the RBA on September 29, which the market prices at about 95% for a hike the canonical source still has as a hold.",
+    update: {
+      at: "2026-09-24T07:42:00Z",
+      title: "🇨🇭 CHF analysis updated",
+      text: "SNB held 0.00% as forecast, but marked its conditional inflation path up to 0.7/0.8/0.8% and dropped June's anti-appreciation clause. CHF to +1; EUR/CHF long closed."
+    }
   },
 
   dailyRead: "Yesterday this page carried two downgrades built on a single premise - that the Middle East risk premium was deflating fast enough to break the monetary case under AUD and CAD - and in the twenty-four hours since, that premise has been contradicted on the tape and the dollar story has become something larger than a rates story. Take the dollar first, because it is now the board. S&P Global's September flash survey put US manufacturing at 57.0 against a 53.6 forecast and 53.9 in August, services at 58.7 from 56.5, and the composite at 58.4 from 56.0 - TradingEconomics carries all three - and the press release adds the two lines that matter more than the headline: the surveys' price gauges rose to their highest since October 2022 and employment growth ran at a pace not seen since mid-2022. Fed Governor Michael Barr then told a Chicago housing conference that in his base case 'further policy adjustments are likely to be needed to ensure inflation comes down to target in a timely fashion', and that risks to the inflation target have increased while risks to the labour market have receded; Austan Goolsbee said in the same session that 'this has been nothing like the one-and-done pattern that underpins the case for looking through.' CME FedWatch odds for October 28 went to about 73%, from the 59.7% this page verified yesterday and roughly 55% on Tuesday, and TradingEconomics reported the US 10-year closing at 5.04%, the highest since July 2007, with its bond board carrying 5.117% this morning. DXY at 101.083 is a two-month high, +0.83% on the week and +2.19% on the month. That is a dollar bid on growth and on term premium at once, and it is why every USD pair on this board points the same way. The single crack worth naming is the US consumer: September confidence fell to 47.8 from 51.7, within four points of its all-time low, which is what a 108% year-on-year gasoline price does to a household even while businesses report the best conditions in four years. Now the correction this page owes itself. Yesterday AUD was cut from +1 to 0, on a labour force survey that was soft beneath a strong headline and on the pre-committed trigger that crude extending lower would do it. The jobs read was right on the detail - full-time employment fell 6,300, unemployment rose to 4.6%, a five-year high, with the whole gain part-time - but the conclusion was wrong on the evidence that actually prices the RBA. Market pricing did not move on the print: it sits at about 95% for a hike to 4.60% on September 29, all four Australian majors now forecast that hike, and the crude leg of the downgrade reversed outright, with WTI back to 91.404 from 89.263 and Brent back over 100 at 102.166. AUD returns to +1 and the specific fact that changed is the pricing, not a new data point. Note carefully that TradingEconomics has now put an explicit TEForecast of 4.35% on the September 29 row - a dated hold where yesterday it carried only a quarter-end level - so the disagreement between the canonical source and the market is sharper today than it has ever been on this page, and it resolves in five days. Europe is the other upgrade. The euro-area flash composite rose to 53.1 from 52.0 against a 51.5 consensus, the fastest in almost three and a half years, with services at 53.0 against 51.7 expected and Germany's composite at 53.8 against 51.8; the Bund 10-year is back above 3.5% at 3.5495, the highest since mid-2009; and the ECB's own calendar, read at ecb.europa.eu, dates the next decision to October 29 with a press conference - something TradingEconomics' calendar still does not carry. With HICP at 3.2% and rising, Nagel already having said out loud he cannot exclude mildly restrictive territory, and a deposit rate of 2.50%, EUR goes to +1. Sterling is the mirror image and yesterday's downgrade holds: the UK composite fell to 51.7 from 52.5 with services missing at 51.7 against 52.0 expected, the only major economy whose September survey went the wrong way, and the gilt 10-year at 5.348% is the highest yield on this board for the wrong reason, five weeks before a Budget that August borrowing of 18.3 billion already made harder. Bailey at 09:15Z tomorrow is the event. The yen is unchanged at 0 and is being held in place by two opposite forces that both got stronger: US yields at 19-year highs dragged USD/JPY to 158.283 yesterday, and the Ministry of Finance's August coordinated operation with the US Treasury plus last Friday's reported rate check sit directly above; spot is 157.904 and -0.27% on the day, which is a market that has noticed. Canada stays at -1, and the reason is worth stating precisely now that crude has bounced: Canada's problem has stopped being only its terms of trade. Employment fell 41,700 in August, the services PMI at 46.8 and the composite at 47.8 are the only contracting activity readings on this board, and the July retail sales print at 12:30Z today is the test. Switzerland decides at 07:30Z. Every source carries 0.00%, so the assessment is about the conditional inflation path - Swiss CPI has doubled to 0.8% from 0.4% on energy - and about whether the intervention clause stays in its 'increased willingness' form now that the franc has weakened 2.84% against the dollar on the month rather than strengthened. The cleanest expressions of all of this are USD/CAD and DXY long, EUR/GBP long, AUD/NZD long, and the metals short that the real-rate move now justifies on both gold and silver.",
@@ -43,8 +48,8 @@ window.FX_DATA = {
     },
     {
       icon: "🇨🇭",
-      t: "The SNB decides at 07:30Z with every source at 0.00%, so the forecast and the FX language are the event",
-      s: "Swiss CPI has doubled to 0.8% from 0.4% on energy, which argues for a higher near-term conditional path, while the franc is 2.84% weaker against the dollar on the month - the opposite of the pressure the 'increased willingness to intervene' clause was written for."
+      t: "SNB held at 0.00% but marked its inflation path up and quietly deleted the clause that capped the franc",
+      s: "The conditional forecast verified at snb.ch goes to 0.7% for 2026, 0.8% for 2027 and 0.8% for 2028, from 0.6%/0.6%/0.7% in June, with the SNB naming 'the weakening of the Swiss franc' as one reason. June's 'increased willingness to intervene' against appreciation is replaced by symmetric standby wording; USD/CHF fell to 0.82312, -0.26% on the day, and CHF goes to +1."
     }
   ],
 
@@ -86,12 +91,18 @@ window.FX_DATA = {
     },
     CHF: {
       next: "hold",
-      when: "TODAY, September 24 at 07:30Z, with TE carrying 0% as consensus and as its own TEForecast and the ForexFactory calendar carrying 0.00% against 0.00% previous. The press conference at 08:00Z is a separate red folder and is where the information is. TE's model projects Switzerland at 0.00 percent in 2027, the only flat-at-zero path on the board, with the Quarterly Bulletin September 30 and the meeting minutes October 22",
-      note: "TE re-verified and unchanged: SNB policy rate 0.00%, held in March and June. The rate is not the event on any source - TE's TEForecast, the ForexFactory consensus and the Reuters economist poll all carry 0%. Two things are. First, the conditional inflation forecast. Swiss CPI has doubled to 0.8% in August from 0.4%, with core at 0.4% and producer prices still negative at -0.7%, and the June assessment verified at snb.ch published a conditional path of 0.6% for 2026, 0.6% for 2027 and 0.7% for 2028. Energy pass-through argues for the near-term leg of that path to be marked up today, and the June minutes already flagged second-round effects in processed food, transport, tourism and restaurants. Second, the FX clause. June's language was that 'if necessary, the SNB has an increased willingness to intervene in the foreign exchange market' to counter 'a rapid and excessive appreciation of the Swiss franc'. The pressure that sentence was written for has inverted: USD/CHF is 0.82421 and the franc is 2.84% WEAKER against the dollar on the month, with EUR/CHF implied near 0.9383. A reversion to symmetric standby wording is the tradeable outcome and would matter more for the franc crosses than the rate ever could. Switzerland's own data is the strongest cyclical set here - GDP 2.3% y/y, manufacturing PMI 57.1, unemployment 3.0% - which is why this is 0 and not negative."
+      when: "December 10, the next assessment, after today's hold at 0.00% was confirmed at 07:30Z. The SNB's own September forecast is explicitly conditioned on the policy rate being 0% across the ENTIRE forecast horizon, which runs to 2029 - so the bank has published no case for either a hike or a cut. The Quarterly Bulletin lands September 30 and the summary of discussion, the closest thing the SNB has to minutes, on October 22",
+      note: "Verified at snb.ch and on TE: policy rate held at 0.00% on September 24, a third consecutive hold after March and June, with the discount on sight deposits above the threshold also unchanged at 0.25 percentage points. The rate was never the event, and both of the things that were have now resolved in the same direction. First, the conditional inflation forecast was marked UP at every horizon: 0.7% for 2026, 0.8% for 2027 and 0.8% for 2028, against June's 0.6%/0.6%/0.7%. The SNB attributes the near-term markup to 'higher-than-expected prices for oil products' and - the line that matters for FX - says the medium-term markup reflects 'among other things, the weakening of the Swiss franc'. Second, the FX clause changed. June's 'increased willingness to intervene' against 'a rapid and excessive appreciation of the Swiss franc' is gone, replaced by the symmetric standard formulation that the SNB 'is also willing to be active in the foreign exchange market as necessary to ensure appropriate monetary conditions'. Read together, the SNB has stopped pledging to lean against a strong franc at the same moment it began blaming a weak one for its inflation forecast. That is not a tightening signal - the path stays flat at zero and the forecast sits inside price stability throughout - but it removes a cap. Growth is guided to 1.5-2% for 2026 and around 1.5% for 2027, and the SNB names the Middle East as the main risk, with energy prices that 'could turn out to be significantly higher than expected'."
     }
   },
 
   today: [
+    {
+      ccy: "CHF",
+      moved: true,
+      headline: "SNB held at 0.00% as forecast, marked its conditional inflation path up to 0.7%/0.8%/0.8%, and dropped June's pledge to lean against franc appreciation",
+      read: "GOES TO +1. The rate was never the event and the two things that were both landed franc-side. The forecast verified at snb.ch is higher at every horizon than June's 0.6%/0.6%/0.7%, and the SNB names 'the weakening of the Swiss franc' as one cause of the medium-term markup - a central bank that dislikes a weaker currency. At the same time 'increased willingness to intervene' against 'a rapid and excessive appreciation' was replaced by symmetric standby language, removing the commitment to sell francs into strength. USD/CHF fell to 0.82312, -0.26% and the largest move on a flat board. Cap the enthusiasm: the whole forecast assumes 0% to 2029 and stays inside price stability, so this is a headwind removed, not a hiking cycle. The Governing Board's remarks at 08:00Z are the next risk."
+    },
     {
       ccy: "USD",
       moved: true,
@@ -133,12 +144,6 @@ window.FX_DATA = {
       moved: true,
       headline: "Market pricing for an October 28 hike to 3.0% has been pulled forward to roughly 75% on the oil pass-through, while NZD/USD sits -5.06% on the month",
       read: "HOLDS 0, with the forward case strengthening and the tape disagreeing. Governor Breman's warning that persistent oil increases could push near-term inflation above the bank's forecast has moved the market onto October, where TE's calendar still carries 2.75% unchanged and puts 3.0% only at December 9. Against that, unemployment is 5.6% and rising, Q2 GDP slowed to +0.2% q/q and wage growth is just 2.1%. An actual October hike is the upgrade trigger; the kiwi grinding to the floor of its range on the dollar is not a reason to downgrade a currency with a 4.1% CPI."
-    },
-    {
-      ccy: "CHF",
-      moved: false,
-      headline: "Quiet into its own decision: the SNB assessment lands at 07:30Z with every source at 0.00% and the press conference at 08:00Z",
-      read: "HOLDS 0 until the words arrive. The conditional inflation path is the first live variable - Swiss CPI has doubled to 0.8% on energy against a June path of 0.6%/0.6%/0.7% - and the intervention clause is the second, because the franc is 2.84% weaker against the dollar on the month rather than the rapid appreciation the June language was written to counter. A move to symmetric standby wording would be read as the SNB stepping back from the franc, and matters far more to EUR/CHF and the franc crosses than a rate nobody expects to change."
     }
   ],
 
@@ -168,20 +173,20 @@ window.FX_DATA = {
       forward: "🦅 Hawkish into September 29, with the verdict left at MIXED because the domestic activity data genuinely contradicts the policy call. Bullock has retired the narrow-path framing and says heat needs to come out of the labour market; the supply shock she is hiking into is live again with Brent back over 100. TE has now attached an explicit 4.35% TEForecast to the meeting, so this is the sharpest canonical-versus-market disagreement on the board. Invalidation is concrete and dated: a hold on September 29 takes this straight back to 0, and the 95% pricing means the asymmetry on a hold is violent. A hike with a dovish statement is the second-order risk."
     },
     {
+      ccy: "CHF",
+      score: 1,
+      verdict: "MIXED",
+      tag: "Held at zero, but the clause that capped the franc is gone",
+      drivers: "SNB policy rate held at 0.00% on September 24, in line on every source and verified on TE. The conditional inflation forecast was marked up at every horizon to 0.7%/0.8%/0.8% for 2026/2027/2028, from 0.6%/0.6%/0.7% in June, and the SNB cites 'the weakening of the Swiss franc' among the reasons for the medium-term leg. June's 'increased willingness to intervene' against franc appreciation is replaced by symmetric standby wording. The cyclical data stays the strongest set on this board: GDP +2.3% y/y, manufacturing PMI 57.1, services 58.3, unemployment 3.0%, employment +0.5%, with SNB guidance of 1.5-2% growth for 2026. Swiss 10-year 0.570, the lowest here by a distance. USD/CHF 0.82312, -0.26% on the day and still +2.70% on the month.",
+      forward: "🦅 Mildly firmer, and this page owes itself a correction on the sign. Yesterday's framing called symmetric standby wording the franc-NEGATIVE outcome; that was inverted. The clause being dropped was a pledge to lean against a rapid APPRECIATION of the franc - a commitment to sell francs - so its removal takes a cap off, and the market read it that way immediately, with USD/CHF the biggest mover on an otherwise flat board. The leg that broke was the mapping, not the facts. Do not over-extend it: the forecast is conditioned on 0% across the whole horizon to 2029, inflation stays inside price stability throughout, and the SNB retains the right to act in either direction, so this is a removed headwind rather than a tightening cycle. That is worth one point and not two. Invalidation is the Governing Board's introductory remarks at 08:00Z walking the FX language back toward an explicit anti-appreciation stance, or a sharp fall in oil that takes the whole inflation markup with it."
+    },
+    {
       ccy: "NZD",
       score: 0,
       verdict: "MIXED",
       tag: "Steepest projected path, second weakest economy",
       drivers: "Official cash rate 2.75%, raised from 2.50% on September 2, a second consecutive hike, with TE carrying 2.75% unchanged at October 28 and a TEForecast of 3.0% at December 9; reporting puts market pricing for an October hike at roughly 75%. CPI 4.1%, the highest on this board, with core 3.2%. Against that: unemployment 5.6% and rising from 5.4%, Q2 GDP +0.2% q/q from +0.9% though the annual rate rose to 2.6% from 1.7%, wage growth 2.1%, retail sales -0.5% m/m, manufacturing PMI 53.1 and services 51.2. NZ 10-year 5.081. NZD/USD 0.56746, -0.98% week and -5.06% month, the worst monthly of the eight.",
       forward: "🦅 Hawkish path, weak carrier. TE's model at 4.00 percent in 2027 is 125bp above spot, the steepest projected tightening anywhere here, and Governor Breman's warning that persistent oil increases could push near-term inflation above forecast has pulled market pricing onto October. Invalidation runs both ways: a confirmed October hike upgrades this to +1, while a Q3 labour report pushing unemployment through 5.8% or a retreat in oil would leave the OCR track looking like a forecast the economy cannot carry."
-    },
-    {
-      ccy: "CHF",
-      score: 0,
-      verdict: "MIXED",
-      tag: "Decision day, and the rate is not the event",
-      drivers: "SNB policy rate 0.00%, held in March and June, with TE's TEForecast, the ForexFactory consensus and the Reuters economist poll all carrying 0% for 07:30Z today. CPI has doubled to 0.8% in August from 0.4%, core 0.4%, producer prices -0.7%. The cyclical data is the strongest set on this board: GDP +2.3% y/y from +0.4%, manufacturing PMI 57.1 from 53.2, services 58.3, unemployment 3.0%, employment +0.5%. Swiss 10-year 0.570, the lowest here by a distance. USD/CHF 0.82421, franc 2.84% weaker on the month; EUR/CHF implied near 0.9383.",
-      forward: "⚖️ Range, pending the words at 08:00Z. Two live variables: whether the conditional inflation path published in June at 0.6%/0.6%/0.7% is marked up on energy pass-through, and whether the 'increased willingness to intervene' clause survives now that the franc is weakening rather than appreciating. A markup plus retained hawkish FX language is franc-positive; a reversion to symmetric standby wording reads as the SNB stepping back and is the franc-negative outcome. Invalidation of the neutral stance is either of those arriving clearly - which is why the franc crosses are held at RANGE into the event rather than positioned."
     },
     {
       ccy: "JPY",
@@ -312,8 +317,8 @@ window.FX_DATA = {
       sym: "USD/CHF",
       bias: "LONG",
       conv: "LOW-MED",
-      why: "Three points of separation and a franc already moving the right way - spot 0.82421 with the franc 2.84% weaker on the month - against a Fed at 4.00% heading for a likely 4.25% and a Swiss policy rate TE's model carries at 0.00 percent through 2027, the only flat-at-zero path here. The Swiss 10-year at 0.570 is the lowest on the board by a wide margin.",
-      risk: "The SNB decides at 07:30Z today with the press conference at 08:00Z, so this is a position into a red folder. Swiss CPI doubling to 0.8% argues for a marked-up conditional inflation path, and if the 'increased willingness to intervene' clause is retained in hawkish form the franc rallies against a dollar that is already long a lot of good news."
+      why: "Still LONG, but on two points of separation rather than three after the SNB upgrade. The dollar leg is intact and is the strongest case on this board - flash composite 58.4, the 10-year at 5.04%, about 73% priced for a hike to 4.25% on October 28 - against an SNB that published a forecast conditioned on 0% across the entire horizon to 2029. The Swiss 10-year at 0.570 is the lowest here by a wide margin and the carry is four full points.",
+      risk: "The event risk is spent but it resolved against this position: spot fell to 0.82312, -0.26% and the biggest move on the board, because the SNB dropped its pledge to lean against franc appreciation and blamed franc weakness for part of its inflation markup. Conviction stays LOW-MED rather than rising on the cleared calendar. The Governing Board speaks at 08:00Z, and US claims at 12:30Z is the first thing that can test a dollar already long a lot of good news."
     },
     {
       sym: "EUR/JPY",
@@ -332,16 +337,16 @@ window.FX_DATA = {
     {
       sym: "AUD/CHF",
       bias: "LONG",
-      conv: "LOW-MED",
-      why: "One point of separation on the Australian upgrade, expressed against the lowest policy rate on the board. Australia's 4.35% heading for a likely 4.60% against a Swiss 0.00% that TE carries flat through 2027 is the widest absolute rate gap available here, and the franc is weakening rather than bid, with USD/CHF up 2.84% on the month.",
-      risk: "Both sides carry a dated event within five days: the SNB at 07:30Z today, where hawkish FX language would bid the franc, and the RBA on September 29, where TE's own forecast is a hold against 95% market pricing for a hike. Holding this into both is the definition of low conviction."
+      conv: "LOW",
+      why: "Held LONG but cut to LOW conviction, because the score separation this rested on has gone: the SNB upgrade puts CHF level with AUD at +1. What keeps it directional is that only one leg has a rate path. Australia's 4.35% is about 95% priced to go to 4.60% on September 29 with all four majors forecasting it, against a Swiss forecast explicitly conditioned on 0% to 2029 - still the widest absolute carry on this board, at the cross near 0.57919.",
+      risk: "This now has to be earned entirely on the RBA in five days, with no score cushion underneath it, and TE's own forecast for that meeting is a 4.35% hold against the market's 95%. On the other leg the SNB has removed its pledge to sell francs into strength, so a haven bid no longer meets an offer. If the RBA disappoints, both legs push the same way and the position has nothing left."
     },
     {
       sym: "EUR/CHF",
-      bias: "LONG",
-      conv: "LOW",
-      why: "One point of separation on the euro-area upgrade, and the single most SNB-sensitive pair on this board. A deposit rate at 2.50% and a composite PMI at 53.1 against a policy rate at zero is the fundamental case; the implied cross near 0.9383 reflects a franc that has been weakening rather than appreciating.",
-      risk: "Conviction is deliberately the lowest here because the decision is ninety minutes away. The June assessment's 'increased willingness to intervene' clause was written to counter rapid franc APPRECIATION, which is not the current problem; a reversion to symmetric standby wording is euro-positive, but a marked-up conditional inflation path with the hawkish clause retained would move this cross several figures the other way."
+      bias: "RANGE",
+      conv: "MEDIUM",
+      why: "FLIPPED from LONG to RANGE, and this is the pair the SNB decision actually settled. Both currencies now score +1, so the one point of separation the long rested on is gone. The euro case is unchanged and good - deposit rate 2.50%, composite PMI 53.1, HICP 3.2% - but the franc leg was upgraded underneath it, and the implied cross has slipped to 0.93755 from 0.9383. With no score gap and a resolved calendar on the Swiss side, this is a levels trade until the ECB on October 29.",
+      risk: "Name the leg that broke: yesterday this page argued a reversion to symmetric SNB wording would be euro-positive. That was the wrong sign. The clause that was dropped committed the SNB to selling francs into rapid appreciation, so deleting it removes a cap on the franc rather than a floor. A directional view returns if the 08:00Z remarks restore explicit anti-appreciation language, which would rebuild the long."
     },
     {
       sym: "CAD/JPY",
@@ -353,9 +358,9 @@ window.FX_DATA = {
     {
       sym: "CAD/CHF",
       bias: "SHORT",
-      conv: "LOW-MED",
-      why: "One point of separation, shorting the weakest currency here against a franc backed by the strongest cyclical data on the board - Swiss GDP +2.3% y/y, manufacturing PMI 57.1, unemployment 3.0% - while Canada's composite contracts at 47.8 and its employment fell 41,700 in August.",
-      risk: "Carry runs hard against it at 2.25% versus 0.00%, and both legs have an event today: the SNB at 07:30Z, where dovish FX language would sell the franc, and Canadian retail sales at 12:30Z. The crude rebound is a CAD tailwind that this position is on the wrong side of."
+      conv: "MEDIUM",
+      why: "Upgraded to MEDIUM: the separation widened from one point to two when CHF went to +1, and the SNB delivered the outcome this short needed. Canada is the weakest currency here - employment down 41,700 in August, the services PMI at 46.8 and the composite at 47.8 the only contracting activity readings on this board, the 10-year at 3.953% - against a franc whose central bank has just marked its inflation path up and stopped pledging to lean against appreciation. The cross sits near 0.58345.",
+      risk: "Carry still runs hard against it at 2.25% versus 0.00%, and the crude rebound is a genuine CAD tailwind with Brent back through the US$100 level Macklem's hawkish conditional was written at. Canadian retail sales at 12:30Z is the near-term test. Note the SNB named Middle East energy as its own main risk, so a further oil spike is not unambiguously franc-negative here."
     },
     {
       sym: "GBP/AUD",
@@ -380,10 +385,10 @@ window.FX_DATA = {
     },
     {
       sym: "CHF/JPY",
-      bias: "RANGE",
-      conv: "MEDIUM",
-      why: "Two zero-score currencies whose scores are about to be set by decisions rather than data. Switzerland decides at 07:30Z today with the conditional inflation path and the FX clause as the whole event; Japan's next decision is October 30 with TE explicitly forecasting a hold. Until the SNB speaks this is a levels trade between the two lowest policy rates on the board.",
-      risk: "Ninety minutes to the SNB and an unquantifiable intervention risk on the other leg. A marked-up Swiss conditional path with hawkish FX language plus a quiet yen would break this higher; an MoF operation would break it lower just as fast."
+      bias: "LONG",
+      conv: "LOW-MED",
+      why: "FLIPPED from RANGE to LONG on the decision this page said would set it. The Swiss leg resolved firmer - the conditional path marked up to 0.7%/0.8%/0.8% and the anti-appreciation clause removed - taking CHF to +1, while Japan stays at 0 with its next decision on October 30 and TE explicitly forecasting a hold. That is a one-point gap between the two lowest policy rates on the board, with the cross near 192.34 and USD/JPY dragged to 158.317 by US yields at 19-year highs.",
+      risk: "Conviction is capped at LOW-MED for one reason: the short leg is the yen at 158, directly beneath the Ministry of Finance's August coordinated operation with the US Treasury and last Friday's reported rate check. That risk is unquantifiable and instantaneous, and it is the single thing that would break this fastest. Note also that the Swiss upgrade was a removed headwind, not a tightening signal - the SNB's own forecast assumes 0% to 2029."
     },
     {
       sym: "EUR/AUD",
@@ -403,15 +408,15 @@ window.FX_DATA = {
       sym: "GBP/CHF",
       bias: "RANGE",
       conv: "MEDIUM",
-      why: "Both at 0 with genuinely offsetting cases: sterling has the highest yield on this board at 5.348% and a hawkish MPC minority against a softening survey and a Budget; the franc has the strongest cyclical data here - GDP +2.3%, manufacturing PMI 57.1 - against a zero policy rate and a decision ninety minutes away.",
-      risk: "Two red folders in two days, the SNB at 07:30Z today and Bailey at 09:15Z tomorrow. Either could set the direction, and the fiscal risk in the gilt market means sterling's high yield is not a safety feature."
+      why: "Stays RANGE, but the balance inside it has tilted franc-side: CHF is now +1 against sterling at 0 after the SNB marked its inflation path up and removed the clause that capped the franc. Sterling still has the highest yield on this board at 5.348% and a hawkish MPC minority, but it also has the only September survey that went the wrong way, with the composite at 51.7, and the implied cross sits near 1.09029.",
+      risk: "The reason this is not yet a short is on the calendar rather than in the scores: Bailey speaks at 09:15Z tomorrow and is the decisive sterling event of the week, so a one-point gap opened hours before a red folder that can close it. Explicit tolerance of above-target inflation from him re-levels this; acknowledging the survey turns the tilt into a trend. The gilt market's fiscal risk means sterling's yield is not a safety feature either way."
     },
     {
       sym: "NZD/CHF",
       bias: "RANGE",
       conv: "LOW-MED",
-      why: "Both at 0 and both carrying policy paths that point up from very different starting points - an OCR at 2.75% with roughly 75% priced for October, against a franc at zero that TE's model keeps flat through 2027. The kiwi's yield advantage is real but it is attached to the weaker economy, with unemployment at 5.6% against Switzerland's 3.0%.",
-      risk: "The SNB at 07:30Z is the immediate risk and the kiwi is already -5.06% on the month, so this pair is short the currency with momentum. A hawkish SNB FX clause would push it lower quickly."
+      why: "Stays RANGE even though the scores have separated to CHF +1 against NZD 0, because the one leg with a live rate path is the kiwi's: roughly 75% is priced for an October 28 hike to 3.0% on the oil pass-through, against a Swiss forecast conditioned on 0% to 2029. Selling a currency with a hike priced four weeks out, already -4.96% on the month and near the floor of its range at 0.46757 on the cross, is not a clean short.",
+      risk: "The kiwi's yield advantage is attached to the weaker economy - unemployment 5.6% and rising, Q2 GDP +0.2% q/q, wages 2.1% - so if the RBNZ does not deliver in October this becomes a short on both fundamentals and the new franc bid at once. On the other side, the SNB dropping its anti-appreciation clause means a haven move now runs without resistance."
     },
     {
       sym: "JPYBASKET",
@@ -473,14 +478,17 @@ window.FX_DATA = {
       date: "Sep 24",
       event: "SNB monetary policy assessment and policy rate - Swiss National Bank",
       impact: "high",
-      note: "07:30Z, with 0.00% carried as the ForexFactory consensus, as TE's consensus and as TE's own TEForecast, and the Reuters economist poll unanimous for no change. The rate is not the event. The conditional inflation forecast is: the June assessment published 0.6% for 2026, 0.6% for 2027 and 0.7% for 2028, and Swiss CPI has since doubled to 0.8% in August from 0.4% on energy pass-through, with the June minutes already flagging second-round effects in processed food, transport, tourism and restaurants.",
-      when: "2026-09-24T07:30:00Z"
+      note: "RELEASED at 07:30Z and verified against the SNB press release at snb.ch and against TradingEconomics: the policy rate is held at 0.00% for a third consecutive assessment, in line with the ForexFactory consensus, TE's consensus and TE's own TEForecast, with the discount on sight deposits above the threshold also unchanged at 0.25 percentage points. The rate was never the event and both of the things that were have resolved. The conditional inflation forecast was marked UP at every horizon to 0.7% for 2026, 0.8% for 2027 and 0.8% for 2028, against June's 0.6%/0.6%/0.7%, with the near-term leg attributed to 'higher-than-expected prices for oil products' and the medium-term leg to 'among other things, the weakening of the Swiss franc'. And the FX clause changed: June's 'increased willingness to intervene' against 'a rapid and excessive appreciation of the Swiss franc' is replaced by the symmetric formulation that the SNB 'is also willing to be active in the foreign exchange market as necessary to ensure appropriate monetary conditions'. The forecast assumes a 0% policy rate across the entire horizon and stays inside price stability throughout. Growth guidance is 1.5-2% for 2026 and around 1.5% for 2027, with the Middle East named as the main risk.",
+      when: "2026-09-24T07:30:00Z",
+      result: [
+        { title: "SNB Policy Rate", actual: "0.00%", forecast: "0.00%", previous: "0.00%", cmp: "in line" }
+      ]
     },
     {
       date: "Sep 24",
       event: "SNB press conference - Swiss National Bank",
       impact: "high",
-      note: "08:00Z, a separate red folder thirty minutes after the assessment, and the place the FX language is delivered. June's formulation was that 'if necessary, the SNB has an increased willingness to intervene in the foreign exchange market' to counter 'a rapid and excessive appreciation of the Swiss franc'. That sentence was written for pressure that has since inverted - the franc is 2.84% WEAKER against the dollar on the month - so a reversion to symmetric standby wording is the live outcome and matters more to EUR/CHF and the franc crosses than the rate.",
+      note: "08:00Z, a separate red folder thirty minutes after the assessment, with the Governing Board's introductory remarks published on the SNB site from the same time. The written FX language question is now answered - the anti-appreciation clause is gone, replaced by symmetric standby wording - so this session is about how far the Board is willing to go in the Q&A. The two things to listen for: whether franc weakness is described as a problem, given the SNB has already put it in writing as a reason its medium-term inflation forecast went up, and whether the 0% assumption running to 2029 is defended as a forecast convention or as guidance. Restoring explicit anti-appreciation language would reverse this morning's franc bid.",
       when: "2026-09-24T08:00:00Z"
     },
     {
@@ -680,7 +688,7 @@ window.FX_DATA = {
       growth: { value: "2.3%", trend: "rising", note: "Q2 y/y", hist: [1.6, 1.4, 1.2, 0.8, 0.4, 2.3] },
       unemployment: { value: "3.0%", trend: "stable", note: "Aug rate", hist: [2.7, 2.8, 2.8, 3, 2.9, 3] },
       jobs: { value: "+0.5%", trend: "rising", note: "Q2 emp chg", hist: [0.2, 0.2, 0.3, 0.4, 0.3, 0.5] },
-      rates: { value: "0.00%", trend: "stable", note: "Policy rate", hist: [0, 0, 0, 0, 0, 0] }
+      rates: { value: "0.00%", trend: "stable", note: "Sep 24 hold", hist: [0, 0, 0, 0, 0, 0] }
     }
   }
 };
