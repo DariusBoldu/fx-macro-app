@@ -3,7 +3,7 @@ window.FX_DATA = {
     reportDate: "2026-09-24",
     reportLabel: "US flash composite PMI hit 58.4 and CME odds of an October Fed hike jumped to 73% from 59.7%; crude reversed higher with Brent back over 100, and AUD goes back to +1 on 95% RBA pricing.",
     horizon: "4H swing",
-    coverage: "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + XAU + XAG + XCU + USOIL",
+    coverage: "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + EU50 + XAU + XAG + XCU + USOIL",
     regime: "A dollar regime that has stopped being about the Fed alone and become about American growth: the September flash PMIs printed the strongest composite since July 2021, the price components went to their highest since October 2022, and the US 10-year closed at a 19-year high. Underneath it the Middle East risk premium has stopped deflating - Brent is back above 100 - which repairs the monetary case under the commodity currencies that the last week broke.",
     nextBigEvent: "BoE Governor Bailey at 09:15Z tomorrow, now that the SNB is spent: sterling is the only major whose September survey went the wrong way and the gilt 10-year at 5.348% is the highest yield on this board. Then the RBA on September 29, which the market prices at about 95% for a hike the canonical source still carries as an explicit 4.35% hold.",
     update: {
@@ -431,6 +431,13 @@ window.FX_DATA = {
       conv: "LOW-MED",
       why: "Flipped from LONG because all three headwinds arrived together and the tailwind reversed. The DAX closed 0.66% lower at 25,410.63 on Wednesday as the Bund 10-year climbed back above 3.5% to 3.5495, the highest since mid-2009; Brent went back through 100 to 102.166 rather than continuing lower; and the euro-area survey jump has put an October 29 ECB hike into the conversation with Nagel already talking about mildly restrictive territory. EU gas at 73.70 is +2.35% on the day.",
       risk: "The short is fighting the strongest German activity data in a year - a 53.8 composite and 52.9 services, both well above expectations - which is exactly what German equities are supposed to trade on. If the ECB stays quiet and the Saudi pipeline restart pushes Brent back under 100, both headwinds fade and the growth leg wins."
+    },
+    {
+      sym: "EU50",
+      bias: "RANGE",
+      conv: "LOW-MED",
+      why: "New to this page today, seeded rather than scored: TradingEconomics has the EU50 at 6308 points this morning, within 4.2% of its 6582 all-time high, and it is deliberately NOT a copy of the GER40 short. The same Bund move that hurts an industrial index - the 10-year at 3.5495, the highest since mid-2009 - lands on a Euro Stoxx 50 whose heaviest sector is banks, which earn more as the curve rises. What the two indices do share is the energy bill, with EU gas at 73.70 and +2.35% today, and an October 29 ECB meeting that the euro-area survey jump has put into play.",
+      risk: "Trade levels until tomorrow's report scores it on a full session: the honest position is two offsetting legs - banks helped by yields, everything else hurt by them and by gas - with no verified EU50 reaction of its own yet. A hawkish ECB repricing resolves it one way, a break of the 6582 high the other."
     },
     {
       sym: "XAU/USD",

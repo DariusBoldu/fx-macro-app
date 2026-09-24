@@ -5,7 +5,7 @@ intelligence as the desktop `Forex_Dashboard`, plus live prices, installable to
 the iPhone/iPad home screen and updated by the existing daily Cowork task.
 
 It mirrors the desktop data exactly: **7 currencies** (USD, EUR, GBP, JPY, AUD,
-NZD, CAD), **21 symbols** (18 pairs + DXY + JPYBASKET + GER40), the same biases as
+NZD, CAD), **36 symbols** (28 pairs + DXY + JPYBASKET + GER40 + EU50 + XAU + XAG + XCU + USOIL), the same biases as
 `fx_bias_indicator.pine`, the strength map with forward bias (🦅/🔻/⚖️), the
 calendar, and the geopolitics/oil → FX read. Same dark theme.
 

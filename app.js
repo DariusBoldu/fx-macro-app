@@ -729,7 +729,11 @@
     'XCU/USD': { contract: 25000, label: '25,000 lbs/lot', quote: 'USD', kind: 'cash' },
     // GER40 (DAX): quoted in EUR, stop in index points. FOREX.COM Germany 40 =
     // €1.00 per point per 1.0 lot (confirmed from their contract spec).
-    'GER40':   { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' }
+    'GER40':   { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' },
+    // EU50 (Euro Stoxx 50): same shape as GER40 — EUR-quoted, stop in index
+    // points. €1.00 per point per lot is the usual retail spec but is NOT yet
+    // confirmed against FOREX.COM's Europe 50 sheet; verify before sizing on it.
+    'EU50':    { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' }
   };
   // one alphabetical list (same convention as the Rates and Signals tabs)
   var CALC_INSTRUMENTS = CALC_PAIRS.concat(Object.keys(CALC_COMMODITIES))
@@ -887,8 +891,8 @@
   }
 
   /* ============================ Symbol detail view ============================ */
-  var LEG_MAP = { 'DXY': ['USD'], 'JPYBASKET': ['JPY'], 'GER40': ['EUR'], 'XAU/USD': ['USD'], 'XAG/USD': ['USD'], 'USOIL': ['USD'] };
-  var TV_MAP = { 'DXY': 'TVC:DXY', 'JPYBASKET': 'FXCM:JPYBASKET', 'GER40': 'GER40', 'XAU/USD': 'OANDA:XAUUSD', 'XAG/USD': 'OANDA:XAGUSD', 'USOIL': 'TVC:USOIL' };
+  var LEG_MAP = { 'DXY': ['USD'], 'JPYBASKET': ['JPY'], 'GER40': ['EUR'], 'EU50': ['EUR'], 'XAU/USD': ['USD'], 'XAG/USD': ['USD'], 'USOIL': ['USD'] };
+  var TV_MAP = { 'DXY': 'TVC:DXY', 'JPYBASKET': 'FXCM:JPYBASKET', 'GER40': 'GER40', 'EU50': 'TVC:SX5E', 'XAU/USD': 'OANDA:XAUUSD', 'XAG/USD': 'OANDA:XAGUSD', 'USOIL': 'TVC:USOIL' };
   var CAT_KEYS = {
     USD: /US |USD|Fed|FOMC|ISM|NFP/i, EUR: /ECB|EZ |euro|Germany|HICP/i, GBP: /BoE|UK |GBP/i,
     JPY: /BoJ|Japan|JPY|MoF|ambush/i, AUD: /RBA|Aussie|Australia|AUD/i, NZD: /RBNZ|NZ |NZD/i,
@@ -1295,7 +1299,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v29';
+  var APP_VERSION = 'v30';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

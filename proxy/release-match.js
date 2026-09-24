@@ -76,7 +76,7 @@ export function isAffectedSymbol(sym, ccy) {
   const s = String(sym);
   if (affectedCurrencies(ccy).some((c) => s.includes(c))) return true;
   if (ccy === 'USD' && ['DXY', 'XAU/USD', 'XAG/USD', 'XCU/USD', 'USOIL'].includes(s)) return true;
-  if (ccy === 'EUR' && s === 'GER40') return true;
+  if (ccy === 'EUR' && (s === 'GER40' || s === 'EU50')) return true;
   if (ccy === 'JPY' && s === 'JPYBASKET') return true;
   if (ccy === 'CNY' && s === 'XCU/USD') return true;
   return false;
