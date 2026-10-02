@@ -5,21 +5,26 @@
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + EU50 + XAU + XAG + XCU + USOIL",
     "regime": "The organising fact on this board is no longer any single central bank: it is the long end of the US curve. The ten-year Treasury yield touched 5.342% on October 1, its highest since early 2002, after rising 87.1bp across the third quarter - the sharpest quarterly increase since 1994 - and the ten-year TIPS real yield sits at 2.88%. That single number explains most of what looks contradictory elsewhere: gold is down 6.45% on the month and silver 8.57% in the middle of an active Gulf war, equities in Europe hit three-and-a-half-month lows, and the dollar printed a yearly high at 101.935 on DXY even though Tuesday's core PCE came in soft at 3.0% y/y against 3.3% expected. Havens are losing to real rates, and that applies to the franc exactly as it applies to bullion. The second regime fact is that yesterday's energy relief has fully reversed: Brent is 102.018 and up 4.70% on the week, WTI 92.430 after settling 2.7% higher at 92.87, and the Hormuz blockade restarted on July 14 still chokes roughly 20% of global daily energy throughput. That is what has every central bank except the BoC and SNB hiking into weakening labour markets.",
-    "nextBigEvent": "US payrolls today at 12:30Z: 89K forecast against 162K prior, unemployment 4.1%, average hourly earnings 0.3% m/m. With the October 28 hike a minority call and December near 90% cumulative, this print decides whether the front end re-converges with the long end. The euro area September flash HICP lands three and a half hours earlier at 09:00Z, forecast 3.7% from 3.3%."
+    "nextBigEvent": "FOMC minutes from the September 15-16 meeting on October 7 at 18:00Z, now read against a 29K payroll: the question is how many of the 16 officials who saw at least one more hike wanted it in October rather than December. After that the October 27-28 FOMC itself, where a hike was already a minority call near 28% before this print.",
+    "update": {
+      "at": "2026-10-02T12:40:20Z",
+      "title": "🇺🇸 USD analysis updated",
+      "text": "Payrolls 29K vs 89K, unemployment 4.2% vs 4.1%, earnings 0.1% vs 0.3%, August cut to 133K. USD to +1, October 28 dead. Gold, silver and USD/JPY flip; DXY and EUR/USD to range."
+    }
   },
-  "dailyRead": "Read today through the long end of the US curve, because almost every cross-asset oddity on this board resolves there. The ten-year Treasury yield touched 5.342% on October 1, the highest since early 2002, capping a third quarter in which it rose 87.1 basis points - the sharpest quarterly move since 1994 - before easing back toward 5.27%. The ten-year TIPS real yield is 2.88%. Hold that number in mind and the contradictions dissolve: gold is 4185.22 and down 6.45% on the month, silver 61.222 and down 8.57%, both falling hard in the middle of an active Gulf war that has Brent above 100 dollars. The haven bid is not absent; it is being outbid by real rates. The same logic is why the franc is the weakest currency here at -2 and why the dollar printed a yearly high of 101.935 on DXY despite a genuinely soft core PCE on Tuesday at 3.0% y/y against 3.3% expected. The front end was repriced dovish last week and the dollar rose anyway, because what is driving it is the long end, persistent inflation and the supply of government paper, not the October meeting. The single new fact that moves this board today is Japanese. Tokyo core CPI printed 2.7% y/y for September against a 2.4% forecast and 1.8% prior, the fastest in ten months, and the core-core measure the BoJ actually watches for trend inflation rose to 3.0% from 2.0%. That matters because yesterday I cut JPY from +2 to +1 on a specific fact - the BoJ's own Summary of Opinions from the September meeting damped expectations of a back-to-back October hike - and this print is the direct answer to it, landing four weeks before an October 29-30 meeting that publishes a fresh quarterly Outlook Report with new inflation forecasts. That leg of yesterday's thesis has broken, so JPY goes back to +2 and the yen is among today's firmer majors with USD/JPY at 157.850 from 158.279. Be honest about the tension in that call: the yen still faces the worst carry on the board against a 5.3% ten-year, which is why USD/JPY is RANGE rather than SHORT and why I would rather express a firm yen against the franc, the kiwi and the Canadian dollar than against the dollar. CHF/JPY at 190.220 is the widest score gap here at four points and the cleanest single ticket on the page: zero policy rate against a central bank at a thirty-year high, and the SNB has just stopped threatening to defend the franc. On September 24 it held at zero and quietly returned to its standard wording on FX intervention, dialling down the war footing because the franc had already weakened about 3% trade-weighted since June, while nudging its inflation forecasts up to 0.7% for 2026 and 0.8% for 2027 and 2028. A funding currency whose central bank no longer wants it stronger, in a world of 5.3% yields, is a short against almost anything. The day is front-loaded with two releases and the order matters. At 09:00Z the euro area September flash HICP is forecast at 3.7% from 3.3%, with core at 2.5%. The ECB hiked its deposit rate to 2.50% on September 10 and said the Middle East conflict continues to generate inflation pressure with inflation set to remain well above target for an extended period, but October 29 has drifted toward a pause after three Lagarde appearances this week struck a more measured tone. I keep EUR at +1 and genuinely two-sided: a 3.7% or higher print puts that meeting back in play, and note that the gas retracement the pause case rests on is not really happening - EU gas is 73.47 and up 2.20% on the week, German gas 74.98 and up 1.90% on the day, both still up around 150% on the year. Then at 12:30Z US payrolls, forecast 89K against 162K prior with unemployment 4.1% and earnings 0.3%. The forecast sits exactly at the level the September SEP carries for unemployment across its whole horizon, so a print at or below 89K with soft earnings makes even December a question, while a beat puts October 28 back in play inside a day. Sterling is the quiet hawkish story and deserves more respect than its score implies. The BoE held at 3.75% on September 17 but the vote was 6-3, with Pill, Mann and Greene all voting for 4.00%, and the Bank expects inflation around 3.75% in Q4 and slightly above 4% in early 2027. Bailey spoke again on October 1 and made the conditional explicit: higher global energy costs have so far had limited effect on UK price and wage setting, but the longer the volatility persists the more likely it is the Bank will need to raise Bank Rate. With UK gas at 186.53 GBp/thm and up 152.72% on the year, that condition is being met rather than relieved, and GBP/USD at 1.32096 has held up better on the month at -2.34% than any European peer. November 5 is the meeting. The antipodeans split on policy rather than on risk, which makes AUD/NZD the cleanest expression of either. The RBA hiked to 4.60% on September 29 - its fourth of 2026, unanimous 9-0, a fifteen-year high - with Bullock saying more hikes are not off the table while hoping four will prove restrictive enough; markets price roughly one-in-three for November 3. The RBNZ by contrast raised to 2.75% on September 2 and published a track pointing to a pause in October and a hike in December, and even at 3.00% the OCR would sit three-quarters of a point below the floor of the Fed's range, so the kiwi's rate gap stays negative whatever happens on October 28. NZD/USD at 0.56126 is the worst major of the month at -4.55% and the lowest since the RBNZ's last cut in November 2025. I am holding AUD at 0 rather than promoting it, because nothing new arrived today: the highest policy rate on this board and a copper squeeze still sit against an unemployment rate that has climbed to 4.6% and a pair that cannot reclaim 0.70. Copper is the one metal that has decoupled and the leg that would resolve AUD upward - 6.5255 a pound, up 0.67% on the day and 14.85% on the year, powered by Chinese physical buying and thin exchange inventories against a refined deficit JP Morgan puts near 330,000 tonnes for 2026, while gold and silver lose to the real-rate shock. Canada keeps the widest clean policy gap to the dollar at 175 basis points after a seventh consecutive hold at 2.25%, with August employment at -41.7K and full-time down 35.9K, so CAD stays at -1. But the oil leg of that thesis has flipped since yesterday and I will not pretend otherwise: Brent back above 100 is a direct terms-of-trade tailwind, which is why USD/CAD at 1.42159 is only a MEDIUM long and why I prefer CAD long against the franc and the kiwi to CAD short against the dollar. European equities are the clearest read-through from the bond shock, and the EU50 leg worth naming is that banks led Thursday's decline by more than 3.5% even as the curve rose - the discount-rate shock is beating the margin story that usually makes a steeper curve good for the index's heaviest sector, with French and Italian political risk still underneath. The DAX fell about 1% to 24,939 on Thursday, its lowest since July 23, on exactly the two things that are not reversing: rising oil and elevated yields.",
+  "dailyRead": "Read today through the long end of the US curve, because almost every cross-asset oddity on this board resolves there. The ten-year Treasury yield touched 5.342% on October 1, the highest since early 2002, capping a third quarter in which it rose 87.1 basis points - the sharpest quarterly move since 1994 - before easing back toward 5.27%. The ten-year TIPS real yield is 2.88%. Hold that number in mind and the contradictions dissolve: gold is 4219.89 and still down 5.67% on the month, silver 61.794 and down 7.72%, both having fallen hard through September in the middle of an active Gulf war - and both turning higher only today, on the payroll print. The haven bid is not absent; it is being outbid by real rates. The same logic is why the franc is the weakest currency here at -2 and why the dollar printed a yearly high of 101.935 on DXY despite a genuinely soft core PCE on Tuesday at 3.0% y/y against 3.3% expected. The front end was repriced dovish last week and the dollar rose anyway, because what is driving it is the long end, persistent inflation and the supply of government paper, not the October meeting. The single new fact that moves this board today is Japanese. Tokyo core CPI printed 2.7% y/y for September against a 2.4% forecast and 1.8% prior, the fastest in ten months, and the core-core measure the BoJ actually watches for trend inflation rose to 3.0% from 2.0%. That matters because yesterday I cut JPY from +2 to +1 on a specific fact - the BoJ's own Summary of Opinions from the September meeting damped expectations of a back-to-back October hike - and this print is the direct answer to it, landing four weeks before an October 29-30 meeting that publishes a fresh quarterly Outlook Report with new inflation forecasts. That leg of yesterday's thesis has broken, so JPY goes back to +2 and the yen is among today's firmer majors with USD/JPY at 157.850 from 158.279. Be honest about the tension in that call: the yen still faces the worst carry on the board against a 5.3% ten-year, which is why the USD/JPY short that today's payroll miss has opened up is a MEDIUM rather than a conviction trade, and why I would still rather express a firm yen against the franc, the kiwi and the Canadian dollar than against the dollar. CHF/JPY at 190.220 is the widest score gap here at four points and the cleanest single ticket on the page: zero policy rate against a central bank at a thirty-year high, and the SNB has just stopped threatening to defend the franc. On September 24 it held at zero and quietly returned to its standard wording on FX intervention, dialling down the war footing because the franc had already weakened about 3% trade-weighted since June, while nudging its inflation forecasts up to 0.7% for 2026 and 0.8% for 2027 and 2028. A funding currency whose central bank no longer wants it stronger, in a world of 5.3% yields, is a short against almost anything. The day is front-loaded with two releases and the order matters. At 09:00Z the euro area September flash HICP is forecast at 3.7% from 3.3%, with core at 2.5%. The ECB hiked its deposit rate to 2.50% on September 10 and said the Middle East conflict continues to generate inflation pressure with inflation set to remain well above target for an extended period, but October 29 has drifted toward a pause after three Lagarde appearances this week struck a more measured tone. I keep EUR at +1 and genuinely two-sided: a 3.7% or higher print puts that meeting back in play, and note that the gas retracement the pause case rests on is not really happening - EU gas is 73.47 and up 2.20% on the week, German gas 74.98 and up 1.90% on the day, both still up around 150% on the year. Then at 12:30Z US payrolls, which printed 29K against an 89K forecast with August revised down to 133K, unemployment up to 4.2% and average hourly earnings at 0.1% m/m - a miss on all three red folders and the exact scenario named above as invalidating the dollar. USD comes down to +1 and MIXED, October 28 is effectively off the table and December 9 becomes the live meeting, and the reaction has been orderly rather than violent: DXY 101.800 and -0.29%, USD/JPY 157.024, USD/CHF -0.90%, gold 4219.89 and +1.00%, silver 61.794 and +2.14%. On that print USD/JPY flips to SHORT, gold and silver flip to LONG, and EUR/USD, GBP/USD and DXY all go to RANGE. Sterling is the quiet hawkish story and deserves more respect than its score implies. The BoE held at 3.75% on September 17 but the vote was 6-3, with Pill, Mann and Greene all voting for 4.00%, and the Bank expects inflation around 3.75% in Q4 and slightly above 4% in early 2027. Bailey spoke again on October 1 and made the conditional explicit: higher global energy costs have so far had limited effect on UK price and wage setting, but the longer the volatility persists the more likely it is the Bank will need to raise Bank Rate. With UK gas at 186.53 GBp/thm and up 152.72% on the year, that condition is being met rather than relieved, and GBP/USD at 1.32096 has held up better on the month at -2.34% than any European peer. November 5 is the meeting. The antipodeans split on policy rather than on risk, which makes AUD/NZD the cleanest expression of either. The RBA hiked to 4.60% on September 29 - its fourth of 2026, unanimous 9-0, a fifteen-year high - with Bullock saying more hikes are not off the table while hoping four will prove restrictive enough; markets price roughly one-in-three for November 3. The RBNZ by contrast raised to 2.75% on September 2 and published a track pointing to a pause in October and a hike in December, and even at 3.00% the OCR would sit three-quarters of a point below the floor of the Fed's range, so the kiwi's rate gap stays negative whatever happens on October 28. NZD/USD at 0.56126 is the worst major of the month at -4.55% and the lowest since the RBNZ's last cut in November 2025. I am holding AUD at 0 rather than promoting it, because nothing new arrived today: the highest policy rate on this board and a copper squeeze still sit against an unemployment rate that has climbed to 4.6% and a pair that cannot reclaim 0.70. Copper is the one metal that has decoupled and the leg that would resolve AUD upward - 6.5168 a pound, up 0.54% on the day and 14.69% on the year, powered by Chinese physical buying and thin exchange inventories against a refined deficit JP Morgan puts near 330,000 tonnes for 2026, while gold and silver lose to the real-rate shock. Canada keeps the widest clean policy gap to the dollar at 175 basis points after a seventh consecutive hold at 2.25%, with August employment at -41.7K and full-time down 35.9K, so CAD stays at -1. The oil leg of that thesis has now flipped back: Brent has slipped below 100 again to 99.612 and WTI to 89.702, -3.41%, on reported European discussion of a strategic reserve release, which removes the terms-of-trade tailwind that was capping the pair. USD/CAD is unchanged at 1.42196 precisely because that offset the softer dollar, and it stays a MEDIUM long. European equities are the clearest read-through from the bond shock, and the EU50 leg worth naming is that banks led Thursday's decline by more than 3.5% even as the curve rose - the discount-rate shock is beating the margin story that usually makes a steeper curve good for the index's heaviest sector, with French and Italian political risk still underneath. The DAX fell about 1% to 24,939 on Thursday, its lowest since July 23, on exactly the two things that are not reversing: rising oil and elevated yields.",
   "today": [
+    {
+      "ccy": "USD",
+      "moved": true,
+      "headline": "Payrolls printed 29K against an 89K forecast with August revised down to 133K, unemployment rose to 4.2% from 4.1%, and average hourly earnings came in at 0.1% m/m against 0.3% - a miss on all three red folders.",
+      "read": "This is the print that breaks the hike leg of the dollar case, so USD comes down from +2 to +1 and from STRENGTHENING to MIXED. The first reaction is orderly rather than violent - DXY 101.800 and -0.29%, USD/CHF -0.90%, USD/JPY -0.67%, gold +1.00% and silver +2.14% - which fits a market taking October 28 off the table while leaving December 9 open. The October 7 FOMC minutes are the next read, and a 4.2% unemployment rate above the SEP's own path is the thing to watch extend."
+    },
     {
       "ccy": "JPY",
       "moved": true,
       "headline": "Tokyo core CPI printed 2.7% y/y against a 2.4% forecast and 1.8% prior - the fastest in ten months - with the BoJ's preferred core-core gauge at 3.0% from 2.0%, and USD/JPY eased to 157.850 from 158.279.",
       "read": "This is the direct answer to the fact JPY was cut on yesterday, so the score goes back to +2: the September Summary of Opinions damped an October hike, and this print undercuts that damping four weeks before a decision that carries a fresh quarterly Outlook Report. Express it against the franc, the kiwi and the Canadian dollar rather than against the dollar, because the yen still has the worst carry here against a 5.3% ten-year."
-    },
-    {
-      "ccy": "USD",
-      "moved": true,
-      "headline": "DXY made a yearly high at 101.935, up 3.06% on the month, and the ten-year touched 5.342% on October 1 - the highest since early 2002 - despite Tuesday's core PCE coming in soft at 3.0% y/y against 3.3% expected.",
-      "read": "The dollar is being driven by the long end rather than the next meeting, which is why soft inflation data did not dent it. Payrolls at 12:30Z is the gate: 89K forecast from 162K, with unemployment 4.1% and earnings 0.3%. At or below forecast with soft earnings makes December a question; a clear beat puts the October 28 hike back in play within a day."
     },
     {
       "ccy": "EUR",
@@ -62,7 +67,7 @@
     {
       "icon": "📈",
       "t": "A 5.342% ten-year, the highest since 2002, is now the organising fact on this board",
-      "s": "The US ten-year rose 87.1bp across Q3, its sharpest quarterly move since 1994, before easing to about 5.27%. The ten-year TIPS real yield at 2.88% is what is beating the haven bid in gold and in the franc alike."
+      "s": "The US ten-year rose 87.1bp across Q3, its sharpest quarterly move since 1994, and was 5.22% going into today's payroll print. The ten-year TIPS real yield at 2.88% is what is beating the haven bid in gold and in the franc alike."
     },
     {
       "icon": "🇯🇵",
@@ -71,18 +76,18 @@
     },
     {
       "icon": "🛢️",
-      "t": "Yesterday's energy relief has fully reversed - Brent is back above 100 dollars and up 4.70% on the week",
-      "s": "Brent 102.018 and WTI 92.430 after settling 2.7% higher at 92.87. The Hormuz blockade restarted July 14 still chokes about 20% of global daily energy throughput, and diplomatic efforts are reported stalled."
+      "t": "Brent has slipped back below 100 dollars on reported European talk of a strategic reserve release",
+      "s": "Brent 99.612 and -2.64%, WTI 89.702 and -3.41%, though Brent still holds +4.28% on the month. The Hormuz blockade restarted July 14 continues to choke about 20% of global daily energy throughput."
     },
     {
       "icon": "💵",
-      "t": "The dollar printed a yearly high even though core PCE came in soft - the long end is driving it, not the Fed",
-      "s": "DXY 101.935, up 3.06% on the month, after Tuesday's core PCE at 3.0% y/y against 3.3% expected. October 28 is a minority call while December stays near 90% cumulative; payrolls at 12:30Z is the gate."
+      "t": "A three-way payroll miss has taken the October 28 Fed hike off the table and cut the dollar to +1",
+      "s": "Payrolls 29K against 89K with August revised down to 133K, unemployment up to 4.2%, earnings 0.1% m/m. DXY 101.800 and -0.29% off its yearly high - an orderly reaction, which says December 9 is still open."
     },
     {
       "icon": "🥇",
-      "t": "Gold and silver are falling hard in the middle of a Gulf war, and copper has decoupled upward",
-      "s": "Gold 4185.22 is -6.45% on the month and silver 61.222 is -8.57%, both losing to real rates. Copper at 6.5255 a pound is +14.85% on the year on Chinese physical buying and a deficit JP Morgan puts near 330kt."
+      "t": "Gold and silver turned higher on the payroll print after a month of losing to real rates",
+      "s": "Gold 4219.89 and +1.00%, silver 61.794 and +2.14%, both still negative on the month at -5.67% and -7.72%. Copper 6.5168 a pound holds +14.69% on the year on Chinese physical buying against thin inventories."
     },
     {
       "icon": "🇨🇭",
@@ -98,8 +103,8 @@
   "ratePaths": {
     "USD": {
       "next": "hike",
-      "when": "December 9 remains the live meeting rather than October 28, but today's payrolls at 12:30Z can move that inside a day. Prediction markets put the October 28 hike in the minority - around 28% on one read with roughly 73% for a hold, against a 65% hike print on another venue, so treat the exact number as unsettled rather than precise. Cumulative pricing through December 9 is the stable part at roughly 90% for at least one more 25bp move",
-      "note": "TE re-verified: the upper bound of the fed funds target range is 4.00%, raised from 3.75% on September 16 in a unanimous decision - the first increase since 2023. The September SEP median is 4.1% for year-end with the second-year projection at 3.9%, both revised up sharply from 3.6% and 3.4%, PCE inflation projected at 3.7% for 2026 with core at 3.4%, GDP at 2.3% and unemployment at 4.1% across the horizon; Chair Warsh again declined to submit his forecasts. What has not changed in a week of dovish front-end repricing is the direction, which is why this stays on hike. Tuesday's core PCE printed 0.2% m/m against 0.3% forecast with the y/y at 3.0% against 3.3% expected and headline at 3.4% against 3.7% - genuinely soft, and below the Committee's own 3.4% core projection - yet the dollar made a yearly high anyway, because the long end is being driven by persistent inflation, heavy issuance and strong growth rather than by the next meeting. Final GDP was revised up to 2.2% annualised from 1.5% and ADP came in at 90K against 73K. John Williams supplied the dovish words, pushing back on an imminent follow-up and saying there is no urgency while still seeing one more hike as potentially appropriate this year; Goolsbee called inflation above target for five and a half years playing with fire, and Barkin indicated more hikes are likely needed. Waller spoke on October 1 but at a data conference on FRED and AI, offering no policy or outlook comment at all - a non-event by design that closed a repricing channel rather than opening one. The hawkish data point of the week was ISM manufacturing prices at 77.9 against 72.3 expected and 71.1 prior. Today's payrolls forecast of 89K from 162K, with unemployment at 4.1% and earnings at 0.3%, sits exactly at the SEP's unemployment path: at or below forecast with soft earnings makes December a real question, a beat puts October back in play. The FY2027 continuing resolution is signed through December 11, so there is no shutdown risk to the release. FOMC minutes from September follow on October 7."
+      "when": "December 9 is now the live meeting and October 28 is close to ruled out. September payrolls at 29K against an 89K forecast, unemployment up to 4.2% and earnings at 0.1% m/m are the exact combination that was flagged as invalidating an October move, and the hike was already a minority call near 28% before the print. Treat December as conditional on the next inflation and labour prints rather than as the near-certainty it was",
+      "note": "TE re-verified: the upper bound of the fed funds target range is 4.00%, raised from 3.75% on September 16 in a unanimous decision - the first increase since 2023. The September SEP median is 4.1% for year-end with the second-year projection at 3.9%, both revised up sharply from 3.6% and 3.4%, PCE inflation projected at 3.7% for 2026 with core at 3.4%, GDP at 2.3% and unemployment at 4.1% across the horizon; Chair Warsh again declined to submit his forecasts. What has not changed in a week of dovish front-end repricing is the direction, which is why this stays on hike. Tuesday's core PCE printed 0.2% m/m against 0.3% forecast with the y/y at 3.0% against 3.3% expected and headline at 3.4% against 3.7% - genuinely soft, and below the Committee's own 3.4% core projection - yet the dollar made a yearly high anyway, because the long end is being driven by persistent inflation, heavy issuance and strong growth rather than by the next meeting. Final GDP was revised up to 2.2% annualised from 1.5% and ADP came in at 90K against 73K. John Williams supplied the dovish words, pushing back on an imminent follow-up and saying there is no urgency while still seeing one more hike as potentially appropriate this year; Goolsbee called inflation above target for five and a half years playing with fire, and Barkin indicated more hikes are likely needed. Waller spoke on October 1 but at a data conference on FRED and AI, offering no policy or outlook comment at all - a non-event by design that closed a repricing channel rather than opening one. The hawkish data point of the week was ISM manufacturing prices at 77.9 against 72.3 expected and 71.1 prior. Payrolls then printed 29K for September against an 89K forecast, with TE revising August down to 133K from 162K, unemployment up to 4.2% against 4.1% expected, and average hourly earnings at 0.1% m/m against 0.3% with the y/y easing to 3.0% from 3.1% - a miss on all three red folders, and an unemployment rate now above the 4.1% the SEP carries across its entire horizon. That removes the case for October 28 rather than the case for tightening: at a 4.00% upper bound against 3.4% CPI and 3.0% core PCE the Fed is only marginally restrictive, so the direction stays hike while the timing moves to December 9 and becomes conditional on the data. The FY2027 continuing resolution is signed through December 11, so there was no shutdown risk to the release. FOMC minutes from September follow on October 7 and are now the most useful read available on how many of the 16 officials who saw another hike wanted it in October."
     },
     "EUR": {
       "next": "hike",
@@ -139,20 +144,20 @@
   },
   "strength": [
     {
-      "ccy": "USD",
-      "score": 2,
-      "verdict": "STRENGTHENING",
-      "tag": "Held at +2 on a yearly high made in spite of soft inflation data - the long end is doing the work, and payrolls is the only thing that can change it today",
-      "drivers": "Policy rate 4.00% after a unanimous September 16 hike, SEP median 4.1% for year-end; ten-year at 5.342% on October 1, the highest since 2002, after +87.1bp in Q3; ten-year TIPS real yield 2.88%; DXY 101.935, +3.06% on the month; core PCE 3.0% y/y against 3.3% expected; ISM manufacturing prices 77.9 against 72.3; unemployment 4.1%.",
-      "forward": "🦅 Hawkish into October 28, but with the timing unsettled rather than the direction. The front end was repriced dovish last week and the dollar rose anyway, which tells you the bid is about persistent inflation, heavy issuance and 2.88% real yields rather than the next 25bp. Cumulative pricing through December 9 is the stable number at roughly 90% for at least one more hike; the October call itself is a minority one and the venues disagree. Invalidated by payrolls at or below 89K with earnings soft, which would drag December into question and finally let the long end rally - the one scenario that reverses the dollar, gold and the franc all at once."
-    },
-    {
       "ccy": "JPY",
       "score": 2,
       "verdict": "STRENGTHENING",
       "tag": "Raised from +1 back to +2 on a specific print: Tokyo core CPI at 2.7% against a 2.4% forecast undoes the Summary of Opinions that caused yesterday's cut",
       "drivers": "Policy rate 1.25% after the September 18 hike, the highest since 1995; Tokyo core CPI 2.7% y/y for September against 2.4% forecast and 1.8% prior, core-core 3.0% from 2.0%; national CPI 1.9% with core 1.7%; wage growth 4.7% from 4.0%; unemployment 2.5%; monetary base -15.2% y/y; USD/JPY 157.850 from 158.279.",
       "forward": "🦅 Hawkish into October 29-30, the meeting that publishes a fresh quarterly Outlook Report - the natural vehicle for a hike the Bank wants to justify with its own forecasts. The leg that broke is identifiable: yesterday's cut rested on the September Summary of Opinions damping a back-to-back move, and Tokyo CPI is the data that undercuts it. Be honest about the offset: the yen carries the worst funding disadvantage here against a 5.3% ten-year, so the cleanest expression is against the franc, the kiwi and the Canadian dollar rather than the dollar. Invalidated by a strong US payrolls print that re-widens the differential faster than the BoJ can close it."
+    },
+    {
+      "ccy": "USD",
+      "score": 1,
+      "verdict": "MIXED",
+      "tag": "Cut from +2 to +1 and from STRENGTHENING to MIXED: the September payroll missed on all three legs, so the hike leg of the dollar case is broken while the carry and long-end leg survives",
+      "drivers": "September payrolls 29K against an 89K forecast, with TE revising August down to 133K from 162K; unemployment 4.2% against 4.1% expected; average hourly earnings 0.1% m/m against 0.3% and 3.0% y/y from 3.1%; government payrolls -17K; policy rate still 4.00% after the unanimous September 16 hike and the SEP median 4.1% for year-end; ten-year 5.22% into the print, down from 5.342% on October 1; DXY 101.800, -0.29% on the day but still +2.92% on the month.",
+      "forward": "⚖️ Range into October 28 - a genuine downgrade from hawkish, and the invalidation condition written here yesterday was met exactly: payrolls at or below 89K with earnings soft. October was already a minority call near 28% before the print and is now very hard to justify, which moves the whole question to December 9. What keeps this at +1 rather than 0 is that nothing in the release touches the other leg: CPI is 3.4% and core PCE 3.0% against a 4.00% upper bound, so the Fed is only marginally restrictive and a cut is not on this horizon, and the dollar gave back only 0.29% on a three-way miss. Invalidated upward by the October 7 FOMC minutes showing officials who wanted October, or by the long end pushing back toward 5.34%; invalidated downward by a second weak labour print or by 4.2% unemployment extending higher."
     },
     {
       "ccy": "GBP",
@@ -206,52 +211,52 @@
   "symbols": [
     {
       "sym": "EUR/USD",
-      "bias": "SHORT",
+      "bias": "RANGE",
       "conv": "MED",
-      "why": "1.12519 and -3.22% on the month: a 150bp deposit-rate disadvantage to the Fed's upper bound, with the ECB drifting toward an October 29 pause while the dollar makes yearly highs on a 5.342% ten-year.",
-      "risk": "Two releases today both cut against it - a flash HICP at or above 3.7% at 09:00Z restores October 29, and payrolls at or below 89K at 12:30Z finally lets the long end rally."
+      "why": "1.12450 and barely moved at +0.01% on a day the dollar lost ground almost everywhere else - the tell of the session. Both legs of the short broke at once: the September flash HICP came in at 3.8% y/y against a 3.7% forecast with core at 2.5%, which puts October 29 back in contention, and US payrolls at 29K removes the October 28 Fed hike. Trade 1.1200-1.1300 levels rather than direction.",
+      "risk": "The euro's refusal to rally on two supportive prints is itself the warning, and the 150bp deposit-rate disadvantage is unchanged; a clean break of 1.1300 is what would turn this into a long."
     },
     {
       "sym": "GBP/USD",
-      "bias": "SHORT",
+      "bias": "RANGE",
       "conv": "MED",
-      "why": "1.32096 and the best European major of the month at -2.34%, which is exactly why this is only MEDIUM: a 6-3 BoE vote and Bailey's explicit energy trigger make sterling the wrong leg to be short against a dollar that is already extended.",
-      "risk": "A soft payrolls print plus UK gas at +152.72% y/y could convert two MPC dissenters ahead of November 5 and squeeze this hard."
+      "why": "1.32335 and +0.29% as the soft payroll took the dollar leg out: GBP is +1 and USD is now +1 too, so the score edge that justified the short has gone. A 6-3 BoE vote and Bailey's explicit energy condition - UK gas 185.20 GBp/thm and +150.91% y/y - sit on the other side before November 5.",
+      "risk": "Sterling is already the best European major of the month at -2.16%, so chasing it higher from here is late; a dollar bounce on the October 7 FOMC minutes is the obvious hazard."
     },
     {
       "sym": "USD/JPY",
-      "bias": "RANGE",
+      "bias": "SHORT",
       "conv": "MED",
-      "why": "157.850 with both currencies at +2 and both central banks hiking: Tokyo core CPI at 2.7% against 2.4% pulls it down, a 5.342% ten-year and 2.88% real yields pull it up. Trade 157.00-159.00 levels rather than direction.",
-      "risk": "A payrolls beat and a BoJ that disappoints on October 30 would break this higher; the reverse combination breaks it lower, and both are live within four weeks."
+      "why": "157.024 and -0.67% after the payroll miss. The scores now diverge - JPY +2 against USD +1 - and this is precisely the combination named yesterday as what breaks the range lower: soft US labour data into an October 29-30 BoJ that publishes a fresh Outlook Report, with Tokyo core CPI at 2.7% behind it.",
+      "risk": "Carry is still against the short with a 5.22% ten-year against a 1.25% policy rate, so size for it; hawkish FOMC minutes on October 7, or a BoJ that disappoints again, puts 159.00 back in play."
     },
     {
       "sym": "USD/CAD",
       "bias": "LONG",
       "conv": "MED",
-      "why": "1.42159 on the widest clean policy gap here at 175bp, with the BoC set to hold an eighth time on October 28 after August employment fell 41.7K and full-time work dropped 35.9K.",
-      "risk": "Downgraded from a cleaner long because Brent is back above 100 at 102.018 and +4.70% on the week - a direct terms-of-trade tailwind for a major crude exporter that caps the upside."
+      "why": "1.42196 and unchanged on the day because the two legs cancelled: a softer dollar pulls it down, while WTI falling 3.41% to 89.702 and Brent slipping below 100 to 99.612 removed the terms-of-trade tailwind that was capping it. The 175bp policy gap and an eighth BoC hold on October 28 are intact.",
+      "risk": "A 29K US payroll is also a weak-demand signal for Canadian exports, which cuts both ways; a Hormuz headline that puts Brent back above 100 restores the cap on the upside."
     },
     {
       "sym": "AUD/USD",
       "bias": "SHORT",
-      "conv": "MED",
-      "why": "0.69343 and unable to reclaim 0.70 despite the highest policy rate on this board, because a global bond shock punishes risk-sensitive commodity currencies regardless of carry; unemployment has risen to 4.6%.",
-      "risk": "The copper squeeze at 6.5255 USD/lb and +14.85% y/y is the leg that resolves AUD upward, and a 9-0 RBA has said further hikes are not off the table before November 3."
+      "conv": "LOW-MED",
+      "why": "0.69668 and the day's best gainer at +0.52% on the softer dollar, yet still short of 0.70 again. Downgraded rather than flipped: AUD is 0 against a USD now at +1, and nothing in the payroll touches the Australian side of the trade - the 4.60% cash rate and 4.6% unemployment are where they were.",
+      "risk": "A close above 0.70 with copper holding 6.5168 USD/lb would invalidate this; note also that a 29K US payroll is a global growth signal, which usually hurts AUD more than its rate gap helps it."
     },
     {
       "sym": "NZD/USD",
       "bias": "SHORT",
-      "conv": "HIGH",
-      "why": "0.56126, the worst major of the month at -4.55% and the lowest since November 2025. Even a hike to 3.00% on October 28 leaves the OCR three-quarters of a point below the floor of the Fed's range, so the differential stays negative either way.",
-      "risk": "The Bank's own track says pause, but pricing is split with one read near 80% for a hike - a hawkish surprise alongside soft US payrolls would close the gap from both ends."
+      "conv": "MED",
+      "why": "0.56282 and +0.43%, still the worst major of the month at -4.28%. The arithmetic survives the payroll because the Fed did not cut - even a hike to 3.00% on October 28 leaves the OCR three-quarters of a point below the floor of the Fed's range - but conviction comes down from HIGH because the dollar leg is no longer one-way.",
+      "risk": "The combination flagged as invalidating this is now half complete: US payrolls came in soft, and a hawkish RBNZ surprise on October 28 against its own track would close the gap from both ends at once."
     },
     {
       "sym": "USD/CHF",
       "bias": "LONG",
-      "conv": "HIGH",
-      "why": "0.82983 and the cleanest dollar expression on the page: 4.00% against 0.00%, a four-point score gap, and an SNB that returned to standard FX-intervention wording on September 24 because the franc had already weakened 3% trade-weighted.",
-      "risk": "Payrolls at or below 89K with soft earnings would collapse the real-yield premium that is doing the work here; a disorderly Hormuz escalation could make the franc trade on fear rather than carry."
+      "conv": "LOW-MED",
+      "why": "0.82355 after a 0.90% fall, the dollar's worst pair today, and the invalidation named here yesterday has triggered: the real-yield premium doing the work was hit directly by a 29K payroll with 0.1% earnings. What is left is carry alone - 4.00% against 0.00%, and an SNB that stopped threatening to defend the franc on September 24 - so this stays long but drops from HIGH to LOW-MED.",
+      "risk": "If the franc keeps outperforming as the US real yield falls this becomes a range and then a short; the December 10 SNB assessment is too far away to help, and the haven bid is now working again."
     },
     {
       "sym": "EUR/JPY",
@@ -402,10 +407,10 @@
     },
     {
       "sym": "DXY",
-      "bias": "LONG",
-      "conv": "MEDIUM",
-      "why": "101.935 at a yearly high and +3.06% on the month, with 57.6% of the weight in a euro drifting toward an ECB pause and 13.6% in a yen whose central bank is repricing hawkish. The ten-year at 5.342% and 2.88% real yields are the engine.",
-      "risk": "Payrolls at 12:30Z is a genuine two-way event at 89K forecast, and the yen leg already works against the index; a soft print with weak earnings puts December in question."
+      "bias": "RANGE",
+      "conv": "MED",
+      "why": "101.800 and -0.29%, off the 101.935 yearly high, with the engine damaged rather than destroyed: the 57.6% euro leg is flat, the 13.6% yen leg is strengthening after the payroll miss, and only the 9.1% CAD leg still clearly works. The monthly gain is still +2.92%.",
+      "risk": "Hawkish FOMC minutes on October 7, or the long end pushing back toward 5.34%, is what puts the uptrend together again; a second weak labour print breaks it properly."
     },
     {
       "sym": "JPYBASKET",
@@ -430,31 +435,31 @@
     },
     {
       "sym": "XAU/USD",
-      "bias": "SHORT",
+      "bias": "LONG",
       "conv": "MED",
-      "why": "4185.22 and -6.45% on the month while a Gulf war runs and the Hormuz blockade holds - the clearest evidence on this board that real rates are outbidding the haven bid, with the ten-year TIPS yield at 2.88% and nominal at a 24-year high.",
-      "risk": "The purest payrolls trade here: a print at or below 89K with soft earnings collapses real yields and snaps gold back hard. Hormuz escalation is the other tail."
+      "why": "4219.89 and +1.00% on the print - the purest payrolls trade on this page, and it paid. The real-rate leg that drove gold down 5.67% on the month has weakened: 29K payrolls with earnings at 0.1% takes October 28 off the table, with the ten-year at 5.22% against 5.342% on October 1, while a Gulf war and the Hormuz blockade still run underneath.",
+      "risk": "Still negative on the month, so this is a reversal in its first session rather than an established trend; hawkish October 7 minutes or a renewed push in the long end restores the old regime quickly."
     },
     {
       "sym": "XAG/USD",
-      "bias": "SHORT",
+      "bias": "LONG",
       "conv": "MED",
-      "why": "61.222 and -8.57% on the month, falling harder than gold, so the real-rate shock is beating the industrial story for now even with a fifth consecutive year of structural supply deficit behind it.",
-      "risk": "Higher beta than gold in both directions, and the industrial leg - solar, EVs and AI data-centre demand - can decouple it from the metal at any point, as copper has already done."
+      "why": "61.794 and +2.14%, outpacing gold's 1.00% exactly as it outpaced it on the way down, with a fifth consecutive year of structural supply deficit underneath. Same trigger as gold: a three-way payroll miss easing the real-yield shock that had silver down 7.72% on the month.",
+      "risk": "Higher beta in both directions, and a 29K US payroll is itself an industrial-demand warning that can turn silver's extra leg from a tailwind into a drag."
     },
     {
       "sym": "XCU/USD",
       "bias": "LONG",
       "conv": "MED",
-      "why": "6.5255 USD/lb and +14.85% on the year, the one metal that has decoupled from the real-rate shock: Chinese physical buying against thin exchange inventories, with JP Morgan putting the 2026 refined deficit near 330,000 tonnes. This is the leg that would resolve AUD upward.",
-      "risk": "Down 2.60% on the week, so the squeeze is not one-way, and a genuine global growth scare would overwhelm the inventory story the way it has overwhelmed carry in AUD."
+      "why": "6.5168 USD/lb and +0.54%, still +14.69% on the year, held up by Chinese physical buying against thin exchange inventories and a 2026 refined deficit JP Morgan puts near 330,000 tonnes. A softer dollar after the payroll helps the price mechanically; this remains the leg that would resolve AUD upward.",
+      "risk": "Down 2.73% on the week, so the squeeze is not one-way, and a 29K US payroll is demand-side evidence against the deficit story rather than for it."
     },
     {
       "sym": "USOIL",
-      "bias": "LONG",
+      "bias": "RANGE",
       "conv": "MED",
-      "why": "WTI 92.430 after settling 2.7% higher at 92.87, with Brent at 102.018 and +4.70% on the week - yesterday's relief fully reversed. The Hormuz blockade restarted July 14 still chokes about 20% of global daily throughput, war-risk insurance is at multiples of pre-crisis levels with some P&I cover withdrawn, and diplomatic efforts are reported stalled.",
-      "risk": "The Iran-Oman transit arrangement is close and would reopen the strait, but it is contingent on the US ending its own naval blockade of Iranian ports - a headline risk that cuts hard and fast. Keep this consistent with CAD: a firm USOIL is why USD/CAD is only MEDIUM."
+      "why": "89.702 and -3.41%, with Brent back below 100 at 99.612, after TE attributed the retreat to reports that European countries are discussing a release of strategic reserves. Combined with a 29K US payroll on the demand side, that is enough to drop this from LONG to RANGE even with the Hormuz blockade still choking about 20% of global daily throughput.",
+      "risk": "The war premium can be restored by a single headline and both tails are live: an Iran-Oman transit deal collapses it further, an escalation puts 100 dollars back fast. Keep it consistent with CAD - softer crude is why USD/CAD stays a long."
     }
   ],
   "macro": {
@@ -486,29 +491,29 @@
         ]
       },
       "unemployment": {
-        "value": "4.1%",
-        "trend": "stable",
-        "note": "Aug rate",
+        "value": "4.2%",
+        "trend": "rising",
+        "note": "Sep rate",
         "hist": [
-          4.3,
           4.3,
           4.3,
           4.2,
           4.1,
-          4.1
+          4.1,
+          4.2
         ]
       },
       "jobs": {
-        "value": "+162k",
-        "trend": "rising",
-        "note": "Aug NFP",
+        "value": "+29k",
+        "trend": "falling",
+        "note": "Sep NFP",
         "hist": [
-          214,
           179,
           129,
           20,
           21,
-          162
+          133,
+          29
         ]
       },
       "rates": {
@@ -1000,8 +1005,31 @@
       "date": "2026-10-02",
       "event": "US non-farm payrolls, unemployment rate and average hourly earnings (BLS)",
       "impact": "high",
-      "note": "Payrolls forecast 89K against 162K prior, unemployment 4.1%, earnings 0.3% m/m. The forecast sits exactly at the unemployment level the September SEP carries across its whole horizon. At or below forecast with soft earnings drags December into question; a clear beat restores the October 28 hike within a day. No shutdown risk - the FY2027 continuing resolution funds agencies through December 11.",
-      "when": "2026-10-02T12:30:00Z"
+      "note": "Payrolls forecast 89K against 162K prior, unemployment 4.1%, earnings 0.3% m/m. The forecast sits exactly at the unemployment level the September SEP carries across its whole horizon. At or below forecast with soft earnings drags December into question; a clear beat restores the October 28 hike within a day. No shutdown risk - the FY2027 continuing resolution funds agencies through December 11. Outcome: a miss on all three legs, with TE also revising August payrolls down to 133K from 162K and average hourly earnings easing to 3.0% y/y from 3.1%.",
+      "when": "2026-10-02T12:30:00Z",
+      "result": [
+        {
+          "title": "Non-Farm Employment Change",
+          "actual": "29K",
+          "forecast": "89K",
+          "previous": "162K",
+          "cmp": "▼ below"
+        },
+        {
+          "title": "Unemployment Rate",
+          "actual": "4.2%",
+          "forecast": "4.1%",
+          "previous": "4.1%",
+          "cmp": "▲ above"
+        },
+        {
+          "title": "Average Hourly Earnings m/m",
+          "actual": "0.1%",
+          "forecast": "0.3%",
+          "previous": "0.3%",
+          "cmp": "▼ below"
+        }
+      ]
     },
     {
       "date": "2026-10-02",
@@ -1158,6 +1186,6 @@
       "note": "The ten-year at 5.342% on October 1 was the highest since early 2002 after +87.1bp in Q3, the sharpest quarterly rise since 1994, with the TIPS real yield at 2.88%. This is the variable that is currently setting the dollar, gold, the franc and European equities simultaneously - watch it ahead of any single central bank."
     }
   ],
-  "geopolitics": "The Iran war remains the inflation engine underneath every rate path on this board, and this week it stopped being a disinflationary story. The Strait of Hormuz blockade, restarted on July 14 after the April ceasefire and June memorandum broke down, still chokes roughly 20% of global daily energy throughput. Brent is 102.018 and up 4.70% on the week, WTI 92.430 after settling 2.7% higher at 92.87, gasoline up 5.48% on the week, and the year-to-date numbers show the structural damage rather than the noise: Brent +67.65%, WTI +60.97%, EU gas +160.90%, UK gas +152.72%, German gas +149.92%. War-risk insurance for the passage is priced at many multiples of pre-crisis levels and several protection and indemnity clubs have withdrawn cover outright, so the constraint is shipping capacity and insurability rather than reserves. Gulf producers have had to curtail output as storage hit capacity and alternative export routes remain insufficient. The diplomacy is close but conditional: Iran and Oman have agreed a transit route and are finishing arrangements for jointly managing the waterway, yet any reopening depends on the United States ending its own naval blockade of Iranian ports, and efforts to resolve the broader conflict were reported stalled this week. S&P Global no longer assumes a definitive end to the war or a return to normal in the strait by the end of 2027, and expects oil to hold an 80-100 dollar range through next year. The FX transmission runs in three directions and they do not all point the same way. First, into inflation and therefore into policy: this is why the ECB warned the conflict continues to generate inflation pressure with inflation well above target for an extended period, why Bailey has tied a November BoE hike explicitly to how long energy volatility persists, why the SNB raised its projections while holding at zero, and why Australia, New Zealand and Japan are all tightening into softening labour markets. It is a supply shock being met with demand restraint across eight economies at once. Second, into terms of trade, which is the leg that changed since yesterday: Canada is the one major crude exporter here and Brent above 100 is a direct tailwind, enough to cap USD/CAD even though the BoC will hold an eighth time and the labour market is shedding jobs. Third, and most counter-intuitively, into havens - where the war is currently losing. Gold is down 6.45% on the month and silver 8.57% in the middle of an active Gulf conflict, and the franc is the weakest currency on this board, because a 5.342% ten-year and a 2.88% real yield outbid fear. That is the single most important thing to understand about this regime: escalation headlines now move oil and European equities far more reliably than they move gold or CHF, so the right way to trade the geopolitics is long USOIL, short GER40 and EU50, and long CAD against the franc and the kiwi - not long bullion. The tail that breaks this framing is a disorderly escalation large enough to make havens trade on fear rather than carry, which would hit XAU and CHF/JPY shorts from both sides at once; the opposite tail is a genuine Hormuz reopening, which collapses the oil premium, relieves the European inflation problem and takes the hawkish tail out of EUR and GBP.",
-  "updatedAt": "2026-10-02T05:19:48.568Z"
+  "geopolitics": "The Iran war remains the inflation engine underneath every rate path on this board, and this week it stopped being a disinflationary story. The Strait of Hormuz blockade, restarted on July 14 after the April ceasefire and June memorandum broke down, still chokes roughly 20% of global daily energy throughput. Brent is 99.612 and -2.64% on the day after reports that European countries are discussing a release of strategic reserves, WTI 89.702 and -3.41%, though Brent still holds +2.23% on the week and +4.28% on the month, and the year-to-date numbers show the structural damage rather than the noise: Brent +67.65%, WTI +60.97%, EU gas +160.90%, UK gas +152.72%, German gas +149.92%. War-risk insurance for the passage is priced at many multiples of pre-crisis levels and several protection and indemnity clubs have withdrawn cover outright, so the constraint is shipping capacity and insurability rather than reserves. Gulf producers have had to curtail output as storage hit capacity and alternative export routes remain insufficient. The diplomacy is close but conditional: Iran and Oman have agreed a transit route and are finishing arrangements for jointly managing the waterway, yet any reopening depends on the United States ending its own naval blockade of Iranian ports, and efforts to resolve the broader conflict were reported stalled this week. S&P Global no longer assumes a definitive end to the war or a return to normal in the strait by the end of 2027, and expects oil to hold an 80-100 dollar range through next year. The FX transmission runs in three directions and they do not all point the same way. First, into inflation and therefore into policy: this is why the ECB warned the conflict continues to generate inflation pressure with inflation well above target for an extended period, why Bailey has tied a November BoE hike explicitly to how long energy volatility persists, why the SNB raised its projections while holding at zero, and why Australia, New Zealand and Japan are all tightening into softening labour markets. It is a supply shock being met with demand restraint across eight economies at once. Second, into terms of trade, which is the leg that changed since yesterday: Canada is the one major crude exporter here, and crude slipping back below 100 has just removed the tailwind that was capping USD/CAD, with the BoC set to hold an eighth time into a labour market that is shedding jobs. Third, and most counter-intuitively, into havens - where the war is currently losing. Gold is down 5.67% on the month and silver 7.72% in the middle of an active Gulf conflict, and the franc is the weakest currency on this board, because a ten-year above 5.2% and a 2.88% real yield outbid fear - and today's payroll miss is the first serious test of that, with gold +1.00%, silver +2.14% and the franc the day's best performer against the dollar. That is the single most important thing to understand about this regime: escalation headlines now move oil and European equities far more reliably than they move gold or CHF, so the right way to trade the geopolitics is USOIL from the levels now that the reserve-release story has knocked it off its highs, short GER40 and EU50, and long CAD against the franc and the kiwi. The tail that breaks this framing is a disorderly escalation large enough to make havens trade on fear rather than carry, which would hit XAU and CHF/JPY shorts from both sides at once; the opposite tail is a genuine Hormuz reopening, which collapses the oil premium, relieves the European inflation problem and takes the hawkish tail out of EUR and GBP.",
+  "updatedAt": "2026-10-02T12:40:47.083Z"
 }
