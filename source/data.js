@@ -1,5 +1,10 @@
 window.FX_DATA = {
   meta: {
+    update: {
+      at: "2026-10-08T13:12:00Z",
+      title: "🇬🇧 GBP analysis updated",
+      text: "Bailey's Istanbul speech was financial stability, not policy: no Bank Rate signal, no repeat of the energy line. November holds near 81%, gilt 5.4709%, GBP/USD 1.32007."
+    },
     reportDate: "2026-10-08",
     reportLabel: "France's ten-year jumped 13.7bp to 4.892% while Bunds sat flat, taking the OAT-Bund spread to 141bp and euro-area bank shares down 3.4%. The euro's political premium is back.",
     horizon: "4H swing",
@@ -41,8 +46,8 @@ window.FX_DATA = {
     },
     {
       icon: "💷",
-      t: "Gilts are now the highest-yielding major bond in the world, ahead of Treasuries",
-      s: "The UK ten-year is 5.4508% against the US at 5.3110%, a 197bp premium over the Bund, with November BoE pricing at 80.5-84.5% after the 6-3 September hold. Bailey at 12:15Z is the only red folder on the board today."
+      t: "Bailey spoke and said nothing about Bank Rate - the day's one red folder passed without a policy signal",
+      s: "His Istanbul speech, Financial resilience in an age of repeated shocks, was a financial-stability text: unwavering commitment to returning inflation to target, but sceptical of unconditional promises about future interest rates and no repeat of the energy line. The gilt rose 3.64bp to 5.4709%, still the highest major yield, and November stayed near 81%."
     }
   ],
   ratePaths: {
@@ -58,8 +63,8 @@ window.FX_DATA = {
     },
     GBP: {
       next: "hike",
-      when: "November 5, priced 80.5-84.5%.",
-      note: "Held at 3.75% on September 17 on a 6-3 vote. Bailey has said publicly that holding gets harder while oil and gas stay expensive, and gilts at 5.4508% are now the highest major yield. The counterweight is wage growth decelerating to 3.9% from 4.2%. He speaks at 12:15Z today."
+      when: "November 5, still near 81% after Bailey declined to steer it.",
+      note: "Held at 3.75% on September 17 on a 6-3 vote. Bailey\'s October 8 Istanbul speech gave the MPC no new guidance: he said monetary policy needs an unwavering commitment to returning inflation to target but that he remains sceptical of unconditional promises about future interest rates, and on energy he said only that interest rates cannot produce more oil or gas - look-through is possible, in his framing, as long as expectations stay anchored. That is softer than the late-September line that holding gets harder while energy is expensive. The gilt is 5.4709%, still the highest major yield, and September CPI on October 21 is now the decider: consensus 3.4% headline from 3.1% and 2.7% core from 2.6%."
     },
     JPY: {
       next: "hike",
@@ -89,6 +94,12 @@ window.FX_DATA = {
   },
   today: [
     {
+      ccy: "GBP",
+      moved: true,
+      headline: "Bailey used the day\'s only red folder on financial stability rather than policy: an unwavering commitment to returning inflation to target, scepticism of unconditional promises about future interest rates, and the observation that interest rates cannot produce more oil or gas - no Bank Rate signal at all.",
+      read: "Held at +2, because nothing in the structural case changed: the gilt added 3.64bp to 5.4709% and is still the highest-yielding major bond in the world, 14.7bp above the Treasury at 5.3240% and 197bp over the Bund at 3.4980%, and GBP/USD only slipped 0.10% to 1.32007 while EUR/GBP fell to 0.84710 from 0.84832. What did change is the shape of the risk. The binary this report flagged resolved as neither outcome: he did not repeat the late-September line that holding gets harder while energy is expensive, which would have been the hawkish resolution, and he did not lean on wage growth at 3.9% from 4.2% to re-anchor pricing, which would have been the dovish one. November sat near 81% after he spoke, inside this morning\'s 80.5-84.5% band. The practical effect is that GBP longs no longer have a Governor-led catalyst in front of them: September CPI on October 21 is now the decider, with consensus at 3.4% headline from 3.1% and 2.7% core from 2.6%. Note the one genuinely two-sided line - interest rates cannot produce more oil or gas, said on a day WTI rose 4.70% to 92.427 and Brent 4.53% to 104.736 - because it is a look-through framing of exactly the shock the market has been treating as his hiking argument, and it is conditional on expectations staying anchored."
+    },
+    {
       ccy: "EUR",
       moved: true,
       headline: "France's ten-year rose 13.72bp to 4.8920% against a flat Bund at 3.4805%, widening the OAT-Bund spread to about 141bp from 127bp, and Euro Stoxx Banks fell 3.38% with SocGen and Deutsche Bank off more than 5%.",
@@ -111,12 +122,6 @@ window.FX_DATA = {
       moved: true,
       headline: "October RBNZ pricing fell to roughly 58% from about 80% in late September, while NZD/USD finished the week flat at 0.00% and 0.56039, stalling a six-week losing streak.",
       read: "Held at -1 and still the worst on the month at -4.04%, but two things argue against pressing it. The flat week breaks a run, and the September forecasts imply an average 2.81% OCR for the December quarter, which works with an October hold and a December hike - so the easing in pricing is about timing, not direction, with TE carrying 3.0% for December 9. The live risk is to AUD/NZD longs: RBNZ at 58% against RBA at 20% is the opposite of what the 185bp policy spread implies."
-    },
-    {
-      ccy: "GBP",
-      moved: true,
-      headline: "The gilt ten-year at 5.4508% overtook the US at 5.3110% to become the highest-yielding major bond in the world, a 197bp premium over the Bund, with November pricing at 80.5-84.5% into Bailey at 12:15Z.",
-      read: "Held at +2 and the best non-dollar currency on both the week (+0.11%) and the month (-2.49%). The structural case is now a yield case as much as a policy case, and against a -2 euro it gives EUR/GBP the widest score gap on the board. Bailey is the binary: he moved November from roughly 70% to about 85% by saying a hold is harder to justify with energy expensive, and Brent back above 102 hands him the same argument. Wage growth at 3.9% from 4.2% is what a dovish re-anchoring would lean on."
     },
     {
       ccy: "JPY",
@@ -150,9 +155,9 @@ window.FX_DATA = {
       ccy: "GBP",
       score: 2,
       verdict: "STRENGTHENING",
-      tag: "Held at +2 and the gilt is now the highest-yielding major bond in the world at 5.4508%, ahead of the US at 5.3110% and 197bp over the Bund, with GBP the best non-dollar currency on the week (+0.11%) and the month (-2.49%).",
-      drivers: "Bank Rate 3.75% after a 6-3 September 17 hold, ten-year 5.4508%, August CPI 3.1% and core 2.6%, wage growth 3.9% down from 4.2%, unemployment 4.9%, July employment +67K after +83K, November priced 80.5-84.5%.",
-      forward: "🦅 Hawkish into November 5, with Bailey at 12:15Z today the binary. He took November from roughly 70% to about 85% by saying a hold is harder to justify while oil and gas stay expensive, and Brent back above 102 hands him that argument again. Invalidated if he leans on decelerating wages to re-anchor pricing, as he did in his September 8 testimony."
+      tag: "Held at +2 through Bailey, who gave no Bank Rate signal: the gilt added 3.64bp to 5.4709% and is still the highest-yielding major bond in the world, ahead of the US at 5.3240% and 197bp over the Bund, with GBP/USD -0.10% at 1.32007 and EUR/GBP down to 0.84710.",
+      drivers: "Bank Rate 3.75% after a 6-3 September 17 hold, ten-year 5.4709%, August CPI 3.1% and core 2.6%, wage growth 3.9% down from 4.2%, unemployment 4.9%, July employment +67K after +83K, November still near 81% after the October 8 speech.",
+      forward: "🦅 Still hawkish into November 5, but no longer Governor-led. His October 8 Istanbul speech was a financial-stability text that deliberately withheld guidance - unwavering commitment to returning inflation to target, yet sceptical of unconditional promises about future interest rates - and it dropped the energy argument for the milder line that interest rates cannot produce more oil or gas. The hike case now rests on the data rather than on rhetoric: September CPI on October 21, consensus 3.4% headline from 3.1% and 2.7% core from 2.6%. Invalidated if that CPI misses consensus, which would leave an 81%-priced November resting on a 6-3 hold and decelerating wages."
     },
     {
       ccy: "AUD",
@@ -215,8 +220,8 @@ window.FX_DATA = {
       sym: "GBP/USD",
       bias: "RANGE",
       conv: "LOW-MED",
-      why: "Both at +2 and the gilt now out-yields the Treasury at 5.4508% against 5.3110%, with GBP/USD at 1.32097, +0.11% on the week - two hawkish central banks pricing 80.5-84.5% and 84-85% for their next meetings.",
-      risk: "Changed from SHORT to RANGE because equal scores and a yield advantage to the pound make direction a coin flip; trade the levels. Bailey at 12:15Z is the break risk in both directions, and September US core CPI on October 14 is the other side of it."
+      why: "Still RANGE and Bailey is why: the break risk flagged this morning passed without a policy signal, leaving both currencies at +2 with the gilt out-yielding the Treasury 5.4709% to 5.3240% and GBP/USD -0.10% at 1.32007, November near 81% against a December Fed at 84-85%.",
+      risk: "Trade the levels - a speech that deliberately avoided guidance confirms the coin flip rather than breaking it. The two events that can break it are now dated: September US core CPI on October 14 and UK September CPI on October 21, consensus 3.4% from 3.1%."
     },
     {
       sym: "USD/JPY",
@@ -278,8 +283,8 @@ window.FX_DATA = {
       sym: "EUR/GBP",
       bias: "SHORT",
       conv: "HIGH",
-      why: "EUR -2 against GBP +2 is the widest score gap on the board at 0.84832, -0.45% on the week and -1.18% on the month, with gilts at 5.4508% carrying a 197bp premium over the Bund and November BoE pricing at 80.5-84.5%.",
-      risk: "The cleanest risk-reward here, and the risk is one speech: Bailey at 12:15Z re-anchoring November pricing lower by leaning on wage growth at 3.9% from 4.2%, as he did on September 8. Today's ECB accounts at 11:30Z are the smaller second risk."
+      why: "The flagged risk is spent and the trade worked through it: Bailey gave no dovish re-anchoring, November held near 81%, and EUR/GBP fell to 0.84710 from 0.84832 with the gilt at 5.4709% keeping a 197bp premium over a 3.4980% Bund. EUR -2 against GBP +2 is still the widest score gap on the board.",
+      risk: "Conviction stays HIGH with the event risk now behind it rather than in front. What is left is data and politics: UK September CPI on October 21 at 3.4% consensus is the pound-side risk, and a Council that sounds closer to hiking is the euro-side one, though it would be doing so against a 141bp OAT-Bund spread."
     },
     {
       sym: "EUR/CAD",
@@ -299,36 +304,36 @@ window.FX_DATA = {
       sym: "GBP/JPY",
       bias: "LONG",
       conv: "MEDIUM",
-      why: "GBP +2 against JPY 0 at 208.976, +0.18% on the week and +0.54% on the month, on the widest yield gap in the G10: a 5.4508% gilt against a 3.0830% JGB is 237bp, with November BoE pricing at 80.5-84.5%.",
-      risk: "A carry trade into two live events - Bailey at 12:15Z and a December BoJ at 65-85% - so it is the most event-exposed of the yen longs. The JGB rallying 2.98bp on a day the rest of the world sold off is the warning sign on the short leg."
+      why: "GBP +2 against JPY 0 at 208.876, with the widest yield gap in the G10 slightly wider after Bailey: a 5.4709% gilt against a 3.0860% JGB is 238bp, and November BoE pricing survived the speech near 81%.",
+      risk: "One of the two live events is now cleared without damage, so the remaining risk is all on the short leg: a December BoJ at 65-85% and a JGB that keeps trading as a haven. Conviction stays MEDIUM because the long leg\'s next test is UK CPI on October 21, not the Governor."
     },
     {
       sym: "GBP/AUD",
       bias: "LONG",
       conv: "LOW-MED",
-      why: "GBP +2 against AUD +1 at 1.89915, +1.14% on the month, with the pound's policy case firming into November at 80.5-84.5% while the RBA's fell to about 20%.",
-      risk: "The week went the other way at -0.25% because AUD was the strongest currency on the board, so the score gap and the tape disagree. Copper at +2.87% on the week supports the wrong leg, and Bailey at 12:15Z decides the right one."
+      why: "GBP +2 against AUD +1 at 1.90174, up from 1.89915 this morning with AUD/USD -0.31%, on a policy-pricing gap that Bailey left intact: November BoE near 81% against an RBA near 20%.",
+      risk: "Bailey was supposed to decide this and did not, so the score gap and the weekly tape still disagree. Both legs now settle it with data in the same week: Australian Q3 CPI on October 28 and UK September CPI on October 21. Conviction stays LOW-MED, and copper slipping 0.32% today no longer argues for the short leg the way +2.87% on the week did."
     },
     {
       sym: "GBP/NZD",
       bias: "LONG",
       conv: "MEDIUM",
-      why: "GBP +2 against NZD -1 at 2.35723, +0.11% on the week and +1.55% on the month, with a 100bp policy gap and gilts the highest-yielding major bond in the world at 5.4508%.",
-      risk: "Both central banks could hike inside four weeks, so the gap can compress from the kiwi side: October 28 RBNZ sits at 58%. Bailey at 12:15Z is the near risk, and NZD's flat week suggests the six-week downtrend is losing steam."
+      why: "GBP +2 against NZD -1 at 2.36186, up from 2.35723 with NZD/USD -0.19%, on a 100bp policy gap and a gilt that added 3.64bp to 5.4709% through Bailey and is still the highest-yielding major bond in the world.",
+      risk: "The near risk has passed harmlessly, so the compression risk is again the kiwi side: October 28 RBNZ at 58%, against a UK CPI print on October 21 that consensus has accelerating to 3.4%. Conviction stays MEDIUM because NZD\'s flat week says the six-week downtrend is losing steam."
     },
     {
       sym: "GBP/CAD",
       bias: "LONG",
       conv: "MEDIUM",
-      why: "GBP +2 against CAD -1 at 1.88401, the best-performing pound cross on the week at +0.40%, on a 150bp policy gap with November BoE at 80.5-84.5% against a BoC holding at 2.25% for a seventh meeting.",
-      risk: "Two events in two days: Bailey at 12:15Z today, then Canadian jobs at 12:30Z tomorrow where +6.3K is forecast after -41.7K. Brent above 102 is a slow tailwind for the short leg even though WTI at 89.995 is not."
+      why: "GBP +2 against CAD -1 at 1.88313, on a 150bp policy gap that Bailey left untouched: November BoE near 81% after a speech with no guidance in it, against a BoC holding at 2.25% for a seventh meeting.",
+      risk: "The first of the two events passed without moving it; the second is the real one, Canadian jobs at 12:30Z tomorrow with +6.3K forecast after -41.7K. The warning on the short leg is today\'s barrel: WTI finally joined Brent, +4.70% to 92.427 against Brent +4.53% to 104.736, which is the first session this week where Canada\'s own grade got paid."
     },
     {
       sym: "GBP/CHF",
       bias: "LONG",
       conv: "LOW-MED",
-      why: "GBP +2 against CHF 0 at 1.10024, +0.34% on the week, on a 375bp policy gap and a gilt at 5.4508% against a Swiss ten-year at 0.5210%.",
-      risk: "The franc is the destination for euro-area haven flow, so a wider OAT-Bund spread works against this even though neither currency is the euro. Bailey at 12:15Z is the trigger, and a dovish re-anchoring leaves only carry supporting it."
+      why: "GBP +2 against CHF 0 at 1.10075, on a 375bp policy gap and a gilt at 5.4709% against a Swiss ten-year at 0.5550% - a 492bp carry advantage that Bailey did nothing to narrow.",
+      risk: "The dovish re-anchoring that would have left only carry supporting this did not happen, so the trade keeps its rationale. The standing drag is unchanged: the franc is where euro-area haven flow goes, and a French ten-year at 4.8840% keeps that bid alive. Conviction stays LOW-MED on that single counterweight."
     },
     {
       sym: "AUD/JPY",
@@ -462,7 +467,7 @@ window.FX_DATA = {
       date: "Thu Oct 8",
       event: "UK: BoE Governor Bailey speaks",
       impact: "high",
-      note: "12:15Z and the only red folder on the board today. He moved November from roughly 70% to about 85% by saying persistently high energy prices make holding Bank Rate harder to justify; pricing has since settled at 80.5-84.5%, and Brent back above 102 hands him the same argument. Decelerating wage growth at 3.9% from 4.2% is what a dovish re-anchoring would lean on. Greene at 09:00-09:15Z, Pill at 09:00Z and Lombardelli at 13:00Z surround him.",
+      note: "Delivered 12:15Z at the Istanbul Economic Forum, hosted by the Central Bank of the Republic of Turkey, titled Financial resilience in an age of repeated shocks - a financial-stability speech with no Bank Rate or November signal in it. On policy he said only that it needs an unwavering commitment to returning inflation to target, that looking through a supply shock is possible only if inflation expectations remain well anchored, and that he remains sceptical of unconditional promises about future interest rates; on energy, that interest rates cannot produce more oil or gas. On markets: financial markets have so far withstood significant increases in sovereign bond yields, but we cannot be relaxed, with leveraged investors now a much larger role in government bond markets and greater central clearing, appropriate minimum haircuts and stronger risk management all merit consideration. The gilt rose 3.64bp to 5.4709% and November stayed near 81%. Lombardelli at 13:00Z is the follow-on.",
       when: "2026-10-08T12:15:00Z"
     },
     {
