@@ -5,10 +5,21 @@
     "horizon": "4H swing",
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + EU50 + XAU + XAG + XCU + USOIL",
     "regime": "The euro-area sovereign scare split in two overnight. The bond leg stopped: the ten-year OAT closed at 4.8850%, down 0.68bp, and Greece rallied 8.95bp with Italy 2.86bp, so the periphery actually retraced. The equity leg did not: Euro Stoxx Banks fell another 2.26% to 289.23, which is -9.00% on the week. Away from Europe the two live stories are Japan, where PM Takaichi told parliament the country no longer needs reflationary policy built on monetary easing and fiscal expansion, and oil, which gave back part of Thursday's 4% surge after Trump pledged no strikes on Iran before the November 3 midterms.",
-    "nextBigEvent": "Canada's September jobs at 12:30Z today, the week's only red folder, with employment forecast +6.1K after -41.7K and the unemployment rate seen at 6.5% from 6.4%. Behind it, the French National Assembly opens its 2027 budget debate on October 13 and US September CPI lands October 14."
+    "nextBigEvent": "The French National Assembly opens its 2027 budget debate on October 13, with US September CPI on October 14 and Canadian September CPI on October 19 behind it - the print that decides whether a December BoC cut gets priced after this morning's -68.3K employment report.",
+    "update": {
+      "at": "2026-10-09T12:39:41Z",
+      "title": "🇨🇦 CAD analysis updated",
+      "text": "September employment -68.3K vs +6.1K forecast, unemployment 6.5% from 6.4% on a 1997-low participation rate. CAD cut to -2; CAD/JPY and CAD/CHF flipped SHORT."
+    }
   },
   "dailyRead": "The tradeable fact this morning is a divergence, not a direction. For two sessions this report has been trading the euro's political premium through French sovereign spreads, and that leg has now stopped working: the ten-year OAT closed Thursday at 4.8850%, lower by 0.68bp, while Greece rallied 8.95bp, Italy 2.86bp and Portugal 1.29bp. With the Bund up 1.32bp to 3.4937% the OAT-Bund spread is about 139bp against roughly 141bp on Wednesday, and the periphery is unwinding rather than widening. Yet the channel the spread was supposed to travel through kept deteriorating: Euro Stoxx Banks lost a further 2.26% to 289.23 on Thursday, which makes -9.00% on the week, with FR40 -5.23% and IT40 -4.97% over the same five sessions. That is the discipline point of the day. Either bank equity catches up to a bond market that has already calmed down, in which case the euro shorts are late, or the bond market is wrong and Tuesday's budget debate re-prices it. The honest statement is that the EUR -2 score now rests on one leg, banks and the October 13 Assembly vote, rather than two, and a calm debate is the upgrade trigger. Nothing in the ECB account argues the dovish side: published Thursday, it recorded that markets had fully priced the unanimous September hike with a further two to three increases priced by end-2027, though Chief Economist Lane noted higher borrowing costs could reduce the need for further tightening, and roughly 80% remains priced for another hike by year-end. The second story is Japan, and it is the most under-priced thing on the board. Prime Minister Takaichi told parliament on October 8 that Japan no longer needs reflationary policy built on monetary easing and fiscal expansion. A head of government abandoning reflationism is a structural yen positive, and the bond market read it as a supply story: the ten-year JGB rallied 6.53bp to 3.0210%, the largest move on any major curve and -9.03bp on the week. Despite that the yen is the only G10 currency lower against the dollar today, with USD/JPY up 0.13% to 158.088, because October 30 is still only about 12% priced and Ueda sounded more cautious than expected earlier in the week. The floor under the yen is rising while spot ignores it, which is a reason to cut conviction on yen shorts rather than to flip them. Third, oil reversed. Thursday settled with Brent up 4% at 104.28 and WTI up 3.6% at 91.49 on a record run of Hormuz tanker attacks - nine to twelve vessels struck in a week, and only seven transits on Tuesday against less than half the seven-day average - and both have since eased, WTI to 90.243 and Brent to 102.856. The reason is political: Trump pledged not to strike Iran before the November 3 midterms, which caps the escalation premium for three and a half weeks while the physical attrition continues. WTI is -11.94% on the month. Elsewhere the dollar is quietly stalling: DXY is 101.997, down 0.12%, and every G10 currency except the yen is firmer against it even though December Fed pricing sits at 84% and Governor Waller said on Thursday he anticipates additional hikes if the data come in as expected. The ten-year Treasury is 5.2250%, down 5.8bp on the week, so the long-end pressure that drove the dollar through September has eased. That leaves sterling as the cleanest currency on the board rather than the dollar: the gilt at 5.4122% is still the highest major yield in the world and is now 18.7bp above the Treasury, up from about 14.7bp, because Treasuries rallied harder, and the market has two full 25bp BoE increases priced by February against one for the Fed. Metals bounced - gold 1.22% to 4183.69, silver 1.93% to 60.316 - but keep the frame right: both are inside a drawdown from January records near 5,589 and 118, gold is -3.10% on the month and silver -5.09%, so this is dollar relief rather than a haven panic. Copper is the exception and the genuine physical story at 6.5954, up 1.17% and 37.46% on the year, though the AUD read has to net it against iron ore at 90.98, down 8.44% on the month. Today's only red folder is Canadian employment at 12:30Z. One last piece of self-marking, because it changes three tickets on this board rather than one: run over the last 23 reports, this report's HIGH conviction setting has paid on 0 of 5 calls, and the USD/JPY long has been right in direction on only 5 of 13. So there is no HIGH conviction anywhere today - EUR/USD and EUR/GBP are both marked MEDIUM despite being the cleanest theses available - and USD/JPY is cut to LOW-MED. HIGH has been functioning as a crowding signal in this series rather than an edge signal, and the fix is to stop paying for it.",
   "today": [
+    {
+      "ccy": "CAD",
+      "moved": true,
+      "headline": "September employment fell 68.3K against a +6.1K forecast with unemployment at 6.5%, and the detail is worse than the headline: participation dropped to 64.8%, the lowest since December 1997 excluding 2020, and USD/CAD jumped 0.50% to 1.42967.",
+      "read": "Cut to -2 from -1, which is the clearest downgrade on the board today. The miss is 74K against forecast and it is the second heavy loss running - August's -41.7K and now -68.3K is 110K of employment gone in two months - with full-time down 35.4K and part-time 32.9K, so there is no composition excuse available. The in-line 6.5% unemployment rate flatters the report rather than softening it: the rate rose only 0.1pt because participation fell 0.2pt to 64.8%, a level last seen in December 1997 outside 2020, so people left the labour force faster than jobs disappeared. The losses are broad - education -35.0K, health care and social assistance -23.0K, manufacturing -13.0K, youth 15-24 down 48.0K - and average hourly wages at 2.3% y/y against 3.0% CPI mean real pay is falling. The forward consequence is the trade rather than the print. Before this report the market priced no cut at all for October 28 and roughly 29-41% odds of a hike depending on the source; that hike case is now gone, which turns September CPI on October 19 into the decider for whether a December cut gets priced. The oil cross-check still does not help: WTI is 90.966 and -11.24% on the month, and that is the barrel Canada prices against. USD/CAD 1.42967 and +0.50%, CAD/CHF -0.57% and CAD/JPY -0.25% are the market's verdict."
+    },
     {
       "ccy": "JPY",
       "moved": true,
@@ -20,12 +31,6 @@
       "moved": true,
       "headline": "The bond leg of the euro's political premium stopped - the OAT closed at 4.8850%, down 0.68bp, with Greece rallying 8.95bp and Italy 2.86bp - while Euro Stoxx Banks fell another 2.26% to 289.23, taking the week to -9.00%.",
       "read": "Held at -2, and this report has to be explicit that the score now rests on one leg instead of two. Wednesday's case was a widening sovereign spread transmitting into banks. The spread stopped widening: with the Bund up 1.32bp to 3.4937%, OAT-Bund is about 139bp against roughly 141bp, and the periphery retraced outright. The transmission did not stop, which is the part that matters for a 4H book: banks are -9.00% on the week, FR40 -5.23% and IT40 -4.97%. Either equity catches up to a calmer bond market, in which case the shorts are late, or the October 13 Assembly budget debate re-prices the bonds. The ECB account published Thursday gives no help to the dovish side - markets had fully priced the unanimous September hike with two to three more by end-2027, roughly 80% for another by year-end - though Lane noted higher borrowing costs could reduce the need to tighten, which is a Council acknowledging the spread constrains it. EUR was the best-supported major in absolute policy terms and still the second-worst monthly performer at -3.28%. A calm October 13 is the upgrade trigger to -1."
-    },
-    {
-      "ccy": "CAD",
-      "moved": true,
-      "headline": "September employment lands at 12:30Z as the week's only red folder: +6.1K forecast after August's -41.7K, with the unemployment rate seen rising to 6.5% from 6.4%.",
-      "read": "Held at -1 into the print, which is the right posture when a binary sits seven hours ahead. The structural case is unchanged and weak: 2.25% after seven consecutive holds, the ten-year at 3.9320% is the second-lowest major yield, and inflation is stable at 3.0% with core at 2.4% - no urgency in either direction. Forecasts cluster tight: Reuters polls +9.2K, CIBC +5.0K, ForexFactory carries +6.1K, and RBC is the outlier calling the unemployment rate unchanged at 6.4% with a dip to 6.3% by year-end. That RBC scenario is the one that reverses the USD/CAD long, because it would make a 175bp policy gap to the Fed look mispriced against a labour market that is not actually deteriorating. The oil cross-check cuts the other way than the headline suggests: Brent above 100 flatters CAD, but WTI is -11.94% on the month and that is the barrel Canada prices against. USD/CAD is 1.42104, down 0.11% today and 0.31% on the week after +2.73% on the month."
     },
     {
       "ccy": "USD",
@@ -91,8 +96,8 @@
     },
     {
       "icon": "🇨🇦",
-      "t": "Canada's September jobs at 12:30Z is the week's only red folder and the CAD score rests on it",
-      "s": "Employment is forecast +6.1K after August's -41.7K, with the unemployment rate seen rising to 6.5% from 6.4%. Reuters polls +9.2K and CIBC +5.0K; RBC is the outlier calling 6.4% unchanged, which is the print that would reverse the USD/CAD long."
+      "t": "Canada shed 68.3K jobs in September against a +6.1K forecast and participation fell to a 1997 low",
+      "s": "The unemployment rate rose only to 6.5% because the labour force shrank faster than the jobs did: participation fell 0.2pt to 64.8%, the lowest since December 1997 excluding 2020. Two months have now cost 110K jobs, CAD is cut to -2 and USD/CAD jumped 0.50% to 1.42967."
     }
   ],
   "ratePaths": {
@@ -128,8 +133,8 @@
     },
     "CAD": {
       "next": "hold",
-      "when": "October 28, with a hold the base case.",
-      "note": "Held at 2.25% on September 2 for a seventh consecutive decision. Macklem said in September that the labour market has held up better than feared, with firms slowing hiring rather than cutting through 2025 and private-sector hiring strengthening this year. Today's September employment report at 12:30Z tests that directly: +6.1K forecast after -41.7K, unemployment seen at 6.5% from 6.4%. September CPI on October 19 follows. The Canadian ten-year at 3.9320% is the second-lowest major yield."
+      "when": "October 28, with a hold still the base case but the risk flipped from a hike to a cut.",
+      "note": "Held at 2.25% on September 2 for a seventh consecutive decision. Today's September employment report settles the question Macklem opened: employment fell 68.3K against a +6.1K forecast, unemployment rose to 6.5%, and participation dropped to 64.8%, so his September line that the labour market has held up better than feared and that firms were slowing hiring rather than cutting no longer survives contact with the data. Pre-release pricing carried no cut at all for October 28 and roughly 29-41% odds of a hike depending on the source; a 74K miss on top of August's -41.7K removes that hike case and makes a cut the more likely next move even if October is too early for it. Wages at 2.3% y/y against 3.0% CPI mean real pay is now falling, which is the disinflationary half of the argument. September CPI on October 19 decides whether December gets priced. The Canadian ten-year at 3.9320% is the second-lowest major yield."
     },
     "CHF": {
       "next": "hold",
@@ -179,14 +184,6 @@
       "forward": "⚖️ Balanced into December 10, with the risk skewed to franc strength on events rather than on policy. The September statement already softened the FX language from an increased willingness to intervene to being willing to be active as necessary, and October 8 added an explicit push-back on near-term tightening, so nothing in the reaction function argues for a stronger franc. The October 13 French budget debate does: EUR/CHF posted its largest single-session fall since 2022 on French debt on October 2. Intervention, not negative rates, remains the tool, and the bar is a disorderly move rather than a directional one. Turns hawkish only if inflation keeps climbing off 1.0% while the haven bid persists."
     },
     {
-      "ccy": "CAD",
-      "score": -1,
-      "verdict": "WEAKENING",
-      "tag": "Held at -1 into today's 12:30Z employment print, the week's only red folder: +6.1K forecast after -41.7K with the unemployment rate seen at 6.5% from 6.4%, on the second-lowest major yield at 3.9320%.",
-      "drivers": "Overnight rate 2.25% after a seventh consecutive hold on September 2, ten-year 3.9320%, August employment -41.7K after +75.1K, unemployment 6.4%, August CPI 3.0% stable with core 2.4%, Q2 growth 1.1% y/y, USD/CAD 1.42104 after +2.73% on the month, WTI -11.94% on the month.",
-      "forward": "⚖️ Hold at October 28 with the data deciding. Macklem said in September that the labour market has held up better than feared, with firms slowing hiring rather than cutting through 2025 and private hiring strengthening this year, and today's report tests exactly that. Reuters polls +9.2K and CIBC +5.0K; RBC is the outlier at 6.4% unchanged, which is the print that makes a 175bp gap to the Fed look mispriced. The oil read is less supportive than the Brent headline suggests, because WTI is the barrel Canada prices against and it is -11.94% on the month. September CPI on October 19 follows."
-    },
-    {
       "ccy": "EUR",
       "score": -2,
       "verdict": "WEAKENING",
@@ -201,6 +198,14 @@
       "tag": "The weakest forward case in the G10: October 28 has drifted to about 58% from roughly 80% while the RBNZ's own September track points to a pause, on the second-lowest policy rate at 2.75% and a currency near one-year lows.",
       "drivers": "Official cash rate 2.75% after the September 2 hike, Q2 CPI 4.1% from 3.1% against a 1-3% target, core 3.2%, unemployment 5.6% from 5.4%, Q2 growth +0.2% q/q from +0.9%, Q2 employment +0.5%, ten-year 5.0700% and -5.15bp today, NZD/USD 0.56218 and -3.02% on the month.",
       "forward": "⚖️ Range into October 28, and the lean is toward disappointing the 58% that is priced. The RBNZ's own published track implies an October pause followed by a December hike, so the market is fading the Bank's guidance rather than following it, and decelerating growth with rising unemployment supports patience. Q3 CPI on October 21, one week before the decision, is the only thing that forces the issue; a currency at one-year lows is itself an inflation argument the Bank will cite either way. Invalidated to the hawkish side if that CPI accelerates from 4.1%."
+    },
+    {
+      "ccy": "CAD",
+      "score": -2,
+      "verdict": "WEAKENING",
+      "tag": "Cut to -2 after September employment fell 68.3K against a +6.1K forecast - the second heavy loss running - with participation at its lowest since December 1997 and the October 28 hike case now gone.",
+      "drivers": "September employment -68.3K after -41.7K, a 74K miss, with full-time -35.4K and part-time -32.9K; unemployment 6.5% from 6.4% on a participation rate down 0.2pt to 64.8%, the lowest since December 1997 excluding 2020; education -35.0K, health care -23.0K, manufacturing -13.0K, youth -48.0K; wages 2.3% y/y against 3.0% CPI with core 2.4%; overnight rate 2.25% after a seventh consecutive hold; ten-year 3.9320%; USD/CAD 1.42967 and +0.50% today.",
+      "forward": "🔻 Dovish into October 28, where a hold is still the base case but the risk has changed sides. Pre-release pricing carried no cut at all and roughly 29-41% odds of a hike; a 74K miss on top of August removes the hike case and makes a cut the more likely next move. Macklem said in September that firms were slowing hiring rather than cutting, and 110K of losses in two months across education, health care and manufacturing contradicts that directly. Real wages are now falling at 2.3% against 3.0% CPI, which is the disinflationary half of the case, while 3.0% headline inflation is what still stops the Bank moving in October. September CPI on October 19 is the decider: a soft core print prices December. Returns to balanced if October's labour report rebounds and CPI holds at 3.0%."
     }
   ],
   "symbols": [
@@ -229,8 +234,8 @@
       "sym": "USD/CAD",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "USD +2 against CAD -1 at 1.42104, +2.73% on the month, on a 129.3bp ten-year gap and a 175bp policy gap, with Canadian employment forecast at only +6.1K after -41.7K and unemployment seen at 6.5%.",
-      "risk": "A seven-hour binary. RBC's call of an unchanged 6.4% with a job gain is the print that reverses this, because it would make the 175bp gap look mispriced. The pair is already -0.31% on the week and -0.11% today, and the dollar leg is stalling with the Treasury -5.8bp on the week."
+      "why": "USD +2 against CAD -2 at 1.42967, +0.50% on the day, after September employment fell 68.3K against a +6.1K forecast and unemployment rose to 6.5% - a 175bp policy gap where the Fed is priced to hike in December and the BoC's October hike case just disappeared.",
+      "risk": "The binary resolved in this trade's favour, so the honest risk is entry rather than thesis: 1.43 is 86 pips above the pre-print 1.42104 and chasing an impulse is how a 4H book gives the move back. US September CPI on October 14 is the dollar-side test and Canadian CPI on October 19 the other."
     },
     {
       "sym": "AUD/USD",
@@ -285,8 +290,8 @@
       "sym": "EUR/CAD",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "EUR -2 against CAD -1 at 1.59593, +0.07% today - two weak currencies with a 25bp policy gap, where today's Canadian employment print at 12:30Z matters more than anything on the euro side until October 13.",
-      "risk": "Trade the levels through the binary. A strong Canadian print drives it lower and a weak one higher, and only then does the French budget debate take over as the driver. Neither central bank moves before October 28."
+      "why": "EUR -2 against CAD -2 at 1.60130, +0.41% today - both legs now carry the same score after Canada's -68.3K print, which resolved the one catalyst this cross had and handed the driver back to the French budget debate on October 13.",
+      "risk": "Trade the levels. Two weak currencies with a 25bp policy gap and neither central bank moving before October 28, so this stays a levels market until the Assembly vote gives the euro leg a direction of its own."
     },
     {
       "sym": "EUR/CHF",
@@ -320,8 +325,8 @@
       "sym": "GBP/CAD",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "GBP +2 against CAD -1 at 1.88221, +0.02% today, on a 148bp ten-year gap with the gilt at 5.4122% against 3.9320% and a BoE hiking into November against a BoC on a seventh consecutive hold.",
-      "risk": "Today's Canadian employment print at 12:30Z is a seven-hour binary, and RBC's unchanged-6.4% scenario would hit this hardest. UK September CPI on October 21 is the other side."
+      "why": "GBP +2 against CAD -2 at 1.88934, +0.41% today and now the widest score gap on the board alongside EUR/GBP, on a 148bp ten-year gap with the gilt at 5.4122% against 3.9320% and a BoE priced 80-91% for November against a BoC whose hike case died with this morning's print.",
+      "risk": "Already extended on the print, and UK September CPI on October 21 at a consensus 3.4% is the sterling-side test. A rebound in Canada's October labour report would compress a four-point score gap quickly."
     },
     {
       "sym": "GBP/CHF",
@@ -348,8 +353,8 @@
       "sym": "AUD/CAD",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "AUD +1 against CAD -1 at 0.99211, +0.24% today, on a 235bp policy gap and the cleanest commodity split on the board: copper +37.46% on the year against WTI -11.94% on the month.",
-      "risk": "Today's Canadian employment print at 12:30Z is the binary, and the parity handle is directly overhead. Iron ore at -8.44% on the month is the honest counterweight to the copper argument, since it is the larger Australian export."
+      "why": "AUD +1 against CAD -2 at 0.99734, +0.77% today and the best-performing CAD cross on the print, on a 235bp policy gap with copper +1.93% to 6.6446 against a Canadian labour market that has shed 110K jobs in two months.",
+      "risk": "Parity sits 27 pips overhead and has capped this cross before, so the break is the trigger rather than the entry. Iron ore at 90.98 and -8.44% on the month remains the honest counterweight to the copper argument, and Australian Q3 CPI on October 28 is the AUD-side binary."
     },
     {
       "sym": "AUD/CHF",
@@ -369,8 +374,8 @@
       "sym": "NZD/CAD",
       "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "NZD -2 against CAD -1 at 0.79888, +0.19% today - two weak currencies with a 50bp policy gap, where today's Canadian employment print is the only near-term driver.",
-      "risk": "Trade the levels through the 12:30Z binary. Both central banks decide on October 28, and NZ Q3 CPI on October 21 is the only thing that separates them before then."
+      "why": "NZD -2 against CAD -2 at 0.80204, +0.59% today - both legs at the same score, but the tilt turned higher because the direction of the next policy move now differs: the RBNZ's own track points to a December hike while Canada's October hike case disappeared on a -68.3K print.",
+      "risk": "Both central banks decide on October 28, so the sequencing is the trade rather than the level, and NZ Q3 CPI on October 21 lands first. The kiwi still has the weakest forward case in the G10, which is why this is RANGE rather than a long."
     },
     {
       "sym": "NZD/CHF",
@@ -381,17 +386,17 @@
     },
     {
       "sym": "CAD/JPY",
-      "bias": "RANGE",
+      "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "CAD -1 against JPY 0 at 111.248, +0.24% today - a soft Canadian dollar against a yen whose forward case just improved, with the Canadian ten-year at 3.9320% only 91bp over the JGB.",
-      "risk": "Trade the levels through two opposing catalysts: Canadian employment at 12:30Z today, and the BoJ Outlook Report on October 30 with December near 90% cumulative. The carry at 2.25% against 1.25% is too thin to pay for either."
+      "why": "Flipped from RANGE to SHORT: CAD -2 against JPY 0 at 110.7050, -0.25% today, because the Canadian binary resolved against the loonie while the yen's forward case improved on Takaichi's rejection of reflationary policy, with the Canadian ten-year only 91bp over the JGB.",
+      "risk": "The 100bp carry runs against the position and the BoJ is only about 12% priced for October 30, so this pays on the Canadian leg rather than the Japanese one. December BoJ near 90% cumulative is the upgrade; a rebound in Canada's October labour report is the invalidation."
     },
     {
       "sym": "CAD/CHF",
-      "bias": "RANGE",
+      "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "CAD -1 against CHF 0 at 0.58426, -0.07% today - a 225bp carry in Canada's favour against a Canadian labour market that shed 41.7K jobs in August, with today's print at 12:30Z the only real driver.",
-      "risk": "Trade the levels through the binary, then October 13 takes over as the franc's driver. Both central banks are on hold until late October and neither leg has a policy catalyst of its own."
+      "why": "Flipped from RANGE to SHORT: CAD -2 against CHF 0 at 0.58146, -0.57% today and the weakest CAD cross on the print, with Canadian employment down 110K in two months against a franc that keeps collecting the euro-area haven bid into the October 13 budget debate.",
+      "risk": "A 225bp carry in Canada's favour pays to hold the other side, and the SNB pushed back on near-term tightening on October 8 while hinting lower-for-longer, so the franc has no policy support of its own. This is a CAD-weakness trade, not a CHF-strength one."
     },
     {
       "sym": "CHF/JPY",
@@ -888,29 +893,29 @@
         ]
       },
       "unemployment": {
-        "value": "6.4%",
-        "trend": "stable",
-        "note": "Aug rate",
+        "value": "6.5%",
+        "trend": "rising",
+        "note": "Sep rate",
         "hist": [
-          6.7,
           6.9,
           6.6,
           6.5,
           6.4,
-          6.4
+          6.4,
+          6.5
         ]
       },
       "jobs": {
-        "value": "-41.7k",
+        "value": "-68.3k",
         "trend": "falling",
-        "note": "Aug employment",
+        "note": "Sep employment",
         "hist": [
-          15,
           14.1,
           -17.7,
           18,
           75.1,
-          -41.7
+          -41.7,
+          -68.3
         ]
       },
       "rates": {
@@ -1000,8 +1005,24 @@
       "date": "Fri Oct 9",
       "event": "Canada: September employment change and unemployment rate",
       "impact": "high",
-      "note": "12:30Z. Employment forecast +6.1K after August's -41.7K, with the unemployment rate seen rising to 6.5% from 6.4%. The only red-folder figures of the week and the print the CAD score and the USD/CAD, GBP/CAD and AUD/CAD longs rest on. Reuters polls +9.2K and CIBC +5.0K; RBC is the outlier calling 6.4% unchanged, which is the outcome that would make the 175bp gap to the Fed look mispriced against a labour market that is not actually deteriorating.",
-      "when": "2026-10-09T12:30:00Z"
+      "note": "12:30Z, released. Employment fell 68.3K against a +6.1K forecast, the second heavy loss after August's -41.7K, with the unemployment rate at 6.5% from 6.4%. The detail is worse than the headline: the rate rose only 0.1pt because participation fell 0.2pt to 64.8%, the lowest since December 1997 excluding 2020. Full-time -35.4K and part-time -32.9K, with education -35.0K, health care and social assistance -23.0K, manufacturing -13.0K and youth 15-24 down 48.0K; wages decelerated in real terms at 2.3% y/y. CAD cut to -2, the October 28 hike case removed, USD/CAD +0.50% to 1.42967.",
+      "when": "2026-10-09T12:30:00Z",
+      "result": [
+        {
+          "title": "Employment Change",
+          "actual": "-68.3K",
+          "forecast": "6.1K",
+          "previous": "-41.7K",
+          "cmp": "▼ below"
+        },
+        {
+          "title": "Unemployment Rate",
+          "actual": "6.5%",
+          "forecast": "6.5%",
+          "previous": "6.4%",
+          "cmp": "in line"
+        }
+      ]
     },
     {
       "date": "Thu Oct 8",
@@ -1181,5 +1202,5 @@
     }
   ],
   "geopolitics": "The oil channel has split into a physical leg and a political leg that are now pointing in opposite directions, and that is the most important thing to understand about this market. Physically, the Strait of Hormuz is deteriorating: nine tankers were attacked in and around the strait over the past week on CNBC's count, Kpler puts ten struck between September 28 and October 4, a US Navy-led outlet counted a dozen between September 28 and October 2, and UKMTO reported a crude tanker hit by an unknown projectile on October 6. Transit volumes show the strain - only seven tankers crossed on Tuesday, less than half the seven-day average - and what flow remains depends on a substantial US military commitment to escort traffic along a southern route off the Omani coast. Politically, the opposite happened: Trump described productive discussions with Iran and pledged not to attack before the November 3 midterm elections, while keeping the blockade in place and adding fresh sanctions on Iran's oil-shipping networks. That pledge is what capped Thursday's rally. Brent settled up 4% at 104.28 and WTI up 3.6% at 91.49 on the attack news plus US Gulf shut-ins ahead of a storm, then both eased from their intraday highs once the midterm comment landed, and they have since drifted to 102.856 and 90.243. WTI is -11.94% on the month. The FX read follows directly from that split. First, the escalation premium now has an expiry date rather than a level, which makes November 3 a scheduled release valve and means long-oil expressions are fighting a political calendar for three and a half weeks even while the physical supply picture worsens - and NBC reporting that Trump's team is weighing renewed strikes is the gap risk that no political cap covers. Second, the barrel that matters for CAD is the one that is falling: Brent above 100 flatters the headline, but Canada prices against WTI, and -11.94% on the month is why the CAD -1 score and a soft employment forecast sit together coherently rather than in tension. Third, the energy inflation that is actually driving central banks is gas, not crude. UK gas is up 4.90% on the week and 165.10% on the year, which is the real content of Lombardelli's line that rates may need to rise if energy prices stay elevated, and it is why sterling carries two priced hikes by February while the oil complex softens. That same gas leg is a heavier headwind for GER40 than crude is a tailwind. Fourth, the haven bid has gone to the franc rather than to gold: gold rose 1.22% to 4183.69 but remains -3.10% on the month and -3.15% on the year, far below January's record near 5,589, while EUR/CHF posted its largest single-session fall since 2022 on October 2 on French debt. With December Fed pricing near 84% keeping real rates rising, a Middle East supply shock is currently transmitting into CHF and into European equity through banks, and only weakly into bullion - which is why the October 13 Assembly budget debate, not Hormuz, is the event most likely to move this board next week.",
-  "updatedAt": "2026-10-09T05:26:14.310Z"
+  "updatedAt": "2026-10-09T12:39:58.630Z"
 }
