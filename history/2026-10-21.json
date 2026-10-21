@@ -7,13 +7,19 @@
     "regime": "One input is now driving seven of the eight currencies in this file, and it is oil. With Brent at 109.925 and WTI at 98.835 on TradingEconomics, up 10.76% and 9.19% on the month, every central bank that imports energy and has a meeting inside six weeks has repriced hawkish in the space of four sessions: the RBA from 22% to between 41% and 51% for November 3, the RBNZ from 56% to around 80% for October 28, the Bank of Canada from roughly 35% to between 75% and 80% for October 28, and the Fed to about 94% for December. The euro is the one currency that did not join, because its problem is not inflation but credit - the OAT-Bund spread widened to 152.2 basis points even though the French ten-year itself fell 1.5 basis points, since the Bund rallied 5.9, which is money moving within the euro area rather than out of duration generally. The practical consequence is that the dollar is going nowhere despite the most hawkish Fed pricing of the cycle: DXY is 101.775 and plus 0.05%, because a synchronised global repricing cancels out in the crosses and only shows up against the two currencies that have no hawkish story at all, the euro and the yen.",
     "nextBigEvent": "UK September CPI is out and it cleared hawkish - 3.5% y/y against a 3.4% consensus and 3.1% in August, with core 2.8% in line and services inflation up to 3.7% from 3.4% - so the nearest binary on this board has resolved in sterling's favour and a November 5 Bank of England hike at 84-89% is now effectively locked. The next event is Bailey at 13:00 UTC, which matters more after a beat than it would have after a miss, because the Governor has argued there is little evidence the energy shock is spreading widely and this print was driven by motor fuels at plus 29.8% year on year. New Zealand Q3 CPI follows at 21:45 UTC tonight, consensus 0.8% q/q from 1.5% and 3.8% y/y from 4.1%, a tenth under the RBNZ own 3.9% projection, and it is the gate on an October 28 hike the market has moved to roughly 80%. Then everything converges on Wednesday October 28: Australian Q3 CPI at 00:30 UTC, the RBNZ Monetary Policy Review, the Bank of Canada decision with a full Monetary Policy Report, and the FOMC, all inside eighteen hours. The ECB follows on October 29 and the Bank of Japan on October 30 with a fresh Quarterly Outlook Report.",
     "update": {
-      "at": "2026-10-21T06:07:44Z",
-      "title": "🇬🇧 GBP analysis updated",
-      "text": "Sep CPI 3.5% vs 3.4% forecast, from 3.1%; core 2.8% in line, services 3.7% from 3.4%. Nov 5 hike locked, yet GBP is minus 0.08% - the beat was already paid for."
+      "at": "2026-10-21T21:52:15Z",
+      "title": "🇳🇿 NZD analysis updated",
+      "text": "Q3 CPI 0.7% q/q vs 0.8% forecast and 3.7% y/y vs 3.8%, the survey low. NZD cut to zero; GBP/NZD flips long, AUD/NZD and NZD/CAD upgraded, NZD/USD and NZD/CHF to range."
     }
   },
   "dailyRead": "The board turned over today and the agent of the change was a speech, not a data print. Reserve Bank of Australia Deputy Governor Andrew Hauser told a Citi conference in the Asian session that the Australian inflation outlook is materially worse than the Bank forecast in August, that oil prices are running about a third higher than the RBA assumed in those forecasts, that cost pressures are also coming from the AI boom and still-hot demand, and that rate rises are laying pain on top of pain but are necessary to stop inflation expectations becoming entrenched. The market moved immediately: November 3 hike odds, which sat at 22% on Tuesday, are now reported between 40% and 51% depending on the provider, with RateProbability swap-market data at roughly 51% for a move to 4.85%, the ABC at 42% and ActionForex at 40-45%; Goldman Sachs flipped from a hold call to expecting a 25 basis point hike in November. The Australian ten-year rose 4.8 basis points to 5.2790, the largest yield move anywhere in this file, and the Aussie led every cross in the session - AUD/NZD plus 0.32%, AUD/EUR plus 0.30%, AUD/GBP plus 0.25%, AUD/CHF plus 0.21%, AUD/CAD plus 0.14% and AUD/USD plus 0.11% to 0.70100. That is the exact confirmation yesterday's note demanded and did not get. This file demoted the Aussie to the bottom half on Monday with the argument that a currency which cannot gain against a falling dollar has no local bid; today it gained against everything while the dollar was flat, and the leg that broke was the labour-market read, because Hauser explicitly subordinated the September employment fall of 39,329 to the energy and expectations channel. AUD goes to plus 2 and takes the top of the board. The second upgrade is the kiwi, and it corrects a framing error rather than reacting to news. Yesterday this report treated the October 28 RBNZ Monetary Policy Review as close to a non-event and said a soft Q3 CPI would send NZD back toward minus 1. The rate market says the opposite: swaps now price roughly 80-81% for a hike to 3.00% on October 28, up from 56% at the start of the prior week, chief economist Paul Conway has said on the record that the direction for rates is most likely up while calling the October decision wide open, and economists now see fourth-quarter inflation between 4.5% and 4.7% against the Bank's own 3.9% projection, with BNZ expecting the OCR to rise above the RBNZ's published path on elevated oil and a weaker currency. A meeting at 80% does not belong at a score of zero, so NZD moves to plus 1, with conviction held down because tonight's Q3 CPI at 21:45 UTC is the gate and consensus of 0.8% q/q against a 1.5% prior would nearly halve the quarterly pace. Canada keeps plus 2 but the asymmetry has turned against it. The hike is now priced between 75% and 80% for October 28 - Bloomberg swaps at 75% via the Globe and Mail, BBH at 78%, one report at 80% against roughly 35% last Friday - and the trigger was Macklem on October 17 saying the Bank expects to raise its quarterly inflation forecast significantly and quite a bit higher than July, with the risk that inflation broadens and becomes more persistent having gone up; Brent near 110 against the 75 the Bank assumed in July is the whole argument. But two facts cut the other way and both are new. September employment fell 68.3k after a 41.7k fall, a materially worse labour print than the market focused on, and unemployment rose to 6.5%. And the Canadian ten-year fell 6.9 basis points to 3.8930, the largest decline on this board, in the same session the Australian ten-year rose 4.8 - a front-end-up, long-end-down flattening is the curve pricing a policy mistake, not a growth story. BBH calls the 100 basis points of BoC tightening priced over twelve months excessive and Commerzbank calls an October move premature; TradingEconomics own consensus for October 28 is still a hold at 2.25%. CAD stays at plus 2 on the priced probability but the cheap part of that trade is behind us. The euro gets cut again, from minus 1 to minus 2, and the reason is a detail rather than a headline. The French ten-year OAT actually fell 1.5 basis points to 4.9160 today - and the OAT-Bund spread still widened, from 147.8 to 152.2 basis points, because the Bund rallied 5.9 basis points to 3.3936. Money moved into German paper and out of French paper inside the same currency on the same day; that is the fragmentation signature, and it is worse than the parallel selloff this file described yesterday. France also still borrows more dearly than Italy, and the gap grew rather than closed: the OAT at 4.9160 against the BTP at 4.5250 is 39.1 basis points through, up from 36 yesterday. The news flow behind it has not improved - authorities have imposed curfews in several French cities, further demonstrations are planned for Saturday, and the fight is over a 54 billion euro fiscal package containing 43 billion of new measures to pull the deficit down from 5.4% of GDP with negotiations on the 2027 budget raising doubts about the government's capacity to deliver austerity before next year's elections. Set that against an ECB that has told the market it is done: the September accounts said 2.50% already sits within staff estimates of the neutral range, negotiated wage growth has fallen to 2.44% from 2.56% and whole-economy wage growth to 3.0% from 3.4%, and a hold on October 29 is near-universally priced. So the euro is the only currency in this file with a terms-of-trade shock - EU gas 87.92 euros per megawatt hour, plus 3.35% today and plus 19.88% on the month, German gas plus 22.08% - a sovereign-credit problem, and no policy response. It is minus 2 and comfortably last. The yen is downgraded to minus 1, and the trigger is the clearest Hormuz transmission anywhere in this file. Japan posted a September trade deficit of 536.6 billion yen against an expected 181.0 billion, the fifth consecutive monthly deficit, with exports up 16.7% year on year against 20.1% expected and imports up 18.9%; the first half of fiscal 2026 now carries a 2.8 trillion yen deficit, nearly double a year earlier. An economy that imports all its energy is paying a direct tax on Brent at 110, and it is now showing in the trade account rather than only in the forecast. Deputy Governor Himino said this morning that underlying inflation is almost at the 2% target, which is the hawkish counterweight, but the October 30 meeting carries under 5% for a move to 1.50% while December 18 carries about 80%, and Finance Minister Katayama said on Wednesday only that the government is coordinating closely with the Bank. The score is a fundamentals verdict; the tradeable fact is unchanged, because USD/JPY is 158.080 and minus 0.06%, a fifth session inside the same handle, capped by intervention risk at the top and a 223 basis point Treasury-JGB gap at the bottom. Sterling holds plus 1 on a labour market that came in firmer than anyone expected. Unemployment fell to 4.7% from 4.9% in the three months to August, employment rose 102k against 66k, and the employment rate climbed to 75.3%, while total pay decelerated to 3.7% from 3.9% and regular pay ticked up to 3.7% from 3.6%. Megan Greene, one of the three September dissenters, used an LSE speech yesterday to say she continues to believe the Committee should proactively lean against the risk of second-round effects, argued that wage growth is running above the official data and that early-2027 settlements could come in higher, and questioned the Bank's own 3.25% estimate of target-consistent pay growth. November 5 sits between 84% and 89%. None of that changes the structural problem, which is that at this price the data has to confirm rather than improve, and CPI lands inside the hour. The dollar stays at zero and the reason is the most interesting fact on the board. December Fed hike pricing has moved to roughly 94% on CME FedWatch from 75-85% a week ago, driven entirely by oil feeding inflation expectations, with October 28 still an 83% hold and the Committee in blackout; the ten-year is 5.1230 and plus 0.8 basis points. And the dollar has gained nothing for it - DXY is 101.775, plus 0.05% on the day and minus 0.76% on the week. That is the lesson of this session: when every central bank reprices in the same direction at the same time, the move cancels in the crosses, and the way to own the oil-inflation theme is not long dollars but long the commodity currencies whose central banks are furthest behind the curve against the two currencies that have no hawkish story at all. The franc keeps its zero but slipped today - CHF was weaker against every major in the session, CHF/AUD minus 0.35%, CHF/USD minus 0.15%, CHF/JPY minus 0.16%, CHF/CAD minus 0.13% - because a commodity-currency repricing outranks a haven bid on a day with no new escalation. It remains the direct beneficiary of the euro's credit problem, with EUR/CHF minus 0.54% on the week and minus 1.41% on the month and the Swiss ten-year down 1.7 basis points to 0.5110, and the SNB Summary of Monetary Policy Discussions tomorrow at 07:30 UTC is its only scheduled communication before December 10. Commodities stay the engine. The Strait of Hormuz is on day 234 of closure, no fewer than 18 vessels have been targeted in the last fortnight, IMF PortWatch logged four transits on October 18 against a pre-crisis baseline of 85 a day, Houthi strikes hit Saudi energy and transport sites on Monday, and Iran is demanding sanctions relief and an end to the US naval blockade before the waterway reopens. WTI is 98.835 at plus 1.04% and plus 3.94% on the week; Brent is 109.925. Metals are the counter-trade and the signal is unambiguous: gold is 4,115.93 and minus 5.69% on the month, falling through a month in which a major shipping artery was closed, because the December Fed repricing to 94% is lifting real rates faster than the war is lifting haven demand. Silver at 57.310 is minus 14.53% on the month but plus 3.08% on the week, which has compressed the gold-silver ratio to about 71.8 and is the industrial leg decoupling rather than a haven story. Copper is 6.5608 and minus 0.77% on the week after LME stocks rose and the Centinela strike ended, with COMEX inventories at a record 711,609 tons absorbing a Chinese Q3 GDP acceleration to 4.5% and a Yangshan premium at a four-year high of 135 dollars a ton. The cleanest tickets today are the ones with a scored currency at both ends and a catalyst that has already fired: short EUR/AUD and short EUR/CAD at a four-point score gap, long AUD/JPY and long CAD/JPY against a yen paying an energy tax, and long USOIL consistent with the firm loonie. The ones to size down are anything with a UK or New Zealand leg before 22:00 UTC tonight.",
   "today": [
+    {
+      "ccy": "NZD",
+      "moved": true,
+      "headline": "Q3 CPI printed 0.7% q/q against a 0.8% consensus and 1.5% in Q2, with the annual rate at 3.7% from 4.1% against 3.8% expected - the most dovish outcome in a 16-economist survey and two tenths under the RBNZ's own 3.9% projection",
+      "read": "This was the gate this file flagged all day and it closed against the plus 1, so NZD goes back to zero and every kiwi leg comes down a notch. The October 28 hike pricing near 80% survives because it was always a Q4 argument - ASB at 4.5%, the range topping at 4.7%, September food inflation already up to 2.4% from 1.9% - but it has lost its backward confirmation, so a meeting priced that high now carries mostly disappointment risk. The cleanest expressions are the crosses where the other leg has the fresher catalyst: long AUD/NZD behind Hauser, long GBP/NZD now that both binaries have resolved in sterling's favour, and short NZD/CAD into two decisions on the same day."
+    },
     {
       "ccy": "GBP",
       "moved": true,
@@ -25,12 +31,6 @@
       "moved": true,
       "headline": "Hauser called the inflation outlook materially worse than the August forecasts and November odds went from 22% to between 40% and 51%, with Goldman flipping to a hike call and the ten-year up 4.8 basis points to 5.2790",
       "read": "The Aussie led every cross in the session - AUD/NZD plus 0.32%, AUD/EUR plus 0.30%, AUD/GBP plus 0.25%, AUD/CHF plus 0.21%, AUD/CAD plus 0.14%, AUD/USD plus 0.11% to 0.70100 - which is the local bid this file said on Monday was missing, and it arrived from a senior official explicitly subordinating the weak labour market to the energy channel. The Q3 CPI on October 28 at 00:30 UTC decides whether 51% becomes 90% or collapses, and updated RBA forecasts land with the November 3 decision."
-    },
-    {
-      "ccy": "NZD",
-      "moved": true,
-      "headline": "The October 28 Monetary Policy Review repriced to roughly 80-81% for a hike to 3.00% from 56% at the start of the prior week, with Conway saying the direction is most likely up while calling the decision wide open",
-      "read": "Economists now see Q4 inflation between 4.5% and 4.7% against the Bank's own 3.9% projection and BNZ expects the OCR above the published path, so this is a genuine upgrade rather than a dollar move. But the kiwi was the weakest major on the day at minus 0.22% to 0.56737 and lost 0.32% to the Aussie, and tonight's Q3 CPI at 21:45 UTC with a consensus of 0.8% q/q from 1.5% is the single print that validates or destroys the 80%."
     },
     {
       "ccy": "JPY",
@@ -71,8 +71,8 @@
     },
     {
       "icon": "🇳🇿",
-      "t": "The RBNZ meeting the market called a non-event a week ago is now priced at 80% for a hike",
-      "s": "Swaps put an October 28 move to 3.00% at roughly 80-81%, up from 56% at the start of the prior week. Chief economist Paul Conway has said the direction for rates is most likely up while calling the decision wide open, and economists now see Q4 inflation between 4.5% and 4.7% against the Bank's own 3.9% projection, with BNZ expecting the OCR above the published path on oil and a softer currency. This report framed that meeting as close to a non-event yesterday and was wrong; NZD goes to plus 1. Tonight's Q3 CPI at 21:45 UTC, consensus 0.8% q/q from 1.5%, is the gate."
+      "t": "New Zealand Q3 CPI landed at the bottom of the forecast range and the kiwi upgrade comes straight back off",
+      "s": "CPI rose 0.7% q/q against a 0.8% consensus and 1.5% in Q2, with the annual rate at 3.7% from 4.1% against 3.8% expected - both verified on TradingEconomics, and the most dovish outcome in a 16-economist Bloomberg survey whose only 3.7% forecast was Westpac's, two tenths under the RBNZ's own 3.9% projection. Cheaper petrol and diesel took about 0.4 percentage points off the quarterly pace. The October 28 hike stays priced near 80% because that case was always the Q4 fuel pass-through - ASB at 4.5%, the range topping at 4.7% - but it has lost its backward confirmation. NZD goes back to zero from plus 1."
     },
     {
       "icon": "🇫🇷",
@@ -128,8 +128,8 @@
     },
     "NZD": {
       "next": "hike",
-      "when": "October 28, a Monetary Policy Review rather than a full statement, now priced at roughly 80-81% for a move to 3.00% against 56% at the start of the prior week. TradingEconomics carries a consensus of 2.75% for October 28 and its own forecast of 3.0% by the December 9 Monetary Policy Statement, so the market is a full meeting ahead of the house view.",
-      "note": "TE re-verified the official cash rate at 2.75% after a 25 basis point hike, the second straight after July. The repricing is the story and it is not driven by new data but by official commentary and oil: chief economist Paul Conway has said on the record that the direction for interest rates is most likely up while describing the October decision as wide open and completely open, and flagged upside risk to the fourth-quarter outlook from fuel prices and a weaker currency than the Bank assumed. Economists now see Q4 inflation between 4.5% and 4.7% against the RBNZ projection of 3.9%, and BNZ expects the OCR to rise above the Bank's published path. That sits oddly against the Bank's own framing when it hiked - that although annual inflation rose to 4.1% in Q2 largely on fuel stemming from the Middle East conflict, core inflation, wage growth and expectations remain consistent with a return to the 1-3% band by mid-2027 - which is the argument for the 20% that still expects a hold. Q2 GDP was 2.6% y/y from 1.7%, unemployment 5.6% and core CPI flat at 3.2%. Tonight's Q3 CPI at 21:45 UTC is the gate: consensus 0.8% q/q from 1.5% and 3.8% y/y, a tenth under the RBNZ forecast. The New Zealand ten-year is 5.0470, down 1.9 basis points."
+      "when": "October 28, a Monetary Policy Review rather than a full statement, still priced at roughly 80% for a move to 3.00% after the Q3 CPI miss, against 56% at the start of the prior week. TradingEconomics carries a consensus of 2.75% for October 28 and its own forecast of 3.0% by the December 9 Monetary Policy Statement, so the market remains a full meeting ahead of the house view - now on a forward argument the Q3 print did not support.",
+      "note": "TE re-verified the official cash rate at 2.75% after a 25 basis point hike, the second straight after July. The repricing is the story and it is not driven by new data but by official commentary and oil: chief economist Paul Conway has said on the record that the direction for interest rates is most likely up while describing the October decision as wide open and completely open, and flagged upside risk to the fourth-quarter outlook from fuel prices and a weaker currency than the Bank assumed. Economists now see Q4 inflation between 4.5% and 4.7% against the RBNZ projection of 3.9%, and BNZ expects the OCR to rise above the Bank's published path. That sits oddly against the Bank's own framing when it hiked - that although annual inflation rose to 4.1% in Q2 largely on fuel stemming from the Middle East conflict, core inflation, wage growth and expectations remain consistent with a return to the 1-3% band by mid-2027 - which is the argument for the 20% that still expects a hold. Q2 GDP was 2.6% y/y from 1.7%, unemployment 5.6% and core CPI flat at 3.2%. The gate has now been through it. Q3 CPI printed 0.7% q/q against a 0.8% consensus and 1.5% in Q2, with the annual rate at 3.7% from 4.1% against 3.8% expected, both verified on TradingEconomics - the most dovish outcome in a 16-economist Bloomberg survey whose median was 3.8% and whose low was Westpac at 3.7%, two tenths under the RBNZ's own 3.9% projection, with cheaper petrol and diesel taking roughly 0.4 percentage points off the quarterly pace. That does not remove the hike, because the hike was never argued off Q3: the upside case is the Q4 fuel pass-through, where ASB sees 4.5% and the range tops at 4.7%, supported by September food inflation at 2.4% from 1.9%. What it removes is the confirmation, so October 28 is now a hike priced near 80% whose last data point came in at the bottom of the forecast range. The New Zealand ten-year is 5.0470, down 1.9 basis points."
     },
     "CAD": {
       "next": "hike",
@@ -169,11 +169,11 @@
     },
     {
       "ccy": "NZD",
-      "score": 1,
-      "verdict": "STRENGTHENING",
-      "tag": "Upgraded from zero to plus 1, and this corrects a framing error in yesterday's report rather than responding to news. That note called the October 28 Monetary Policy Review close to a non-event and said a soft Q3 CPI would send the kiwi back toward minus 1. The rate market disagrees by a full meeting: swaps are at roughly 80-81% for a hike to 3.00% on October 28, up from 56% at the start of the prior week, chief economist Conway has said the direction for rates is most likely up while calling the decision wide open, and economists now put Q4 inflation at 4.5-4.7% against the Bank's 3.9% projection. The conviction stays low because the kiwi was the weakest major on the day at minus 0.22% and lost 0.32% to the Aussie, and because tonight's print is the whole case.",
-      "drivers": "Official cash rate 2.75% after two consecutive hikes, Q2 CPI 4.1% from 3.1% with core flat at 3.2%, unemployment 5.6%, Q2 GDP 2.6% y/y from 1.7%, ten-year 5.0470.",
-      "forward": "🦅 Hawkish on pricing, unproven on data. Q3 CPI tonight at 21:45 UTC is the gate: consensus 0.8% q/q from 1.5% and 3.8% y/y, a tenth under the RBNZ forecast. A print at or under consensus still leaves 80% priced for a meeting the Bank has called wide open, which is an unstable combination; a print at or above the 1.5% prior makes a third straight hike close to certain and would put NZD alongside AUD."
+      "score": 0,
+      "verdict": "MIXED",
+      "tag": "Cut straight back to zero one day after the upgrade, and the fact that changed is tonight's Q3 CPI: 0.7% q/q against a 0.8% consensus and 1.5% in Q2, with the annual rate at 3.7% from 4.1% against 3.8% expected, both verified on TradingEconomics. The miss is one tenth, but it is the most dovish outcome that was available - a Bloomberg survey of 16 economists had a 3.8% median and Westpac alone sat at 3.7% - and it is two tenths under the RBNZ's own 3.9% projection, with cheaper petrol and diesel taking about 0.4 percentage points off the quarterly pace. Yesterday's plus 1 rested on two legs: roughly 80-81% priced for an October 28 hike, and Conway saying the direction for rates is most likely up. The pricing leg survives, because the hike case is a Q4 fuel argument rather than a Q3 one. The leg that broke is the data confirmation, and this report said in the same breath that 80% priced into a meeting the Bank calls wide open with nothing behind it is unstable. A currency cannot hold plus 1 on pricing alone into the very meeting that pricing refers to.",
+      "drivers": "Official cash rate 2.75% after two consecutive hikes, Q3 CPI 0.7% q/q and 3.7% y/y from 1.5% and 4.1%, core CPI flat at 3.2%, September food inflation 2.4% from 1.9%, unemployment 5.6%, Q2 GDP 2.6% y/y, ten-year 5.0470.",
+      "forward": "⚖️ Hawkish pricing, dovish data, and the asymmetry has flipped against the kiwi. October 28 still carries roughly 80% for a move to 3.00% against a TradingEconomics consensus of 2.75%, and the hawkish case is intact because it was always forward-looking: ASB sees Q4 inflation at 4.5% with the range topping at 4.7%, fuel and a soft currency are the mechanism, and September food inflation already rose to 2.4% from 1.9%. But a meeting priced at 80% whose last data point arrived at the bottom of the forecast range can only disappoint - a hike pays little and a hold costs a lot. What would send NZD back to plus 1 is the October 28 statement hiking and explicitly marking up the Q4 track, or Conway repeating the upside-risk language before then; what would take it to minus 1 is any trimming of that 80% in the week ahead."
     },
     {
       "ccy": "USD",
@@ -246,10 +246,10 @@
     },
     {
       "sym": "NZD/USD",
-      "bias": "LONG",
+      "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "0.56737 and plus 1.44% on the week with the October 28 Monetary Policy Review repriced to roughly 80% for a hike to 3.00% from 56% a week earlier, and Conway on record that the direction is most likely up.",
-      "risk": "Q3 CPI tonight at 21:45 UTC is the entire case - consensus 0.8% q/q from 1.5% - and the kiwi was the weakest major today at minus 0.22%, so this is a position to size down before 21:45."
+      "why": "Downgraded from long. Q3 CPI printed 0.7% q/q against 0.8% and 3.7% y/y against 3.8%, the most dovish outcome in the survey and two tenths under the RBNZ's own projection, which removes the data confirmation that was the entire case for the long. 0.56922 on TradingEconomics.",
+      "risk": "Roughly 80% is still priced for October 28 and a hike restores the long quickly, so this is range rather than short; against that, the dollar has gained nothing from 94% December pricing, with DXY at 101.775 and minus 0.76% on the week, which caps the downside too."
     },
     {
       "sym": "USD/CHF",
@@ -275,9 +275,9 @@
     {
       "sym": "EUR/NZD",
       "bias": "SHORT",
-      "conv": "MEDIUM",
-      "why": "1.97857 with the euro at minus 2 against a kiwi repriced to roughly 80% for an October 28 hike; both the ECB and the RBNZ meet inside nine days and only one of them is expected to move.",
-      "risk": "New Zealand Q3 CPI tonight at 21:45 UTC is a binary on the NZD leg, and the pair rose 0.12% today against the thesis despite the euro being the day's worst fundamental story."
+      "conv": "LOW-MED",
+      "why": "Conviction cut from medium. The short still works on a two-point score gap - the euro is minus 2 with an OAT-Bund spread at 152.2 basis points, EU gas plus 19.88% on the month and an ECB that has said 2.50% already sits within neutral - but the kiwi leg weakened tonight, with Q3 CPI at 0.7% q/q against 0.8% and 3.7% y/y against 3.8%. 1.97857.",
+      "risk": "Both central banks meet inside nine days and the NZD leg no longer has data behind its 80% hike pricing; the pair already rose 0.12% against the thesis in the prior session despite the euro being the worst fundamental story on the board."
     },
     {
       "sym": "EUR/GBP",
@@ -316,10 +316,10 @@
     },
     {
       "sym": "GBP/NZD",
-      "bias": "RANGE",
-      "conv": "LOW-MED",
-      "why": "One of the two binaries has resolved and it went sterling's way - UK CPI 3.5% above forecast with services at 3.7% - but New Zealand Q3 CPI is still ahead at 21:45 UTC tonight, so this stays range for one more session rather than going directional on half the information. 2.35720.",
-      "risk": "A New Zealand print under the 0.8% q/q consensus restores the long into a weakened October 28 hike case; one nearer the 4.5-4.7% Q4 estimates economists now carry sets up the clean short instead."
+      "bias": "LONG",
+      "conv": "MEDIUM",
+      "why": "Flipped to long, which is exactly what this entry specified: both binaries have now resolved and they went the same way. UK September CPI beat at 3.5% with services up to 3.7%, locking November 5, while New Zealand Q3 CPI missed at 0.7% q/q and 3.7% y/y, the bottom of the forecast range. Plus 1 against zero. 2.35720.",
+      "risk": "An October 28 RBNZ hike that explicitly marks up the Q4 track is the clean reversal, and sterling's own problem is unchanged - at 84-89% priced the data has to keep confirming, Bailey argues the energy shock is not spreading widely, and the Budget a week before the meeting is still unpriced."
     },
     {
       "sym": "GBP/CAD",
@@ -345,9 +345,9 @@
     {
       "sym": "AUD/NZD",
       "bias": "LONG",
-      "conv": "LOW-MED",
-      "why": "Flipped from short. 1.23572 at plus 0.32% - both central banks repriced hawkish this week, but the Australian catalyst is fresher and came from a deputy governor rather than from the oil price, and today's tape agrees.",
-      "risk": "The pair is still minus 0.93% on the week against this view and New Zealand Q3 CPI tonight at 21:45 UTC could reverse it in a single print; this is the lowest-conviction flip in today's file and should be sized accordingly."
+      "conv": "MEDIUM",
+      "why": "Upgraded from low-medium because the print went the way the position needed. 1.23572, with the Aussie at plus 2 behind Hauser calling the inflation outlook materially worse and November odds doubling to 40-51%, against a kiwi cut back to zero after Q3 CPI at 0.7% q/q against 0.8% and 3.7% y/y against 3.8%. Both legs point the same way for the first time this week.",
+      "risk": "The pair was still minus 0.93% on the week before tonight, and the two catalysts land within hours of each other on October 28 - Australian Q3 CPI at 00:30 UTC and the RBNZ Monetary Policy Review - so the position has one week before it is re-tested on both sides at once."
     },
     {
       "sym": "AUD/CAD",
@@ -365,24 +365,24 @@
     },
     {
       "sym": "NZD/JPY",
-      "bias": "LONG",
+      "bias": "RANGE",
       "conv": "LOW-MED",
-      "why": "Upgraded from range. 89.6810 and plus 1.28% on the week, a plus 1 kiwi with an 80% priced hike against a minus 1 yen whose central bank is under 5% for October 30.",
-      "risk": "Two prints in two days decide it - New Zealand Q3 CPI tonight at 21:45 UTC and Japanese national core CPI on Thursday at 23:30 UTC - and they point in opposite directions for this pair."
+      "why": "Downgraded from long. The first of the two prints this entry was waiting on has landed and it went against the kiwi leg - Q3 CPI 0.7% q/q against 0.8%, 3.7% y/y against 3.8% - while Japanese national core CPI on Thursday at 23:30 UTC, consensus 2.1% from 1.7%, is still ahead and points the other way for this pair. 89.9690.",
+      "risk": "Zero against minus 1 still leans long on scores and the yen's constraint is intact - under 5% for October 30 against about 80% for December 18 - so a soft Japanese print would restore the long rather than confirm the range."
     },
     {
       "sym": "NZD/CAD",
       "bias": "SHORT",
-      "conv": "LOW-MED",
-      "why": "0.79774 at minus 0.21% with a plus 2 loonie against a plus 1 kiwi, both central banks meeting on the same day on October 28 at 75-80% and 80% priced respectively.",
-      "risk": "Two meetings on the same day at near-identical pricing makes this a pure relative-disappointment trade, and the New Zealand CPI tonight arrives seven days before either decision."
+      "conv": "MEDIUM",
+      "why": "Upgraded from low-medium. 0.79912 with a plus 2 loonie against a kiwi back at zero, both central banks meeting on October 28 at 75-80% and 80% priced - and after tonight only one of the two has fresh data behind its pricing, because New Zealand's Q3 CPI came in at the bottom of the range.",
+      "risk": "The Canadian asymmetry has also turned: September employment fell 68.3k with unemployment at 6.5%, the ten-year fell 6.9 basis points, and TradingEconomics' own consensus for October 28 is still a hold at 2.25% - so this is short the relative disappointment, not long Canada."
     },
     {
       "sym": "NZD/CHF",
-      "bias": "LONG",
-      "conv": "LOW",
-      "why": "Upgraded from range. 0.46828 with an 80% priced RBNZ hike against a zero policy rate, but conviction stays at the floor because the kiwi was the weakest major today at minus 0.22% and lost ground to the Aussie.",
-      "risk": "A soft Q3 CPI tonight removes the only argument for this position, and the franc retains the euro-escalation bid underneath it."
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "Flipped out of long exactly as this entry's risk field specified: a soft Q3 CPI removes the only argument for the position, and 0.7% q/q against 0.8% with 3.7% y/y against 3.8% is the bottom of the forecast range. 0.46900 and plus 0.03% on the day.",
+      "risk": "An 80% priced hike against a zero policy rate is still a carry argument that would restore the long on October 28, while the franc keeps the euro-escalation bid underneath it; trade the levels until the meeting."
     },
     {
       "sym": "CAD/JPY",
@@ -800,16 +800,16 @@
     },
     "NZD": {
       "inflation": {
-        "value": "4.1%",
-        "trend": "rising",
-        "note": "Q2 CPI",
+        "value": "3.7%",
+        "trend": "falling",
+        "note": "Q3 CPI",
         "hist": [
-          2.3,
           2.5,
           2.7,
           3.1,
           3.1,
-          4.1
+          4.1,
+          3.7
         ]
       },
       "growth": {
@@ -1022,7 +1022,16 @@
       "event": "New Zealand: Q3 CPI q/q (Stats NZ red folder)",
       "impact": "high",
       "when": "2026-10-21T21:45:00Z",
-      "note": "The print that validates or destroys the NZD upgrade to plus 1. ForexFactory consensus is 0.8% q/q against a 1.5% prior, which annualises to about 3.8% y/y from 4.1% - a tenth under the RBNZ's own 3.9% projection. The market has moved to roughly 80-81% for an October 28 hike to 3.00% from 56% at the start of the prior week, so this is the last data point before a meeting the Bank's chief economist has publicly called wide open while saying the direction for rates is most likely up. Economists now see Q4 inflation between 4.5% and 4.7% against that 3.9% forecast, and BNZ expects the OCR to rise above the published path on oil and a weaker currency. A print at or under consensus leaves 80% priced into a genuinely open meeting, which is an unstable combination; a print at or above the 1.5% prior makes a third consecutive hike close to certain."
+      "result": [
+        {
+          "title": "CPI q/q",
+          "actual": "0.7%",
+          "forecast": "0.8%",
+          "previous": "1.5%",
+          "cmp": "▼ below"
+        }
+      ],
+      "note": "Released below forecast. The print that validates or destroys the NZD upgrade to plus 1. ForexFactory consensus is 0.8% q/q against a 1.5% prior, which annualises to about 3.8% y/y from 4.1% - a tenth under the RBNZ's own 3.9% projection. The market has moved to roughly 80-81% for an October 28 hike to 3.00% from 56% at the start of the prior week, so this is the last data point before a meeting the Bank's chief economist has publicly called wide open while saying the direction for rates is most likely up. Economists now see Q4 inflation between 4.5% and 4.7% against that 3.9% forecast, and BNZ expects the OCR to rise above the published path on oil and a weaker currency. A print at or under consensus leaves 80% priced into a genuinely open meeting, which is an unstable combination; a print at or above the 1.5% prior makes a third consecutive hike close to certain. OUTCOME: 0.7% q/q against the 0.8% consensus and 1.5% in Q2, with the annual rate at 3.7% from 4.1% against a 3.8% consensus - both figures verified on TradingEconomics, whose calendar row for the 21:45 UTC release carries 0.7% actual on an 0.8% consensus and 3.7% y/y on 3.8%. The size of the miss is one tenth; the location of it is what matters. A Bloomberg survey of 16 economists had a 3.8% median with Westpac alone at 3.7%, so the print landed on the single most dovish forecast in the survey and two tenths under the RBNZ's own 3.9% projection rather than the one tenth this entry expected, and Westpac's mechanism is the one that worked - cheaper petrol and diesel taking roughly 0.4 percentage points off the quarterly pace. What the print does not touch is the hike case, because that case was never about Q3: Conway's upside risk is fuel and a soft currency feeding Q4, where ASB sees 4.5% and the top of the range is 4.7%, and September food inflation had already accelerated to 2.4% y/y from 1.9%. So October 28 keeps its roughly 80% pricing on a forward argument that has lost its backward confirmation - the unstable combination this entry named, not the validation the kiwi needed. NZD goes back to zero."
     },
     {
       "date": "Mon Oct 19",
@@ -1123,5 +1132,5 @@
     }
   ],
   "geopolitics": "The Strait of Hormuz has now been closed for 234 days and the market has stopped treating it as a headline risk and started treating it as a permanent change to the inflation outlook - which is the single most important development in this file this week. No fewer than 18 vessels have been targeted in the last fortnight, IMF PortWatch logged four transits on October 18 against a pre-crisis baseline of 85 a day, Kpler reports export rates decimated again by Iranian strikes on tankers in the waterway, and Houthi strikes hit Saudi energy and transport sites on Monday October 19. Iran is demanding sanctions relief and an end to the US naval blockade before the strait reopens. WTI is 98.835 at plus 1.04% on the day, plus 3.94% on the week and plus 9.19% on the month; Brent is 109.925 at plus 10.76% on the month, and the 11.09 dollar spread between them is where the transit risk is actually priced, because Hormuz bites the seaborne grade. The supply-side offset remains the executive order waiving Graham Act sanctions and tariffs on buyers of Russian crude, plus the Treasury waiver letting Russian diesel sales run to April 2027, which is what keeps WTI under the hundred handle while Brent trades 110. The FX transmission has changed character in the last four sessions. Until last week the oil premium was a CAD story and a risk-sentiment story. It is now a monetary-policy story in four currencies simultaneously: Macklem said on October 17 that the Bank of Canada will mark its inflation forecast up significantly because of persistently high crude, taking October 28 from roughly 35% to 75-80%; Hauser said yesterday that oil is about a third higher than the RBA assumed in August and the Australian outlook is materially worse, taking November 3 from 22% to 40-51%; RBNZ chief economist Conway flagged upside risk to the Q4 outlook from fuel prices and a weaker currency, with swaps now at 80% for October 28 against 56% a week earlier; and US December pricing reached roughly 94% from 75-85% on the same input. The two currencies that did not reprice are the ones that cannot. The euro's central bank has said 2.50% already sits within neutral estimates and is absorbing EU gas at 87.92 euros per megawatt hour, plus 19.88% on the month, as a pure terms-of-trade tax on top of a sovereign-credit problem at the French end of its own curve. Japan's central bank is at under 5% for October 30 while the economy posts its fifth consecutive monthly trade deficit, 536.6 billion yen in September against 181.0 billion expected, with the first half of fiscal 2026 running at 2.8 trillion - almost exactly the arithmetic of an energy importer paying 110 dollar Brent. That is why the cleanest tickets in this report pair a commodity currency against the euro or the yen rather than against the dollar: the dollar repriced too, which is why DXY is 101.775 and plus 0.05% on the most hawkish Fed pricing of the cycle. The metals complex is the cross-check and it agrees. Gold is 4,115.93 and minus 5.69% on the month, falling through a month in which a major shipping artery stayed shut, because the December Fed repricing is lifting real rates faster than the conflict is lifting haven demand. A war that makes gold fall is a war the market is pricing as inflationary rather than dangerous, and that read is the single assumption underneath most of the biases in this file. The invalidation is correspondingly concentrated: a credible de-escalation, a reopening of the strait, or an Iranian agreement on sanctions relief would remove the common input behind four separate central-bank repricings at once, and would do more damage to this board in a single session than any scheduled meeting.",
-  "updatedAt": "2026-10-21T06:10:02.930Z"
+  "updatedAt": "2026-10-21T21:52:16.009Z"
 }
