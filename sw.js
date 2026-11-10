@@ -4,7 +4,7 @@
  *   - cache-first (stale-while-revalidate) for static assets
  *   - Web Push: shows a notification when the push sender fires
  * Bump CACHE when shell assets change to force an update. */
-var CACHE = 'fx-macro-v30';
+var CACHE = 'fx-macro-v31';
 var SHELL = [
   './',
   './index.html',
@@ -77,7 +77,10 @@ self.addEventListener('push', function (e) {
     body: data.body || 'New macro update available.',
     icon: 'icons/icon-192.png',
     badge: 'icons/favicon-32.png',
-    tag: data.tag || 'fx-macro',
+    // A repeated tag makes iOS replace the earlier notification SILENTLY (no
+    // banner, no sound), so the fallback is unique; senders pass unique tags too.
+    tag: data.tag || ('fx-macro-' + Date.now()),
+    renotify: true,
     data: { url: data.url || './index.html' }
   };
   e.waitUntil(self.registration.showNotification(title, opts));

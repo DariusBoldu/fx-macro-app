@@ -69,6 +69,15 @@ export default {
       if (url.pathname === '/results') return await getResults(env);
       if (url.pathname === '/results/probe') return await probeResults(url, env);
       if (url.pathname === '/routine/test' && request.method === 'POST') return await testRoutine(url, env);
+      if (url.pathname === '/push/test' && request.method === 'POST') {
+        if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
+        const results = await broadcast(env, {
+          title: '🔔 FX Macro — Worker test',
+          body: 'Sent by the Cloudflare Worker, the same path as the 1-hour / 15-minute warnings and release figures.',
+          url: './', tag: 'worker-test',
+        });
+        return json({ sent: results.length, results });
+      }
       return json({ error: 'not found' }, 404);
     } catch (e) {
       return json({ error: String(e && e.message || e) }, 500);
@@ -339,6 +348,8 @@ async function probeResults(url, env) {
   try { lastCron = JSON.parse((await env.FX_SUBS.get('cron:last')) || 'null'); } catch (e) {}
   let lastFire = null;
   try { lastFire = JSON.parse((await env.FX_SUBS.get('fire:last')) || 'null'); } catch (e) {}
+  let lastPush = null;
+  try { lastPush = JSON.parse((await env.FX_SUBS.get('push:last')) || 'null'); } catch (e) {}
   let lastCommentary = null;
   try { lastCommentary = JSON.parse((await env.FX_SUBS.get('comm:last')) || 'null'); } catch (e) {}
   let commentaryDue = [];
@@ -354,6 +365,7 @@ async function probeResults(url, env) {
     lastCron,                                   // null = the cron has not run since this was added
     lastFire,                                   // last routine fire for figures: HTTP status or error
     lastCommentary,                             // last "what was said" fire
+    lastPush,                                   // Apple's reply per device on the last Worker push
     commentaryDue,                              // upcoming commentary passes this week
   });
 }
@@ -366,14 +378,26 @@ async function broadcast(env, payload) {
     subject: env.VAPID_SUBJECT || 'mailto:admin@example.com', ttl: 1800
   };
   const body = JSON.stringify(payload);
+  // Record Apple's answer for every device. Until 2026-11-10 these were thrown
+  // away, so a Worker push that Apple rejected (pre-alerts, release figures) was
+  // indistinguishable from one that arrived. GET /results/probe shows the last send.
+  const results = [];
   for (const k of list.keys) {
     const v = await env.FX_SUBS.get(k.name);
     if (!v) continue;
+    let status;
     try {
-      const status = await sendWebPush(JSON.parse(v), body, cfg);
+      status = await sendWebPush(JSON.parse(v), body, cfg);
       if (status === 404 || status === 410) await env.FX_SUBS.delete(k.name);
-    } catch (e) { /* keep going */ }
+    } catch (e) { status = 'error: ' + String((e && e.message) || e).slice(0, 120); }
+    results.push({ device: k.name.slice(-6), status });
   }
+  try {
+    await env.FX_SUBS.put('push:last', JSON.stringify({
+      at: new Date().toISOString(), title: String(payload.title || '').slice(0, 80), results,
+    }), { expirationTtl: 14 * 86400 });
+  } catch (e) { /* monitoring must never block a send */ }
+  return results;
 }
 
 /* ============================ Shared trade journal ============================

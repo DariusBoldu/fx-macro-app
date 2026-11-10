@@ -360,11 +360,16 @@ function joinCapped(parts, sep, max) {
   return s;
 }
 
+/* Clock times in notifications are Bucharest time (Darius, 2026-11-10). The
+ * feeds are UTC; Intl handles summer/winter time. */
+const BUC_CLOCK = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Bucharest', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+export const bucharestTime = (ms) => BUC_CLOCK.format(new Date(ms));
+
 export function buildResultNotification(group, match) {
   const parts = match.lines.filter((l) => l.actual != null).map((l) =>
     `${l.title} ${l.actual}` + (l.forecast ? ` (exp ${l.forecast}${l.cmp ? ', ' + l.cmp : ''})` : ''));
   return {
-    title: `${FLAG[group.ccy] || '📊'} ${group.ccy} red folder — released`,
+    title: `${FLAG[group.ccy] || '📊'} ${group.ccy} red folder — released ${bucharestTime(Date.parse(group.when))}`,
     body: joinCapped(parts, ' · ', 200) || 'Figures released.',
     tag: 'fx-result-' + group.id,
     url: './index.html',
@@ -374,9 +379,12 @@ export function buildResultNotification(group, match) {
 export function buildPreAlert(group, label) {
   const parts = group.lines.map((l) => (l.forecast ? `${l.title} exp ${l.forecast}` : l.title));
   return {
-    title: `⏰ ${FLAG[group.ccy] || ''} ${group.ccy} red folder — ${label}`,
+    title: `⏰ ${FLAG[group.ccy] || ''} ${group.ccy} red folder at ${bucharestTime(Date.parse(group.when))} — ${label}`,
     body: joinCapped(parts, ' · ', 200) || 'High-impact release ahead.',
-    tag: 'fx-event-' + group.id,
+    // One tag PER WARNING. They used to share 'fx-event-<id>', and iOS replaces a
+    // notification with the same tag silently, so the 15-minute warning could
+    // overwrite the 1-hour one without a banner or sound.
+    tag: 'fx-event-' + group.id + '-' + String(label).replace(/\W+/g, ''),
     url: './index.html',
   };
 }

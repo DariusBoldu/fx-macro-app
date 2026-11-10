@@ -8,8 +8,27 @@
   'use strict';
   var CFG = window.FX_CONFIG || {};
   var $ = function (id) { return document.getElementById(id); };
+  /* Every clock time the app shows is Bucharest time (Darius, 2026-11-10).
+   * Reports and feeds are UTC — the analyst writes "13:30Z" / "13:30 GMT" — so
+   * all rendered text is converted here, in the one function every text field
+   * passes through. The report's own date decides summer vs winter time, and a
+   * time that falls on the next Bucharest day is marked. Machine fields (`when`)
+   * stay UTC. */
+  var BUC_TZ = 'Europe/Bucharest';
+  var bucRef = Date.now();          // set to the report date in renderAll()
+  var bucClock = new Intl.DateTimeFormat('en-GB', { timeZone: BUC_TZ, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+  var bucIsoDay = new Intl.DateTimeFormat('en-CA', { timeZone: BUC_TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
+  var bucDay = new Intl.DateTimeFormat('en-GB', { timeZone: BUC_TZ, weekday: 'short', day: 'numeric', month: 'short' });
+  function bucText(s) {
+    return s.replace(/\b([01]?\d|2[0-3]):([0-5]\d)\s?(?:Z|UTC|GMT)\b/g, function (m, h, mi) {
+      var r = new Date(bucRef);
+      var t = Date.UTC(r.getUTCFullYear(), r.getUTCMonth(), r.getUTCDate(), +h, +mi);
+      var nextDay = bucIsoDay.format(t) !== new Date(t).toISOString().slice(0, 10);
+      return bucClock.format(t) + (nextDay ? ' (next day)' : '');
+    });
+  }
   var esc = function (s) {
-    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+    return bucText(String(s == null ? '' : s)).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
     });
   };
@@ -130,6 +149,8 @@
 
   /* ============================ Renderers ============================ */
   function renderAll(D) {
+    var rd = Date.parse(((D.meta && D.meta.reportDate) || '') + 'T12:00:00Z');
+    bucRef = isNaN(rd) ? Date.now() : rd;
     renderMeta(D); renderToday(D); renderMacro(D); renderSignals(D.symbols);
     renderRates(D); renderCalendar(D);
     renderBookBanner(); renderTrades();
@@ -551,8 +572,17 @@
   setInterval(function () { if (!document.hidden && calData) loadResults(); }, 120000);
   document.addEventListener('visibilitychange', function () { if (!document.hidden && calData) loadResults(); });
 
+  // The release's own UTC timestamp, shown as Bucharest day + time. The text
+  // `date` ("Nov 12") is the UTC day, so an Asian release late in the UTC evening
+  // would otherwise show a day early.
+  function whenLabel(c, inline) {
+    var t = c.when ? Date.parse(c.when) : NaN;
+    if (isNaN(t)) return esc(c.date);
+    return inline ? esc(bucDay.format(t) + ' ' + bucClock.format(t))
+      : esc(bucDay.format(t)) + '<span class="ctime">' + esc(bucClock.format(t)) + '</span>';
+  }
   function calRow(c) {
-    return '<div class="cal"><div class="cdate">' + esc(c.date) + '</div>' +
+    return '<div class="cal"><div class="cdate">' + whenLabel(c) + '</div>' +
       '<div><div class="cev"><span class="dot ' + esc(c.impact) + '"></span>' + esc(c.event) + '</div>' +
       resultHtml(c) +
       '<div class="cnote">' + esc(c.note || '') + '</div></div></div>';
@@ -962,7 +992,7 @@
     }).slice(0, 5);
     if (cats.length) {
       html += '<div class="dsec"><h3>Related catalysts</h3>' + cats.map(function (c) {
-        return '<div class="dcat"><span class="dot ' + esc(c.impact) + '"></span><b>' + esc(c.date) + '</b> — ' +
+        return '<div class="dcat"><span class="dot ' + esc(c.impact) + '"></span><b>' + whenLabel(c, true) + '</b> — ' +
           esc(c.event) + '<div class="cnote">' + esc(c.note || '') + '</div></div>';
       }).join('') + '</div>';
     }
@@ -1150,7 +1180,7 @@
           '<span class="jdir ' + t.dir + '">' + t.dir + '</span>' +
           '<span class="conv">' + esc(t.lots) + ' lots</span>' +
           '<span class="jr">risk ' + esc(String(t.riskAmt)) + ' ' + esc(t.riskCcy || '') + '</span></div>' +
-        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString() + ' · SL ' + esc(t.sl || '—') +
+        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) + ' · SL ' + esc(t.sl || '—') +
           ' · entered ' + (t.align === 'with' ? 'WITH' : t.align === 'against' ? 'AGAINST' : 'no') + ' bias (' + esc(t.biasAtEntry || '—') + ')' +
           (t.note ? ' · ' + esc(t.note) : '') + '</div>' +
         (f ? '<div class="jflip ' + f.cls + '">' + esc(f.txt) + '</div>' : '') +
@@ -1235,7 +1265,7 @@
         '<span class="jdir ' + t.dir + '">' + t.dir + '</span>' +
         '<span class="conv">' + (t.align === 'with' ? 'with bias' : t.align === 'against' ? 'against bias' : 'no bias') + '</span>' +
         '<span class="jr ' + rcls + '">' + rtxt + '</span></div>' +
-        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString() + ' → ' + (t.closedTs ? new Date(t.closedTs).toLocaleDateString() : '') +
+        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) + ' → ' + (t.closedTs ? new Date(t.closedTs).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) : '') +
         (t.note ? ' · ' + esc(t.note) : '') + '</div>' +
         '<div class="jact"><button class="btn ghost jedit">Edit result</button><button class="jdel">delete</button></div>' +
         '<div class="closeform jeditform" style="display:none"><input type="text" inputmode="text" placeholder="Result in R (0 = breakeven), e.g. +1,5 · 0 · -1" value="' + rval + '">' +
@@ -1299,7 +1329,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v30';
+  var APP_VERSION = 'v31';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

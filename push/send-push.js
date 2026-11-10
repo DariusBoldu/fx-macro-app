@@ -93,8 +93,18 @@ async function main() {
   const { subscriptions = [] } = await getJson(subsEndpoint, agent);
   if (!subscriptions.length) { console.log('No subscribers.'); return; }
 
-  const payload = JSON.stringify({ title, body, url, tag: 'fx-macro-report' });
-  const opts = agent ? { agent } : {};
+  // Report texts are written by the analyst; convert any UTC clock time left in
+  // them ("13:30Z", "13:30 GMT") to Bucharest time before it reaches a phone.
+  const buc = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Bucharest', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+  const toBuc = (txt) => String(txt).replace(/\b([01]?\d|2[0-3]):([0-5]\d)\s?(?:Z|UTC|GMT)\b/g, (m, h, mi) => {
+    const n = new Date(); return buc.format(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate(), +h, +mi));
+  });
+  // Unique tag per report: a repeated tag ('fx-macro-report' every morning) made
+  // iOS replace yesterday's notification silently instead of alerting.
+  const payload = JSON.stringify({ title: toBuc(title), body: toBuc(body), url, tag: 'fx-macro-report-' + Date.now() });
+  // urgency high: iOS defers normal-priority pushes on an idle phone. TTL 6 h: a
+  // report that cannot be delivered by then is stale (the library default is 4 weeks).
+  const opts = Object.assign({ TTL: 6 * 3600, urgency: 'high' }, agent ? { agent } : {});
   let ok = 0, gone = 0;
   await Promise.all(subscriptions.map(async (sub) => {
     try { await webpush.sendNotification(sub, payload, opts); ok++; }
