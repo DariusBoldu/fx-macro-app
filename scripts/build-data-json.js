@@ -104,6 +104,24 @@ function buildPayload(prevData) {
       'notification body: keep it to ONE sentence (~200 chars) and put the narrative in dailyRead.');
   }
 
+  // meta.nextEvent drives the structured "Next big event" card (v32). The app
+  // falls back to building the card from catalysts[] when it is absent or stale,
+  // so a bad block only warns.
+  const ne = FX.meta && FX.meta.nextEvent;
+  if (!ne) {
+    console.warn('WARNING: meta.nextEvent is missing — the app will build the Next big event card from catalysts[] without figures or scenarios.');
+  } else {
+    const probs = [];
+    if (!ne.event || String(ne.event).length > 60) probs.push('event must be a short name (<= 60 chars)');
+    if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?Z$/.test(String(ne.when || ''))) probs.push('when must be ISO 8601 UTC like 2026-11-12T07:00:00Z');
+    if (!['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CAD', 'CHF'].includes(ne.ccy)) probs.push('ccy must be one of the 8 currencies');
+    if (ne.figures != null && (!Array.isArray(ne.figures) || ne.figures.length > 4)) probs.push('figures must be an array of at most 4 { label, forecast, previous }');
+    if (String(ne.why || '').length > 300) probs.push('why is ' + String(ne.why).length + ' chars (max ~240)');
+    if (ne.scenarios != null && (!Array.isArray(ne.scenarios) || ne.scenarios.length > 3 ||
+        ne.scenarios.some((s) => !s || !s.if || !s.then))) probs.push('scenarios must be at most 3 { if, then }');
+    if (probs.length) console.warn('WARNING: meta.nextEvent: ' + probs.join('; ') + '.');
+  }
+
   // ratePaths: carry forward if a run omits them (stale expectations beat none — warned)
   if (!FX.ratePaths || !Object.keys(FX.ratePaths).length) {
     FX.ratePaths = (prevData && prevData.ratePaths) || {};

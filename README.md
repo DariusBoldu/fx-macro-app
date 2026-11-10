@@ -13,7 +13,7 @@ calendar, and the geopolitics/oil → FX read. Same dark theme.
 
 | Tab | Shows |
 |---|---|
-| **Today** | regime line · single biggest upcoming catalyst (`meta.nextBigEvent`) · "what changed" · geopolitics→FX |
+| **Today** | regime line · structured next-big-event card (`meta.nextEvent`, falls back to the next red folder in `catalysts[]`) · "what changed" · geopolitics→FX |
 | **Strength** | 7-currency strength map (−3..+3 bars, verdict, drivers, forward bias), strongest→weakest |
 | **Signals** | all 21 symbols as cards (Bias / Conviction / Why / Risk), filterable, with the live quote on each FX card |
 | **Prices** | live quotes for the 18 tradable pairs — mid, day %, sparkline, bid/ask |

@@ -240,9 +240,7 @@
   var openCcy = null;
   function renderToday(D) {
     var m = D.meta || {};
-    $('bigevent').innerHTML =
-      '<div class="ic">📌</div><div><div class="k">Next big event</div>' +
-      '<div class="v">' + esc(m.nextBigEvent || '—') + '</div></div>';
+    renderBigEvent(D);
     $('dailyRead').textContent = D.dailyRead || '';
     $('geo').textContent = D.geopolitics || '';
 
@@ -565,12 +563,13 @@
         });
         liveResults = m;
         if (calData) renderCalendar(calData);
+        if (DATA) renderBigEvent(DATA);
       })
       .catch(function () { /* Worker unreachable: results already in data.json still show */ });
   }
   // pick up figures released while the app is open
   setInterval(function () { if (!document.hidden && calData) loadResults(); }, 120000);
-  document.addEventListener('visibilitychange', function () { if (!document.hidden && calData) loadResults(); });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && calData) { loadResults(); if (DATA) renderBigEvent(DATA); } });
 
   // The release's own UTC timestamp, shown as Bucharest day + time. The text
   // `date` ("Nov 12") is the UTC day, so an Asian release late in the UTC evening
@@ -599,6 +598,178 @@
     $('calOtherHdr').style.display = rest.length ? '' : 'none';
     $('calOther').innerHTML = rest.map(calRow).join('');
   }
+
+  /* ============ Next big event card (Today tab) ============
+   * Was one paragraph doing three jobs (the event, why it matters, the rest of
+   * the calendar); Darius asked for structure on 2026-11-10. Now:
+   *   header  flag + event, Bucharest day/time, live countdown (or Released)
+   *   figures forecast / previous, plus the actual once the Worker has it
+   *   why     why it matters; `priced` = what the market prices going in
+   *   if/then the 2-3 tradeable outcomes (hidden once released)
+   *   coming up / later  the next dated catalysts, straight from catalysts[]
+   * Source: meta.nextEvent (structured, from the analyst). When it is missing
+   * (reports before v32) or its event is more than RELEASED_KEEP_MS in the past,
+   * the card builds itself from the next red folder in catalysts[]. */
+  var CCY_FLAG = { USD: '🇺🇸', EUR: '🇪🇺', GBP: '🇬🇧', JPY: '🇯🇵', AUD: '🇦🇺', NZD: '🇳🇿', CAD: '🇨🇦', CHF: '🇨🇭' };
+  var RELEASED_KEEP_MS = 2 * 3600 * 1000;
+  var UPCOMING_MS = 7 * 86400 * 1000;
+  var MON_IDX = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+  var bigWhyOpen = false, bigLaterOpen = true;
+  try { bigLaterOpen = localStorage.getItem('fx_later_open') !== '0'; } catch (e) {}
+
+  // A catalyst's time: the exact `when`, else the day in its `date` text
+  // ("Wed Dec 9") at midday UTC. Rolling items have neither and are skipped.
+  function catTime(c) {
+    var t = c.when ? Date.parse(c.when) : NaN;
+    if (!isNaN(t)) return { t: t, exact: true };
+    var m = /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})\b/i.exec(c.date || '');
+    if (!m) return null;
+    var ref = new Date(Date.now()), y = ref.getUTCFullYear(), mo = MON_IDX[m[1].toLowerCase()];
+    if (mo < ref.getUTCMonth() - 6) y++;          // a January date seen in December
+    return { t: Date.UTC(y, mo, +m[2], 12), exact: false };
+  }
+  function countdownTxt(t, now) {
+    var mins = Math.round((t - now) / 60000);
+    if (mins < 1) return 'now';
+    if (mins < 60) return 'in ' + mins + ' min';
+    var h = Math.floor(mins / 60), mm = mins % 60;
+    if (h < 24) return 'in ' + h + 'h' + (mm ? ' ' + mm + 'm' : '');
+    var d = Math.floor(h / 24), hh = h % 24;
+    return 'in ' + d + 'd' + (hh ? ' ' + hh + 'h' : '');
+  }
+  function shortWhen(t, exact, now) {
+    var day = bucIsoDay.format(t) === bucIsoDay.format(now) ? 'Today' : bucDay.format(t);
+    return exact ? (day === 'Today' ? 'Today' : day.split(' ')[0]) + ' ' + bucClock.format(t) : day;
+  }
+  // Released figures for a time+currency: the Worker's record first, then the
+  // result the post-release pass wrote onto the matching catalyst.
+  function releasedLines(D, when, ccy) {
+    var live = liveResults[resultKey(when, ccy)];
+    if (live && live.lines && live.lines.length) return live.lines;
+    var t = Date.parse(when), hit = null;
+    (D.catalysts || []).forEach(function (c) {
+      if (!hit && c.when && Date.parse(c.when) === t && ccyOf(c.event) === ccy && c.result && c.result.length) hit = c.result;
+    });
+    return hit || [];
+  }
+  function pickBigEvent(D, now) {
+    var ne = (D.meta || {}).nextEvent;
+    var t = ne && ne.when ? Date.parse(ne.when) : NaN;
+    if (ne && ne.event && !isNaN(t) && t > now - RELEASED_KEEP_MS) {
+      return { event: ne.event, ccy: ne.ccy || ccyOf(ne.event), when: ne.when, t: t,
+        figures: ne.figures || [], why: ne.why || '', priced: ne.priced || '', scenarios: ne.scenarios || [] };
+    }
+    var best = null;
+    (D.catalysts || []).forEach(function (c) {
+      if (c.impact !== 'high' || !c.when) return;
+      var ct = Date.parse(c.when);
+      if (isNaN(ct) || ct <= now - RELEASED_KEEP_MS) return;
+      if (!best || ct < best.t) best = { t: ct, c: c };
+    });
+    if (!best) return null;
+    return { event: best.c.event, ccy: ccyOf(best.c.event), when: best.c.when, t: best.t,
+      figures: [], why: best.c.note || '', priced: '', scenarios: [], auto: true };
+  }
+  function bigFiguresHtml(ev, released, lines) {
+    var rows, head;
+    if (released && lines.length) {
+      head = ['Actual', 'Fcst', 'Prev'];
+      rows = lines.filter(function (l) { return l && l.actual != null; }).slice(0, 4).map(function (l) {
+        var cmp = String(l.cmp || ''), arrow = /above/.test(cmp) ? ' ▲' : /below/.test(cmp) ? ' ▼' : '';
+        return [String(l.title).replace(/\bRate (?=(YoY|MoM|QoQ)\b)/, ''),
+          '<b class="nea">' + esc(fmtVal(l.actual, l.unit)) + esc(arrow) + '</b>',
+          esc(fmtVal(l.forecast, l.unit)), esc(fmtVal(l.previous, l.unit))];
+      });
+    } else if (ev.figures.length) {
+      head = ['Fcst', 'Prev'];
+      rows = ev.figures.slice(0, 4).map(function (f) {
+        return [f.label || '', '<b>' + esc(f.forecast == null ? '—' : f.forecast) + '</b>', esc(f.previous == null ? '—' : f.previous)];
+      });
+    }
+    if (!rows || !rows.length) return '';
+    return '<div class="nefig" style="grid-template-columns:1fr repeat(' + head.length + ',auto)">' +
+      '<span></span>' + head.map(function (h) { return '<span class="nefh">' + h + '</span>'; }).join('') +
+      rows.map(function (r) {
+        return '<span class="nefl">' + esc(r[0]) + '</span>' + r.slice(1).map(function (v) { return '<span class="nefv">' + v + '</span>'; }).join('');
+      }).join('') + '</div>';
+  }
+  function bigListRow(x, now) {
+    return '<div class="neup"><span class="neut">' + esc(shortWhen(x.t, x.exact, now)) + '</span>' +
+      '<span class="dot ' + esc(x.c.impact) + '"></span><span class="neue">' + esc(x.c.event) + '</span></div>';
+  }
+  function renderBigEvent(D) {
+    var box = $('bigevent');
+    if (!box || !D) return;
+    var now = Date.now(), ev = pickBigEvent(D, now);
+    if (!ev) {                                   // nothing dated: the old prose line
+      box.innerHTML = '<div class="nehdr"><span class="ic">📌</span><span class="k">Next big event</span></div>' +
+        '<div class="v">' + esc((D.meta || {}).nextBigEvent || '—') + '</div>';
+      return;
+    }
+    var released = ev.t <= now, lines = released && ev.ccy ? releasedLines(D, ev.when, ev.ccy) : [];
+    var chip = released ? (lines.length ? 'Released' : 'Out now') : countdownTxt(ev.t, now);
+    var html = '<div class="nehdr"><span class="ic">📌</span><span class="k">Next big event</span>' +
+      '<span class="nechip' + (released ? ' done' : (ev.t - now < 3600000 ? ' soon' : '')) + '">' + esc(chip) + '</span></div>' +
+      '<div class="netitle">' + (ev.ccy && CCY_FLAG[ev.ccy] ? CCY_FLAG[ev.ccy] + ' ' : '') + esc(ev.event) + '</div>' +
+      '<div class="newhen">' + esc(bucDay.format(ev.t) + ' · ' + bucClock.format(ev.t)) + '</div>' +
+      bigFiguresHtml(ev, released, lines);
+    if (ev.why) {
+      html += '<div class="newhy' + (ev.auto ? ' clamp' : '') + (bigWhyOpen ? ' open' : '') + '" id="bigWhy">' +
+        '<span class="nelab">Why it matters</span>' + esc(ev.why) + '</div>' +
+        (ev.auto ? '<button class="nemorewhy" id="bigWhyMore" hidden></button>' : '');
+    }
+    if (!released && ev.priced) html += '<div class="neprice"><span class="nelab">Priced in</span>' + esc(ev.priced) + '</div>';
+    if (!released && ev.scenarios.length) {
+      html += '<div class="nesc">' + ev.scenarios.slice(0, 3).map(function (s) {
+        return '<div class="nesr"><span class="neif">' + esc(s.if) + '</span><span class="nethen">' + esc(s.then) + '</span></div>';
+      }).join('') + '</div>';
+    }
+    // The rest of the calendar: exact-time events in the next 7 days, then later dated ones.
+    var soon = [], later = [];
+    (D.catalysts || []).forEach(function (c) {
+      if (c.impact !== 'high' && c.impact !== 'med') return;
+      var ct = catTime(c);
+      if (!ct || ct.t <= now || (ct.exact && ct.t === ev.t && ccyOf(c.event) === ev.ccy)) return;
+      var x = { t: ct.t, exact: ct.exact, c: c };
+      (ct.exact && ct.t - now < UPCOMING_MS ? soon : later).push(x);
+    });
+    var byT = function (a, b) { return a.t - b.t; };
+    soon.sort(byT); later.sort(byT);
+    // At most 6 rows, but never drop a red folder: trim the latest amber ones first.
+    while (soon.length > 6) {
+      var cut = -1;
+      for (var i = soon.length - 1; i >= 0; i--) if (soon[i].c.impact !== 'high') { cut = i; break; }
+      soon.splice(cut < 0 ? soon.length - 1 : cut, 1);
+    }
+    if (soon.length) html += '<div class="nesec">Coming up</div>' + soon.map(function (x) { return bigListRow(x, now); }).join('');
+    if (later.length) {
+      html += '<div class="nesec tog" id="bigLaterHdr">Later (' + Math.min(later.length, 10) + ') <span class="chev' + (bigLaterOpen ? ' open' : '') + '">▸</span></div>' +
+        '<div id="bigLater"' + (bigLaterOpen ? '' : ' hidden') + '>' + later.slice(0, 10).map(function (x) { return bigListRow(x, now); }).join('') + '</div>';
+    }
+    html += '<button class="nemore" id="bigCal">Full calendar ›</button>';
+    box.innerHTML = html;
+    $('bigCal').addEventListener('click', function () { showView('cal'); });
+    var why = $('bigWhy'), whyMore = $('bigWhyMore');
+    if (why && whyMore) {                         // long catalyst note: clamp to 4 lines, tap to expand
+      var syncWhy = function () {
+        why.classList.toggle('open', bigWhyOpen);
+        whyMore.hidden = !(bigWhyOpen || why.scrollHeight > why.clientHeight + 2);
+        whyMore.textContent = bigWhyOpen ? 'less ⌃' : 'more ⌄';
+      };
+      var flip = function () { bigWhyOpen = !bigWhyOpen; syncWhy(); };
+      why.addEventListener('click', flip); whyMore.addEventListener('click', flip);
+      syncWhy();
+    }
+    var lh = $('bigLaterHdr');
+    if (lh) lh.addEventListener('click', function () {
+      bigLaterOpen = !bigLaterOpen;
+      try { localStorage.setItem('fx_later_open', bigLaterOpen ? '1' : '0'); } catch (e) {}
+      $('bigLater').hidden = !bigLaterOpen;
+      lh.querySelector('.chev').classList.toggle('open', bigLaterOpen);
+    });
+  }
+  // keep the countdown and the released figures current while the app is open
+  setInterval(function () { if (!document.hidden && DATA) renderBigEvent(DATA); }, 60000);
 
   /* ============ Rates: policy-rate differentials (source: TradingEconomics) ============ */
   var TE_SLUG = { USD: 'united-states', EUR: 'euro-area', GBP: 'united-kingdom', JPY: 'japan',
@@ -1329,7 +1500,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v31';
+  var APP_VERSION = 'v32';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
