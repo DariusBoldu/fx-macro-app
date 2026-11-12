@@ -6,42 +6,53 @@
     "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + EU50 + XAU + XAG + XCU + USOIL",
     "regime": "The US 10-year is at 5.00% and the dollar index at 102.991 is sitting exactly on the 102.85 to 103.00 resistance ING named, so the dollar case has moved from being discovered to being fully owned - and USD/JPY at 159.759, after touching 159.94 overnight, has arrived at the level where Tokyo intervenes rather than warns. Underneath that, two of yesterday's legs need correcting rather than repeating: the de-escalation trade restarted instead of stalling, with Vance now authorised to negotiate and crude down 4.91% on the week, and the sterling hawkish case rests on roughly 50% to 58% December pricing, not the 70% this file carried.",
     "nextEvent": {
-      "event": "UK September GDP m/m",
-      "ccy": "GBP",
-      "when": "2026-11-12T07:00:00Z",
+      "event": "US October PPI",
+      "ccy": "USD",
+      "when": "2026-11-13T13:30:00Z",
       "figures": [
         {
-          "label": "GDP m/m",
-          "forecast": "0.0%",
-          "previous": "0.1%"
+          "label": "PPI m/m",
+          "forecast": "0.4%",
+          "previous": "1.3%"
         },
         {
-          "label": "Prelim GDP q/q",
-          "forecast": "0.7%",
-          "previous": "0.5%"
+          "label": "Core PPI m/m",
+          "forecast": "0.3%",
+          "previous": "0.7%"
         }
       ],
-      "why": "Sterling is the weakest major on the week at minus 1.42% while the 10-year gilt yields 5.22% against the Treasury's 5.00%, and December BoE pricing is only about 50% to 58%, so growth has to do the work the pricing will not.",
-      "priced": "December 17 BoE hike about 50% to 58%, not the 70% this file carried yesterday",
+      "why": "Friday 15:30 is the last scheduled US data before the December 9 vote, and the only thing that can soften the half-point tail that opened when October core CPI printed plus 0.3% m/m for a third month.",
+      "priced": "December Fed hike 85% to 89% for 25bp, with 11% to 15% on 50bp",
       "scenarios": [
         {
-          "if": "Beat (0.2% m/m or more)",
-          "then": "Lifts December pricing back toward 70% and squeezes GBP/USD shorts; buy GBP/CHF."
+          "if": "Core 0.2% or less",
+          "then": "Cuts the 50bp tail and caps the dollar on ING resistance; buy EUR/USD, sell USD/JPY."
         },
         {
-          "if": "In line at 0.0%",
-          "then": "Leaves the dollar differential in charge; GBP/USD short holds, EUR/GBP stays a low-conviction long."
+          "if": "In line at 0.4% and 0.3%",
+          "then": "Leaves the dollar owned rather than extended; DXY holds 102.85 to 103.00, USD/JPY stays pinned near 160."
         },
         {
-          "if": "Contraction (-0.1% or worse)",
-          "then": "Confirms the downgrade to zero; sell GBP/JPY and GBP/NZD, buy EUR/GBP."
+          "if": "Core 0.5% or more",
+          "then": "Revives the half-point and pushes USD/JPY into the intervention zone; buy DXY, sell XAU/USD."
         }
       ]
     },
-    "nextBigEvent": "UK September GDP and prelim Q3 GDP, Thursday 09:00 - the growth test for a Bank of England whose December hike is only a coin flip at about 50% to 58%."
+    "nextBigEvent": "US October PPI and core PPI, Friday 15:30 - the last scheduled data before the December 9 Fed vote and the only thing that can soften the 11% to 15% half-point tail.",
+    "update": {
+      "at": "2026-11-12T07:11:21Z",
+      "title": "🇬🇧 GBP analysis updated",
+      "text": "UK September GDP plus 0.2% m/m against 0.0% forecast, prelim Q3 plus 0.7% in line. Growth is no longer the dovish argument, but spot did not reprice."
+    }
   },
   "dailyRead": "The dollar did not need another catalyst today and it did not get one: every major moved less than 0.2% overnight, the index is 102.991 and plus 0.14%, and what happened instead is that two levels arrived at once. The first is the round number on the US curve. TradingEconomics now prints the 10-year at 5.00% on November 12, up a basis point on the session, with the last cash closes from Tuesday at 4.73% on the two-year and 5.35% on the thirty-year - Wednesday was Veterans Day and the cash market was shut. Yesterday this file wrote that the 10-year had reached roughly 4.98% and briefly traded through 5%; the honest update is that it is now simply at 5.00% and staying there, and that single number is doing the work on every other line of the board. The second level is 159.94. USD/JPY touched that overnight, its strongest in over two months, and sits at 159.759 as this is written. Yesterday this file corrected itself on the yen: 158 was not a line, and the official constraint was placed roughly 1.2 yen above spot nearer 160. That read is now confirmed by the authorities themselves. Atsushi Mimura, Vice Finance Minister for International Affairs and Japan's top currency diplomat, declined to comment on the level but said currency moves have been excessively rapid and that it is still too early to forget what happened this summer - a direct reference to the yen-buying operations run from late July into early August, one of them jointly with the United States. Japan also carried out its largest-ever yen-buying intervention around late April and early May, after the dollar climbed above 160. So the position has changed in character rather than in direction: at 158.8 the argument for a USD/JPY range was that the reward to the ceiling was small, and at 159.76 the argument is that there is essentially no reward left and the tail is an operation that historically moves the pair several yen in hours. USD/JPY stays a range, but the skew inside that range has inverted to the downside, and that is the single most important practical change on the board today. The dollar's own case is intact and also fully priced, which is why it holds at plus two rather than going to plus three. CME-based pricing has the December 9 quarter-point near 85% to 89% and the half-point bucket at roughly 11% to 15%, up from about 1% before the CPI print, after Governor Waller said a half-point should be considered if October core came in near 0.3% or higher and it did. ING's Chris Turner named 102.85 to 103.00 as big resistance for the index and it is 102.991, and the same note has EUR/USD pressing the lower end of a 1.10 to 1.15 range into year-end - it is 1.10791. Both of those are reasons to hold dollar longs rather than to add to them, and Friday's PPI at 15:30, forecast at plus 0.4% headline and plus 0.3% core against prior prints of plus 1.3% and plus 0.7%, is the last scheduled data before the vote. The second genuine reversal today is in oil, and it runs directly against what this file wrote yesterday. The claim was that the de-escalation trade had stalled and that crude had bounced off two-month lows. It has not held. WTI is 86.075 and minus 4.91% on the week, Brent is 92.440 and minus 5.95% on the week and minus 12.54% on the month, and the newest reporting attributes the fall to surging OPEC+ output alongside easing US-Iran tensions. The diplomatic record moved too: Trump has authorised Vance to negotiate with Iran with a possible Rezaei meeting under consideration, the Wall Street Journal reports Iran would allow 25 tankers through the Strait in exchange for easing the blockade on its own ports, and Iran's foreign minister says the offer to reopen the Strait within two days still stands if the war ends on all fronts. Against that, Rubio has called Iran's demands outrageous and ridiculous and said the two sides are not close, Qatar denied the reported eight-billion-dollar interim arrangement, and attacks on tankers near the Strait continue. So this is a restarted negotiation rather than a settlement - but a restarted negotiation with crude already down a fifth on the month is enough to turn USOIL from a range back to a short, and it is enough to change two currencies. It finishes the franc. CHF lost 1.99% to the dollar this week, the worst of the seven, and it goes to minus two and the bottom of the board. The mechanics are unusually clean: the policy rate is zero, Rabobank reports the consensus views a December hike as highly unlikely, the SNB itself judged in October that its threat to sell francs was no longer needed because war-induced haven flows had subsided, and its own record notes little safe-haven demand since June. A 5.00% US 10-year suppresses what is left mechanically. Yesterday this file named the reversal trigger explicitly - an oil bounce that re-bids the haven - and oil did the opposite, so the short is confirmed rather than at risk. The 1.5% October CPI is the highest in nearly three years but core is 0.5%, which says it is energy, and falling energy now removes even that. USD/CHF goes to high conviction, EUR/CHF and NZD/CHF go to high, and CHF/JPY is the cleanest short on the board at minus 0.69% on the week. It also changes sterling, and this is the correction that matters most for the open trades. Yesterday this file put December BoE pricing near 70%. The verifiable figures are lower: Bloomberg has swaps at roughly 50% immediately after the November 5 vote, up from about 30% before it and from one-in-four on LSEG data, and the most current OIS-based tracker read 58% on November 9. Bank Rate did go to 4.00% on an 8-1 vote with Catherine Mann dissenting for 4.25%, Bailey did say the rise was unlikely to be the last unless the conflict is resolved, and Deputy Governor Lombardelli said on November 10 that there is likely to be a case for a further rise in the near term. But Bailey's stated stopping condition is resolution of the conflict, and the conflict has spent this week moving toward resolution rather than away from it - FXStreet's read is that the Bank will be comfortable holding in December if energy keeps easing and oil stays below 100 dollars, with February the next hike. Oil is at 86. So sterling loses its edge from both ends at once, and it goes from plus one to zero: a coin-flip December instead of a 70% December, and the second-worst price on the week at minus 1.42% despite a 10-year gilt at 5.22% that yields more than the Treasury at 5.00%. That gilt premium is a fiscal risk premium, not a policy premium, and it is not paying the pound. GBP/AUD and GBP/NZD, both longs yesterday on the 70% figure, go to a range and a short. Today's GDP at 09:00 is the reconciliation: forecast 0.0% on the month with prelim Q3 at plus 0.7%. The upgrade on the board is New Zealand, and it is the non-obvious one. The kiwi was the best major of the week at minus 0.74% against a dollar that beat everything else by more than a percent, and the December 9 Monetary Policy Statement is now priced around 75% for a hike after the 4-3 October hold, with ANZ, Westpac and BNZ all forecasting the OCR at 3% by December and Westpac still holding a 4% peak for 2027. The September Statement itself projected exactly this - a pause in October, then 25bp to 3% in December. Yesterday this file kept conviction low on that path; the pricing says the path is the base case. The fundamentals remain the worst on the board and that is why this is plus one rather than plus two: unemployment at 5.7% is the highest since 2016, wages run 2.0% against 3.7% inflation, Q3 GDP was plus 0.2% and employment fell 0.1%. But a currency with the best price and a 75% hike is not a zero, so NZD/CHF at plus 1.25% and NZD/CAD at plus 0.96% are the two best-performing crosses on the week and both go up in conviction. Australia comes off the bottom to minus one without its case improving - it simply stopped being the worst price. AUD lost 1.37% this week against the franc's 1.99% and the loonie's 1.70%, though it is still the worst on the month at minus 2.13%. The structural cap is unchanged: the November 3 hike to 4.85% was the fifth of the year and an 18-year high, it passed 6-3 with three members preferring to hold at 4.60%, one model tracker has December 8 at roughly 78% hold against 11% hike, and markets are pricing 2027 cuts. Copper refuses to confirm the AI-demand leg at 6.2084, minus 1.05% today and minus 7.03% on the month. What keeps Australia off minus two is the highest inflation on this board, 4.3% headline with 3.6% core, and the November 17 minutes at 02:30 are the only scheduled test. AUD/NZD is where that resolves and it is now the cleanest cross trade on the board: a central bank at terminal with cuts priced for next year against one with a 75% hike and a full Statement, in a cross already minus 0.63% on the week. Canada stays at minus one and the loonie stays the second-worst price at minus 1.70%. Falling crude is the whole problem - a reopened Strait would take oil lower still and with it the case for a December 9 hike, which one estimate puts near 40%. Unemployment is 6.7%, a six-month high, employment fell 4,700 for a third consecutive monthly decline, and core at 2.2% is the softest on this board outside Japan and Switzerland. The offsetting facts are real but prospective: headline CPI at 3.1%, a Governing Council that agreed there could be a need to increase further, and the October CPI on Monday November 16 at 15:30 as the actual test. The euro is third on the board and it got there by standing still, beating five of the other six non-dollar majors while losing 1.25% to the dollar. The hike is as close to settled as these things get - ECB Watch has December 17 at 84% and Central Bank Watch at 86% as of November 11 - on October HICP at 4.0%, a three-year high, with energy up 20.8% on the year and core holding at 2.5%. The caveat worth carrying is Lagarde's own framing rather than the trackers: her line is that the Governing Council will have many indicators between now and December that will really help determine whether a hike is necessary, which is data dependence rather than a commitment, and she speaks again tonight at 21:30. The standing institutional risk, announced on October 29 rather than new today, is that she leaves on February 7, 2027, nine months early, with de Cos and Knot the names most often floated - a succession that sits directly on the far end of the 4H horizon rather than inside it. Metals are where the regime shows cleanest and where one call has to be reversed outright. Gold broke below 4,000 dollars and is 3978.43, minus 2.67% on the week and minus 4.40% on the month; yesterday's turn from a levels trade to a short was right and it goes up in conviction, with Kitco flagging 3,910 to 3,890 as the next support zone and TD Securities warning of a 3,900 retest. Silver is the reversal. Yesterday this file kept a long specifically because silver was beating gold on the week on an industrial leg that data-centre and grid demand supplies. That leg has broken: silver is 51.498 and minus 0.54% on the week against gold's minus 2.67%, which looks like relative strength until the month is read - minus 12.97% against gold's minus 4.40%. A metal falling three times as fast as gold over a month is not decoupling on industrial demand, it is being sold harder, and the one-week outperformance was noise inside that. XAG/USD flips from long to short at low-medium, and the specific fact that changed is the monthly divergence, not the daily tick. Equities are the one place where yesterday's read also needs inverting, and it is a small thing honestly stated. This file said the Euro Stoxx 50 had outperformed the DAX for three sessions on its bank weight and gave it the higher conviction. Today the DAX is 26,832 and plus 0.63% while the EU50 is 6,407 and plus 0.17%, and on the month it is plus 6.22% against plus 3.89%. The bank leg is still being paid by an 84% to 86% December hike and a steeper curve, but it is no longer the dominant leg: Brent at minus 5.95% on the week is paying the DAX's industrial and energy-input weight harder than the curve is paying the EU50's banks, and the EU50 additionally carries French and Italian political risk the DAX does not. So GER40 goes up and EU50 goes down, and the leg that decides it is energy. The one caution on the DAX is German gas, which rebounded 2.22% to 88.22 and is plus 3.43% on the month even while euro-area gas at 87.00 is minus 4.06% on the week. The practical instruction for today is narrow. The dollar is right but it is at resistance and fully priced, so hold rather than add. The two trades with the most room are the ones created by the franc going to the bottom - USD/CHF, EUR/CHF, NZD/CHF and CHF/JPY - and the AUD/NZD short. The one position to actively de-risk is any long USD/JPY: at 159.76, with Mimura invoking the summer operations and the Bank of Japan all but locked for 1.50% on December 17-18, the pair is being held up by Fed pricing alone and the asymmetry below it is now worse than the asymmetry above.",
   "today": [
+    {
+      "ccy": "GBP",
+      "moved": true,
+      "headline": "September GDP came in at plus 0.2% m/m against a 0.0% forecast and prelim Q3 matched at plus 0.7%, yet spot did not move",
+      "read": "TradingEconomics confirms the monthly figure at plus 0.2% for September against a 0.0% consensus, with August revised down to 0.0% from the plus 0.1% the calendar carried, and prelim Q3 GDP at plus 0.7% q/q from plus 0.5% - exactly the consensus and exactly the number the Bank's own November Monetary Policy Report projected. Quarterly y/y growth is 1.9% from 1.4% and the monthly series is plus 2.1% y/y. The narrow read for December 17 is real: growth was the one dovish argument available to the MPC and it is now gone, so the hold case rests entirely on Bailey's stated condition - resolution of the conflict - and on energy, with Brent at 92.44 and minus 5.95% on the week. What has not happened is the repricing this file said a beat would bring. GBP/USD is 1.32601 and minus 0.11% on the session, unchanged from the 1.32584 it printed before the release, and the 10-year gilt is 5.23%; post-release December pricing is not yet verifiable. The conclusion to trade is that sterling's problem is the dollar and the fiscal premium rather than the data, which keeps the score at zero while taking the contraction tail out of the GBP/CHF and GBP/CAD longs and out of the EUR/GBP long's rationale."
+    },
     {
       "ccy": "JPY",
       "moved": true,
@@ -53,12 +64,6 @@
       "moved": true,
       "headline": "Worst major of the week at minus 1.99% and down to minus two as the SNB withdraws its last asymmetry",
       "read": "USD/CHF is 0.83289, plus 1.99% on the week and plus 5.04% year to date, with the franc beating nothing on the board over the week. The downgrade is not about the day - CHF is plus 0.03% against the dollar in the session - it is about the removal of the only leg a zero-rate currency has. The SNB judged in October that its threat to sell francs was no longer needed because war-induced haven flows had subsided, its record notes little safe-haven demand since June, and Rabobank says a December hike is viewed as highly unlikely. A 5.00% US 10-year suppresses the residual bid mechanically, and the oil bounce this file named yesterday as the one reversal trigger did not happen - crude fell another 4.91% on the week instead. October CPI at 1.5% is a near-three-year high but core is 0.5%, so it is energy, and energy is deflating. The crosses are where this pays: EUR/CHF plus 0.74%, GBP/CHF plus 0.57%, NZD/CHF plus 1.25%, all on the week."
-    },
-    {
-      "ccy": "GBP",
-      "moved": true,
-      "headline": "Downgraded to zero because December pricing is 50% to 58%, not the 70% this file carried",
-      "read": "GBP/USD is 1.32584, minus 0.12% on the day and minus 1.42% on the week, the second-worst major. The correction is specific: Bloomberg has swaps at roughly 50% for a December quarter-point immediately after the November 5 vote, up from about 30% before and a one-in-four chance on LSEG data, while the most current OIS tracker read 58% on November 9. The hawkish facts stand - 8-1 to 4.00%, Mann dissenting for 4.25%, Dhingra and Taylor switching to hike, Lombardelli on November 10 saying there is likely a case for a near-term rise, and a Monetary Policy Report that sees CPI near 5% by mid-2027. What changed is the condition Bailey attached: he said the rise was unlikely to be the last unless the conflict is resolved, and this week the conflict moved toward resolution. The 10-year gilt at 5.22% yields more than the Treasury at 5.00% and the pound still lost 1.42%, which says that premium is fiscal, not policy. September GDP at 09:00, forecast 0.0% m/m with prelim Q3 at plus 0.7%, is the reconciliation."
     },
     {
       "ccy": "NZD",
@@ -114,8 +119,8 @@
     },
     {
       "icon": "🇬🇧",
-      "t": "December BoE pricing is about 50% to 58%, not the 70% carried yesterday, so GBP goes to zero",
-      "s": "Bloomberg has swaps near 50% right after the November 5 vote, from about 30% before, and the most current OIS tracker read 58% on November 9. The 8-1 hike to 4.00% and Lombardelli's November 10 line about a near-term case still stand, but Bailey's stopping condition is conflict resolution and the conflict is easing. The gilt yields 5.22% against the Treasury's 5.00% and the pound still lost 1.42%."
+      "t": "UK September GDP beat at plus 0.2% m/m and the pound did not move, which is the day's cleanest signal",
+      "s": "September came in at plus 0.2% against a 0.0% forecast with August revised to 0.0%, and prelim Q3 at plus 0.7% matched both consensus and the Bank's own projection. GBP/USD is 1.32601, unchanged on the session. Growth is no longer an argument for a December hold, but with the gilt at 5.23% against a 5.00% Treasury the pound is being traded off the dollar and the fiscal premium, not off UK data."
     },
     {
       "icon": "🥇",
@@ -141,8 +146,8 @@
     },
     "GBP": {
       "next": "hike",
-      "when": "December 17, but roughly a coin flip at 50% to 58% - corrected down from the 70% this file carried yesterday",
-      "note": "TradingEconomics carries Bank Rate at 4.00% for November, from 3.75%, after the November 5 hike passed 8-1 with Catherine Mann dissenting for 4.25% and Dhingra and Taylor switching from hold to hike. The pricing correction is the material change. Bloomberg reports swaps moved to roughly 50% for another quarter-point in December immediately after the vote, up from about 30% before it and from a one-in-four chance on LSEG data, and the most current OIS-based tracker read 58% on November 9. Deputy Governor Lombardelli said on November 10 that there is likely to be a case for a further rise in the near term, and Bailey signalled another increase may be needed while cautioning against expecting a prolonged series. But Bailey's stated stopping condition was resolution of the conflict, and the conflict is easing: FXStreet's read is that the Bank will be comfortable holding in December if energy keeps easing and oil stays below 100 dollars, with February the next hike. Brent is 92.44. Two-year gilts are near 4.79% and the 10-year at 5.22%, above the Treasury at 5.00%, but that premium is fiscal rather than policy and the pound is not being paid for it. Today's GDP at 09:00 is the first real test."
+      "when": "December 17, a coin flip at 50% to 58% going in, with growth no longer the argument against it",
+      "note": "TradingEconomics carries Bank Rate at 4.00% for November, from 3.75%, after the November 5 hike passed 8-1 with Catherine Mann dissenting for 4.25% and Dhingra and Taylor switching from hold to hike. The pricing correction is the material change. Bloomberg reports swaps moved to roughly 50% for another quarter-point in December immediately after the vote, up from about 30% before it and from a one-in-four chance on LSEG data, and the most current OIS-based tracker read 58% on November 9. Deputy Governor Lombardelli said on November 10 that there is likely to be a case for a further rise in the near term, and Bailey signalled another increase may be needed while cautioning against expecting a prolonged series. But Bailey's stated stopping condition was resolution of the conflict, and the conflict is easing: FXStreet's read is that the Bank will be comfortable holding in December if energy keeps easing and oil stays below 100 dollars, with February the next hike. Brent is 92.44. Two-year gilts are near 4.79% and the 10-year at 5.23%, above the Treasury at 5.00%, but that premium is fiscal rather than policy and the pound is not being paid for it. The GDP test at 09:00 is now answered and it answered hawkish: September came in at plus 0.2% m/m against a 0.0% forecast, prelim Q3 at plus 0.7% matched both the consensus and the Bank's own Monetary Policy Report projection, and quarterly y/y growth is 1.9% from 1.4%. That removes the growth leg of the hold case and leaves it standing on energy alone, which is why the path stays a hike with the odds unresolved rather than improved - post-release December pricing is not yet verifiable, and Greene speaks Saturday at 13:00."
     },
     "JPY": {
       "next": "hike",
@@ -207,9 +212,9 @@
       "ccy": "GBP",
       "score": 0,
       "verdict": "MIXED",
-      "tag": "A coin-flip December, not the 70% this file carried, and the second-worst price on the week",
-      "drivers": "GBP/USD 1.32584, minus 0.12% on the day and minus 1.42% on the week, second-worst of the majors, though plus 0.03% on the month is the best monthly print on the board. Bank Rate 4.00% on TradingEconomics from 3.75%, hiked November 5 on an 8-1 vote with Mann dissenting for 4.25%. September CPI 3.5% with core 2.8%, Q2 growth 1.4% y/y on 0.5% q/q, unemployment 4.7% from 4.9%, August employment plus 102,000 with wages at 3.7%. The 10-year gilt is 5.22% and two-year gilts near 4.79% - the 10-year yields more than the Treasury's 5.00% and the pound is not being paid for it, which marks that spread as a fiscal premium.",
-      "forward": "⚖️ Balanced, and this is a downgrade from plus one on two specific things. First, the pricing: Bloomberg has swaps at roughly 50% for December immediately after the vote, up from about 30% before and a one-in-four chance on LSEG data, with the most current OIS tracker at 58% on November 9 - not the near-70% this file reported yesterday. Second, the condition: Bailey said the November rise was unlikely to be the last unless the conflict is resolved, and the conflict has spent this week moving toward resolution, with Vance authorised to negotiate and Brent down 5.95%. FXStreet reads the Bank as comfortable holding in December if energy keeps easing and oil stays below 100 dollars, with February the next hike; oil is 86. Against the downgrade, Lombardelli said on November 10 that there is likely a case for a near-term rise, Dhingra and Taylor switched from hold to hike, and the Monetary Policy Report still sees CPI near 5% by mid-2027. So this is genuinely two-sided, which is what zero means. Today's GDP at 09:00 resolves it in one direction or the other: forecast 0.0% m/m with prelim Q3 at plus 0.7%, and Greene speaks Saturday at 13:00."
+      "tag": "The growth beat removes the dovish argument, but spot refused to reprice it, so this stays at zero",
+      "drivers": "GBP/USD 1.32601, minus 0.11% on the day and minus 1.41% on the week, second-worst of the majors. September GDP plus 0.2% m/m against a 0.0% forecast with August revised to 0.0%, prelim Q3 plus 0.7% q/q from plus 0.5% matching consensus and the Bank's own projection, Q3 growth 1.9% y/y from 1.4%. Bank Rate 4.00% on TradingEconomics from 3.75%, hiked November 5 on an 8-1 vote with Mann dissenting for 4.25%. September CPI 3.5% with core 2.8%, unemployment 4.7% from 4.9%, August employment plus 102,000 with wages at 3.7%. The 10-year gilt is 5.23% and two-year gilts near 4.79% - the 10-year yields more than the Treasury's 5.00% and the pound is not being paid for it, which marks that spread as a fiscal premium.",
+      "forward": "⚖️ Balanced, but the balance has tilted inside itself rather than broken. What the release settled is the dovish side: growth was the one argument the MPC could have used to justify a December hold, and at plus 0.2% m/m with Q3 at the 0.7% the Monetary Policy Report itself projected, that argument is gone. What the release did not settle is the pricing. Bloomberg had swaps at roughly 50% for December right after the November 5 vote, up from about 30% before, with the most current OIS tracker at 58% on November 9, and the post-release figure is not yet verifiable - so this file will not claim the move back toward 70% it said a beat would bring. The evidence against claiming it is spot itself: GBP/USD is unchanged on the session after an upside surprise, which says the pound is being priced off the 5.00% Treasury and the fiscal premium rather than off UK data. The hold case now stands on one leg only, Bailey's condition that the November rise was unlikely to be the last unless the conflict is resolved, and the conflict is still easing with Brent minus 5.95% on the week. Greene speaks Saturday at 13:00 and is the next read on whether the MPC agrees. An upgrade to plus one needs either verified December pricing above about 65% or a close above 1.3450; a renewed oil slide toward the low 80s takes this back to minus one."
     },
     {
       "ccy": "AUD",
@@ -247,9 +252,9 @@
     {
       "sym": "GBP/USD",
       "bias": "SHORT",
-      "conv": "MEDIUM",
-      "why": "Zero against plus two at 1.32584 after minus 1.42% on the week, and conviction rises from low-medium because the sterling leg weakened rather than because the dollar leg strengthened. December BoE pricing is about 50% to 58%, not the near-70% this file carried yesterday, and Bailey's own stopping condition - resolution of the conflict - is now being met rather than missed, with Brent minus 5.95% on the week. The 10-year gilt at 5.22% yields more than the Treasury at 5.00% and the pound still lost 1.42%, which identifies that spread as a fiscal premium that does not pay the currency.",
-      "risk": "September GDP at 09:00 is minutes away: forecast 0.0% m/m with prelim Q3 at plus 0.7% against plus 0.5%. A beat of 0.2% or better lifts December pricing back toward 70% and squeezes this. Lombardelli already said on November 10 that there is likely a case for a near-term rise, and Greene speaks Saturday at 13:00. On the other side, a US PPI miss on Friday at 15:30 cuts the dollar leg. A close above 1.3450 invalidates."
+      "conv": "LOW-MED",
+      "why": "Zero against plus two at 1.32601, and conviction comes back down from medium because the sterling leg has lost its data support. September GDP printed plus 0.2% m/m against a 0.0% forecast and prelim Q3 plus 0.7% matched the Bank's own projection, which is the beat this file said would squeeze the short - and the squeeze did not come: spot is unchanged on the session, minus 0.11%, having traded 1.32584 before the release. What is left is a pure dollar trade on a 5.00% 10-year and a December hike priced 85% to 89%, plus a 5.23% gilt yielding more than the Treasury without paying the currency, which identifies that spread as fiscal.",
+      "risk": "The short now has one leg, so US PPI on Friday at 15:30 is the whole risk: core forecast plus 0.3% from plus 0.7%, and a soft print cuts the 50bp tail and the dollar with it. On the sterling side the growth argument for a December hold is gone, Greene speaks Saturday at 13:00, and verified December pricing above about 65% would turn this into a range. A close above 1.3450 invalidates."
     },
     {
       "sym": "USD/JPY",
@@ -309,10 +314,10 @@
     },
     {
       "sym": "EUR/GBP",
-      "bias": "LONG",
-      "conv": "LOW-MED",
-      "why": "Plus one against zero at 0.83563 after plus 0.17% on the week, and this flips from range to long on the sterling downgrade. The specific fact is the pricing correction: December BoE is about 50% to 58%, not the near-70% this file carried, while the ECB sits at 84% to 86% - so a near-certain hike now faces a coin flip rather than another near-certainty. Bailey's stopping condition was conflict resolution and the conflict is easing, which cuts sterling's energy-driven case while leaving the euro's 4.0% HICP intact.",
-      "risk": "UK GDP at 09:00 is immediate and two-way: a beat of 0.2% m/m or better lifts December pricing back toward 70% and this long should be abandoned. Lombardelli already flagged a near-term case on November 10 and Greene speaks Saturday at 13:00. On the euro side Lagarde's data dependence tonight at 21:30 is the offsetting risk. A close below 0.8300 invalidates."
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "Back to a range from yesterday's long, because the condition this file set for abandoning it was met: UK September GDP came in at plus 0.2% m/m against a 0.0% forecast with prelim Q3 at plus 0.7%, matching the Bank's own projection, so the growth argument for a December BoE hold is gone. The pricing gap that justified the long is still there - ECB 84% to 86% against a BoE coin flip at 50% to 58% going in - but it is now the only leg, and post-release UK pricing is not yet verifiable. A 0.17% weekly move on a cross where both banks are expected to hike on the same day, December 17, is levels rather than direction.",
+      "risk": "Two scheduled tests point opposite ways: euro-area flash Q3 GDP tomorrow at 12:00, forecast plus 0.4% q/q, is the cleanest risk to the 84% to 86% ECB pricing, and Greene speaks Saturday at 13:00 on the sterling side. Lagarde's data dependence tonight at 21:30 can cut the euro leg on its own. Levels 0.8300 to 0.8420; verified UK December pricing below about 45% would restore the long."
     },
     {
       "sym": "EUR/CAD",
@@ -332,36 +337,36 @@
       "sym": "GBP/JPY",
       "bias": "SHORT",
       "conv": "LOW-MED",
-      "why": "Zero against plus one at 211.815 after minus 0.12% on the week, and this flips from range to short because sterling was downgraded while the yen gained an official floor. December BoE pricing is 50% to 58% rather than near-70%, and Bailey's stopping condition - conflict resolution - is being met; against that the BoJ is read as all but locked for 1.50% on December 17-18 and Mimura placed the intervention constraint at spot today. Conviction stays low-medium because the cross is rangebound and the catalyst is 45 minutes away.",
-      "risk": "UK GDP at 09:00 is the immediate two-way risk - a beat of 0.2% or more revives December pricing and this short. A Fed 50bp on December 9 lifts every yen cross against the intervention zone. Levels 208.00 to 215.00; a close above 215.00 invalidates."
+      "why": "Zero against plus one, and the short now rests entirely on the yen leg after sterling beat on growth: September GDP plus 0.2% m/m against 0.0% forecast and prelim Q3 plus 0.7% in line, which takes the UK data argument out of this trade without putting it on the other side, since spot did not reprice. What is left is the Bank of Japan read as all but locked for 1.50% on December 17-18 and Mimura placing the intervention constraint at spot rather than above it - a floor under the yen that no UK print changes.",
+      "risk": "The single-leg structure is the risk: if Tokyo does not act and the Fed delivers 50bp on December 9, every yen cross lifts into the intervention zone regardless of sterling. Verified UK December pricing above about 65% would compress this to a range, and Greene speaks Saturday at 13:00. Levels 208.00 to 215.00; a close above 215.00 invalidates."
     },
     {
       "sym": "GBP/AUD",
       "bias": "RANGE",
       "conv": "LOW",
-      "why": "1.93972 and minus 0.05% on the week, and this is the largest change on the board: it flips from a high-conviction long to a range. The long rested on December BoE pricing near 70% against an RBA pause, and that 70% was wrong - the verifiable figures are about 50% to 58%. At the same time Australia came off the bottom from minus two to minus one. Zero against minus one over a cross that moved five basis points in a week is not a trade.",
-      "risk": "Both legs have a catalyst inside a week: UK GDP at 09:00 today and the RBA minutes on November 17 at 02:30. A UK beat with hawkish minutes is a wash; a UK beat with dovish minutes restores the long. Levels 1.9150 to 1.9650."
+      "why": "Still a range, with a mild upward tilt it did not have before the release. September UK GDP at plus 0.2% m/m against a 0.0% forecast, with prelim Q3 at plus 0.7%, removes the growth case for a December BoE hold, while the RBA's 6-3 vote on November 3 still reads as a peak at 4.85% with December 8 near 78% a hold. Zero against minus one is not yet direction, and the cross has moved five basis points in a week, so this stays levels until one bank's path actually changes.",
+      "risk": "The RBA minutes on November 17 at 02:30 are now the decisive leg: if the three members who preferred a hold were arguing about the peak rather than the timing, that converts this range into a long. Australia still carries the board's highest inflation at 4.3%, which is the counter. Levels 1.9150 to 1.9650."
     },
     {
       "sym": "GBP/NZD",
       "bias": "SHORT",
-      "conv": "LOW-MED",
-      "why": "Zero against plus one at 2.38774 after minus 0.68% on the week, and this flips from long to short on both legs moving at once. Sterling's December is a coin flip at 50% to 58% rather than near-70%, while New Zealand's December 9 Monetary Policy Statement is priced near 75% with ANZ, Westpac and BNZ all at 3% - so the hawkish differential has reversed sign. The cross already moved 0.68% in the kiwi's favour this week, which confirms rather than anticipates.",
-      "risk": "UK GDP at 09:00 is the immediate risk and a beat of 0.2% or better reverses this. New Zealand's fundamentals are the worst on the board - 5.7% unemployment, 2.0% wages against 3.7% inflation - so the Survey of Expectations before the Statement could soften the kiwi leg. A close above 2.4150 invalidates."
+      "conv": "LOW",
+      "why": "Zero against plus one, and conviction drops from low-medium because one of the two legs just weakened. The kiwi leg is intact - December 9 Monetary Policy Statement priced near 75% with ANZ, Westpac and BNZ all at 3% - but the sterling leg was built on a December coin flip, and September GDP at plus 0.2% m/m against a 0.0% forecast with prelim Q3 at plus 0.7% takes the growth argument for a hold away. The cross has already moved 0.68% in the kiwi's favour this week, so what remains is a pricing differential rather than a data one.",
+      "risk": "This is the GBP cross the release damaged most, and verified UK December pricing above about 65% would flatten it outright. New Zealand's own fundamentals are the worst on the board - 5.7% unemployment, 2.0% wages against 3.7% inflation - so the Survey of Expectations before the Statement is a two-way risk on the other leg. A close above 2.4150 invalidates."
     },
     {
       "sym": "GBP/CAD",
       "bias": "LONG",
-      "conv": "LOW-MED",
-      "why": "Zero against minus one at 1.89038 after plus 0.28% on the week, and conviction falls from medium because the sterling leg was downgraded while the Canadian leg was not. What is left is the oil differential rather than a policy differential: WTI is minus 4.91% on the week and a December BoC hike is near 40%, against a BoE coin flip. Both currencies are hurt by the same de-escalation - one through energy-driven inflation falling out of the BoE case, the other through the terms of trade - which is why this is low-medium.",
-      "risk": "UK GDP at 09:00 and Canadian October CPI on Monday at 15:30 are both live and point opposite ways. A Hormuz re-escalation helps the loonie and the BoE case simultaneously, making the cross noise. A close below 1.8700 invalidates."
+      "conv": "MEDIUM",
+      "why": "Zero against minus one after plus 0.28% on the week, and conviction goes back up to medium because the release took the downside tail out of the sterling leg: September GDP plus 0.2% m/m against a 0.0% forecast and prelim Q3 plus 0.7% in line with the Bank's own projection, so the UK is not the economy contracting into its December meeting. Canada is: unemployment 6.7% and a six-month high, October employment minus 4,700 for a third consecutive decline, core 2.2%, and WTI at 86.075 and minus 4.91% on the week against a BoC hike estimated near 40%.",
+      "risk": "Canadian October CPI on Monday at 15:30 is the single test that can reverse this - headline is 3.1% and the Governing Council documented that higher costs have largely not reached consumers yet. A Hormuz re-escalation helps the loonie and revives Bailey's energy case at the same time, making the cross noise. A close below 1.8700 invalidates."
     },
     {
       "sym": "GBP/CHF",
       "bias": "LONG",
       "conv": "MEDIUM",
-      "why": "Zero against minus two at 1.10428 after plus 0.57% on the week, and this holds its medium conviction despite the sterling downgrade because the franc fell further than the pound did. Sterling still carries a 4.00% Bank Rate with a live if coin-flip December and a Monetary Policy Report seeing CPI near 5% by mid-2027; the franc carries zero, a December hike Rabobank calls highly unlikely, and a central bank that has withdrawn its own intervention threat. A 5.00% US 10-year suppresses the haven leg that is the franc's only counter.",
-      "risk": "UK GDP at 09:00 is two-way, and a contraction would compress this to a range. A Hormuz re-escalation is the franc-side tail and it cuts both ways here - it re-bids the franc but also revives Bailey's energy case. A close below 1.0950 invalidates."
+      "why": "Zero against minus two after plus 0.57% on the week, and this is the cleanest GBP ticket on the board now because the release removed its stated downside tail. Yesterday the risk line said a UK contraction would compress this to a range; September instead came in at plus 0.2% m/m against a 0.0% forecast with prelim Q3 at plus 0.7%, so sterling keeps a 4.00% Bank Rate, a live December and a Monetary Policy Report seeing CPI near 5% by mid-2027 against a franc at zero whose own central bank has withdrawn its intervention threat and which Rabobank says is highly unlikely to move in December.",
+      "risk": "A Hormuz re-escalation is the franc-side tail and it cuts both ways - it re-bids the franc but also revives Bailey's energy case for a December hike. Swiss October PPI tomorrow at 09:30, forecast plus 0.2%, is a minor check on whether the 1.5% CPI rise is still purely energy against a 0.5% core. A close below 1.0950 invalidates."
     },
     {
       "sym": "AUD/JPY",
@@ -640,16 +645,16 @@
         ]
       },
       "growth": {
-        "value": "1.4%",
+        "value": "1.9%",
         "trend": "rising",
-        "note": "Q2 y/y; 0.5% q/q, Q3 prelim today",
+        "note": "Q3 y/y; prelim 0.7% q/q, Sep GDP +0.2% m/m",
         "hist": [
-          1,
           0.8,
           1.1,
           0.9,
           1.2,
-          1.4
+          1.4,
+          1.9
         ]
       },
       "unemployment": {
@@ -1040,8 +1045,24 @@
       "date": "Thu Nov 12",
       "event": "UK September GDP m/m (red folder)",
       "impact": "high",
-      "note": "Forecast 0.0% m/m against plus 0.1% previous, released alongside prelim Q3 GDP at plus 0.7% against plus 0.5%. The growth test for a Bank of England whose December hike is only a coin flip at 50% to 58%, and the reconciliation for a pound that is the second-worst major on the week.",
-      "when": "2026-11-12T07:00:00Z"
+      "note": "Came in at plus 0.2% m/m against a 0.0% forecast, with August revised down to 0.0% from the plus 0.1% the calendar carried, and prelim Q3 GDP at plus 0.7% q/q from plus 0.5% - exactly the consensus and exactly the number the Bank's own November Monetary Policy Report projected. Quarterly y/y growth is 1.9% from 1.4%. Growth was the one dovish argument available to the MPC on December 17 and it is gone; the hold case now rests entirely on Bailey's condition of conflict resolution and on falling energy.",
+      "when": "2026-11-12T07:00:00Z",
+      "result": [
+        {
+          "title": "GDP m/m",
+          "actual": "0.2%",
+          "forecast": "0.0%",
+          "previous": "0.0%",
+          "cmp": "▲ above"
+        },
+        {
+          "title": "Prelim GDP q/q",
+          "actual": "0.7%",
+          "forecast": "0.7%",
+          "previous": "0.5%",
+          "cmp": "in line"
+        }
+      ]
     },
     {
       "date": "Fri Nov 13",
@@ -1054,7 +1075,7 @@
       "date": "Thu Nov 12",
       "event": "UK prelim Q3 GDP q/q",
       "impact": "med",
-      "note": "Forecast plus 0.7% against plus 0.5%, published at 09:00 with the monthly figure, construction output, industrial and manufacturing production and the goods trade balance.",
+      "note": "Came in at plus 0.7% from plus 0.5%, matching both the consensus and the Bank of England's own November projection, published at 09:00 with the monthly figure, construction output, industrial and manufacturing production and the goods trade balance.",
       "when": "2026-11-12T07:00:00Z"
     },
     {
@@ -1178,5 +1199,5 @@
     }
   ],
   "geopolitics": "The de-escalation trade restarted this week, which is the reverse of what this file wrote yesterday, and it is the single fact doing the most work across the board today. Start with the record. Trump has authorised Vice President Vance to negotiate with Iran and a face-to-face meeting with Mohsen Rezaei is reportedly under consideration. The Wall Street Journal, citing Middle Eastern officials, reports Iran would allow 25 tankers to pass through the Strait of Hormuz in exchange for an easing of the blockade on its own ports. Iran's foreign minister says the offer to reopen the Strait within two days still stands, conditional on the war ending on all fronts, and Tehran still wants the blockade lifted before talks resume. An Israeli outlet reported an interim arrangement under which Washington would lift the blockade and unfreeze eight billion dollars held in Qatar while Iran ended attacks on shipping and dropped its demand to control the Strait; a Qatari official told Bloomberg that report was false and said negotiations are ongoing, and Tehran has since rejected the asset-for-reopening framing. Against all of that, Secretary Rubio has called Iran's demands outrageous and ridiculous and said the two sides are not close to a breakthrough, attacks on vessels carrying oil and gas through the Strait continue, and Europe is reported to be negotiating its own access while the United States remains blocked. So this is a restarted negotiation, not a settlement - but a restarted negotiation is enough, because the market is trading the expectation rather than the physical flow. The price confirms it. WTI is 86.075 and minus 4.91% on the week, Brent 92.440 and minus 5.95% on the week and minus 12.54% on the month, and the newest reporting pairs the diplomacy with surging OPEC+ output as the two drivers. The gas complex is more mixed than the oil complex and the detail matters for the equity read: euro-area gas is 87.00 euros and minus 4.06% on the week, UK gas 215.71 and minus 4.09%, but German gas is 88.22 and plus 2.22% on the day and plus 3.43% on the month, so the cleanest European signal has turned the other way at the margin. Five consequences follow. First, oil goes from a range back to a short, which reverses yesterday's call and restores the consistency with a weak loonie: Canada stays at minus one, a December 9 hike sits near 40%, and analysts note explicitly that a deal reopening the Strait would push oil lower and weaken that case directly. The restraint on the short is that roughly a fifth of the barrel's value has already come out this month, so there is less premium left to drain and re-escalation is the larger tail from 86 dollars. Second, it finishes the franc, and this is the cleanest call on the board. CHF goes to minus two and the bottom. The reasoning is not the oil price itself but what the central bank has already done with it: the SNB judged in October that its threat to sell francs was no longer needed because war-induced haven flows had subsided, and its own record notes little safe-haven demand since June. With the policy rate at zero, a December hike called highly unlikely, and a US 10-year at 5.00% suppressing the residual bid mechanically, a de-escalating Gulf removes the last asymmetry the currency had. Yesterday this file named an oil bounce as the one thing that would reverse the franc short; oil fell another 4.91% instead. Third, it changes what the Bank of England's guidance means, and this is where yesterday's reading has to be inverted rather than extended. Bailey justified the November hike on a material further increase in energy prices and said the rise was unlikely to be the last unless the conflict is resolved. Yesterday that condition pointed hawkish because resolution was stalling. It now points the other way, and FXStreet's read is explicit: the Bank will be comfortable holding in December if energy keeps easing and oil stays below 100 dollars, with February the next hike. Combined with the pricing correction - about 50% to 58% rather than near-70% - sterling goes from plus one to zero, GBP/AUD from a high-conviction long to a range, and GBP/NZD from a long to a short. Fourth, the metals split along the same line and one of them has to be reversed. Gold broke below 4,000 dollars to 3978.43 because a hawkish Fed into deflating energy raises real rates, which is the one combination it cannot absorb; that short is confirmed and upgraded. Silver is the reversal: yesterday's long rested on an industrial leg decoupling it from gold, and the month says the opposite, minus 12.97% against gold's minus 4.40%. Copper at minus 7.03% on the month corroborates - industrial metals are falling harder than the haven metal, which is a demand read, not a decoupling. Fifth, the dollar needs none of this. Its case is domestic, it votes on December 9, and the CPI that settled the question covered October. It remains the only currency on the board whose path does not depend on what happens in the Gulf, which is also why its edge is now narrow rather than wide: at 102.991 against ING's 102.85 to 103.00 resistance, with 25bp at 85% to 89% and 50bp at 11% to 15%, there is very little left to discover. The equity read follows the same energy leg and flips with it. Brent at minus 5.95% on the week pays the DAX's industrial and energy-input weight harder than a steepening curve pays the Euro Stoxx 50's banks, and the relative performance confirms it - the DAX is plus 0.63% today and plus 6.22% on the month against the EU50's plus 0.17% and plus 3.89%, reversing three sessions of the opposite. So GER40 goes up to medium and EU50 down to low-medium, with energy the dominating leg and German gas at plus 2.22% the one counter worth watching.",
-  "updatedAt": "2026-11-12T06:24:39.210Z"
+  "updatedAt": "2026-11-12T07:11:25.506Z"
 }
