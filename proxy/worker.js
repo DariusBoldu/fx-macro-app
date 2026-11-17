@@ -6,8 +6,10 @@
  *        GET /quotes?symbols=EUR/USD,GBP/USD
  *        GET /sparkline?symbol=EUR/USD&points=24
  *   2) PUSH SUBSCRIPTION COLLECTOR (stores devices in KV for the push sender):
- *        POST /subscribe            body = PushSubscription JSON   (public)
- *        GET  /subscriptions?key=…  -> all subs                    (admin)
+ *        POST /subscribe            body = PushSubscription JSON + {label, app}  (public)
+ *        POST /unsubscribe          body = {endpoint}  -> forget that device       (public)
+ *        POST /push/self            body = {endpoint}  -> test push to THAT device (public, 1/min)
+ *        GET  /subscriptions?key=…  -> all subs with device id, label, last seen   (admin)
  *   3) SHARED TRADE JOURNAL:  GET/POST /journal  (x-fx-auth)
  *   4) RED-FOLDER NEWS (cron — laptop not involved), ForexFactory red folders
  *      for the app's 8 currencies only:
@@ -33,7 +35,7 @@ import { sendWebPush } from './webpush.js';
 import {
   fetchRedFolder, fetchCalendar, matchGroup, buildResultNotification, buildPreAlert,
   commentaryGroups, relatedDecision, buildCommentaryPayload, COMMENTARY_STALE_H,
-  TV_URL, TV_HEADERS,
+  TV_URL, TV_HEADERS, bucharestTime,
 } from './release-match.js';
 
 const OANDA_BASE = 'https://api-fxpractice.oanda.com/v3';
@@ -56,7 +58,7 @@ const toOanda = (s) => s.replace('/', '_');
 const fromOanda = (s) => s.replace('_', '/');
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors() });
 
@@ -64,6 +66,8 @@ export default {
       if (url.pathname === '/quotes') return await quotes(url, env);
       if (url.pathname === '/sparkline') return await sparkline(url, env);
       if (url.pathname === '/subscribe' && request.method === 'POST') return await subscribe(request, env);
+      if (url.pathname === '/unsubscribe' && request.method === 'POST') return await unsubscribe(request, env);
+      if (url.pathname === '/push/self' && request.method === 'POST') return await selfTest(request, env, ctx);
       if (url.pathname === '/subscriptions') return await listSubs(url, env);
       if (url.pathname === '/journal') return await journal(request, env);
       if (url.pathname === '/results') return await getResults(env);
@@ -200,7 +204,7 @@ async function releaseResults(env, groups) {
     }
 
     await env.FX_SUBS.put(sentKey, '1', { expirationTtl: 3 * 86400 });   // mark BEFORE sending
-    await broadcast(env, buildResultNotification(g, m));
+    await broadcast(env, buildResultNotification(g, m), 3 * 3600);
     await saveResult(env, { id: g.id, when: g.when, ccy: g.ccy, lines: m.lines, at: new Date(now).toISOString() });
     await fireRoutine(env, g, m);
   }
@@ -350,6 +354,8 @@ async function probeResults(url, env) {
   try { lastFire = JSON.parse((await env.FX_SUBS.get('fire:last')) || 'null'); } catch (e) {}
   let lastPush = null;
   try { lastPush = JSON.parse((await env.FX_SUBS.get('push:last')) || 'null'); } catch (e) {}
+  let lastSelfTest = null;
+  try { lastSelfTest = JSON.parse((await env.FX_SUBS.get('selftest:last')) || 'null'); } catch (e) {}
   let lastCommentary = null;
   try { lastCommentary = JSON.parse((await env.FX_SUBS.get('comm:last')) || 'null'); } catch (e) {}
   let commentaryDue = [];
@@ -366,17 +372,23 @@ async function probeResults(url, env) {
     lastFire,                                   // last routine fire for figures: HTTP status or error
     lastCommentary,                             // last "what was said" fire
     lastPush,                                   // Apple's reply per device on the last Worker push
+    lastSelfTest,                               // the last "Send test" tapped in the app
     commentaryDue,                              // upcoming commentary passes this week
   });
 }
 
 /* Send a payload to every subscriber; prune expired subscriptions. */
-async function broadcast(env, payload) {
-  const list = await env.FX_SUBS.list({ prefix: 'sub:' });
-  const cfg = {
+function pushCfg(env, ttl) {
+  return {
     vapidPublicKey: env.VAPID_PUBLIC, vapidPrivateKey: env.VAPID_PRIVATE,
-    subject: env.VAPID_SUBJECT || 'mailto:admin@example.com', ttl: 1800
+    subject: env.VAPID_SUBJECT || 'mailto:admin@example.com', ttl,
   };
+}
+/* ttl = how long Apple keeps trying a phone that is asleep or offline: 30 min
+ * for warnings (stale after the release), 3 h for released figures. */
+async function broadcast(env, payload, ttl = 1800) {
+  const list = await env.FX_SUBS.list({ prefix: 'sub:' });
+  const cfg = pushCfg(env, ttl);
   const body = JSON.stringify(payload);
   // Record Apple's answer for every device. Until 2026-11-10 these were thrown
   // away, so a Worker push that Apple rejected (pre-alerts, release figures) was
@@ -482,13 +494,79 @@ async function sparkline(url, env) {
   return json({ closes });
 }
 
+/* Device registry. Since v33 (2026-11-17) the app re-posts its subscription
+ * every time it opens, so `lastSeen` tells a live device from a dead one: Apple
+ * keeps answering 201 for a subscription iOS has silently dropped on the phone,
+ * which made a phone that had stopped receiving look healthy from here.
+ * Only real push services are accepted, so the Worker can't be pointed at an
+ * arbitrary URL. */
+const PUSH_HOSTS = /^https:\/\/(web\.push\.apple\.com|fcm\.googleapis\.com|[a-z0-9.-]+\.push\.services\.mozilla\.com|[a-z0-9.-]+\.notify\.windows\.com)\//;
+const subKey = async (endpoint) => 'sub:' + await hash(endpoint);
+async function readEndpoint(request) {
+  const b = await request.json().catch(() => null);
+  return b && typeof b.endpoint === 'string' && PUSH_HOSTS.test(b.endpoint) ? b : null;
+}
+
 async function subscribe(request, env) {
-  const sub = await request.json();
-  if (!sub || !sub.endpoint) return json({ error: 'invalid subscription' }, 400);
+  const b = await readEndpoint(request);
+  if (!b || !b.keys || !b.keys.p256dh || !b.keys.auth) return json({ error: 'invalid subscription' }, 400);
   // key by endpoint hash so re-subscribes overwrite
-  const id = await hash(sub.endpoint);
-  await env.FX_SUBS.put('sub:' + id, JSON.stringify(sub));
+  const key = await subKey(b.endpoint);
+  const prev = JSON.parse((await env.FX_SUBS.get(key)) || 'null');
+  const now = new Date().toISOString();
+  const rec = {
+    endpoint: b.endpoint,
+    keys: { p256dh: String(b.keys.p256dh), auth: String(b.keys.auth) },
+    label: String(b.label || (prev && prev.label) || '').slice(0, 20),
+    app: String(b.app || (prev && prev.app) || '').slice(0, 10),
+    firstSeen: (prev && prev.firstSeen) || now,
+    lastSeen: now,
+  };
+  await env.FX_SUBS.put(key, JSON.stringify(rec));
+  return json({ ok: true, device: key.slice(-6), known: !!prev });
+}
+
+async function unsubscribe(request, env) {
+  const b = await readEndpoint(request);
+  if (!b) return json({ error: 'invalid endpoint' }, 400);
+  await env.FX_SUBS.delete(await subKey(b.endpoint));
   return json({ ok: true });
+}
+
+/* "Send a test to this device" from the app. Only reaches an endpoint that is
+ * already registered, at most once a minute per device. `delay` (0-10 s) gives
+ * the user time to leave the app so the banner shows as it would for a real
+ * alert; waitUntil keeps the send alive if iOS suspends the page meanwhile.
+ * The outcome is kept in KV (selftest:last) so a failed check can be read later. */
+async function selfTest(request, env, ctx) {
+  const b = await readEndpoint(request);
+  if (!b) return json({ error: 'invalid endpoint' }, 400);
+  const key = await subKey(b.endpoint);
+  const v = await env.FX_SUBS.get(key);
+  if (!v) return json({ registered: false });
+  if (await env.FX_SUBS.get('selftest:' + key)) return json({ registered: true, error: 'wait a minute between tests' }, 429);
+  await env.FX_SUBS.put('selftest:' + key, '1', { expirationTtl: 60 });
+  const sub = JSON.parse(v);
+  const delayMs = Math.min(Math.max(Number(b.delay) || 0, 0), 10) * 1000;
+  const send = new Promise((r) => setTimeout(r, delayMs)).then(async () => {
+    let status;
+    try {
+      status = await sendWebPush(sub, JSON.stringify({
+        title: '🔔 FX Macro — test for this device',
+        body: 'Alerts reach this ' + (sub.label || 'device') + '. Sent at ' + bucharestTime(Date.now()) + '.',
+        url: './', tag: 'self-test-' + Date.now(),
+      }), pushCfg(env, 600));
+    } catch (e) { status = 'error: ' + String((e && e.message) || e).slice(0, 120); }
+    if (status === 404 || status === 410) await env.FX_SUBS.delete(key);
+    await env.FX_SUBS.put('selftest:last', JSON.stringify({
+      at: new Date().toISOString(), device: key.slice(-6), label: sub.label || '', status,
+    }), { expirationTtl: 30 * 86400 }).catch(() => {});
+    return status;
+  });
+  if (ctx && ctx.waitUntil) ctx.waitUntil(send.catch(() => {}));
+  const status = await send;
+  if (status === 404 || status === 410) return json({ registered: false, status });
+  return json({ registered: true, status, device: key.slice(-6) });
 }
 
 async function listSubs(url, env) {
@@ -497,7 +575,7 @@ async function listSubs(url, env) {
   const subs = [];
   for (const k of list.keys) {
     const v = await env.FX_SUBS.get(k.name);
-    if (v) subs.push(JSON.parse(v));
+    if (v) subs.push(Object.assign({ device: k.name.slice(-6) }, JSON.parse(v)));
   }
   return json({ subscriptions: subs });
 }

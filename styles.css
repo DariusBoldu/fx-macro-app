@@ -527,3 +527,8 @@ nav.tabbar{
 .crl b{color:var(--txt);font-weight:800}
 .crl .crx{color:var(--dim)}
 .crl .cmp{font-size:10.5px;font-weight:700;color:var(--mut);margin-left:3px;white-space:nowrap}
+/* Alerts panel (v33): per-device test + re-register */
+.pushpanel .pushline{font-size:14px;font-weight:700;color:var(--txt)}
+.pushbtns{display:flex;gap:8px;margin-top:10px}
+.pushbtns .btn{flex:1}
+.pushmsg{margin:9px 0 0!important}

@@ -882,33 +882,165 @@
     for (var i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
     return arr;
   }
-  function setupPush() {
-    var p = CFG.push || {};
-    if (!p.enabled || !p.subscribeUrl || !('serviceWorker' in navigator) || !('PushManager' in window)) return;
-    // elegant auto-hide: once alerts are enabled on this device, show nothing
-    if (localStorage.getItem('fx_push_on') === '1' ||
-        ('Notification' in window && Notification.permission === 'granted')) return;
+  /* Darius's and his brother's iPhones stopped showing alerts (2026-10-06 and
+   * 2026-11-17) while the Mac kept getting them and Apple answered 201 for every
+   * device. iOS can drop a Home Screen app's push subscription without telling
+   * anyone, and the app used to subscribe once and never look again. Now, on
+   * every open:
+   *   granted + subscription present -> re-post it (lastSeen; registers a rotated endpoint)
+   *   granted + subscription gone    -> resubscribe; if iOS wants a tap, "Alerts stopped" panel
+   *   default / denied               -> the enable panel / how to unblock
+   * and the Alerts panel at the bottom of Today can send a test to THIS device
+   * or re-register it, so a phone can be checked end to end in one tap. */
+  var pushReg = null, pushSub = null;
+  var PUSH_SYNC_MS = 3600 * 1000;
+  function deviceLabel() {
+    var ua = navigator.userAgent || '';
+    if (/iPhone/.test(ua)) return 'iPhone';
+    if (/iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return 'iPad';
+    if (/Macintosh/.test(ua)) return 'Mac';
+    if (/Android/.test(ua)) return 'Android';
+    if (/Windows/.test(ua)) return 'PC';
+    return 'device';
+  }
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function pushBase() { return String((CFG.push || {}).subscribeUrl || '').replace(/\/subscribe\/?$/, ''); }
+  function postJSON(path, obj) {
+    return fetch(pushBase() + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(obj) })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) { j.httpStatus = r.status; return j; });
+      });
+  }
+  function postSub(sub) {
+    var o = JSON.parse(JSON.stringify(sub));
+    o.label = deviceLabel(); o.app = APP_VERSION;
+    return postJSON('/subscribe', o).then(function (j) {
+      if (!j.ok) throw new Error('the server said HTTP ' + j.httpStatus);
+      var prevEp = lsGet('fx_push_ep');
+      if (prevEp && prevEp !== sub.endpoint) postJSON('/unsubscribe', { endpoint: prevEp });   // iOS rotated it
+      lsSet('fx_push_on', '1'); lsSet('fx_push_ep', sub.endpoint); lsSet('fx_push_sync', String(Date.now()));
+      return j;
+    });
+  }
+  function freshSub() {
+    return pushReg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlB64ToUint8(CFG.push.vapidPublicKey) });
+  }
+  function setPushMsg(t) { var m = $('pushMsg'); if (m) m.textContent = t; }
+
+  // 'on' -> compact panel at the bottom of Today; anything else -> a panel up top.
+  function showPushState(state, msg) {
+    $('alertRow').innerHTML = '';
+    var bottom = $('pushPanel'); if (bottom) bottom.innerHTML = '';
+    var dev = deviceLabel();
+    if (state === 'on') {
+      if (!bottom) return;
+      bottom.innerHTML = '<div class="panel pushpanel"><h2>Alerts</h2>' +
+        '<div class="pushline">🔔 On for this ' + esc(dev) + '</div>' +
+        '<div class="pushbtns"><button class="btn" id="pushTest">Send test</button>' +
+        '<button class="btn ghost" id="pushRereg">Re-register</button></div>' +
+        '<div class="legend pushmsg" id="pushMsg">' + esc(msg || 'Not getting alerts? Tap Send test, then lock the phone — the test arrives about 5 seconds later.') + '</div></div>';
+      $('pushTest').addEventListener('click', function () { sendTest(''); });
+      $('pushRereg').addEventListener('click', reRegister);
+      return;
+    }
     var bar = document.createElement('div');
     bar.className = 'panel';
-    bar.innerHTML = '<h2>Alerts</h2><button class="btn" id="pushBtn">Enable push alerts</button>' +
-      '<div class="legend" style="margin-top:8px">Get a notification when a new report publishes or a high-impact event fires.</div>';
+    if (state === 'denied') {
+      bar.innerHTML = '<h2>Alerts are blocked</h2><div class="legend" style="margin:0">Notifications for FX Macro are switched off on this ' + esc(dev) +
+        '. On iPhone: Settings → Notifications → FX Macro → Allow Notifications, then reopen the app.</div>';
+    } else {
+      var lost = state === 'lost';
+      bar.innerHTML = '<h2>' + (lost ? '⚠ Alerts stopped on this ' + esc(dev) : 'Alerts') + '</h2>' +
+        '<button class="btn" id="pushBtn">' + (lost ? 'Turn alerts back on' : 'Enable push alerts') + '</button>' +
+        '<div class="legend" id="pushMsg" style="margin-top:8px">' +
+        (lost ? 'This ' + esc(dev) + ' dropped its alert registration, so warnings and release figures can\'t reach it. One tap fixes it.'
+              : 'Get a notification when a new report publishes or a high-impact event fires.') + '</div>';
+    }
     $('alertRow').appendChild(bar);
-    $('pushBtn').addEventListener('click', function () {
-      Notification.requestPermission().then(function (perm) {
-        if (perm !== 'granted') return;
-        navigator.serviceWorker.ready.then(function (reg) {
-          return reg.pushManager.subscribe({
-            userVisibleOnly: true,
-            applicationServerKey: urlB64ToUint8(p.vapidPublicKey)
-          });
-        }).then(function (sub) {
-          return fetch(p.subscribeUrl, {
-            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(sub)
-          });
-        }).then(function () { localStorage.setItem('fx_push_on', '1'); $('pushBtn').textContent = 'Alerts enabled ✓'; $('pushBtn').disabled = true; setTimeout(function(){ $('alertRow').innerHTML=''; }, 1500); })
-          .catch(function (e) { console.warn('push subscribe failed', e); });
-      });
+    if ($('pushBtn')) $('pushBtn').addEventListener('click', function () { enablePush($('pushBtn')); });
+  }
+
+  function enablePush(btn) {
+    btn.disabled = true; btn.textContent = 'Turning on…';
+    Notification.requestPermission().then(function (perm) {
+      if (perm !== 'granted') { showPushState(perm === 'denied' ? 'denied' : 'off'); return; }
+      return (pushReg ? Promise.resolve(pushReg) : navigator.serviceWorker.ready).then(function (reg) {
+        pushReg = reg;
+        return reg.pushManager.getSubscription().then(function (s) { return s || freshSub(); });
+      }).then(function (s) { pushSub = s; return postSub(s); })
+        .then(function () { showPushState('on', 'Alerts are on ✓ Tap Send test to check this device.'); });
+    }).catch(function (e) {
+      btn.disabled = false; btn.textContent = 'Try again';
+      setPushMsg('Could not turn alerts on: ' + (e && e.message || e));
     });
+  }
+
+  function sendTest(prefix, retried) {
+    if (!pushSub) { setPushMsg('This device has no registration — tap Re-register.'); return Promise.resolve(); }
+    var btn = $('pushTest'); if (btn) btn.disabled = true;
+    setPushMsg((prefix || '') + 'Sending in 5 seconds — lock the phone or go to the Home Screen now…');
+    return postJSON('/push/self', { endpoint: pushSub.endpoint, delay: 5 }).then(function (j) {
+      if (j.registered === false && !retried) {
+        if (j.status) { setPushMsg('Apple says this device\'s registration has expired (' + j.status + '). Tap Re-register.'); return; }
+        return postSub(pushSub).then(function () { return sendTest('Registered this device. ', true); });
+      }
+      if (j.registered === false) { setPushMsg('This device could not be registered — tap Re-register.'); return; }
+      if (j.httpStatus === 429) { setPushMsg('One test a minute — try again shortly.'); return; }
+      if (j.status === 201 || j.status === 200) {
+        setPushMsg((prefix || '') + 'Apple accepted the test at ' + bucClock.format(Date.now()) + '. Didn\'t see it? Tap Re-register and test again; ' +
+          'if it still doesn\'t show, check Settings → Notifications → FX Macro and any Focus mode.');
+      } else {
+        setPushMsg('Test failed (' + (j.status || j.error || ('HTTP ' + j.httpStatus)) + '). Tap Re-register.');
+      }
+    }).catch(function () {
+      setPushMsg('Test sent — the reply was lost while the app was in the background. Did the notification arrive?');
+    }).then(function () { if (btn) btn.disabled = false; });
+  }
+
+  function reRegister() {
+    var old = pushSub, btn = $('pushRereg');
+    if (btn) btn.disabled = true;
+    setPushMsg('Re-registering…');
+    (old ? old.unsubscribe().catch(function () {}) : Promise.resolve())
+      .then(freshSub)
+      .then(function (s) {
+        pushSub = s;
+        return postSub(s).then(function () {
+          if (old && old.endpoint !== s.endpoint) postJSON('/unsubscribe', { endpoint: old.endpoint });
+        });
+      })
+      .then(function () { if (btn) btn.disabled = false; return sendTest('Re-registered ✓ '); })
+      .catch(function (e) {
+        if (btn) btn.disabled = false;
+        pushReg.pushManager.getSubscription().then(function (s) { pushSub = s; if (!s) showPushState('lost'); });
+        setPushMsg('Re-register failed (' + (e && e.message || e) + '). Remove FX Macro from the Home Screen, add it again from Safari, and enable alerts.');
+      });
+  }
+
+  function setupPush() {
+    var p = CFG.push || {};
+    if (!p.enabled || !p.subscribeUrl || !('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) return;
+    navigator.serviceWorker.ready.then(function (reg) {
+      pushReg = reg;
+      var perm = Notification.permission;
+      if (perm === 'denied') { showPushState('denied'); return; }
+      if (perm !== 'granted') { showPushState(lsGet('fx_push_on') === '1' ? 'lost' : 'off'); return; }
+      return reg.pushManager.getSubscription().then(function (sub) {
+        if (sub) {
+          pushSub = sub;
+          showPushState('on');
+          if (Date.now() - Number(lsGet('fx_push_sync') || 0) > PUSH_SYNC_MS || lsGet('fx_push_ep') !== sub.endpoint) {
+            return postSub(sub).catch(function (e) { console.warn('[push] sync failed', e); });
+          }
+          return;
+        }
+        // Permission is still granted but the subscription is gone: iOS dropped it.
+        return freshSub().then(function (s) { pushSub = s; return postSub(s); })
+          .then(function () { showPushState('on', 'Alerts were reconnected on this device ✓ Tap Send test to check.'); })
+          .catch(function (e) { console.warn('[push] resubscribe needs a tap', e); showPushState('lost'); });
+      });
+    }).catch(function (e) { console.warn('[push] setup failed', e); });
   }
 
   /* ============================ Size calculator ============================ */
@@ -1500,7 +1632,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v32';
+  var APP_VERSION = 'v33';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
