@@ -18,7 +18,13 @@
  *        GET /results               -> recent released figures     (public)
  *        GET /results/probe?key=…   -> FF + TradingView reachable, last cron tick (admin)
  *      and after each release, fire the cloud analyst routine's API trigger:
- *        POST /routine/test?key=…   -> fire it with a TRIGGER TEST payload (admin)
+ *        POST /routine/test?key=…   -> fire it with a TRIGGER TEST / EGRESS CHECK /
+ *                                      US30 DRY RUN payload (admin; nothing is published)
+ *   5) US30 (Dow futures) TRACKER for the analyst (see ./us30.js):
+ *        GET /us30                  -> YM snapshot, Asia/London/NY ranges, scorecard
+ *        GET /us30?live=0           -> same without the live snapshot (the app)
+ *      and, when US30_FIRE = "on", fire the routine 40 min before the NY cash
+ *      open with a US30 NY UPDATE payload.
  *
  * Deploy (free):
  *   npm i -g wrangler && wrangler login
@@ -37,6 +43,10 @@ import {
   commentaryGroups, relatedDecision, buildCommentaryPayload, COMMENTARY_STALE_H,
   TV_URL, TV_HEADERS, bucharestTime,
 } from './release-match.js';
+import {
+  fetchYM, tradeDate, isTradingDay, prevTradingDay, sessionTimes, phaseAt, applySample,
+  summarizeScores, levelsText, bucClock, NY_FIRE_LEAD_MIN,
+} from './us30.js';
 
 const OANDA_BASE = 'https://api-fxpractice.oanda.com/v3';
 
@@ -73,6 +83,7 @@ export default {
       if (url.pathname === '/results') return await getResults(env);
       if (url.pathname === '/results/probe') return await probeResults(url, env);
       if (url.pathname === '/routine/test' && request.method === 'POST') return await testRoutine(url, env);
+      if (url.pathname === '/us30') return await getUs30(url, env);
       if (url.pathname === '/push/test' && request.method === 'POST') {
         if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
         const results = await broadcast(env, {
@@ -118,6 +129,12 @@ async function cronTick(env, scheduledTime) {
   }
   const doAlerts = minute % 5 === 0;
   const doResults = minute % 2 === 0;
+  // US30 sampling shares the even-minute cadence (same KV-propagation reason).
+  if (doResults) {
+    try { await us30Job(env, scheduledTime || Date.now()); } catch (e) {
+      try { await env.FX_SUBS.put('us30:err', JSON.stringify({ at: new Date().toISOString(), error: String((e && e.message) || e).slice(0, 200) }), { expirationTtl: 7 * 86400 }); } catch (e2) {}
+    }
+  }
   if (!doAlerts && !doResults) return;
 
   const groups = await redFolder(env);
@@ -308,7 +325,7 @@ async function testRoutine(url, env) {
   // `text` sends another read-only payload the prompt understands (EGRESS CHECK,
   // which reports what the sandbox can reach). Capped, and admin-gated above.
   const text = (url.searchParams.get('text') || '').slice(0, 2000) || ('TRIGGER TEST ' + new Date().toISOString());
-  if (!/^(TRIGGER TEST|EGRESS CHECK)\b/.test(text)) return json({ error: 'text must start with TRIGGER TEST or EGRESS CHECK' }, 400);
+  if (!/^(TRIGGER TEST|EGRESS CHECK|US30 DRY RUN)\b/.test(text)) return json({ error: 'text must start with TRIGGER TEST, EGRESS CHECK or US30 DRY RUN' }, 400);
   const res = await postRoutineFire(env, text);
   return json(res, res.status < 300 ? 200 : 502);
 }
@@ -358,6 +375,14 @@ async function probeResults(url, env) {
   try { lastSelfTest = JSON.parse((await env.FX_SUBS.get('selftest:last')) || 'null'); } catch (e) {}
   let lastCommentary = null;
   try { lastCommentary = JSON.parse((await env.FX_SUBS.get('comm:last')) || 'null'); } catch (e) {}
+  let us30 = null;
+  try {
+    us30 = {
+      lastError: JSON.parse((await env.FX_SUBS.get('us30:err')) || 'null'),
+      lastFire: JSON.parse((await env.FX_SUBS.get('us30fire:last')) || 'null'),
+      fireEnabled: env.US30_FIRE === 'on',
+    };
+  } catch (e) {}
   let commentaryDue = [];
   try {
     const groups = await redFolder(env);
@@ -374,6 +399,7 @@ async function probeResults(url, env) {
     lastPush,                                   // Apple's reply per device on the last Worker push
     lastSelfTest,                               // the last "Send test" tapped in the app
     commentaryDue,                              // upcoming commentary passes this week
+    us30,                                       // US30 tracker: last error, last NY-update fire
   });
 }
 
@@ -410,6 +436,106 @@ async function broadcast(env, payload, ttl = 1800) {
     }), { expirationTtl: 14 * 86400 });
   } catch (e) { /* monitoring must never block a send */ }
   return results;
+}
+
+/* ============================== US30 tracker ==============================
+ * Samples YM every 2 minutes from London open to 15 min after the NY cash
+ * close (data time; the feed is ~10 min delayed), keeps one record per CME day,
+ * scores the analyst's London and NY calls, and fires the NY update. KV writes
+ * happen only when a window opens/closes or makes a new high/low. */
+const US30_REC = (d) => 'us30:d:' + d;
+const US30_SCORES = 'us30:scores';
+const APP_DATA_URL = 'https://raw.githubusercontent.com/DariusBoldu/fx-macro-app/main/data.json';
+
+async function us30Job(env, now) {
+  const td = tradeDate(now);
+  if (!isTradingDay(td)) return;
+  const t = sessionTimes(td);
+  await us30Fire(env, td, t, now);
+  const approxData = now - 10 * 60000;
+  if (approxData < t.lonOpen - 2 * 60000 || approxData > t.nyClose + 15 * 60000) return;
+  let rec = null;
+  try { rec = JSON.parse((await env.FX_SUBS.get(US30_REC(td))) || 'null'); } catch (e) {}
+  rec = rec || { date: td };
+  if (rec.ny && rec.ny.c != null) return;                    // day complete
+  const snap = await fetchYM();
+  const dataMs = Date.parse(snap.fetchedAt) - snap.delayMin * 60000;
+  const phase = phaseAt(td, dataMs);
+  let calls = { london: null, ny: null };
+  if ((phase === 'london' && !rec.lon) || (phase === 'ny' && !rec.ny)) calls = await readCalls(td);
+  const { changed, scores } = applySample(rec, snap, dataMs, (s) => calls[s]);
+  if (changed) await env.FX_SUBS.put(US30_REC(td), JSON.stringify(rec), { expirationTtl: 30 * 86400 });
+  if (scores.length) {
+    let list = [];
+    try { list = JSON.parse((await env.FX_SUBS.get(US30_SCORES)) || '[]'); } catch (e) {}
+    list = scores.concat(list.filter((x) => !scores.some((s) => s.date === x.date && s.s === x.s))).slice(0, 80);
+    await env.FX_SUBS.put(US30_SCORES, JSON.stringify(list));
+  }
+}
+
+/* The analyst's call for each session, as published in the app's data.json. */
+async function readCalls(td) {
+  const none = { london: null, ny: null };
+  try {
+    const r = await fetch(APP_DATA_URL + '?t=' + Date.now());
+    if (!r.ok) return none;
+    const u = (await r.json()).us30;
+    if (!u || u.date !== td) return none;
+    const s = u.sessions || {};
+    const c = (x) => (x && /^(BULLISH|BEARISH|RANGE)$/.test(x.lean)
+      ? { bias: x.lean, conviction: x.conviction || u.conviction || null } : null);
+    return { london: c(s.london), ny: c(s.ny) };
+  } catch (e) { return none; }
+}
+
+/* NY update: start the analyst routine 40 min before the cash open with the
+ * YM levels in the payload. Gated by US30_FIRE = "on" (wrangler.toml [vars]). */
+async function us30Fire(env, td, t, now) {
+  if (env.US30_FIRE !== 'on' || !env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return;
+  const fireAt = t.nyOpen - NY_FIRE_LEAD_MIN * 60000;
+  if (now < fireAt || now > fireAt + 10 * 60000) return;
+  const key = 'us30fire:' + td;
+  if (await env.FX_SUBS.get(key)) return;
+  await env.FX_SUBS.put(key, '1', { expirationTtl: 3 * 86400 });   // mark BEFORE firing
+  let snap = null, rec = null;
+  try { snap = await fetchYM(); } catch (e) {}
+  try { rec = JSON.parse((await env.FX_SUBS.get(US30_REC(td))) || 'null'); } catch (e) {}
+  const text = [
+    `US30 NY UPDATE ${td}`,
+    `NY cash open: ${new Date(t.nyOpen).toISOString()} (${bucClock(t.nyOpen)} Bucharest)`,
+    snap ? levelsText(snap, rec) : 'YM snapshot unavailable from the Worker; work from news and GET /us30.',
+  ].join('\n');
+  let outcome;
+  try {
+    const res = await postRoutineFire(env, text);
+    outcome = { date: td, status: res.status, at: new Date().toISOString() };
+    if (res.status >= 300) outcome.detail = res.body.slice(0, 200);
+  } catch (e) {
+    outcome = { date: td, error: String((e && e.message) || e), at: new Date().toISOString() };
+  }
+  await env.FX_SUBS.put('us30fire:last', JSON.stringify(outcome), { expirationTtl: 14 * 86400 });
+}
+
+async function getUs30(url, env) {
+  const now = Date.now(), td = tradeDate(now), t = sessionTimes(td);
+  const wantLive = url.searchParams.get('live') !== '0';
+  let live = null, liveError = null;
+  if (wantLive) { try { live = await fetchYM(); } catch (e) { liveError = String((e && e.message) || e); } }
+  const read = async (d) => { try { return d ? JSON.parse((await env.FX_SUBS.get(US30_REC(d))) || 'null') : null; } catch (e) { return null; } };
+  const today = await read(td), prev = await read(prevTradingDay(td));
+  let scores = [];
+  try { scores = JSON.parse((await env.FX_SUBS.get(US30_SCORES)) || '[]'); } catch (e) {}
+  const iso = (ms) => new Date(ms).toISOString();
+  return new Response(JSON.stringify({
+    tradeDate: td, tradingDay: isTradingDay(td), phase: phaseAt(td, now),
+    sessions: {
+      londonOpen: iso(t.lonOpen), nyOpen: iso(t.nyOpen), nyClose: iso(t.nyClose),
+      bucharest: { london: bucClock(t.lonOpen), ny: bucClock(t.nyOpen), close: bucClock(t.nyClose) },
+    },
+    live, liveError, today, prev,
+    scores: { summary: summarizeScores(scores), recent: scores.slice(0, 20) },
+    text: live ? levelsText(live, today) : null,
+  }), { headers: cors({ 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' }) });
 }
 
 /* ============================ Shared trade journal ============================

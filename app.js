@@ -112,6 +112,7 @@
     for (var k = 0; k < tabs.length; k++) tabs[k].classList.toggle('active', tabs[k].dataset.v === v);
     window.scrollTo(0, 0);
     if (v === 'trades') { computeSize(); renderTrades(); }
+    if (v === 'us30') { loadUs30Track(); if (DATA) renderUs30(DATA); }
   }
   document.querySelectorAll('.tabbtn').forEach(function (b) {
     b.addEventListener('click', function () { showView(b.dataset.v); });
@@ -152,7 +153,7 @@
     var rd = Date.parse(((D.meta && D.meta.reportDate) || '') + 'T12:00:00Z');
     bucRef = isNaN(rd) ? Date.now() : rd;
     renderMeta(D); renderToday(D); renderMacro(D); renderSignals(D.symbols);
-    renderRates(D); renderCalendar(D);
+    renderRates(D); renderCalendar(D); renderUs30(D);
     renderBookBanner(); renderTrades();
   }
 
@@ -770,6 +771,197 @@
   }
   // keep the countdown and the released figures current while the app is open
   setInterval(function () { if (!document.hidden && DATA) renderBigEvent(DATA); }, 60000);
+
+  /* ============ US30 intraday bias (Dow futures YM/MYM; Darius, 2026-11-18) ============
+   * D.us30 is written by the cloud analyst: at 08:00 (stage "london": London plan
+   * plus a first NY lean) and ~40 min before the NY cash open (stage "ny"). The
+   * track record comes from the Worker (/us30?live=0), which scores each session
+   * from YM itself — the analyst never grades its own calls. */
+  var U3_TV = 'https://www.tradingview.com/chart/?symbol=CBOT_MINI%3AYM1%21';
+  var U3_CHIP = { BULLISH: 'LONG', BEARISH: 'SHORT', RANGE: 'RANGE' };
+  var U3_WORD = { BULLISH: 'Bullish', BEARISH: 'Bearish', RANGE: 'Range' };
+  var U3_DAY = { trend: ['📈', 'Trend day'], range: ['↔️', 'Range day'], news: ['📰', 'News-driven day'] };
+  var U3_CONV = { high: 3, medium: 2, med: 2, low: 1 };
+  var u3Track = null, u3TrackAt = 0;
+  // NYSE full-day closures (mirror of proxy/us30.js): no cash session, no bias.
+  var US_HOLIDAYS = ['2026-01-01', '2026-01-19', '2026-02-16', '2026-04-03', '2026-05-25', '2026-06-19',
+    '2026-07-03', '2026-09-07', '2026-11-26', '2026-12-25', '2027-01-01', '2027-01-18', '2027-02-15',
+    '2027-03-26', '2027-05-31', '2027-06-18', '2027-07-05', '2027-09-06', '2027-11-25', '2027-12-24'];
+  function usTradingDay(date) {
+    var wd = new Date(date + 'T12:00:00Z').getUTCDay();
+    return wd >= 1 && wd <= 5 && US_HOLIDAYS.indexOf(date) < 0;
+  }
+  function nextUsTradingDay(date) {
+    var t = Date.parse(date + 'T12:00:00Z');
+    for (var i = 0; i < 10; i++) { t += 86400000; var d = new Date(t).toISOString().slice(0, 10); if (usTradingDay(d)) return d; }
+    return null;
+  }
+  var tzFmt = {};
+  function tzMin(ms, tz) {                       // {date, min} of a UTC instant in a zone
+    var f = tzFmt[tz] || (tzFmt[tz] = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }));
+    var p = {};
+    f.formatToParts(new Date(ms)).forEach(function (x) { p[x.type] = x.value; });
+    return { date: p.year + '-' + p.month + '-' + p.day, min: (+p.hour) * 60 + (+p.minute) };
+  }
+  function zonedMs(date, min, tz) {              // wall-clock time in a zone -> UTC ms
+    var a = date.split('-').map(Number), want = Date.UTC(a[0], a[1] - 1, a[2], Math.floor(min / 60), min % 60), t = want;
+    for (var i = 0; i < 2; i++) {
+      var p = tzMin(t, tz), b = p.date.split('-').map(Number);
+      t += want - Date.UTC(b[0], b[1] - 1, b[2], Math.floor(p.min / 60), p.min % 60);
+    }
+    return t;
+  }
+  // London 08:00 London -> NY cash open 09:30 New York -> cash close 16:00 New York
+  function u3Times(date) {
+    return { lon: zonedMs(date, 480, 'Europe/London'), ny: zonedMs(date, 570, 'America/New_York'),
+      close: zonedMs(date, 960, 'America/New_York') };
+  }
+  function loadUs30Track() {
+    if (!CFG.workerUrl || Date.now() - u3TrackAt < 5 * 60000) return;
+    u3TrackAt = Date.now();
+    fetch(CFG.workerUrl.replace(/\/$/, '') + '/us30?live=0', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j) { u3Track = j; if (DATA) renderUs30(DATA); } })
+      .catch(function () { /* Worker unreachable: the bias still shows */ });
+  }
+  function u3Dots(conv) {
+    var n = U3_CONV[String(conv || '').toLowerCase()] || 0;
+    return '<span class="u3dots" title="' + esc(conv || '') + ' conviction">' +
+      [1, 2, 3].map(function (i) { return '<i' + (i <= n ? ' class="on"' : '') + '></i>'; }).join('') + '</span>';
+  }
+  function u3Num(v) { return v == null || v === '' ? '—' : Number(v).toLocaleString('en-US'); }
+  function u3Result(sc) {
+    if (!sc) return '';
+    var lab = sc.r === 'hit' ? '✓ Right' : sc.r === 'miss' ? '✗ Wrong' : '– Flat';
+    return '<span class="u3res ' + sc.r + '">' + lab + ' · ' + (sc.move > 0 ? '+' : '') + u3Num(sc.move) + ' pts</span>';
+  }
+  function u3SessionCard(key, s, from, to, now, U) {
+    var flag = key === 'london' ? '🇬🇧 London' : '🇺🇸 New York';
+    var state, cls = '';
+    if (now < from) state = 'starts ' + countdownTxt(from, now);
+    else if (now < to) { state = 'live now'; cls = ' live'; }
+    else { state = 'done'; cls = ' done'; }
+    var rec = u3Track && u3Track.today && u3Track.today.date === U.date ? u3Track.today[key === 'london' ? 'lon' : 'ny'] : null;
+    var lean = (s && s.lean) || 'RANGE';
+    var html = '<div class="u3s ' + (U3_CHIP[lean] || 'RANGE') + cls + '">' +
+      '<div class="u3sh"><span class="u3sn">' + flag + '</span><span class="u3st">' + bucClock.format(from) + '–' + bucClock.format(to) + '</span>' +
+      '<span class="u3state' + cls + '">' + esc(state) + '</span></div>';
+    if (!s) return html + '<div class="u3plan dim">No call for this session yet.</div></div>';
+    html += '<div class="u3lean"><span class="chip ' + (U3_CHIP[lean] || 'RANGE') + '">' + esc(lean) + '</span>' + u3Dots(s.conviction) +
+      (key === 'ny' && U.stage !== 'ny' ? '<span class="u3first">First look · final call ~' + bucClock.format(from - 40 * 60000) + '</span>' : '') +
+      (rec && rec.score ? u3Result(rec.score) : '') + '</div>';
+    if (s.plan) html += '<div class="u3plan">' + esc(s.plan) + '</div>';
+    if (s.invalid) html += '<div class="u3inv"><span>Wrong if</span>' + esc(s.invalid) + '</div>';
+    return html + '</div>';
+  }
+  function u3Levels(U) {
+    var lv = (U.levels || []).filter(function (l) { return l && l.name && isFinite(Number(l.v)); }).slice(0, 8);
+    if (!lv.length) return '';
+    lv.sort(function (a, b) { return Number(b.v) - Number(a.v); });
+    var ref = U.ref && isFinite(Number(U.ref.price)) ? Number(U.ref.price) : null, placed = ref == null;
+    var rows = '';
+    lv.forEach(function (l) {
+      if (!placed && Number(l.v) < ref) {
+        rows += '<div class="u3now"><span>YM ≈ ' + u3Num(Math.round(ref / 10) * 10) + '</span>' +
+          (U.ref.at ? ' at ' + bucClock.format(Date.parse(U.ref.at)) : '') + '</div>';
+        placed = true;
+      }
+      var side = ref == null ? '' : Number(l.v) >= ref ? ' above' : ' below';
+      rows += '<div class="u3lv' + side + '"><span class="u3ln">' + esc(l.name) + '</span><span class="u3lp">' + u3Num(l.v) + '</span>' +
+        '<span class="u3lnote">' + esc(l.note || '') + '</span></div>';
+    });
+    if (!placed) rows += '<div class="u3now"><span>YM ≈ ' + u3Num(Math.round(ref / 10) * 10) + '</span>' +
+      (U.ref.at ? ' at ' + bucClock.format(Date.parse(U.ref.at)) : '') + '</div>';
+    return '<div class="panel"><h2>Levels to watch <span class="sidenote">YM · approximate</span></h2>' + rows + '</div>';
+  }
+  function u3Events(D, U, now) {
+    var ev = (U.events || []).map(function (e) { return { t: Date.parse(e.when), what: e.what, kind: e.kind || 'data' }; })
+      .filter(function (e) { return e.what; });
+    if (!ev.length) {                           // fall back to today's USD catalysts
+      (D.catalysts || []).forEach(function (c) {
+        var t = c.when ? Date.parse(c.when) : NaN;
+        if (!isNaN(t) && ccyOf(c.event) === 'USD' && bucIsoDay.format(t) === bucIsoDay.format(now) && (c.impact === 'high' || c.impact === 'med'))
+          ev.push({ t: t, what: c.event, kind: c.impact === 'high' ? 'data' : 'minor' });
+      });
+    }
+    if (!ev.length) return '';
+    ev.sort(function (a, b) { return (isNaN(a.t) ? 9e15 : a.t) - (isNaN(b.t) ? 9e15 : b.t); });
+    var KIND = { data: ['high', 'Stand aside ±5 min'], fed: ['med', 'Fed'], earnings: ['low', 'Earnings'], minor: ['med', ''] };
+    return '<div class="panel"><h2>US events today <span class="sidenote">Bucharest time</span></h2>' + ev.slice(0, 8).map(function (e) {
+      var k = KIND[e.kind] || KIND.minor, past = !isNaN(e.t) && e.t < now - 5 * 60000;
+      return '<div class="u3ev' + (past ? ' past' : '') + '"><span class="u3et">' + (isNaN(e.t) ? 'Today' : bucClock.format(e.t)) + '</span>' +
+        '<span class="dot ' + k[0] + '"></span><span class="u3ew">' + esc(e.what) + '</span>' +
+        (k[1] && !past ? '<span class="u3etag ' + e.kind + '">' + k[1] + '</span>' : '') + '</div>';
+    }).join('') + '</div>';
+  }
+  function u3TrackHtml() {
+    var t = u3Track && u3Track.scores;
+    var head = '<div class="panel"><h2>Track record <span class="sidenote">last 20 sessions each</span></h2>';
+    var foot = '<div class="legend u3leg">Scored automatically from YM futures, not by the analyst: a Bullish or Bearish call is <b>right</b> when the session moved at least 10% of the daily ATR its way, <b>wrong</b> when it moved that much the other way, otherwise <b>flat</b> (not counted). London = 10:00 to the NY open, NY = cash open to close.</div></div>';
+    if (!t || !t.recent || !t.recent.length) return head + '<div class="u3empty">Scoring starts with the first sessions after launch.</div>' + foot;
+    var cell = function (k, lab) {
+      var s = t.summary[k] || {}, n = (s.hit || 0) + (s.miss || 0);
+      return '<div class="u3rc"><span class="u3rk">' + lab + '</span><b>' + (n ? Math.round(100 * s.hit / n) + '%' : '—') + '</b>' +
+        '<span class="u3rn">' + (s.hit || 0) + ' right · ' + (s.miss || 0) + ' wrong' + (s.flat ? ' · ' + s.flat + ' flat' : '') + '</span></div>';
+    };
+    var dots = t.recent.slice(0, 10).reverse().map(function (x) {
+      return '<i class="' + x.r + '" title="' + esc(x.date + ' ' + (x.s === 'lon' ? 'London' : 'NY') + ' ' + x.call + ': ' + x.r + ' (' + x.move + ' pts)') + '">' + (x.s === 'lon' ? 'L' : 'N') + '</i>';
+    }).join('');
+    return head + '<div class="u3rec">' + cell('london', '🇬🇧 London') + cell('ny', '🇺🇸 New York') + '</div>' +
+      '<div class="u3hist">' + dots + '<span>← older · newer →</span></div>' + foot;
+  }
+  function renderUs30(D) {
+    var box = $('us30');
+    if (!box || !D) return;
+    var U = D.us30, now = Date.now();
+    if (!U || !U.date) {
+      box.innerHTML = '<div class="notice">The first US30 bias arrives with the 08:00 report: a London plan, a first New York lean, levels and the day\'s US events. It is refreshed about 40 minutes before the New York open.</div>';
+      return;
+    }
+    var times = u3Times(U.date), today = bucIsoDay.format(now);
+    var dayName = function (d) { return bucDay.format(Date.parse(d + 'T12:00:00Z')); };
+    var bias = U.bias || 'RANGE', dt = U3_DAY[U.dayType] || null;
+    var stageTxt = U.stage === 'ny' ? 'NY update' : 'London plan';
+    var html = '';
+    if (U.date < today) {
+      var nx = nextUsTradingDay(U.date), msg;
+      if (!usTradingDay(today)) msg = 'US markets are closed today. Showing ' + dayName(U.date) + '\'s bias; the next one comes with the 08:00 report' + (nx ? ' on ' + dayName(nx) : '') + '.';
+      else if (tzMin(now, BUC_TZ).min < 8 * 60 + 30) msg = 'Showing ' + dayName(U.date) + '\'s bias. Today\'s arrives with the 08:00 report.';
+      else msg = 'Showing ' + dayName(U.date) + '\'s bias. Today\'s has not arrived yet.';
+      html += '<div class="u3stale">' + esc(msg) + '</div>';
+    }
+    html += '<div class="u3hero ' + (U3_CHIP[bias] || 'RANGE') + '">' +
+      '<div class="u3top"><span class="u3k">US30 · Dow futures</span><span class="nechip">' + esc(stageTxt) +
+      (U.updatedAt ? ' · ' + bucClock.format(Date.parse(U.updatedAt)) : '') + '</span></div>' +
+      '<div class="u3bias"><span class="u3big ' + (U3_CHIP[bias] || 'RANGE') + '">' + esc(U3_WORD[bias] || bias) + '</span>' +
+      (U.conviction ? '<span class="u3cv">' + u3Dots(U.conviction) + '<span>' + esc(String(U.conviction).charAt(0).toUpperCase() + String(U.conviction).slice(1).toLowerCase() + ' conviction') + '</span></span>' : '') + '</div>' +
+      (dt ? '<div class="u3type">' + dt[0] + ' ' + dt[1] + '</div>' : '') +
+      (U.headline ? '<div class="u3head">' + esc(U.headline) + '</div>' : '') +
+      '<div class="u3date">' + esc(bucDay.format(Date.parse(U.date + 'T12:00:00Z'))) + '</div></div>';
+    var S = U.sessions || {};
+    html += '<div class="u3sess">' + u3SessionCard('london', S.london, times.lon, times.ny, now, U) +
+      u3SessionCard('ny', S.ny, times.ny, times.close, now, U) + '</div>';
+    var dr = (U.drivers || []).filter(function (d) { return d && d.k; }).slice(0, 6);
+    if (dr.length) {
+      var up = dr.filter(function (d) { return d.s > 0; }).length, dn = dr.filter(function (d) { return d.s < 0; }).length;
+      html += '<div class="panel"><h2>What\'s driving it <span class="sidenote"><span class="u3up">▲ ' + up + '</span> · <span class="u3dn">▼ ' + dn + '</span></span></h2>' +
+        dr.map(function (d) {
+          var c = d.s > 0 ? 'up' : d.s < 0 ? 'dn' : 'fl';
+          return '<div class="u3dr"><span class="u3ds ' + c + '">' + (d.s > 0 ? '▲' : d.s < 0 ? '▼' : '●') + '</span>' +
+            '<span class="u3dk">' + esc(d.k) + '</span><span class="u3dv">' + esc(d.v || '') + '</span></div>';
+        }).join('') + '</div>';
+    }
+    html += u3Levels(U);
+    var sc = (U.scenarios || []).filter(function (s) { return s && s.if && s.then; }).slice(0, 3);
+    if (sc.length) html += '<div class="panel"><h2>If → then</h2><div class="nesc" style="margin-top:0">' + sc.map(function (s) {
+      return '<div class="nesr"><span class="neif">' + esc(s.if) + '</span><span class="nethen">' + esc(s.then) + '</span></div>';
+    }).join('') + '</div></div>';
+    html += u3Events(D, U, now);
+    html += u3TrackHtml();
+    html += '<a class="btn ghost u3tv" href="' + U3_TV + '" target="_blank" rel="noopener">Open YM1! on TradingView ›</a>';
+    box.innerHTML = html;
+  }
+  setInterval(function () { if (!document.hidden && DATA && current === 'us30') renderUs30(DATA); }, 60000);
 
   /* ============ Rates: policy-rate differentials (source: TradingEconomics) ============ */
   var TE_SLUG = { USD: 'united-states', EUR: 'euro-area', GBP: 'united-kingdom', JPY: 'japan',
@@ -1632,7 +1824,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v33';
+  var APP_VERSION = 'v34';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

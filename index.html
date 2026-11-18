@@ -75,6 +75,12 @@
       <div class="disclaimer">Not financial advice — for your own decision-making.</div>
     </section>
 
+    <!-- US30 intraday bias -->
+    <section class="view" id="v-us30">
+      <div id="us30"></div>
+      <div class="disclaimer">US30 = Dow futures (YM / MYM). Bias written at 08:00 for London and updated about 40 min before the New York open. Levels are approximate (10-min delayed futures) — mark them on your own chart.<br>Not financial advice — for your own decision-making.</div>
+    </section>
+
     <!-- Macro -->
     <section class="view" id="v-macro">
       <div id="macro"></div>
@@ -186,6 +192,8 @@
   <nav class="tabbar" id="tabbar">
     <button class="tabbtn active" data-v="today">
       <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>Today</button>
+    <button class="tabbtn" data-v="us30">
+      <svg viewBox="0 0 24 24"><path d="M7 3v4M7 15v6M17 3v7M17 17v4"/><rect x="4.5" y="7" width="5" height="8" rx="1"/><rect x="14.5" y="10" width="5" height="7" rx="1"/></svg>US30</button>
     <button class="tabbtn" data-v="macro">
       <svg viewBox="0 0 24 24"><path d="M3 13a9 9 0 0 1 18 0"/><path d="M12 13l4-2.5"/><circle cx="12" cy="13" r="1.3" fill="currentColor" stroke="none"/></svg>Macro</button>
     <button class="tabbtn" data-v="signals">

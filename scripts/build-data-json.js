@@ -122,6 +122,44 @@ function buildPayload(prevData) {
     if (probs.length) console.warn('WARNING: meta.nextEvent: ' + probs.join('; ') + '.');
   }
 
+  // us30 drives the US30 intraday tab (v34): written by the 08:00 report (stage
+  // london) and the NY update ~40 min before the cash open (stage ny). The Worker
+  // scores sessions.london/ny.lean, so a malformed block warns loudly. Carried
+  // forward when a run omits it (the app marks an old date as not today's).
+  let us30 = FX.us30;
+  if (!us30) {
+    us30 = prevData && prevData.us30;
+    if (us30) console.warn('WARNING: data.js has no us30 block — carried forward from the previous publish (date ' + us30.date + ').');
+  } else {
+    const p = [], LEAN = ['BULLISH', 'BEARISH', 'RANGE'], CONV = ['high', 'medium', 'low'];
+    const ISO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$/;
+    const len = (v) => String(v == null ? '' : v).length;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(us30.date || ''))) p.push('date must be YYYY-MM-DD');
+    if (!['london', 'ny'].includes(us30.stage)) p.push("stage must be 'london' or 'ny'");
+    if (!ISO.test(String(us30.updatedAt || ''))) p.push('updatedAt must be ISO 8601 UTC');
+    if (!LEAN.includes(us30.bias)) p.push('bias must be BULLISH|BEARISH|RANGE');
+    if (!CONV.includes(us30.conviction)) p.push('conviction must be high|medium|low');
+    if (!['trend', 'range', 'news'].includes(us30.dayType)) p.push('dayType must be trend|range|news');
+    if (!us30.headline || len(us30.headline) > 170) p.push('headline must be one sentence (<= 140 chars), got ' + len(us30.headline));
+    const S = us30.sessions || {};
+    ['london', 'ny'].forEach((k) => {
+      const x = S[k];
+      if (!x) { p.push('sessions.' + k + ' is missing'); return; }
+      if (!LEAN.includes(x.lean)) p.push('sessions.' + k + '.lean must be BULLISH|BEARISH|RANGE (the Worker scores it)');
+      if (x.conviction && !CONV.includes(x.conviction)) p.push('sessions.' + k + '.conviction must be high|medium|low');
+      if (len(x.plan) > 240) p.push('sessions.' + k + '.plan is ' + len(x.plan) + ' chars (max ~200)');
+      if (!x.invalid || len(x.invalid) > 110) p.push('sessions.' + k + '.invalid must be a level (<= 90 chars)');
+    });
+    const arr = (v, max) => Array.isArray(v) && v.length <= max;
+    if (!arr(us30.drivers, 6) || us30.drivers.some((d) => !d || !d.k || ![1, 0, -1].includes(d.s))) p.push('drivers must be at most 6 { k, v, s: 1|0|-1 }');
+    if (!arr(us30.levels, 8) || us30.levels.some((l) => !l || !l.name || typeof l.v !== 'number')) p.push('levels must be at most 8 { name, v: number, note }');
+    if (us30.scenarios != null && (!arr(us30.scenarios, 3) || us30.scenarios.some((x) => !x || !x.if || !x.then))) p.push('scenarios must be at most 3 { if, then }');
+    if (us30.events != null && (!arr(us30.events, 8) || us30.events.some((e) => !e || !e.what || (e.when != null && !ISO.test(String(e.when))) ||
+        !['data', 'fed', 'earnings'].includes(e.kind)))) p.push('events must be at most 8 { when: ISO UTC or null, what, kind: data|fed|earnings }');
+    if (us30.ref != null && (typeof us30.ref.price !== 'number' || !ISO.test(String(us30.ref.at || '')))) p.push('ref must be { price: number, at: ISO UTC }');
+    if (p.length) console.warn('WARNING: us30: ' + p.join('; ') + '.');
+  }
+
   // ratePaths: carry forward if a run omits them (stale expectations beat none — warned)
   if (!FX.ratePaths || !Object.keys(FX.ratePaths).length) {
     FX.ratePaths = (prevData && prevData.ratePaths) || {};
@@ -172,6 +210,8 @@ function buildPayload(prevData) {
     macro: macro,
     catalysts: FX.catalysts,
     geopolitics: FX.geopolitics,
+    // US30 intraday bias (Dow futures) for the US30 tab
+    us30: us30 || undefined,
     // The app reads this for "last updated" and the push trigger.
     updatedAt: new Date().toISOString(),
   };
