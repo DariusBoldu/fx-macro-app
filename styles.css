@@ -603,4 +603,9 @@ nav.tabbar{
 .u3hist i.hit{background:var(--long)} .u3hist i.miss{background:var(--short)}
 .u3empty{font-size:13px;color:var(--mut)}
 .u3leg{margin-top:11px !important}
-.u3tv{display:block;text-align:center;text-decoration:none;margin:4px 0 14px}
+.u3btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 14px}
+.u3btns .btn{display:block;text-align:center;text-decoration:none}
+
+/* calculator: index entry/stop prices + editable US30 CFD point value (v35) */
+.fld[hidden]{display:none}
+.pipbox.edit{padding:0;border:0;background:none}

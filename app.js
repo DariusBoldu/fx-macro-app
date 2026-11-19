@@ -958,10 +958,25 @@
     }).join('') + '</div></div>';
     html += u3Events(D, U, now);
     html += u3TrackHtml();
-    html += '<a class="btn ghost u3tv" href="' + U3_TV + '" target="_blank" rel="noopener">Open YM1! on TradingView ›</a>';
+    html += '<div class="u3btns"><button class="btn" id="u3Size">Size a US30 trade</button>' +
+      '<a class="btn ghost" href="' + U3_TV + '" target="_blank" rel="noopener">YM1! chart ›</a></div>';
     box.innerHTML = html;
+    $('u3Size').addEventListener('click', openUs30Calc);
   }
   setInterval(function () { if (!document.hidden && DATA && current === 'us30') renderUs30(DATA); }, 60000);
+  // Jump to the size calculator with the last US30 contract used (CFD by default).
+  function openUs30Calc() {
+    showView('trades');
+    var sel = $('cPair');
+    if (sel && !/^US30/.test(sel.value)) {
+      var last = null;
+      try { last = localStorage.getItem('fx_us30_last'); } catch (e) {}
+      sel.value = CALC_COMMODITIES[last] ? last : 'US30 CFD';
+      computeSize();
+    }
+    var e = $('cEntry');
+    if (e) { e.scrollIntoView({ block: 'center' }); setTimeout(function () { e.focus(); }, 250); }
+  }
 
   /* ============ Rates: policy-rate differentials (source: TradingEconomics) ============ */
   var TE_SLUG = { USD: 'united-states', EUR: 'euro-area', GBP: 'united-kingdom', JPY: 'japan',
@@ -1258,8 +1273,31 @@
     // EU50 (Euro Stoxx 50): same shape as GER40 — EUR-quoted, stop in index
     // points. €1.00 per point per lot is the usual retail spec but is NOT yet
     // confirmed against FOREX.COM's Europe 50 sheet; verify before sizing on it.
-    'EU50':    { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' }
+    'EU50':    { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' },
+    // US30 (Dow, Darius 2026-11-19). The CFD's $ per point per lot differs by
+    // broker and is NOT confirmed for FOREX.COM, so it is editable (default $1).
+    // MYM / YM are CME futures with fixed point values; they size in whole contracts.
+    'US30 CFD': { contract: 1,   label: '$1 / point / lot', quote: 'USD', kind: 'points', editable: true },
+    'US30 MYM': { contract: 0.5, label: '$0.50 / point / contract', quote: 'USD', kind: 'points', futures: true },
+    'US30 YM':  { contract: 5,   label: '$5 / point / contract', quote: 'USD', kind: 'points', futures: true }
   };
+  var US30_CFD_KEY = 'fx_us30_cfd_pp';
+  function us30CfdValue() {
+    var v = NaN;
+    try { v = parseFloat(String(localStorage.getItem(US30_CFD_KEY) || '').replace(',', '.')); } catch (e) {}
+    return v > 0 ? v : 1;
+  }
+  function contractOf(c) { return c && c.editable ? us30CfdValue() : (c ? c.contract : 100000); }
+  // Index prices as typed on a phone: "50.600" and "50,600" are both fifty thousand
+  // six hundred (a thousands separator, as Darius writes them); "50600.5",
+  // "50,600.5" and "50.600,5" keep their decimals.
+  function priceNum(str) {
+    var t = String(str == null ? '' : str).replace(/[\s']/g, '');
+    if (!t) return NaN;
+    var m = /^(\d{1,3}(?:([.,])\d{3})+)(?:([.,])(\d+))?$/.exec(t);
+    if (m && (!m[3] || m[3] !== m[2])) return parseFloat(m[1].replace(/[.,]/g, '') + (m[4] ? '.' + m[4] : ''));
+    return parseFloat(t.replace(',', '.'));
+  }
   // one alphabetical list (same convention as the Rates and Signals tabs)
   var CALC_INSTRUMENTS = CALC_PAIRS.concat(Object.keys(CALC_COMMODITIES))
     .sort(function (x, y) { return x.localeCompare(y); });
@@ -1301,7 +1339,8 @@
     try {
       localStorage.setItem(CALC_KEY, JSON.stringify({
         pair: $('cPair').value, dep: $('cDep').value, bal: $('cBal').value,
-        risk: $('cRisk').value, mode: $('cRiskMode').value, sl: $('cSl').value
+        risk: $('cRisk').value, mode: $('cRiskMode').value, sl: $('cSl').value,
+        entry: $('cEntry').value, stop: $('cStop').value
       }));
     } catch (e) {}
   }
@@ -1311,18 +1350,44 @@
   // accept both "100.5" and "100,5" (the phone keypad only offers a comma)
   function numVal(id) { return parseFloat(($(id).value || '').replace(',', '.').replace(/\s/g, '')); }
 
+  var calcShownPair = null;
   function computeSize() {
     var pair = $('cPair').value, dep = $('cDep').value, mode = $('cRiskMode').value;
+    if (/^US30/.test(pair)) { try { localStorage.setItem('fx_us30_last', pair); } catch (e) {} }
     var bal = numVal('cBal'), risk = numVal('cRisk'), sl = numVal('cSl');
     var commodity = CALC_COMMODITIES[pair];
     var isPoints = commodity && commodity.kind === 'points';
+    var isFut = !!(commodity && commodity.futures);
     // non-FX: SL is a price move so pipSize is 1 unit; FX keeps broker pips
     var pipSize = commodity ? 1 : (pair.indexOf('JPY') >= 0 ? 0.01 : 0.0001);
     $('cSlLabel').textContent = commodity ? (isPoints ? 'Stop loss (points)' : 'Stop loss ($ move)') : 'Stop loss (pips)';
-    $('cPipLabel').textContent = commodity ? 'Contract size' : '1 pip size';
-    $('cPip').textContent = commodity ? commodity.label : pipSize.toString();
+    $('cPipLabel').textContent = commodity ? (commodity.editable ? '$ per point per lot' : 'Contract size') : '1 pip size';
+    if (calcShownPair !== pair) {                 // re-render only on a change, or the input loses focus
+      calcShownPair = pair;
+      if (commodity && commodity.editable) {
+        $('cPip').innerHTML = '<input id="cContract" type="text" inputmode="decimal" autocomplete="off" aria-label="Dollars per point per lot" value="' + us30CfdValue() + '">';
+        $('cContract').addEventListener('input', function () {
+          var v = parseFloat(($('cContract').value || '').replace(',', '.'));
+          try { if (v > 0) localStorage.setItem(US30_CFD_KEY, String(v)); } catch (e) {}
+          computeSize();
+        });
+      } else $('cPip').textContent = commodity ? commodity.label : pipSize.toString();
+      $('cPip').classList.toggle('edit', !!(commodity && commodity.editable));
+    }
+    $('cEntryF').hidden = $('cStopF').hidden = !isPoints;
+    $('rLotsLabel').textContent = isFut ? 'Contracts' : 'Lots (trade size)';
     $('rUnitsLabel').textContent = isPoints ? (commodity.quote + '/point') : 'Units';
     $('cRate').textContent = '';
+    // Index: entry and stop prices give the stop distance (and the direction).
+    var tradeDir = null, entryP = NaN, stopP = NaN;
+    if (isPoints) {
+      entryP = priceNum($('cEntry').value); stopP = priceNum($('cStop').value);
+      if (entryP > 0 && stopP > 0 && entryP !== stopP) {
+        sl = Math.round(Math.abs(entryP - stopP) * 10) / 10;
+        tradeDir = stopP > entryP ? 'SHORT' : 'LONG';
+        if (document.activeElement !== $('cSl')) $('cSl').value = String(sl);
+      }
+    }
     saveCalcInputs();
 
     if (!(bal > 0) || !(risk > 0) || !(sl > 0)) {
@@ -1336,7 +1401,7 @@
     }
     var riskAmount = mode === 'pct' ? bal * risk / 100 : risk;
     var quote = commodity ? commodity.quote : pair.split('/')[1];
-    var contract = commodity ? commodity.contract : 100000;
+    var contract = contractOf(commodity);
     var pvQuote = pipSize * contract;   // value per lot of one SL unit, in quote ccy
 
     function finish(rateObj) {
@@ -1354,24 +1419,31 @@
       }
       var riskPerLot = sl * pvDep;
       var exactLots = riskAmount / riskPerLot;
-      var lots = Math.round(exactLots * 100) / 100;            // broker step 0.01
-      var belowMin = exactLots < 0.01;
-      var useLots = belowMin ? exactLots : lots;               // show precise if sub-minimum
+      // futures: whole contracts, rounded DOWN so the risk is never exceeded
+      var lots = isFut ? Math.floor(exactLots + 1e-9) : Math.round(exactLots * 100) / 100;   // CFD step 0.01
+      var belowMin = isFut ? lots < 1 : exactLots < 0.01;
+      var useLots = (belowMin && !isFut) ? exactLots : lots;   // show precise if sub-minimum
       var unitsRaw = useLots * contract;   // FX/cash: units; points: quote$/point
       var units = isPoints ? (Math.round(unitsRaw * 100) / 100) : Math.round(unitsRaw);
       var actualRisk = useLots * riskPerLot;
-      setCalcRes(belowMin ? exactLots.toFixed(3) : lots.toFixed(2),
+      setCalcRes(isFut ? String(lots) : (belowMin ? exactLots.toFixed(3) : lots.toFixed(2)),
         units.toLocaleString('en-US'), fmtMoney(dep, actualRisk));
       var riskShown = mode === 'pct' ? (risk + '% = ' + fmtMoney(dep, riskAmount)) : fmtMoney(dep, riskAmount);
+      var per = isFut ? '/contract' : '/lot';
+      var fmtPx = function (v) { return v.toLocaleString('en-US', { maximumFractionDigits: 2 }); };
+      var stopTxt = sl.toLocaleString('en-US') + '-pt stop' + (tradeDir
+        ? ' (' + (tradeDir === 'LONG' ? 'long' : 'short') + ' ' + fmtPx(entryP) + ' → stop ' + fmtPx(stopP) + ')' : '');
       $('cNote').className = 'calcnote' + (belowMin ? ' warn' : '');
       $('cNote').innerHTML = belowMin
-        ? 'Risking <b>' + riskShown + '</b> needs ≈' + exactLots.toFixed(3) + ' lots — <b>below the 0.01 minimum</b>; raise risk or balance.'
+        ? (isFut
+          ? 'Risking <b>' + riskShown + '</b> is less than 1 contract: 1 ' + pair.replace('US30 ', '') + ' over this ' + sl.toLocaleString('en-US') + '-pt stop risks ' + fmtMoney(dep, riskPerLot) + '. <b>Raise risk, tighten the stop' + (pair === 'US30 YM' ? ' or use MYM' : '') + '</b>.'
+          : 'Risking <b>' + riskShown + '</b> needs ≈' + exactLots.toFixed(3) + ' lots — <b>below the 0.01 minimum</b>; raise risk or balance.')
         : 'Risking <b>' + riskShown + '</b> · ' + (commodity
-            ? (isPoints ? '1 point = <b>' + fmtMoney(dep, pvDep) + '/lot</b> · ' + sl + '-pt stop'
+            ? (isPoints ? '1 point = <b>' + fmtMoney(dep, pvDep) + per + '</b> · ' + stopTxt
                         : '$1 move = <b>' + fmtMoney(dep, pvDep) + '/lot</b> · $' + sl + ' stop')
             : 'pip value <b>' + fmtMoney(dep, pvDep) + '/lot</b> · ' + sl + '-pip stop');
       lastCalc = belowMin ? null : {
-        sym: pair, dep: dep, lots: lots.toFixed(2),
+        sym: pair, dep: dep, lots: isFut ? String(lots) : lots.toFixed(2), dir: tradeDir,
         riskAmt: Math.round(actualRisk * 100) / 100,
         sl: sl + (commodity ? (isPoints ? ' pts' : ' $') : ' pips')
       };
@@ -1395,9 +1467,15 @@
     $('cRisk').value = (saved.risk != null && saved.risk !== '') ? saved.risk : 1;
     $('cRiskMode').value = saved.mode === 'amt' ? 'amt' : 'pct';
     if (saved.sl) $('cSl').value = saved.sl;
-    ['cPair', 'cDep', 'cBal', 'cRisk', 'cRiskMode', 'cSl'].forEach(function (id) {
+    if (saved.entry) $('cEntry').value = saved.entry;
+    if (saved.stop) $('cStop').value = saved.stop;
+    ['cPair', 'cDep', 'cBal', 'cRisk', 'cRiskMode', 'cSl', 'cEntry', 'cStop'].forEach(function (id) {
       $(id).addEventListener('input', computeSize);
       $(id).addEventListener('change', computeSize);
+    });
+    // Typing the points by hand replaces the entry/stop prices.
+    $('cSl').addEventListener('input', function () {
+      if ($('cEntry').value || $('cStop').value) { $('cEntry').value = ''; $('cStop').value = ''; computeSize(); }
     });
     computeSize();
   }
@@ -1416,7 +1494,7 @@
   }
 
   /* ============================ Symbol detail view ============================ */
-  var LEG_MAP = { 'DXY': ['USD'], 'JPYBASKET': ['JPY'], 'GER40': ['EUR'], 'EU50': ['EUR'], 'XAU/USD': ['USD'], 'XAG/USD': ['USD'], 'USOIL': ['USD'] };
+  var LEG_MAP = { 'US30 CFD': ['USD'], 'US30 MYM': ['USD'], 'US30 YM': ['USD'], 'DXY': ['USD'], 'JPYBASKET': ['JPY'], 'GER40': ['EUR'], 'EU50': ['EUR'], 'XAU/USD': ['USD'], 'XAG/USD': ['USD'], 'USOIL': ['USD'] };
   var TV_MAP = { 'DXY': 'TVC:DXY', 'JPYBASKET': 'FXCM:JPYBASKET', 'GER40': 'GER40', 'EU50': 'TVC:SX5E', 'XAU/USD': 'OANDA:XAUUSD', 'XAG/USD': 'OANDA:XAGUSD', 'USOIL': 'TVC:USOIL' };
   var CAT_KEYS = {
     USD: /US |USD|Fed|FOMC|ISM|NFP/i, EUR: /ECB|EZ |euro|Germany|HICP/i, GBP: /BoE|UK |GBP/i,
@@ -1578,8 +1656,8 @@
   function wireLogForm() {
     $('logBtn').addEventListener('click', function () {
       $('logForm').style.display = ''; $('logBtn').style.display = 'none';
-      logDir = null;
-      $('dirLong').classList.remove('sel'); $('dirShort').classList.remove('sel');
+      logDir = (lastCalc && lastCalc.dir) || null;          // known from the entry/stop prices
+      $('dirLong').classList.toggle('sel', logDir === 'LONG'); $('dirShort').classList.toggle('sel', logDir === 'SHORT');
     });
     $('dirLong').addEventListener('click', function () { logDir = 'LONG'; $('dirLong').classList.add('sel'); $('dirShort').classList.remove('sel'); });
     $('dirShort').addEventListener('click', function () { logDir = 'SHORT'; $('dirShort').classList.add('sel'); $('dirLong').classList.remove('sel'); });
@@ -1587,6 +1665,10 @@
     $('logSave').addEventListener('click', function () {
       if (!lastCalc || !logDir) { $('logSave').textContent = logDir ? 'Save trade' : 'Pick a direction'; return; }
       var s = (DATA.symbols || []).find(function (x) { return x.sym === lastCalc.sym; });
+      if (!s && /^US30/.test(lastCalc.sym) && DATA.us30 && DATA.us30.bias) {   // the US30 tab's day bias
+        s = { bias: { BULLISH: 'LONG', BEARISH: 'SHORT', RANGE: 'RANGE' }[DATA.us30.bias] || null,
+          conv: String(DATA.us30.conviction || '').toUpperCase() || null };
+      }
       var trade = {
         ts: new Date().toISOString(), sym: lastCalc.sym, dir: logDir,
         lots: lastCalc.lots, riskAmt: lastCalc.riskAmt, riskCcy: lastCalc.dep, sl: lastCalc.sl,
@@ -1824,7 +1906,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v34';
+  var APP_VERSION = 'v35';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
