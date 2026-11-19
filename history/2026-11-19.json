@@ -1,5 +1,10 @@
 {
   "meta": {
+    "update": {
+      "at": "2026-11-19T13:55:14Z",
+      "title": "US indices NY update",
+      "text": "US30 Bearish (low), wrong above 50,660 · NAS100 Bullish (medium), wrong below 27,550 · Anthropic IPO lifts megacaps; Philly Fed 6.3 vs 20.6, claims 203K."
+    },
     "reportDate": "2026-11-19",
     "reportLabel": "Almost all FOMC participants want more hikes, the minutes showed - yet the 10-year fell to 5.06% and metals bounced, while Australian jobs at -43,500 took the RBA out of December.",
     "horizon": "4H swing",
@@ -1139,15 +1144,15 @@
   "geopolitics": "The transmission has now fully inverted and it is worth stating plainly, because it is the single most important thing on this board that nobody is paid to say: the news is getting worse and the price is going down, and that is information rather than noise. Day 263 of the closure. Iran’s armed forces claim a fourth oil tanker struck in 24 hours, UKMTO reported a vessel hit by an unknown projectile with a resulting engine-room fire, the United States says it is enforcing a naval blockade of Iran’s Persian Gulf and Gulf of Oman ports while Iran claims control of the strait itself, and Trump has publicly raised Iranian gases and biological weapons alongside a dirty-bomb report. The physical numbers remain estimates rather than data and should be treated that way: one tracker reports a single tanker transit on its most recent complete UTC day and two ships on November 15 against a pre-crisis baseline near 85 transits a day, Iranian state media has published differing totals for tanker casualties, and no maritime authority has independently confirmed the Iranian count. Kpler remains the most useful single figure - about 8.3 million barrels a day in the week to November 11, roughly 48% of the 17.1 million pre-war level, and preliminary. Against all of that, WTI is 83.2866 and minus 0.07%, down 14% on the month, and Brent is 92.2103 and plus 0.24%, with one tracker quoting Brent as low as 90.87. A market that will not bid live escalation is a market with no remaining premium to unwind, and the practical consequence is that the direction of the asymmetry has flipped even though the direction of the trend has not. That is exactly why USOIL moves from a short to a range today rather than staying with the trend: the downside is drift and the upside is a gap. The FX read follows from the same inversion. The Canadian dollar has been the main casualty and stays a minus two: the Bank of Canada hiked in October specifically to stop energy spreading into other goods, and energy has since fallen 14% while core CPI dropped to 2.0%, trimmed to 1.8% and median to 2.0% - the stated reason for the hike has been removed by the bank’s own data, December odds are 38%, and USD/CAD at 1.4340 is a 19-month low for the currency. Europe is the mirror image and this is where the reversal actually bites, because the crude move and the gas move have separated: EU natural gas rose 1.73% to 82.11 euros while crude fell, so the euro-area keeps the inflation cost of the conflict without the terms-of-trade relief, which is precisely the mechanism holding euro-area inflation at a three-year high of 4.0% and keeping the December 17 hike priced at 67% to 84%. That split is also why GER40 and EU50 both score as ranges rather than directional shorts: falling crude helps industrial margins while rising gas hurts them, and the two legs are currently cancelling. For the havens, the honest observation is that the conflict is no longer generating a haven bid at all - the yen’s four-session run against all seven others ended overnight on a day the tanker headlines got worse, and the franc was flat on every single cross. Both were bid by the Federal Reserve and by the metals rout, not by Hormuz, which is the clearest possible evidence that this market has stopped treating the strait as a tradeable risk. Keep the CHF crosses consistent with that: a zero score, no haven premium, and a Swiss National Bank at zero that will sell francs if one ever appears. The scenario that re-prices everything at once is a genuine supply interruption rather than another unconfirmed claim - WTI through 95 would restore the Canadian inflation argument and terms of trade together, invert the USD/CAD long, and force the European growth-versus-inflation trade-off back to the growth side. Nothing in the current price is paying for that.",
   "us30": {
     "date": "2026-11-19",
-    "stage": "london",
-    "updatedAt": "2026-11-19T06:21:07Z",
+    "stage": "ny",
+    "updatedAt": "2026-11-19T13:55:14Z",
     "bias": "RANGE",
     "conviction": "medium",
     "dayType": "range",
-    "headline": "A 400-point bounce off a 1-month low with yields easing, inside a week that is still down 3.96% and below the 200-day.",
+    "headline": "Rotation day: the Anthropic IPO has NQ up 1.75% while YM holds +0.44%, with Philly Fed at 6.3 and Walmart beating but falling.",
     "ref": {
-      "price": 50490,
-      "at": "2026-11-19T06:04:28Z"
+      "price": 50500,
+      "at": "2026-11-19T13:51:16Z"
     },
     "sessions": {
       "london": {
@@ -1157,114 +1162,104 @@
         "invalid": "5-min close back below 50,260 (today’s open and low)"
       },
       "ny": {
-        "lean": "RANGE",
+        "lean": "BEARISH",
         "conviction": "low",
-        "plan": "Claims and Philly Fed at 15:30 then Hammack at 15:50 land just before the cash open. Let them print, then trade the reaction off the London high and low rather than anticipating.",
-        "invalid": "A 5-min close outside the London range in either direction"
+        "plan": "Sell a 5-min lower high into 50,620-50,660, or a 5-min close back under VWAP 50,470; first target PDC 50,270, then the 50,100 low. Stand aside if NQ breaks to new highs.",
+        "invalid": "5-min close above 50,660 (today’s high, rejected twice)"
       }
     },
     "drivers": [
       {
-        "k": "Yields",
-        "v": "US 10-year 5.06%, down 2bp - it fell even on hawkish minutes",
-        "s": 1
-      },
-      {
-        "k": "Fed",
-        "v": "Minutes: almost all saw more hikes, a couple open to over 25bp in Dec",
-        "s": -1
-      },
-      {
-        "k": "Structure",
-        "v": "Bounced off the 1-month low 50,096; now above VWAP 50,420 and PDC 50,270",
-        "s": 1
-      },
-      {
-        "k": "Europe",
-        "v": "GER40 +0.31% and EU50 +0.48%, both firm into the US open",
-        "s": 1
-      },
-      {
-        "k": "AI credit",
-        "v": "Minutes flagged opaque AI-debt growth; Nvidia closed -2.89% after a beat",
-        "s": -1
-      },
-      {
-        "k": "Dow names",
-        "v": "Walmart reports pre-open; options imply about 6% either way",
+        "k": "Rotation",
+        "v": "NQ +1.75% vs YM +0.44% - the AI bid is lifting the tape, not the Dow",
         "s": 0
+      },
+      {
+        "k": "Philly Fed",
+        "v": "Nov 6.3 vs 20.6 f, down from 20.9; new orders -0.4",
+        "s": -1
+      },
+      {
+        "k": "Prices paid",
+        "v": "Philly prices paid 58.2 from 43.2 - weak growth, hot prices",
+        "s": -1
+      },
+      {
+        "k": "Claims",
+        "v": "Claims 203K vs 197K f; continuing 1.763M, up 70K",
+        "s": 1
+      },
+      {
+        "k": "Yields",
+        "v": "US 10-year 5.087%, up about 3bp from 5.06% at 08:00",
+        "s": -1
+      },
+      {
+        "k": "Walmart",
+        "v": "Q3 revenue 188.8bn +5.2%, outlook raised - stock still fell pre-open",
+        "s": -1
       }
     ],
     "levels": [
       {
         "name": "PDH",
         "v": 51020,
-        "note": "Yesterday’s high; caps the bounce"
+        "note": "Yesterday’s high; caps any New York squeeze"
+      },
+      {
+        "name": "London high",
+        "v": 50660,
+        "note": "Day high, rejected twice; the invalidation"
+      },
+      {
+        "name": "London low",
+        "v": 50490,
+        "note": "London floor; a break opens the 50,260 open"
+      },
+      {
+        "name": "VWAP",
+        "v": 50470,
+        "note": "Session VWAP; the pivot price is sitting on"
+      },
+      {
+        "name": "Day open",
+        "v": 50260,
+        "note": "Today’s open and the Asia low"
       },
       {
         "name": "PDC",
         "v": 50270,
-        "note": "Yesterday’s close, reclaimed overnight"
+        "note": "Yesterday’s close; first downside target"
       },
       {
         "name": "PDL",
         "v": 50100,
         "note": "The 1-month low, set yesterday"
-      },
-      {
-        "name": "VWAP",
-        "v": 50420,
-        "note": "Session VWAP; the London pivot"
-      },
-      {
-        "name": "Asia high",
-        "v": 50520,
-        "note": "Overnight high so far; first resistance"
-      },
-      {
-        "name": "Asia low",
-        "v": 50260,
-        "note": "Overnight low and today’s open; invalidation"
-      },
-      {
-        "name": "Month high",
-        "v": 53910,
-        "note": "Top of the 1-month range, 6.8% above"
       }
     ],
     "scenarios": [
       {
-        "if": "Holds above VWAP 50,420",
-        "then": "Push into 50,900 then PDH 51,020; above there the week’s downtrend is in doubt"
+        "if": "Holds below VWAP 50,470",
+        "then": "Drift to PDC 50,270 then the 50,100 low; the week stays -4% and below the 200-day"
       },
       {
-        "if": "5-min close below 50,260",
-        "then": "Re-opens the 1-month low 50,100; next ATR air pocket near 49,700"
+        "if": "5-min close above 50,660",
+        "then": "The short is wrong; squeeze to 50,900 and PDH 51,020 as the Dow plays catch-up"
       },
       {
-        "if": "Hammack repeats her hike dissent",
-        "then": "Yields and dollar up, YM back under VWAP and toward the London low"
+        "if": "Anthropic debut sells off",
+        "then": "The AI bid holding the tape goes; YM loses 50,260 and retests 50,100"
       }
     ],
     "events": [
       {
-        "when": "2026-11-19T12:00:00Z",
-        "what": "Walmart Q3 earnings (Dow member), pre-open",
-        "kind": "earnings"
-      },
-      {
         "when": "2026-11-19T13:30:00Z",
-        "what": "Jobless claims 198K f, Philly Fed 20.6 f",
+        "what": "Claims 203K a, Philly Fed 6.3 a (released)",
         "kind": "data"
       },
       {
-        "when": "2026-11-19T13:50:00Z",
-        "what": "Fed Hammack (Oct hike dissenter) speaks",
-        "kind": "fed"
-      },
-      {
         "when": "2026-11-19T14:25:00Z",
-        "what": "Fed Vice Chair Jefferson speaks",
+        "what": "Fed Vice Chair Jefferson on economic shocks",
         "kind": "fed"
       },
       {
@@ -1279,7 +1274,7 @@
       },
       {
         "when": "2026-11-19T19:15:00Z",
-        "what": "Fed Governor Barr speaks",
+        "what": "Fed Governor Barr on artificial intelligence",
         "kind": "fed"
       },
       {
@@ -1289,5 +1284,147 @@
       }
     ]
   },
-  "updatedAt": "2026-11-19T06:21:10.391Z"
+  "nas100": {
+    "date": "2026-11-19",
+    "stage": "ny",
+    "updatedAt": "2026-11-19T13:55:14Z",
+    "bias": "BULLISH",
+    "conviction": "medium",
+    "dayType": "trend",
+    "headline": "NQ is through yesterday’s high on Anthropic’s 83-dollar IPO and 26bn of megacap buying, up 1.75% while the Dow stalls at +0.44%.",
+    "ref": {
+      "price": 27660,
+      "at": "2026-11-19T13:51:16Z"
+    },
+    "sessions": {
+      "london": {
+        "lean": "BULLISH",
+        "conviction": "medium",
+        "plan": "Written at the New York update rather than at the London open, so it is a record and not a live call: London carried NQ from the 27,174 open through PDH 27,610 to 27,831.",
+        "invalid": "No London invalidation was published for NAS100 today"
+      },
+      "ny": {
+        "lean": "BULLISH",
+        "conviction": "medium",
+        "plan": "Buy a 5-min higher low on a retest of PDH 27,610 / VWAP 27,555 while both hold; first target the day high 27,830. Chasing 660 points into the open is the mistake.",
+        "invalid": "5-min close below 27,550 (VWAP and the PDH retest)"
+      }
+    },
+    "drivers": [
+      {
+        "k": "Anthropic",
+        "v": "IPO priced at 83 dollars, above the 70-78 range; 81.3bn raised, debuts today",
+        "s": 1
+      },
+      {
+        "k": "Megacaps",
+        "v": "Alphabet +3.8%, Broadcom +2.9%, Amazon +2.3%, Microsoft +1.5% pre-open",
+        "s": 1
+      },
+      {
+        "k": "Strategic bid",
+        "v": "Alphabet, Nvidia, Broadcom, Microsoft to buy 26bn of a separate class",
+        "s": 1
+      },
+      {
+        "k": "Yields",
+        "v": "US 10-year 5.087%, up about 3bp - a headwind the AI bid is overriding",
+        "s": -1
+      },
+      {
+        "k": "Structure",
+        "v": "Through PDH 27,610 to 27,831; the 662-pt range is 82% of the 809 ATR",
+        "s": 0
+      },
+      {
+        "k": "Philly Fed",
+        "v": "Nov 6.3 vs 20.6 f; prices paid 58.2 - weak growth, hot prices",
+        "s": -1
+      }
+    ],
+    "levels": [
+      {
+        "name": "Day high",
+        "v": 27830,
+        "note": "Today’s high; the breakout trigger"
+      },
+      {
+        "name": "PDH",
+        "v": 27610,
+        "note": "Yesterday’s high, broken; the retest that must hold"
+      },
+      {
+        "name": "VWAP",
+        "v": 27555,
+        "note": "Session VWAP; the bull and bear pivot"
+      },
+      {
+        "name": "PDC",
+        "v": 27185,
+        "note": "Yesterday’s close; the floor of today’s gap"
+      },
+      {
+        "name": "Day open",
+        "v": 27170,
+        "note": "Today’s open and low; a full retrace"
+      },
+      {
+        "name": "PDL",
+        "v": 26920,
+        "note": "Yesterday’s low; far below, the week’s base"
+      }
+    ],
+    "scenarios": [
+      {
+        "if": "PDH 27,610 holds on the retest",
+        "then": "The breakout runs through 27,830 and the week’s -2.3% is nearly erased"
+      },
+      {
+        "if": "5-min close below 27,550",
+        "then": "Failed breakout: back toward the gap at PDC 27,185; the AI bid was one day of liquidity"
+      },
+      {
+        "if": "Anthropic opens below 83",
+        "then": "The IPO leg breaks, the megacap proxies unwind and NQ gives back most of +1.75%"
+      }
+    ],
+    "events": [
+      {
+        "when": null,
+        "what": "Anthropic (ANT) Nasdaq debut, priced at 83",
+        "kind": "earnings"
+      },
+      {
+        "when": "2026-11-19T13:30:00Z",
+        "what": "Claims 203K a, Philly Fed 6.3 a (released)",
+        "kind": "data"
+      },
+      {
+        "when": "2026-11-19T14:25:00Z",
+        "what": "Fed Vice Chair Jefferson on economic shocks",
+        "kind": "fed"
+      },
+      {
+        "when": "2026-11-19T15:00:00Z",
+        "what": "CB leading index 0.0% f",
+        "kind": "data"
+      },
+      {
+        "when": "2026-11-19T17:30:00Z",
+        "what": "Fed Goolsbee speaks",
+        "kind": "fed"
+      },
+      {
+        "when": "2026-11-19T19:15:00Z",
+        "what": "Fed Governor Barr on artificial intelligence",
+        "kind": "fed"
+      },
+      {
+        "when": "2026-11-19T21:00:00Z",
+        "what": "Fed Barkin speaks",
+        "kind": "fed"
+      }
+    ]
+  },
+  "updatedAt": "2026-11-19T13:55:16.774Z"
 }
