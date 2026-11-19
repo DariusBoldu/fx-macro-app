@@ -14,7 +14,8 @@ calendar, and the geopolitics/oil → FX read. Same dark theme.
 | Tab | Shows |
 |---|---|
 | **Today** | regime line · structured next-big-event card (`meta.nextEvent`, falls back to the next red folder in `catalysts[]`) · "what changed" · geopolitics→FX |
-| **US30** | intraday bias for the Dow futures (YM/MYM) from `us30` in data.json: day bias + conviction + day type, London and NY session calls with invalidation, drivers, YM levels, if→then, US events, and a track record scored by the Worker (`GET /us30?live=0`). Written by the 08:00 report and refreshed ~40 min before the NY cash open (Worker fires the routine with `US30 NY UPDATE`; see `proxy/us30.js`). |
+| **US30** | intraday bias for the Dow futures (YM/MYM) from `us30` in data.json: day bias + conviction + day type, London and NY session calls with invalidation, drivers, YM levels, if→then, US events, and a track record scored by the Worker (`GET /us30?live=0`). Written by the 08:00 report and refreshed ~40 min before the NY cash open (Worker fires the routine with `US INDICES NY UPDATE`; see `proxy/indices.js`). |
+| **NAS100** | the same tab for the Nasdaq-100 futures (NQ/MNQ) from `nas100` in data.json, same engine (`renderIdx`), track record from `GET /nas100?live=0`. The one NY update covers both indices. |
 | **Strength** | 7-currency strength map (−3..+3 bars, verdict, drivers, forward bias), strongest→weakest |
 | **Signals** | all 21 symbols as cards (Bias / Conviction / Why / Risk), filterable, with the live quote on each FX card |
 | **Prices** | live quotes for the 18 tradable pairs — mid, day %, sparkline, bid/ask |

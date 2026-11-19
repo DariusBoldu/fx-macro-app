@@ -46,8 +46,8 @@ jobs:
             # A post-release follow-up stamps meta.update; if it is fresh, say
             # "analysis updated" instead of repeating the whole daily headline.
             TITLE=$(node -e 'const m=require("./data.json").meta||{};const u=m.update;const f=u&&u.at&&(Date.now()-Date.parse(u.at))<45*60000;process.stdout.write(f?("📊 "+(u.title||"Analysis updated")):"New FX report")')
-            # The daily report's body also carries the morning US30 bias, when it is today's.
-            LABEL=$(node -e 'const d=require("./data.json");const m=d.meta||{};const u=m.update;const f=u&&u.at&&(Date.now()-Date.parse(u.at))<45*60000;const x=d.us30;const w=s=>String(s||"").charAt(0)+String(s||"").slice(1).toLowerCase();const us=(x&&x.date===m.reportDate&&x.stage==="london"&&x.bias)?(" · US30 "+w(x.bias)+(x.conviction?" ("+x.conviction+")":"")):"";process.stdout.write(f?(u.text||"Analysis updated after a release."):((m.reportLabel||"A new macro report has been published.")+us))')
+            # The daily report's body also carries the morning US30 / NAS100 biases, when they are today's.
+            LABEL=$(node -e 'const d=require("./data.json");const m=d.meta||{};const u=m.update;const f=u&&u.at&&(Date.now()-Date.parse(u.at))<45*60000;const w=s=>String(s||"").charAt(0)+String(s||"").slice(1).toLowerCase();const ix=(k,n)=>{const x=d[k];return (x&&x.date===m.reportDate&&x.stage==="london"&&x.bias)?(" · "+n+" "+w(x.bias)+(x.conviction?" ("+x.conviction+")":"")):""};process.stdout.write(f?(u.text||"Analysis updated after a release."):((m.reportLabel||"A new macro report has been published.")+ix("us30","US30")+ix("nas100","NAS100")))')
           fi
           {
             echo "title<<__EOF__"; echo "$TITLE"; echo "__EOF__"

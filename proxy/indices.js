@@ -1,11 +1,13 @@
 /* ============================================================================
- * US30 (Dow futures, YM) tracker — feeds the cloud analyst, NOT the app's UI.
+ * US index futures tracker (US30 = Dow, YM; NAS100 = Nasdaq-100, NQ) — feeds
+ * the cloud analyst and the app's track records.
  *
- * Source: TradingView's public screener endpoint for CBOT_MINI:YM1! (front
- * month, 10-minute delayed for CME without a data subscription). One request
- * returns the current CME day (opens 18:00 New York), the previous day's
- * high/low/close, VWAP and the 14-day ATR. Intraday bars are not available, so
- * the Worker builds the session ranges itself:
+ * Source: TradingView's public screener endpoint for the front months
+ * CBOT_MINI:YM1! and CME_MINI:NQ1! (10-minute delayed for CME without a data
+ * subscription). ONE request returns both: the current CME day (opens 18:00
+ * New York), the previous day's high/low/close, VWAP and the 14-day ATR.
+ * Intraday bars are not available, so the Worker builds the session ranges
+ * itself:
  *
  *   Asia    CME open (18:00 NY)  -> London open    = the day's range at London open
  *   London  08:00 London         -> 09:30 New York (cash open)
@@ -20,7 +22,12 @@
  * ==========================================================================*/
 
 export const SCAN_URL = 'https://scanner.tradingview.com/futures/scan';
-export const YM_SYMBOL = 'CBOT_MINI:YM1!';
+/* key = the data.json block and the KV prefix (`<key>:d:<date>`, `<key>:scores`). */
+export const INDICES = {
+  us30: { key: 'us30', label: 'US30', fut: 'YM', symbol: 'CBOT_MINI:YM1!' },
+  nas100: { key: 'nas100', label: 'NAS100', fut: 'NQ', symbol: 'CME_MINI:NQ1!' },
+};
+export const INDEX_KEYS = Object.keys(INDICES);
 const COLS = ['close', 'open', 'high', 'low', 'VWAP', 'ATR', 'close[1]', 'high[1]', 'low[1]',
   'change', 'Perf.W', 'High.1M', 'Low.1M', 'time', 'update_mode'];
 
@@ -95,24 +102,15 @@ export function sessionTimes(date) {
 }
 
 /* -------------------------------- snapshot -------------------------------- */
-export async function fetchYM(fetchImpl = fetch) {
-  const r = await fetchImpl(SCAN_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ symbols: { tickers: [YM_SYMBOL] }, columns: COLS }),
-  });
-  if (!r.ok) throw new Error('scanner HTTP ' + r.status);
-  const j = await r.json();
-  const d = j && j.data && j.data[0] && j.data[0].d;
-  if (!Array.isArray(d)) throw new Error('scanner: no data');
+function parseRow(sym, d) {
   const o = {};
   COLS.forEach((c, i) => { o[c] = d[i]; });
-  if (typeof o.close !== 'number') throw new Error('scanner: no price');
+  if (typeof o.close !== 'number') return null;
   const m = /_(\d+)$/.exec(String(o.update_mode || ''));
   const delaySec = /delayed/.test(String(o.update_mode || '')) ? (m ? +m[1] : 600) : 0;
   const r1 = (v) => (typeof v === 'number' ? Math.round(v) : null);
   return {
-    symbol: YM_SYMBOL, fetchedAt: new Date().toISOString(), delayMin: Math.round(delaySec / 60),
+    symbol: sym, fetchedAt: new Date().toISOString(), delayMin: Math.round(delaySec / 60),
     last: r1(o.close), dayOpen: r1(o.open), dayHigh: r1(o.high), dayLow: r1(o.low),
     vwap: r1(o.VWAP), atr: r1(o.ATR),
     pdh: r1(o['high[1]']), pdl: r1(o['low[1]']), pdc: r1(o['close[1]']),
@@ -121,6 +119,25 @@ export async function fetchYM(fetchImpl = fetch) {
     monthHigh: r1(o['High.1M']), monthLow: r1(o['Low.1M']),
     dayStart: typeof o.time === 'number' ? new Date(o.time * 1000).toISOString() : null,
   };
+}
+/* Both futures in one request -> { us30: snap, nas100: snap }. A symbol the
+ * screener did not return is simply absent; throws only when none came back. */
+export async function fetchFutures(fetchImpl = fetch) {
+  const r = await fetchImpl(SCAN_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ symbols: { tickers: INDEX_KEYS.map((k) => INDICES[k].symbol) }, columns: COLS }),
+  });
+  if (!r.ok) throw new Error('scanner HTTP ' + r.status);
+  const j = await r.json();
+  const out = {};
+  for (const row of (j && j.data) || []) {
+    const k = INDEX_KEYS.find((x) => INDICES[x].symbol === row.s);
+    const snap = k && Array.isArray(row.d) ? parseRow(row.s, row.d) : null;
+    if (snap) out[k] = snap;
+  }
+  if (!Object.keys(out).length) throw new Error('scanner: no data');
+  return out;
 }
 
 /* --------------------------------- scoring --------------------------------- */
@@ -216,9 +233,9 @@ export function applySample(rec, snap, dataMs, callFor) {
 
 /* --------------------------- analyst payload text --------------------------- */
 const n = (v) => (v == null ? '—' : String(v));
-export function levelsText(snap, rec) {
+export function levelsText(ix, snap, rec) {
   const lines = [
-    `YM futures (${YM_SYMBOL}, TradingView, ${snap.delayMin}-min delayed) as of ${bucClock(Date.parse(snap.fetchedAt))} Bucharest:`,
+    `${ix.label}: ${ix.fut} futures (${ix.symbol}, TradingView, ${snap.delayMin}-min delayed) as of ${bucClock(Date.parse(snap.fetchedAt))} Bucharest:`,
     `last ${n(snap.last)} (${snap.chgPct != null ? (snap.chgPct >= 0 ? '+' : '') + snap.chgPct + '%' : '—'} vs prev settle), day open ${n(snap.dayOpen)}, day high ${n(snap.dayHigh)}, day low ${n(snap.dayLow)}, VWAP ${n(snap.vwap)}`,
     `previous day: high ${n(snap.pdh)}, low ${n(snap.pdl)}, close ${n(snap.pdc)}; ATR(14 days) ${n(snap.atr)}; week ${snap.weekPct != null ? snap.weekPct + '%' : '—'}; 1-month range ${n(snap.monthLow)}–${n(snap.monthHigh)}`,
   ];

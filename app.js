@@ -112,7 +112,7 @@
     for (var k = 0; k < tabs.length; k++) tabs[k].classList.toggle('active', tabs[k].dataset.v === v);
     window.scrollTo(0, 0);
     if (v === 'trades') { computeSize(); renderTrades(); }
-    if (v === 'us30') { loadUs30Track(); if (DATA) renderUs30(DATA); }
+    if (IDX[v]) { loadIdxTrack(v); if (DATA) renderIdx(v, DATA); }
   }
   document.querySelectorAll('.tabbtn').forEach(function (b) {
     b.addEventListener('click', function () { showView(b.dataset.v); });
@@ -153,7 +153,7 @@
     var rd = Date.parse(((D.meta && D.meta.reportDate) || '') + 'T12:00:00Z');
     bucRef = isNaN(rd) ? Date.now() : rd;
     renderMeta(D); renderToday(D); renderMacro(D); renderSignals(D.symbols);
-    renderRates(D); renderCalendar(D); renderUs30(D);
+    renderRates(D); renderCalendar(D); renderIdx('us30', D); renderIdx('nas100', D);
     renderBookBanner(); renderTrades();
   }
 
@@ -772,17 +772,27 @@
   // keep the countdown and the released figures current while the app is open
   setInterval(function () { if (!document.hidden && DATA) renderBigEvent(DATA); }, 60000);
 
-  /* ============ US30 intraday bias (Dow futures YM/MYM; Darius, 2026-11-18) ============
-   * D.us30 is written by the cloud analyst: at 08:00 (stage "london": London plan
-   * plus a first NY lean) and ~40 min before the NY cash open (stage "ny"). The
-   * track record comes from the Worker (/us30?live=0), which scores each session
-   * from YM itself — the analyst never grades its own calls. */
-  var U3_TV = 'https://www.tradingview.com/chart/?symbol=CBOT_MINI%3AYM1%21';
+  /* ===== US index intraday bias: US30 (Dow, YM/MYM; 2026-11-18) and NAS100 (Nasdaq-100,
+   * NQ/MNQ; 2026-11-19). Same tab, same engine. D.us30 / D.nas100 are written by the
+   * cloud analyst: at 08:00 (stage "london": London plan plus a first NY lean) and
+   * ~40 min before the NY cash open (stage "ny"). The track record comes from the
+   * Worker (/us30 or /nas100 ?live=0), which scores each session from the futures
+   * themselves — the analyst never grades its own calls. */
+  var IDX = {
+    us30: { key: 'us30', label: 'US30', name: 'Dow futures', fut: 'YM', calc: 'US30',
+      tv: 'https://www.tradingview.com/chart/?symbol=CBOT_MINI%3AYM1%21' },
+    nas100: { key: 'nas100', label: 'NAS100', name: 'Nasdaq-100', fut: 'NQ', calc: 'NAS100',
+      tv: 'https://www.tradingview.com/chart/?symbol=CME_MINI%3ANQ1%21' }
+  };
+  function idxOfSym(sym) {                       // calculator instrument -> index key
+    for (var k in IDX) if (String(sym || '').indexOf(IDX[k].calc + ' ') === 0) return k;
+    return null;
+  }
   var U3_CHIP = { BULLISH: 'LONG', BEARISH: 'SHORT', RANGE: 'RANGE' };
   var U3_WORD = { BULLISH: 'Bullish', BEARISH: 'Bearish', RANGE: 'Range' };
   var U3_DAY = { trend: ['📈', 'Trend day'], range: ['↔️', 'Range day'], news: ['📰', 'News-driven day'] };
   var U3_CONV = { high: 3, medium: 2, med: 2, low: 1 };
-  var u3Track = null, u3TrackAt = 0;
+  var idxTrack = {}, idxTrackAt = {};
   // NYSE full-day closures (mirror of proxy/us30.js): no cash session, no bias.
   var US_HOLIDAYS = ['2026-01-01', '2026-01-19', '2026-02-16', '2026-04-03', '2026-05-25', '2026-06-19',
     '2026-07-03', '2026-09-07', '2026-11-26', '2026-12-25', '2027-01-01', '2027-01-18', '2027-02-15',
@@ -816,12 +826,12 @@
     return { lon: zonedMs(date, 480, 'Europe/London'), ny: zonedMs(date, 570, 'America/New_York'),
       close: zonedMs(date, 960, 'America/New_York') };
   }
-  function loadUs30Track() {
-    if (!CFG.workerUrl || Date.now() - u3TrackAt < 5 * 60000) return;
-    u3TrackAt = Date.now();
-    fetch(CFG.workerUrl.replace(/\/$/, '') + '/us30?live=0', { cache: 'no-store' })
+  function loadIdxTrack(k) {
+    if (!IDX[k] || !CFG.workerUrl || Date.now() - (idxTrackAt[k] || 0) < 5 * 60000) return;
+    idxTrackAt[k] = Date.now();
+    fetch(CFG.workerUrl.replace(/\/$/, '') + '/' + k + '?live=0', { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { if (j) { u3Track = j; if (DATA) renderUs30(DATA); } })
+      .then(function (j) { if (j) { idxTrack[k] = j; if (DATA) renderIdx(k, DATA); } })
       .catch(function () { /* Worker unreachable: the bias still shows */ });
   }
   function u3Dots(conv) {
@@ -835,13 +845,13 @@
     var lab = sc.r === 'hit' ? '✓ Right' : sc.r === 'miss' ? '✗ Wrong' : '– Flat';
     return '<span class="u3res ' + sc.r + '">' + lab + ' · ' + (sc.move > 0 ? '+' : '') + u3Num(sc.move) + ' pts</span>';
   }
-  function u3SessionCard(key, s, from, to, now, U) {
+  function u3SessionCard(key, s, from, to, now, U, track) {
     var flag = key === 'london' ? '🇬🇧 London' : '🇺🇸 New York';
     var state, cls = '';
     if (now < from) state = 'starts ' + countdownTxt(from, now);
     else if (now < to) { state = 'live now'; cls = ' live'; }
     else { state = 'done'; cls = ' done'; }
-    var rec = u3Track && u3Track.today && u3Track.today.date === U.date ? u3Track.today[key === 'london' ? 'lon' : 'ny'] : null;
+    var rec = track && track.today && track.today.date === U.date ? track.today[key === 'london' ? 'lon' : 'ny'] : null;
     var lean = (s && s.lean) || 'RANGE';
     var html = '<div class="u3s ' + (U3_CHIP[lean] || 'RANGE') + cls + '">' +
       '<div class="u3sh"><span class="u3sn">' + flag + '</span><span class="u3st">' + bucClock.format(from) + '–' + bucClock.format(to) + '</span>' +
@@ -854,7 +864,7 @@
     if (s.invalid) html += '<div class="u3inv"><span>Wrong if</span>' + esc(s.invalid) + '</div>';
     return html + '</div>';
   }
-  function u3Levels(U) {
+  function u3Levels(U, ix) {
     var lv = (U.levels || []).filter(function (l) { return l && l.name && isFinite(Number(l.v)); }).slice(0, 8);
     if (!lv.length) return '';
     lv.sort(function (a, b) { return Number(b.v) - Number(a.v); });
@@ -862,7 +872,7 @@
     var rows = '';
     lv.forEach(function (l) {
       if (!placed && Number(l.v) < ref) {
-        rows += '<div class="u3now"><span>YM ≈ ' + u3Num(Math.round(ref / 10) * 10) + '</span>' +
+        rows += '<div class="u3now"><span>' + ix.fut + ' ≈ ' + u3Num(Math.round(ref / 10) * 10) + '</span>' +
           (U.ref.at ? ' at ' + bucClock.format(Date.parse(U.ref.at)) : '') + '</div>';
         placed = true;
       }
@@ -870,9 +880,9 @@
       rows += '<div class="u3lv' + side + '"><span class="u3ln">' + esc(l.name) + '</span><span class="u3lp">' + u3Num(l.v) + '</span>' +
         '<span class="u3lnote">' + esc(l.note || '') + '</span></div>';
     });
-    if (!placed) rows += '<div class="u3now"><span>YM ≈ ' + u3Num(Math.round(ref / 10) * 10) + '</span>' +
+    if (!placed) rows += '<div class="u3now"><span>' + ix.fut + ' ≈ ' + u3Num(Math.round(ref / 10) * 10) + '</span>' +
       (U.ref.at ? ' at ' + bucClock.format(Date.parse(U.ref.at)) : '') + '</div>';
-    return '<div class="panel"><h2>Levels to watch <span class="sidenote">YM · approximate</span></h2>' + rows + '</div>';
+    return '<div class="panel"><h2>Levels to watch <span class="sidenote">' + ix.fut + ' · approximate</span></h2>' + rows + '</div>';
   }
   function u3Events(D, U, now) {
     var ev = (U.events || []).map(function (e) { return { t: Date.parse(e.when), what: e.what, kind: e.kind || 'data' }; })
@@ -894,10 +904,10 @@
         (k[1] && !past ? '<span class="u3etag ' + e.kind + '">' + k[1] + '</span>' : '') + '</div>';
     }).join('') + '</div>';
   }
-  function u3TrackHtml() {
-    var t = u3Track && u3Track.scores;
+  function u3TrackHtml(ix) {
+    var t = idxTrack[ix.key] && idxTrack[ix.key].scores;
     var head = '<div class="panel"><h2>Track record <span class="sidenote">last 20 sessions each</span></h2>';
-    var foot = '<div class="legend u3leg">Scored automatically from YM futures, not by the analyst: a Bullish or Bearish call is <b>right</b> when the session moved at least 10% of the daily ATR its way, <b>wrong</b> when it moved that much the other way, otherwise <b>flat</b> (not counted). London = 10:00 to the NY open, NY = cash open to close.</div></div>';
+    var foot = '<div class="legend u3leg">Scored automatically from ' + ix.fut + ' futures, not by the analyst: a Bullish or Bearish call is <b>right</b> when the session moved at least 10% of the daily ATR its way, <b>wrong</b> when it moved that much the other way, otherwise <b>flat</b> (not counted). London = 10:00 to the NY open, NY = cash open to close.</div></div>';
     if (!t || !t.recent || !t.recent.length) return head + '<div class="u3empty">Scoring starts with the first sessions after launch.</div>' + foot;
     var cell = function (k, lab) {
       var s = t.summary[k] || {}, n = (s.hit || 0) + (s.miss || 0);
@@ -910,12 +920,12 @@
     return head + '<div class="u3rec">' + cell('london', '🇬🇧 London') + cell('ny', '🇺🇸 New York') + '</div>' +
       '<div class="u3hist">' + dots + '<span>← older · newer →</span></div>' + foot;
   }
-  function renderUs30(D) {
-    var box = $('us30');
-    if (!box || !D) return;
-    var U = D.us30, now = Date.now();
+  function renderIdx(k, D) {
+    var ix = IDX[k], box = $(k);
+    if (!ix || !box || !D) return;
+    var U = D[k], now = Date.now();
     if (!U || !U.date) {
-      box.innerHTML = '<div class="notice">The first US30 bias arrives with the 08:00 report: a London plan, a first New York lean, levels and the day\'s US events. It is refreshed about 40 minutes before the New York open.</div>';
+      box.innerHTML = '<div class="notice">The first ' + ix.label + ' bias arrives with the 08:00 report: a London plan, a first New York lean, levels and the day\'s US events. It is refreshed about 40 minutes before the New York open.</div>';
       return;
     }
     var times = u3Times(U.date), today = bucIsoDay.format(now);
@@ -931,7 +941,7 @@
       html += '<div class="u3stale">' + esc(msg) + '</div>';
     }
     html += '<div class="u3hero ' + (U3_CHIP[bias] || 'RANGE') + '">' +
-      '<div class="u3top"><span class="u3k">US30 · Dow futures</span><span class="nechip">' + esc(stageTxt) +
+      '<div class="u3top"><span class="u3k">' + ix.label + ' · ' + ix.name + '</span><span class="nechip">' + esc(stageTxt) +
       (U.updatedAt ? ' · ' + bucClock.format(Date.parse(U.updatedAt)) : '') + '</span></div>' +
       '<div class="u3bias"><span class="u3big ' + (U3_CHIP[bias] || 'RANGE') + '">' + esc(U3_WORD[bias] || bias) + '</span>' +
       (U.conviction ? '<span class="u3cv">' + u3Dots(U.conviction) + '<span>' + esc(String(U.conviction).charAt(0).toUpperCase() + String(U.conviction).slice(1).toLowerCase() + ' conviction') + '</span></span>' : '') + '</div>' +
@@ -939,8 +949,8 @@
       (U.headline ? '<div class="u3head">' + esc(U.headline) + '</div>' : '') +
       '<div class="u3date">' + esc(bucDay.format(Date.parse(U.date + 'T12:00:00Z'))) + '</div></div>';
     var S = U.sessions || {};
-    html += '<div class="u3sess">' + u3SessionCard('london', S.london, times.lon, times.ny, now, U) +
-      u3SessionCard('ny', S.ny, times.ny, times.close, now, U) + '</div>';
+    html += '<div class="u3sess">' + u3SessionCard('london', S.london, times.lon, times.ny, now, U, idxTrack[k]) +
+      u3SessionCard('ny', S.ny, times.ny, times.close, now, U, idxTrack[k]) + '</div>';
     var dr = (U.drivers || []).filter(function (d) { return d && d.k; }).slice(0, 6);
     if (dr.length) {
       var up = dr.filter(function (d) { return d.s > 0; }).length, dn = dr.filter(function (d) { return d.s < 0; }).length;
@@ -951,27 +961,27 @@
             '<span class="u3dk">' + esc(d.k) + '</span><span class="u3dv">' + esc(d.v || '') + '</span></div>';
         }).join('') + '</div>';
     }
-    html += u3Levels(U);
+    html += u3Levels(U, ix);
     var sc = (U.scenarios || []).filter(function (s) { return s && s.if && s.then; }).slice(0, 3);
     if (sc.length) html += '<div class="panel"><h2>If → then</h2><div class="nesc" style="margin-top:0">' + sc.map(function (s) {
       return '<div class="nesr"><span class="neif">' + esc(s.if) + '</span><span class="nethen">' + esc(s.then) + '</span></div>';
     }).join('') + '</div></div>';
     html += u3Events(D, U, now);
-    html += u3TrackHtml();
-    html += '<div class="u3btns"><button class="btn" id="u3Size">Size a US30 trade</button>' +
-      '<a class="btn ghost" href="' + U3_TV + '" target="_blank" rel="noopener">YM1! chart ›</a></div>';
+    html += u3TrackHtml(ix);
+    html += '<div class="u3btns"><button class="btn u3size">Size a ' + ix.label + ' trade</button>' +
+      '<a class="btn ghost" href="' + ix.tv + '" target="_blank" rel="noopener">' + ix.fut + '1! chart ›</a></div>';
     box.innerHTML = html;
-    $('u3Size').addEventListener('click', openUs30Calc);
+    box.querySelector('.u3size').addEventListener('click', function () { openIdxCalc(k); });
   }
-  setInterval(function () { if (!document.hidden && DATA && current === 'us30') renderUs30(DATA); }, 60000);
-  // Jump to the size calculator with the last US30 contract used (CFD by default).
-  function openUs30Calc() {
+  setInterval(function () { if (!document.hidden && DATA && IDX[current]) renderIdx(current, DATA); }, 60000);
+  // Jump to the size calculator with the last contract used for this index (CFD by default).
+  function openIdxCalc(k) {
     showView('trades');
     var sel = $('cPair');
-    if (sel && !/^US30/.test(sel.value)) {
+    if (sel && idxOfSym(sel.value) !== k) {
       var last = null;
-      try { last = localStorage.getItem('fx_us30_last'); } catch (e) {}
-      sel.value = CALC_COMMODITIES[last] ? last : 'US30 CFD';
+      try { last = localStorage.getItem('fx_' + k + '_last'); } catch (e) {}
+      sel.value = CALC_COMMODITIES[last] && idxOfSym(last) === k ? last : IDX[k].calc + ' CFD';
       computeSize();
     }
     var e = $('cEntry');
@@ -1274,20 +1284,24 @@
     // points. €1.00 per point per lot is the usual retail spec but is NOT yet
     // confirmed against FOREX.COM's Europe 50 sheet; verify before sizing on it.
     'EU50':    { contract: 1,    label: '€1 / point / lot', quote: 'EUR', kind: 'points' },
-    // US30 (Dow, Darius 2026-11-19). The CFD's $ per point per lot differs by
-    // broker and is NOT confirmed for FOREX.COM, so it is editable (default $1).
-    // MYM / YM are CME futures with fixed point values; they size in whole contracts.
-    'US30 CFD': { contract: 1,   label: '$1 / point / lot', quote: 'USD', kind: 'points', editable: true },
-    'US30 MYM': { contract: 0.5, label: '$0.50 / point / contract', quote: 'USD', kind: 'points', futures: true },
-    'US30 YM':  { contract: 5,   label: '$5 / point / contract', quote: 'USD', kind: 'points', futures: true }
+    // US30 (Dow, 2026-11-19) and NAS100 (Nasdaq-100, 2026-11-19). A CFD's $ per
+    // point per lot differs by broker and is NOT confirmed for FOREX.COM, so it is
+    // editable (default $1; `editable` = its localStorage key). The micro and mini
+    // futures are CME contracts with fixed point values; they size in whole
+    // contracts (`micro` = the smaller contract to suggest when 1 is too big).
+    'US30 CFD':   { contract: 1,   label: '$1 / point / lot', quote: 'USD', kind: 'points', editable: 'fx_us30_cfd_pp' },
+    'US30 MYM':   { contract: 0.5, label: '$0.50 / point / contract', quote: 'USD', kind: 'points', futures: true },
+    'US30 YM':    { contract: 5,   label: '$5 / point / contract', quote: 'USD', kind: 'points', futures: true, micro: 'MYM' },
+    'NAS100 CFD': { contract: 1,   label: '$1 / point / lot', quote: 'USD', kind: 'points', editable: 'fx_nas100_cfd_pp' },
+    'NAS100 MNQ': { contract: 2,   label: '$2 / point / contract', quote: 'USD', kind: 'points', futures: true },
+    'NAS100 NQ':  { contract: 20,  label: '$20 / point / contract', quote: 'USD', kind: 'points', futures: true, micro: 'MNQ' }
   };
-  var US30_CFD_KEY = 'fx_us30_cfd_pp';
-  function us30CfdValue() {
+  function cfdValue(c) {
     var v = NaN;
-    try { v = parseFloat(String(localStorage.getItem(US30_CFD_KEY) || '').replace(',', '.')); } catch (e) {}
-    return v > 0 ? v : 1;
+    try { v = parseFloat(String(localStorage.getItem(c.editable) || '').replace(',', '.')); } catch (e) {}
+    return v > 0 ? v : c.contract;
   }
-  function contractOf(c) { return c && c.editable ? us30CfdValue() : (c ? c.contract : 100000); }
+  function contractOf(c) { return c && c.editable ? cfdValue(c) : (c ? c.contract : 100000); }
   // Index prices as typed on a phone: "50.600" and "50,600" are both fifty thousand
   // six hundred (a thousands separator, as Darius writes them); "50600.5",
   // "50,600.5" and "50.600,5" keep their decimals.
@@ -1353,7 +1367,7 @@
   var calcShownPair = null;
   function computeSize() {
     var pair = $('cPair').value, dep = $('cDep').value, mode = $('cRiskMode').value;
-    if (/^US30/.test(pair)) { try { localStorage.setItem('fx_us30_last', pair); } catch (e) {} }
+    if (idxOfSym(pair)) { try { localStorage.setItem('fx_' + idxOfSym(pair) + '_last', pair); } catch (e) {} }
     var bal = numVal('cBal'), risk = numVal('cRisk'), sl = numVal('cSl');
     var commodity = CALC_COMMODITIES[pair];
     var isPoints = commodity && commodity.kind === 'points';
@@ -1365,10 +1379,10 @@
     if (calcShownPair !== pair) {                 // re-render only on a change, or the input loses focus
       calcShownPair = pair;
       if (commodity && commodity.editable) {
-        $('cPip').innerHTML = '<input id="cContract" type="text" inputmode="decimal" autocomplete="off" aria-label="Dollars per point per lot" value="' + us30CfdValue() + '">';
+        $('cPip').innerHTML = '<input id="cContract" type="text" inputmode="decimal" autocomplete="off" aria-label="Dollars per point per lot" value="' + cfdValue(commodity) + '">';
         $('cContract').addEventListener('input', function () {
           var v = parseFloat(($('cContract').value || '').replace(',', '.'));
-          try { if (v > 0) localStorage.setItem(US30_CFD_KEY, String(v)); } catch (e) {}
+          try { if (v > 0) localStorage.setItem(commodity.editable, String(v)); } catch (e) {}
           computeSize();
         });
       } else $('cPip').textContent = commodity ? commodity.label : pipSize.toString();
@@ -1436,7 +1450,7 @@
       $('cNote').className = 'calcnote' + (belowMin ? ' warn' : '');
       $('cNote').innerHTML = belowMin
         ? (isFut
-          ? 'Risking <b>' + riskShown + '</b> is less than 1 contract: 1 ' + pair.replace('US30 ', '') + ' over this ' + sl.toLocaleString('en-US') + '-pt stop risks ' + fmtMoney(dep, riskPerLot) + '. <b>Raise risk, tighten the stop' + (pair === 'US30 YM' ? ' or use MYM' : '') + '</b>.'
+          ? 'Risking <b>' + riskShown + '</b> is less than 1 contract: 1 ' + pair.split(' ')[1] + ' over this ' + sl.toLocaleString('en-US') + '-pt stop risks ' + fmtMoney(dep, riskPerLot) + '. <b>Raise risk, tighten the stop' + (commodity.micro ? ' or use ' + commodity.micro : '') + '</b>.'
           : 'Risking <b>' + riskShown + '</b> needs ≈' + exactLots.toFixed(3) + ' lots — <b>below the 0.01 minimum</b>; raise risk or balance.')
         : 'Risking <b>' + riskShown + '</b> · ' + (commodity
             ? (isPoints ? '1 point = <b>' + fmtMoney(dep, pvDep) + per + '</b> · ' + stopTxt
@@ -1494,7 +1508,7 @@
   }
 
   /* ============================ Symbol detail view ============================ */
-  var LEG_MAP = { 'US30 CFD': ['USD'], 'US30 MYM': ['USD'], 'US30 YM': ['USD'], 'DXY': ['USD'], 'JPYBASKET': ['JPY'], 'GER40': ['EUR'], 'EU50': ['EUR'], 'XAU/USD': ['USD'], 'XAG/USD': ['USD'], 'USOIL': ['USD'] };
+  var LEG_MAP = { 'US30 CFD': ['USD'], 'US30 MYM': ['USD'], 'US30 YM': ['USD'], 'NAS100 CFD': ['USD'], 'NAS100 MNQ': ['USD'], 'NAS100 NQ': ['USD'], 'DXY': ['USD'], 'JPYBASKET': ['JPY'], 'GER40': ['EUR'], 'EU50': ['EUR'], 'XAU/USD': ['USD'], 'XAG/USD': ['USD'], 'USOIL': ['USD'] };
   var TV_MAP = { 'DXY': 'TVC:DXY', 'JPYBASKET': 'FXCM:JPYBASKET', 'GER40': 'GER40', 'EU50': 'TVC:SX5E', 'XAU/USD': 'OANDA:XAUUSD', 'XAG/USD': 'OANDA:XAGUSD', 'USOIL': 'TVC:USOIL' };
   var CAT_KEYS = {
     USD: /US |USD|Fed|FOMC|ISM|NFP/i, EUR: /ECB|EZ |euro|Germany|HICP/i, GBP: /BoE|UK |GBP/i,
@@ -1665,9 +1679,10 @@
     $('logSave').addEventListener('click', function () {
       if (!lastCalc || !logDir) { $('logSave').textContent = logDir ? 'Save trade' : 'Pick a direction'; return; }
       var s = (DATA.symbols || []).find(function (x) { return x.sym === lastCalc.sym; });
-      if (!s && /^US30/.test(lastCalc.sym) && DATA.us30 && DATA.us30.bias) {   // the US30 tab's day bias
-        s = { bias: { BULLISH: 'LONG', BEARISH: 'SHORT', RANGE: 'RANGE' }[DATA.us30.bias] || null,
-          conv: String(DATA.us30.conviction || '').toUpperCase() || null };
+      var ixk = idxOfSym(lastCalc.sym), IB = ixk && DATA[ixk];
+      if (!s && IB && IB.bias) {                // the index tab's day bias (US30 / NAS100)
+        s = { bias: { BULLISH: 'LONG', BEARISH: 'SHORT', RANGE: 'RANGE' }[IB.bias] || null,
+          conv: String(IB.conviction || '').toUpperCase() || null };
       }
       var trade = {
         ts: new Date().toISOString(), sym: lastCalc.sym, dir: logDir,
@@ -1906,7 +1921,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v35';
+  var APP_VERSION = 'v36';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
