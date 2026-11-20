@@ -337,6 +337,10 @@ main{flex:1;padding:14px 14px calc(var(--tabbar-h) + var(--safe-bottom) + 18px);
   background:var(--panel2);border:1px solid var(--line);color:var(--mut)}
 .dirbtn.long.sel{background:var(--chip-long-bg);border-color:var(--long);color:var(--chip-long-tx)}
 .dirbtn.short.sel{background:var(--chip-short-bg);border-color:var(--short);color:var(--chip-short-tx)}
+.sessrow[hidden],.sesshint[hidden]{display:none}
+.dirbtn.sess{font-size:13px;padding:10px}
+.dirbtn.sess.sel{border-color:var(--accent);color:var(--accent);background:var(--panel)}
+.sesshint{font-size:12px;color:var(--mut);margin-top:-4px}
 .logform input{background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--txt);
   padding:11px 12px;font-size:14px;outline:none}
 .logform input:focus{border-color:var(--accent)}

@@ -1619,7 +1619,7 @@
   var JSTATE = { trades: [] };
   try { JSTATE = JSON.parse(localStorage.getItem('fx_jcache') || '{"trades":[]}'); } catch (e) {}
   var lastCalc = null;
-  var logDir = null;
+  var logDir = null, logSess = null;
 
   function jToken() { return localStorage.getItem('fx_jtoken') || ''; }
   function jFetch(method, body) {
@@ -1643,6 +1643,7 @@
       .catch(function () { renderTrades(); renderBookBanner(); });
   }
 
+  function sessTxt(t) { return t.session ? ' · ' + (t.session === 'london' ? 'London' : 'NY') + ' session' : ''; }
   function alignOf(bias, dir) {
     if (bias === 'LONG' && dir === 'LONG') return 'with';
     if (bias === 'SHORT' && dir === 'SHORT') return 'with';
@@ -1662,28 +1663,66 @@
   }
 
   /* ---- log form ---- */
+  /* Index trades (US30 / NAS100) are checked against the call for the SESSION
+   * they were taken in, not the day bias (Darius, 2026-11-20): a NY short on a
+   * Range day with a Bearish NY call is a trade WITH the analysis. The session
+   * is preselected from the clock (before the NY cash open of the call's day =
+   * London) and can be switched when a trade is logged late. */
+  var LEAN_DIR = { BULLISH: 'LONG', BEARISH: 'SHORT', RANGE: 'RANGE' };
+  function defaultSession(k) {
+    var U = DATA && DATA[k];
+    if (!U || !U.date) return 'ny';
+    return Date.now() < u3Times(U.date).ny ? 'london' : 'ny';
+  }
+  function sessionCall(k, sess) {
+    var U = DATA && DATA[k];
+    if (!U) return null;
+    var x = U.sessions && U.sessions[sess];
+    if (x && x.lean) return { bias: LEAN_DIR[x.lean] || null, conv: String(x.conviction || U.conviction || '').toUpperCase() || null, lean: x.lean };
+    return U.bias ? { bias: LEAN_DIR[U.bias] || null, conv: String(U.conviction || '').toUpperCase() || null, lean: U.bias, day: true } : null;
+  }
+  function updateSessUi() {
+    var k = lastCalc && idxOfSym(lastCalc.sym);
+    $('logSessRow').hidden = $('logSessHint').hidden = !k;
+    if (!k) return;
+    $('sessLon').classList.toggle('sel', logSess === 'london'); $('sessNy').classList.toggle('sel', logSess === 'ny');
+    var c = sessionCall(k, logSess), U = DATA[k];
+    var when = U && U.date && U.date !== bucIsoDay.format(Date.now()) ? ' (' + bucDay.format(Date.parse(U.date + 'T12:00:00Z')) + ')' : '';
+    $('logSessHint').textContent = c
+      ? 'Checked against the ' + (c.day ? 'day bias' : (logSess === 'london' ? 'London' : 'New York') + ' call') + when + ': ' +
+        U3_WORD[c.lean] + (c.conv ? ' (' + c.conv.toLowerCase() + ')' : '')
+      : 'No ' + IDX[k].label + ' call published yet: the trade is logged without one.';
+  }
   function updateLogUi() {
     var btn = $('logBtn'); if (!btn) return;
     btn.style.display = lastCalc ? '' : 'none';
     if (!lastCalc) $('logForm').style.display = 'none';
+    else if ($('logForm').style.display !== 'none') {          // instrument changed with the form open
+      btn.style.display = 'none';
+      var k = idxOfSym(lastCalc.sym);
+      if (k && !logSess) logSess = defaultSession(k);
+      updateSessUi();
+    }
   }
   function wireLogForm() {
     $('logBtn').addEventListener('click', function () {
       $('logForm').style.display = ''; $('logBtn').style.display = 'none';
       logDir = (lastCalc && lastCalc.dir) || null;          // known from the entry/stop prices
       $('dirLong').classList.toggle('sel', logDir === 'LONG'); $('dirShort').classList.toggle('sel', logDir === 'SHORT');
+      var k = lastCalc && idxOfSym(lastCalc.sym);
+      logSess = k ? defaultSession(k) : null;
+      updateSessUi();
     });
+    $('sessLon').addEventListener('click', function () { logSess = 'london'; updateSessUi(); });
+    $('sessNy').addEventListener('click', function () { logSess = 'ny'; updateSessUi(); });
     $('dirLong').addEventListener('click', function () { logDir = 'LONG'; $('dirLong').classList.add('sel'); $('dirShort').classList.remove('sel'); });
     $('dirShort').addEventListener('click', function () { logDir = 'SHORT'; $('dirShort').classList.add('sel'); $('dirLong').classList.remove('sel'); });
     $('logCancel').addEventListener('click', function () { $('logForm').style.display = 'none'; updateLogUi(); });
     $('logSave').addEventListener('click', function () {
       if (!lastCalc || !logDir) { $('logSave').textContent = logDir ? 'Save trade' : 'Pick a direction'; return; }
       var s = (DATA.symbols || []).find(function (x) { return x.sym === lastCalc.sym; });
-      var ixk = idxOfSym(lastCalc.sym), IB = ixk && DATA[ixk];
-      if (!s && IB && IB.bias) {                // the index tab's day bias (US30 / NAS100)
-        s = { bias: { BULLISH: 'LONG', BEARISH: 'SHORT', RANGE: 'RANGE' }[IB.bias] || null,
-          conv: String(IB.conviction || '').toUpperCase() || null };
-      }
+      var ixk = idxOfSym(lastCalc.sym);
+      if (!s && ixk) s = sessionCall(ixk, logSess || defaultSession(ixk));   // the session's call
       var trade = {
         ts: new Date().toISOString(), sym: lastCalc.sym, dir: logDir,
         lots: lastCalc.lots, riskAmt: lastCalc.riskAmt, riskCcy: lastCalc.dep, sl: lastCalc.sl,
@@ -1691,6 +1730,7 @@
         align: alignOf(s ? s.bias : null, logDir), status: 'open',
         note: ($('logNote').value || '').slice(0, 140)
       };
+      if (ixk) trade.session = logSess || defaultSession(ixk);
       $('logSave').disabled = true; $('logSave').textContent = 'Saving…';
       jFetch('POST', { op: 'add', trade: trade }).then(function () {
         $('logForm').style.display = 'none'; $('logNote').value = '';
@@ -1772,7 +1812,7 @@
           '<span class="jdir ' + t.dir + '">' + t.dir + '</span>' +
           '<span class="conv">' + esc(t.lots) + ' lots</span>' +
           '<span class="jr">risk ' + esc(String(t.riskAmt)) + ' ' + esc(t.riskCcy || '') + '</span></div>' +
-        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) + ' · SL ' + esc(t.sl || '—') +
+        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) + sessTxt(t) + ' · SL ' + esc(t.sl || '—') +
           ' · entered ' + (t.align === 'with' ? 'WITH' : t.align === 'against' ? 'AGAINST' : 'no') + ' bias (' + esc(t.biasAtEntry || '—') + ')' +
           (t.note ? ' · ' + esc(t.note) : '') + '</div>' +
         (f ? '<div class="jflip ' + f.cls + '">' + esc(f.txt) + '</div>' : '') +
@@ -1857,7 +1897,7 @@
         '<span class="jdir ' + t.dir + '">' + t.dir + '</span>' +
         '<span class="conv">' + (t.align === 'with' ? 'with bias' : t.align === 'against' ? 'against bias' : 'no bias') + '</span>' +
         '<span class="jr ' + rcls + '">' + rtxt + '</span></div>' +
-        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) + ' → ' + (t.closedTs ? new Date(t.closedTs).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) : '') +
+        '<div class="jmeta">' + new Date(t.ts).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) + ' → ' + (t.closedTs ? new Date(t.closedTs).toLocaleDateString('en-GB', { timeZone: BUC_TZ }) : '') + sessTxt(t) +
         (t.note ? ' · ' + esc(t.note) : '') + '</div>' +
         '<div class="jact"><button class="btn ghost jedit">Edit result</button><button class="jdel">delete</button></div>' +
         '<div class="closeform jeditform" style="display:none"><input type="text" inputmode="text" placeholder="Result in R (0 = breakeven), e.g. +1,5 · 0 · -1" value="' + rval + '">' +
@@ -1921,7 +1961,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v36';
+  var APP_VERSION = 'v37';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';
