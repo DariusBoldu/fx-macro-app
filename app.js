@@ -1762,8 +1762,11 @@
     open.forEach(function (t) {
       var sign = t.dir === 'LONG' ? 1 : -1;
       var r = Number(t.riskAmt) || 0;
-      if (COMMODITY_LEG[t.sym]) {
-        var cc = COMMODITY_LEG[t.sym];
+      // single-leg instruments (indices: US30 CFD/MYM/YM count as one 'US30')
+      var ik = idxOfSym(t.sym);
+      var single = COMMODITY_LEG[t.sym] || (ik ? IDX[ik].label : t.sym.indexOf('/') < 0 ? t.sym : null);
+      if (single) {
+        var cc = single;
         exp[cc] = (exp[cc] || 0) + sign * r; (touch[cc] = touch[cc] || []).push(sign);
         return;
       }
@@ -1961,7 +1964,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v37';
+  var APP_VERSION = 'v38';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

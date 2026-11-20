@@ -4,7 +4,7 @@
  *   - cache-first (stale-while-revalidate) for static assets
  *   - Web Push: shows a notification when the push sender fires
  * Bump CACHE when shell assets change to force an update. */
-var CACHE = 'fx-macro-v37';
+var CACHE = 'fx-macro-v38';
 var SHELL = [
   './',
   './index.html',
@@ -21,8 +21,13 @@ var SHELL = [
 ];
 
 self.addEventListener('install', function (e) {
+  // cache: 'reload' bypasses the browser's HTTP cache (GitHub Pages serves
+  // max-age=600): without it a new version could precache a NEW index.html
+  // next to an OLD app.js/styles.css and run them together (v37 bug: the
+  // London/New York buttons showed but did nothing).
   e.waitUntil(caches.open(CACHE).then(function (c) {
-    return c.addAll(SHELL).catch(function () {/* tolerate a missing optional asset */});
+    return c.addAll(SHELL.map(function (u) { return new Request(u, { cache: 'reload' }); }))
+      .catch(function () {/* tolerate a missing optional asset */});
   }).then(function () { return self.skipWaiting(); }));
 });
 
