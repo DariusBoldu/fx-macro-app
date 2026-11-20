@@ -20,7 +20,12 @@ window.FX_DATA = {
         { if: "Hold on the equity-credit stress", then: "The 19-month dollar high unwinds fast; gold, AUD/USD and the Nasdaq the biggest beneficiaries" }
       ]
     },
-    nextBigEvent: "FOMC decision and new dot plot Wednesday December 9 at 21:00, with a quarter-point hike priced 92% to 95.7% and the 50bp tail near 7%."
+    nextBigEvent: "FOMC decision and new dot plot Wednesday December 9 at 21:00, with a quarter-point hike priced 92% to 95.7% and the 50bp tail near 7%.",
+    update: {
+      at: "2026-11-20T13:54:58Z",
+      title: "US indices NY update",
+      text: "US30 Bearish (medium), wrong above 49,150 \u00b7 NAS100 Bearish (low), wrong above 26,210 \u00b7 NQ hit 26,000 and the 10-year fell under 5% without rescuing tech."
+    }
   },
   dailyRead: "Yesterday this file argued that the dollar trend was intact but the marginal buyer was tired, and that the hawkish minutes had been met with six basis points of dollar strength because the same document carried an AI-credit warning. Today that split resolved, and it resolved against the dollar rather than for it. The New York session was a rout: the Dow fell 1,101 points, or 2.19%, to 49,097.06 and closed back under 50,000, the S&P 500 lost 2.02% to 7,175.83 for a sixth consecutive decline and its longest slide since April 2024, the Nasdaq Composite fell 2.25% to 23,879.20, and more than 90% of S&P members fell. Anthropic debuted on Nasdaq, closed 17% up and was valued near 1.76 trillion dollars, and it did not rescue the AI trade for a single hour. Nvidia closed at 145.98 and minus 3.3%, now about 28% below where it started November; AMD fell 7.72% to 489.19 on a short report citing its China exposure, which the company denied; UnitedHealth fell 5.55% to 330.48 and is down roughly 18% in five sessions, the Dow’s biggest single drag. Overnight it kept going. Asian equities are heading for their worst week since 2020, YM is 49,088 and sitting on a 1-month low of 49,004 with the week down 6.35%, and NQ is 26,343, already through yesterday’s low, at a 1-month low of 26,271 with the week down 7.24%. The metals went with it rather than against it: gold is 3,545.43 and minus 2.30%, down 14.45% on the month; silver is 41.796 and minus 2.32%, down 27.79% on the month; copper is 5.4989 and minus 2.33%, down 15.91%. Analysts are describing margin calls and fund redemptions rather than a change of view, with support flagged near 3,500 for gold and 40 for silver, and central banks still bought 321 tonnes in the third quarter. The single most important observation on this board today is what the dollar did with all of that. Nothing. DXY is 103.789 and minus 0.13%, and the dollar is lower against every one of the other seven: euro plus 0.10%, sterling plus 0.13%, yen plus 0.31%, Australian dollar plus 0.09%, kiwi plus 0.26%, Canadian dollar plus 0.11%, franc plus 0.22%. The 10-year eased four basis points to 5.014%, a one-week low. That is the third session running in which maximal Fed hawkishness has produced no dollar follow-through, and it is now enough evidence to act on: the score comes down from plus three to plus two, and the conviction in the dollar expressions comes down with it. The policy case has not weakened at all - December 9 is priced between 92% and 95.7% for a quarter point with a 4.3% to 7% tail for fifty, the October minutes put almost all participants behind further increases, Waller has said publicly that he leans toward hiking even on a better inflation print and that a half point is probably needed, and he speaks at 15:25 today with Cook, the other October dissenter, at 19:15. What has weakened is the dollar’s ability to convert it. The currency that is converting is the yen. It rose against all seven others overnight - USD/JPY 159.162 and minus 0.31%, AUD/JPY minus 0.38%, EUR/JPY minus 0.24%, CAD/JPY minus 0.22%, GBP/JPY minus 0.20%, CHF/JPY minus 0.16%, NZD/JPY minus 0.07% - which is the opposite of yesterday, when the four-session run ended and the score was cut to plus one. It goes back to plus two, and the honest point is that it did so on a day when its own data disappointed: October national core CPI came in at 2.2% against a 2.3% forecast, headline at 2.3% against 2.5%, and core-core slowed to 2.2% from 2.4%, so all three missed. Core is nevertheless above target for a second straight month and at the fastest pace this year as household energy subsidies were scaled back, TradingEconomics carries 1.50% for the December 18 decision, and 61 of 71 economists expect exactly that. A yen that rallies on a soft CPI print is a yen being bought for what equities are doing, not for what the Bank of Japan is doing, and that is precisely the environment the XXX/JPY shorts are built for. The franc is doing the junior version of the same job: up against the dollar, euro, sterling, Australian dollar and Canadian dollar, down only against the yen and the kiwi, so it moves from zero to plus one. Europe is the quiet upgrade. The deposit facility rate is 2.50% and euro-area inflation is 4.0%, a three-year high, with core at 2.6% - and December 17 pricing has moved up sharply, with LSEG data cited at about 91% as of November 18 against the 67% to 84% range this file was using a week ago. The energy leg behind that print keeps strengthening: EU natural gas is 85.67 euros and plus 1.65%, up from 82.11 the day before yesterday on tighter winter supply concerns. Lagarde speaks at 10:15 and Nagel at 15:00. So the euro goes to plus one, EUR/USD drops out of the short book entirely and becomes a range, and the long euro crosses against the Australian and Canadian dollars are where the ECB case gets expressed. Sterling is the one where the trade has partly already paid: the market now prices December 17 near 74% against 79% to 84% a week ago, while all but one of 65 economists polled by Reuters expect a hold with February the consensus for the next move and 4.25% the peak, and the November 5 hike was an 8-1 vote with Mann wanting fifty. Some of that premium has already left sterling, so the score moves from minus one to zero and the sterling shorts become relative-value trades rather than directional ones. Retail sales at 09:00 are the only input today. Australia stays the weakest thing here and the reason has broadened. Yesterday it was the labour report - employment minus 43,500 against a plus 25,500 forecast, unemployment 4.9% and a four-year high. Today it is copper, down another 2.33% and 15.91% on the month, which is the China and industrial-demand leg of the Australian dollar being removed at the same time as the labour leg. The board still cannot hike into 4.9% unemployment and cannot cut into 4.3% inflation with core at 3.6%, so the Reserve Bank is frozen, TradingEconomics carries 4.85% for December 8, and the score stays at minus three. New Zealand is the mirror for a second day: the kiwi was the best-performing non-haven overnight at plus 0.26% against the dollar, inflation is 3.7% and falling from 4.1%, and TradingEconomics carries 3.00% for the December 9 Monetary Policy Statement, so the score goes from minus one to zero and AUD/NZD stays the cleanest cross idea on the board. Canada stays a minus two and the one thing worth flagging is a genuine disagreement: TradingEconomics own calendar now forecasts a hike to 2.75% on December 9, while the rate market prices about 38%, with October core CPI at 2.0%, trimmed at 1.8%, median at 2.0%, unemployment at 6.7% and WTI 14.92% lower on the month. The market is almost certainly right, but that gap is the risk to the highest-conviction dollar long on this board. For the two indices, there is no red folder in either session today, which means structure and the trend carry the day: YM is pinned on its 1-month low below VWAP, NQ is already through yesterday’s low, and the one thing arguing for a bounce is a 10-year at a one-week low into a monthly options expiry. Both get a bearish lean with the honest caveat that this is the sixth day down and squeezes start from exactly here. Not financial advice.",
   snapshot: [
@@ -122,65 +127,66 @@ window.FX_DATA = {
   geopolitics: "The inversion this file described yesterday has not just held, it has been tested about as hard as a market can test one. Day 264 of the closure. Iran’s army said on November 19 that three oil tankers struck naval mines and caught fire in the eastern Strait of Hormuz; the Revolutionary Guard separately claimed two supertankers hit mines; a British monitor confirmed one vessel hit by an unknown projectile; an attack on an ADNOC vessel left 11 crew members injured and one missing; and the United States has widened its blockade to cover ship-to-ship transfers of Iranian-origin cargo, with reports of US forces firing on and disabling a tanker attempting to run it toward Kharg Island. IMF PortWatch logged two transits on November 15 against a pre-crisis baseline near 85 a day. The physical figures remain estimates and should be read as such - Iranian state media has published differing tanker totals, no maritime authority has independently confirmed the Iranian count, and one tracker is carrying an unsourced and undated headline claiming the strait has reopened with the blockade lifted, which conflicts with everything else and should be treated as unreliable until a second source carries it. Against all of that, WTI is 82.5089 and plus 0.26%, down 14.92% on the month, and Brent is 92.1779 and plus 0.23%. The conclusion is unchanged and now better evidenced: a market that will not bid mines in the strait has no premium left to unwind, so the direction of the asymmetry is up while the direction of the trend is down, and USOIL stays a range rather than a short. What has changed is that oil is no longer the dominant cross-asset story. The AI derating is. The October 28 minutes flagged the rapid growth of debt behind the artificial-intelligence buildout, the opacity of its financing structures and the scenario in which returns disappoint, and the market has spent the four sessions since trading exactly that: six consecutive S&P declines, the longest slide since April 2024, the Dow back under 50,000, Nvidia about 28% below where it started the month, and a record Nasdaq debut for Anthropic at a 1.76 trillion dollar valuation that could not hold the tape up for a day. That matters for the FX read because it is a growth-and-credit shock rather than a rates shock, which is why gold fell 2.30% and silver 2.32% alongside equities instead of rallying, why copper lost another 2.33% to leave it 15.91% lower on the month, and why the 10-year eased to 5.014% while December hike pricing stayed at 92% to 95.7%. The transmission into currencies is clean. The yen is the primary beneficiary and rose against all seven others on a night its own CPI missed on all three measures - that is a haven bid, not a policy bid, and it is why the yen crosses carry the conviction today. The franc takes the junior share, up against five of seven and capped only by the Swiss National Bank’s standing readiness to sell francs. The Australian dollar is the primary casualty, because copper is its terms-of-trade leg and AI capex doubt is now removing it on top of a four-year-high unemployment rate. Canada keeps its minus two, with the Bank of Canada’s stated reason for the October hike removed by a 14.92% monthly fall in crude and both preferred cores at or below the midpoint, though TradingEconomics own calendar forecasting 2.75% for December 9 against market odds near 38% is a real disagreement rather than a rounding error. Europe is the only place where the oil story still pays: EU natural gas is 85.67 euros and plus 1.65% on tighter winter supply concerns, up from 82.11 the day before yesterday, so the euro-area keeps the inflation cost of the conflict without the terms-of-trade relief - which is precisely what holds inflation at a three-year high of 4.0% and has moved December 17 pricing up to about 91%. The dollar is the surprise. It should be the second beneficiary of a global growth scare and it is not: DXY is 103.789 and minus 0.13%, lower against all seven others on the day the rout accelerated. Three consecutive hawkish catalysts have produced no dollar gain, and that is the single most actionable observation on this board - the trades with an edge today are the ones that do not need a dollar leg. The scenario that re-prices everything at once is still a confirmed physical supply interruption rather than another unverified claim: WTI through 95 would restore the Canadian inflation argument and terms of trade together, invert the USD/CAD long and force the European growth-versus-inflation trade-off back toward growth. Nothing in the current price is paying for that.",
   us30: {
     date: "2026-11-20",
-    stage: "london",
-    updatedAt: "2026-11-20T06:20:00Z",
+    stage: "ny",
+    updatedAt: "2026-11-20T13:54:58Z",
     bias: "BEARISH",
-    conviction: "medium",
+    conviction: "low",
     dayType: "trend",
-    headline: "A sixth straight down day put the Dow under 50,000 and YM is pinned on the 1-month low at 49,000 with no red folder to break it.",
-    ref: { price: 49090, at: "2026-11-20T06:05:58Z" },
+    headline: "London swept the Asia high, failed, and broke YM to a new month low at 48,897 - but the Dow is down 0.5% while NQ is down 2.1%.",
+    ref: { price: 48950, at: "2026-11-20T13:51:15Z" },
     sessions: {
       london: {
         lean: "BEARISH",
         conviction: "low",
         plan: "Sell a 5-min lower high into VWAP 49,110 or the 49,240 Asia high while they cap; first target 49,000, then 48,500. Do not chase a break of 49,000 without a retest.",
-        invalid: "5-min close back above 49,240 (Asia high and today’s open)"
+        invalid: "5-min close back above 49,240 (Asia high and today\u2019s open)"
       },
       ny: {
         lean: "BEARISH",
-        conviction: "low",
-        plan: "Short a 5-min failure at VWAP or PDC 49,180 after the open; first target 49,000 then 48,500. A 5-min close above 49,240 makes it a squeeze trade, not a short.",
-        invalid: "5-min close above 49,240 (Asia high)"
+        conviction: "medium",
+        plan: "Sell a 5-min lower high into 49,060, where VWAP and PDL sit together, or 49,150; first target 48,900 then 48,500. Do not sell the 48,897 low itself - wait for the retest.",
+        invalid: "5-min close above 49,150 (London open) with VWAP 49,060 reclaimed"
       }
     },
     drivers: [
-      { k: "Structure", v: "YM 49,088, under VWAP 49,110 and PDC 49,180, 84 pts off the month low", s: -1 },
-      { k: "Trend", v: "Week -6.35%; S&P 6 straight losses, longest slide since April 2024", s: -1 },
-      { k: "Dow names", v: "UnitedHealth -5.55% to 330.48, -18% in 5 sessions, the biggest drag", s: -1 },
-      { k: "Fed", v: "Waller 15:25 has said 50bp is probably needed; Cook 19:15", s: -1 },
-      { k: "Yields", v: "US 10-year 5.014%, -4bp to a one-week low - the one bullish input", s: 1 },
-      { k: "Stretch", v: "ATR 872 and price on the 49,004 month low into monthly opex", s: 1 }
+      { k: "Structure", v: "YM 48,950 on the 48,897 month low, under VWAP and PDL at 49,060", s: -1 },
+      { k: "Rotation", v: "YM -0.47% vs NQ -2.14% - value is defended, growth is not", s: 1 },
+      { k: "Yields", v: "US 10-year 4.975%, -8bp and under 5% - and equities fell anyway", s: 0 },
+      { k: "Fed", v: "Waller spoke 15:25; he wants 50bp in December, now fully priced", s: -1 },
+      { k: "AI / tech", v: "Anthropic -9% after its record IPO; Nvidia -6% in Europe premarket", s: -1 },
+      { k: "Stretch", v: "Range 443 pts of 887 ATR on opex Friday after -6.6% on the week", s: 1 }
     ],
     levels: [
-      { name: "PDH", v: 50660, note: "Yesterday’s high; the gap left behind by the NY rout" },
-      { name: "50,000", v: 50000, note: "The round number the Dow closed back under" },
-      { name: "PDC", v: 49180, note: "Yesterday’s close; first resistance overhead" },
-      { name: "Asia high", v: 49240, note: "Today’s open and high; the invalidation level" },
-      { name: "VWAP", v: 49110, note: "Session VWAP; price is sitting just under it" },
-      { name: "PDL", v: 49060, note: "Yesterday’s low; now acting as the pivot" },
-      { name: "Asia low", v: 49000, note: "Today’s low and the 1-month low" },
-      { name: "48,500", v: 48500, note: "Round-number objective if 49,000 goes" }
+      { name: "London high", v: 49340, note: "Today\u2019s high; the Asia-high sweep that failed" },
+      { name: "Asia high", v: 49240, note: "Today\u2019s open; the level London poked and rejected" },
+      { name: "PDC", v: 49180, note: "Thursday\u2019s close; the day\u2019s overhead pivot" },
+      { name: "PDL", v: 49060, note: "Thursday\u2019s low, now resistance, exactly on VWAP" },
+      { name: "VWAP", v: 49060, note: "Session VWAP sits on PDL - one line to defend" },
+      { name: "Asia low", v: 49000, note: "The old month low, broken in London" },
+      { name: "London low", v: 48900, note: "Today\u2019s low and the new 1-month low" },
+      { name: "48,500", v: 48500, note: "Round-number objective; 95% of ATR if tagged" }
     ],
     scenarios: [
-      { if: "Holds under VWAP 49,110", then: "Grind into 49,000 and then 48,500; the week stays near -7% with no catalyst to stop it" },
-      { if: "5-min close above 49,240", then: "Sixth-day short-covering; 49,500 then the 50,000 round number, and the short stands aside" },
-      { if: "Waller pushes 50bp at 15:25", then: "Yields up and the bid leaves; 49,000 breaks and 48,500 trades inside the NY session" }
+      { if: "Rejected at VWAP / PDL 49,060", then: "Grind to 48,500; the Dow joins the correction and the week closes near -7%" },
+      { if: "5-min close above 49,150", then: "Opex short-covering to PDC 49,180 then 49,240; stand aside rather than fade it" },
+      { if: "Nvidia opens down more than 6%", then: "NQ leads another leg and YM follows to 48,500 even with the 10-year under 5%" }
     ],
     events: [
-      { when: "2026-11-20T13:25:00Z", what: "Fed Governor Waller speaks", kind: "fed" },
-      { when: "2026-11-20T15:00:00Z", what: "Revised UoM sentiment 51.7 f, inflation exp 4.3% p", kind: "data" },
+      { when: "2026-11-20T13:25:00Z", what: "Fed Governor Waller spoke", kind: "fed" },
+      { when: "2026-11-20T15:00:00Z", what: "Revised UoM sentiment 51.7 f, infl exp 4.3% p", kind: "data" },
+      { when: "2026-11-20T17:00:00Z", what: "President Trump speaks", kind: "data" },
       { when: "2026-11-20T17:15:00Z", what: "Fed Governor Cook speaks", kind: "fed" }
     ]
   },
   nas100: {
     date: "2026-11-20",
-    stage: "london",
-    updatedAt: "2026-11-20T06:20:00Z",
+    stage: "ny",
+    updatedAt: "2026-11-20T13:54:58Z",
     bias: "BEARISH",
-    conviction: "medium",
+    conviction: "low",
     dayType: "trend",
-    headline: "NQ is already through yesterday’s low at a 1-month low of 26,271, week -7.24%, with Nvidia 28% off its high - growth is leading the fall.",
-    ref: { price: 26340, at: "2026-11-20T06:05:58Z" },
+    headline: "NQ hit the 08:00 target of 26,000 exactly - 72% of ATR spent before the open, so the edge is selling retests, not the low.",
+    ref: { price: 26030, at: "2026-11-20T13:51:16Z" },
     sessions: {
       london: {
         lean: "BEARISH",
@@ -191,35 +197,36 @@ window.FX_DATA = {
       ny: {
         lean: "BEARISH",
         conviction: "low",
-        plan: "Short a 5-min failure at VWAP 26,405 or PDL 26,435 after the open; targets 26,270 then 26,000. A 5-min close above 26,605 makes it a squeeze into opex, not a short.",
-        invalid: "5-min close above 26,605 (Asia high)"
+        plan: "Sell a 5-min lower high into VWAP 26,210 or the 26,230 Asia low; first target 25,800. The 26,000 target is already paid, so do not chase a break without a retest.",
+        invalid: "5-min close above VWAP 26,210, which opens PDL 26,435"
       }
     },
     drivers: [
-      { k: "Structure", v: "NQ 26,343, below VWAP 26,406 and PDL 26,436; month low 26,271 today", s: -1 },
-      { k: "Megacaps", v: "Nvidia closed 145.98, -3.3%, about -28% since November 1", s: -1 },
-      { k: "Semis / AI", v: "AMD -7.72% to 489.19 on a short report citing China; AMD denies it", s: -1 },
-      { k: "Rotation", v: "NQ -0.97% vs YM -0.19% - duration sold harder than value again", s: -1 },
-      { k: "Yields", v: "US 10-year 5.014%, -4bp to a one-week low; the bounce argument", s: 1 },
-      { k: "Trend", v: "Week -7.24%, 12.7% below the 30,178 month high", s: -1 }
+      { k: "Structure", v: "NQ 26,030 on the 26,000 month low; VWAP 26,210 and PDL 26,435 above", s: -1 },
+      { k: "Megacaps", v: "Nvidia -6.2% in European premarket, about $2trn off its October peak", s: -1 },
+      { k: "Semis / AI", v: "Anthropic -9% after its record IPO failed to calm AI-spend worries", s: -1 },
+      { k: "Rotation", v: "NQ -2.14% vs YM -0.47%; growth is carrying the whole decline", s: -1 },
+      { k: "Yields", v: "US 10-year 4.975%, -8bp under 5% - duration relief never arrived", s: 0 },
+      { k: "Stretch", v: "604 pts done, 72% of the 844 ATR, before the cash open on opex", s: 1 }
     ],
     levels: [
-      { name: "PDH", v: 27840, note: "Yesterday’s high before the 1,114-pt NY collapse" },
-      { name: "Day open", v: 26600, note: "Today’s open and yesterday’s close, both 26,600" },
-      { name: "Asia high", v: 26605, note: "Today’s high; the invalidation level" },
-      { name: "PDL", v: 26435, note: "Yesterday’s low, already broken - now resistance" },
-      { name: "VWAP", v: 26405, note: "Session VWAP; the pivot for every short entry" },
-      { name: "Asia low", v: 26270, note: "Today’s low and the 1-month low" },
-      { name: "26,000", v: 26000, note: "Round-number objective if 26,270 gives way" }
+      { name: "PDC / open", v: 26600, note: "Thursday\u2019s close and today\u2019s open; the day\u2019s ceiling" },
+      { name: "PDL", v: 26435, note: "Thursday\u2019s low; London\u2019s high failed right under it" },
+      { name: "London high", v: 26425, note: "Today\u2019s London high - a clean lower high at PDL" },
+      { name: "Asia low", v: 26230, note: "Old session low, now the lower edge of resistance" },
+      { name: "VWAP", v: 26210, note: "Session VWAP; the pivot for every NY short entry" },
+      { name: "26,000", v: 26000, note: "Today\u2019s low, the month low and the 08:00 target" },
+      { name: "25,800", v: 25800, note: "Next shelf if a 5-min close loses 26,000" }
     ],
     scenarios: [
-      { if: "Holds under VWAP 26,405", then: "26,270 breaks and 26,000 comes into range; NQ keeps leading YM lower on the week" },
-      { if: "5-min close above 26,605", then: "The short is wrong; squeeze toward PDL-turned-support and 26,900 as semis bounce" },
-      { if: "10-year drops under 5.00%", then: "Duration gets relief first; NQ outperforms YM and the bearish lean goes to range" }
+      { if: "Rejected at VWAP 26,210", then: "26,000 gives way on a 5-min close and 25,800 trades inside the NY session" },
+      { if: "5-min close above 26,210", then: "Opex squeeze to PDL 26,435; stand aside, the 26,000 target is already paid" },
+      { if: "Nvidia holds its premarket low", then: "NQ bases at 26,000 into the weekend; a range day between 26,000 and 26,210" }
     ],
     events: [
-      { when: "2026-11-20T13:25:00Z", what: "Fed Governor Waller speaks", kind: "fed" },
-      { when: "2026-11-20T15:00:00Z", what: "Revised UoM sentiment 51.7 f, inflation exp 4.3% p", kind: "data" },
+      { when: "2026-11-20T13:25:00Z", what: "Fed Governor Waller spoke", kind: "fed" },
+      { when: "2026-11-20T15:00:00Z", what: "Revised UoM sentiment 51.7 f, infl exp 4.3% p", kind: "data" },
+      { when: "2026-11-20T17:00:00Z", what: "President Trump speaks", kind: "data" },
       { when: "2026-11-20T17:15:00Z", what: "Fed Governor Cook speaks", kind: "fed" }
     ]
   },
