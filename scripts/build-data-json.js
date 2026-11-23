@@ -123,8 +123,9 @@ function buildPayload(prevData) {
   }
 
   // us30 / nas100 drive the US30 (v34) and NAS100 (v36) intraday tabs: written by
-  // the 08:00 report (stage london) and the NY update ~40 min before the cash open
-  // (stage ny). The Worker scores sessions.london/ny.lean, so a malformed block
+  // the 08:00 report (stage london), then the London update 40 min before the
+  // London open (london-update), the midday update at 14:00 Bucharest (midday) and
+  // the NY update 40 min before the cash open (ny). The Worker scores sessions.london/ny.lean, so a malformed block
   // warns loudly. Carried forward when a run omits it (the app marks an old date
   // as not today's).
   const indexBlock = (name) => {
@@ -138,7 +139,7 @@ function buildPayload(prevData) {
     const ISO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$/;
     const len = (v) => String(v == null ? '' : v).length;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(String(ix.date || ''))) p.push('date must be YYYY-MM-DD');
-    if (!['london', 'ny'].includes(ix.stage)) p.push("stage must be 'london' or 'ny'");
+    if (!['london', 'london-update', 'midday', 'ny'].includes(ix.stage)) p.push("stage must be 'london', 'london-update', 'midday' or 'ny'");
     if (!ISO.test(String(ix.updatedAt || ''))) p.push('updatedAt must be ISO 8601 UTC');
     if (!LEAN.includes(ix.bias)) p.push('bias must be BULLISH|BEARISH|RANGE');
     if (!CONV.includes(ix.conviction)) p.push('conviction must be high|medium|low');
@@ -152,6 +153,11 @@ function buildPayload(prevData) {
       if (x.conviction && !CONV.includes(x.conviction)) p.push('sessions.' + k + '.conviction must be high|medium|low');
       if (len(x.plan) > 240) p.push('sessions.' + k + '.plan is ' + len(x.plan) + ' chars (max ~200)');
       if (!x.invalid || len(x.invalid) > 110) p.push('sessions.' + k + '.invalid must be a level (<= 90 chars)');
+      // the midday check on a live session (v39): how the published plan is doing
+      if (x.check != null && (!['on-track', 'target-hit', 'invalidated', 'not-triggered'].includes(x.check.status) ||
+          !ISO.test(String(x.check.at || '')) || !x.check.note || len(x.check.note) > 170)) {
+        p.push('sessions.' + k + '.check must be { at: ISO UTC, status: on-track|target-hit|invalidated|not-triggered, note (<= 140 chars) }');
+      }
     });
     const arr = (v, max) => Array.isArray(v) && v.length <= max;
     if (!arr(ix.drivers, 6) || ix.drivers.some((d) => !d || !d.k || ![1, 0, -1].includes(d.s))) p.push('drivers must be at most 6 { k, v, s: 1|0|-1 }');

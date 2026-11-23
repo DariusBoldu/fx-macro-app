@@ -20,6 +20,6 @@ crons = ["* * * * *"]
 #   npx wrangler secret put ROUTINE_FIRE_TOKEN
 [vars]
 ROUTINE_ID = "trig_012ZHTBaARkJjBHivSZJuGNQ"
-# "on" = fire the routine with a US INDICES NY UPDATE payload 40 min before the NY
-# cash open on US trading days (proxy/indices.js; one run for US30 + NAS100). Anything else = off.
+# "on" = fire the routine with US INDICES LONDON / MIDDAY / NY UPDATE payloads on US
+# trading days (proxy/indices.js updateFires; one run each for US30 + NAS100). Anything else = off.
 US30_FIRE = "on"

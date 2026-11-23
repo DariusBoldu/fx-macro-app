@@ -24,8 +24,10 @@
  *      and NAS100 (NQ):
  *        GET /us30 | /nas100        -> snapshot, Asia/London/NY ranges, scorecard
  *        GET /us30?live=0 (etc.)    -> same without the live snapshot (the app)
- *      and, when US30_FIRE = "on", fire the routine 40 min before the NY cash
- *      open with ONE US INDICES NY UPDATE payload covering both.
+ *      and, when US30_FIRE = "on", fire the routine three times per US trading
+ *      day with ONE payload covering both indices: US INDICES LONDON UPDATE
+ *      (40 min before the London open), MIDDAY UPDATE (14:00 Bucharest) and
+ *      NY UPDATE (40 min before the NY cash open).
  *
  * Deploy (free):
  *   npm i -g wrangler && wrangler login
@@ -46,7 +48,7 @@ import {
 } from './release-match.js';
 import {
   INDICES, INDEX_KEYS, fetchFutures, tradeDate, isTradingDay, prevTradingDay, sessionTimes,
-  phaseAt, applySample, summarizeScores, levelsText, bucClock, NY_FIRE_LEAD_MIN,
+  phaseAt, applySample, summarizeScores, levelsText, bucClock, updateFires,
 } from './indices.js';
 
 const OANDA_BASE = 'https://api-fxpractice.oanda.com/v3';
@@ -506,14 +508,15 @@ async function readCalls(td) {
   return out;
 }
 
-/* NY update: start the analyst routine 40 min before the cash open with the YM
- * and NQ levels in ONE payload (one run, one commit, one push). Gated by
- * US30_FIRE = "on" (wrangler.toml [vars]). */
+/* Intraday updates: start the analyst routine at each of the day's update
+ * fires (see updateFires: LONDON, MIDDAY, NY) with the YM and NQ levels in ONE
+ * payload (one run, one commit, one push). Gated by US30_FIRE = "on"
+ * (wrangler.toml [vars]). */
 async function indexFire(env, td, t, now) {
   if (env.US30_FIRE !== 'on' || !env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return;
-  const fireAt = t.nyOpen - NY_FIRE_LEAD_MIN * 60000;
-  if (now < fireAt || now > fireAt + 10 * 60000) return;
-  const key = 'us30fire:' + td;
+  const f = updateFires(td).find((x) => now >= x.at && now <= x.at + 10 * 60000);
+  if (!f) return;
+  const key = f.key + td;
   if (await env.FX_SUBS.get(key)) return;
   await env.FX_SUBS.put(key, '1', { expirationTtl: 3 * 86400 });   // mark BEFORE firing
   let snaps = {};
@@ -526,17 +529,18 @@ async function indexFire(env, td, t, now) {
     blocks.push(snaps[k] ? levelsText(ix, snaps[k], rec)
       : `${ix.label}: ${ix.fut} snapshot unavailable from the Worker; work from news and GET /${k}.`);
   }
+  const at = (ms) => `${new Date(ms).toISOString()} (${bucClock(ms)} Bucharest)`;
   const text = [
-    `US INDICES NY UPDATE ${td}`,
-    `NY cash open: ${new Date(t.nyOpen).toISOString()} (${bucClock(t.nyOpen)} Bucharest)`,
+    `US INDICES ${f.kind} UPDATE ${td}`,
+    `London open: ${at(t.lonOpen)}; NY cash open: ${at(t.nyOpen)}`,
   ].concat(blocks).join('\n');
   let outcome;
   try {
     const res = await postRoutineFire(env, text);
-    outcome = { date: td, status: res.status, at: new Date().toISOString() };
+    outcome = { date: td, kind: f.kind, status: res.status, at: new Date().toISOString() };
     if (res.status >= 300) outcome.detail = res.body.slice(0, 200);
   } catch (e) {
-    outcome = { date: td, error: String((e && e.message) || e), at: new Date().toISOString() };
+    outcome = { date: td, kind: f.kind, error: String((e && e.message) || e), at: new Date().toISOString() };
   }
   await env.FX_SUBS.put('us30fire:last', JSON.stringify(outcome), { expirationTtl: 14 * 86400 });
 }

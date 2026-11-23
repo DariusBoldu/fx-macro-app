@@ -574,6 +574,10 @@ nav.tabbar{
 .u3plan.dim{color:var(--dim)}
 .u3inv{font-size:12.5px;line-height:1.45;color:var(--txt2);margin-top:8px;padding:6px 9px;background:var(--panel2);border-radius:8px}
 .u3inv span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--short);font-weight:800;margin-bottom:1px}
+.u3chk{font-size:12.5px;line-height:1.45;color:var(--txt2);margin-top:8px;padding:6px 9px;border-radius:8px;background:var(--chip-range-bg)}
+.u3chk span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--mut);font-weight:800;margin-bottom:1px}
+.u3chk.on-track,.u3chk.target-hit{background:var(--chip-long-bg)} .u3chk.on-track span b,.u3chk.target-hit span b{color:var(--chip-long-tx)}
+.u3chk.invalidated{background:var(--chip-short-bg)} .u3chk.invalidated span b{color:var(--chip-short-tx)}
 .u3up{color:var(--long)} .u3dn{color:var(--short)}
 .u3dr{display:grid;grid-template-columns:16px 78px 1fr;gap:8px;align-items:baseline;padding:7px 0;border-top:1px solid var(--line);font-size:13px;line-height:1.4}
 .u3dr:first-of-type{border-top:0;padding-top:0}

@@ -826,6 +826,16 @@
     return { lon: zonedMs(date, 480, 'Europe/London'), ny: zonedMs(date, 570, 'America/New_York'),
       close: zonedMs(date, 960, 'America/New_York') };
   }
+  // The analyst's intraday updates (mirror of proxy/indices.js updateFires):
+  // 40 min before the London open, 14:00 Bucharest (>= 90 min before the NY
+  // fire), and 40 min before the NY cash open.
+  function u3Fires(date) {
+    var t = u3Times(date), ny = t.ny - 40 * 60000, mid = zonedMs(date, 14 * 60, BUC_TZ);
+    if (ny - mid < 90 * 60000) mid = ny - 90 * 60000;
+    return [{ k: 'london-update', at: t.lon - 40 * 60000 }, { k: 'midday', at: mid }, { k: 'ny', at: ny }];
+  }
+  var U3_STAGE = { london: 'London plan', 'london-update': 'London update', midday: 'Midday update', ny: 'NY update' };
+  var U3_CHECK = { 'on-track': 'On track', 'target-hit': 'Target hit', invalidated: 'Invalidated', 'not-triggered': 'Not triggered' };
   function loadIdxTrack(k) {
     if (!IDX[k] || !CFG.workerUrl || Date.now() - (idxTrackAt[k] || 0) < 5 * 60000) return;
     idxTrackAt[k] = Date.now();
@@ -858,10 +868,16 @@
       '<span class="u3state' + cls + '">' + esc(state) + '</span></div>';
     if (!s) return html + '<div class="u3plan dim">No call for this session yet.</div></div>';
     html += '<div class="u3lean"><span class="chip ' + (U3_CHIP[lean] || 'RANGE') + '">' + esc(lean) + '</span>' + u3Dots(s.conviction) +
-      (key === 'ny' && U.stage !== 'ny' ? '<span class="u3first">First look · final call ~' + bucClock.format(from - 40 * 60000) + '</span>' : '') +
+      (now < from && ((key === 'ny' && U.stage !== 'ny') || (key === 'london' && U.stage === 'london'))
+        ? '<span class="u3first">First look · final call ~' + bucClock.format(from - 40 * 60000) + '</span>' : '') +
       (rec && rec.score ? u3Result(rec.score) : '') + '</div>';
     if (s.plan) html += '<div class="u3plan">' + esc(s.plan) + '</div>';
     if (s.invalid) html += '<div class="u3inv"><span>Wrong if</span>' + esc(s.invalid) + '</div>';
+    if (s.check && U3_CHECK[s.check.status]) {
+      var ct = Date.parse(s.check.at);
+      html += '<div class="u3chk ' + s.check.status + '"><span>' + (isNaN(ct) ? 'Update' : bucClock.format(ct) + ' check') +
+        ' · <b>' + U3_CHECK[s.check.status] + '</b></span>' + esc(s.check.note || '') + '</div>';
+    }
     return html + '</div>';
   }
   function u3Levels(U, ix) {
@@ -931,7 +947,8 @@
     var times = u3Times(U.date), today = bucIsoDay.format(now);
     var dayName = function (d) { return bucDay.format(Date.parse(d + 'T12:00:00Z')); };
     var bias = U.bias || 'RANGE', dt = U3_DAY[U.dayType] || null;
-    var stageTxt = U.stage === 'ny' ? 'NY update' : 'London plan';
+    var stageTxt = U3_STAGE[U.stage] || 'London plan';
+    var nextUp = U.date === today ? u3Fires(U.date).filter(function (f) { return f.at > now; })[0] : null;
     var html = '';
     if (U.date < today) {
       var nx = nextUsTradingDay(U.date), msg;
@@ -947,7 +964,8 @@
       (U.conviction ? '<span class="u3cv">' + u3Dots(U.conviction) + '<span>' + esc(String(U.conviction).charAt(0).toUpperCase() + String(U.conviction).slice(1).toLowerCase() + ' conviction') + '</span></span>' : '') + '</div>' +
       (dt ? '<div class="u3type">' + dt[0] + ' ' + dt[1] + '</div>' : '') +
       (U.headline ? '<div class="u3head">' + esc(U.headline) + '</div>' : '') +
-      '<div class="u3date">' + esc(bucDay.format(Date.parse(U.date + 'T12:00:00Z'))) + '</div></div>';
+      '<div class="u3date">' + esc(bucDay.format(Date.parse(U.date + 'T12:00:00Z'))) +
+        (nextUp ? ' · next update ' + bucClock.format(nextUp.at) + ' (' + U3_STAGE[nextUp.k].replace(' update', '') + ')' : '') + '</div></div>';
     var S = U.sessions || {};
     html += '<div class="u3sess">' + u3SessionCard('london', S.london, times.lon, times.ny, now, U, idxTrack[k]) +
       u3SessionCard('ny', S.ny, times.ny, times.close, now, U, idxTrack[k]) + '</div>';
@@ -1964,7 +1982,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v38';
+  var APP_VERSION = 'v39';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

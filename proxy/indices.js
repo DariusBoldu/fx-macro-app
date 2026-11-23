@@ -38,6 +38,9 @@ const LON_OPEN = 8 * 60;          // 08:00 London
 const NY_OPEN = 9 * 60 + 30;      // 09:30 New York
 const NY_CLOSE = 16 * 60;         // 16:00 New York
 export const NY_FIRE_LEAD_MIN = 40;   // NY update fires 40 min before the cash open
+export const LONDON_FIRE_LEAD_MIN = 40;   // London update fires 40 min before the London open
+const MIDDAY_BUC_MIN = 14 * 60;          // midday update at 14:00 Bucharest...
+const MIDDAY_MIN_GAP_MIN = 90;           // ...but at least 90 min before the NY fire (US/EU DST gap weeks)
 
 /* NYSE full-day closures. CME equity futures trade a shortened session on most
  * of these, but there is no cash session to call. */
@@ -99,6 +102,25 @@ export function sessionTimes(date) {
     nyOpen: zonedMs(date, NY_OPEN, NY_TZ),
     nyClose: zonedMs(date, NY_CLOSE, NY_TZ),
   };
+}
+
+/* The three intraday analyst updates of a US trading day (Darius, 2026-11-23):
+ *   LONDON  40 min before the London open  (09:20 Bucharest)  final London call
+ *   MIDDAY  14:00 Bucharest, London live                      London check + NY first look
+ *   NY      40 min before the NY cash open (15:50 Bucharest)  final NY call
+ * In the weeks when US and EU clocks change on different dates the NY fire is
+ * 14:50, so MIDDAY moves to 90 min before it (13:20). `key` is the KV dedupe
+ * prefix; NY keeps the key it had before the other two were added. */
+export function updateFires(date) {
+  const t = sessionTimes(date);
+  const ny = t.nyOpen - NY_FIRE_LEAD_MIN * 60000;
+  let mid = zonedMs(date, MIDDAY_BUC_MIN, BUC_TZ);
+  if (ny - mid < MIDDAY_MIN_GAP_MIN * 60000) mid = ny - MIDDAY_MIN_GAP_MIN * 60000;
+  return [
+    { kind: 'LONDON', at: t.lonOpen - LONDON_FIRE_LEAD_MIN * 60000, key: 'idxfire:lon:' },
+    { kind: 'MIDDAY', at: mid, key: 'idxfire:mid:' },
+    { kind: 'NY', at: ny, key: 'us30fire:' },
+  ];
 }
 
 /* -------------------------------- snapshot -------------------------------- */
