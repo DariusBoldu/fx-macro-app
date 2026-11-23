@@ -117,6 +117,16 @@
   document.querySelectorAll('.tabbtn').forEach(function (b) {
     b.addEventListener('click', function () { showView(b.dataset.v); });
   });
+  // A tapped notification can name a tab (the US30 open alerts send ./#us30): on a
+  // cold start via the URL hash, on a running app via a message from sw.js.
+  function openFromUrl(u) {
+    var m = /#([a-z0-9]+)$/i.exec(String(u || ''));
+    if (m && $('v-' + m[1])) showView(m[1]);
+  }
+  setTimeout(function () { openFromUrl(location.hash); }, 0);   // after the rest of this file has run (IDX etc.)
+  if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('message', function (e) {
+    if (e.data && e.data.type === 'open') openFromUrl(e.data.url);
+  });
 
   /* ============================ Data loading ============================ */
   var DATA = null, lastSeenUpdatedAt = null;
@@ -2018,7 +2028,7 @@
   /* ============================ Version badge ============================ */
   // Bump this together with CACHE in sw.js on every release. Shown in the header
   // so you can confirm the running version; tap it to force-fetch the latest.
-  var APP_VERSION = 'v40';
+  var APP_VERSION = 'v41';
   function initVersion() {
     var el = $('appver'); if (!el) return;
     el.textContent = APP_VERSION + ' ⟳';

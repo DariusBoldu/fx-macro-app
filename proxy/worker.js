@@ -490,7 +490,8 @@ async function indexJob(env, now) {
     const w = rec[k === 'london' ? 'lon' : 'ny'];
     const msg = openAlert(k, U, ps, mk.last != null ? mk.last : w.o);
     if (!msg) continue;
-    const res = await broadcast(env, { title: msg.title, body: msg.body, url: './#us30', tag: 'us30-open-' + k }, 1800);
+    // A unique tag: a repeated one makes iOS replace the old notification silently (no banner).
+    const res = await broadcast(env, { title: msg.title, body: msg.body, url: './#us30', tag: 'us30-open-' + k + '-' + td }, 1800);
     try {
       await env.FX_SUBS.put('us30:alert:last', JSON.stringify({ at: new Date().toISOString(), session: k, title: msg.title, body: msg.body, sent: res.length, source: mk.source }), { expirationTtl: 14 * 86400 });
     } catch (e) {}

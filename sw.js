@@ -4,7 +4,7 @@
  *   - cache-first (stale-while-revalidate) for static assets
  *   - Web Push: shows a notification when the push sender fires
  * Bump CACHE when shell assets change to force an update. */
-var CACHE = 'fx-macro-v40';
+var CACHE = 'fx-macro-v41';
 var SHELL = [
   './',
   './index.html',
@@ -97,7 +97,8 @@ self.addEventListener('notificationclick', function (e) {
   e.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (list) {
       for (var i = 0; i < list.length; i++) {
-        if ('focus' in list[i]) return list[i].focus();
+        // tell the open app which tab the notification is about (e.g. ./#us30)
+        if ('focus' in list[i]) { try { list[i].postMessage({ type: 'open', url: target }); } catch (err) {} return list[i].focus(); }
       }
       if (self.clients.openWindow) return self.clients.openWindow(target);
     })
