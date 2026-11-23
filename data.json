@@ -44,7 +44,11 @@
       ]
     },
     "nextBigEvent": "US October core PCE Wednesday at 15:30, the last inflation print before the December 9 FOMC, with core m/m forecast 0.3% and prelim GDP 3.5%.",
-    "update": null
+    "update": {
+      "at": "2026-11-23T13:57:07Z",
+      "title": "US indices NY update",
+      "text": "US30 Range (low), box 48,900-49,275 · NAS100 Bullish (low), wrong below 25,815 · Trump pressed Nvidia's board to reinstate Huang, Nvidia +9%, but the 10-year is flat at 4.92."
+    }
   },
   "dailyRead": "The day turns on one Sunday interview rather than on anything that happened in the Gulf. Treasury Secretary Bessent told Face the Nation that the Fed may be making a policy mistake if it overtightens, pointing at hawkish remarks from governors and at months of tightening financial conditions, and he pushed back on the fifty-point December move Governor Waller had floated. The repricing that followed is specific and worth reading carefully: NQ is 3.0% higher at 25,882, YM is 1.46% higher at 48,919, and gold is about 2% higher at 3,618 - equities and gold up together, on the same news, is a terminal-rate story and not a risk-sentiment story. December itself has barely moved, still roughly 90% on Kalshi to 96% on FedWatch for a quarter point on December 9; what moved is everything after it, which is why the most rate-sensitive index got paid first and the price-weighted Dow lagged. That ordering is the trade. The dollar is softer against seven of eight, DXY 103.674 and minus 0.13%, and the two havens are giving back only a fraction of Friday - USD/JPY 158.942 and plus 0.25%, USD/CHF 0.83934 and minus 0.06%. The yen lost to all seven others, but it did so with Tokyo shut for Labour Thanksgiving, so treat 158.942 as holiday liquidity rather than a change of view: the December 18 hike to 1.50% is still expected by 86% of economists and the Ministry of Finance sits immediately above at 160. The franc held better than the yen and now leads the board on its own, because the SNB has no policy story at 0.00% and the Gulf is a direct input. And the Gulf keeps escalating without being paid: UKMTO reported another tanker on fire in the engine room early Monday, the sixth hit since Sunday, after two separate projectile strikes near Khasab on Saturday and an incident involving military forces in the Gulf of Oman, and the IRGC claimed attacks on Bahrain - yet WTI is 83.52 against the 83.98 Friday settle and Brent 92.63 against 92.57. Three weekends running, the premium has refused to be paid, which keeps the Canadian dollar at minus one and keeps the Bank of Canada disagreement with TradingEconomics alive into Macklem on Tuesday at 19:25. The cleanest expressions today are the ones where both legs still point the same way after the bounce: long the euro and sterling against the Australian dollar into Wednesday CPI, and long gold now that Friday forced selling has visibly ended. The cleanest mistake would be to add to the crowded Australian and Canadian shorts into Wednesday at 02:30 and 15:30 - this is the week where a squeeze is cheaper for the market than a trend. Flash PMIs at 10:15, 10:30, 11:30 and 16:45 are the live risk to the whole construction, because the US prints are forecast to decelerate hard, to 54.5 manufacturing from 56.0 and 55.6 services from 57.9, and growth doubt would undercut exactly the trade Bessent words started.",
   "today": [
@@ -1191,15 +1195,15 @@
   "geopolitics": "Day 268 of a closed Strait of Hormuz, and the weekend escalated further without moving the price of oil. UKMTO reported that a tanker transiting outbound through the strait was struck by an unidentified projectile about 11 nautical miles north of Khasab on Saturday and a second was hit in its engine room 17 nautical miles east of Khasab, both without casualties, one of them running with its identification and navigation systems switched off in defiance of issued warnings. On Sunday UKMTO reported a tanker involved in an incident with military forces in the Gulf of Oman near Chabahar, close to the American blockade line, while Iranian state media quoting the navy said two supertankers caught fire after striking mines in a restricted area east of the strait - the same pattern of competing and unverifiable accounts as the previous weekend. Early on Monday UKMTO reported another attack inside the strait that left a fire in the engine room, which the IRGC said it carried out at around 08:00 Bucharest and which Iranian claims make the sixth tanker hit since Sunday. The IRGC also claimed attacks on Bahrain, which Manama said its air defences defeated and which it says targeted a facility; the IRGC described the targets as US Patriot sites. Iran demands are unchanged and explicit: an end to the war on all fronts, unfrozen assets, oil sanctions lifted and the American counter-blockade of Iranian ports ended, and the foreign minister has told the Qatari mediator that discussing the reopening of the strait is pointless until they are met. The FX read is the important part, and it is the same read for the third weekend running: a direct military exchange, six commercial vessels hit in three days and an attack on a Gulf state produced WTI at 83.52 against the 83.98 Friday settle and Brent at 92.63 against 92.57. The market is pricing an IEA surplus near 2 million barrels a day, a US-China-Russia agreement to lift refined output and American statements that flows through the strait are at record levels, and it is pricing those ahead of the headlines. That keeps the Canadian dollar at minus one, because the energy pass-through the Bank of Canada hiked for in October is the one input that keeps reversing, and it keeps the franc at plus two rather than higher, because a haven bid that oil will not confirm is a shallow one. The asymmetry is now very large: what turns this into a crude long and a Canadian dollar long overnight is a supply response that visibly interrupts actual loadings, not another projectile. Until then, trade the retest and never the headline.",
   "us30": {
     "date": "2026-11-23",
-    "stage": "london",
-    "updatedAt": "2026-11-23T06:17:20Z",
-    "bias": "BULLISH",
+    "stage": "ny",
+    "updatedAt": "2026-11-23T13:57:07Z",
+    "bias": "RANGE",
     "conviction": "low",
     "dayType": "range",
-    "headline": "YM is 1.46% higher but still inside Friday range while NQ runs 3.0% - the Bessent bounce is a duration trade, so the Dow lags.",
+    "headline": "Downgraded to range from bullish: YM failed back inside the Asia range after 49,275 and 86% of the 961 ATR is already spent.",
     "ref": {
-      "price": 48920,
-      "at": "2026-11-23T06:04:56Z"
+      "price": 48980,
+      "at": "2026-11-23T13:55:51Z"
     },
     "sessions": {
       "london": {
@@ -1209,42 +1213,42 @@
         "invalid": "5-min close below 48,500 (day open), which reopens the 48,430 Asia low"
       },
       "ny": {
-        "lean": "BULLISH",
+        "lean": "RANGE",
         "conviction": "low",
-        "plan": "After the open buy a retest of VWAP 48,810 or the London low while 48,500 holds; first target 49,060 then 49,300. Reduce before the 16:45 flash PMIs.",
-        "invalid": "5-min close below 48,430 (Asia low), which hands it back to PDC 48,220"
+        "plan": "First look is a 5-min lower high into 49,060 for VWAP 48,900, then 48,500; buy only a reclaim of 49,060. Stand aside 16:40-16:50 - the PMIs decide whether the box breaks.",
+        "invalid": "5-min close outside 48,900-49,275 - that ends the box and starts a trend leg"
       }
     },
     "drivers": [
       {
         "k": "Fed",
-        "v": "Bessent Sunday: overtightening would be a policy mistake; 50bp pushed back",
+        "v": "Dec 9 hike about 91% priced, down from 98% on November 12",
         "s": 1
       },
       {
         "k": "Rotation",
-        "v": "NQ +3.0% vs YM +1.46% - duration leads, the price-weighted Dow lags",
-        "s": 1
+        "v": "NQ +3.1% vs YM +1.6% - chips and duration lead, price-weighted Dow lags",
+        "s": -1
       },
       {
-        "k": "Yields",
-        "v": "US 10-year still 4.944% on TE - no bond confirmation behind the bounce",
-        "s": 0
+        "k": "Structure",
+        "v": "London broke 49,064 to 49,275 then fell back inside the Asia range",
+        "s": -1
       },
       {
         "k": "Stretch",
-        "v": "631 pts overnight, 66% of the 961 ATR, and still inside Friday range",
+        "v": "842-pt range is 86% of the 961 ATR, spent before the cash open",
         "s": -1
+      },
+      {
+        "k": "Yields",
+        "v": "US 10-year pinned 4.92-4.93, within 2bp of Friday - no confirmation",
+        "s": 0
       },
       {
         "k": "Oil / Iran",
-        "v": "Sixth tanker hit since Sunday yet WTI 83.52, below the 83.98 settle",
+        "v": "WTI Jan 81.3, down 2.2%, despite a Houthi hit on a Saudi refinery",
         "s": 1
-      },
-      {
-        "k": "Data",
-        "v": "Flash PMIs 16:45 forecast 54.5 mfg from 56.0, 55.6 svcs from 57.9",
-        "s": -1
       }
     ],
     "levels": [
@@ -1254,48 +1258,53 @@
         "note": "Friday high; the full gap-fill objective"
       },
       {
+        "name": "London high",
+        "v": 49280,
+        "note": "Session high and the top of the box"
+      },
+      {
         "name": "Asia high",
         "v": 49060,
-        "note": "Overnight high and the first real supply"
+        "note": "Broke then lost; now the pivot overhead"
+      },
+      {
+        "name": "London low",
+        "v": 48970,
+        "note": "Bottom of the box, being tested into the open"
       },
       {
         "name": "VWAP",
-        "v": 48810,
-        "note": "Session VWAP; the pivot for every long entry"
+        "v": 48900,
+        "note": "Session VWAP; the line the range hangs on"
       },
       {
         "name": "Day open",
         "v": 48500,
-        "note": "Sunday reopen; losing it kills the bounce"
+        "note": "Sunday reopen; first target if the box fails"
       },
       {
         "name": "Asia low",
         "v": 48430,
-        "note": "Overnight low, set before the bid arrived"
+        "note": "Day low, set before the bid arrived"
       },
       {
         "name": "PDC",
         "v": 48220,
         "note": "Friday close; the gap that would be filled back"
-      },
-      {
-        "name": "PDL",
-        "v": 48050,
-        "note": "Friday low and the 1-month low"
       }
     ],
     "scenarios": [
       {
-        "if": "Holds above VWAP 48,810",
-        "then": "Asia high 49,060 then 49,300; a close over 49,060 opens the 49,660 PDH"
+        "if": "5-min close over 49,280",
+        "then": "The box breaks up; 49,660 PDH is live and the Dow finally joins the NQ bid"
       },
       {
-        "if": "5-min close below 48,430",
-        "then": "The bounce fails, PDC 48,220 fills and the 48,050 month low is live again"
+        "if": "5-min close below 48,900",
+        "then": "Box fails; 48,500 day open then the 48,220 PDC gap-fill come back into play"
       },
       {
-        "if": "Flash PMIs miss at 16:45",
-        "then": "Growth doubt replaces rate relief; sell retests of VWAP instead of buying dips"
+        "if": "PMIs miss at 16:45",
+        "then": "Growth doubt replaces rate relief; sell failures at 49,060 instead of buying dips"
       }
     ],
     "events": [
@@ -1313,15 +1322,15 @@
   },
   "nas100": {
     "date": "2026-11-23",
-    "stage": "london",
-    "updatedAt": "2026-11-23T06:17:20Z",
+    "stage": "ny",
+    "updatedAt": "2026-11-23T13:57:07Z",
     "bias": "BULLISH",
     "conviction": "low",
     "dayType": "trend",
-    "headline": "NQ is 3.0% higher at 25,882 after a 7.77% week - Bessent capped the terminal rate and the most rate-sensitive index got paid first.",
+    "headline": "Nvidia +9% after Trump pressed the board to reinstate Huang - NQ has the catalyst and YM does not, but 26,102 capped it.",
     "ref": {
-      "price": 25880,
-      "at": "2026-11-23T06:04:56Z"
+      "price": 25910,
+      "at": "2026-11-23T13:55:51Z"
     },
     "sessions": {
       "london": {
@@ -1333,40 +1342,40 @@
       "ny": {
         "lean": "BULLISH",
         "conviction": "low",
-        "plan": "After the open buy a retest of VWAP 25,750 or the London low while 25,560 holds; first target 25,945 then 26,200. Reduce before the 16:45 flash PMIs.",
-        "invalid": "5-min close below 25,425 (Asia low), which points back at PDC 25,125"
+        "plan": "Buy a 5-min higher low above VWAP 25,815; first target the 25,945 Asia high, then 26,100. Nvidia's cash open is the engine - do not add into the 16:45 PMIs.",
+        "invalid": "5-min close below 25,815 (VWAP), which reopens the 25,425 Asia low"
       }
     },
     "drivers": [
       {
+        "k": "Semis / AI",
+        "v": "Trump pressed the board to reinstate Huang; Nvidia +9%, Micron +5%",
+        "s": 1
+      },
+      {
+        "k": "Megacaps",
+        "v": "AMD and Broadcom +4%, SK Hynix +9% - the chip complex led the rebound",
+        "s": 1
+      },
+      {
         "k": "Fed",
-        "v": "Bessent warned on overtightening and pushed back on a 50bp December",
+        "v": "Dec 9 hike about 91% priced, down from 98% - the 50bp tail got cut",
         "s": 1
       },
       {
         "k": "Yields",
-        "v": "US 10-year 4.944% unchanged on TE - relief is in pricing, not bonds",
+        "v": "10-year flat at 4.92-4.93 - a 3% NQ bounce with no help from bonds",
         "s": 0
       },
       {
-        "k": "Megacaps",
-        "v": "Nvidia led Friday 5.28% Nasdaq Composite rout; AI-spend doubt unfixed",
-        "s": -1
-      },
-      {
-        "k": "Semis / AI",
-        "v": "No new chip headline overnight - this bounce is macro, not AI news",
+        "k": "Structure",
+        "v": "Tagged 26,102 then slipped back under the 25,945 Asia high",
         "s": 0
       },
       {
         "k": "Stretch",
-        "v": "518 pts overnight, 57% of the 910 ATR, with PDH 26,605 far above",
+        "v": "675-pt range is 73% of the 910 ATR; NDX still near a 20% bear market",
         "s": -1
-      },
-      {
-        "k": "Rotation",
-        "v": "NQ +3.0% vs YM +1.46% - duration leads, which fits the Fed story",
-        "s": 1
       }
     ],
     "levels": [
@@ -1376,14 +1385,24 @@
         "note": "Friday high; far above and not today objective"
       },
       {
+        "name": "London high",
+        "v": 26100,
+        "note": "Session high and the supply that capped it"
+      },
+      {
         "name": "Asia high",
         "v": 25945,
-        "note": "Overnight high and the first real supply"
+        "note": "The line price is pinned to into the open"
+      },
+      {
+        "name": "London low",
+        "v": 25855,
+        "note": "Session low; first crack in the bullish lean"
       },
       {
         "name": "VWAP",
-        "v": 25750,
-        "note": "Session VWAP; the pivot for every long entry"
+        "v": 25815,
+        "note": "Session VWAP; the pivot the long case needs"
       },
       {
         "name": "Day open",
@@ -1393,31 +1412,26 @@
       {
         "name": "Asia low",
         "v": 25425,
-        "note": "Overnight low, set before the bid arrived"
+        "note": "Day low, set before the chip bid arrived"
       },
       {
         "name": "PDC",
         "v": 25125,
         "note": "Friday close; the whole gap to be filled back"
-      },
-      {
-        "name": "PDL",
-        "v": 24975,
-        "note": "Friday low and the 1-month low"
       }
     ],
     "scenarios": [
       {
-        "if": "Holds above VWAP 25,750",
-        "then": "Asia high 25,945 then 26,100; a 5-min close over 26,100 opens 26,400"
+        "if": "Reclaims 25,945 after the open",
+        "then": "26,100 London high then 26,400; Nvidia's cash open is the engine"
       },
       {
-        "if": "5-min close below 25,425",
-        "then": "The gap fills toward PDC 25,125 and the 24,975 month low is live again"
+        "if": "5-min close below 25,815",
+        "then": "The AI bid fails intraday and the 25,560 day open then 25,425 open up"
       },
       {
-        "if": "A megacap headline turns bad",
-        "then": "It becomes a sell-the-rip day; the AI derating outranks the Fed repricing"
+        "if": "PMIs miss at 16:45",
+        "then": "Weaker prints cut the hike case; yields fall and NQ keeps outperforming YM"
       }
     ],
     "events": [
@@ -1433,5 +1447,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-23T06:17:54.197Z"
+  "updatedAt": "2026-11-23T13:57:17.804Z"
 }
