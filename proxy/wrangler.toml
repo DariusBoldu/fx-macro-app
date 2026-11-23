@@ -20,6 +20,9 @@ crons = ["* * * * *"]
 #   npx wrangler secret put ROUTINE_FIRE_TOKEN
 [vars]
 ROUTINE_ID = "trig_012ZHTBaARkJjBHivSZJuGNQ"
-# "on" = fire the routine with US INDICES LONDON / MIDDAY / NY UPDATE payloads on US
-# trading days (proxy/indices.js updateFires; one run each for US30 + NAS100). Anything else = off.
+# "on" = fire the routine with US30 LONDON / MIDDAY / NY UPDATE payloads on US
+# trading days (proxy/indices.js updateFires). Anything else = off.
 US30_FIRE = "on"
+# "on" = push at the London and NY opens which side of the US30 level map is live
+# (proxy/indices.js openAlert; Darius chose open alerts only, 2026-11-23). Anything else = off.
+US30_OPEN_ALERT = "on"

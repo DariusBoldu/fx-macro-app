@@ -19,17 +19,19 @@
  *        GET /results/probe?key=…   -> FF + TradingView reachable, last cron tick (admin)
  *      and after each release, fire the cloud analyst routine's API trigger:
  *        POST /routine/test?key=…   -> fire it with a TRIGGER TEST / EGRESS CHECK /
- *                                      US INDICES DRY RUN payload (admin; nothing is published)
+ *                                      US30 DRY RUN payload (admin; nothing is published)
  *        POST /routine/index-update?key=…&kind=NY&note=…  -> re-run an index update now (admin; publishes)
- *   5) US INDEX FUTURES TRACKER for the analyst (see ./indices.js), US30 (YM)
- *      and NAS100 (NQ):
- *        GET /us30 | /nas100        -> snapshot, Asia/London/NY ranges, scorecard
- *        GET /us30?live=0 (etc.)    -> same without the live snapshot (the app)
+ *   5) US30 TRACKER for the analyst and the app (see ./indices.js): BlackBull
+ *      Markets' US30 CFD, the chart Darius trades, live from TradingView:
+ *        GET /us30                  -> live levels, session ranges, the published
+ *                                      level map's status, scorecard
+ *        GET /us30?live=0           -> record and scorecard only
  *      and, when US30_FIRE = "on", fire the routine three times per US trading
- *      day with ONE payload covering both indices: US INDICES LONDON UPDATE
- *      (40 min before the London open), MIDDAY UPDATE (14:00 Bucharest) and
- *      NY UPDATE (40 min before the NY cash open).
- *
+ *      day: US30 LONDON UPDATE (40 min before the London open), MIDDAY UPDATE
+ *      (14:00 Bucharest) and NY UPDATE (40 min before the NY cash open); when
+ *      US30_OPEN_ALERT = "on", push at the London and NY opens which side of
+ *      the level map is live.
+
  * Deploy (free):
  *   npm i -g wrangler && wrangler login
  *   wrangler kv namespace create FX_SUBS
@@ -48,8 +50,8 @@ import {
   TV_URL, TV_HEADERS, bucharestTime,
 } from './release-match.js';
 import {
-  INDICES, INDEX_KEYS, fetchFutures, tradeDate, isTradingDay, prevTradingDay, sessionTimes,
-  phaseAt, applySample, summarizeScores, levelsText, bucClock, updateFires,
+  US30, fetchMarket, publicMarket, tradeDate, isTradingDay, prevTradingDay, sessionTimes, phaseAt,
+  advanceRecord, recordDue, summarizeScores, levelsText, planStatus, openAlert, bucClock, updateFires,
 } from './indices.js';
 
 const OANDA_BASE = 'https://api-fxpractice.oanda.com/v3';
@@ -88,7 +90,8 @@ export default {
       if (url.pathname === '/results/probe') return await probeResults(url, env);
       if (url.pathname === '/routine/test' && request.method === 'POST') return await testRoutine(url, env);
       if (url.pathname === '/routine/index-update' && request.method === 'POST') return await indexRerun(url, env);
-      if (url.pathname === '/us30' || url.pathname === '/nas100') return await getIndex(INDICES[url.pathname.slice(1)], url, env);
+      if (url.pathname === '/us30') return await getUs30(url, env);
+      if (url.pathname === '/nas100') return json({ error: 'NAS100 was removed on 2026-11-23; only US30 is tracked' }, 410);
       if (url.pathname === '/push/test' && request.method === 'POST') {
         if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
         const results = await broadcast(env, {
@@ -330,7 +333,7 @@ async function testRoutine(url, env) {
   // `text` sends another read-only payload the prompt understands (EGRESS CHECK,
   // which reports what the sandbox can reach). Capped, and admin-gated above.
   const text = (url.searchParams.get('text') || '').slice(0, 2000) || ('TRIGGER TEST ' + new Date().toISOString());
-  if (!/^(TRIGGER TEST|EGRESS CHECK|US INDICES DRY RUN|US30 DRY RUN)\b/.test(text)) return json({ error: 'text must start with TRIGGER TEST, EGRESS CHECK or US INDICES DRY RUN' }, 400);
+  if (!/^(TRIGGER TEST|EGRESS CHECK|US INDICES DRY RUN|US30 DRY RUN)\b/.test(text)) return json({ error: 'text must start with TRIGGER TEST, EGRESS CHECK or US30 DRY RUN' }, 400);
   const res = await postRoutineFire(env, text);
   return json(res, res.status < 300 ? 200 : 502);
 }
@@ -386,6 +389,8 @@ async function probeResults(url, env) {
       lastError: JSON.parse((await env.FX_SUBS.get('us30:err')) || 'null'),
       lastFire: JSON.parse((await env.FX_SUBS.get('us30fire:last')) || 'null'),
       fireEnabled: env.US30_FIRE === 'on',
+      lastOpenAlert: JSON.parse((await env.FX_SUBS.get('us30:alert:last')) || 'null'),
+      openAlertEnabled: env.US30_OPEN_ALERT === 'on',
     };
   } catch (e) {}
   let commentaryDue = [];
@@ -404,7 +409,7 @@ async function probeResults(url, env) {
     lastPush,                                   // Apple's reply per device on the last Worker push
     lastSelfTest,                               // the last "Send test" tapped in the app
     commentaryDue,                              // upcoming commentary passes this week
-    us30,                                       // index tracker (US30 + NAS100): last error, last NY-update fire
+    us30,                                       // US30 tracker: last error, last update fire, last open alert
   });
 }
 
@@ -443,77 +448,69 @@ async function broadcast(env, payload, ttl = 1800) {
   return results;
 }
 
-/* ========================= US index futures tracker =========================
- * Samples YM and NQ (one screener request) every 2 minutes from London open to
- * 15 min after the NY cash close (data time; the feed is ~10 min delayed),
- * keeps one record per index per CME day, scores the analyst's London and NY
- * calls, and fires ONE NY update for both. KV writes happen only when a window
- * opens/closes or makes a new high/low. Keys: <index>:d:<date>, <index>:scores
- * (us30 keeps the keys it had before NAS100 was added); us30:err and
- * us30fire:* serve both indices. */
-const IDX_REC = (k, d) => k + ':d:' + d;
-const IDX_SCORES = (k) => k + ':scores';
+/* ================================ US30 tracker ================================
+ * BlackBull's US30 CFD, live (see ./indices.js). The even-minute job only
+ * touches the feed when the day record needs it: a window opening (open price,
+ * the analyst's call, the open alert) or closing (close + score). KV writes are
+ * a handful a day. Keys: us30:d:<date>, us30:scores, us30:err, us30fire:*. */
+const REC_KEY = (d) => 'us30:d:' + d;
+const SCORES_KEY = 'us30:scores';
 const APP_DATA_URL = 'https://raw.githubusercontent.com/DariusBoldu/fx-macro-app/main/data.json';
+
+async function readRec(env, d) {
+  try { return d ? JSON.parse((await env.FX_SUBS.get(REC_KEY(d))) || 'null') : null; } catch (e) { return null; }
+}
 
 async function indexJob(env, now) {
   const td = tradeDate(now);
   if (!isTradingDay(td)) return;
   const t = sessionTimes(td);
   await indexFire(env, td, t, now);
-  const approxData = now - 10 * 60000;
-  if (approxData < t.lonOpen - 2 * 60000 || approxData > t.nyClose + 15 * 60000) return;
-  const recs = {};
-  for (const k of INDEX_KEYS) {
-    let rec = null;
-    try { rec = JSON.parse((await env.FX_SUBS.get(IDX_REC(k, td))) || 'null'); } catch (e) {}
-    rec = rec || { date: td };
-    if (!(rec.ny && rec.ny.c != null)) recs[k] = rec;          // skip a completed day
+  if (now < t.lonOpen || now > t.nyClose + 15 * 60000) return;
+  const rec = (await readRec(env, td)) || { date: td };
+  if (!recordDue(rec, now)) return;
+  const mk = await fetchMarket(now);
+  const U = await readUs30(td);                      // the published map, for calls and the open alert
+  const callFor = (k) => {
+    const x = U && U.sessions && U.sessions[k];
+    return x && /^(BULLISH|BEARISH|RANGE)$/.test(x.lean) ? { bias: x.lean, conviction: x.conviction || U.conviction || null } : null;
+  };
+  const { changed, scores, opened } = advanceRecord(rec, mk, now, callFor);
+  if (opened.length) for (const k of opened) rec[k === 'london' ? 'lon' : 'ny'].alerted = env.US30_OPEN_ALERT === 'on';
+  if (changed) await env.FX_SUBS.put(REC_KEY(td), JSON.stringify(rec), { expirationTtl: 30 * 86400 });   // before any push: dedupe
+  if (scores.length) {
+    let list = [];
+    try { list = JSON.parse((await env.FX_SUBS.get(SCORES_KEY)) || '[]'); } catch (e) {}
+    list = scores.concat(list.filter((x) => !scores.some((s) => s.date === x.date && s.s === x.s))).slice(0, 80);
+    await env.FX_SUBS.put(SCORES_KEY, JSON.stringify(list));
   }
-  if (!Object.keys(recs).length) return;
-  const snaps = await fetchFutures();
-  let calls = null;                                            // data.json, read at most once
-  for (const k of Object.keys(recs)) {
-    const rec = recs[k], snap = snaps[k];
-    if (!snap) continue;
-    const dataMs = Date.parse(snap.fetchedAt) - snap.delayMin * 60000;
-    const phase = phaseAt(td, dataMs);
-    if (!calls && ((phase === 'london' && !rec.lon) || (phase === 'ny' && !rec.ny))) calls = await readCalls(td);
-    const mine = (calls && calls[k]) || { london: null, ny: null };
-    const { changed, scores } = applySample(rec, snap, dataMs, (s) => mine[s]);
-    if (changed) await env.FX_SUBS.put(IDX_REC(k, td), JSON.stringify(rec), { expirationTtl: 30 * 86400 });
-    if (scores.length) {
-      let list = [];
-      try { list = JSON.parse((await env.FX_SUBS.get(IDX_SCORES(k))) || '[]'); } catch (e) {}
-      list = scores.concat(list.filter((x) => !scores.some((s) => s.date === x.date && s.s === x.s))).slice(0, 80);
-      await env.FX_SUBS.put(IDX_SCORES(k), JSON.stringify(list));
-    }
+  if (env.US30_OPEN_ALERT !== 'on' || !opened.length || !U) return;
+  const ps = planStatus(U, mk.bars, td);
+  for (const k of opened) {
+    const w = rec[k === 'london' ? 'lon' : 'ny'];
+    const msg = openAlert(k, U, ps, mk.last != null ? mk.last : w.o);
+    if (!msg) continue;
+    const res = await broadcast(env, { title: msg.title, body: msg.body, url: './#us30', tag: 'us30-open-' + k }, 1800);
+    try {
+      await env.FX_SUBS.put('us30:alert:last', JSON.stringify({ at: new Date().toISOString(), session: k, title: msg.title, body: msg.body, sent: res.length, source: mk.source }), { expirationTtl: 14 * 86400 });
+    } catch (e) {}
   }
 }
 
-/* The analyst's call for each session of each index, as published in the app's
- * data.json -> { us30: { london, ny }, nas100: { london, ny } }. */
-async function readCalls(td) {
-  const out = {};
+/* The app's published us30 block, if it is for `td`. raw.githubusercontent
+ * caches for minutes; the query string asks for a fresh copy. */
+async function readUs30(td) {
   try {
-    const r = await fetch(APP_DATA_URL + '?t=' + Date.now());
-    if (!r.ok) return out;
+    const r = await fetch(APP_DATA_URL + '?t=' + Date.now(), { cf: { cacheTtl: 0 } });
+    if (!r.ok) return null;
     const D = await r.json();
-    for (const k of INDEX_KEYS) {
-      const u = D[k];
-      if (!u || u.date !== td) continue;
-      const s = u.sessions || {};
-      const c = (x) => (x && /^(BULLISH|BEARISH|RANGE)$/.test(x.lean)
-        ? { bias: x.lean, conviction: x.conviction || u.conviction || null } : null);
-      out[k] = { london: c(s.london), ny: c(s.ny) };
-    }
-  } catch (e) {}
-  return out;
+    return D.us30 && D.us30.date === td ? D.us30 : null;
+  } catch (e) { return null; }
 }
 
 /* Intraday updates: start the analyst routine at each of the day's update
- * fires (see updateFires: LONDON, MIDDAY, NY) with the YM and NQ levels in ONE
- * payload (one run, one commit, one push). Gated by US30_FIRE = "on"
- * (wrangler.toml [vars]). */
+ * fires (see updateFires: LONDON, MIDDAY, NY) with the live BlackBull levels.
+ * Gated by US30_FIRE = "on" (wrangler.toml [vars]). */
 async function indexFire(env, td, t, now) {
   if (env.US30_FIRE !== 'on' || !env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return;
   const f = updateFires(td).find((x) => now >= x.at && now <= x.at + 10 * 60000);
@@ -533,27 +530,27 @@ async function indexFire(env, td, t, now) {
   await env.FX_SUBS.put('us30fire:last', JSON.stringify(outcome), { expirationTtl: 14 * 86400 });
 }
 
-/* The payload for one index update: header, session times, then the YM and NQ
- * snapshots with today's ranges. Shared by the scheduled fire and the admin re-run. */
+/* The payload for one update: header, session times, then the live BlackBull
+ * levels, today's ranges and how the published map has played out so far.
+ * Shared by the scheduled fire and the admin re-run. */
 async function indexPayload(env, kind, td, t, note) {
-  let snaps = {};
-  try { snaps = await fetchFutures(); } catch (e) {}
-  const blocks = [];
-  for (const k of INDEX_KEYS) {
-    const ix = INDICES[k];
-    let rec = null;
-    try { rec = JSON.parse((await env.FX_SUBS.get(IDX_REC(k, td))) || 'null'); } catch (e) {}
-    blocks.push(snaps[k] ? levelsText(ix, snaps[k], rec)
-      : `${ix.label}: ${ix.fut} snapshot unavailable from the Worker; work from news and GET /${k}.`);
+  const now = Date.now();
+  let body;
+  try {
+    const mk = await fetchMarket(now);
+    const rec = await readRec(env, td), U = await readUs30(td);
+    body = levelsText(mk, rec, planStatus(U, mk.bars, td), U);
+  } catch (e) {
+    body = `US30: BlackBull snapshot unavailable from the Worker (${String((e && e.message) || e).slice(0, 120)}); work from news and GET /us30.`;
   }
   const at = (ms) => `${new Date(ms).toISOString()} (${bucClock(ms)} Bucharest)`;
-  const head = [`US INDICES ${kind} UPDATE ${td}`, `London open: ${at(t.lonOpen)}; NY cash open: ${at(t.nyOpen)}`];
+  const head = [`US30 ${kind} UPDATE ${td}`, `London open: ${at(t.lonOpen)}; NY cash open: ${at(t.nyOpen)}`];
   if (note) head.push(`Re-run requested by Darius after this news (verify it before using it): ${note}`);
-  return head.concat(blocks).join('\n');
+  return head.concat([body]).join('\n');
 }
 
-/* Admin: re-run an index update now (e.g. after breaking news). Same payload as
- * the scheduled fire; kind = LONDON | MIDDAY | NY, note = the news that prompted it. */
+/* Admin: re-run an update now (e.g. after breaking news). Same payload as the
+ * scheduled fire; kind = LONDON | MIDDAY | NY, note = the news that prompted it. */
 async function indexRerun(url, env) {
   if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
   if (!env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return json({ error: 'ROUTINE_ID or ROUTINE_FIRE_TOKEN is not set' }, 400);
@@ -567,30 +564,39 @@ async function indexRerun(url, env) {
   return json({ status: res.status, body: res.body, text }, res.status < 300 ? 200 : 502);
 }
 
-async function getIndex(ix, url, env) {
+/* GET /us30: live BlackBull snapshot, today's ranges, the published map's
+ * status (by session, keyed by the map's `at`), the record and the scorecard.
+ * ?live=0 skips the feed (track record only). */
+async function getUs30(url, env) {
   const now = Date.now(), td = tradeDate(now), t = sessionTimes(td);
   const wantLive = url.searchParams.get('live') !== '0';
-  let live = null, liveError = null;
+  let mk = null, liveError = null, plan = null, U = null;
+  const today = await readRec(env, td), prev = await readRec(env, prevTradingDay(td));
   if (wantLive) {
-    try { live = (await fetchFutures())[ix.key] || null; if (!live) liveError = 'scanner: no ' + ix.fut + ' row'; }
-    catch (e) { liveError = String((e && e.message) || e); }
+    try {
+      mk = await fetchMarket(now);
+      if (mk.error) liveError = mk.error;
+      U = await readUs30(td);
+      plan = planStatus(U, mk.bars, td);
+    } catch (e) { liveError = String((e && e.message) || e); }
   }
-  const read = async (d) => { try { return d ? JSON.parse((await env.FX_SUBS.get(IDX_REC(ix.key, d))) || 'null') : null; } catch (e) { return null; } };
-  const today = await read(td), prev = await read(prevTradingDay(td));
+  // While a window runs, show its live range on top of the stored open.
+  const merged = today ? JSON.parse(JSON.stringify(today)) : null;
+  if (merged && mk) for (const k of ['lon', 'ny']) if (merged[k] && merged[k].c == null && mk[k]) Object.assign(merged[k], { h: mk[k].h, l: mk[k].l, last: mk.last });
   let scores = [];
-  try { scores = JSON.parse((await env.FX_SUBS.get(IDX_SCORES(ix.key))) || '[]'); } catch (e) {}
+  try { scores = JSON.parse((await env.FX_SUBS.get(SCORES_KEY)) || '[]'); } catch (e) {}
   const iso = (ms) => new Date(ms).toISOString();
   return new Response(JSON.stringify({
-    index: ix.label, symbol: ix.symbol,
+    index: US30.label, symbol: US30.symbol, feed: US30.feed,
     tradeDate: td, tradingDay: isTradingDay(td), phase: phaseAt(td, now),
     sessions: {
       londonOpen: iso(t.lonOpen), nyOpen: iso(t.nyOpen), nyClose: iso(t.nyClose),
       bucharest: { london: bucClock(t.lonOpen), ny: bucClock(t.nyOpen), close: bucClock(t.nyClose) },
     },
-    live, liveError, today, prev,
+    live: publicMarket(mk), liveError, plan, today: merged, prev,
     scores: { summary: summarizeScores(scores), recent: scores.slice(0, 20) },
-    text: live ? levelsText(ix, live, today) : null,
-  }), { headers: cors({ 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' }) });
+    text: mk ? levelsText(mk, today, plan, U) : null,
+  }), { headers: cors({ 'Content-Type': 'application/json', 'Cache-Control': 'max-age=20' }) });
 }
 
 /* ============================ Shared trade journal ============================

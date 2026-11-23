@@ -122,12 +122,15 @@ function buildPayload(prevData) {
     if (probs.length) console.warn('WARNING: meta.nextEvent: ' + probs.join('; ') + '.');
   }
 
-  // us30 / nas100 drive the US30 (v34) and NAS100 (v36) intraday tabs: written by
+  // us30 drives the US30 intraday tab (v34; NAS100 was removed in v40): written by
   // the 08:00 report (stage london), then the London update 40 min before the
   // London open (london-update), the midday update at 14:00 Bucharest (midday) and
-  // the NY update 40 min before the cash open (ny). The Worker scores sessions.london/ny.lean, so a malformed block
-  // warns loudly. Carried forward when a run omits it (the app marks an old date
-  // as not today's).
+  // the NY update 40 min before the cash open (ny). Prices are BlackBull Markets'
+  // US30 CFD (the chart Darius trades). Each session is a LEVEL MAP (v40): a long
+  // and a short side { zone: [lo, hi], entry, t1, t2?, stop } plus `at` (when the
+  // map was written), which the Worker follows live on the 5-minute candles. The
+  // Worker scores sessions.london/ny.lean, so a malformed block warns loudly.
+  // Carried forward when a run omits it (the app marks an old date as not today's).
   const indexBlock = (name) => {
     let ix = FX[name];
     if (!ix) {
@@ -138,6 +141,7 @@ function buildPayload(prevData) {
     const p = [], LEAN = ['BULLISH', 'BEARISH', 'RANGE'], CONV = ['high', 'medium', 'low'];
     const ISO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$/;
     const len = (v) => String(v == null ? '' : v).length;
+    const num = (v) => typeof v === 'number' && isFinite(v);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(String(ix.date || ''))) p.push('date must be YYYY-MM-DD');
     if (!['london', 'london-update', 'midday', 'ny'].includes(ix.stage)) p.push("stage must be 'london', 'london-update', 'midday' or 'ny'");
     if (!ISO.test(String(ix.updatedAt || ''))) p.push('updatedAt must be ISO 8601 UTC');
@@ -145,6 +149,17 @@ function buildPayload(prevData) {
     if (!CONV.includes(ix.conviction)) p.push('conviction must be high|medium|low');
     if (!['trend', 'range', 'news'].includes(ix.dayType)) p.push('dayType must be trend|range|news');
     if (!ix.headline || len(ix.headline) > 170) p.push('headline must be one sentence (<= 140 chars), got ' + len(ix.headline));
+    const ref = ix.ref && num(ix.ref.price) ? ix.ref.price : null;
+    const side = (k, dir, x) => {
+      const pre = 'sessions.' + k + '.' + dir;
+      if (!x || !Array.isArray(x.zone) || x.zone.length !== 2 || !x.zone.every(num) || x.zone[0] > x.zone[1]) return p.push(pre + '.zone must be [low, high] numbers');
+      if (!num(x.t1) || !num(x.stop) || (x.t2 != null && !num(x.t2))) return p.push(pre + ' needs numeric t1 and stop (t2 optional)');
+      const [lo, hi] = x.zone, L = dir === 'long';
+      const ok = L ? x.stop < lo && x.t1 > hi && (x.t2 == null || x.t2 > x.t1) : x.stop > hi && x.t1 < lo && (x.t2 == null || x.t2 < x.t1);
+      if (!ok) p.push(pre + (L ? ' must be stop < zone < t1 < t2' : ' must be stop > zone > t1 > t2'));
+      if (!x.entry || len(x.entry) > 160) p.push(pre + '.entry must say the 5-minute trigger inside the zone (<= 140 chars)');
+      if (ref != null && ref >= lo && ref <= hi) p.push(pre + '.zone contains ref.price ' + ref + ': a zone price is already in when the map is written plays out before Darius reads it');
+    };
     const S = ix.sessions || {};
     ['london', 'ny'].forEach((k) => {
       const x = S[k];
@@ -153,6 +168,11 @@ function buildPayload(prevData) {
       if (x.conviction && !CONV.includes(x.conviction)) p.push('sessions.' + k + '.conviction must be high|medium|low');
       if (len(x.plan) > 240) p.push('sessions.' + k + '.plan is ' + len(x.plan) + ' chars (max ~200)');
       if (!x.invalid || len(x.invalid) > 110) p.push('sessions.' + k + '.invalid must be a level (<= 90 chars)');
+      if (!ISO.test(String(x.at || ''))) p.push('sessions.' + k + '.at must be the ISO UTC time this map was written');
+      if (!x.long || !x.short) p.push('sessions.' + k + ' needs both sides of the level map (long and short)');
+      if (x.long) side(k, 'long', x.long);
+      if (x.short) side(k, 'short', x.short);
+      if (x.wait != null && len(x.wait) > 170) p.push('sessions.' + k + '.wait is ' + len(x.wait) + ' chars (max ~140)');
       // the midday check on a live session (v39): how the published plan is doing
       if (x.check != null && (!['on-track', 'target-hit', 'invalidated', 'not-triggered'].includes(x.check.status) ||
           !ISO.test(String(x.check.at || '')) || !x.check.note || len(x.check.note) > 170)) {
@@ -170,7 +190,6 @@ function buildPayload(prevData) {
     return ix;
   };
   const us30 = indexBlock('us30');
-  const nas100 = indexBlock('nas100');
 
   // ratePaths: carry forward if a run omits them (stale expectations beat none — warned)
   if (!FX.ratePaths || !Object.keys(FX.ratePaths).length) {
@@ -222,9 +241,8 @@ function buildPayload(prevData) {
     macro: macro,
     catalysts: FX.catalysts,
     geopolitics: FX.geopolitics,
-    // US index intraday biases (Dow and Nasdaq-100 futures) for the US30 / NAS100 tabs
+    // US30 intraday bias and level map (BlackBull US30 CFD) for the US30 tab
     us30: us30 || undefined,
-    nas100: nas100 || undefined,
     // The app reads this for "last updated" and the push trigger.
     updatedAt: new Date().toISOString(),
   };
