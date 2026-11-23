@@ -45,9 +45,9 @@
     },
     "nextBigEvent": "US October core PCE Wednesday at 15:30, the last inflation print before the December 9 FOMC, with core m/m forecast 0.3% and prelim GDP 3.5%.",
     "update": {
-      "at": "2026-11-23T13:57:07Z",
+      "at": "2026-11-23T14:06:22Z",
       "title": "US indices NY update",
-      "text": "US30 Range (low), box 48,900-49,275 · NAS100 Bullish (low), wrong below 25,815 · Trump pressed Nvidia's board to reinstate Huang, Nvidia +9%, but the 10-year is flat at 4.92."
+      "text": "US30 NY Bearish (low), wrong above 49,060 · NAS100 NY Bullish (medium), wrong below 25,800 · Nvidia's board reinstated Huang unanimously; YM lost its London low, NQ held VWAP."
     }
   },
   "dailyRead": "The day turns on one Sunday interview rather than on anything that happened in the Gulf. Treasury Secretary Bessent told Face the Nation that the Fed may be making a policy mistake if it overtightens, pointing at hawkish remarks from governors and at months of tightening financial conditions, and he pushed back on the fifty-point December move Governor Waller had floated. The repricing that followed is specific and worth reading carefully: NQ is 3.0% higher at 25,882, YM is 1.46% higher at 48,919, and gold is about 2% higher at 3,618 - equities and gold up together, on the same news, is a terminal-rate story and not a risk-sentiment story. December itself has barely moved, still roughly 90% on Kalshi to 96% on FedWatch for a quarter point on December 9; what moved is everything after it, which is why the most rate-sensitive index got paid first and the price-weighted Dow lagged. That ordering is the trade. The dollar is softer against seven of eight, DXY 103.674 and minus 0.13%, and the two havens are giving back only a fraction of Friday - USD/JPY 158.942 and plus 0.25%, USD/CHF 0.83934 and minus 0.06%. The yen lost to all seven others, but it did so with Tokyo shut for Labour Thanksgiving, so treat 158.942 as holiday liquidity rather than a change of view: the December 18 hike to 1.50% is still expected by 86% of economists and the Ministry of Finance sits immediately above at 160. The franc held better than the yen and now leads the board on its own, because the SNB has no policy story at 0.00% and the Gulf is a direct input. And the Gulf keeps escalating without being paid: UKMTO reported another tanker on fire in the engine room early Monday, the sixth hit since Sunday, after two separate projectile strikes near Khasab on Saturday and an incident involving military forces in the Gulf of Oman, and the IRGC claimed attacks on Bahrain - yet WTI is 83.52 against the 83.98 Friday settle and Brent 92.63 against 92.57. Three weekends running, the premium has refused to be paid, which keeps the Canadian dollar at minus one and keeps the Bank of Canada disagreement with TradingEconomics alive into Macklem on Tuesday at 19:25. The cleanest expressions today are the ones where both legs still point the same way after the bounce: long the euro and sterling against the Australian dollar into Wednesday CPI, and long gold now that Friday forced selling has visibly ended. The cleanest mistake would be to add to the crowded Australian and Canadian shorts into Wednesday at 02:30 and 15:30 - this is the week where a squeeze is cheaper for the market than a trend. Flash PMIs at 10:15, 10:30, 11:30 and 16:45 are the live risk to the whole construction, because the US prints are forecast to decelerate hard, to 54.5 manufacturing from 56.0 and 55.6 services from 57.9, and growth doubt would undercut exactly the trade Bessent words started.",
@@ -1196,14 +1196,14 @@
   "us30": {
     "date": "2026-11-23",
     "stage": "ny",
-    "updatedAt": "2026-11-23T13:57:07Z",
+    "updatedAt": "2026-11-23T14:06:22Z",
     "bias": "RANGE",
     "conviction": "low",
     "dayType": "range",
-    "headline": "Downgraded to range from bullish: YM failed back inside the Asia range after 49,275 and 86% of the 961 ATR is already spent.",
+    "headline": "Nvidia's board reinstated Huang unanimously, but YM lost its 48,960 London low into the open - the Dow is funding the AI rebound.",
     "ref": {
-      "price": 48980,
-      "at": "2026-11-23T13:55:51Z"
+      "price": 48930,
+      "at": "2026-11-23T14:03:00Z"
     },
     "sessions": {
       "london": {
@@ -1213,26 +1213,31 @@
         "invalid": "5-min close below 48,500 (day open), which reopens the 48,430 Asia low"
       },
       "ny": {
-        "lean": "RANGE",
+        "lean": "BEARISH",
         "conviction": "low",
-        "plan": "First look is a 5-min lower high into 49,060 for VWAP 48,900, then 48,500; buy only a reclaim of 49,060. Stand aside 16:40-16:50 - the PMIs decide whether the box breaks.",
-        "invalid": "5-min close outside 48,900-49,275 - that ends the box and starts a trend leg"
+        "plan": "Sell a 5-min lower high into 48,960-49,060 after the open; first target the 48,880 VWAP, then the 48,500 day open. Stand aside 16:40-16:50 for the PMIs.",
+        "invalid": "5-min close back above 49,060 (Asia high)"
       }
     },
     "drivers": [
       {
-        "k": "Fed",
-        "v": "Dec 9 hike about 91% priced, down from 98% on November 12",
-        "s": 1
-      },
-      {
-        "k": "Rotation",
-        "v": "NQ +3.1% vs YM +1.6% - chips and duration lead, price-weighted Dow lags",
-        "s": -1
+        "k": "Huang",
+        "v": "Board reinstated him unanimously - but NVDA is a low-priced Dow member",
+        "s": 0
       },
       {
         "k": "Structure",
-        "v": "London broke 49,064 to 49,275 then fell back inside the Asia range",
+        "v": "YM lost the 48,960 London low into the open while NQ held its VWAP",
+        "s": -1
+      },
+      {
+        "k": "Rotation",
+        "v": "NQ +3.0% vs YM +1.5% - the Dow is the funding leg of the AI rebound",
+        "s": -1
+      },
+      {
+        "k": "Yields",
+        "v": "US 10-year +5bp to about 4.96%; Dec 9 hike still about 91% priced",
         "s": -1
       },
       {
@@ -1241,13 +1246,8 @@
         "s": -1
       },
       {
-        "k": "Yields",
-        "v": "US 10-year pinned 4.92-4.93, within 2bp of Friday - no confirmation",
-        "s": 0
-      },
-      {
-        "k": "Oil / Iran",
-        "v": "WTI Jan 81.3, down 2.2%, despite a Houthi hit on a Saudi refinery",
+        "k": "Rebound",
+        "v": "S&P futures +2.5% and NQ +3.5% into the open - broad dip-buying bid",
         "s": 1
       }
     ],
@@ -1260,27 +1260,27 @@
       {
         "name": "London high",
         "v": 49280,
-        "note": "Session high and the top of the box"
+        "note": "Day high and the top of the box"
       },
       {
         "name": "Asia high",
         "v": 49060,
-        "note": "Broke then lost; now the pivot overhead"
+        "note": "Pivot overhead and the short-side invalidation"
       },
       {
         "name": "London low",
-        "v": 48970,
-        "note": "Bottom of the box, being tested into the open"
+        "v": 48960,
+        "note": "Lost into the cash open - the crack in the bid"
       },
       {
         "name": "VWAP",
-        "v": 48900,
-        "note": "Session VWAP; the line the range hangs on"
+        "v": 48880,
+        "note": "Session VWAP; first downside target"
       },
       {
         "name": "Day open",
         "v": 48500,
-        "note": "Sunday reopen; first target if the box fails"
+        "note": "Sunday reopen; second target if VWAP goes"
       },
       {
         "name": "Asia low",
@@ -1295,16 +1295,16 @@
     ],
     "scenarios": [
       {
-        "if": "5-min close over 49,280",
-        "then": "The box breaks up; 49,660 PDH is live and the Dow finally joins the NQ bid"
+        "if": "5-min close below 48,880 VWAP",
+        "then": "Opens the 48,500 day open then the 48,220 PDC gap-fill - the cleanest short of the day"
       },
       {
-        "if": "5-min close below 48,900",
-        "then": "Box fails; 48,500 day open then the 48,220 PDC gap-fill come back into play"
+        "if": "Reclaim of the 49,060 Asia high",
+        "then": "The bearish lean is done; 49,280 London high then the 49,660 PDH come back into play"
       },
       {
-        "if": "PMIs miss at 16:45",
-        "then": "Growth doubt replaces rate relief; sell failures at 49,060 instead of buying dips"
+        "if": "Strong PMIs at 16:45",
+        "then": "Hike pricing firms and yields rise; the price-weighted Dow takes it worse than the NQ"
       }
     ],
     "events": [
@@ -1323,14 +1323,14 @@
   "nas100": {
     "date": "2026-11-23",
     "stage": "ny",
-    "updatedAt": "2026-11-23T13:57:07Z",
+    "updatedAt": "2026-11-23T14:06:22Z",
     "bias": "BULLISH",
-    "conviction": "low",
+    "conviction": "medium",
     "dayType": "trend",
-    "headline": "Nvidia +9% after Trump pressed the board to reinstate Huang - NQ has the catalyst and YM does not, but 26,102 capped it.",
+    "headline": "Confirmed: Nvidia's board reinstated Huang unanimously - the overhang Kress denied two days ago is gone and NQ holds its 25,800 VWAP.",
     "ref": {
-      "price": 25910,
-      "at": "2026-11-23T13:55:51Z"
+      "price": 25870,
+      "at": "2026-11-23T14:03:00Z"
     },
     "sessions": {
       "london": {
@@ -1341,40 +1341,40 @@
       },
       "ny": {
         "lean": "BULLISH",
-        "conviction": "low",
-        "plan": "Buy a 5-min higher low above VWAP 25,815; first target the 25,945 Asia high, then 26,100. Nvidia's cash open is the engine - do not add into the 16:45 PMIs.",
-        "invalid": "5-min close below 25,815 (VWAP), which reopens the 25,425 Asia low"
+        "conviction": "medium",
+        "plan": "Buy a 5-min higher low above the 25,800 VWAP; first target the 25,945 Asia high, then 26,100. NVDA's cash open is the engine - do not add into the 16:45 PMIs.",
+        "invalid": "5-min close below 25,800 (VWAP), which reopens the 25,560 day open"
       }
     },
     "drivers": [
       {
         "k": "Semis / AI",
-        "v": "Trump pressed the board to reinstate Huang; Nvidia +9%, Micron +5%",
+        "v": "Board reinstated Huang as CEO and director, effective immediately",
         "s": 1
       },
       {
         "k": "Megacaps",
-        "v": "AMD and Broadcom +4%, SK Hynix +9% - the chip complex led the rebound",
+        "v": "NVDA about +9% premarket after a 23% weekly drop - the top NDX weight",
         "s": 1
       },
       {
-        "k": "Fed",
-        "v": "Dec 9 hike about 91% priced, down from 98% - the 50bp tail got cut",
+        "k": "Governance",
+        "v": "Kress said two days ago the board would not bring Huang back",
         "s": 1
       },
       {
         "k": "Yields",
-        "v": "10-year flat at 4.92-4.93 - a 3% NQ bounce with no help from bonds",
-        "s": 0
+        "v": "US 10-year +5bp to about 4.96% - the one headwind for long duration",
+        "s": -1
       },
       {
         "k": "Structure",
-        "v": "Tagged 26,102 then slipped back under the 25,945 Asia high",
+        "v": "Capped at 26,102, but holding above the 25,800 VWAP into the open",
         "s": 0
       },
       {
         "k": "Stretch",
-        "v": "675-pt range is 73% of the 910 ATR; NDX still near a 20% bear market",
+        "v": "675-pt range is 74% of the 910 ATR; NDX still near a 20% bear market",
         "s": -1
       }
     ],
@@ -1382,27 +1382,27 @@
       {
         "name": "PDH",
         "v": 26605,
-        "note": "Friday high; far above and not today objective"
+        "note": "Friday high; far above and not a today objective"
       },
       {
         "name": "London high",
         "v": 26100,
-        "note": "Session high and the supply that capped it"
+        "note": "Day high and the supply that capped the bounce"
       },
       {
         "name": "Asia high",
         "v": 25945,
-        "note": "The line price is pinned to into the open"
+        "note": "The line the long case has to reclaim"
       },
       {
         "name": "London low",
         "v": 25855,
-        "note": "Session low; first crack in the bullish lean"
+        "note": "Session low; the first crack if it goes"
       },
       {
         "name": "VWAP",
-        "v": 25815,
-        "note": "Session VWAP; the pivot the long case needs"
+        "v": 25800,
+        "note": "Session VWAP; the pivot the long lean needs"
       },
       {
         "name": "Day open",
@@ -1423,15 +1423,15 @@
     "scenarios": [
       {
         "if": "Reclaims 25,945 after the open",
-        "then": "26,100 London high then 26,400; Nvidia's cash open is the engine"
+        "then": "26,100 London high then 26,400; NVDA's cash open is the engine of the move"
       },
       {
-        "if": "5-min close below 25,815",
-        "then": "The AI bid fails intraday and the 25,560 day open then 25,425 open up"
+        "if": "5-min close below 25,800 VWAP",
+        "then": "The reinstatement is being sold; the 25,560 day open then 25,425 open up"
       },
       {
-        "if": "PMIs miss at 16:45",
-        "then": "Weaker prints cut the hike case; yields fall and NQ keeps outperforming YM"
+        "if": "Strong PMIs at 16:45",
+        "then": "Yields extend toward 5% and long duration gives the bounce back - cut, do not add"
       }
     ],
     "events": [
@@ -1447,5 +1447,5 @@
       }
     ]
   },
-  "updatedAt": "2026-11-23T13:57:17.804Z"
+  "updatedAt": "2026-11-23T14:06:23.080Z"
 }
