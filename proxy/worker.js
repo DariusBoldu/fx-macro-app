@@ -20,6 +20,7 @@
  *      and after each release, fire the cloud analyst routine's API trigger:
  *        POST /routine/test?key=…   -> fire it with a TRIGGER TEST / EGRESS CHECK /
  *                                      US INDICES DRY RUN payload (admin; nothing is published)
+ *        POST /routine/index-update?key=…&kind=NY&note=…  -> re-run an index update now (admin; publishes)
  *   5) US INDEX FUTURES TRACKER for the analyst (see ./indices.js), US30 (YM)
  *      and NAS100 (NQ):
  *        GET /us30 | /nas100        -> snapshot, Asia/London/NY ranges, scorecard
@@ -86,6 +87,7 @@ export default {
       if (url.pathname === '/results') return await getResults(env);
       if (url.pathname === '/results/probe') return await probeResults(url, env);
       if (url.pathname === '/routine/test' && request.method === 'POST') return await testRoutine(url, env);
+      if (url.pathname === '/routine/index-update' && request.method === 'POST') return await indexRerun(url, env);
       if (url.pathname === '/us30' || url.pathname === '/nas100') return await getIndex(INDICES[url.pathname.slice(1)], url, env);
       if (url.pathname === '/push/test' && request.method === 'POST') {
         if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
@@ -519,6 +521,21 @@ async function indexFire(env, td, t, now) {
   const key = f.key + td;
   if (await env.FX_SUBS.get(key)) return;
   await env.FX_SUBS.put(key, '1', { expirationTtl: 3 * 86400 });   // mark BEFORE firing
+  const text = await indexPayload(env, f.kind, td, t);
+  let outcome;
+  try {
+    const res = await postRoutineFire(env, text);
+    outcome = { date: td, kind: f.kind, status: res.status, at: new Date().toISOString() };
+    if (res.status >= 300) outcome.detail = res.body.slice(0, 200);
+  } catch (e) {
+    outcome = { date: td, kind: f.kind, error: String((e && e.message) || e), at: new Date().toISOString() };
+  }
+  await env.FX_SUBS.put('us30fire:last', JSON.stringify(outcome), { expirationTtl: 14 * 86400 });
+}
+
+/* The payload for one index update: header, session times, then the YM and NQ
+ * snapshots with today's ranges. Shared by the scheduled fire and the admin re-run. */
+async function indexPayload(env, kind, td, t, note) {
   let snaps = {};
   try { snaps = await fetchFutures(); } catch (e) {}
   const blocks = [];
@@ -530,19 +547,24 @@ async function indexFire(env, td, t, now) {
       : `${ix.label}: ${ix.fut} snapshot unavailable from the Worker; work from news and GET /${k}.`);
   }
   const at = (ms) => `${new Date(ms).toISOString()} (${bucClock(ms)} Bucharest)`;
-  const text = [
-    `US INDICES ${f.kind} UPDATE ${td}`,
-    `London open: ${at(t.lonOpen)}; NY cash open: ${at(t.nyOpen)}`,
-  ].concat(blocks).join('\n');
-  let outcome;
-  try {
-    const res = await postRoutineFire(env, text);
-    outcome = { date: td, kind: f.kind, status: res.status, at: new Date().toISOString() };
-    if (res.status >= 300) outcome.detail = res.body.slice(0, 200);
-  } catch (e) {
-    outcome = { date: td, kind: f.kind, error: String((e && e.message) || e), at: new Date().toISOString() };
-  }
-  await env.FX_SUBS.put('us30fire:last', JSON.stringify(outcome), { expirationTtl: 14 * 86400 });
+  const head = [`US INDICES ${kind} UPDATE ${td}`, `London open: ${at(t.lonOpen)}; NY cash open: ${at(t.nyOpen)}`];
+  if (note) head.push(`Re-run requested by Darius after this news (verify it before using it): ${note}`);
+  return head.concat(blocks).join('\n');
+}
+
+/* Admin: re-run an index update now (e.g. after breaking news). Same payload as
+ * the scheduled fire; kind = LONDON | MIDDAY | NY, note = the news that prompted it. */
+async function indexRerun(url, env) {
+  if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'forbidden' }, 403);
+  if (!env.ROUTINE_ID || !env.ROUTINE_FIRE_TOKEN) return json({ error: 'ROUTINE_ID or ROUTINE_FIRE_TOKEN is not set' }, 400);
+  const kind = (url.searchParams.get('kind') || '').toUpperCase();
+  if (!['LONDON', 'MIDDAY', 'NY'].includes(kind)) return json({ error: 'kind must be LONDON, MIDDAY or NY' }, 400);
+  const note = (url.searchParams.get('note') || '').slice(0, 300);
+  const now = Date.now(), td = tradeDate(now), t = sessionTimes(td);
+  const text = await indexPayload(env, kind, td, t, note);
+  const res = await postRoutineFire(env, text);
+  await env.FX_SUBS.put('us30fire:last', JSON.stringify({ date: td, kind, rerun: true, status: res.status, at: new Date().toISOString() }), { expirationTtl: 14 * 86400 });
+  return json({ status: res.status, body: res.body, text }, res.status < 300 ? 200 : 502);
 }
 
 async function getIndex(ix, url, env) {
