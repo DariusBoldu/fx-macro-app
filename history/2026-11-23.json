@@ -1,0 +1,1437 @@
+{
+  "meta": {
+    "reportDate": "2026-11-23",
+    "reportLabel": "Bessent told the Fed on Sunday that overtightening would be a policy mistake, so NQ is 3% higher and gold 2% higher - a terminal-rate bounce, not a haven bid, while a sixth tanker burns in the Gulf.",
+    "horizon": "4H swing",
+    "coverage": "USD, EUR, GBP, JPY, AUD, NZD, CAD, CHF · 28 pairs (full G10 ex SEK/NOK) + DXY + JPYBASKET + GER40 + EU50 + XAU + XAG + XCU + USOIL",
+    "regime": "Friday closed the Dow and the S&P 500 in correction with the Nasdaq Composite 5.28% lower, and then on Sunday Treasury Secretary Bessent told Face the Nation that the Fed may be making a policy mistake if it overtightens and pushed back on the fifty-point December move, which is why NQ trades 3.0% higher, YM 1.46% higher and gold about 2% higher all at once - a repricing of the terminal rate rather than a repair of the AI trade. Against that, the Gulf escalated through the weekend to a sixth tanker hit since Sunday and an IRGC strike on Bahrain while WTI at 83.52 sits below the 83.98 Friday settle, so for a third weekend running the risk premium has refused to be paid and this bounce has to stand on the Fed leg alone.",
+    "nextEvent": {
+      "event": "US October core PCE",
+      "ccy": "USD",
+      "when": "2026-11-25T13:30:00Z",
+      "figures": [
+        {
+          "label": "Core PCE m/m",
+          "forecast": "0.3%",
+          "previous": "0.3%"
+        },
+        {
+          "label": "Prelim GDP q/q",
+          "forecast": "3.5%",
+          "previous": "3.4%"
+        },
+        {
+          "label": "Unemployment Claims",
+          "forecast": "201K",
+          "previous": "203K"
+        }
+      ],
+      "why": "Wednesday at 15:30 and the last inflation print before the December 9 FOMC - November CPI only lands on December 10, after the meeting. Bessent has now publicly warned against overtightening, so this print decides whether the fifty-point tail returns.",
+      "priced": "December 25bp about 90% on Kalshi to 96% on FedWatch; the fifty-point tail is out",
+      "scenarios": [
+        {
+          "if": "Core 0.4% m/m or higher",
+          "then": "The fifty-point tail returns: dollar bid, gold back under 3,500, US30 and NAS100 retest the month lows"
+        },
+        {
+          "if": "Core 0.2% m/m or lower",
+          "then": "Bessent is vindicated: USD/JPY toward 157, gold through 3,700, NAS100 extends the bounce"
+        },
+        {
+          "if": "In line at 0.3% m/m",
+          "then": "A thin pre-Thanksgiving tape leaves Hormuz and the AI derating in charge of the board"
+        }
+      ]
+    },
+    "nextBigEvent": "US October core PCE Wednesday at 15:30, the last inflation print before the December 9 FOMC, with core m/m forecast 0.3% and prelim GDP 3.5%.",
+    "update": null
+  },
+  "dailyRead": "The day turns on one Sunday interview rather than on anything that happened in the Gulf. Treasury Secretary Bessent told Face the Nation that the Fed may be making a policy mistake if it overtightens, pointing at hawkish remarks from governors and at months of tightening financial conditions, and he pushed back on the fifty-point December move Governor Waller had floated. The repricing that followed is specific and worth reading carefully: NQ is 3.0% higher at 25,882, YM is 1.46% higher at 48,919, and gold is about 2% higher at 3,618 - equities and gold up together, on the same news, is a terminal-rate story and not a risk-sentiment story. December itself has barely moved, still roughly 90% on Kalshi to 96% on FedWatch for a quarter point on December 9; what moved is everything after it, which is why the most rate-sensitive index got paid first and the price-weighted Dow lagged. That ordering is the trade. The dollar is softer against seven of eight, DXY 103.674 and minus 0.13%, and the two havens are giving back only a fraction of Friday - USD/JPY 158.942 and plus 0.25%, USD/CHF 0.83934 and minus 0.06%. The yen lost to all seven others, but it did so with Tokyo shut for Labour Thanksgiving, so treat 158.942 as holiday liquidity rather than a change of view: the December 18 hike to 1.50% is still expected by 86% of economists and the Ministry of Finance sits immediately above at 160. The franc held better than the yen and now leads the board on its own, because the SNB has no policy story at 0.00% and the Gulf is a direct input. And the Gulf keeps escalating without being paid: UKMTO reported another tanker on fire in the engine room early Monday, the sixth hit since Sunday, after two separate projectile strikes near Khasab on Saturday and an incident involving military forces in the Gulf of Oman, and the IRGC claimed attacks on Bahrain - yet WTI is 83.52 against the 83.98 Friday settle and Brent 92.63 against 92.57. Three weekends running, the premium has refused to be paid, which keeps the Canadian dollar at minus one and keeps the Bank of Canada disagreement with TradingEconomics alive into Macklem on Tuesday at 19:25. The cleanest expressions today are the ones where both legs still point the same way after the bounce: long the euro and sterling against the Australian dollar into Wednesday CPI, and long gold now that Friday forced selling has visibly ended. The cleanest mistake would be to add to the crowded Australian and Canadian shorts into Wednesday at 02:30 and 15:30 - this is the week where a squeeze is cheaper for the market than a trend. Flash PMIs at 10:15, 10:30, 11:30 and 16:45 are the live risk to the whole construction, because the US prints are forecast to decelerate hard, to 54.5 manufacturing from 56.0 and 55.6 services from 57.9, and growth doubt would undercut exactly the trade Bessent words started.",
+  "today": [
+    {
+      "ccy": "JPY",
+      "moved": true,
+      "headline": "Lost ground to all seven others - USD/JPY 158.942 and plus 0.25%, AUD/JPY 105.615 and plus 0.50%, EUR/JPY 174.745 and plus 0.49% - with Tokyo closed for Labour Thanksgiving.",
+      "read": "Read this as holiday liquidity unwinding Friday haven bid rather than a change of view: the December 18 hike to 1.50% is still expected by 86% of economists and the carry gap is unchanged at 2.16 points. The nearer risk is upward, not downward, because 160 is where the Ministry of Finance has intervened before and spot is 158.942."
+    },
+    {
+      "ccy": "USD",
+      "moved": true,
+      "headline": "Softer against seven of eight on a Treasury Secretary rather than on data - DXY 103.674 and minus 0.13% after Bessent warned the Fed that overtightening would be a policy mistake.",
+      "read": "December is untouched at roughly 90% to 96% for a quarter point; what repriced is the path after it, which is why gold and NQ rallied together. Core PCE on Wednesday at 15:30 is the only event this week that can rebuild the fifty-point tail, and Williams speaks tonight at 23:00."
+    },
+    {
+      "ccy": "AUD",
+      "moved": true,
+      "headline": "The best high-beta performer of the bounce - AUD/JPY 105.615 and plus 0.50%, AUD/USD 0.66449 and plus 0.23% - which is the most crowded short on this board starting to squeeze.",
+      "read": "Nothing in the data improved: unemployment is a four-year high 4.9% and employment fell 43,500. This is positioning into Wednesday 02:30, where the consensus already reads headline 4.8% from 4.3% with trimmed mean monthly steady at 0.3%. Hold shorts, do not add, and be flat into the print."
+    },
+    {
+      "ccy": "CHF",
+      "moved": true,
+      "headline": "Beat the yen and now leads the board - CHF/JPY 189.378 and plus 0.31%, USD/CHF 0.83934 and minus 0.06% - giving back less of Friday than the senior haven did.",
+      "read": "With the SNB at 0.00% and no rate expectation to unwind, the franc is the cleanest Gulf expression on the board, and the sixth tanker strike since Sunday keeps that bid funded. Intervention rhetoric rather than policy is the cap, so expect it to keep doing the junior version of whatever the yen does."
+    },
+    {
+      "ccy": "GBP",
+      "moved": true,
+      "headline": "Best performer against the dollar at GBP/USD 1.31228 and plus 0.29%, and it took back ground from the euro with EUR/GBP 0.83779 and minus 0.06%.",
+      "read": "The December 17 decision is still the most genuinely two-sided on this board, 78% to 84% priced against all but one of 65 economists expecting a hold. Two live inputs today: flash PMIs at 11:30 forecast at 53.0 and 53.0, then Chief Economist Pill at 15:00, who has already signalled rates likely rising again."
+    },
+    {
+      "ccy": "EUR",
+      "moved": true,
+      "headline": "Up 0.26% against the dollar at EUR/USD 1.09955 and higher against both havens, but it lost to sterling for the first time in three sessions.",
+      "read": "The December 17 hike stays near-certain at 90% to 92% with inflation at a three-year-high 4.0% and gas back up at 92.89 euros from the 88.45 the last report carried. The flash PMIs at 10:15 and 10:30 are the test - French services forecast at 47.4 against German services at 52.4 is the two-speed problem the Council keeps naming."
+    },
+    {
+      "ccy": "CAD",
+      "moved": true,
+      "headline": "Firmer against the dollar and both havens - USD/CAD 1.43214 and minus 0.15%, CAD/JPY 110.983 and plus 0.39% - but weaker against Europe, and the oil leg still refuses to pay.",
+      "read": "Six tankers hit since Sunday and WTI is 83.52 against the 83.98 Friday settle: the energy pass-through the Bank hiked for in October is going backwards, which is why the market sits near 38% against the TradingEconomics 2.75% forecast for December 9. Macklem on Tuesday at 19:25 is the week best chance of resolving that gap."
+    },
+    {
+      "ccy": "NZD",
+      "moved": false,
+      "headline": "The laggard of the bounce, up only 0.10% against the dollar at NZD/USD 0.54764 and losing ground to the Australian dollar at AUD/NZD 1.2129.",
+      "read": "The policy leg is the only thing working: TradingEconomics forecasts 3.00% on December 9 and the Reserve Bank own survey sees 3.05% by quarter end. With unemployment at a 2016 high of 5.7% and employment down 0.1% on the quarter, the kiwi needs the hike delivered rather than discussed, so keep it expressed against the Australian dollar rather than the dollar."
+    }
+  ],
+  "snapshot": [
+    {
+      "icon": "💵",
+      "t": "Bessent told the Fed on Sunday that overtightening would be a policy mistake, and the board repriced",
+      "s": "On Face the Nation the Treasury Secretary cited hawkish governor remarks and months of tightening financial conditions, and pushed back on the fifty-point December move. December is still near-certain at roughly 90% on Kalshi to 96% on FedWatch - the terminal rate moved, the next hike did not."
+    },
+    {
+      "icon": "📈",
+      "t": "NQ is 3.0% higher and YM 1.46% higher, with growth leading the bounce and the Dow lagging behind it",
+      "s": "NQ trades 25,882 against the 25,127 Friday close after a 7.77% week; YM 48,919 against 48,216 after 6.61%. The most rate-sensitive index getting paid first is what a terminal-rate story looks like, not an AI-sentiment repair."
+    },
+    {
+      "icon": "🥇",
+      "t": "Gold rose about 2% to 3,618 on the same news that lifted equities - a real-rates bounce, not a haven bid",
+      "s": "Friday 2.51% fall came with the 10-year down 10 basis points and the dollar lower, which was the signature of forced selling; that liquidation has now visibly ended. Silver followed to 42.68 and copper rose about 1% off its seven-month low to 5.55."
+    },
+    {
+      "icon": "🛢️",
+      "t": "A sixth tanker has been hit since Sunday and the IRGC struck Bahrain, yet WTI is below Friday settle",
+      "s": "UKMTO reported a tanker on fire in the engine room early Monday around 08:00, after two separate projectile strikes near Khasab on Saturday and an incident involving military forces in the Gulf of Oman. WTI 83.52 against 83.98 and Brent 92.63 against 92.57 - three weekends running the premium has refused to be paid."
+    },
+    {
+      "icon": "🇯🇵",
+      "t": "The yen gave back ground against all seven others, but it did it with Tokyo closed for Labour Thanksgiving",
+      "s": "USD/JPY 158.942 and plus 0.25%, AUD/JPY 105.615 and plus 0.50%, EUR/JPY 174.745 and plus 0.49%. The December 18 hike to 1.50% is still 86% expected by economists and the Ministry of Finance sits just above at 160, so read this as liquidity rather than a view change."
+    },
+    {
+      "icon": "🇨🇭",
+      "t": "The franc beat the yen and now leads the board, holding Friday gains better than the senior haven did",
+      "s": "CHF/JPY 189.378 and plus 0.31%, USD/CHF 0.83934 and minus 0.06%, while every high-beta cross recovered against it. With the SNB at 0.00% and no policy story, the franc trades the Gulf alone, capped only by intervention risk."
+    },
+    {
+      "icon": "📊",
+      "t": "Today is a flash-PMI day and both US prints are forecast to decelerate sharply at 16:45",
+      "s": "US manufacturing is forecast at 54.5 from 56.0 and services at 55.6 from 57.9; German services improve to 52.4 from 51.7 at 10:30 while French services fall to 47.4 from 48.4 at 10:15, and UK prints land at 11:30. A growth-doubt print would undercut the exact trade Bessent started."
+    }
+  ],
+  "ratePaths": {
+    "USD": {
+      "next": "hike",
+      "when": "December 9 at 21:00 with a new dot plot, and the fifty-point tail now pushed back by the Treasury itself",
+      "note": "TradingEconomics carries the Fed funds rate at 4.00% as the upper bound of the 3.75% to 4.00% range, held on October 28, and its own quarter-end projection is 4.25%. The quarter point is still near-certain - about 90% on Kalshi, 95.7% on a November 19 FedWatch reading and 96.9% in later coverage - but the new input is political rather than monetary: Treasury Secretary Bessent said on Sunday that the Fed may be making a policy mistake if it overtightens, citing hawkish governor remarks and a substantial tightening in financial conditions, and pushed back on the fifty-point move Waller had floated. That caps the path beyond December rather than December itself, which is exactly how gold and NQ can rally together. The October 28 minutes record that almost all participants judged further action to raise the target range would likely be appropriate and that a couple would consider more than 25 basis points on unfavourable inflation data, so core PCE on Wednesday at 15:30 is what decides whether the tail returns - November CPI only lands on December 10, after the meeting. New York Fed President Williams, who has said the situation does not call for dramatic action, speaks Monday at 23:00. The meeting carries a Summary of Economic Projections, so the dot plot is the larger half of the event."
+    },
+    "EUR": {
+      "next": "hike",
+      "when": "December 17 at 15:15, priced about 90% to 92%",
+      "note": "TradingEconomics carries the deposit facility rate at 2.50%, with the main refinancing rate at 2.65% and the marginal lending rate at 2.90%, all held on October 29 - Lagarde confirmed at that press conference that a hike was discussed but the hold was unanimous. Euro-area inflation is 4.0%, a three-year high, with core at 2.6% and rising, and the energy input behind that print is still live: EU natural gas now reads 92.89 euros against the 88.45 the last report carried, on the Troll field outage and lower Norwegian exports, with storage 69.8% full on November 19 against 81.2% a year earlier. Pricing is a near-certain quarter point without being a formality: ECB Watch at 92.0% and LSEG around 91% on November 18, against roughly 72% in mid-November after Nagel warning and about 84% at the October meeting. Today the flash PMIs are the live test - French services forecast at 47.4 from 48.4 and German services at 52.4 from 51.7 at 10:15 and 10:30, which is the same two-speed euro area the Council keeps describing. The October accounts arrive Thursday at 14:30, Nagel speaks Friday at 14:40, and French and Spanish November flash CPI on Friday give the first read on euro-area November inflation. Lagarde steps down on February 7, 2027."
+    },
+    "GBP": {
+      "next": "hike",
+      "when": "December 17 at 14:00, the most two-sided decision on this board at 78% to 84% against an economist consensus to hold",
+      "note": "TradingEconomics carries Bank Rate at 4.00% after the November 5 quarter-point rise from 3.75%. The vote was nine of nine to hike with Catherine Mann wanting fifty basis points to 4.25%, and the Bank said inflation is expected to rise to around 5% by the middle of next year before falling back, with recent activity data stronger than expected. CPI is 3.6% with core steady at 2.8% and unemployment improved to 4.6%, though the ONS has flagged Labour Force Survey sample rotation and wage growth has slowed to 3.6% from 3.8%. The split is genuine: market pricing sits between 78% and 84% - RateProbability at 78% on November 20, Blue Gamma at 84% on November 18 - while all but one of 65 economists polled by Reuters expect a hold, with February the consensus for the next move. The market side has names on it, which is what changed this month: Chief Economist Huw Pill has signalled rates likely rising again in December and through 2027, and Deputy Governor Lombardelli will not rule out voting for one. Pill speaks today at 15:00 and Greene on Tuesday at 14:30, with the flash PMIs at 11:30 forecast at 53.0 manufacturing and 53.0 services. TradingEconomics own quarter-end projection is still 4.00%, so it reads this as a hold."
+    },
+    "JPY": {
+      "next": "hike",
+      "when": "December 18 at 05:00, forecast at 1.50% with 86% of economists agreeing - but a two-sided event",
+      "note": "TradingEconomics carries the policy rate at 1.25% after the October 30 hold, an 8-1 vote with Hajime Takata dissenting for faster hikes toward neutral, and its calendar forecasts 1.50% for December 18. A Reuters poll of 71 economists run November 11 to 18 has 86% expecting that quarter point, which would make this the first three-hike year in 37 years, and nearly 60% expect 1.75% by the end of March. October national core CPI was 2.2% against a 2.3% forecast, so it missed, but core has been above the 2% target for a second straight month and headline is 2.3%. Wage growth is 4.6%, the fastest on this board, and unemployment is 2.4%. The carry gap is unchanged on TradingEconomics at 2.16 points, the US 10-year at 4.944% against the Japanese 10-year at 2.785%, with cash Treasuries not yet repriced for Sunday news. The important nuance is that December is not one-way: Bank staff put the nominal neutral rate anywhere between 1.1% and 2.5% with no board consensus, the hike is largely priced, and several analysts warn a vague statement or cautious Ueda press conference risks a repeat of last December hike-and-sell. Spot at 158.942 keeps the Ministry of Finance the nearer risk, with intervention having capped the pair around 160 before. Tokyo core CPI arrives Friday at 01:30 forecast at 2.9% from 2.6%, and Tokyo is closed today for Labour Thanksgiving."
+    },
+    "AUD": {
+      "next": "hold",
+      "when": "December 8 at 05:30, with TradingEconomics carrying 4.85% and the hurdle for more now visibly higher",
+      "note": "TradingEconomics carries the cash rate at 4.85% after the November 3 rise from 4.60%, an 18-year high, and forecasts a hold for December 8. The November minutes are the key detail: six of nine members supported that rise, citing inflation above target, resilient activity and the possibility that a higher neutral rate had made policy less restrictive than assumed, while three opposed it, warning that rising unemployment and falling house prices could push the economy into a sharper downturn. TradingEconomics own summary reads that split as a higher hurdle for further increases, with markets increasingly expecting the peak. The board is stuck: it cannot hike into October unemployment at a four-year high of 4.9% after employment fell 43,500 against a forecast of plus 25,500, and it cannot cut into headline inflation at 4.3% with core at 3.6%, the highest on this board. October CPI on Wednesday at 02:30 is the only release that can move this, and the ForexFactory consensus reads headline 4.8% from 4.3%, monthly 0.4% from 0.8% and trimmed mean monthly steady at 0.3% - energy pass-through lifting the headline while the targeted core measure does not accelerate, which argues the freeze holds even on a hot headline. A market that already expects 4.8% and gets it is how the most crowded short on this board gets squeezed, and this morning that squeeze has started."
+    },
+    "NZD": {
+      "next": "hike",
+      "when": "December 9 at 03:00, where TradingEconomics forecasts 3.00% from 2.75%",
+      "note": "TradingEconomics carries the Official Cash Rate at 2.75% after the October 28 hold - which undershot both the 3.0% consensus and TradingEconomics own 3.0% forecast - and forecasts 3.00% for the December 9 Monetary Policy Statement. This remains the only move outside the Fed, ECB and Bank of Japan that this board carries. The Reserve Bank November Survey of Expectations supports it: respondents expect the cash rate to reach 3.05% by the end of the December quarter and 3.40% over the next year, up from 3.21% in the previous survey, with one-year inflation expectations rising to 2.92% from 2.60% and two-year to 2.36% from 2.34%. Against that, Q3 CPI fell to 3.7% from 4.1% with core steady at 3.2%, unemployment rose to 5.7%, the highest since 2016, employment fell 0.1% on the quarter and private wage growth is 2.0%. Quarterly retail sales landed overnight at 23:45 forecast at 0.5% from minus 0.5% with the core measure at 0.8%, a low-impact release and not one the Worker has posted an actual for yet. The kiwi is the laggard of this bounce, up only 0.10% against the dollar, which says the policy leg is doing the work and the price leg is not."
+    },
+    "CAD": {
+      "next": "hike",
+      "when": "December 9 at 16:45, with TradingEconomics forecasting 2.75% against a rate market near 38%",
+      "note": "TradingEconomics carries the overnight rate at 2.50% after the October 28 rise from 2.25%, the first increase in three years, and forecasts 2.75% for December 9. The Bank said the move aimed to reduce the risk that continuing high energy prices spread to other goods and services, noted there could be a need to raise further although caution is necessary, and projected CPI averaging 3% in 2027 before returning to 2% in mid-2028, with growth of 1% in 2026 and 2% in each of the next two years. The problem is that the energy pass-through it was aimed at keeps going in reverse: six tankers have now been hit in the Gulf since Sunday and WTI still reads 83.52 against the 83.98 Friday settle, with the barrel 14% lower on the month. Meanwhile core CPI is 2.0%, trimmed 1.8% and median 2.0%, all at or below the midpoint, headline held at 3.1%, unemployment is 6.7% and employment has fallen three months running. That leaves a real disagreement rather than a rounding error between the TradingEconomics forecast and a rate market near 38%. Governor Macklem speaks Tuesday at 19:25 and is the single best chance of resolving it before December 9."
+    },
+    "CHF": {
+      "next": "hold",
+      "when": "December 10 at 10:30, with TradingEconomics carrying 0.00% and no case for anything else",
+      "note": "TradingEconomics carries the SNB policy rate at 0.00%, held on September 24 and held there since mid-2025, and forecasts 0.00% for December 10. At the September meeting the bank said the current stance remains appropriate, noted inflation had risen on higher energy prices, and forecast average inflation of 0.7% in 2026 and 0.8% in both 2027 and 2028, with GDP growth of 1.5% to 2% in 2026 and around 1.5% in 2027, flagging high uncertainty from Middle East tensions, global growth, trade policy and exchange rates. Crucially it repeated that it remains willing to intervene in foreign exchange markets as necessary. October headline inflation is 1.5%, near a three-year high, but core is 0.5% and the gap between them is imported energy rather than domestic pressure, so there is no policy story here at all. That is precisely why the franc led the board this morning: with no rate expectation to unwind, it held Friday haven bid better than the yen did and beat it by 0.31% on the cross. The cap is intervention rather than policy, and UBS economic expectations on Wednesday at 11:00 are the only domestic item this week."
+    }
+  },
+  "strength": [
+    {
+      "ccy": "CHF",
+      "score": 2,
+      "verdict": "STRENGTHENING",
+      "tag": "The junior haven held Friday gains better than the senior one and now leads on its own evidence",
+      "drivers": "CHF/JPY 189.378 and plus 0.31%, USD/CHF 0.83934 and minus 0.06%, against AUD/CHF 0.55755 and plus 0.19%, EUR/CHF 0.92281 and plus 0.18%, CAD/CHF 0.58605 and plus 0.07% and NZD/CHF 0.45958 and plus 0.02% - it gave back almost nothing while every high-beta cross recovered.",
+      "forward": "⚖️ Balanced into December 10, where TradingEconomics carries 0.00% and the SNB has no reason to move: headline 1.5% is imported energy against core at 0.5%. The franc is a pure Gulf expression with the sixth tanker hit since Sunday keeping the bid funded, and the only cap is the September pledge to intervene in FX as necessary. Invalidated by a visible de-escalation in Hormuz or explicit SNB intervention language, either of which removes the only leg it has."
+    },
+    {
+      "ccy": "EUR",
+      "score": 1,
+      "verdict": "MIXED",
+      "tag": "Beat the dollar and both havens but lost to sterling, with the December hike near-certain and the energy input back on the wrong side",
+      "drivers": "EUR/USD 1.09955 and plus 0.26%, EUR/JPY 174.745 and plus 0.49%, EUR/CHF 0.92281 and plus 0.18%, EUR/CAD 1.57476 and plus 0.12%, against EUR/GBP 0.83779 and minus 0.06%; euro-area inflation is 4.0% with core 2.6% and the deposit rate 2.50%.",
+      "forward": "🦅 Hawkish into December 17 at 90% to 92% for a quarter point, with inflation at a three-year high and EU gas back to 92.89 euros from the 88.45 the last report carried on the Troll outage - the energy pass-through that produced the 4.0% print is live rather than fading. The October accounts on Thursday at 14:30 and French and Spanish flash CPI on Friday are the confirmations. Invalidated by a French services PMI materially below the 47.4 forecast at 10:15, which would put the two-speed problem ahead of the inflation one."
+    },
+    {
+      "ccy": "GBP",
+      "score": 1,
+      "verdict": "MIXED",
+      "tag": "Best against the dollar and took ground back from the euro, into the most genuinely two-sided December decision on the board",
+      "drivers": "GBP/USD 1.31228 and plus 0.29%, EUR/GBP 0.83779 and minus 0.06%, GBP/JPY 208.58 and plus 0.55%, GBP/CAD 1.87942 and plus 0.14%, GBP/AUD 1.97517; Bank Rate 4.00% after a 9-0 November hike, CPI 3.6% and core 2.8%.",
+      "forward": "🦅 Hawkish but genuinely two-sided into December 17: the market prices 78% to 84% while all but one of 65 economists polled expect a hold with February the consensus. The market side has names on it now - Chief Economist Pill has signalled rates likely rising again in December and through 2027 and speaks today at 15:00, and Lombardelli will not rule out a vote. Invalidated by a flash services PMI below 52 at 11:30 or a Pill walk-back, either of which closes the gap toward the economist view."
+    },
+    {
+      "ccy": "JPY",
+      "score": 1,
+      "verdict": "MIXED",
+      "tag": "Lost to all seven others on a Tokyo holiday after two sessions of leading - the price leg broke, the policy leg did not",
+      "drivers": "USD/JPY 158.942 and plus 0.25%, AUD/JPY 105.615 and plus 0.50%, EUR/JPY 174.745 and plus 0.49%, GBP/JPY 208.58 and plus 0.55%, CAD/JPY 110.983 and plus 0.39%, NZD/JPY 87.045 and plus 0.35%, CHF/JPY 189.378 and plus 0.31% - every cross higher, with the carry gap unchanged at 2.16 points.",
+      "forward": "🦅 Hawkish into December 18, forecast at 1.50% with 86% of 71 economists agreeing and nearly 60% seeing 1.75% by March - the first three-hike year in 37 years. Two caveats that matter at 158.942: the hike is largely priced, so the yen now depends on guidance, and Bank staff put nominal neutral anywhere from 1.1% to 2.5% with no board consensus, which is how last December turned into hike-and-sell. The Ministry of Finance at 160 cuts the yen way. Invalidated by a 5-min and daily close above 160 without intervention."
+    },
+    {
+      "ccy": "USD",
+      "score": 0,
+      "verdict": "MIXED",
+      "tag": "Five sessions of hawkish news that will not pay, and now the Treasury Secretary is publicly on the other side of it",
+      "drivers": "DXY 103.674 and minus 0.13%, lower against seven of eight and higher only against the yen: EUR/USD plus 0.26%, GBP/USD plus 0.29%, AUD/USD plus 0.23%, USD/CAD minus 0.15%, USD/CHF minus 0.06%; the 10-year still reads 4.944% on TradingEconomics with cash Treasuries not yet repriced.",
+      "forward": "⚖️ Range into December 9. The quarter point is near-certain at about 90% on Kalshi to 96% on FedWatch and the October minutes record almost all participants judging further tightening likely appropriate, but Bessent warning on Sunday that overtightening would be a policy mistake caps the path beyond the meeting, which is exactly why gold and NQ rallied with the dollar lower. Core PCE on Wednesday at 15:30 is the single event that can rebuild the fifty-point tail; the dot plot is the larger half of December 9. Invalidated by core PCE at 0.4% m/m or higher."
+    },
+    {
+      "ccy": "NZD",
+      "score": -1,
+      "verdict": "WEAKENING",
+      "tag": "The laggard of the bounce and it lost ground to the Australian dollar - the policy leg is the only one working",
+      "drivers": "NZD/USD 0.54764 and plus 0.10%, the smallest gain against the dollar on the board, NZD/CHF 0.45958 and plus 0.02%, AUD/NZD 1.2129 and plus 0.09%, EUR/NZD 2.00794, GBP/NZD 2.39633; unemployment 5.7%, a 2016 high, with employment minus 0.1% on the quarter.",
+      "forward": "🦅 Hawkish on paper into December 9, where TradingEconomics forecasts 3.00% from 2.75% and the Reserve Bank own November survey sees 3.05% by quarter end and 3.40% in a year, with one-year inflation expectations up to 2.92% from 2.60%. But October 28 already undershot a 3.0% consensus once, and Q3 CPI fell to 3.7% from 4.1% with private wages at 2.0%, so the Bank has cover to wait again. Invalidated by another hold on December 9, which would leave the kiwi with nothing."
+    },
+    {
+      "ccy": "CAD",
+      "score": -1,
+      "verdict": "WEAKENING",
+      "tag": "Participated in the bounce against the dollar and both havens, but the oil leg it needs still refuses to pay",
+      "drivers": "USD/CAD 1.43214 and minus 0.15%, CAD/JPY 110.983 and plus 0.39%, CAD/CHF 0.58605 and plus 0.07%, against EUR/CAD 1.57476 and plus 0.12% and GBP/CAD 1.87942 and plus 0.14%; WTI 83.52 against the 83.98 Friday settle with six tankers hit since Sunday.",
+      "forward": "⚖️ Balanced into December 9, and the disagreement is real rather than a rounding error: TradingEconomics forecasts 2.75% while the rate market sits near 38%. The Bank hiked in October to stop high energy prices spreading to other goods, and that pass-through has gone backwards with the barrel 14% lower on the month even through an escalating Gulf. Core 2.0%, trimmed 1.8%, unemployment 6.7% and three straight months of falling employment argue the market is right. Invalidated by Macklem on Tuesday at 19:25 repeating the need to raise further."
+    },
+    {
+      "ccy": "AUD",
+      "score": -2,
+      "verdict": "WEAKENING",
+      "tag": "Still the weakest set of fundamentals on the board, but it led the bounce - the crowded short has started to squeeze",
+      "drivers": "AUD/JPY 105.615 and plus 0.50%, the biggest cross move on the board, AUD/USD 0.66449 and plus 0.23%, AUD/CHF 0.55755 and plus 0.19%, AUD/NZD 1.2129 and plus 0.09%, EUR/AUD 1.65503, AUD/CAD 0.95154; unemployment 4.9% at a four-year high with employment minus 43,500 against plus 25,500 forecast.",
+      "forward": "⚖️ Range into December 8, where TradingEconomics carries 4.85% and the November minutes read 6-3 for the last hike, with three members warning about rising unemployment and falling house prices - TradingEconomics itself reads that split as a higher hurdle and markets as the peak. The board cannot hike into 4.9% unemployment and cannot cut into 4.3% headline with 3.6% core. Wednesday CPI at 02:30 is the whole event, and the consensus already says 4.8% headline with trimmed mean monthly steady at 0.3%. Invalidated by a trimmed mean monthly print of 0.5% or higher, which reopens December 8."
+    }
+  ],
+  "symbols": [
+    {
+      "sym": "EUR/USD",
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "1.09955 and plus 0.26%, still inside the 1.0930 to 1.1050 band it has held all week: both central banks hike in December at roughly the same probability, so the pair has no rate differential to trade.",
+      "risk": "Core PCE on Wednesday at 15:30 is the only release that breaks it - 0.4% m/m or higher takes it toward 1.0900, a soft core opens 1.1100. The French and German flash PMIs at 10:15 and 10:30 are the euro-side risk today."
+    },
+    {
+      "sym": "GBP/USD",
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "1.31228 and plus 0.29%, the best performance against a dollar softened by Bessent, into a December 17 decision priced 78% to 84% against an economist consensus to hold - the two-sidedness is the reason it is a range and not a long.",
+      "risk": "Two live events today: flash PMIs at 11:30 forecast at 53.0 manufacturing and 53.0 services, then Chief Economist Pill at 15:00. Trade 1.3050 to 1.3200 and let Pill pick the side."
+    },
+    {
+      "sym": "USD/JPY",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "158.942 and plus 0.25% on a Tokyo holiday, which puts it back within a figure and a half of the 160 level where the Ministry of Finance has intervened before - the edge here is the level and the December 18 hike, not the momentum.",
+      "risk": "Today the tape is against this trade, so the entry is a failed push toward 160 rather than a break lower. A 5-min and daily close above 160 without intervention invalidates it, and core PCE at 0.4% m/m or higher on Wednesday would deliver that."
+    },
+    {
+      "sym": "USD/CAD",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "1.43214 and minus 0.15%: a softer dollar on one side against Canadian data that has not repaired on the other, with the oil leg refusing to pay even through six tanker strikes since Sunday.",
+      "risk": "Two scheduled resolutions: Macklem on Tuesday at 19:25 and core PCE on Wednesday at 15:30, which pull the pair in opposite directions. Trade 1.4250 to 1.4400 and stand aside between them."
+    },
+    {
+      "sym": "AUD/USD",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "0.66449 and plus 0.23%, with unemployment at a four-year-high 4.9%, employment down 43,500 against a plus 25,500 forecast and the RBA frozen at 4.85% on a 6-3 vote - but this is now a crowded short and the squeeze has started.",
+      "risk": "Downgraded from medium conviction for that reason: Wednesday CPI at 02:30 is already expected at 4.8% headline, so an in-line print squeezes rather than pays. Hold, do not add, and be flat into 02:30."
+    },
+    {
+      "sym": "NZD/USD",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "0.54764 and plus 0.10%, the weakest gain against the dollar on the board, with unemployment at a 2016 high of 5.7%, employment minus 0.1% on the quarter and private wages at 2.0%.",
+      "risk": "December 9 is the two-way risk: TradingEconomics forecasts 3.00% and the Bank own survey sees 3.05%, so a delivered hike turns this. Core PCE on Wednesday cuts the other way. Keep size modest; 0.5420 is the shelf."
+    },
+    {
+      "sym": "USD/CHF",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "0.83934 and minus 0.06%: the franc is the only currency that gave back essentially nothing of Friday haven bid, and a dollar that Bessent has publicly capped on the path side is the weaker leg.",
+      "risk": "0.8390 has acted as a floor repeatedly, so the risk is a grind rather than a reversal, and SNB intervention rhetoric is the standing tail. Core PCE at 0.4% m/m or higher takes it back to 0.8460."
+    },
+    {
+      "sym": "EUR/JPY",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "174.745 and plus 0.49%, back near the top of its range: the thesis is the December 18 hike at 86% economist consensus plus the Ministry of Finance, not the euro side, where the ECB hikes too.",
+      "risk": "This is a two-hike cross, so the only edge is the yen leg, and today it is losing. Enter on a failed push above 175.50 rather than selling into strength; a close above 176.50 says the BoJ hike is fully absorbed and the trade is wrong."
+    },
+    {
+      "sym": "EUR/AUD",
+      "bias": "LONG",
+      "conv": "MEDIUM",
+      "why": "1.65503 with the euro at plus one on a near-certain December 17 hike and three-year-high inflation against an Australian dollar at minus two with a frozen RBA, 4.9% unemployment and two straight falls in employment - the cleanest two-leg divergence left on the board.",
+      "risk": "Wednesday CPI at 02:30 is the whole risk: the consensus already says 4.8% headline, so an in-line or hot print can squeeze this hard before it resumes. Hold the position, do not add, and be flat into 02:30."
+    },
+    {
+      "sym": "EUR/NZD",
+      "bias": "LONG",
+      "conv": "LOW-MED",
+      "why": "2.00794, the same euro leg against a kiwi that was the laggard of this bounce at plus 0.10% against the dollar, with unemployment at a 2016 high and employment contracting.",
+      "risk": "The December 9 RBNZ is the live two-way: TradingEconomics forecasts 3.00% and the Bank own survey 3.05%, and a delivered hike against an ECB that is fully priced would hurt. The 2.0000 round number is the pivot."
+    },
+    {
+      "sym": "EUR/GBP",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "0.83779 and minus 0.06%: both currencies score plus one, both central banks are expected to hike on the same afternoon of December 17, and the only difference is that the British decision is 78% to 84% priced against 90% to 92% for the ECB.",
+      "risk": "Pill at 15:00 today is the one input that can separate them, with the UK flash PMIs at 11:30 just before. Trade 0.8350 to 0.8420 and let the speech pick the direction."
+    },
+    {
+      "sym": "EUR/CAD",
+      "bias": "LONG",
+      "conv": "LOW-MED",
+      "why": "1.57476 and plus 0.12%: the euro hikes on December 17 at 90% to 92% while the Bank of Canada December 9 move is only 38% priced, and the oil pass-through Ottawa hiked for has gone backwards with WTI below the Friday settle despite six tanker strikes.",
+      "risk": "Macklem on Tuesday at 19:25 is the direct risk - a repeat of the need to raise further closes the differential fast. A genuine interruption to Hormuz loadings rather than another headline would do the same through the oil leg."
+    },
+    {
+      "sym": "EUR/CHF",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "0.92281 and plus 0.18%: the franc is the strongest currency on the board on its own evidence and the Gulf keeps escalating, while the euro leg is fully priced for December 17.",
+      "risk": "The SNB pledge to intervene in FX as necessary is the standing cap on every franc long, and this is the pair it defends. Keep targets modest, 0.9180 then 0.9150, and respect any intervention language."
+    },
+    {
+      "sym": "GBP/JPY",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "208.58 and plus 0.55%, the biggest yen-cross move of the session: the thesis is the December 18 hike at 86% economist consensus and the Ministry of Finance at 160, against a British decision that is itself only 78% to 84% priced.",
+      "risk": "A high-beta cross in a risk-on bounce is the wrong side of today momentum, so wait for a failed push rather than selling into it. Pill at 15:00 is the sterling-side risk and a close above 210 invalidates."
+    },
+    {
+      "sym": "GBP/AUD",
+      "bias": "LONG",
+      "conv": "MEDIUM",
+      "why": "1.97517: sterling at plus one into a two-sided but hawkish December 17 against an Australian dollar at minus two with a frozen central bank and the worst labour data on the board - the same divergence as EUR/AUD with a cheaper funding leg.",
+      "risk": "Wednesday CPI at 02:30 and Pill at 15:00 today are two separate event risks on the same position. Do not add into either; the 2.0000 round number is the obvious objective and also the obvious resting place."
+    },
+    {
+      "sym": "GBP/NZD",
+      "bias": "LONG",
+      "conv": "LOW-MED",
+      "why": "2.39633: sterling against the laggard of this bounce, with New Zealand unemployment at a 2016 high and the October 28 meeting having already undershot a 3.0% consensus once.",
+      "risk": "December 9 is the risk and TradingEconomics forecasts the hike, so a delivered 3.00% against a British hold would reverse this fast. Keep it as the smaller of the two antipodean expressions."
+    },
+    {
+      "sym": "GBP/CAD",
+      "bias": "LONG",
+      "conv": "LOW-MED",
+      "why": "1.87942 and plus 0.14%: sterling priced 78% to 84% for December 17 against a Canadian December 9 at roughly 38%, with the oil leg Ottawa needs still refusing to pay through an escalating Gulf.",
+      "risk": "Two speeches decide it - Pill today at 15:00 and Macklem on Tuesday at 19:25 - and they can offset. Upgraded from a range call because the Canadian side is the one with the unrepaired data."
+    },
+    {
+      "sym": "GBP/CHF",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "1.10134: the franc leads the board and has no rate expectation to unwind, while sterling carries genuine two-way risk into December 17 with economists expecting a hold.",
+      "risk": "Pill at 15:00 is the direct risk, and SNB intervention is the standing cap on all franc longs. 1.0950 is the first objective; do not press beyond it."
+    },
+    {
+      "sym": "AUD/JPY",
+      "bias": "SHORT",
+      "conv": "MEDIUM",
+      "why": "105.615 and plus 0.50%, the biggest cross move of the session: both legs still favour the short - the RBA is frozen at 4.85% with 4.9% unemployment while the BoJ is 86% expected to hike on December 18 - but this is the most crowded short on the board and the squeeze has begun.",
+      "risk": "Downgraded from high conviction for exactly that reason. Wednesday CPI at 02:30 can squeeze it to 107 before it works, and the December 18 BoJ is itself two-sided given a largely priced hike. Hold, do not add, be flat into 02:30."
+    },
+    {
+      "sym": "AUD/NZD",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "1.2129 and plus 0.09%: both legs are broken - Australian unemployment at a four-year high against New Zealand unemployment at a 2016 high - and the two December meetings point opposite ways, with the RBA frozen and the RBNZ forecast to hike.",
+      "risk": "Wednesday CPI at 02:30 and the December 9 RBNZ are the two resolutions and they can cancel out. Trade 1.2050 to 1.2200 and take the extremes rather than holding a view."
+    },
+    {
+      "sym": "AUD/CAD",
+      "bias": "SHORT",
+      "conv": "LOW",
+      "why": "0.95154: the two weakest currencies on the board against each other, with the Australian labour market the worse of the two and the RBA frozen while the Bank of Canada at least has a 38% chance of hiking on December 9.",
+      "risk": "Both legs face events within 36 hours - CPI on Wednesday at 02:30 and Macklem on Tuesday at 19:25 - and falling oil hurts the Canadian leg just as much. This is the lowest-quality expression of the Australian view; prefer EUR/AUD."
+    },
+    {
+      "sym": "AUD/CHF",
+      "bias": "SHORT",
+      "conv": "MEDIUM",
+      "why": "0.55755 and plus 0.19%: the weakest currency against the strongest, with the franc holding essentially all of Friday haven bid and the Gulf escalating to a sixth tanker strike since Sunday.",
+      "risk": "Downgraded from high conviction because the Australian leg is a crowded short into Wednesday 02:30 and the risk-on bounce runs directly against it. SNB intervention rhetoric is the other cap. Hold, do not add."
+    },
+    {
+      "sym": "NZD/JPY",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "87.045 and plus 0.35%: the laggard currency against a yen with the only committed hike on the board on December 18, and a kiwi labour market at a 2016 unemployment high.",
+      "risk": "December 9 cuts against this if the RBNZ delivers the 3.00% TradingEconomics forecasts, and the BoJ hike is largely priced so the yen leg depends on guidance. 86.00 is the first objective."
+    },
+    {
+      "sym": "NZD/CAD",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "0.7843: two weak currencies with opposite December setups - the RBNZ is forecast to hike to 3.00% on December 9 while the Bank of Canada move the same day is only 38% priced - and both labour markets are deteriorating.",
+      "risk": "Oil is the swing factor and it is not cooperating with either story, sitting below the Friday settle through an escalating Gulf. Trade the range and let December 9 resolve it."
+    },
+    {
+      "sym": "NZD/CHF",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "0.45958 and plus 0.02% - the kiwi failed to recover anything against the franc even in a risk-on session, which is the clearest single read on relative demand this morning.",
+      "risk": "A delivered RBNZ hike on December 9 is the reversal risk and SNB intervention is the cap. The pair is already near multi-month lows, so take profit into round numbers rather than holding for a trend."
+    },
+    {
+      "sym": "CAD/JPY",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "110.983 and plus 0.39%: the yen has the only committed December hike while the Canadian dollar needs an oil premium that six tanker strikes since Sunday have failed to produce, with WTI at 83.52 below the 83.98 Friday settle.",
+      "risk": "This is the cross most exposed to a genuine Hormuz supply interruption, which would lift the Canadian leg and hurt the yen leg at once. Macklem on Tuesday at 19:25 is the scheduled risk; 109.50 is the first objective."
+    },
+    {
+      "sym": "CAD/CHF",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "0.58605 and plus 0.07%: the franc leads the board with no policy story to unwind, against a Canadian dollar whose central-bank case depends on an energy pass-through that keeps reversing.",
+      "risk": "A real interruption to Hormuz loadings would hit both legs in the same direction and break this trade cleanly. Macklem on Tuesday at 19:25 is the other risk; keep size modest with SNB intervention in mind."
+    },
+    {
+      "sym": "CHF/JPY",
+      "bias": "RANGE",
+      "conv": "LOW",
+      "why": "189.378 and plus 0.31%: haven against haven, and the two legs now disagree - the franc won today and leads on price, while the yen has the only December hike on the board at 86% economist consensus.",
+      "risk": "December 18 is the resolution and it is two-sided: a hike with vague guidance repeats last December hike-and-sell and would extend this higher. Trade 188.00 to 190.50 rather than holding a direction into that."
+    },
+    {
+      "sym": "DXY",
+      "bias": "RANGE",
+      "conv": "MEDIUM",
+      "why": "103.674 and minus 0.13%. Weighted 57.6% euro, 13.6% yen, 11.9% sterling and 9.1% Canadian dollar, and the euro and sterling legs both carry December hikes of their own while the yen leg is the only one helping - five sessions of hawkish Fed news have now failed to pay.",
+      "risk": "Core PCE at 15:30 Wednesday is the only event that breaks it: 0.4% m/m or higher rebuilds the fifty-point tail and the dollar pays again, a soft core takes the index toward 103.00. Williams at 23:00 tonight and the Beige Book at 21:00 Wednesday are secondary. Trade 103.00 to 104.60."
+    },
+    {
+      "sym": "JPYBASKET",
+      "bias": "LONG",
+      "conv": "MEDIUM",
+      "why": "The opposite ticket to every XXX/JPY pair, and it rises as the yen strengthens. The yen lost to all seven others this session so this is below Friday level, but the structural leg is intact: December 18 forecast at 1.50% with 86% of 71 economists agreeing and nearly 60% seeing 1.75% by March.",
+      "risk": "Downgraded from high conviction because the price leg broke, even if it broke on a Tokyo holiday. December 18 is itself two-sided with the hike largely priced and no board consensus on neutral between 1.1% and 2.5%. Ministry of Finance intervention near 160 cuts in this trade favour; be flat into the decision."
+    },
+    {
+      "sym": "GER40",
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "Closed at 24,886 after six consecutive declines and will gap higher at the 10:00 open with YM 1.46% and NQ 3.0% up, so the global derating leg pauses - but the two local headwinds got worse, with EU gas at 92.89 euros against the 88.45 the last report carried and a near-certain ECB hike on December 17.",
+      "risk": "Falling Brent is the standing tailwind and it is still 14% lower on the month, but Brent at 92.63 is going nowhere and the Gulf keeps escalating. German flash PMIs at 10:30 are forecast to improve on services to 52.4 from 51.7 with manufacturing steady at 54.1, and the ifo follows Tuesday at 11:00. Do not chase the gap in either direction."
+    },
+    {
+      "sym": "EU50",
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "Closed at 5,964 after falling more than the DAX last week, and the bank leg is what decides today: banks are its heaviest sector, so a near-certain December 17 hike with a steeper curve should help that weight while hurting everything else. The bank leg is dominating, and this time it argues for a bigger bounce than the DAX gets.",
+      "risk": "The French overhang is the leg the DAX does not carry: S&P reviews France on Friday at A+ with a negative outlook, and a downgrade hits the French and bank weights together. The ECB accounts on Thursday at 14:30 are the other side - a hawkish read with calm spreads lets the bank weight carry the index. Say which leg is leading before sizing."
+    },
+    {
+      "sym": "XAU/USD",
+      "bias": "LONG",
+      "conv": "LOW-MED",
+      "why": "3,618 and about 2% higher, rising on the same Bessent remarks that lifted NQ 3.0% - gold and equities up together is a terminal-rate repricing, not a haven bid, and it is the clean counterpart to Friday 2.51% fall on falling yields, which was forced selling. Upgraded from range because that liquidation has visibly ended.",
+      "risk": "Core PCE at 15:30 Wednesday is the invalidation: 0.4% m/m or higher rebuilds the fifty-point tail and takes gold back under 3,500. The month is still 14% lower, so this is a bounce inside a broken trend - first objective 3,700, and do not hold through Wednesday."
+    },
+    {
+      "sym": "XAG/USD",
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "42.68 and about 3.6% higher, with copper also up about 1.2% to 5.55 off its seven-month low - both legs of the silver story stopped breaking at once, which removes the edge the short had. Changed from short for that reason rather than on a view that the industrial leg has repaired.",
+      "risk": "It is still roughly 29% lower on the month, so moves in both directions will be violent and liquidation can resume as abruptly as it stopped. Trade 41.00 to 44.00, keep size modest and take profit into round numbers."
+    },
+    {
+      "sym": "XCU/USD",
+      "bias": "SHORT",
+      "conv": "LOW-MED",
+      "why": "5.5524 dollars a pound and about 1.2% higher off a seven-month low, still 16% lower on the month. The AI-unwind driver is pausing with the equity bounce rather than reversing: Nvidia signalled more discipline on AI investment, the new Democratic Congress raises data-centre regulation risk and Chinese industrial production slowed more than expected in October.",
+      "risk": "Downgraded from medium because the driver is on hold. Tight Shanghai Futures Exchange inventories are the floor and authorities have already asked some long holders to settle in cash rather than take delivery - that is a squeeze mechanism. This is the Australian dollar read in physical form, so keep the two consistent."
+    },
+    {
+      "sym": "USOIL",
+      "bias": "RANGE",
+      "conv": "LOW-MED",
+      "why": "83.52 against the 83.98 Friday settle, after a weekend in which a sixth tanker was hit since Sunday, UKMTO reported another engine-room fire early Monday around 08:00 and the IRGC claimed attacks on Bahrain. Three weekends running the premium has refused to be paid, against an IEA surplus near 2 million barrels a day and a US-China-Russia deal to lift refined output.",
+      "risk": "The asymmetry is now large in both directions: a supply response that visibly interrupts actual loadings turns this into a long overnight, while another headline without a loading impact does nothing. Brent at 92.63 against 92.57 frames the same thing. US crude inventories arrive Wednesday at 17:30 after a 3.4 million build; trade the retest, never the headline."
+    }
+  ],
+  "macro": {
+    "USD": {
+      "inflation": {
+        "value": "3.7%",
+        "trend": "rising",
+        "note": "Sep y/y; core 2.6%, core PCE 3.1%",
+        "hist": [
+          4.2,
+          3.5,
+          3.5,
+          3.4,
+          3.4,
+          3.7
+        ]
+      },
+      "growth": {
+        "value": "3.4%",
+        "trend": "rising",
+        "note": "Q3; prelim 2nd estimate Wed 15:30 fc 3.5%",
+        "hist": [
+          2.7,
+          2.1,
+          2.7,
+          2.1,
+          2.2,
+          3.4
+        ]
+      },
+      "unemployment": {
+        "value": "4.1%",
+        "trend": "falling",
+        "note": "Oct rate, down from 4.2%",
+        "hist": [
+          4.3,
+          4.2,
+          4.1,
+          4.1,
+          4.2,
+          4.1
+        ]
+      },
+      "jobs": {
+        "value": "+165k",
+        "trend": "rising",
+        "note": "Oct NFP after +60k; claims 203k",
+        "hist": [
+          129,
+          20,
+          21,
+          186,
+          60,
+          165
+        ]
+      },
+      "rates": {
+        "value": "4.00%",
+        "trend": "stable",
+        "note": "Upper bound of 3.75-4.00%; Dec 9 priced 90-96%",
+        "hist": [
+          3.5,
+          3.75,
+          3.75,
+          3.75,
+          4,
+          4
+        ]
+      }
+    },
+    "EUR": {
+      "inflation": {
+        "value": "4.0%",
+        "trend": "rising",
+        "note": "Oct HICP, 3-yr high; core 2.6% and rising",
+        "hist": [
+          2.8,
+          2.9,
+          2.9,
+          3.2,
+          3.8,
+          4
+        ]
+      },
+      "growth": {
+        "value": "1.3%",
+        "trend": "rising",
+        "note": "Q3 y/y; 0.4% q/q",
+        "hist": [
+          1,
+          0.9,
+          1.2,
+          0.6,
+          1.2,
+          1.3
+        ]
+      },
+      "unemployment": {
+        "value": "6.5%",
+        "trend": "stable",
+        "note": "Sep rate; unchanged from Aug",
+        "hist": [
+          6.3,
+          6.3,
+          6.4,
+          6.4,
+          6.4,
+          6.5
+        ]
+      },
+      "jobs": {
+        "value": "0.0%",
+        "trend": "falling",
+        "note": "Q3 employment change; fc was +0.2%",
+        "hist": [
+          0.3,
+          0.2,
+          0.1,
+          0.1,
+          0.1,
+          0
+        ]
+      },
+      "rates": {
+        "value": "2.50%",
+        "trend": "rising",
+        "note": "Deposit facility; refi 2.65%, Dec 17 priced 90-92%",
+        "hist": [
+          2,
+          2,
+          2,
+          2,
+          2.25,
+          2.5
+        ]
+      }
+    },
+    "GBP": {
+      "inflation": {
+        "value": "3.6%",
+        "trend": "rising",
+        "note": "Oct CPI, 13-mth high; core steady 2.8%",
+        "hist": [
+          2.6,
+          2.6,
+          2.9,
+          3.1,
+          3.5,
+          3.6
+        ]
+      },
+      "growth": {
+        "value": "1.9%",
+        "trend": "rising",
+        "note": "Q3 y/y; 0.7% q/q",
+        "hist": [
+          0.8,
+          1.1,
+          0.9,
+          1.2,
+          1.4,
+          1.9
+        ]
+      },
+      "unemployment": {
+        "value": "4.6%",
+        "trend": "falling",
+        "note": "Sep rate; ONS flags LFS sample rotation",
+        "hist": [
+          5.2,
+          4.9,
+          4.9,
+          4.9,
+          4.7,
+          4.6
+        ]
+      },
+      "jobs": {
+        "value": "+156k",
+        "trend": "rising",
+        "note": "Sep employment; wage growth slowed to 3.6%",
+        "hist": [
+          99,
+          147,
+          83,
+          67,
+          102,
+          156
+        ]
+      },
+      "rates": {
+        "value": "4.00%",
+        "trend": "rising",
+        "note": "Bank Rate; hiked Nov 5 9-0, Dec 17 priced 78-84%",
+        "hist": [
+          3.75,
+          3.75,
+          3.75,
+          3.75,
+          3.75,
+          4
+        ]
+      }
+    },
+    "JPY": {
+      "inflation": {
+        "value": "2.3%",
+        "trend": "rising",
+        "note": "Oct CPI; core 2.2%, 2nd mth above target",
+        "hist": [
+          1.5,
+          1.6,
+          1.9,
+          1.9,
+          2.1,
+          2.3
+        ]
+      },
+      "growth": {
+        "value": "1.1%",
+        "trend": "rising",
+        "note": "Q3 y/y, but q/q flat at 0.0%",
+        "hist": [
+          1.1,
+          1.3,
+          0.6,
+          0.5,
+          0.9,
+          1.1
+        ]
+      },
+      "unemployment": {
+        "value": "2.4%",
+        "trend": "falling",
+        "note": "Sep rate",
+        "hist": [
+          2.5,
+          2.5,
+          2.5,
+          2.4,
+          2.5,
+          2.4
+        ]
+      },
+      "jobs": {
+        "value": "+4.6%",
+        "trend": "rising",
+        "note": "Sep wage growth, fastest on the board",
+        "hist": [
+          2.9,
+          3.3,
+          4,
+          4.3,
+          3.9,
+          4.6
+        ]
+      },
+      "rates": {
+        "value": "1.25%",
+        "trend": "rising",
+        "note": "Policy rate; Dec 18 fc 1.50%, 86% of economists",
+        "hist": [
+          0.5,
+          0.75,
+          0.75,
+          1,
+          1,
+          1.25
+        ]
+      }
+    },
+    "AUD": {
+      "inflation": {
+        "value": "4.3%",
+        "trend": "rising",
+        "note": "Q3 CPI; core 3.6%, highest here; Wed fc 4.8%",
+        "hist": [
+          4.2,
+          4,
+          3.8,
+          3.5,
+          4,
+          4.3
+        ]
+      },
+      "growth": {
+        "value": "2.1%",
+        "trend": "falling",
+        "note": "y/y; 0.4% q/q",
+        "hist": [
+          2.1,
+          2.2,
+          2.4,
+          2.5,
+          2.5,
+          2.1
+        ]
+      },
+      "unemployment": {
+        "value": "4.9%",
+        "trend": "rising",
+        "note": "Oct rate; 4-yr high, fc was 4.7%",
+        "hist": [
+          4.4,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.9
+        ]
+      },
+      "jobs": {
+        "value": "-43.5k",
+        "trend": "falling",
+        "note": "Oct employment vs fc +25.5k; 2nd fall running",
+        "hist": [
+          44,
+          80.2,
+          -15.8,
+          39.5,
+          -39.3,
+          -43.5
+        ]
+      },
+      "rates": {
+        "value": "4.85%",
+        "trend": "rising",
+        "note": "Cash rate; Nov minutes 6-3, TE holds for Dec 8",
+        "hist": [
+          4.35,
+          4.35,
+          4.35,
+          4.35,
+          4.6,
+          4.85
+        ]
+      }
+    },
+    "NZD": {
+      "inflation": {
+        "value": "3.7%",
+        "trend": "falling",
+        "note": "Q3 CPI; core 3.2%, falling from 4.1%",
+        "hist": [
+          2.5,
+          2.7,
+          3.1,
+          3.1,
+          4.1,
+          3.7
+        ]
+      },
+      "growth": {
+        "value": "2.6%",
+        "trend": "rising",
+        "note": "y/y; 0.2% q/q",
+        "hist": [
+          0.3,
+          1.3,
+          1.5,
+          1.5,
+          1.7,
+          2.6
+        ]
+      },
+      "unemployment": {
+        "value": "5.7%",
+        "trend": "rising",
+        "note": "Q3 rate; highest since 2016",
+        "hist": [
+          5.3,
+          5.4,
+          5.4,
+          5.4,
+          5.6,
+          5.7
+        ]
+      },
+      "jobs": {
+        "value": "-0.1%",
+        "trend": "falling",
+        "note": "Q3 employment q/q; private wages 2.0%",
+        "hist": [
+          0,
+          0.1,
+          0.5,
+          0.2,
+          0.3,
+          -0.1
+        ]
+      },
+      "rates": {
+        "value": "2.75%",
+        "trend": "rising",
+        "note": "OCR; TE fc 3.00% Dec 9, survey sees 3.05%",
+        "hist": [
+          2.25,
+          2.25,
+          2.25,
+          2.5,
+          2.75,
+          2.75
+        ]
+      }
+    },
+    "CAD": {
+      "inflation": {
+        "value": "3.1%",
+        "trend": "stable",
+        "note": "Oct CPI held 3.1%; core 2.0%, trimmed 1.8%",
+        "hist": [
+          3.2,
+          2.8,
+          3,
+          3,
+          3.1,
+          3.1
+        ]
+      },
+      "growth": {
+        "value": "1.1%",
+        "trend": "rising",
+        "note": "y/y; 0.8% q/q",
+        "hist": [
+          1.7,
+          1.4,
+          0.9,
+          0.6,
+          0.1,
+          1.1
+        ]
+      },
+      "unemployment": {
+        "value": "6.7%",
+        "trend": "rising",
+        "note": "Oct rate; six-month high",
+        "hist": [
+          6.6,
+          6.5,
+          6.4,
+          6.4,
+          6.5,
+          6.7
+        ]
+      },
+      "jobs": {
+        "value": "-4.7k",
+        "trend": "falling",
+        "note": "Oct employment; 3rd fall running",
+        "hist": [
+          -17.7,
+          18,
+          75.1,
+          -41.7,
+          -68.3,
+          -4.7
+        ]
+      },
+      "rates": {
+        "value": "2.50%",
+        "trend": "rising",
+        "note": "Overnight rate; TE fc 2.75% Dec 9, market 38%",
+        "hist": [
+          2.25,
+          2.25,
+          2.25,
+          2.25,
+          2.25,
+          2.5
+        ]
+      }
+    },
+    "CHF": {
+      "inflation": {
+        "value": "1.5%",
+        "trend": "rising",
+        "note": "Oct CPI, near 3-yr high; core 0.5%, so energy",
+        "hist": [
+          0.6,
+          0.5,
+          0.4,
+          0.8,
+          1,
+          1.5
+        ]
+      },
+      "growth": {
+        "value": "2.3%",
+        "trend": "rising",
+        "note": "y/y; Q3 q/q slowed to 0.2% from 1.5%",
+        "hist": [
+          1.6,
+          1.4,
+          1.2,
+          0.8,
+          0.4,
+          2.3
+        ]
+      },
+      "unemployment": {
+        "value": "3.0%",
+        "trend": "stable",
+        "note": "Oct rate",
+        "hist": [
+          2.8,
+          2.8,
+          3,
+          2.9,
+          3,
+          3
+        ]
+      },
+      "jobs": {
+        "value": "+0.5%",
+        "trend": "rising",
+        "note": "Q2 employment; wage growth 0.4%",
+        "hist": [
+          0.2,
+          0.2,
+          0.3,
+          0.4,
+          0.3,
+          0.5
+        ]
+      },
+      "rates": {
+        "value": "0.00%",
+        "trend": "stable",
+        "note": "SNB policy rate; TE carries 0.00% for Dec 10",
+        "hist": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "catalysts": [
+    {
+      "date": "Mon Nov 23",
+      "event": "Japan Labour Thanksgiving holiday, Tokyo closed",
+      "impact": "low",
+      "note": "Yen moves this session are holiday liquidity rather than Tokyo positioning - the yen lost to all seven others on it."
+    },
+    {
+      "date": "Mon Nov 23",
+      "event": "Euro-area, UK and US flash PMIs",
+      "impact": "med",
+      "note": "French at 10:15 with services 47.4 from 48.4, German at 10:30 with services 52.4 from 51.7, UK at 11:30 at 53.0 and 53.0, US at 16:45 with manufacturing 54.5 from 56.0 and services 55.6 from 57.9. The US prints are the risk to the bounce.",
+      "when": "2026-11-23T08:15:00Z"
+    },
+    {
+      "date": "Mon Nov 23",
+      "event": "Bank of England chief economist Pill speaks",
+      "impact": "med",
+      "note": "He has signalled rates likely rising again in December and through 2027, which is the market side of a decision economists expect to be a hold.",
+      "when": "2026-11-23T13:00:00Z"
+    },
+    {
+      "date": "Mon Nov 23",
+      "event": "Fed's Williams speaks",
+      "impact": "med",
+      "note": "At 23:00. He has said the situation does not call for dramatic action - the first Fed voice since Bessent told the Fed publicly not to overtighten.",
+      "when": "2026-11-23T21:00:00Z"
+    },
+    {
+      "date": "Tue Nov 24",
+      "event": "German ifo and Bank of England's Greene",
+      "impact": "low",
+      "note": "ifo forecast at 90.6 from 90.2 at 11:00; Greene at 14:30.",
+      "when": "2026-11-24T09:00:00Z"
+    },
+    {
+      "date": "Tue Nov 24",
+      "event": "US Conference Board consumer confidence",
+      "impact": "med",
+      "note": "Forecast 92.1 from 91.7 - the first read on whether a correction-level equity tape has reached the consumer.",
+      "when": "2026-11-24T15:00:00Z"
+    },
+    {
+      "date": "Tue Nov 24",
+      "event": "Bank of Canada Governor Macklem speaks",
+      "impact": "med",
+      "note": "At 19:25, and the best chance of resolving the gap between the TradingEconomics 2.75% forecast for December 9 and a rate market near 38%.",
+      "when": "2026-11-24T17:25:00Z"
+    },
+    {
+      "date": "Wed Nov 25",
+      "event": "Australia October monthly CPI",
+      "impact": "high",
+      "note": "At 02:30. Headline forecast 4.8% from 4.3%, monthly 0.4% from 0.8%, trimmed mean monthly steady at 0.3% - the only release that can move a frozen RBA, and the squeeze risk for the board most crowded short.",
+      "when": "2026-11-25T00:30:00Z"
+    },
+    {
+      "date": "Wed Nov 25",
+      "event": "US October core PCE and prelim Q3 GDP",
+      "impact": "high",
+      "note": "At 15:30. Core PCE m/m forecast 0.3% from 0.3%, prelim GDP 3.5% from 3.4%, claims 201K from 203K. The last inflation print before December 9 and the only thing that can rebuild the fifty-point tail.",
+      "when": "2026-11-25T13:30:00Z"
+    },
+    {
+      "date": "Wed Nov 25",
+      "event": "Bank of Japan core CPI, German final GDP, Swiss UBS expectations",
+      "impact": "low",
+      "note": "BoJ core CPI forecast 2.5% from 2.4% at 07:00; German final GDP 0.2% at 09:00; UBS expectations at 11:00."
+    },
+    {
+      "date": "Wed Nov 25",
+      "event": "US crude oil inventories",
+      "impact": "low",
+      "note": "At 17:30 after a 3.4 million build - the demand side of a market that will not pay the Hormuz premium.",
+      "when": "2026-11-25T15:30:00Z"
+    },
+    {
+      "date": "Wed Nov 25",
+      "event": "Fed Beige Book",
+      "impact": "low",
+      "note": "At 21:00, two weeks before the decision.",
+      "when": "2026-11-25T19:00:00Z"
+    },
+    {
+      "date": "Thu Nov 26",
+      "event": "US Thanksgiving - NYSE and the bond market closed",
+      "impact": "med",
+      "note": "No US cash session, so the us30 and nas100 blocks hold Wednesday view; liquidity thins from Wednesday afternoon."
+    },
+    {
+      "date": "Thu Nov 26",
+      "event": "ECB October meeting accounts",
+      "impact": "med",
+      "note": "At 14:30. Lagarde said a hike was discussed and the hold was unanimous - the accounts say how close it was with December at 90% to 92%.",
+      "when": "2026-11-26T12:30:00Z"
+    },
+    {
+      "date": "Thu Nov 26",
+      "event": "Bank of England Financial Stability Report and FPC minutes",
+      "impact": "low",
+      "note": "At 12:30, into a correction-level global equity tape."
+    },
+    {
+      "date": "Thu Nov 26",
+      "event": "Australian Q3 private capital expenditure and RBA Bulletin",
+      "impact": "low",
+      "note": "Capex forecast 4.4% from minus 3.6% at 02:30."
+    },
+    {
+      "date": "Fri Nov 27",
+      "event": "Tokyo core CPI",
+      "impact": "med",
+      "note": "At 01:30 Bucharest on Friday, forecast 2.9% from 2.6% - the last inflation read before the December 18 Bank of Japan decision.",
+      "when": "2026-11-26T23:30:00Z"
+    },
+    {
+      "date": "Fri Nov 27",
+      "event": "French and Spanish November flash CPI",
+      "impact": "med",
+      "note": "French monthly forecast minus 0.1% at 09:45 and Spanish at 4.8% from 4.9% at 10:00 - the first read on euro-area November inflation after the 4.0% October print.",
+      "when": "2026-11-27T07:45:00Z"
+    },
+    {
+      "date": "Fri Nov 27",
+      "event": "German Buba President Nagel speaks",
+      "impact": "low",
+      "note": "At 14:40. His mid-November warning is what knocked December pricing down to about 72% before it recovered above 90%.",
+      "when": "2026-11-27T12:40:00Z"
+    },
+    {
+      "date": "Fri Nov 27",
+      "event": "S&P review of France, and a US early close at 20:00",
+      "impact": "med",
+      "note": "France is A+ with a negative outlook after the October 2025 downgrade, with Moody's having held at Aa3 in October - a downgrade hits the French and bank weights in EU50 together."
+    },
+    {
+      "date": "Rolling",
+      "event": "Iran, the Strait of Hormuz and the US naval response",
+      "impact": "med",
+      "note": "Six tankers hit since Sunday, an IRGC claim of attacks on Bahrain, a US blockade of Iranian ports and escorted convoys - and crude below the Friday settle anyway."
+    },
+    {
+      "date": "Rolling",
+      "event": "December central-bank meetings",
+      "impact": "med",
+      "note": "RBA December 8, Fed and RBNZ and Bank of Canada December 9, SNB December 10, ECB and Bank of England December 17, Bank of Japan December 18."
+    },
+    {
+      "date": "Rolling",
+      "event": "The AI derating and the Nvidia accounting inquiry",
+      "impact": "med",
+      "note": "The force that produced a 7.77% NQ week is unresolved; Sunday bounce was a Fed repricing, not a repair of the AI trade."
+    }
+  ],
+  "geopolitics": "Day 268 of a closed Strait of Hormuz, and the weekend escalated further without moving the price of oil. UKMTO reported that a tanker transiting outbound through the strait was struck by an unidentified projectile about 11 nautical miles north of Khasab on Saturday and a second was hit in its engine room 17 nautical miles east of Khasab, both without casualties, one of them running with its identification and navigation systems switched off in defiance of issued warnings. On Sunday UKMTO reported a tanker involved in an incident with military forces in the Gulf of Oman near Chabahar, close to the American blockade line, while Iranian state media quoting the navy said two supertankers caught fire after striking mines in a restricted area east of the strait - the same pattern of competing and unverifiable accounts as the previous weekend. Early on Monday UKMTO reported another attack inside the strait that left a fire in the engine room, which the IRGC said it carried out at around 08:00 Bucharest and which Iranian claims make the sixth tanker hit since Sunday. The IRGC also claimed attacks on Bahrain, which Manama said its air defences defeated and which it says targeted a facility; the IRGC described the targets as US Patriot sites. Iran demands are unchanged and explicit: an end to the war on all fronts, unfrozen assets, oil sanctions lifted and the American counter-blockade of Iranian ports ended, and the foreign minister has told the Qatari mediator that discussing the reopening of the strait is pointless until they are met. The FX read is the important part, and it is the same read for the third weekend running: a direct military exchange, six commercial vessels hit in three days and an attack on a Gulf state produced WTI at 83.52 against the 83.98 Friday settle and Brent at 92.63 against 92.57. The market is pricing an IEA surplus near 2 million barrels a day, a US-China-Russia agreement to lift refined output and American statements that flows through the strait are at record levels, and it is pricing those ahead of the headlines. That keeps the Canadian dollar at minus one, because the energy pass-through the Bank of Canada hiked for in October is the one input that keeps reversing, and it keeps the franc at plus two rather than higher, because a haven bid that oil will not confirm is a shallow one. The asymmetry is now very large: what turns this into a crude long and a Canadian dollar long overnight is a supply response that visibly interrupts actual loadings, not another projectile. Until then, trade the retest and never the headline.",
+  "us30": {
+    "date": "2026-11-23",
+    "stage": "london",
+    "updatedAt": "2026-11-23T06:17:20Z",
+    "bias": "BULLISH",
+    "conviction": "low",
+    "dayType": "range",
+    "headline": "YM is 1.46% higher but still inside Friday range while NQ runs 3.0% - the Bessent bounce is a duration trade, so the Dow lags.",
+    "ref": {
+      "price": 48920,
+      "at": "2026-11-23T06:04:56Z"
+    },
+    "sessions": {
+      "london": {
+        "lean": "BULLISH",
+        "conviction": "low",
+        "plan": "Buy a 5-min higher low above VWAP 48,810; first target the 49,060 Asia high, then 49,300. Do not chase 49,060 without a retest - 66% of ATR is already spent.",
+        "invalid": "5-min close below 48,500 (day open), which reopens the 48,430 Asia low"
+      },
+      "ny": {
+        "lean": "BULLISH",
+        "conviction": "low",
+        "plan": "After the open buy a retest of VWAP 48,810 or the London low while 48,500 holds; first target 49,060 then 49,300. Reduce before the 16:45 flash PMIs.",
+        "invalid": "5-min close below 48,430 (Asia low), which hands it back to PDC 48,220"
+      }
+    },
+    "drivers": [
+      {
+        "k": "Fed",
+        "v": "Bessent Sunday: overtightening would be a policy mistake; 50bp pushed back",
+        "s": 1
+      },
+      {
+        "k": "Rotation",
+        "v": "NQ +3.0% vs YM +1.46% - duration leads, the price-weighted Dow lags",
+        "s": 1
+      },
+      {
+        "k": "Yields",
+        "v": "US 10-year still 4.944% on TE - no bond confirmation behind the bounce",
+        "s": 0
+      },
+      {
+        "k": "Stretch",
+        "v": "631 pts overnight, 66% of the 961 ATR, and still inside Friday range",
+        "s": -1
+      },
+      {
+        "k": "Oil / Iran",
+        "v": "Sixth tanker hit since Sunday yet WTI 83.52, below the 83.98 settle",
+        "s": 1
+      },
+      {
+        "k": "Data",
+        "v": "Flash PMIs 16:45 forecast 54.5 mfg from 56.0, 55.6 svcs from 57.9",
+        "s": -1
+      }
+    ],
+    "levels": [
+      {
+        "name": "PDH",
+        "v": 49660,
+        "note": "Friday high; the full gap-fill objective"
+      },
+      {
+        "name": "Asia high",
+        "v": 49060,
+        "note": "Overnight high and the first real supply"
+      },
+      {
+        "name": "VWAP",
+        "v": 48810,
+        "note": "Session VWAP; the pivot for every long entry"
+      },
+      {
+        "name": "Day open",
+        "v": 48500,
+        "note": "Sunday reopen; losing it kills the bounce"
+      },
+      {
+        "name": "Asia low",
+        "v": 48430,
+        "note": "Overnight low, set before the bid arrived"
+      },
+      {
+        "name": "PDC",
+        "v": 48220,
+        "note": "Friday close; the gap that would be filled back"
+      },
+      {
+        "name": "PDL",
+        "v": 48050,
+        "note": "Friday low and the 1-month low"
+      }
+    ],
+    "scenarios": [
+      {
+        "if": "Holds above VWAP 48,810",
+        "then": "Asia high 49,060 then 49,300; a close over 49,060 opens the 49,660 PDH"
+      },
+      {
+        "if": "5-min close below 48,430",
+        "then": "The bounce fails, PDC 48,220 fills and the 48,050 month low is live again"
+      },
+      {
+        "if": "Flash PMIs miss at 16:45",
+        "then": "Growth doubt replaces rate relief; sell retests of VWAP instead of buying dips"
+      }
+    ],
+    "events": [
+      {
+        "when": "2026-11-23T14:45:00Z",
+        "what": "US flash PMIs: mfg 54.5 f, svcs 55.6 f",
+        "kind": "data"
+      },
+      {
+        "when": "2026-11-23T21:00:00Z",
+        "what": "FOMC member Williams speaks",
+        "kind": "fed"
+      }
+    ]
+  },
+  "nas100": {
+    "date": "2026-11-23",
+    "stage": "london",
+    "updatedAt": "2026-11-23T06:17:20Z",
+    "bias": "BULLISH",
+    "conviction": "low",
+    "dayType": "trend",
+    "headline": "NQ is 3.0% higher at 25,882 after a 7.77% week - Bessent capped the terminal rate and the most rate-sensitive index got paid first.",
+    "ref": {
+      "price": 25880,
+      "at": "2026-11-23T06:04:56Z"
+    },
+    "sessions": {
+      "london": {
+        "lean": "BULLISH",
+        "conviction": "low",
+        "plan": "Buy a 5-min higher low above VWAP 25,750; first target the 25,945 Asia high, then 26,100. Do not chase 25,945 - 57% of ATR is already spent overnight.",
+        "invalid": "5-min close below 25,560 (day open), which reopens the 25,425 Asia low"
+      },
+      "ny": {
+        "lean": "BULLISH",
+        "conviction": "low",
+        "plan": "After the open buy a retest of VWAP 25,750 or the London low while 25,560 holds; first target 25,945 then 26,200. Reduce before the 16:45 flash PMIs.",
+        "invalid": "5-min close below 25,425 (Asia low), which points back at PDC 25,125"
+      }
+    },
+    "drivers": [
+      {
+        "k": "Fed",
+        "v": "Bessent warned on overtightening and pushed back on a 50bp December",
+        "s": 1
+      },
+      {
+        "k": "Yields",
+        "v": "US 10-year 4.944% unchanged on TE - relief is in pricing, not bonds",
+        "s": 0
+      },
+      {
+        "k": "Megacaps",
+        "v": "Nvidia led Friday 5.28% Nasdaq Composite rout; AI-spend doubt unfixed",
+        "s": -1
+      },
+      {
+        "k": "Semis / AI",
+        "v": "No new chip headline overnight - this bounce is macro, not AI news",
+        "s": 0
+      },
+      {
+        "k": "Stretch",
+        "v": "518 pts overnight, 57% of the 910 ATR, with PDH 26,605 far above",
+        "s": -1
+      },
+      {
+        "k": "Rotation",
+        "v": "NQ +3.0% vs YM +1.46% - duration leads, which fits the Fed story",
+        "s": 1
+      }
+    ],
+    "levels": [
+      {
+        "name": "PDH",
+        "v": 26605,
+        "note": "Friday high; far above and not today objective"
+      },
+      {
+        "name": "Asia high",
+        "v": 25945,
+        "note": "Overnight high and the first real supply"
+      },
+      {
+        "name": "VWAP",
+        "v": 25750,
+        "note": "Session VWAP; the pivot for every long entry"
+      },
+      {
+        "name": "Day open",
+        "v": 25560,
+        "note": "Sunday reopen; losing it kills the bounce"
+      },
+      {
+        "name": "Asia low",
+        "v": 25425,
+        "note": "Overnight low, set before the bid arrived"
+      },
+      {
+        "name": "PDC",
+        "v": 25125,
+        "note": "Friday close; the whole gap to be filled back"
+      },
+      {
+        "name": "PDL",
+        "v": 24975,
+        "note": "Friday low and the 1-month low"
+      }
+    ],
+    "scenarios": [
+      {
+        "if": "Holds above VWAP 25,750",
+        "then": "Asia high 25,945 then 26,100; a 5-min close over 26,100 opens 26,400"
+      },
+      {
+        "if": "5-min close below 25,425",
+        "then": "The gap fills toward PDC 25,125 and the 24,975 month low is live again"
+      },
+      {
+        "if": "A megacap headline turns bad",
+        "then": "It becomes a sell-the-rip day; the AI derating outranks the Fed repricing"
+      }
+    ],
+    "events": [
+      {
+        "when": "2026-11-23T14:45:00Z",
+        "what": "US flash PMIs: mfg 54.5 f, svcs 55.6 f",
+        "kind": "data"
+      },
+      {
+        "when": "2026-11-23T21:00:00Z",
+        "what": "FOMC member Williams speaks",
+        "kind": "fed"
+      }
+    ]
+  },
+  "updatedAt": "2026-11-23T06:17:54.197Z"
+}
