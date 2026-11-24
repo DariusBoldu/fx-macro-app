@@ -43,7 +43,12 @@
         }
       ]
     },
-    "nextBigEvent": "US October core PCE Wednesday at 15:30 with core m/m forecast 0.3% and prelim GDP 3.5% - the last inflation print before the December 9 FOMC."
+    "nextBigEvent": "US October core PCE Wednesday at 15:30 with core m/m forecast 0.3% and prelim GDP 3.5% - the last inflation print before the December 9 FOMC.",
+    "update": {
+      "at": "2026-11-24T07:30:00Z",
+      "title": "US30 London update",
+      "text": "London RANGE: sell 49,790-49,840 (T1 49,630) or buy 49,500-49,550 (T1 49,710). An eight-hour 297-point box sitting on VWAP, 10Y 4.937% flat, no US red folder today."
+    }
   },
   "dailyRead": "Yesterday's read had one leg and that leg broke in the US session. Treasury Secretary Bessent had argued on Sunday that the Fed risked a policy mistake by overtightening, and the board took that as a cap on the terminal rate - which is why gold and the Nasdaq rallied together. On Monday evening New York Fed President Williams answered him directly: more hikes are likely over time to bring inflation back to 2%, the AI investment boom could push the Fed to raise further in 2027, and the only thing he ruled out was the fifty-point move, because conditions do not call for dramatic action. December pricing went from about 88% on Friday to about 98%, the front end repriced hawkish, and the dollar beat all seven other currencies - DXY 104.308 against 103.674 this time yesterday, EUR/USD 1.09086 from 1.09955, GBP/USD 1.30389 from 1.31228. Gold is the cleanest casualty: it sits at 3,633 after bouncing off a more-than-one-year low, down 9.54% on the month, and the Bessent leg that made it a long yesterday is gone. The second development is energy, and it is the one most people will misprice. Brent closed at 89.37 on Monday, its lowest close since August 31, and WTI broke 80 dollars to 79.84 - down 23.18% and 21.54% on the month - on an IEA surplus call for this quarter and a bigger one in 2027, with Kpler showing 9.5 million barrels a day still moving through a strait that has been shut for 269 days. The obvious read is that this hurts the Canadian dollar, and it does, but the Bank of Canada's December hike was only ever about 38% priced. The bigger casualties are the euro and sterling, the two weakest currencies of the last 24 hours, because the ECB priced a December 17 hike at 90% to 92% while warning in October that elevated energy prices could fuel inflation, and the Bank of England priced December at about 74% with ING saying plainly that a hold becomes likelier if oil stays below 100 dollars. Both of those hawkish cases just lost their main input in a single session. The yen, by contrast, beat six of seven, because its December 18 hike rests on 4.6% wage growth and a Tokyo CPI forecast of 3.0% on Friday rather than on imported energy - though at 159.218 the Ministry of Finance sits immediately above at 160. Europe's own split got sharper: German composite PMI hit 55.0, its highest since March 2022, while France contracted at the fastest pace since May and the euro-area aggregate held 51.7 against a 51.9 forecast, which is exactly why the DAX is a better long than the Euro Stoxx. The cleanest expressions today are short EUR/JPY and EUR/CHF, where the policy leg and the price leg finally agree, and long USD/CAD into Macklem at 19:25. The cleanest mistake would be to add to the Australian short into Wednesday's CPI at 02:30: headline is forecast to jump to 4.7% from 4.3% while trimmed mean holds 0.3%, the market already expects a December 8 hold from ANZ, Westpac and NAB, and that is how a crowded short gets squeezed. The US calendar today is thin - consumer confidence at 17:00 forecast 92.4 - because Thursday is Thanksgiving and Friday is a half day, so Wednesday at 15:30 carries the whole week.",
   "today": [
@@ -1196,88 +1201,93 @@
   "geopolitics": "Day 269 of a closed Strait of Hormuz, and this is the week the market stopped pretending the closure is the price driver. UKMTO has logged roughly 19 attacks in and around the strait in November against 31 in October, with six vessel losses since the August 17 ceasefire expiry, and reporting on Monday and Tuesday added three more tankers struck by unidentified projectiles plus a separate Gulf of Oman incident; UKMTO Warning 216-26 described an outbound tanker hit in its engine room about 17 nautical miles east of Khasab, without casualties. The IRGC said three tankers caught fire after striking naval mines, which maritime authorities have not confirmed - the same pattern of competing and unverifiable accounts as the previous three weekends. Diplomacy is moving without arriving: Qatar remains the main mediator and the Qatari prime minister met Vice President Vance and Secretary of State Rubio separately on Monday, with proposals that would lift the Hormuz disruption in exchange for limited sanctions relief. Foreign Minister Araghchi says talks are pointless until the American blockade imposed in July ends, and President Trump has said he wants a real deal rather than a fake one. Against all of that, Brent closed at 89.37 on Monday - its lowest close since August 31 - and WTI broke 80 dollars to 79.84, down 23.18% and 21.54% on the month, because the IEA sees a global surplus this quarter and a bigger one in 2027 and Kpler still measures 9.5 million barrels a day crossing the strait in the ten days to November 19. The FX read has now inverted, and that is the part worth trading. For three weeks the story was that falling energy kept the Canadian dollar pinned because the Bank of Canada hiked in October specifically to stop energy prices spreading. That is still true, and Macklem at 19:25 tonight has to answer for it. But the larger casualties are now the euro and sterling, which were the two weakest currencies of the last 24 hours: the ECB has a December 17 hike priced at 90% to 92% having warned in October about elevated energy prices feeding through, and the Bank of England has December at about 74% with ING saying explicitly that a hold becomes likelier below 100 dollars a barrel. The franc and the yen gained on both, because neither had an energy-driven hike to lose. The asymmetry in crude itself is unchanged and very large: what turns this into a long overnight is a supply response that visibly interrupts actual loadings, not another projectile. Trade the retest and never the headline.",
   "us30": {
     "date": "2026-11-24",
-    "stage": "london",
-    "updatedAt": "2026-11-24T06:21:38Z",
+    "stage": "london-update",
+    "updatedAt": "2026-11-24T07:30:00Z",
     "bias": "RANGE",
     "conviction": "medium",
     "dayType": "range",
-    "headline": "Monday spent 143% of its ATR on Nvidia, and the overnight has gone nowhere since - a 297-point box under the 49,805 PDH.",
+    "headline": "Eight hours to the London open went nowhere: a 297-point box, 29% of ATR, pinned to VWAP under the 49,805 PDH.",
     "ref": {
-      "price": 49670,
-      "at": "2026-11-24T06:04:00Z"
+      "price": 49690,
+      "at": "2026-11-24T07:21:00Z"
     },
     "sessions": {
       "london": {
         "lean": "RANGE",
         "conviction": "medium",
-        "at": "2026-11-24T06:21:38Z",
+        "at": "2026-11-24T07:30:00Z",
         "long": {
           "zone": [
-            49490,
-            49540
+            49500,
+            49550
           ],
-          "entry": "Buy the first 5-min higher low inside the zone, above the 49,510 overnight low",
-          "t1": 49700,
-          "t2": 49800,
-          "stop": 49370
+          "entry": "Buy the first 5-min higher low inside the zone, above the 49,510 Asia low",
+          "t1": 49710,
+          "t2": 49805,
+          "stop": 49390
         },
         "short": {
           "zone": [
             49790,
-            49830
+            49840
           ],
           "entry": "Sell the first 5-min lower high inside the zone after a failed push through the 49,805 PDH",
           "t1": 49630,
           "t2": 49510,
-          "stop": 49950
+          "stop": 49960
         },
-        "wait": "Between 49,540 and 49,790 is the overnight box - no trade until one edge is tested",
-        "plan": "Fade the edges: sell a 5-min lower high in 49,790-49,830 for 49,630; buy a 5-min higher low in 49,490-49,540 for 49,700.",
-        "invalid": "5-min close above 49,830 or below 49,490 - the box has broken, stand aside"
+        "wait": "49,550 to 49,790 is the overnight box and VWAP sits in it - no trade in the middle, let the first hour pick an edge",
+        "plan": "Fade the box edges: sell a 5-min lower high in 49,790-49,840 for 49,630; buy a 5-min higher low in 49,500-49,550 for 49,710.",
+        "invalid": "5-min close above 49,840 or below 49,500 - the box has broken, stand aside"
       },
       "ny": {
         "lean": "RANGE",
         "conviction": "low",
-        "at": "2026-11-24T06:21:38Z",
+        "at": "2026-11-24T07:30:00Z",
         "long": {
           "zone": [
             49520,
-            49570
+            49580
           ],
           "entry": "Buy a 5-min higher low inside the zone once the London low has held it",
-          "t1": 49730,
-          "t2": 49850,
-          "stop": 49390
+          "t1": 49740,
+          "t2": 49860,
+          "stop": 49400
         },
         "short": {
           "zone": [
             49800,
             49860
           ],
-          "entry": "Sell a 5-min lower high above the 49,805 PDH once the open fails to hold the break",
+          "entry": "Sell a 5-min lower high above the 49,805 PDH once the cash open fails to hold the break",
           "t1": 49640,
-          "t2": 49500,
+          "t2": 49520,
           "stop": 49980
         },
-        "wait": "49,570 to 49,800 is the dead middle; CB confidence at 17:00 is the first real test",
-        "plan": "Fade the edges again: short a 5-min lower high above 49,805 for 49,640, long a 5-min higher low in 49,520-49,570 for 49,730.",
+        "wait": "49,580 to 49,800 is the dead middle; CB consumer confidence at 17:00 is the first real test of the week",
+        "plan": "Fade the edges again: short a 5-min lower high in 49,800-49,860 for 49,640; long a 5-min higher low in 49,520-49,580 for 49,740.",
         "invalid": "5-min close above 49,860 or below 49,520 ends the range read"
       }
     },
     "drivers": [
       {
-        "k": "Fed path",
-        "v": "Williams: more hikes over time; Dec 9 about 98% from 88% Friday",
+        "k": "Yields",
+        "v": "US 10Y 4.937%, barely changed overnight after the Williams repricing",
         "s": -1
       },
       {
+        "k": "Overnight",
+        "v": "Box 49,512-49,809 is 297 pts, 29% of the 1,007 ATR; last on VWAP 49,686",
+        "s": 0
+      },
+      {
         "k": "Momentum",
-        "v": "Best Dow day since April 2025: +3.01% to 49,595 cash on Huang's return",
+        "v": "Dow closed Monday +3.11% on Nvidia; US futures steady this morning",
         "s": 1
       },
       {
-        "k": "Stretch",
-        "v": "Monday ran 1,435 pts, 143% of the 1,007 ATR; overnight only 297",
+        "k": "Fed",
+        "v": "December 9 hike about 98% priced, up from 88% on Friday",
         "s": -1
       },
       {
@@ -1286,41 +1296,36 @@
         "s": 1
       },
       {
-        "k": "Rotation",
-        "v": "Dow +3.01% vs Nasdaq Composite +6.51% - still the funding leg",
-        "s": -1
-      },
-      {
         "k": "Calendar",
-        "v": "No US red folder today; core PCE Wednesday 15:30 caps risk appetite",
+        "v": "No US red folder today; CB confidence 17:00, core PCE Wednesday",
         "s": 0
       }
     ],
     "levels": [
       {
+        "name": "Asia high",
+        "v": 49810,
+        "note": "Overnight ceiling, 5 pts above the PDH"
+      },
+      {
         "name": "PDH",
         "v": 49805,
-        "note": "Monday high and the overnight ceiling"
+        "note": "Monday high; the box lid London has to clear"
       },
       {
         "name": "PDC",
         "v": 49715,
-        "note": "Monday close; the pivot the overnight keeps testing"
-      },
-      {
-        "name": "Day open",
-        "v": 49685,
-        "note": "18:00 New York reopen; price pinned to it all night"
+        "note": "Monday close, the pivot the box keeps testing"
       },
       {
         "name": "VWAP",
-        "v": 49680,
-        "note": "Session VWAP from the 18:00 reopen"
+        "v": 49685,
+        "note": "From the 18:00 reopen; price is sitting on it"
       },
       {
-        "name": "Overnight low",
+        "name": "Asia low",
         "v": 49510,
-        "note": "Only real support before the 49,500 round number"
+        "note": "Overnight floor at the 49,500 round number"
       },
       {
         "name": "50,000",
@@ -1330,17 +1335,17 @@
       {
         "name": "PDL",
         "v": 48370,
-        "note": "Monday low, 1,300 points below - Friday's capitulation"
+        "note": "Monday low, 1,320 pts below - Friday capitulation"
       }
     ],
     "scenarios": [
       {
-        "if": "5-min close above the 49,805 PDH",
-        "then": "Opens 50,000; the Dow finally joins the Nasdaq rebound instead of funding it"
+        "if": "5-min close above 49,840",
+        "then": "Box breaks; 50,000 opens and the Dow joins the Nasdaq rebound instead of funding it"
       },
       {
-        "if": "5-min close below 49,510",
-        "then": "The box fails toward 49,300 then the 49,000 handle, with the 48,370 PDL the extreme"
+        "if": "5-min close below 49,500",
+        "then": "Box fails toward 49,300 then the 49,000 handle, with the 48,370 PDL the extreme"
       },
       {
         "if": "CB confidence misses 92.4 at 17:00",
@@ -1367,13 +1372,8 @@
         "when": "2026-11-24T15:00:00Z",
         "what": "Richmond manufacturing index, -2 f",
         "kind": "data"
-      },
-      {
-        "when": "2026-11-25T13:30:00Z",
-        "what": "Core PCE m/m 0.3% f, prelim GDP 3.5% f",
-        "kind": "data"
       }
     ]
   },
-  "updatedAt": "2026-11-24T06:21:38.627Z"
+  "updatedAt": "2026-11-24T07:23:55.546Z"
 }
