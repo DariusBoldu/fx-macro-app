@@ -369,38 +369,18 @@ export function planStatus(U, bars, td) {
 
 /* ------------------------------- open alert -------------------------------- */
 const fN = (v) => Math.round(Number(v)).toLocaleString('en-US');
-function sideLine(s, dir, st, open, fav) {
-  const D = (fav ? 'Favoured ' : '') + (dir === 'long' ? 'long' : 'short');
-  const Dc = D.charAt(0).toUpperCase() + D.slice(1);
-  const z = fN(s.zone[0]) + '–' + fN(s.zone[1]);
-  switch (st.state) {
-    case 'live': return `${Dc} zone ${z} live${st.liveAt < open ? ' since ' + bucClock(st.liveAt) : ''}: T1 ${fN(s.t1)}, stop ${fN(s.stop)}`;
-    case 't1': return `${Dc} already hit T1 ${fN(s.t1)} at ${bucClock(st.t1At)}, don't chase`;
-    case 't2': return `${Dc} already hit T2 ${fN(s.t2)} at ${bucClock(st.t2At)}, done`;
-    case 'stopped': return `${Dc} stopped at ${bucClock(st.stopAt)} (${fN(s.stop)})`;
-    case 'missed': return `${Dc} ran to ${fN(s.t1)} at ${bucClock(st.missedAt)} without entering ${z}, don't chase`;
-    default: return `${Dc} zone ${z} not reached`;
-  }
-}
-/* The push at the London / NY open: which side of the map is live right now. */
+
+/* The push at the London / NY open (v42, simple): the direction expected for the
+ * session that is starting and why, in plain words - no levels or prices. */
+const DIR = { BULLISH: ['▲', 'Up', 'up'], BEARISH: ['▼', 'Down', 'down'], RANGE: ['↔', 'Sideways', 'sideways'] };
 export function openAlert(key, U, ps, price) {
-  const name = key === 'london' ? 'London' : 'NY';
   const s = U && U.sessions && U.sessions[key];
-  const title = `📊 US30 ${name} open` + (isFinite(Number(price)) && price != null ? ` · ${fN(price)}` : '');
-  if (!s) return null;
-  const st = ps && ps[key];
-  if (!st || !validSide(s.long, 'long') || !validSide(s.short, 'short')) {
-    const w = { BULLISH: 'Bullish', BEARISH: 'Bearish', RANGE: 'Range' }[s.lean] || s.lean;
-    return { title, body: `${w}${s.conviction ? ' (' + s.conviction + ')' : ''}: ${s.plan || ''}${s.invalid ? ' Wrong if ' + s.invalid : ''}`.slice(0, 230) };
-  }
-  const favLong = s.lean !== 'BEARISH';
-  const L = sideLine(s.long, 'long', st.long, st.open, s.lean === 'BULLISH');
-  const S = sideLine(s.short, 'short', st.short, st.open, s.lean === 'BEARISH');
-  let body;
-  if (st.long.state === 'waiting' && st.short.state === 'waiting') {
-    body = `Between the zones: wait. Long ${fN(s.long.zone[0])}–${fN(s.long.zone[1])} (T1 ${fN(s.long.t1)}), short ${fN(s.short.zone[0])}–${fN(s.short.zone[1])} (T1 ${fN(s.short.t1)}).`;
-  } else body = (favLong ? [L, S] : [S, L]).join(' · ');
-  return { title, body: body.slice(0, 230) };
+  if (!s || !DIR[s.lean]) return null;
+  const d = DIR[s.lean], where = key === 'london' ? 'London' : 'New York';
+  const title = `📊 US30 ${key === 'london' ? 'London' : 'NY'} open: ${d[0]} ${d[1]}`;
+  const conf = s.conviction ? ` (${String(s.conviction).toLowerCase()} confidence)` : '';
+  const why = s.note || (U.headline && !/\b\d{2},\d{3}\b|\b\d{5,}\b/.test(U.headline) ? U.headline : '');
+  return { title, body: `Expected for ${where}: ${d[2]}${conf}.${why ? ' ' + why : ''}`.slice(0, 230) };
 }
 
 /* --------------------------- analyst payload text --------------------------- */

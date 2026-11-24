@@ -122,15 +122,14 @@ function buildPayload(prevData) {
     if (probs.length) console.warn('WARNING: meta.nextEvent: ' + probs.join('; ') + '.');
   }
 
-  // us30 drives the US30 intraday tab (v34; NAS100 was removed in v40): written by
-  // the 08:00 report (stage london), then the London update 40 min before the
-  // London open (london-update), the midday update at 14:00 Bucharest (midday) and
-  // the NY update 40 min before the cash open (ny). Prices are BlackBull Markets'
-  // US30 CFD (the chart Darius trades). Each session is a LEVEL MAP (v40): a long
-  // and a short side { zone: [lo, hi], entry, t1, t2?, stop } plus `at` (when the
-  // map was written), which the Worker follows live on the 5-minute candles. The
-  // Worker scores sessions.london/ny.lean, so a malformed block warns loudly.
-  // Carried forward when a run omits it (the app marks an old date as not today's).
+  // us30 drives the US30 tab (v34; NAS100 removed in v40): written by the 08:00
+  // report (stage london), then the London update 40 min before the London open
+  // (london-update), the midday update at 14:00 Bucharest (midday) and the NY update
+  // 40 min before the cash open (ny). SIMPLE since v42 (Darius, 2026-11-24): the
+  // expected direction for the day and for each session, and why, in plain words -
+  // no levels, prices, zones or targets. The Worker scores sessions.london/ny.lean,
+  // so a malformed block warns loudly. Carried forward when a run omits it (the
+  // app marks an old date as not today's).
   const indexBlock = (name) => {
     let ix = FX[name];
     if (!ix) {
@@ -141,51 +140,40 @@ function buildPayload(prevData) {
     const p = [], LEAN = ['BULLISH', 'BEARISH', 'RANGE'], CONV = ['high', 'medium', 'low'];
     const ISO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$/;
     const len = (v) => String(v == null ? '' : v).length;
-    const num = (v) => typeof v === 'number' && isFinite(v);
+    // an index level or price in the prose: 49,480 / 49480 / 4,95x... (5+ digits)
+    const PRICE = /\b\d{2},\d{3}\b|\b\d{5,}\b/;
+    const priced = [];
+    const prose = (where, v) => { if (v != null && PRICE.test(String(v))) priced.push(where); };
     if (!/^\d{4}-\d{2}-\d{2}$/.test(String(ix.date || ''))) p.push('date must be YYYY-MM-DD');
     if (!['london', 'london-update', 'midday', 'ny'].includes(ix.stage)) p.push("stage must be 'london', 'london-update', 'midday' or 'ny'");
     if (!ISO.test(String(ix.updatedAt || ''))) p.push('updatedAt must be ISO 8601 UTC');
     if (!LEAN.includes(ix.bias)) p.push('bias must be BULLISH|BEARISH|RANGE');
     if (!CONV.includes(ix.conviction)) p.push('conviction must be high|medium|low');
-    if (!['trend', 'range', 'news'].includes(ix.dayType)) p.push('dayType must be trend|range|news');
-    if (!ix.headline || len(ix.headline) > 170) p.push('headline must be one sentence (<= 140 chars), got ' + len(ix.headline));
-    const ref = ix.ref && num(ix.ref.price) ? ix.ref.price : null;
-    const side = (k, dir, x) => {
-      const pre = 'sessions.' + k + '.' + dir;
-      if (!x || !Array.isArray(x.zone) || x.zone.length !== 2 || !x.zone.every(num) || x.zone[0] > x.zone[1]) return p.push(pre + '.zone must be [low, high] numbers');
-      if (!num(x.t1) || !num(x.stop) || (x.t2 != null && !num(x.t2))) return p.push(pre + ' needs numeric t1 and stop (t2 optional)');
-      const [lo, hi] = x.zone, L = dir === 'long';
-      const ok = L ? x.stop < lo && x.t1 > hi && (x.t2 == null || x.t2 > x.t1) : x.stop > hi && x.t1 < lo && (x.t2 == null || x.t2 < x.t1);
-      if (!ok) p.push(pre + (L ? ' must be stop < zone < t1 < t2' : ' must be stop > zone > t1 > t2'));
-      if (!x.entry || len(x.entry) > 160) p.push(pre + '.entry must say the 5-minute trigger inside the zone (<= 140 chars)');
-      if (ref != null && ref >= lo && ref <= hi) p.push(pre + '.zone contains ref.price ' + ref + ': a zone price is already in when the map is written plays out before Darius reads it');
-    };
+    if (!ix.headline || len(ix.headline) > 170) p.push('headline must be one plain sentence (<= 140 chars), got ' + len(ix.headline));
+    prose('headline', ix.headline);
     const S = ix.sessions || {};
     ['london', 'ny'].forEach((k) => {
       const x = S[k];
       if (!x) { p.push('sessions.' + k + ' is missing'); return; }
       if (!LEAN.includes(x.lean)) p.push('sessions.' + k + '.lean must be BULLISH|BEARISH|RANGE (the Worker scores it)');
-      if (x.conviction && !CONV.includes(x.conviction)) p.push('sessions.' + k + '.conviction must be high|medium|low');
-      if (len(x.plan) > 240) p.push('sessions.' + k + '.plan is ' + len(x.plan) + ' chars (max ~200)');
-      if (!x.invalid || len(x.invalid) > 110) p.push('sessions.' + k + '.invalid must be a level (<= 90 chars)');
-      if (!ISO.test(String(x.at || ''))) p.push('sessions.' + k + '.at must be the ISO UTC time this map was written');
-      if (!x.long || !x.short) p.push('sessions.' + k + ' needs both sides of the level map (long and short)');
-      if (x.long) side(k, 'long', x.long);
-      if (x.short) side(k, 'short', x.short);
-      if (x.wait != null && len(x.wait) > 170) p.push('sessions.' + k + '.wait is ' + len(x.wait) + ' chars (max ~140)');
-      // the midday check on a live session (v39): how the published plan is doing
-      if (x.check != null && (!['on-track', 'target-hit', 'invalidated', 'not-triggered'].includes(x.check.status) ||
-          !ISO.test(String(x.check.at || '')) || !x.check.note || len(x.check.note) > 170)) {
-        p.push('sessions.' + k + '.check must be { at: ISO UTC, status: on-track|target-hit|invalidated|not-triggered, note (<= 140 chars) }');
+      if (!CONV.includes(x.conviction)) p.push('sessions.' + k + '.conviction must be high|medium|low');
+      if (!x.note || len(x.note) > 220) p.push('sessions.' + k + '.note must be 1-2 plain sentences (<= 180 chars): the direction expected and why');
+      prose('sessions.' + k + '.note', x.note);
+      if (x.check != null) {
+        if (!['as-expected', 'against', 'flat'].includes(x.check.status) || !ISO.test(String(x.check.at || '')) || !x.check.note || len(x.check.note) > 170) {
+          p.push('sessions.' + k + '.check must be { at: ISO UTC, status: as-expected|against|flat, note (<= 140 chars) }');
+        }
+        prose('sessions.' + k + '.check.note', x.check.note);
       }
+      const old = ['long', 'short', 'zone', 'plan', 'invalid', 'wait', 'at'].filter((f) => x[f] != null);
+      if (old.length) p.push('sessions.' + k + ' has ' + old.join(', ') + ': the simple tab (v42) shows none of these - leave them out');
     });
     const arr = (v, max) => Array.isArray(v) && v.length <= max;
-    if (!arr(ix.drivers, 6) || ix.drivers.some((d) => !d || !d.k || ![1, 0, -1].includes(d.s))) p.push('drivers must be at most 6 { k, v, s: 1|0|-1 }');
-    if (!arr(ix.levels, 8) || ix.levels.some((l) => !l || !l.name || typeof l.v !== 'number')) p.push('levels must be at most 8 { name, v: number, note }');
-    if (ix.scenarios != null && (!arr(ix.scenarios, 3) || ix.scenarios.some((x) => !x || !x.if || !x.then))) p.push('scenarios must be at most 3 { if, then }');
-    if (ix.events != null && (!arr(ix.events, 8) || ix.events.some((e) => !e || !e.what || (e.when != null && !ISO.test(String(e.when))) ||
-        !['data', 'fed', 'earnings'].includes(e.kind)))) p.push('events must be at most 8 { when: ISO UTC or null, what, kind: data|fed|earnings }');
-    if (ix.ref != null && (typeof ix.ref.price !== 'number' || !ISO.test(String(ix.ref.at || '')))) p.push('ref must be { price: number, at: ISO UTC }');
+    if (!arr(ix.drivers, 5) || ix.drivers.length < 3 || ix.drivers.some((d) => !d || !d.k || !d.v || ![1, 0, -1].includes(d.s))) p.push('drivers must be 3-5 { k, v, s: 1|0|-1 }');
+    (ix.drivers || []).forEach((d, i) => prose('drivers[' + i + '].v', d && d.v));
+    const extra = ['ref', 'levels', 'scenarios', 'events', 'dayType'].filter((f) => ix[f] != null);
+    if (extra.length) p.push('has ' + extra.join(', ') + ': the simple tab (v42) shows none of these - leave them out');
+    if (priced.length) p.push('index levels or prices in ' + priced.join(', ') + ': Darius asked for plain words only - say "fell", "near the lows", not a number');
     if (p.length) console.warn('WARNING: ' + name + ': ' + p.join('; ') + '.');
     return ix;
   };

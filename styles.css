@@ -614,35 +614,33 @@ nav.tabbar{
 .u3btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 14px}
 .u3btns .btn{display:block;text-align:center;text-decoration:none}
 
-.u3live{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--txt2);margin-top:8px;font-variant-numeric:tabular-nums}
-.u3live b{color:var(--txt);font-weight:800}
-.u3livedot{width:7px;height:7px;border-radius:50%;background:var(--long);animation:u3pulse 1.6s infinite}
-/* US30 level map (v40): two sides per session, each with a live status chip */
-.u3map{display:grid;gap:8px;margin-top:9px}
-.u3side{border:1px solid var(--line);border-left:3px solid var(--line);border-radius:9px;padding:8px 10px;background:var(--panel2)}
-.u3side.LONG{border-left-color:var(--long)} .u3side.SHORT{border-left-color:var(--short)}
-.u3side.fav{border-color:var(--accent);border-left-width:3px}
-.u3side.LONG.fav{border-left-color:var(--long)} .u3side.SHORT.fav{border-left-color:var(--short)}
-.u3side.s-stopped,.u3side.s-missed,.u3side.s-t2{opacity:.72}
-.u3sideh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.u3dir{font-size:12.5px;font-weight:800;color:var(--txt)}
-.u3side.LONG .u3dir{color:var(--long)} .u3side.SHORT .u3dir{color:var(--short)}
-.u3dir em{font-style:normal;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);margin-left:3px}
-.u3ss{margin-left:auto;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:6px;white-space:nowrap;background:var(--chip-range-bg);color:var(--chip-range-tx)}
-.u3ss.live{background:var(--accent-bg);color:var(--accent)}
-.u3ss.hit{background:var(--chip-long-bg);color:var(--chip-long-tx)}
-.u3ss.stop{background:var(--chip-short-bg);color:var(--chip-short-tx)}
-.u3ss.miss{background:var(--chip-range-bg);color:var(--warn)}
-.u3zone{display:flex;align-items:baseline;gap:7px;margin-top:5px;font-variant-numeric:tabular-nums}
-.u3zk{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--mut)}
-.u3zone b{font-size:15px;font-weight:900;color:var(--txt)}
-.u3tg{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--mut);margin-top:3px;font-variant-numeric:tabular-nums}
-.u3tg b{color:var(--txt2);font-weight:800}
-.u3tg .u3stop b{color:var(--short)}
-.u3entry{font-size:12.5px;line-height:1.45;color:var(--txt2);margin-top:5px}
-.u3wait{font-size:12.5px;line-height:1.45;color:var(--mut);margin-top:8px;padding:6px 9px;border-radius:8px;border:1px dashed var(--line)}
-.u3mapnote{font-size:11px;color:var(--dim);margin-top:6px}
-.u3mapnote:empty{display:none}
+.u3hero2{background:var(--panel);border:1px solid var(--line);border-left:6px solid var(--range);border-radius:14px;padding:13px 15px 14px;margin-bottom:13px}
+.u3hero2.up{border-left-color:var(--long)} .u3hero2.down{border-left-color:var(--short)}
+.u3sesname{font-size:15px;font-weight:800;color:var(--txt);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.u3when{font-size:11px;font-weight:700;color:var(--dim)}
+.u3when.live{color:var(--long)}
+.u3when.live::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--long);margin-right:5px;vertical-align:middle;animation:u3pulse 1.6s infinite}
+.u3main{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px}
+.u3d{display:inline-flex;align-items:center;gap:6px;font-weight:900;letter-spacing:-.2px;color:var(--range)}
+.u3d i{font-style:normal}
+.u3d.up{color:var(--long)} .u3d.down{color:var(--short)}
+.u3d.big{font-size:34px;line-height:1}
+.u3d.big i{font-size:26px}
+.u3d.mid{font-size:17px}
+.u3conf{font-size:12.5px;font-weight:600;color:var(--mut)}
+.u3main .u3res,.u3row .u3res{margin-left:auto}
+.u3note{font-size:14px;line-height:1.55;color:var(--txt);margin-top:10px}
+.u3note.small{font-size:13px;color:var(--txt2);margin-top:6px}
+.u3note.dim{color:var(--dim)}
+.u3ck{font-size:12.5px;line-height:1.45;color:var(--txt2);margin-top:9px;padding:7px 10px;border-radius:9px;background:var(--chip-range-bg)}
+.u3ck.ok{background:var(--chip-long-bg)} .u3ck.ok b{color:var(--chip-long-tx)}
+.u3ck.bad{background:var(--chip-short-bg)} .u3ck.bad b{color:var(--chip-short-tx)}
+.u3row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.u3rl{font-size:12px;font-weight:800;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;min-width:0}
+.u3other{margin-top:13px;padding-top:11px;border-top:1px solid var(--line)}
+.u3legend{font-size:11px;color:var(--dim);margin-top:8px}
+.u3foot{font-size:12px;line-height:1.6;color:var(--dim);text-align:center;margin:2px 0 12px}
+.u3btns.one{grid-template-columns:1fr}
 
 /* calculator: index entry/stop prices + editable US30 CFD point value (v35) */
 .fld[hidden]{display:none}

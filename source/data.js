@@ -667,188 +667,49 @@ window.FX_DATA = {
   "updatedAt": "2026-11-24T13:55:00Z",
   "bias": "BEARISH",
   "conviction": "medium",
-  "dayType": "trend",
-  "headline": "Dow flushed 632 points to 49,177 and is holding the low into the open; the only support is the 10-year back at 4.90%.",
-  "ref": {
-   "price": 49325,
-   "at": "2026-11-24T13:51:00Z"
-  },
+  "headline": "The Dow sold off hard through the day with Europe closing lower; only falling Treasury yields are offering some support.",
   "sessions": {
    "london": {
     "lean": "RANGE",
     "conviction": "medium",
-    "at": "2026-11-24T07:30:00Z",
-    "long": {
-     "zone": [
-      49500,
-      49550
-     ],
-     "entry": "Buy the first 5-min higher low inside the zone, above the 49,510 Asia low",
-     "t1": 49710,
-     "t2": 49805,
-     "stop": 49390
-    },
-    "short": {
-     "zone": [
-      49790,
-      49840
-     ],
-     "entry": "Sell the first 5-min lower high inside the zone after a failed push through the 49,805 PDH",
-     "t1": 49630,
-     "t2": 49510,
-     "stop": 49960
-    },
-    "wait": "49,550 to 49,790 is the overnight box and VWAP sits in it - no trade in the middle, let the first hour pick an edge",
-    "plan": "Fade the box edges: sell a 5-min lower high in 49,790-49,840 for 49,630; buy a 5-min higher low in 49,500-49,550 for 49,710.",
-    "invalid": "5-min close above 49,840 or below 49,500 - the box has broken, stand aside",
+    "note": "With no clear driver before New York, the Dow was likely to swing back and forth inside its overnight range.",
     "check": {
      "at": "2026-11-24T12:04:34Z",
-     "status": "not-triggered",
-     "note": "Both sides ran to T1 unfilled, then London broke 49,500 and took out the box. The range read is dead - stand aside, wait for NY."
+     "status": "against",
+     "note": "London broke lower instead of staying sideways, so the range call did not work."
     }
    },
    "ny": {
     "lean": "BEARISH",
     "conviction": "medium",
-    "at": "2026-11-24T13:55:00Z",
-    "long": {
-     "zone": [
-      49180,
-      49240
-     ],
-     "entry": "Buy the first 5-min higher low inside the zone - the retest of the 49,177 flush low that held at 15:15",
-     "t1": 49400,
-     "t2": 49575,
-     "stop": 48975
-    },
-    "short": {
-     "zone": [
-      49480,
-      49540
-     ],
-     "entry": "Sell the first 5-min lower high inside the zone at the broken 49,510 Asia low",
-     "t1": 49250,
-     "t2": 49100,
-     "stop": 49665
-    },
-    "wait": "49,240 to 49,480 is where price sits now and there is no level in it - no trade until the day low or the Asia-low retest",
-    "plan": "Short favoured: sell a 5-min lower high in 49,480-49,540 at the broken Asia low, T1 49,250; the 49,180-49,240 day-low long is the alternative, T1 49,400.",
-    "invalid": "5-min close above 49,665 - back over the 18:00 day open, the trend day has failed"
+    "note": "The Dow broke lower into the open and Europe closed weak; only falling yields stand in the way of more selling."
    }
   },
   "drivers": [
    {
-    "k": "Structure",
-    "v": "Day range 632 pts (63% ATR); the 49,330 midday floor broke to 49,177",
-    "s": -1
-   },
-   {
-    "k": "VWAP",
-    "v": "Price 49,325 is 250 pts under the 49,575 VWAP, below it since 12:30",
+    "k": "Momentum",
+    "v": "The Dow has been falling all day and is holding near its lows",
     "s": -1
    },
    {
     "k": "Europe",
-    "v": "DAX 25,058 closing -1.10%, EU50 6,012 -0.88% - Europe led the leg down",
+    "v": "European stocks closed about 1% lower and led the selling",
     "s": -1
    },
    {
     "k": "Yields",
-    "v": "US 10Y 4.90%, down 5bp on the day and 4bp since the midday update",
+    "v": "The 10-year Treasury yield is falling, which supports stocks",
     "s": 1
    },
    {
     "k": "Dollar",
-    "v": "DXY 103.92, -0.38% - the dollar gave back Monday Williams pop",
+    "v": "A softer dollar is a small help for US stocks",
     "s": 1
    },
    {
     "k": "Oil / Iran",
-    "v": "WTI under 80 dollars, lowest since August 7, on US-Iran optimism",
+    "v": "Oil is at its lowest since August on US-Iran optimism",
     "s": 1
-   }
-  ],
-  "levels": [
-   {
-    "name": "PDH",
-    "v": 49805,
-    "note": "Monday high and the Asia ceiling, 480 pts up"
-   },
-   {
-    "name": "London high",
-    "v": 49715,
-    "note": "London ceiling, stalled on Monday 49,715 close"
-   },
-   {
-    "name": "Day open",
-    "v": 49685,
-    "note": "18:00 reopen; the short stop sits just under it"
-   },
-   {
-    "name": "VWAP",
-    "v": 49575,
-    "note": "250 pts above price, unreclaimed since 12:30"
-   },
-   {
-    "name": "Asia low",
-    "v": 49510,
-    "note": "Broken box floor - the short zone anchor"
-   },
-   {
-    "name": "Day low",
-    "v": 49175,
-    "note": "15:15 flush low - the long zone anchor"
-   },
-   {
-    "name": "49,000",
-    "v": 49000,
-    "note": "Round number and next shelf if 49,175 goes"
-   },
-   {
-    "name": "PDL",
-    "v": 48370,
-    "note": "Monday low, the downside extreme"
-   }
-  ],
-  "scenarios": [
-   {
-    "if": "5-min close below 49,175",
-    "then": "Trend day resumes; 49,000 opens with Monday 48,370 low the extreme"
-   },
-   {
-    "if": "49,575 VWAP reclaimed and held",
-    "then": "The flush was a washout; the short zone becomes the trap and 49,715 comes back"
-   },
-   {
-    "if": "CB confidence misses 92.4 at 17:00",
-    "then": "First sign the correction reached the consumer; the price-weighted Dow takes it worst"
-   }
-  ],
-  "events": [
-   {
-    "when": "2026-11-24T13:15:00Z",
-    "what": "ADP weekly employment change (released)",
-    "kind": "data"
-   },
-   {
-    "when": "2026-11-24T14:00:00Z",
-    "what": "FHFA HPI m/m 0.2% f, S&P/CS 2.7% f",
-    "kind": "data"
-   },
-   {
-    "when": "2026-11-24T15:00:00Z",
-    "what": "CB consumer confidence, 92.4 f",
-    "kind": "data"
-   },
-   {
-    "when": "2026-11-24T15:00:00Z",
-    "what": "Richmond manufacturing index, -2 f",
-    "kind": "data"
-   },
-   {
-    "when": "2026-11-24T21:30:00Z",
-    "what": "API weekly crude bulletin",
-    "kind": "data"
    }
   ]
  },
