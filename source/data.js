@@ -45,9 +45,9 @@ window.FX_DATA = {
   },
   "nextBigEvent": "US October core PCE today at 15:30, forecast 0.3% m/m with prelim GDP at 3.5% - the last inflation print before the December 9 FOMC.",
   "update": {
-   "at": "2026-11-25T07:24:50Z",
-   "title": "US30 London update",
-   "text": "London: Down (medium) - Asian chip stocks were liquidated a second day and the broad US market is down about 1%, though Europe opened higher and the 10-year yield eased."
+   "at": "2026-11-25T12:12:00Z",
+   "title": "US30 midday update",
+   "text": "Midday: London is going as called, the Dow has fallen all session and Europe has now turned lower too. New York first look: Down (low), but the 15:30 inflation print decides it."
   }
  },
  "dailyRead": "Yesterday's report had three legs and two of them broke within twenty-four hours, so start there. The first was the Canadian dollar. I argued that the Bank of Canada's December hike at about 38% looked generous against collapsing crude, and that long USD/CAD into Macklem at 19:25 was the cleanest dollar expression. Macklem spoke to the Economic Club of Canada in Toronto and said falling global oil prices could leave inflation below the Bank's last forecast - but he spent the speech on what has not gone away, reaffirming the 2% target, admitting the Bank had sent mixed messages on core inflation in the past, and repeating that he expects Canadian firms to pass higher costs through to consumers in the coming months. Bay Street read that as hawkish, LSEG put December 9 at 79% against the 38% carried a day earlier, and CIBC's Shenfeld said the focus on lingering inflation risk points to a second consecutive hike. USD/CAD is 1.42783 from 1.43595, the Canadian dollar beat all seven others over twenty-four hours, and the trade is now the other way round. The second leg was that falling energy had quietly destroyed the ECB's and the Bank of England's hawkish cases. That reversed too. Brent and WTI recovered from three-month lows to settle more than 2% higher on Tuesday after Iran's IRGC claimed four tankers struck naval mines in the strait, and both December probabilities went up rather than down - the ECB at 82% to 93% depending on the source and the Bank of England at about 79% against the 74% I carried yesterday. EUR/USD is 1.09448 from 1.09086 and GBP/USD 1.30874 from 1.30389. Both shorts are off, and the honest statement is that a one-session move in gas and crude was not enough to move two central banks that have spent two months telling you energy is the reason they are tightening. The third leg survived, and it is now the only clean trade on the board. Australian October CPI at 02:30 beat on all three red-folder lines - headline 4.9% against 4.7% forecast from 4.3%, monthly 0.5% against 0.4%, trimmed mean monthly 0.5% against 0.3% - with TradingEconomics putting trimmed mean at 3.8% y/y from 3.6%. AUD/USD spiked to roughly 0.6641 and then faded to 0.65933, a fresh year-to-date low, and the Aussie lost to every other currency on the day. That is the most informative price action anywhere this morning: the market will not pay for an RBA hike at any inflation print, because October unemployment is a four-year high of 4.9% after employment fell 43,531, ANZ, Westpac and NAB are all at a hold on December 8, and copper down 18.27% in a month removes the terms-of-trade support. Short the Aussie against the Canadian dollar and the franc, not against the dollar. The regime underneath all of this changed character on Tuesday and overnight. The AI trade is being sold again and the rotation is now the dominant flow: the Dow rose 423.39 points or 0.85% on Tuesday to close at 50,018.70 and reclaim 50,000 while the Nasdaq fell 1.48% and the S&P 500 0.50% on an AI chip selloff, with health care and consumer names leading. Overnight it went global - Korea's Kospi fell about 6% with Samsung Electronics and SK Hynix down 8% to 9%, Taiwan's Taiex as much as 6%, the Nikkei about 3% - and the Korea Exchange briefly suspended programme trading. The critical detail for this board is where the money went: not into gold. Gold is 3,521.90, down 0.98% on the day, 12.32% on the month and 15.39% on the year, and it fell again on Tuesday despite a weaker dollar. Silver is 40.15, down 25.58% in a month. When a fully priced December hike forces leveraged funds to raise cash they sell the most liquid and most crowded position first, and silver's thinner market amplifies every exit - so the metals are a real-rate and positioning trade now, not a dollar trade, and the haven bid is going to the franc and the dollar instead. On the data, the US consumer is not the problem: CB consumer confidence printed 103.3 against a 92.4 forecast, a very large beat, and traders dropped the half-point December bet with the 10-year near 4.90%. Japan quietly strengthened its own case - services producer prices rose 4.2% y/y against a 3.6% forecast at 01:50 - and yet the yen did not catch a bid in a 6% Kospi selloff, which tells you the carry gap still outranks the hike. Everything now funnels into core PCE today at 15:30. December is settled at 96% to 100%, so this print is about 2027 and the dot plot, and it is the last inflation read before December 9 because November CPI lands on December 10. Thursday is Thanksgiving and Friday a half day, so there is no second chance this week. The cleanest expressions are short AUD/CAD, short EUR/CAD and long CAD/JPY, where the strongest currency has a fresh policy story and the weak side has none; EUR/CHF stays short because that one never depended on the energy leg. The cleanest mistake would be to re-sell gold and silver into a print that could be 0.2%, with gold's RSI reported at deeply oversold levels.",
@@ -677,47 +677,52 @@ window.FX_DATA = {
  "geopolitics": "Day 270 of a closed Strait of Hormuz, and this is the week to be honest that the closure has stopped setting the price and started setting only the spikes. Crude had been in free fall - WTI broke 80 dollars on Monday and Brent posted its lowest close since August 31 - and then on Tuesday both recovered from three-month lows to settle more than 2% higher, with Brent settling around 91.40 and WTI near 82.05, after Iran's IRGC Navy claimed four oil tankers struck naval mines in the strait. That claim comes from Iran and maritime authorities have not confirmed it; what UKMTO did confirm is that three vessels were hit by unidentified projectiles on Monday while sailing east through the strait, that all three continued their voyages and that all crew were accounted for. The same pattern of competing and unverifiable accounts has now run for four weekends. Volumes tell the structural story better than the headlines: Al Jazeera reported on Tuesday that Hormuz oil traffic is down about 40%, with one analysis putting AIS-visible transits near 9% of the pre-crisis rate in November while Kpler measures oil clearance at roughly half of pre-war levels. Diplomacy is moving without arriving - indirect US-Iran talks continue with Qatari and Pakistani mediation, mediators warned on November 21 of a risk of renewed conflict as negotiations stalled over Tehran's enriched uranium stockpile, and President Trump has said he is inclined to resume major strikes after the New Year if no agreement is reached. Against that, a UBS analyst put the sell-off down to markets pricing out near-term Middle East risk while strategic reserve releases keep supply comfortable, and the IEA still sees a global surplus this quarter and a bigger one in 2027. This morning WTI is 80.86 and Brent 90.29, both down a little on the day and still down 20.54% and 22.04% on the month. The FX read inverted twice in three days and the second inversion is the one to trade. On Monday the lesson was that falling energy was quietly destroying the ECB's and the Bank of England's hawkish cases, and the euro and sterling were the two weakest currencies. Tuesday's bounce reversed that inside a session: ECB December pricing sits at 82% to 93% and the Bank of England near 79%, both higher than a day ago, and the euro and sterling both gained on the dollar. The currency the energy story now actually pays is the Canadian dollar, and not because of crude - because Macklem used a speech about falling oil to restate that firms will pass costs through anyway, and the market moved December 9 from about 38% to 79%. The franc is the other winner, for the opposite reason: core inflation at 0.5% means the SNB had no energy-driven hike to lose and none to gain, so it simply collects the haven flow that gold is refusing. What would turn crude into a genuine overnight long is unchanged and still absent: a supply response that visibly interrupts actual loadings, not another projectile or another unverified mine claim. Trade the retest and never the headline.",
  "us30": {
   "date": "2026-11-25",
-  "stage": "london-update",
-  "updatedAt": "2026-11-25T07:24:50Z",
+  "stage": "midday",
+  "updatedAt": "2026-11-25T12:12:00Z",
   "bias": "BEARISH",
-  "conviction": "low",
-  "headline": "A second day of AI liquidation is pulling US equities lower while Europe holds firm, and the 15:30 inflation print decides the rest.",
+  "conviction": "medium",
+  "headline": "The AI liquidation has spread into the Dow's own value names, Europe has turned lower and falling yields are no longer helping.",
   "sessions": {
    "london": {
     "lean": "BEARISH",
     "conviction": "medium",
-    "note": "Asian chip stocks were liquidated for a second day and the broad US market is down about 1%, so rallies are likely to be sold even though Europe opened higher."
+    "note": "Asian chip stocks were liquidated for a second day and the broad US market is down about 1%, so rallies are likely to be sold even though Europe opened higher.",
+    "check": {
+     "at": "2026-11-25T12:12:00Z",
+     "status": "as-expected",
+     "note": "The Dow has fallen steadily since the open and is near the day's lows, in line with the call; the 15:30 print decides what follows."
+    }
    },
    "ny": {
-    "lean": "RANGE",
+    "lean": "BEARISH",
     "conviction": "low",
-    "note": "US core inflation at 15:30 lands an hour before the cash open and decides this one; until then a thinned Thanksgiving-eve tape argues for chop."
+    "note": "US inflation at 15:30 lands an hour before the open and can still flip this, but momentum, a weaker Europe and a firmer dollar all argue that rallies get sold."
    }
   },
   "drivers": [
    {
-    "k": "AI selloff",
-    "v": "Asian chip stocks sold a second day: Korea fell about 5.7% and Tokyo 3.2%",
+    "k": "Momentum",
+    "v": "The Dow has fallen all through London and is sitting near the day's lows",
     "s": -1
    },
    {
-    "k": "US futures",
-    "v": "The broad US market is down about 1%, the Dow less, so the selling is tech-led",
+    "k": "Rotation",
+    "v": "It is now falling harder than the broad US market, so Tuesday's value bid has gone",
     "s": -1
    },
    {
     "k": "Europe",
-    "v": "Germany and France opened higher and are refusing to follow Asia down",
-    "s": 1
+    "v": "Germany and France opened higher, gave it all back and are now lower",
+    "s": -1
    },
    {
     "k": "Yields",
-    "v": "The 10-year yield eased about five basis points, a cushion for the Dow's value names",
-    "s": 1
+    "v": "The 10-year yield is down about nine basis points and stocks are ignoring the help",
+    "s": 0
    },
    {
     "k": "Data",
-    "v": "US core inflation at 15:30 is the binary and nothing resolves before it",
+    "v": "US core inflation at 15:30 is the binary, an hour before the New York open",
     "s": 0
    }
   ]
