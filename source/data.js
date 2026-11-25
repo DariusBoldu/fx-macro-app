@@ -45,9 +45,9 @@ window.FX_DATA = {
   },
   "nextBigEvent": "US October core PCE Wednesday at 15:30 with core m/m forecast 0.3% and prelim GDP 3.5% - the last inflation print before the December 9 FOMC.",
   "update": {
-   "at": "2026-11-24T13:55:00Z",
-   "title": "US30 NY update",
-   "text": "NY short 49,480-49,540 (T1 49,250) favoured; long 49,180-49,240 (T1 49,400) - Dow flushed 632 pts to 49,177, Europe closed -1.1%, 10Y down 5bp to 4.90%."
+   "at": "2026-11-25T00:42:00Z",
+   "title": "🇦🇺 AUD analysis updated",
+   "text": "CPI above forecast on all three: headline 4.9% vs 4.7%, trimmed mean monthly 0.5% vs 0.3%. The core accelerated, so December 8 is live again - AUD/USD and AUD/JPY to range."
   }
  },
  "dailyRead": "Yesterday's read had one leg and that leg broke in the US session. Treasury Secretary Bessent had argued on Sunday that the Fed risked a policy mistake by overtightening, and the board took that as a cap on the terminal rate - which is why gold and the Nasdaq rallied together. On Monday evening New York Fed President Williams answered him directly: more hikes are likely over time to bring inflation back to 2%, the AI investment boom could push the Fed to raise further in 2027, and the only thing he ruled out was the fifty-point move, because conditions do not call for dramatic action. December pricing went from about 88% on Friday to about 98%, the front end repriced hawkish, and the dollar beat all seven other currencies - DXY 104.308 against 103.674 this time yesterday, EUR/USD 1.09086 from 1.09955, GBP/USD 1.30389 from 1.31228. Gold is the cleanest casualty: it sits at 3,633 after bouncing off a more-than-one-year low, down 9.54% on the month, and the Bessent leg that made it a long yesterday is gone. The second development is energy, and it is the one most people will misprice. Brent closed at 89.37 on Monday, its lowest close since August 31, and WTI broke 80 dollars to 79.84 - down 23.18% and 21.54% on the month - on an IEA surplus call for this quarter and a bigger one in 2027, with Kpler showing 9.5 million barrels a day still moving through a strait that has been shut for 269 days. The obvious read is that this hurts the Canadian dollar, and it does, but the Bank of Canada's December hike was only ever about 38% priced. The bigger casualties are the euro and sterling, the two weakest currencies of the last 24 hours, because the ECB priced a December 17 hike at 90% to 92% while warning in October that elevated energy prices could fuel inflation, and the Bank of England priced December at about 74% with ING saying plainly that a hold becomes likelier if oil stays below 100 dollars. Both of those hawkish cases just lost their main input in a single session. The yen, by contrast, beat six of seven, because its December 18 hike rests on 4.6% wage growth and a Tokyo CPI forecast of 3.0% on Friday rather than on imported energy - though at 159.218 the Ministry of Finance sits immediately above at 160. Europe's own split got sharper: German composite PMI hit 55.0, its highest since March 2022, while France contracted at the fastest pace since May and the euro-area aggregate held 51.7 against a 51.9 forecast, which is exactly why the DAX is a better long than the Euro Stoxx. The cleanest expressions today are short EUR/JPY and EUR/CHF, where the policy leg and the price leg finally agree, and long USD/CAD into Macklem at 19:25. The cleanest mistake would be to add to the Australian short into Wednesday's CPI at 02:30: headline is forecast to jump to 4.7% from 4.3% while trimmed mean holds 0.3%, the market already expects a December 8 hold from ANZ, Westpac and NAB, and that is how a crowded short gets squeezed. The US calendar today is thin - consumer confidence at 17:00 forecast 92.4 - because Thursday is Thanksgiving and Friday is a half day, so Wednesday at 15:30 carries the whole week.",
@@ -111,8 +111,8 @@ window.FX_DATA = {
   },
   "AUD": {
    "next": "hold",
-   "when": "December 8 at 05:30, with ANZ, Westpac and NAB all expecting 4.85% to stand",
-   "note": "TradingEconomics carries the cash rate at 4.85% after the November 3 rise from 4.60%, an 18-year high and the fifth increase of 2026, and forecasts a hold for December 8. The November minutes are the constraint: six of nine members supported that rise, citing inflation above target and the possibility that a higher neutral rate had made policy less restrictive than assumed, while three opposed it, warning that rising unemployment and falling house prices could push the economy into a sharper downturn. ANZ says the cash rate is at or close to its peak, Westpac expects a hold, and NAB says policy is now in restrictive territory. The board is stuck between October unemployment at a four-year high of 4.9% after employment fell 43,500 against a forecast of plus 25,500, and headline inflation at 4.3% with core at 3.6%, the highest on this board. The November Statement on Monetary Policy carries a 4.9% year-average cash rate, which the RBA describes as an assumption from market pricing rather than a forecast of another hike. October CPI on Wednesday at 02:30 is the only release that can move this: headline is forecast at 4.7% from 4.3%, monthly 0.4% from 0.8% and trimmed mean monthly steady at 0.3% - energy lifting the headline while the targeted core measure does not accelerate, which argues the freeze holds even on a hot headline, and which is how the most crowded short on this board gets squeezed."
+   "when": "December 8 at 05:30, where TradingEconomics still carries 4.85% but October CPI has reopened a hike",
+   "note": "TradingEconomics carries the cash rate at 4.85% after the November 3 rise from 4.60%, an 18-year high and the fifth increase of 2026, and still forecasts 4.85% for December 8. That forecast is now the weak part of this path. October CPI, released Wednesday at 02:30, was above forecast on all three red-folder lines - headline 4.9% against 4.7% from 4.3%, monthly 0.5% against 0.4% and trimmed mean monthly 0.5% against 0.3% - and TradingEconomics puts trimmed mean at 3.8% y/y from 3.6%. The pre-release case for a freeze was that energy would lift the headline while the targeted core stayed flat; the core accelerated instead, which speaks directly to the November minutes majority of six of nine who judged previous tightening was not clearly sufficient and cited the possibility that a higher neutral rate had made policy less restrictive than assumed. Against that, three members opposed the November rise warning that rising unemployment and falling house prices could force a sharper downturn, October unemployment is at a four-year high of 4.9% after employment fell 43,500, and ANZ, Westpac and NAB were all at a hold going in. A repricing of December toward a hike is not yet verifiable on any rate-market source reachable from here, so this stays a hold with live hike risk rather than a hike. The RBA Bulletin Thursday at 02:30 is the next official word."
   },
   "NZD": {
    "next": "hike",
@@ -131,6 +131,12 @@ window.FX_DATA = {
   }
  },
  "today": [
+  {
+   "ccy": "AUD",
+   "moved": true,
+   "headline": "October CPI beat on all three red-folder lines - headline 4.9% against 4.7% forecast from 4.3%, monthly 0.5% against 0.4% and trimmed mean monthly 0.5% against 0.3% - and TradingEconomics has trimmed mean at 3.8% y/y from 3.6%.",
+   "read": "The targeted core accelerated, which is exactly what yesterday's freeze case said would not happen, so December 8 is live again even though TradingEconomics still forecasts 4.85%. The reaction was narrower than the print: AUD/USD 0.66566 and AUD/JPY 105.925 are up, but AUD/NZD, AUD/CAD and AUD/CHF are all lower and DXY fell to 103.868, so the Aussie mostly tracked a softer dollar rather than leading it. Copper down another 2.4% to 5.39 is why the crosses have not paid yet. The RBA Bulletin Thursday at 02:30 is the next official word, and US core PCE today at 15:30 is the bigger of the two legs."
+  },
   {
    "ccy": "EUR",
    "moved": true,
@@ -168,12 +174,6 @@ window.FX_DATA = {
    "read": "The fundamental case got materially worse and the price barely noticed, which is the setup. The Bank of Canada hiked in October specifically to stop high energy prices spreading, and energy is now down 21.54% on the month with core CPI at 2.0%, trimmed at 1.8% and employment falling three months running. A December 9 hike at about 38% in the rate market still looks too high. The reason the Canadian dollar held is relative: its hike was barely priced to begin with, so it had far less to give back than the euro at 90% or sterling at 74%. Macklem at 19:25 tonight is the resolution and the biggest CAD risk of the week in both directions."
   },
   {
-   "ccy": "AUD",
-   "moved": true,
-   "headline": "Middle of the board - AUD/USD 0.66269 and minus 0.27% over 24 hours, but AUD/NZD 1.21645 and plus 0.29%, EUR/AUD 1.64619 and minus 0.53%, GBP/AUD 1.96821 and minus 0.35%.",
-   "read": "The crowded short has started to squeeze and Wednesday at 02:30 is where it gets tested. Headline CPI is forecast at 4.7% from 4.3% with monthly at 0.4% from 0.8% and trimmed mean monthly steady at 0.3% - energy lifting the headline while the targeted core measure does not accelerate, which is an argument for the December 8 freeze that ANZ, Westpac and NAB all expect. The commodity leg is the genuine drag: copper fell 2.11% to 5.52 and is down 15.35% on the month, and it fell on the same day the Nasdaq Composite rose 6.51%. Do not add size to this short before the print."
-  },
-  {
    "ccy": "CHF",
    "moved": true,
    "headline": "Held the middle without a policy story - USD/CHF 0.84155 and plus 0.26% over 24 hours, but EUR/CHF 0.91787 and minus 0.54%, GBP/CHF 1.09714 and minus 0.38%, NZD/CHF 0.45831 and minus 0.28%.",
@@ -207,11 +207,11 @@ window.FX_DATA = {
   },
   {
    "ccy": "AUD",
-   "score": 0,
+   "score": 1,
    "verdict": "MIXED",
-   "tag": "The crowded short started squeezing, but copper fell on the day the Nasdaq rose 6.51%",
-   "drivers": "AUD/NZD 1.21645 and plus 0.29%, AUD/CHF 0.55778 and plus 0.04%, EUR/AUD 1.64619 and minus 0.53% and GBP/AUD 1.96821 and minus 0.35% in its favour, against AUD/USD 0.66269 and minus 0.27% and AUD/JPY 105.477 and minus 0.13%; CPI 4.3% with core 3.6%, the highest here, unemployment 4.9% at a four-year high and the cash rate 4.85%.",
-   "forward": "⚖️ Range into December 8, where ANZ, Westpac and NAB all expect 4.85% to stand and the November minutes showed a six-three split with three members warning about a sharper downturn. Wednesday at 02:30 is the whole trade: headline forecast 4.7% from 4.3%, monthly 0.4% from 0.8%, trimmed mean monthly steady at 0.3%. A hot headline with a steady core argues for the freeze and squeezes the short; the real drag is copper at 5.52, down 15.35% on the month. Invalidated by trimmed mean monthly at 0.4% or higher, which would put a December hike back on the table and force this to plus one."
+   "tag": "October CPI beat on all three lines and the targeted core accelerated, but it still lagged four of seven peers",
+   "drivers": "October CPI 4.9% y/y against 4.7% forecast from 4.3%, monthly 0.5% against 0.4% and trimmed mean monthly 0.5% against 0.3%, with TradingEconomics carrying trimmed mean at 3.8% y/y from 3.6%; AUD/USD 0.66566 and AUD/JPY 105.925 higher after the print, but AUD/NZD 1.21395, AUD/CAD 0.94839 and AUD/CHF 0.55563 all lower as DXY fell to 103.868, against the cash rate at 4.85% and unemployment at a four-year high of 4.9%.",
+   "forward": "🦅 Hawkish shift into December 8. Yesterday's range call named its own invalidation - trimmed mean monthly at 0.4% or higher - and it printed 0.5%, with trimmed mean y/y accelerating to 3.8%. That removes the argument for the freeze that ANZ, Westpac and NAB all expected, and it feeds the November minutes majority of six of nine, who judged previous tightening was not clearly sufficient and raised the possibility that a higher neutral rate had left policy less restrictive than assumed. Three brakes remain: the three members who opposed the November rise over rising unemployment and falling house prices, unemployment at 4.9% after employment fell 43,500, and copper down another 2.4% to 5.39. An FXStreet headline 15 minutes before the print carried RBA's Jacobs calling financial conditions restrictive after the hikes. Invalidated if the RBA Bulletin Thursday at 02:30 frames the headline as energy pass-through."
   },
   {
    "ccy": "CAD",
@@ -277,10 +277,10 @@ window.FX_DATA = {
   },
   {
    "sym": "AUD/USD",
-   "bias": "SHORT",
+   "bias": "RANGE",
    "conv": "LOW-MED",
-   "why": "0.66269 and minus 0.27%, down 5.59% over four weeks. The RBA is frozen with unemployment at a four-year high of 4.9% and ANZ, Westpac and NAB all expecting a December 8 hold, against a Fed that went to about 98% for December 9.",
-   "risk": "This is the most crowded short on the board and Wednesday at 02:30 is the squeeze. Headline CPI is forecast at 4.7% from 4.3% with trimmed mean monthly steady at 0.3%, and a hot headline that the market already expects is how shorts get run. Do not add before the print."
+   "why": "0.66566 after October CPI beat on all three lines - headline 4.9% against 4.7%, trimmed mean monthly 0.5% against 0.3% - which breaks the frozen-RBA leg this short was built on. The Fed leg is intact at about 98% for December 9, so neither side leads now.",
+   "risk": "The squeeze this trade was warned about arrived, but it was mostly a softer dollar: DXY fell to 103.868 and the Aussie lagged the kiwi, the franc and the Canadian dollar. US core PCE today at 15:30 is the bigger leg from here - a 0.4% core puts the short back on."
   },
   {
    "sym": "NZD/USD",
@@ -306,9 +306,9 @@ window.FX_DATA = {
   {
    "sym": "EUR/AUD",
    "bias": "SHORT",
-   "conv": "LOW-MED",
-   "why": "1.64619 and minus 0.53% over 24 hours after gaining 3.33% over four weeks. The euro lost to all seven while the Australian dollar held the middle, and the crowded Aussie short has begun to unwind into Wednesday's CPI.",
-   "risk": "Both legs are event-driven in the same 36 hours: AUD CPI on Wednesday at 02:30 and the ECB accounts on Thursday at 14:30. A trimmed mean monthly at 0.4% or higher would accelerate this, but copper down 15.35% on the month is a standing drag on the Australian leg."
+   "conv": "MEDIUM",
+   "why": "1.64797. The accelerant this trade named has fired: trimmed mean monthly printed 0.5% against 0.3% forecast and trimmed mean y/y 3.8% from 3.6%, reopening December 8, while the euro is the weakest currency here with the energy input behind its own hike deflating.",
+   "risk": "The print has not moved it yet - this is marginally higher over 24 hours, because the euro rose against a softer dollar like everything else. The ECB accounts Thursday at 14:30 is the other leg, and copper down another 2.4% to 5.39 caps the Australian side."
   },
   {
    "sym": "EUR/NZD",
@@ -348,9 +348,9 @@ window.FX_DATA = {
   {
    "sym": "GBP/AUD",
    "bias": "SHORT",
-   "conv": "LOW-MED",
-   "why": "1.96821 and minus 0.35% over 24 hours after gaining 3.51% over four weeks. Sterling's December hike is leaking to about 74% while the most crowded short on the board starts to squeeze into Wednesday's Australian CPI.",
-   "risk": "Wednesday at 02:30 cuts both ways: trimmed mean monthly at 0.2% or lower would revive the Australian short and reverse this. Copper down 15.35% on the month remains the structural drag on the Aussie leg, and the four-week trend is still the other way."
+   "conv": "MEDIUM",
+   "why": "1.97081. The reversal condition for this trade was a trimmed mean monthly at 0.2% or lower and it printed 0.5%, with headline 4.9% against 4.7% - the Australian leg turned hawkish while sterling's December hike keeps leaking around 74%.",
+   "risk": "Like EUR/AUD it has not paid yet, slightly higher over 24 hours on broad dollar weakness rather than on the print. Copper down 2.4% to 5.39 is the standing drag on the Aussie leg and the four-week trend is still about 3.5% the other way."
   },
   {
    "sym": "GBP/NZD",
@@ -375,31 +375,31 @@ window.FX_DATA = {
   },
   {
    "sym": "AUD/JPY",
-   "bias": "SHORT",
+   "bias": "RANGE",
    "conv": "LOW-MED",
-   "why": "105.477 and minus 0.13% over 24 hours after gaining 4.60% over four weeks. The yen beat six of seven on a wage-funded December hike while the RBA is frozen, and copper at 5.52 is down 15.35% on the month - the Australian dollar's commodity leg is still being sold.",
-   "risk": "Wednesday at 02:30 is the squeeze risk and the four-week trend is firmly against this trade. The 160 level in USD/JPY is the other complication, because Ministry of Finance intervention would move this far faster than the Australian data."
+   "why": "105.925 and higher after the print. Both legs are hawkish now - Australian trimmed mean monthly 0.5% against 0.3% reopening December 8, against a yen whose own December hike is funded by wages rather than imported energy - so the short's premise is gone.",
+   "risk": "The squeeze arrived and the four-week trend was already 4.6% against the short, so do not re-enter it on the print alone. USD/JPY at 159.279 is the complication: Ministry of Finance intervention near 160 would move this faster than anything in the Australian data."
   },
   {
    "sym": "AUD/NZD",
    "bias": "LONG",
    "conv": "LOW-MED",
-   "why": "1.21645 and plus 0.29% over 24 hours. Both labour markets are deteriorating but New Zealand's is worse - unemployment 5.7% and the highest since 2016, wage growth 2.0% the lowest of the eight, against Australian wage growth of 3.5% and core inflation of 3.6%.",
-   "risk": "The policy legs point the other way: TradingEconomics forecasts an RBNZ hike to 3.00% on December 9 while the RBA is expected to hold on December 8. Wednesday's Australian CPI at 02:30 is the first test and a soft trimmed mean kills this."
+   "why": "1.21395. The CPI test this trade was waiting on passed - trimmed mean monthly 0.5% against 0.3% and headline 4.9% - against a New Zealand labour market that is worse, with unemployment at 5.7% and wage growth of 2.0%, the lowest of the eight.",
+   "risk": "It passed the test and still fell about 0.2% over 24 hours, which is the warning. TradingEconomics forecasts an RBNZ hike to 3.00% on December 9 while the RBA is still carried at a hold, so the policy legs point the other way until December 8 reprices."
   },
   {
    "sym": "AUD/CAD",
    "bias": "RANGE",
    "conv": "LOW-MED",
-   "why": "0.95139 and minus 0.05%, essentially unchanged over 24 hours and down 3.23% over four weeks. Both legs are commodity casualties at once - copper down 15.35% on the month, WTI down 21.54% - so neither currency can lead.",
-   "risk": "Two events inside 20 hours will break the range: Macklem tonight at 19:25 and Australian CPI on Wednesday at 02:30. Until then trade 0.9450 to 0.9580; a Macklem defence of the October framing is the more likely of the two to force the move."
+   "why": "0.94839, lower over 24 hours despite the Australian CPI beat, because the Canadian dollar firmed as the dollar fell broadly. Both legs stay commodity casualties at once - copper down another 2.4% to 5.39, WTI down over 21% on the month - so neither can lead.",
+   "risk": "The hot trimmed mean is the first thing that could break this range upward and it did not on the print, which is the point. Trade 0.9450 to 0.9580 and watch the RBA Bulletin Thursday at 02:30 against the Canadian side."
   },
   {
    "sym": "AUD/CHF",
    "bias": "SHORT",
    "conv": "LOW-MED",
-   "why": "0.55778 and plus 0.01% over 24 hours, the only cross where the Australian dollar failed to beat a scoring peer. The RBA is frozen at 4.85% with unemployment at a four-year high, and copper down 15.35% on the month keeps the commodity leg heavy.",
-   "risk": "The franc's haven leg is fading with the risk rally, which removes some of the short's support, and Wednesday's CPI at 02:30 is the squeeze. This is the weakest of the franc longs - EUR/CHF and GBP/CHF both have a priced hike to unwind on the other side."
+   "why": "0.55563 and lower over 24 hours - the squeeze did not happen here because the franc was strong. The Australian core did accelerate though, with trimmed mean monthly 0.5% against 0.3%, which is a new argument against this short rather than for it.",
+   "risk": "This is the franc long whose other leg has just turned: a December 8 hike coming back onto the table would hurt it and the print is the first evidence for that. EUR/CHF and GBP/CHF both still have a priced hike to unwind on the other side and are cleaner."
   },
   {
    "sym": "NZD/JPY",
@@ -554,8 +554,31 @@ window.FX_DATA = {
    "date": "Wed Nov 25",
    "event": "Australia October CPI",
    "impact": "high",
-   "note": "At 02:30. Headline y/y forecast 4.7% from 4.3%, monthly 0.4% from 0.8% and trimmed mean monthly steady at 0.3%. Energy lifting the headline while the targeted core measure does not accelerate is the argument for the December 8 freeze - and the squeeze risk for the most crowded short on this board.",
-   "when": "2026-11-25T00:30:00Z"
+   "note": "Released at 02:30 and above forecast on all three lines: headline 4.9% against 4.7% from 4.3%, monthly 0.5% against 0.4% from 0.8% and trimmed mean monthly 0.5% against 0.3%. TradingEconomics also carries trimmed mean at 3.8% y/y from 3.6%, the highest reading on its monthly series. The pre-release case for the December 8 freeze was energy lifting the headline while the targeted core stayed flat - the core accelerated instead.",
+   "when": "2026-11-25T00:30:00Z",
+   "result": [
+    {
+     "title": "CPI m/m",
+     "actual": "0.5%",
+     "forecast": "0.4%",
+     "previous": "0.8%",
+     "cmp": "▲ above"
+    },
+    {
+     "title": "CPI y/y",
+     "actual": "4.9%",
+     "forecast": "4.7%",
+     "previous": "4.3%",
+     "cmp": "▲ above"
+    },
+    {
+     "title": "Trimmed Mean CPI m/m",
+     "actual": "0.5%",
+     "forecast": "0.3%",
+     "previous": "0.3%",
+     "cmp": "▲ above"
+    }
+   ]
   },
   {
    "date": "Wed Nov 25",
@@ -984,16 +1007,17 @@ window.FX_DATA = {
   },
   "AUD": {
    "inflation": {
-    "value": "4.3%",
+    "value": "4.9%",
     "trend": "rising",
-    "note": "Q3 CPI; core 3.6%, highest here; Wed fc 4.7%",
+    "note": "Oct CPI; trimmed mean 3.8% y/y, high here",
     "hist": [
      4.2,
      4,
      3.8,
      3.5,
      4,
-     4.3
+     4.3,
+     4.9
     ]
    },
    "growth": {
